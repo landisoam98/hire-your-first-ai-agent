@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>有了 SQL Account 为何还要 SuDu · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.slide { padding-top: 84px; }
+.h1 { font-size: 64px; max-width: 1500px; }
+.lead { font-size: 30px; margin-top: 10px; }
+.stk { position:relative; flex:1; display:grid; grid-template-rows: 1.15fr 1fr 1fr 1fr; gap: 12px; margin-top: 28px; margin-right: 150px; }
+.ly { display:grid; grid-template-columns: 70px 330px 1fr 260px; align-items:center; gap: 22px; padding: 0 26px 0 18px; border-radius: 22px; background: #fff;
+  box-shadow: 0 0 0 1px var(--line), 0 20px 40px -30px rgba(2,34,31,.35); }
+.ly .no { width: 54px; height: 54px; border-radius: 16px; background: var(--mint); color: var(--green); display:grid; place-items:center; font-size: 28px; font-weight: 700; }
+.ly .nm b { display:block; font-size: 40px; font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
+.ly .nm img { height: 40px; display:block; }
+.ly .nm span { display:block; font-size: 22px; font-weight: 600; color: var(--green); margin-top: 6px; }
+.ly p { font-size: 24px; line-height: 1.32; color: var(--ink-2); }
+.ly .bd { justify-self: end; display:flex; align-items:center; gap: 8px; white-space: nowrap; font-size: 21px; font-weight: 700; padding: 9px 13px; border-radius: 12px; background: var(--mint); color: var(--ink); }
+.ly .bd svg { color: var(--green); flex:none; }
+.ly.sql { background: linear-gradient(110deg, #F3EEFF, #EAF2FF); }
+.ly.sql .no { background: rgba(124,92,255,.15); color: #5B43D6; }
+.ly.ai { background: var(--ink); box-shadow: 0 0 60px rgba(0,245,169,.22); }
+.ly.ai .no { background: var(--neon); color: var(--ink); }
+.ly.ai .nm b { color: var(--on-dark); } .ly.ai .nm span { color: var(--neon); } .ly.ai p { color: var(--on-dark-2); }
+.ly.ai .bd { background: var(--neon); }
+.ly.ai .bd svg { color: var(--ink); }
+.brk { position:absolute; right: -128px; top: calc(25% + 10px); bottom: 6px; width: 100px; }
+.brk i { position:absolute; left: 0; top: 0; bottom: 0; width: 26px; border: 3px solid var(--emerald); border-left: 0; border-radius: 0 16px 16px 0; }
+.brk span { position:absolute; left: 40px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; white-space: nowrap; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .12em; color: var(--green); }
+.end { margin-top: 22px; font-size: 32px; font-weight: 600; }
+.end span { color: var(--ink-3); font-weight: 500; }
+.end .sig { color: var(--ink); font-weight: 600; }
+/* 2-stage reveal: big title first, then the content */
+.ttlw { display:inline-block; align-self:flex-start; transform-origin: 0 0; transition: transform 1.05s cubic-bezier(.65,0,.15,1); will-change: transform; }
+.rest { flex:1; display:flex; flex-direction:column; min-height: 0; transition: opacity .6s ease .8s, transform .8s cubic-bezier(.2,.8,.2,1) .75s; }
+body[data-s="0"] .rest { opacity: 0; transform: translateY(40px); pointer-events: none; transition: opacity .35s ease, transform .5s ease; }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="light" data-section="SuDu AI" data-sparks="9,0" style="--gx:80%;--gy:30%;--mx:80%;--my:30%">
+<main class="slide">
+<div class="ttlw"><h1 class="h1 r" style="--d:.05s">“我已经有 SQL Account 了，<br>为什么还需要 SuDu AI？”</h1></div>
+<div class="rest">
+<p class="lead r" style="--d:.2s">因为会计只是公司的第一层。</p>
+<div class="stk"><div class="ly ai r" style="--d:1.20s"><span class="no">4</span><div class="nm"><b>AI Agent</b><span>操作全部 3 层</span></div><p>读取每一层并动手做事：接单、采购、追款、提早发现问题。由人来批准。</p><div class="bd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>运营整家公司</div></div><div class="ly mes r" style="--d:0.95s"><span class="no">3</span><div class="nm"><b>MES</b><span>工厂，实时掌握</span></div><p>安排每张工单，按 BOM 发料，实时记录产量、废料和机器时间。每张工单的进度和真实成本，随时看得到。</p><div class="bd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>生产看得见</div></div><div class="ly wms r" style="--d:0.70s"><span class="no">2</span><div class="nm"><b>WMS</b><span>仓库，实时掌握</span></div><p>每一箱都扫描入库、上架、拣货、出货。库存一动就马上记录。</p><div class="bd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>库存准确</div></div><div class="ly sql r" style="--d:0.45s"><span class="no">1</span><div class="nm"><img src="../assets/sql-h.png" alt="SQL Account"><span>基础：会计</span></div><p>管你的账：Invoice、付款、税务和报表。它记录的是已经发生的事。</p><div class="bd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>账目正确</div></div><div class="brk f" style="--d:1.6s"><i></i><span>AI 操作全部 3 层</span></div></div>
+<p class="end r" style="--d:1.7s">SQL Account 告诉你 <span class="sig" style="--sd:2.3s">已经发生了什么。</span> <span>SuDu 负责接下来要发生的事。</span></p>
+</div>
+<script>
+(function () {
+  var B = document.body, w = document.querySelector('.ttlw'), rest = document.querySelector('.rest');
+  var STATIC = navigator.webdriver || location.hash === '#static', big = 'none';
+  function measure() {                       // where the title sits normally -> big and centred
+    var prev = w.style.transform; w.style.transition = 'none'; w.style.transform = 'none';
+    var sl = document.querySelector('.slide').getBoundingClientRect(), k = sl.width / 1920, r = w.getBoundingClientRect();
+    var x = (r.left - sl.left) / k, y = (r.top - sl.top) / k, wd = r.width / k, ht = r.height / k, sc = Math.min(2.2, 1720 / wd);
+    big = 'translate(' + (960 - x - sc * wd / 2) + 'px,' + (520 - y - sc * ht / 2) + 'px) scale(' + sc + ')';
+    w.style.transform = prev; void w.offsetWidth; w.style.transition = '';
+  }
+  function replay() { rest.querySelectorAll('.r,.f,.pop,.sig,.draw').forEach(function (el) { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; }); }
+  function set(n, instant) {
+    if (instant) w.style.transition = 'none';
+    if (n >= 1) { if (B.dataset.s !== '1') { B.dataset.s = '1'; w.style.transform = 'none'; rest.querySelectorAll('.r,.f,.pop,.sig,.draw').forEach(function (el) { el.style.animation = 'none'; }); setTimeout(replay, instant ? 0 : 750); } }
+    else { B.dataset.s = '0'; w.style.transform = big; }
+    if (instant) { void w.offsetWidth; w.style.transition = ''; }
+  }
+  if (STATIC) { B.dataset.s = '1'; return; }
+  B.dataset.s = '0'; measure(); set(0, true);
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () { if (B.dataset.s === '0') { measure(); set(0, true); } });
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') set(e.data.deckStep); });
+  if (window.parent === window) addEventListener('keydown', function (e) { if (e.key === 'ArrowRight' || e.key === ' ') set(1); if (e.key === 'ArrowLeft') set(0); });
+})();
+</script>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

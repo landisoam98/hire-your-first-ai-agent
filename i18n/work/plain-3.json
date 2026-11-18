@@ -1,0 +1,62 @@
+[
+  {
+    "slide": "40",
+    "old": "'Answers the numbers, builds dashboards'",
+    "new": "'Explains the numbers, builds dashboards'",
+    "why": "\"answers the numbers\" reads oddly"
+  },
+  {
+    "slide": "41-42",
+    "old": "'Auto-posting settings'",
+    "new": "'Auto-save to SQL Account'",
+    "why": "\"posting\" is accounting jargon"
+  },
+  {
+    "slide": "41-42",
+    "old": "'Load historical prices'",
+    "new": "'Load past prices'",
+    "why": "simpler word than historical"
+  },
+  {
+    "slide": "46",
+    "old": "'Posted to SQL Account']",
+    "new": "'Saved into SQL Account']",
+    "why": "\"posted\" is accounting jargon"
+  },
+  {
+    "slide": "48",
+    "old": "'Or ask the ERP, after it syncs'",
+    "new": "'Or ask the ERP, after it updates'",
+    "why": "\"syncs\" is IT jargon"
+  },
+  {
+    "slide": "48",
+    "old": "'/accounting reads live from SQL Account.'",
+    "new": "'/accounting reads straight from SQL Account.'",
+    "why": "\"reads live\" is unclear"
+  },
+  {
+    "slide": "49",
+    "old": "'A PDF to share, or a dashboard that stays live.'",
+    "new": "'A PDF to share, or a dashboard that keeps updating.'",
+    "why": "\"stays live\" is abstract"
+  },
+  {
+    "slide": "50",
+    "old": "'Set it and forget it.'",
+    "new": "'Ask once. It runs every week.'",
+    "why": "idiom, say what happens"
+  },
+  {
+    "slide": "53",
+    "old": "'Posted as a purchase invoice'",
+    "new": "'Saved as a purchase invoice'",
+    "why": "\"posted\" is accounting jargon"
+  },
+  {
+    "slide": "53",
+    "old": "'Mismatches are flagged before posting.'",
+    "new": "'Wrong qty or price is caught first.'",
+    "why": "\"mismatches flagged posting\" is jargon"
+  }
+]

@@ -1,0 +1,356 @@
+[
+ {
+  "slide": "05",
+  "old": "Keeps the books: invoices, payments, tax and reports.",
+  "new": "Keeps your accounts: invoices, payments, tax and reports.",
+  "why": "'the books' is accounting idiom"
+ },
+ {
+  "slide": "05",
+  "old": "'Books right', 'sql'),",
+  "new": "'Accounts right', 'sql'),",
+  "why": "'books' unclear to staff"
+ },
+ {
+  "slide": "05",
+  "old": "true cost, live.',\n     'Production transparent'",
+  "new": "true cost, live.',\n     'Production you can see'",
+  "why": "'transparent' is abstract"
+ },
+ {
+  "slide": "05",
+  "old": "issues materials against the BOM, records",
+  "new": "gives out materials by the BOM, records",
+  "why": "'issues against' is jargon"
+ },
+ {
+  "slide": "05",
+  "old": "Every carton scanned in, put away, picked and shipped.",
+  "new": "Every carton scanned in, put on the shelf, picked and shipped.",
+  "why": "'put away' to plain words"
+ },
+ {
+  "slide": "05",
+  "old": "SQL Account keeps the books: invoices",
+  "new": "SQL Account keeps your accounts: invoices",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "05",
+  "old": "Production becomes transparent.",
+  "new": "You can see every job.",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "06",
+  "old": "SuDu AI is the AI-native ERP built to get there:",
+  "new": "SuDu AI is the ERP built around AI to get there:",
+  "why": "'AI-native' is jargon"
+ },
+ {
+  "slide": "07",
+  "old": "1 AI-native ERP runs the whole company",
+  "new": "1 ERP with AI runs the whole company",
+  "why": "'AI-native' is jargon"
+ },
+ {
+  "slide": "07",
+  "old": "SUDU AI-NATIVE ERP",
+  "new": "SUDU ERP WITH AI",
+  "why": "'AI-native' is jargon"
+ },
+ {
+  "slide": "07",
+  "old": "'Production<br>transparent'",
+  "new": "'Production<br>you can see'",
+  "why": "'transparent' is abstract"
+ },
+ {
+  "slide": "07",
+  "old": "'Invoices and payments post by themselves.', 'Books up to date'",
+  "new": "'Invoices and payments recorded automatically.', 'Accounts up to date'",
+  "why": "'post' and 'books' are jargon"
+ },
+ {
+  "slide": "07",
+  "old": "Invoice and payment post to SQL Account",
+  "new": "Invoice and payment go into SQL Account",
+  "why": "'post' is accounting jargon"
+ },
+ {
+  "slide": "07",
+  "old": "so production is transparent. And finance: everything posts to SQL Account, so the books are always up to date.",
+  "new": "so you can see every job. And finance: everything goes into SQL Account, so your accounts are always up to date.",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "08",
+  "old": "<i class=\"p\"></i>posts to accounting</span>",
+  "new": "<i class=\"p\"></i>goes to accounting</span>",
+  "why": "'posts' is accounting jargon"
+ },
+ {
+  "slide": "08",
+  "old": "<em>Posts automatically</em>",
+  "new": "<em>Goes in automatically</em>",
+  "why": "'posts' is accounting jargon"
+ },
+ {
+  "slide": "08",
+  "old": "['Goods Receiving', 'Putaway', 'Picking'",
+  "new": "['Goods Receiving', 'Put on shelf', 'Picking'",
+  "why": "'putaway' to plain words"
+ },
+ {
+  "slide": "08",
+  "old": "goods receiving, putaway, picking, packing, goods delivery",
+  "new": "goods receiving, putting on shelves, picking, packing, goods delivery",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "08",
+  "old": "purchase invoices post to it automatically, so your books stay where they are.",
+  "new": "purchase invoices go into it automatically, so your accounts stay where they are.",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "09",
+  "old": "('3', 'MES', 'production transparent')",
+  "new": "('3', 'MES', 'production you can see')",
+  "why": "'transparent' is abstract"
+ },
+ {
+  "slide": "09",
+  "old": "('1', 'SQL Account', 'books right')",
+  "new": "('1', 'SQL Account', 'accounts right')",
+  "why": "'books' unclear to staff"
+ },
+ {
+  "slide": "09",
+  "old": "'Books right', 'Every SuDu document posts here automatically.'",
+  "new": "'Accounts right', 'Every SuDu document goes in here automatically.'",
+  "why": "'books', 'posts' are jargon"
+ },
+ {
+  "slide": "09",
+  "old": "Stock value and GRNs flow down to SQL Account.",
+  "new": "Stock value and goods received flow down to SQL Account.",
+  "why": "'GRNs' is an acronym"
+ },
+ {
+  "slide": "09",
+  "old": "'Production transparent', 'Finished goods flow back into WMS.'",
+  "new": "'Production you can see', 'Finished goods flow back into WMS.'",
+  "why": "'transparent' is abstract"
+ },
+ {
+  "slide": "09",
+  "old": "'Runs the company', 'Nothing is posted until a person approves.'",
+  "new": "'Runs the company', 'Nothing is saved until a person approves.'",
+  "why": "'posted' is accounting jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'POSTING')]",
+  "new": "'INTO SQL ACCOUNT')]",
+  "why": "'posting' is accounting jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'synced master data'",
+  "new": "'copied from SQL Account'",
+  "why": "'synced master data' is IT jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'who may post'",
+  "new": "'who can do what'",
+  "why": "'post' is accounting jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'complete, then post'",
+  "new": "'complete, then send'",
+  "why": "'post' is accounting jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'Pending post', 'queued for SQL Account'",
+  "new": "'Waiting', 'queued for SQL Account'",
+  "why": "'pending post' is jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'Posted', 'in SQL Account', 'hub'",
+  "new": "'Saved', 'in SQL Account', 'hub'",
+  "why": "'posted' is accounting jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'Verify &amp; reconcile', 'check every line'",
+  "new": "'Check &amp; match', 'check every line'",
+  "why": "'reconcile' is accounting jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'SQL Account books', 'ledger &middot; debtors &middot; tax &middot; reports'",
+  "new": "'SQL Account records', 'accounts &middot; who owes you &middot; tax &middot; reports'",
+  "why": "'ledger', 'debtors' are jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'Post GD <u>or</u> SI, GR <u>or</u> PI'",
+  "new": "'Send GD <u>or</u> SI, GR <u>or</u> PI'",
+  "why": "'post' is accounting jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'post', 'ps', (1100, 250)",
+  "new": "'send', 'ps', (1100, 250)",
+  "why": "'post' is accounting jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'Putaway', 'to the right bin'",
+  "new": "'Put on shelf', 'to the right shelf'",
+  "why": "'putaway' to plain words"
+ },
+ {
+  "slide": "09",
+  "old": "'count, see variance'",
+  "new": "'count, see the difference'",
+  "why": "'variance' is jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'write off variance'",
+  "new": "'fix the difference'",
+  "why": "'variance', 'write off' jargon"
+ },
+ {
+  "slide": "09",
+  "old": "(1000, 292)], 'variance', ''",
+  "new": "(1000, 292)], 'difference', ''",
+  "why": "'variance' is jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'first-article, process, receipt'",
+  "new": "'first piece, during the job, at receipt'",
+  "why": "'first-article' is QC jargon"
+ },
+ {
+  "slide": "09",
+  "old": "backflushed on receipt (BACK)",
+  "new": "deducted on receipt (BACK)",
+  "why": "'backflushed' is MES jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'Tax &amp; SST', 'Ledger', 'Reports']",
+  "new": "'Tax &amp; SST', 'Accounts', 'Reports']",
+  "why": "'ledger' is accounting jargon"
+ },
+ {
+  "slide": "09",
+  "old": "'Ledger': '<rect x=\"4\" y=\"3\"",
+  "new": "'Accounts': '<rect x=\"4\" y=\"3\"",
+  "why": "keep tile icon after rename"
+ },
+ {
+  "slide": "09",
+  "old": "['Receive', 'Put away', 'Pick &amp; pack'",
+  "new": "['Receive', 'Put on shelf', 'Pick &amp; pack'",
+  "why": "'put away' to plain words"
+ },
+ {
+  "slide": "09",
+  "old": "It keeps the books right, and it records",
+  "new": "It keeps your accounts right, and it records",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "09",
+  "old": "Every document SuDu creates posts down here automatically.",
+  "new": "Every document SuDu creates goes down here automatically.",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "09",
+  "old": "Receiving, putaway to a bin, picking",
+  "new": "Receiving, putting on the shelf, picking",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "09",
+  "old": "routine work. Nothing is posted until a person approves.",
+  "new": "routine work. Nothing is saved until a person approves.",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "12",
+  "old": "The book says 40 cartons. The shelf says 12.",
+  "new": "The system says 40 cartons. The shelf has 12.",
+  "why": "'the book' means accounts; confusing"
+ },
+ {
+  "slide": "12",
+  "old": "The book says forty cartons, the shelf says twelve.",
+  "new": "The system says forty cartons, the shelf has twelve.",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "17",
+  "old": "The book says 40. The shelf says 12.</h1>",
+  "new": "The system says 40. The shelf has 12.</h1>",
+  "why": "'the book' means accounts; confusing"
+ },
+ {
+  "slide": "17",
+  "old": "'No proper putaway', 'Goods are left wherever there is space. The bin is never recorded.'",
+  "new": "'No fixed shelf spot', 'Goods are left wherever there is space. Nobody records which shelf.'",
+  "why": "'putaway', 'bin' are warehouse jargon"
+ },
+ {
+  "slide": "17",
+  "old": "The numbers drift every day.",
+  "new": "The numbers get more wrong every day.",
+  "why": "'drift' is an idiom"
+ },
+ {
+  "slide": "17",
+  "old": "('Expired stock written off', 'Money thrown in the bin')",
+  "new": "('Expired stock thrown out', 'Money lost')",
+  "why": "'written off' jargon; bin pun"
+ },
+ {
+  "slide": "17",
+  "old": "'Pickers walking, not picking'",
+  "new": "'Staff walking, not picking'",
+  "why": "'pickers' is warehouse jargon"
+ },
+ {
+  "slide": "17",
+  "old": "There is no proper putaway, so goods are left wherever there is space and the bin is never recorded.",
+  "new": "There is no fixed shelf spot, so goods are left wherever there is space and nobody records which shelf.",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "17",
+  "old": "Expired stock is written off. Pickers spend hours searching.",
+  "new": "Expired stock is thrown out. Staff spend hours searching.",
+  "why": "notes match slide"
+ },
+ {
+  "slide": "17",
+  "old": "Hands up if your stock count never matches the book.",
+  "new": "Hands up if your stock count never matches the system.",
+  "why": "'the book' confusing"
+ },
+ {
+  "slide": "18",
+  "old": "'Paperwork backlog'",
+  "new": "'Paperwork piles up'",
+  "why": "'backlog' is office jargon"
+ }
+]

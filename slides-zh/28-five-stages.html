@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>5 个阶段 · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.slide { padding-top: 88px; }
+.h1 { font-size: 66px; }
+.lead { font-size: 29px; margin-top: 10px; }
+.lead b { color: var(--on-dark); font-weight: 650; }
+.graph { position:relative; width: 1664px; height: 730px; margin-top: 10px; }
+.graph svg.cv { position:absolute; inset: 0; width: 1664px; height: 300px; overflow: visible; }
+.streak { stroke-dasharray: 160 2400; stroke-dashoffset: 160; animation: streak 3.4s cubic-bezier(.5,0,.3,1) 2.2s infinite; }
+@keyframes streak { to { stroke-dashoffset: -2240; } }
+html.static .streak { display: none; }
+.nd { position:absolute; width: 76px; height: 76px; margin: -38px 0 0 -38px; border-radius: 50%; background: #0B2E29; border: 2px solid rgba(242,251,247,.25); display:grid; place-items:center; color: var(--on-dark-2); z-index: 3; }
+.nd svg { width: 36px; height: 36px; }
+.nd.next { border: 2px dashed rgba(0,245,169,.55); color: var(--neon); background: #0A2622; }
+.nd.now { border-color: var(--neon); color: var(--neon); box-shadow: 0 0 0 8px rgba(0,245,169,.12), 0 0 40px rgba(0,245,169,.4); }
+.nd.fin { width: 104px; height: 104px; margin: -52px 0 0 -52px; background: var(--neon); border-color: var(--neon); color: var(--ink); box-shadow: 0 0 0 14px rgba(0,245,169,.14), 0 0 80px rgba(0,245,169,.7); }
+.nd.fin svg { width: 50px; height: 50px; }
+.nd.fin::before, .nd.fin::after { content:""; position:absolute; inset: -2px; border-radius: 50%; border: 2px solid rgba(0,245,169,.7); animation: ring 2.4s ease-out infinite; }
+.nd.fin::after { animation-delay: 1.2s; }
+@keyframes ring { from { transform: scale(1); opacity: .9; } to { transform: scale(2.3); opacity: 0; } }
+.stem { position:absolute; width: 0; border-left: 2px dashed rgba(242,251,247,.18); z-index: 1; }
+.st { position:absolute; top: 310px; width: 282px; height: 420px; padding: 20px 22px; border-radius: 22px; background: rgba(242,251,247,.04); border: 1px solid rgba(242,251,247,.1); display:flex; flex-direction:column; }
+.st .n, .fc .n { font-family: var(--mono); font-size: 17px; letter-spacing: .1em; font-weight: 600; color: var(--on-dark-3); display:flex; align-items:center; gap: 10px; }
+.st .n b, .fc .n b { font-size: 19px; color: var(--on-dark); background: rgba(242,251,247,.1); padding: 2px 8px; border-radius: 6px; }
+.nowt { margin-left: auto; color: var(--ink); background: var(--neon); padding: 2px 8px; border-radius: 6px; font-size: 16px; }
+.st.now { background: rgba(0,245,169,.1); border: 1.5px solid rgba(0,245,169,.6); box-shadow: 0 0 60px rgba(0,245,169,.16); }
+.st.now .n b { background: var(--neon); color: var(--ink); }
+.st.now .mw b { background: linear-gradient(90deg, #00F5A9, #00A57A); }
+.st h3 { font-size: 38px; font-weight: 700; letter-spacing: -.02em; margin-top: 12px; }
+.bars { margin-top: auto; display:grid; gap: 20px; }
+.pain, .win { display:flex; align-items:center; gap: 8px; margin-top: 14px; font-size: 21px; font-weight: 600; white-space: nowrap; padding: 7px 11px; border-radius: 10px; width: fit-content; }
+.pain { color: #FFB08F; background: rgba(255,138,91,.1); }
+.pain svg { flex: none; }
+.st.now .pain { color: #FFD27A; background: rgba(255,210,122,.1); }
+.win { color: var(--ink); background: var(--neon); }
+.mw.c b { background: linear-gradient(90deg, #FFD27A, #FFB547); }
+.st.now .mw.c b, .fc .mw.c b { background: linear-gradient(90deg, #9FFFE0, #4FE3B8); }
+.k { font-family: var(--mono); font-size: 16px; letter-spacing: .12em; font-weight: 600; color: var(--on-dark-3); margin-top: 14px; display:flex; align-items:center; gap: 8px; }
+.k.warn { color: #FFB08F; }
+.st p { font-size: 25px; line-height: 1.3; color: var(--on-dark); margin-top: 6px; }
+.st p:not(.pb) { min-height: 90px; }
+.st p.pb { color: var(--on-dark-2); }
+.mw { }
+.mw span { font-size: 22px; font-weight: 600; color: var(--on-dark-2); }
+.mw i { display:block; height: 14px; border-radius: 7px; background: rgba(242,251,247,.08); margin-top: 8px; overflow:hidden; }
+.mw b { display:block; height: 100%; width: 0; border-radius: 4px; background: linear-gradient(90deg, #FFB08F, #FF8A5B); animation: fillw 1.2s var(--ease) forwards; animation-delay: var(--d); }
+@keyframes fillw { to { width: var(--w); } }
+.fc { position:absolute; top: 310px; width: 432px; height: 420px; border-radius: 26px; padding: 2px; overflow: hidden; }
+.fc::before { content:""; position:absolute; inset: -60%; background: conic-gradient(from 0deg, rgba(0,245,169,0) 0deg, #00F5A9 60deg, rgba(0,245,169,0) 140deg, rgba(0,245,169,.25) 220deg, rgba(0,245,169,0) 300deg); animation: spin 5s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.fc .in { position:relative; height: 100%; border-radius: 24px; background: linear-gradient(170deg, #0C3A33, #062621 60%); padding: 20px 26px 20px; display:flex; flex-direction:column; box-shadow: inset 0 0 80px rgba(0,245,169,.12); }
+.fc .n { color: var(--neon); }
+.fc h3 { font-size: 52px; line-height: 1.04; font-weight: 750; letter-spacing: -.025em; margin-top: 4px; }
+.eq { display:flex; align-items:center; gap: 10px; margin-top: 12px; }
+.eq span { font-size: 21px; font-weight: 700; padding: 7px 13px; border-radius: 12px; background: var(--neon); color: var(--ink); white-space: nowrap; }
+.eq span.o { background: transparent; color: var(--neon); border: 1.5px solid var(--neon); }
+.eq em { font-style: normal; font-size: 26px; font-weight: 700; color: var(--on-dark-2); }
+.fc p { font-size: 25px; line-height: 1.3; color: var(--on-dark); margin-top: 6px; }
+.fc .row { display:flex; flex-wrap: wrap; gap: 0 10px; }
+.fc .pain { color: #FFD27A; background: rgba(255,210,122,.1); }
+.st.future { background: transparent; border: 2px dashed rgba(242,251,247,.22); }
+.st.future h3, .st.future p { color: var(--on-dark-2); }
+.st.future .n b { background: transparent; color: var(--neon); border: 1.5px solid rgba(0,245,169,.5); }
+.st.future .mw b { background: linear-gradient(90deg, rgba(0,245,169,.6), rgba(0,165,122,.6)); }
+.st.future .mw.c b { background: linear-gradient(90deg, rgba(159,255,224,.55), rgba(79,227,184,.55)); }
+.fc .k { color: var(--neon); }
+.fc .n b { background: var(--neon); color: var(--ink); }
+.fc .nowt { margin-left: auto; }
+.nxt { margin-left: auto; color: var(--neon); border: 1.5px dashed var(--neon); padding: 1px 8px; border-radius: 6px; font-size: 16px; }
+.eq { flex-wrap: wrap; row-gap: 8px; margin-top: 12px; }
+.eq strong { font-size: 22px; font-weight: 700; color: var(--neon); }
+.fc .mw b { background: linear-gradient(90deg, #00F5A9, #00A57A); }
+/* the race */
+.mk { position:absolute; transform: translateX(-50%); z-index: 4; }
+.mk .in { display:flex; flex-direction:column; align-items:center; }
+.mk .chip { white-space: nowrap; font-size: 21px; font-weight: 700; padding: 7px 15px; border-radius: 999px; }
+.mk .stm { width: 2px; height: 16px; }
+.mk.you { left: 757px; top: 90px; }
+.mk.you .chip { background: #F2FBF7; color: var(--ink); } .mk.you .stm { background: #F2FBF7; }
+.mk.comp { left: 757px; top: 38px; }
+.mk.comp .chip { background: #FF8A5B; color: #1A0F0A; box-shadow: 0 0 40px rgba(255,138,91,.5); }
+.mk.comp .stm { background: #FF8A5B; height: 0; animation: stm .4s ease 4.6s forwards; }
+@keyframes stm { to { height: 16px; } }
+.mk.comp .in { animation: race 1.4s cubic-bezier(.65,0,.25,1) 3.3s forwards; }
+@keyframes race { to { transform: translate(383px, -10px); } }
+.gap { position:absolute; left: 757px; width: 383px; top: 262px; height: 0; border-top: 2.5px dashed #FF8A5B; opacity: 0; z-index: 3; animation: fade .6s ease 4.8s forwards; }
+.gap::before, .gap::after { content:""; position:absolute; top: -9px; width: 2.5px; height: 16px; background: #FF8A5B; }
+.gap::before { left: 0; } .gap::after { right: 0; }
+.gap span { position:absolute; left: 50%; transform: translateX(-50%); top: 8px; white-space: nowrap; font-size: 23px; font-weight: 700; color: #FFB08F; }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="dark" data-section="SuDu AI" data-sparks="none" style="--gx:86%;--gy:22%;--mx:85%;--my:30%">
+<main class="slide">
+<h1 class="h1 r" style="--d:.1s">AI 时代已经来了。 <span class="g">别被抛在后面。</span></h1>
+<p class="lead r" style="--d:.25s">每个时代都减少了 <b>人手工作</b> 和 <b>成本</b>。每个时代，观望的公司都失去了客户。</p>
+<div class="graph">
+  <svg class="cv" viewBox="0 0 1664 300" fill="none">
+    <defs><linearGradient id="sc" x1="0" x2="1"><stop offset="0" stop-color="#A9C4BA" stop-opacity=".3"/><stop offset=".6" stop-color="#00F5A9" stop-opacity=".8"/><stop offset="1" stop-color="#00F5A9"/></linearGradient>
+      <linearGradient id="sf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00F5A9" stop-opacity=".14"/><stop offset="1" stop-color="#00F5A9" stop-opacity="0"/></linearGradient>
+      <filter id="glow" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="4"/></filter></defs>
+    <path class="f" style="--d:1.4s" d="M141 250 C220.8 244.3 346.3 238.7 449 228 C551.7 217.3 641.8 203.3 757 186 C872.2 168.7 1012.3 146.3 1140 124 C1267.7 101.7 1429.7 69.3 1523 52 L1523 300 L141 300 Z" fill="url(#sf)"/>
+    <path class="draw" pathLength="1" style="--d:.3s;--dur:2s" d="M141 250 C220.8 244.3 346.3 238.7 449 228 C551.7 217.3 641.8 203.3 757 186 C872.2 168.7 1012.3 146.3 1140 124 C1267.7 101.7 1429.7 69.3 1523 52" stroke="url(#sc)" stroke-width="4" stroke-linecap="round"/>
+    <path class="streak" d="M141 250 C220.8 244.3 346.3 238.7 449 228 C551.7 217.3 641.8 203.3 757 186 C872.2 168.7 1012.3 146.3 1140 124 C1267.7 101.7 1429.7 69.3 1523 52" stroke="#F2FBF7" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+    <path class="streak" d="M141 250 C220.8 244.3 346.3 238.7 449 228 C551.7 217.3 641.8 203.3 757 186 C872.2 168.7 1012.3 146.3 1140 124 C1267.7 101.7 1429.7 69.3 1523 52" stroke="#00F5A9" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <div class="nd  pop" style="left:141px;top:250px;--d:0.60s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 11h7M9 15h7M9 19h4"/></svg></div><span class="stem f" style="left:141px;top:290px;height:20px;--d:0.80s"></span><div class="nd  pop" style="left:449px;top:228px;--d:0.95s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M3 14h18M9 4v16M15 4v16"/></svg></div><span class="stem f" style="left:449px;top:268px;height:42px;--d:1.15s"></span><div class="nd  pop" style="left:757px;top:186px;--d:1.30s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M7 8h6M7 11h4"/></svg></div><span class="stem f" style="left:757px;top:226px;height:84px;--d:1.50s"></span><div class="nd fin pop" style="left:1140px;top:124px;--d:1.65s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c.5 4.7 3.3 7.5 8 8-4.7.5-7.5 3.3-8 8-.5-4.7-3.3-7.5-8-8 4.7-.5 7.5-3.3 8-8z"/><path d="M19 15l.6 2.4L22 18l-2.4.6L19 21l-.6-2.4L16 18l2.4-.6z"/></svg></div><span class="stem f" style="left:1140px;top:164px;height:146px;--d:1.85s"></span><div class="nd next pop" style="left:1523px;top:52px;--d:2.00s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="6" rx="2"/><path d="M10.5 5.5h.01M13.5 5.5h.01"/><rect x="7" y="10" width="10" height="7" rx="1.5"/><path d="M7 11.5L4 15l1.5 2M17 11.5l3 3.5-1.5 2M9.5 17v4.5M14.5 17v4.5"/></svg></div><span class="stem f" style="left:1523px;top:92px;height:218px;--d:2.20s"></span><div class="st r" style="left:0px;--d:0.75s"><div class="n"><b>1.0</b>1980 年以前</div><h3>手写</h3><p>纸本和记录簿</p><div class="pain"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/></svg><span>慢，单据会丢</span></div><div class="bars"><div class="mw"><span>人手工作</span><i><b style="--w:100%;--d:1.35s"></b></i></div><div class="mw c"><span>成本</span><i><b style="--w:100%;--d:1.50s"></b></i></div></div></div><div class="st r" style="left:308px;--d:1.10s"><div class="n"><b>2.0</b>1980s – 90s</div><h3>电子表格</h3><p>Excel 文件靠打字和 Email</p><div class="pain"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/></svg><span>文件多，常打错</span></div><div class="bars"><div class="mw"><span>人手工作</span><i><b style="--w:85%;--d:1.70s"></b></i></div><div class="mw c"><span>成本</span><i><b style="--w:85%;--d:1.85s"></b></i></div></div></div><div class="st r" style="left:616px;--d:1.45s"><div class="n"><b>3.0</b>1990s – 2020s</div><h3>软件</h3><p>各自独立的系统，靠员工输入</p><div class="pain"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/></svg><span>数据打 2 次</span></div><div class="bars"><div class="mw"><span>人手工作</span><i><b style="--w:65%;--d:2.05s"></b></i></div><div class="mw c"><span>成本</span><i><b style="--w:70%;--d:2.20s"></b></i></div></div></div><div class="fc pop" style="left:924px;--d:1.80s"><div class="in"><span class="n"><b>4.0</b>2025 年起<span class="nowt">现在</span></span><h3>AI Agent</h3><p>AI 做文书工作，你来批准。</p><div class="bars"><div class="mw"><span>人手工作</span><i><b style="--w:25%;--d:2.40s"></b></i></div><div class="mw c"><span>成本</span><i><b style="--w:35%;--d:2.55s"></b></i></div></div></div></div>
+  <div class="st future r" style="left:1382px;--d:2.2s"><div class="n"><b>5.0</b>2020 年代后期</div>
+    <h3>实体 AI</h3><p>机器人做体力活</p>
+    <div class="bars"><div class="mw"><span>人手工作</span><i><b style="--w:5%;--d:2.9s"></b></i></div>
+    <div class="mw c"><span>成本</span><i><b style="--w:15%;--d:3.05s"></b></i></div></div></div>
+  <div class="mk you f" style="--d:2.4s"><div class="in"><span class="chip">你的公司？</span><span class="stm"></span></div></div>
+  <div class="mk comp f" style="--d:2.7s"><div class="in"><span class="chip">你的竞争对手</span><span class="stm"></span></div></div>
+  <div class="gap"><span>差距每年都在扩大</span></div>
+</div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

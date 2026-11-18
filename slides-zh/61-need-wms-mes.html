@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>你需要 WMS 和 MES 吗？ · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.top { display:flex; justify-content:space-between; align-items:flex-start; }
+.sub { font-size: 30px; color: var(--ink-2); margin-top: 10px; }
+.cols { display:grid; grid-template-columns: 1fr 1fr; gap: 34px; margin-top: 30px; }
+.nc { border-radius: 26px; padding: 22px 30px 12px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -30px rgba(2,34,31,.4); }
+.nc .hd { display:flex; align-items:baseline; gap: 14px; padding-bottom: 12px; border-bottom: 3px solid var(--ink); }
+.nc .hd b { font-size: 46px; font-weight: 800; letter-spacing: -.02em; }
+.nc .hd span { font-size: 26px; color: var(--green); font-weight: 600; }
+.nc .hd em { margin-left: auto; font-style: normal; font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--ink-3); }
+.mes .hd { border-color: var(--emerald); }
+.q { display:grid; grid-template-columns: 50px 34px 1fr; align-items:center; gap: 6px; font-size: 27px; line-height: 1.28; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.q:last-child { border: 0; }
+.q i { width: 34px; height: 34px; border: 3px solid var(--ink); border-radius: 8px; background:#fff; }
+.q .n { font-family: var(--mono); font-size: 22px; color: var(--green); }
+.key { margin-top: 24px; display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.key div { display:flex; align-items:center; gap: 16px; padding: 16px 22px; border-radius: 18px; background: #F1F2F0; }
+.key b { font-family: var(--mono); font-size: 28px; font-weight: 700; white-space: nowrap; }
+.key span { font-size: 25px; line-height: 1.3; color: var(--ink-2); }
+.key .hi { background: var(--ink); color: var(--on-dark); }
+.key .hi b { color: var(--neon); } .key .hi span { color: var(--on-dark-2); }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="light" data-section="工作坊" data-sparks="9,1" style="--gx:90%;--gy:10%;--mx:90%;--my:10%">
+<main class="slide">
+<div class="top"><div><h1 class="h1 r" style="--d:.1s">你需要 WMS 和 MES 吗？</h1><p class="sub r" style="--d:.25s">每个“是”打勾。两边分开算。</p></div><div class="ws r" style="--d:1.6s"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg><b>第 2B 格</b>每边满分 5 分</div></div>
+<div class="cols"><div class="nc wms r" style="--d:0.30s"><div class="hd"><b>WMS</b><span>仓库</span><em>___ / 5</em></div><div class="q r" style="--d:0.50s"><i></i><span class="n">1</span><span>库存放在超过 1 个仓库，或分散在很多货架？</span></div><div class="q r" style="--d:0.60s"><i></i><span class="n">2</span><span>员工常浪费时间找货吗？</span></div><div class="q r" style="--d:0.70s"><i></i><span class="n">3</span><span>你要跟 Batch 或有效期，或常丢掉过期货吗？</span></div><div class="q r" style="--d:0.80s"><i></i><span class="n">4</span><span>盘点数常常和系统对不上？</span></div><div class="q r" style="--d:0.90s"><i></i><span class="n">5</span><span>每天要拣货打包超过 30 张订单？</span></div></div><div class="nc mes r" style="--d:0.60s"><div class="hd"><b>MES</b><span>工厂</span><em>___ / 5</em></div><div class="q r" style="--d:0.80s"><i></i><span class="n">1</span><span>你自己生产、调配或组装产品吗？</span></div><div class="q r" style="--d:0.90s"><i></i><span class="n">2</span><span>你按配方或 BOM 发原料吗？</span></div><div class="q r" style="--d:1.00s"><i></i><span class="n">3</span><span>很难知道每张单做到哪一步？</span></div><div class="q r" style="--d:1.10s"><i></i><span class="n">4</span><span>不清楚每批的真实成本或损耗？</span></div><div class="q r" style="--d:1.20s"><i></i><span class="n">5</span><span>你用纸或 Excel 排生产？</span></div></div></div>
+<div class="key">
+  <div class="r" style="--d:1.9s"><b>0</b><span>目前 SQL Account + AI Agent 就够了。</span></div>
+  <div class="r" style="--d:2.05s"><b>1 到 2</b><span>先用 AI Agent，以后再加。</span></div>
+  <div class="hi r" style="--d:2.2s"><b>3 到 5</b><span>你需要它，第 1 天就规划。</span></div>
+</div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

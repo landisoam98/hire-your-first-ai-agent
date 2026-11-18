@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>How much an AI has read · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+body.light { background: #FAFAF7; } body.light .bg { display: none; }
+body.dark { background: #03201C; } body.dark .bg .spark { display: none; }
+.slide { padding-top: 92px; }
+.mk { font-family: var(--mono); font-size: 20px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--green); }
+body.dark .mk { color: var(--neon); }
+.mt { font-size: 78px; font-weight: 750; letter-spacing: -.035em; line-height: 1.04; margin-top: 16px; max-width: 1560px; text-wrap: balance; }
+.mt em { font-style: normal; color: var(--green); } body.dark .mt em { color: var(--neon); }
+.ml { font-size: 34px; line-height: 1.42; color: var(--ink-2); margin-top: 22px; max-width: 1320px; text-wrap: pretty; }
+body.dark .ml { color: var(--on-dark-2); }
+.ml b { color: var(--ink); font-weight: 650; } body.dark .ml b { color: var(--on-dark); }
+.m3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; margin-top: auto; margin-bottom: 64px; }
+.m3 > div { border-top: 3px solid var(--ink); padding-top: 22px; }
+body.dark .m3 > div { border-color: var(--neon); }
+.m3 b { display: block; font-size: 38px; font-weight: 750; letter-spacing: -.02em; line-height: 1.15; }
+.m3 p { font-size: 27px; line-height: 1.42; color: var(--ink-2); margin-top: 10px; }
+body.dark .m3 p { color: var(--on-dark-2); }
+.mn { font-size: 180px; font-weight: 800; letter-spacing: -.05em; line-height: .9; }
+.mn small { font-size: .32em; letter-spacing: -.02em; color: var(--green); } body.dark .mn small { color: var(--neon); }
+.mq { display: inline-block; font-size: 32px; font-weight: 600; padding: 18px 28px; border-radius: 6px 26px 26px 26px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -30px rgba(2,34,31,.45); }
+.mnote { font-size: 23px; color: var(--ink-3); } body.dark .mnote { color: var(--on-dark-3); }
+/* motion: soft rise, staggered with --d */
+.u { opacity: 0; transform: translateY(26px); animation: mUp .95s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
+.uf { opacity: 0; animation: mFade 1.1s ease forwards; animation-delay: var(--d, 0s); }
+.ux { opacity: 0; transform: translateX(-30px); animation: mUp .95s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
+.ug { transform-origin: left; transform: scaleX(0); animation: mGrow 1.4s cubic-bezier(.65,0,.25,1) forwards; animation-delay: var(--d, 0s); }
+@keyframes mUp { to { opacity: 1; transform: none; } }
+@keyframes mFade { to { opacity: 1; } }
+@keyframes mGrow { to { transform: none; } }
+html.static .u, html.static .uf, html.static .ux { opacity: 1; transform: none; animation: none; }
+html.static .ug { transform: none; animation: none; }
+
+.slide { padding-top: 112px; }
+.wrap { flex:1; display:grid; grid-template-columns: 1fr 800px; gap: 50px; }
+.lf { display:flex; flex-direction:column; }
+.h2 { color: var(--on-dark-2); font-weight: 500; font-size: 36px; margin-top: 18px; }
+.hero { font-size: 170px; font-weight: 800; letter-spacing: -.055em; line-height: .9; margin-top: 14px; white-space: nowrap; }
+.hero small { display:block; font-size: 64px; font-weight: 700; letter-spacing: -.03em; color: var(--neon); margin-top: 6px; }
+.bk { font-size: 34px; color: var(--on-dark-2); margin-top: 26px; }
+.bk b { color: var(--on-dark); font-weight: 650; }
+.facts { margin-top: auto; margin-bottom: 10px; display:grid; gap: 0; }
+.fx { display:grid; grid-template-columns: 210px 1fr; align-items:baseline; gap: 20px; padding: 16px 0; border-top: 1px solid rgba(242,251,247,.16); }
+.fx b { font-size: 42px; font-weight: 750; letter-spacing: -.02em; color: var(--neon); white-space: nowrap; }
+.fx span { font-size: 26px; line-height: 1.3; color: var(--on-dark-2); }
+/* the scene */
+.sc { position:relative; height: 860px; margin-top: -60px; border-radius: 30px; overflow:hidden;
+  background: linear-gradient(to top, rgba(0,245,169,.06), transparent 40%); }
+.ground { position:absolute; left: 0; right: 0; bottom: 70px; height: 2px; background: rgba(242,251,247,.25); }
+.zoom { position:absolute; left: 0; right: 0; bottom: 72px; top: 0; transform-origin: 20% 100%; }
+@keyframes zoomout { to { transform: scale(.1); } }
+.tw { position:absolute; left: 180px; bottom: 0; width: 160px; height: 400px; }
+.stack { position:absolute; left: 400px; bottom: 0; width: 150px; height: 0;
+  background: repeating-linear-gradient(to top, #FFB547 0 18px, #0E3A33 18px 20px, #00C389 20px 40px, #0E3A33 40px 42px, #7C5CFF 42px 60px, #0E3A33 60px 62px, #F2FBF7 62px 80px, #0E3A33 80px 82px, #FF8A5B 82px 100px, #0E3A33 100px 102px);
+  border-radius: 4px; box-shadow: 0 0 40px rgba(0,245,169,.25);
+  animation: pile 2.4s cubic-bezier(.3,.1,.3,1) .8s forwards, sky 2.6s cubic-bezier(.6,0,.2,1) 3.6s forwards; }
+@keyframes pile { to { height: 400px; } }
+@keyframes sky { from { height: 400px; } to { height: 8200px; } }
+.cap1 { position:absolute; left: 400px; bottom: 490px; font-size: 26px; font-weight: 700; color: var(--on-dark); opacity: 0; animation: fade .5s ease 2.6s forwards, fadeout .4s ease 3.4s forwards; }
+@keyframes fadeout { to { opacity: 0; } }
+.cnt { position:absolute; right: 40px; top: 40px; text-align:right; opacity: 0; }
+.cnt b { display:block; font-size: 120px; font-weight: 800; letter-spacing: -.04em; color: var(--neon); line-height: 1; }
+.cnt > span { font-size: 30px; color: var(--on-dark); font-weight: 600; }
+.tiny { position:absolute; left: 30%; bottom: 76px; transform: translateX(-50%); font-size: 22px; color: var(--on-dark-2); opacity: 0; white-space: nowrap; }
+.ht { position:absolute; right: 40px; top: 230px; text-align:right; opacity: 0; animation: fade .6s ease 6.3s forwards, fadeout .5s ease 7.9s forwards; }
+.ht b { display:block; font-size: 76px; font-weight: 800; letter-spacing: -.03em; color: var(--on-dark); line-height: 1; }
+.ht span { font-size: 26px; color: var(--on-dark-2); }
+.ht em { font-style: normal; color: var(--neon); font-weight: 700; }
+.cnt { animation: fade .6s ease 3.8s forwards, fadeout .5s ease 7.9s forwards; }
+.tiny { animation: fade .6s ease 5.6s forwards, fadeout .5s ease 7.9s forwards; }
+.ground { animation: fadeout .5s ease 7.9s forwards; }
+.zoom { animation: zoomout 2.6s cubic-bezier(.6,0,.2,1) 3.6s forwards, fadeout .5s ease 7.9s forwards; }
+.space { position:absolute; inset: 0; opacity: 0; animation: fade .9s ease 8.1s forwards;
+  background: radial-gradient(1.5px 1.5px at 12% 22%, #fff8, transparent), radial-gradient(1.5px 1.5px at 72% 12%, #fff8, transparent), radial-gradient(1px 1px at 40% 64%, #fff6, transparent), radial-gradient(1px 1px at 86% 70%, #fff6, transparent), radial-gradient(1.5px 1.5px at 58% 38%, #fff7, transparent), radial-gradient(1px 1px at 24% 84%, #fff6, transparent); }
+.space svg { position:absolute; inset: 0; width: 100%; height: 100%; }
+.space .tl { font: 600 24px var(--sans, Figtree); fill: var(--on-dark-2); }
+.space .tb { font: 800 26px var(--sans, Figtree); fill: var(--on-dark); }
+.mc { position:absolute; left: 40px; top: 36px; max-width: 560px; }
+.mc b { display:block; font-size: 96px; font-weight: 800; letter-spacing: -.04em; color: var(--neon); line-height: 1; }
+.mc > span { font-size: 28px; color: var(--on-dark); font-weight: 600; }
+html.static .ht, html.static .cnt, html.static .tiny { display:none; }
+html.static .zoom { transform: scale(.1); } html.static .stack { height: 8200px; } html.static .cap1 { display:none; }
+</style>
+</head>
+<body class="dark" data-section="What is an AI Agent?" data-sparks="none">
+<main class="slide">
+<div class="wrap">
+  <div class="lf">
+    <div class="mk u" style="--d:.05s">How much it read</div>
+    <h2 class="h2 u" style="--d:.15s">DeepSeek V4 (2026) read more than</h2>
+    <div class="hero u" style="--d:.3s"><span data-count="32" data-delay=".5" data-dur="1.6">0</span> trillion<small>tokens of text</small></div>
+    <p class="bk u" style="--d:.7s">&asymp; <b>240 million books</b> of 400 pages</p>
+    <div class="facts"><div class="fx u" style="--d:4.2s"><b>13,000</b><span>Twin Towers high, if you stacked the books</span></div><div class="fx u" style="--d:6.6s"><b>800</b><span>football fields, if you laid the books flat</span></div><div class="fx u" style="--d:8.8s"><b>50 trips</b><span>to the Moon, with the pages end to end</span></div></div>
+  </div>
+  <div class="sc">
+    <div class="zoom"><svg class="tw" viewBox="0 0 160 400" fill="none">
+<g fill="#0E3A33" stroke="#00F5A9" stroke-width="2.5" stroke-linejoin="round">
+<path d="M14 400V120l8-16v-20l6-10 6 10v20l8 16v280z"/><path d="M28 74V20"/>
+<path d="M104 400V120l8-16v-20l6-10 6 10v20l8 16v280z"/><path d="M118 74V20"/>
+<path d="M42 210h62v14H42z" fill="#00F5A9" fill-opacity=".25"/></g>
+<g stroke="rgba(0,245,169,.35)" stroke-width="1.5"><path d="M18 140 h20M108 140 h20"/><path d="M18 158 h20M108 158 h20"/><path d="M18 176 h20M108 176 h20"/><path d="M18 194 h20M108 194 h20"/><path d="M18 212 h20M108 212 h20"/><path d="M18 230 h20M108 230 h20"/><path d="M18 248 h20M108 248 h20"/><path d="M18 266 h20M108 266 h20"/><path d="M18 284 h20M108 284 h20"/><path d="M18 302 h20M108 302 h20"/><path d="M18 320 h20M108 320 h20"/><path d="M18 338 h20M108 338 h20"/><path d="M18 356 h20M108 356 h20"/><path d="M18 374 h20M108 374 h20"/><path d="M18 392 h20M108 392 h20"/></g></svg><div class="stack"></div></div>
+    <div class="cap1">= 1 Twin Tower</div>
+    <div class="ground"></div>
+    <div class="tiny">the Twin Towers, 452 m</div>
+    <div class="ht"><b>&asymp; 6,000 km</b><span>tall: <em>15x higher</em> than the space station</span></div>
+    <div class="space"><svg viewBox="0 0 800 860">
+      <defs><radialGradient id="ea" cx=".35" cy=".35"><stop offset="0" stop-color="#4DA3FF"/><stop offset=".6" stop-color="#0B6E5A"/><stop offset="1" stop-color="#05362D"/></radialGradient>
+      <radialGradient id="mo" cx=".35" cy=".35"><stop offset="0" stop-color="#F2F4F3"/><stop offset="1" stop-color="#8A9A95"/></radialGradient></defs>
+      <path id="tr" d="M190 660 C 330 420, 470 330, 640 250" fill="none" stroke="rgba(0,245,169,.35)" stroke-width="3" stroke-dasharray="6 10"/>
+      <circle cx="150" cy="700" r="100" fill="url(#ea)"/><circle cx="150" cy="700" r="100" fill="none" stroke="rgba(77,163,255,.5)" stroke-width="10" stroke-opacity=".25"/>
+      <circle cx="660" cy="240" r="44" fill="url(#mo)"/>
+      <circle r="9" fill="#00F5A9"><animateMotion dur="1.4s" begin="8.6s" repeatCount="indefinite" keyPoints="0;1;0" keyTimes="0;.5;1" calcMode="linear"><mpath href="#tr"/></animateMotion></circle>
+      <text class="tb" x="150" y="840" text-anchor="middle">Earth</text><text class="tb" x="660" y="320" text-anchor="middle">Moon</text>
+      <text class="tl" x="440" y="520" text-anchor="middle" transform="rotate(-33 440 470)">384,400 km</text>
+    </svg>
+    <div class="mc"><b>&times;<span data-count="50" data-delay="8.6" data-dur="2.2">0</span></b><span>trips to the Moon, with the pages<br>laid end to end</span></div></div>
+    <div class="cnt"><b>&times;<span data-count="13000" data-delay="3.8" data-dur="2.4">0</span></b><span>Twin Towers of books</span></div>
+  </div>
+</div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

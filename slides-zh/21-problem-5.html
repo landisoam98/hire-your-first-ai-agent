@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>问题 5：钱收得慢 · 请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.h1 { margin-top: 18px; }
+.tl { position:relative; height: 360px; margin-top: 70px; }
+.tl .rail { position:absolute; left: 60px; right: 284px; top: 20px; height: 6px; border-radius: 3px; background: rgba(242,251,247,.1); overflow:hidden; }
+.tl .rail b { position:absolute; inset: 0; width: 0; background: linear-gradient(90deg, #00F5A9, #FFB547 40%, #FF8A5B); animation: rl 2.4s cubic-bezier(.4,0,.2,1) .7s forwards; }
+@keyframes rl { to { width: 100%; } }
+.cs { position:absolute; top: 0; width: 0; }
+.cs i { position:absolute; left: -23px; top: 0; width: 46px; height: 46px; border-radius: 50%; background: var(--night); border: 5px solid #FFB547; }
+.cs:first-of-type i { border-color: var(--neon); }
+.cs i.end { border-color: #FF8A5B; background: #FF8A5B; box-shadow: 0 0 40px rgba(255,138,91,.6); }
+.cs b { position:absolute; left: -23px; top: 70px; font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--neon); white-space: nowrap; }
+.cs h3 { position:absolute; left: -23px; top: 108px; width: 330px; font-size: 38px; font-weight: 700; letter-spacing: -.02em; }
+.cs span { position:absolute; left: -23px; top: 200px; white-space: nowrap; font-size: 24px; font-weight: 600; color: #FFB08F; background: rgba(255,138,91,.12); padding: 7px 13px; border-radius: 10px; }
+.wait { font-size: 40px; font-weight: 700; margin-top: 10px; }
+.wait em { font-style: normal; color: #FFB08F; }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="dark" data-section="问题" data-sparks="9,1" style="--gx:80%;--gy:40%;--mx:80%;--my:40%">
+<main class="slide">
+<div class="prob f" style="--d:0s">问题 5/5<i><b></b><b></b><b></b><b></b><b class="on"></b></i><span>钱收得慢</span></div>
+<h1 class="h1 r" style="--d:.1s">今天送货，2 个月后才收钱。</h1>
+<div class="tl"><div class="rail"><b></b></div><div class="cs pop" style="left:60px;--d:0.80s"><i></i><b>第 0 天</b><h3>货送到了</h3></div><div class="cs pop" style="left:500px;--d:1.30s"><i></i><b>第 3 天</b><h3>Invoice 打好寄出</h3><span>单据越堆越多</span></div><div class="cs pop" style="left:940px;--d:1.80s"><i></i><b>第 33 天</b><h3>付款到期</h3><span>客户忘了</span></div><div class="cs pop" style="left:1380px;--d:2.30s"><i class="end"></i><b>第 63 天</b><h3>钱进银行</h3><span>银行单埋在聊天里</span></div></div>
+<p class="wait r" style="--d:3.2s">你的钱要等 <em>63 天</em>，这段时间你还得照发薪水。</p>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

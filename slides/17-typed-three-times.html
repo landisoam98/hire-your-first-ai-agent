@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Keyed in by hand · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.flow { position:relative; margin-top: auto; display:grid; grid-template-columns: repeat(3, 440px); justify-content:space-between; }
+.flow svg.line { position:absolute; left: 0; top: 185px; width: 100%; height: 40px; overflow:visible; }
+.node { height: 450px; padding: 30px; display:flex; flex-direction:column; position:relative; z-index:1; }
+.node .pic { flex:1; border-radius: 18px; background: #fff; box-shadow: 0 0 0 1px var(--line); display:grid; place-items:center; overflow:hidden; position:relative; }
+.node .name { font-size: 32px; font-weight: 650; margin-top: 22px; letter-spacing: -.01em; }
+.badge { position:absolute; top: -22px; right: -18px; background: var(--ink); color: var(--neon); font-family: var(--mono); font-size: 24px; font-weight: 600; padding: 10px 16px; border-radius: 14px; display:flex; gap: 10px; align-items:center; }
+.chat { width: 78%; display:grid; gap: 12px; }
+.chat i { display:block; height: 34px; border-radius: 16px 16px 16px 4px; background: var(--mint); }
+.chat i:nth-child(2) { width: 70%; justify-self:end; background:#DDF8EC; border-radius: 16px 16px 4px 16px; }
+.chat i:nth-child(3) { width: 85%; }
+.sheet { width: 80%; display:grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 0; border: 2px solid rgba(2,34,31,.15); border-radius: 6px; overflow:hidden; transform: rotate(-2deg); }
+.sheet b { height: 34px; border-right: 1px solid rgba(2,34,31,.12); border-bottom: 1px solid rgba(2,34,31,.12); font: 500 18px var(--mono); color: var(--ink-3); display:flex; align-items:center; padding-left: 8px; }
+.sql { width: 62%; }
+.frm { width: 84%; display:grid; gap: 14px; justify-items:center; }
+.frm .sheet { width: 100%; transform: none; grid-template-columns: 1.3fr .6fr .8fr; }
+.sheet b.h { color: var(--ink); font-weight: 700; background: #F1F4F2; }
+.sheet b.cur::after { content:""; width: 2px; height: 20px; background: var(--ink); margin-left: 4px; animation: blk 1s steps(1) infinite; }
+@keyframes blk { 50% { opacity: 0; } }
+.node .name small { display:block; font-size: 23px; font-weight: 500; color: var(--ink-3); margin-top: 4px; }
+.xls { width: 84%; transform: rotate(-2deg); grid-template-columns: 1.4fr .8fr .8fr; }
+.issues { margin-top: 56px; margin-bottom: auto; display:flex; gap: 22px; }
+.issues div b { color: var(--ink); font-weight: 750; }
+.issues div { font-size: 30px; padding: 16px 28px; border-radius: 999px; background: #fff; box-shadow: 0 0 0 1px var(--line); color: var(--ink-2); }
+</style>
+</head>
+<body class="light" data-section="The problem" data-sparks="9,1 1,5" style="--gx:50%;--gy:55%;--mx:50%;--my:55%">
+<main class="slide">
+<div class="prob f" style="--d:0s">PROBLEM 1 OF 5<i><b class="on"></b><b></b><b></b><b></b><b></b></i><span>Orders typed in by hand</span></div>
+<h1 class="h1 r" style="--d:.1s;margin-top:18px">Every order is keyed in <span class="sig" style="--sd:4.4s">by hand</span></h1>
+<div class="flow">
+  <svg class="line" viewBox="0 0 1664 40" preserveAspectRatio="none">
+    <path d="M220 20 H1444" stroke="rgba(2,34,31,.18)" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round"/>
+    <circle r="12" fill="#00F5A9" stroke="#02221F" stroke-width="3"><animateMotion dur="3.6s" begin="0.6s" fill="freeze" path="M220 20 H1444" keyPoints="0;0;0.5;0.5;1" keyTimes="0;0.1;0.45;0.6;1" calcMode="spline" keySplines=".2 .8 .2 1;.2 .8 .2 1;.2 .8 .2 1;.2 .8 .2 1"/></circle>
+  </svg>
+  <div class="glass node r" style="--d:.3s"><div class="pic"><div class="chat"><i></i><i></i><i></i></div></div><div class="name">Order comes in<small>WhatsApp, PDF, phone call</small></div><div class="badge pop" style="--d:.9s"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5z"/></svg> 80 a day</div></div>
+  <div class="glass node r" style="--d:.45s"><div class="pic"><div class="frm"><img class="sql" src="../assets/sql-h.png" alt="SQL Account"><div class="sheet"><b class="h">Item code</b><b class="h">Qty</b><b class="h">UOM</b><b>BWG-CN-10</b><b>20</b><b>BAG</b><b>AYM-CC-8</b><b>8</b><b>EKOR</b><b class="cur">TP-25</b><b></b><b></b></div></div></div><div class="name">Keyed into SQL Account<small>Line by line, ~4 min an order</small></div><div class="badge pop" style="--d:2.4s"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg> ×1</div></div>
+  <div class="glass node r" style="--d:.6s"><div class="pic"><div class="sheet xls"><b class="h">Item</b><b class="h">Qty</b><b class="h">Bin</b><b>Bawang 10kg</b><b>20 bag</b><b>A3-02</b><b>Ayam cincang</b><b>8 ekor</b><b>Chiller</b><b class="cur">Tape 25mm</b><b></b><b></b></div></div><div class="name">Picking list into Excel<small>Again, ~2 min an order</small></div><div class="badge pop" style="--d:4.1s"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg> ×2</div></div>
+</div>
+<div class="issues">
+  <div class="r" style="--d:4.8s">80 orders &times; 6 min = <b>8 hours a day</b></div>
+  <div class="r" style="--d:5s"><b>1 full-time person</b>, just typing</div>
+  <div class="r" style="--d:5.2s">Typed twice: 2 chances for a mistake</div>
+</div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

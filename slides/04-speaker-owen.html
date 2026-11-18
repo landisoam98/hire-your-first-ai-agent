@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Speaker: Owen · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.wrap { flex:1; display:grid; grid-template-columns: 600px 1fr; gap: 90px; align-items:center; }
+.ph { position:relative; width: 560px; height: 560px; justify-self:center; }
+.ph svg { position:absolute; inset: -40px; width: 640px; height: 640px; }
+.ph .ring { transform-origin: 320px 320px; animation: spin 40s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.ph img { position:absolute; inset: 30px; width: 500px; height: 500px; border-radius: 50%; object-fit: cover; border: 6px solid var(--neon); box-shadow: 0 0 120px rgba(0,245,169,.35); }
+.ph .was { position:absolute; left: 50%; bottom: -78px; transform: translateX(-50%); display:flex; align-items:center; gap: 14px; white-space: nowrap; }
+.ph .was span { font-family: var(--mono); font-size: 17px; letter-spacing: .14em; color: var(--on-dark-3); }
+.ph .was i { height: 58px; padding: 0 14px; border-radius: 12px; background: #fff; display:grid; place-items:center; }
+.ph .was img { position: static; width: auto; height: 34px; border: 0; border-radius: 0; box-shadow: none; }
+.nm { font-size: 104px; font-weight: 700; letter-spacing: -.045em; line-height: .95; margin-top: 16px; }
+.role { font-size: 34px; font-weight: 600; color: var(--neon); margin-top: 14px; }
+.bio { font-size: 30px; line-height: 1.4; color: var(--on-dark-2); margin-top: 16px; max-width: 900px; }
+.tiles { display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+.tiles .glass { padding: 20px 22px; border-radius: 20px; }
+.tiles b { display:block; font-size: 50px; font-weight: 700; letter-spacing: -.03em; color: var(--neon); line-height: 1; }
+.tiles > div > span { display:block; font-size: 22px; color: var(--on-dark-2); margin-top: 8px; }
+.row2 { display:grid; grid-template-columns: 1.35fr 1fr; gap: 16px; margin-top: 16px; }
+.row2 .glass { padding: 20px 24px; border-radius: 20px; }
+.row2 h4 { font-family: var(--mono); font-size: 17px; letter-spacing: .12em; color: var(--neon); font-weight: 600; }
+.chips { display:flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chips i { font-style: normal; font-size: 21px; font-weight: 600; padding: 6px 13px; border-radius: 999px; background: rgba(242,251,247,.1); color: var(--on-dark); }
+.trn { display:flex; align-items:center; gap: 18px; background: var(--neon) !important; color: var(--ink); border: 0 !important; }
+.trn img { width: 70px; height: 70px; border-radius: 50%; background: #fff; }
+.trn b { display:block; font-size: 44px; font-weight: 700; letter-spacing: -.03em; line-height: 1; }
+.trn div > span { font-size: 22px; font-weight: 600; }
+</style>
+</head>
+<body class="dark" data-section="Speaker intro" data-sparks="9,1 1,5" style="--gx:22%;--gy:50%;--mx:25%;--my:50%">
+<main class="slide">
+<div class="wrap">
+  <div class="ph pop" style="--d:.2s">
+    <svg viewBox="0 0 640 640" fill="none"><g class="ring"><circle cx="320" cy="320" r="306" stroke="rgba(0,245,169,.35)" stroke-dasharray="3 10"/><circle cx="320" cy="14" r="8" fill="#00F5A9"/></g></svg>
+    <img src="../assets/speaker-owen.jpg" alt="Owen Ng">
+  </div>
+  <div>
+    <div class="kicker r" style="--d:.1s">Your speaker today</div>
+    <div class="nm r" style="--d:.25s">Owen Ng</div>
+    <div class="role r" style="--d:.4s">CRO and Founder, SuDu AI</div>
+    <p class="bio r" style="--d:.55s">From supply chain to SAP to SuDu AI: putting Malaysian warehouses, factories and sales on 1 system.</p>
+    <div class="tiles" style="grid-template-columns: repeat(3, 1fr)">
+      <div class="glass r" style="--d:.75s"><b><span data-count="7" data-delay=".9">0</span>+</b><span>years in supply chain</span></div>
+      <div class="glass r" style="--d:.85s"><b data-count="2" data-delay="1">0</b><span>years of SAP projects</span></div>
+      <div class="glass r" style="--d:.95s"><b data-count="5" data-delay="1.1">0</b><span>years building SuDu AI</span></div>
+    </div>
+    <div class="row2" style="grid-template-columns: 1fr">
+      <div class="glass r" style="--d:1.2s"><h4>WHAT HE BUILDS</h4><div class="chips"><i>WMS: warehouse</i><i>MES: production</i><i>AI assistant</i></div></div>
+    </div>
+  </div>
+</div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

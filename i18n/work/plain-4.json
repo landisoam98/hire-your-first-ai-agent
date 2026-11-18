@@ -1,0 +1,140 @@
+[
+ {
+  "slide": "59",
+  "old": "'Wins back quiet customers'",
+  "new": "'Wins back lost customers'",
+  "why": "\"quiet customers\" is an idiom"
+ },
+ {
+  "slide": "60",
+  "old": "'1 of 1', 'Win back quiet customers'",
+  "new": "'1 of 1', 'Win back lost customers'",
+  "why": "\"quiet customers\" is an idiom"
+ },
+ {
+  "slide": "59",
+  "old": "Uma brings quiet customers back.",
+  "new": "Uma brings lost customers back.",
+  "why": "notes match new wording"
+ },
+ {
+  "slide": "61",
+  "old": "'Answers the numbers, builds dashboards'",
+  "new": "'Gives you the numbers, makes dashboards'",
+  "why": "\"answers the numbers\" is odd"
+ },
+ {
+  "slide": "62",
+  "old": "'Profit and loss, sales, debtors'",
+  "new": "'Profit and loss, sales, who owes you'",
+  "why": "debtors is accounting jargon"
+ },
+ {
+  "slide": "63",
+  "old": "'The owner&rsquo;s view, any time.'",
+  "new": "'Your numbers, any time.'",
+  "why": "\"owner's view\" is abstract"
+ },
+ {
+  "slide": "64",
+  "old": "Nothing is posted until you approve.</li>",
+  "new": "Nothing is saved until you approve.</li>",
+  "why": "posted is accounting jargon"
+ },
+ {
+  "slide": "64",
+  "old": "It does not post anything you have not approved.",
+  "new": "It does not save anything you have not approved.",
+  "why": "notes match new wording"
+ },
+ {
+  "slide": "65",
+  "old": "'Does your stock book match the shelf when you count?'",
+  "new": "'Does the stock in your system match the shelf when you count?'",
+  "why": "\"stock book\" is confusing"
+ },
+ {
+  "slide": "65",
+  "old": "3 Book matches shelf",
+  "new": "3 System matches shelf",
+  "why": "notes match new wording"
+ },
+ {
+  "slide": "67",
+  "old": "Start with AI agents. Add this layer later.",
+  "new": "Start with AI agents. Add it later.",
+  "why": "\"layer\" is abstract"
+ },
+ {
+  "slide": "67",
+  "old": "You need this layer. Plan it in from day 1.",
+  "new": "You need it. Plan it from day 1.",
+  "why": "\"layer\" abstract, \"plan it in\" idiom"
+ },
+ {
+  "slide": "67",
+  "old": "start with the agents and add that layer later. 3 or more, you need it, so plan it in from day 1.",
+  "new": "start with the agents and add it later. 3 or more, you need it, so plan it from day 1.",
+  "why": "notes match new wording"
+ },
+ {
+  "slide": "67",
+  "old": "'Do you not know the true cost or scrap of each batch?'",
+  "new": "'Is the real cost or waste of each batch unclear?'",
+  "why": "double negative, \"scrap\" jargon"
+ },
+ {
+  "slide": "67",
+  "old": "you do not know the true cost or scrap of each batch;",
+  "new": "the real cost or waste of each batch is unclear;",
+  "why": "notes match new wording"
+ },
+ {
+  "slide": "68",
+  "old": "Write it like you would brief a new clerk",
+  "new": "Write it like you would teach a new clerk",
+  "why": "\"brief\" is office jargon"
+ },
+ {
+  "slide": "68",
+  "old": "'Remind quiet customers'",
+  "new": "'Remind lost customers'",
+  "why": "\"quiet customers\" is an idiom"
+ },
+ {
+  "slide": "71",
+  "old": "<th>Desk</th>",
+  "new": "<th>Team</th>",
+  "why": "\"desk\" unclear as column"
+ },
+ {
+  "slide": "72",
+  "old": "'group operations and deeper warehouse'",
+  "new": "'group companies and more warehouse work'",
+  "why": "vague, \"deeper warehouse\" unclear"
+ },
+ {
+  "slide": "72",
+  "old": "'everything, with a dedicated success manager'",
+  "new": "'everything, with your own SuDu contact person'",
+  "why": "\"success manager\" is jargon"
+ },
+ {
+  "slide": "73",
+  "old": "('Day 0', 'Kickoff',",
+  "new": "('Day 0', 'Start',",
+  "why": "\"kickoff\" is an idiom"
+ },
+ {
+  "slide": "73",
+  "old": "('Week 4', 'Own',",
+  "new": "('Week 4', 'Done',",
+  "why": "\"Own\" is unclear here"
+ },
+ {
+  "slide": "74",
+  "old": "Book your free AI Workflow Assessment",
+  "new": "Book your free AI check-up",
+  "why": "\"workflow assessment\" is jargon"
+ }
+]

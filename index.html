@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hire Your First AI Agent · SuDu AI</title>
+<!--
+  deck_index.html — 多文件 slide deck 拼接器 · 双概览模式
+
+  概览（默认进入，两种模式按 getSeconds()%5 随机：20% 画廊 / 80% 网格）：
+   · grid  自适应网格墙：列数随页数+视口自适应，行多则倾斜变平，scale-to-fit 居中铺满（任意页数都不溢出/不失真）
+   · gallery 无限画廊：固定卡片大小，无缝无限平铺 + 缓慢漂移 + 轻微呼吸；一个 tile 含全部页（洗牌），看完所有页才重复
+  演示 present：单页 fit 缩放翻页。ESC / ⊞ 回概览。
+  性能：manifest 每项可带 thumb（预渲染缩略图），概览即用 <img> 平铺，避免 N 个 iframe 同时加载。
+
+  用法：复制为 index.html；建 slides/ 放每页独立 HTML；编辑 MANIFEST。
+  可选覆盖：window.DECK_OVERVIEW = 'grid' | 'gallery'（不写则随机）；URL ?ov=grid|gallery 临时强制。
+  键盘（演示）：← / → / Space / PgUp / PgDown / Home / End / 1-9 / P 打印 / ESC 回概览
+-->
+<script>
+  window.DECK_MANIFEST = [
+ {
+  "file": "slides/01-cover.html",
+  "label": "Cover",
+  "section": "Company intro",
+  "notes": "Nothing. The MC welcomes the room and hands over in one sentence. Straight to slide 2.",
+  "thumb": "thumbs/01-cover.jpg"
+ },
+ {
+  "file": "slides/02-who-we-are.html",
+  "label": "Who we are",
+  "section": "Company intro",
+  "notes": "\"Good afternoon. A little about SuDu AI before we start.\n\nSuDu means two things. In Chinese, 速度 means speed: fast to set up, fast results. In Malay, sudu means spoon: easy enough to spoon-feed.\n\nWe started in 2021 by building the warehouse and factory systems, and refined them for two years. In 2022 we started building the AI. In 2023 we launched in Malaysia, in 2025 we went to Singapore and China, and this year the AI went live. Today more than 100 companies run their warehouse or factory on SuDu, and we have users in 6 countries.\n\nCompanies like Petronas, BHPetrol, YTL Hotels and Twin Arrow run on SuDu. We are certified by MDEC and HRD Corp, and we are an official SQL Account partner.\"\n\nDo: keep it under two minutes.\nSource: SuDu company profile, pages 1 to 3.\nNext: \"And here is who you will be listening to today.\"",
+  "thumb": "thumbs/02-who-we-are.jpg"
+ },
+ {
+  "file": "slides/03-speaker.html",
+  "label": "Your speaker",
+  "section": "Speaker intro",
+  "notes": "\"I'm Landis, CEO and founder of SuDu AI. My background is IT and supply chain. Before SuDu, I led Industry 4.0 projects at GDEX, Top Glove and other global companies: warehouse RFID, manufacturing systems, SAP. I have spent more than five years working with SQL Account and AutoCount companies like yours, and as an HRDC certified trainer I have trained more than fifty companies.\n\nSo I know what your office looks like on a Monday morning. \"\n\nDo: under one minute.\nIf someone else presents, swap the photo and facts (Owen Ng, CRO: 7+ years supply chain, 2 years SAP projects, 5 years building SuDu AI).\nSource: SuDu company profile, page 4.\nNext: \"And my co-founder, Owen.\"",
+  "thumb": "thumbs/03-speaker.jpg"
+ },
+ {
+  "file": "slides/04-speaker-owen.html",
+  "label": "Speaker: Owen",
+  "section": "Speaker intro",
+  "notes": "\"And I'm Owen, CRO and co-founder of SuDu AI. I started in supply chain, spent two years on SAP projects, and for the last five years I have been building SuDu: the warehouse system, the factory system and the AI assistant, so that Malaysian warehouses, factories and sales can run on one system.\"\n\nDo: under one minute.\nSource: SuDu company profile, page 5.\nNext: \"Before we start, here is our afternoon.\"",
+  "thumb": "thumbs/04-speaker-owen.jpg"
+ },
+ {
+  "file": "slides/05-today.html",
+  "label": "Today at a glance",
+  "section": "Speaker intro",
+  "notes": "\"Here is our afternoon, in 5 parts. No tech talk.\n\nPart 1, what is an AI Agent: how an LLM really works, why people invented the AI Agent, and what it needs to work in a real company. Part 2, the problem: the 5 problems we see in almost every office, and what they cost you. You will put your own number on it. Part 3, SuDu AI: the system, and then 6 AI Agents doing real jobs live on the screen, sales, stock, buying, payments and finance. Part 4, the workshop: you score your own company, check if you need a WMS or MES, and write your first AI job. Part 5, the diagnosis: where your company should start, what it saves you, and your next step.\n\nSo you leave with 3 things on your worksheet: your own number, what manual work costs you a year; your readiness score; and your first AI job, written down and ready to run.\"\n\nNext: \"Let's start with the big question: what is AI, really?\"",
+  "thumb": "thumbs/05-today.jpg"
+ },
+ {
+  "file": "slides/06-section-ai.html",
+  "label": "Section: What is AI?",
+  "section": "What is an AI Agent?",
+  "notes": "\"So what is AI, really? Forget the headlines. We will go in 3 steps.\n\nOne: how AI grew up, from hand-written rules to agents. Two: the brain, the thing people call an LLM, and how it learned. Three: the agent, a brain that can actually do the work.\"\n\nNext: \"First, how did we get here? 70 years in 1 slide.\"",
+  "thumb": "thumbs/06-section-ai.jpg"
+ },
+ {
+  "file": "slides/07-ai-history.html",
+  "label": "70 years of AI",
+  "section": "What is an AI Agent?",
+  "notes": "\"Before we open up the brain, 1 minute of history, because ChatGPT did not come from nowhere. 70 years, 5 big steps. Let me open them 1 by 1.\"\n\n(Next) Rules, 1950s to 80s: \"Think of a recipe book: the computer follows every step exactly. Watch this order of RM6,000: the rule says over the credit limit, block it. You use rules every day: Excel formulas, the credit-limit check in SQL Account. The problem: a new situation with no rule, and it is stuck.\"\n\n(Next) Machine learning, 2000s: \"Think of a clerk who has seen 10,000 invoices and just knows who pays late. You show the computer past customers, green paid on time, orange paid late. It finds the line between them by itself. Then a new customer comes in: Kedai Ali, 80 percent chance of paying late. That is how spam filters and credit scores work. But it needs neat tables, and 1 model answers only 1 question.\"\n\n(Next) Deep learning, 2012: \"Think of a child who learns what a cat is by seeing 1,000 cats. Many layers look at a photo, layer by layer, and it says: damaged carton, 94 percent sure. Face unlock, Siri, Google Translate all work like this. In your company: reading a handwritten order or a bank slip. But each model does only 1 job, and it cannot talk with you.\"\n\n(Next) LLM, 2018 to 2020: \"Think of your phone's autocomplete, but it read the whole internet. The customer asks: can you deliver tomorrow? It writes: yes, we can deliver... and for the next word it scores every option: tomorrow 82 percent. It picks it. Then the next word, and the next. ChatGPT, Claude, Gemini, DeepSeek. It replies to emails, summarises PDFs. But it only talks; it cannot act in your systems.\"\n\n(Next) AI agents, 2025: \"Think of a new staff member. It reads the WhatsApp order, checks the stock, drafts the Sales Order, and then asks you to approve. Round and round the loop until the job is done. That is where we are today.\"\n\nThis slide has 5 extra Next presses; each card flies in, in 3D, and plays its own short animation.\nNext: \"Now let's open up the brain of today's AI: the LLM.\"",
+  "steps": 5,
+  "thumb": "thumbs/07-ai-history.jpg"
+ },
+ {
+  "file": "slides/08-what-is-llm.html",
+  "label": "What is an LLM?",
+  "section": "What is an AI Agent?",
+  "notes": "\"ChatGPT, Claude, Gemini, DeepSeek. You know the names. Inside each one is the same kind of thing: an LLM, a large language model. Large, because it read a huge amount of text. Language, because words go in and words come out.\n\nWhat does it actually do? Only 1 thing. Let's try. Terima kasih, see you...\" (pause, let the room finish) \"...tomorrow. You did it too. It looked at the words so far and picked the most likely next word. Then the next. Then the next. Done well enough, that looks like understanding.\n\nRemember this sentence: it does not look answers up. It predicts them, 1 word at a time. Everything else today follows from that.\"\n\n(Next) \"1 small correction: it does not really see words. Think of LEGO: it breaks your message into small bricks called tokens, then builds the reply 1 brick at a time. A token is a small piece of text: a word, part of a word, or a comma. Terima kasih, see you tomorrow becomes 8 pieces: Ter, ima, kas, ih, comma, see, you, tomorrow. Short English words are 1 token; Malay words often become 2 or 3. Rule of thumb: 1 token is about three quarters of an English word. Why care? Because AI is measured in tokens: you pay per token, and its memory is counted in tokens. So when people say it predicts the next word, it really predicts the next token.\"\n\nThis slide has 1 extra Next press.\nNote: the split is an illustration; each model cuts text a little differently.\nNext: \"To predict that well, it had to read. A lot.\"",
+  "steps": 1,
+  "thumb": "thumbs/08-what-is-llm.jpg"
+ },
+ {
+  "file": "slides/09-how-much-it-read.html",
+  "label": "How much an AI has read",
+  "section": "What is an AI Agent?",
+  "notes": "\"How much does an LLM read? Take DeepSeek V4, from 2026. It was trained on more than 32 trillion tokens. A token is a small piece of text; more on that in 2 slides. As books of 400 pages, that is about 240 million books. 2 years earlier, Llama 3 read 15 trillion, about 110 million books, so it doubled in 2 years.\n\nWatch: if you stacked the books...\" (the pile reaches the top of the Twin Towers) \"...that is 1 Twin Tower. Keep going.\" (the view pulls back) \"13,000 Twin Towers. The pile is about 6,000 km tall, 15 times higher than the space station. Laid flat, the books would cover 800 football fields.\" (the view changes to Earth and Moon) \"And if you tore out every page and laid them end to end, they would reach the Moon 50 times over.\"\n\nNote: rough figures from the published token counts (DeepSeek-V4 paper: 32T+ tokens; Meta: Llama 3, 15T+). Working: 1 token = 0.75 word; a 400-page book = 100,000 words, 2.5 cm thick, 12 x 20 cm pages; a football field = 7,140 m2. Say \"about\". The stack itself does not reach the Moon; the pages laid end to end do.\nNext: \"So it is a very clever brain. But can it do your work? Not on its own.\"",
+  "thumb": "thumbs/09-how-much-it-read.jpg"
+ },
+ {
+  "file": "slides/10-what-is-agent.html",
+  "label": "What is an AI agent?",
+  "section": "What is an AI Agent?",
+  "notes": "\"Why do we need an AI Agent at all? Look at a normal WhatsApp order: 20 bags of big onions before 12. Ask ChatGPT on its own and it tells you what to do: open SQL Account, create a Sales Order, check stock, reply to the customer. Helpful, but you still do all the typing. An AI Agent does it for you: it checks stock, drafts the Sales Order in your system, replies on WhatsApp, and you just approve. Why can't the chatbot do that? It cannot click, it forgets, it does not know your rules, and nothing stops it. So we give the brain 4 things.\"\n\n(Next: the robot appears) \"A brain alone only talks. So, step by step, people gave it more: tools in 2023, and from 2025 agents that work on their own. If the LLM is the brain, an AI agent is the brain with hands, and with limits. Here it is as a robot with 5 parts. A brain alone only talks; it tells you what to do. Give it the other 4 parts and it does the work for you. Let me take them 1 at a time.\"\n\n(Next) Brain: \"The head is the language model. It understands the message and plans the next step. It understands meaning, not keywords: bwg, bawang and onion are the same thing. Here it reads big onions, 10 kg bags, and sees the quantity is missing, so it asks. But on its own it has never seen your company. Like a smart graduate on day 1.\"\n\n(Next) Tools: \"The hands, and the part people forget. Each tool is 1 action in a real system. Some tools only look: check stock, read an invoice. Some tools act: create an order, send a message. The brain cannot click a button. Without tools, it can only tell you what to do. No tools, no work.\"\n\n(Next) Memory: \"The filing cabinet in its chest. Most people do not know this: the brain forgets everything after each chat. So it looks things up in your records: customers, prices, stock, fresh every time. Jaya Grocer's last price for big onions: RM28 a bag. Which also means: messy records in, wrong answers out.\"\n\n(Next) Rules and skills: \"The rulebook in its hand. Your way of working, written down. Rules say what must never happen: over the credit limit, stop and ask the boss. Skills are the steps for 1 job: read the order, match the items, check stock, draft, send for approval. Plain words, so your manager can read and change them.\"\n\n(Next) Permission: \"The badge on its chest, and what makes it safe. What can it see? Only the data its job needs. What can it do? Only what you allow: draft yes, delete no, move money never. And anything important waits for a person, and every action is logged. This is the difference between a helper and a risk.\"\n\n(Next) \"Put the 5 together on 1 WhatsApp order: the brain reads it, memory finds the customer and the stock, the tools draft the order in your ERP, the rules make it ask when an item is unclear, and permission means you approve before anything is saved.\"\n\nThis slide has 7 extra Next presses: the robot, then the 5 parts, then 1 order.\nNext: \"So how does it actually work? It goes round a loop.\"",
+  "steps": 7,
+  "thumb": "thumbs/10-what-is-agent.jpg"
+ },
+ {
+  "file": "slides/11-agent-loop.html",
+  "label": "The agent loop",
+  "section": "What is an AI Agent?",
+  "notes": "\"So how does an agent actually work? It does not answer in 1 shot like a chatbot. It goes round a loop. [Point at the circle] Think: plan the next step. Act: use 1 tool. Check: did it work? Am I done? Is this safe? If not done, round again.\n\nWatch it on 1 WhatsApp order from Jaya Grocer. Round 1: find the items. It searches and finds big onions, 10 kg bags, 42 bags in stock. Round 2: check the credit. The order is RM560, and only RM180 is left on the credit limit. Round 3: over the limit. The rule says the boss decides. So it sends the request for approval and waits.\n\nThat is the whole idea. It loops until the job is done, then reports to you. Or, when it is unsure or the step is risky, it stops and asks a person.\"\n\nNext: \"Think of it like hiring a new graduate.\"",
+  "thumb": "thumbs/11-agent-loop.jpg"
+ },
+ {
+  "file": "slides/12-brain-to-staff.html",
+  "label": "From brain to staff member",
+  "section": "What is an AI Agent?",
+  "notes": "\"A brilliant brain alone only talks. Think about hiring a brilliant graduate: talent is not enough. You give them 6 things, and an AI Agent needs the same 6.\n\n[Go down the list] A job description: for the AI, its instructions: the goal, and when the job counts as done. Without it, it does too much, or the wrong job. Logins and keys: its tools, 1 for each action. Without them, it can only give advice. The files: its memory: your records, and what you taught it. Without it, it forgets the customer and guesses the price. Your SOP: its rules and skills. Without them, it does the job its own way. A supervisor: permission, who says yes. Without it, nobody checks before stock or money moves. And probation: testing. You try it on last month's orders first, then you watch it. Without that, the same mistake repeats quietly.\n\nThe brain plus this setup has a name: the harness. Every company can rent the same brain. The harness decides whether it helps or hurts.\"\n\nNext: \"And 1 part of that setup matters more than people think: the tools.\"",
+  "thumb": "thumbs/12-brain-to-staff.jpg"
+ },
+ {
+  "file": "slides/13-tools-and-memory.html",
+  "label": "No tools, no work",
+  "section": "What is an AI Agent?",
+  "notes": "\"Here is the part people forget. The smartest brain in the world, with no tools, can only talk.\n\nSame WhatsApp from Jaya Grocer: 20 bags of big onions before 12. [Point left] A chatbot, a brain only, replies: open SQL Account, create a sales order, send it to the customer. Helpful advice, and you still do all the work.\n\n[Point right] An AI agent, brain plus tools, does it: checks stock, 42 bags. Checks credit, within limit. Creates the sales order. Sends the PDF on WhatsApp. Done; you just approve.\n\nNow look where every one of those tools goes: into your ERP. Your ERP is the core of the company: customers, prices, stock, invoices and money. The agent's memory lives there too. It looks things up fresh every time, so if your records are messy, its answers are wrong.\n\nSo: no ERP, no tools. No tools, no work.\n\nThat is what an AI Agent is. Now let's leave the technology and talk about you.\"\n\nNext: \"Now let's talk about your company. Before I say anything else, I want to hear from you.\"",
+  "thumb": "thumbs/13-tools-and-memory.jpg"
+ },
+ {
+  "file": "slides/14-tell-us.html",
+  "label": "Tell us your problem",
+  "section": "The problem",
+  "notes": "\"Take out your phone and scan this. Three questions, one minute. Your answers will be on this screen in a few minutes. By 5 pm each of you will leave with three things written on the worksheet in front of you: your number, your readiness score, and your first AI job.\"\n\nDo: table hosts help anyone who cannot scan. The demo driver watches the answers come in.\nForm: name, company, mobile; Q1 keying in orders / chasing payments / checking stock / typing up paper forms / making reports; Q2 1 person / 2 to 3 / 4 or more; Q3 fully / mostly / not much; consent line.\nNext: \"While the answers come in, here are the five problems we hear most.\"",
+  "thumb": "thumbs/14-tell-us.jpg"
+ },
+ {
+  "file": "slides/15-top-5-issues.html",
+  "label": "Top 5 issues",
+  "section": "The problem",
+  "notes": "\"While your answers come in, here are the five problems we hear in almost every company we visit.\n\nOne: orders typed in by hand. Every WhatsApp and email order is keyed in again, and it takes a team of people to do it.\n\nTwo: routine work done by people. Chasing overdue payments, sending statements, checking the same reports every morning.\n\nThree: problems found too late. Sales drop, a good customer stops ordering, stock runs out, and nobody notices until it hurts.\n\nFour: stock that is never right. The system says forty cartons, the shelf has twelve.\n\nAnd five: cash comes in late. The invoice goes out days after the delivery, and the bank slip is lost somewhere in the chat.\n\nPut your hand up if you have at least three of these.\" (Pause.)\n\nDo: let the hands go up; it is the same point the poll will make with data.\nNote: issue 5 is our suggestion; swap it for the room's top answer if the poll shows something else.\nNext: \"Let me show you how problem number one starts.\"",
+  "thumb": "thumbs/15-top-5-issues.jpg"
+ },
+ {
+  "file": "slides/16-guess-the-order.html",
+  "label": "Guess the order",
+  "section": "The problem",
+  "notes": "\"This is a real order, from a real customer chat. Read it with your table: what exactly did this customer order? You have twenty seconds.\" (Pause, let two tables answer.)\n\n(Next: the question marks appear.) \"China: is that a heading, a brand, or where the onions come from? Bwg besar, ten kilo, times what? How many bags? Ayam cincang, eight ekor, times how many? Twenty-five mil clear, one piece: which item is that in your system, which code? And deliver before twelve: which day?\n\nNobody outside your office could decode this. But somebody inside your office does it, for every order, every day: opens the chat, guesses, checks the last order, looks up the codes, and types it into SQL Account.\"\n\n(Next: a PDF purchase order slides in.) \"Some customers are neater. They send a PDF purchase order. Better, but somebody still has to match their stock code to yours, check the price and the unit, a bag of ten or one, and key every line into SQL Account. Then the next PO.\" (The PO is a mock-up with made-up names.)\n\nThis slide has 2 extra Next presses: the questions, then the PDF.\nNext: \"And that same order gets typed again, and again.\"",
+  "steps": 2,
+  "thumb": "thumbs/16-guess-the-order.jpg"
+ },
+ {
+  "file": "slides/17-typed-three-times.html",
+  "label": "Keyed in by hand",
+  "section": "The problem",
+  "notes": "\"Follow one order once it is decoded. It comes in by WhatsApp, PDF or a phone call, about 80 a day in a typical distributor. Then a person keys it into SQL Account: new sales order, customer, then line by line, field by field: item code, quantity, unit, price. About 4 minutes an order.\n\nThen the store needs a picking list. The order is already in SQL Account, but in many companies someone types it again into Excel: item, quantity, which rack. Print, pick, pack. Another 2 minutes.\n\nAdd it up: 80 orders times 6 minutes is 8 hours a day. That is 1 full-time person who only types. And because the same order is typed twice, there are 2 chances for a wrong code or 10 pieces read as 10 cartons.\n\nYour books are right; SQL Account does its job. The trouble is all the typing around the books. It is nobody's fault; it is how the work was set up.\"\n\nDo: point at each card as you say it. Note: 80 orders, 4 and 2 minutes are an example; ask the room for theirs.\nNext: \"Problem two: the routine work.\"",
+  "thumb": "thumbs/17-typed-three-times.jpg"
+ },
+ {
+  "file": "slides/18-problem-2.html",
+  "label": "Problem 2: routine work",
+  "section": "The problem",
+  "notes": "\"Problem two. Look at this list. Check who is overdue. Send fifteen payment reminders on WhatsApp. Match the bank slips to the invoices. Send statements. Check the stock. Put the sales report together. Somebody in your office does this every day. And tomorrow, the list starts again. None of it needs a decision. All of it needs a person, today.\"\n\nNext: \"Problem three is worse, because you don't see it.\"",
+  "thumb": "thumbs/18-problem-2.jpg"
+ },
+ {
+  "file": "slides/19-problem-3.html",
+  "label": "Problem 3: found too late",
+  "section": "The problem",
+  "notes": "\"Problem three: problems you find too late. This is a sample customer. Every week, nine or ten cartons. Then the orders get smaller, and then they stop. Maybe a competitor called him. Nobody in the office notices, because nobody is watching every customer every week. Seven weeks later someone asks, whatever happened to Ah Seng? By then he is gone. Same with stock: you find out it ran out when the customer calls. Same with sales: you see the drop in the month-end report, a month after it started.\"\n\nNote: sample data, say so.\nNext: \"Problem four: your stock figures.\"",
+  "thumb": "thumbs/19-problem-3.jpg"
+ },
+ {
+  "file": "slides/20-problem-4.html",
+  "label": "Problem 4: stock never right",
+  "section": "The problem",
+  "notes": "\"Problem four: stock. SQL Account says forty cartons. Somebody walks to the shelf: twelve. Where did twenty-eight go? Here is what really happens in most warehouses.\n\nPicking is done on paper, so the wrong item or quantity goes out and nobody updates the system. There is no fixed shelf spot, so goods are left wherever there is space and nobody records which shelf. So stock cannot be found: it is in the warehouse, but nobody knows where. The oldest stock is not sent first, so the old cartons sit at the back and expire. Pieces get keyed as cartons. And everything is typed in the next day.\n\nWhat does it cost? You promise stock you don't have. Expired stock is thrown out. Staff spend hours searching. And the warehouse stops for a day at every month-end count.\n\nHands up if your stock count never matches the system.\" (Pause.) \"If you don't trust the number, you can't let a person, or an AI, promise stock to a customer.\"\n\nNext: \"And problem 5, the one that hurts the most: cash.\"",
+  "thumb": "thumbs/20-problem-4.jpg"
+ },
+ {
+  "file": "slides/21-problem-5.html",
+  "label": "Problem 5: cash comes in late",
+  "section": "The problem",
+  "notes": "\"Problem five: cash. The goods are delivered on day zero. The invoice is typed and sent on day three, because the office is behind. Payment is due a month later, and the customer forgets. Someone chases. The money arrives on day sixty-three, and the bank slip is sitting somewhere in a WhatsApp chat until somebody matches it. For two months, your money is in your customer's bank, and you are paying salaries and suppliers in the meantime.\"\n\nNote: sample timeline; use the room's real payment terms if you know them.\nNext: \"So what do all five problems cost you? Let's count it, with your own numbers.\"",
+  "thumb": "thumbs/21-problem-5.jpg"
+ },
+ {
+  "file": "slides/22-count-your-number.html",
+  "label": "Count your own number",
+  "section": "The problem",
+  "notes": "\"Let's put a number on all five problems, your own number. Three steps.\n\nStep one: how many hours a week does your team spend on manual work, all staff added together? In my example: keying in orders ten hours, chasing payments eight, checking stock seven. Twenty-five hours a week.\n\nStep two: times fifty-two weeks in a year.\n\nStep three: times sixteen ringgit, roughly what one hour of a clerk costs you with EPF and SOCSO.\n\nTwenty-five times fifty-two times sixteen: twenty thousand eight hundred ringgit a year, spent on typing and chasing. Now do yours in box 1 of your worksheet. One minute. Rough is fine, nobody will read it out.\"\n\nDo: one minute of silence. Table hosts help with the sums.\nNote: RM16 an hour is a clerk at about RM3,400 a month all-in, over 208 working hours. Adjust for your audience.\nNext: \"The usual answer is to hire another clerk. That only puts more people on the same typing. So how do you fix this, when you already have SQL Account?\"",
+  "thumb": "thumbs/22-count-your-number.jpg"
+ },
+ {
+  "file": "slides/23-why-sudu.html",
+  "label": "Why SuDu if I have SQL Account",
+  "section": "SuDu AI",
+  "notes": "\"(The question fills the screen. Let it sit.) Here is the question I hear most: I already have SQL Account, why do I need SuDu?\" (Next: the answer appears.) \"Good question, because SQL Account is excellent. Think of your company in layers.\n\nLayer one, the foundation, is accounting. SQL Account keeps your accounts: invoices, payments, tax, reports. But notice: it records what has already happened.\n\nLayer two is the warehouse. A warehouse system runs the floor: every carton is scanned when it arrives, goes on a shelf, is picked and is shipped. The stock moves are recorded the moment they happen, so your stock figure is real and accurate.\n\nLayer three, if you manufacture, is the factory: MES, a manufacturing execution system. It plans each job, issues materials against the BOM, and records output, scrap and machine time as they happen. So at any moment you can see where every job is, whether it is late, and what it really cost. No more waiting for the paper logsheet tomorrow. You can see every job.\n\nAnd layer four sits on top: the AI agents. They read all three layers and do the work: take orders, buy stock, chase payments, spot problems early, and people approve. SQL Account tells you what already happened. SuDu runs what happens next.\"\n\nNext: \"So where is SuDu going?\"",
+  "steps": 1,
+  "thumb": "thumbs/23-why-sudu.jpg"
+ },
+ {
+  "file": "slides/24-vision.html",
+  "label": "Our vision",
+  "section": "SuDu AI",
+  "notes": "(Let the line land. Pause for two seconds before speaking.)\n\n\"Our vision at SuDu is to build a fully autonomous AI that runs a company. Not a chatbot. Not a report. An AI that runs the operation. Look at the sphere: every point is a job in your company. Order, buy, receive, store, make, ship, bill, collect, and all the jobs around them: quote, credit check, pick, pack, count, plan, quality check, pay the supplier, report. Every one is connected, and the work keeps moving around it on its own.\n\nThat is why SuDu is built as an AI-native ERP. Most software adds AI on top: a chatbot sits beside the old system, and people still key in, click and chase. We built the system itself for AI, so it can read every order, every stock count and every payment, decide, and do the work, with people approving what matters. And the last step is physical: robots that move, pick and count, run by the same system.\n\nThat is where we are going. Let me show you what it looks like today.\"\n\nNext: the map.",
+  "thumb": "thumbs/24-vision.jpg"
+ },
+ {
+  "file": "slides/25-the-map.html",
+  "label": "The SuDu map",
+  "section": "SuDu AI",
+  "notes": "\"First, the big picture, in plain words.\n\nThe big box is SuDu: one ERP, one system, one database. Inside it the work flows left to right. Supply chain: selling and buying, so orders are in one place. The warehouse, WMS: every carton is scanned, so stock is accurate. The factory, MES: every job is tracked, so you can see every job. And finance: everything goes into SQL Account, so your accounts are always up to date.\n\nOn the left, customers and suppliers reach the system the way they already work: WhatsApp and email. Across the top, the AI agents read everything and do the work at every step. At the bottom, the next step: physical AI, an auto-driving truck and a humanoid robot, run by the same system.\n\nWatch one order travel through it.\" (It loops by itself, about 17 seconds.)\n\nNote: physical AI is the roadmap, not on sale today.\nNext: \"Now let's zoom in and look at the real documents.\"",
+  "thumb": "thumbs/25-the-map.jpg"
+ },
+ {
+  "file": "slides/26-map-detail.html",
+  "label": "The map in detail",
+  "section": "SuDu AI",
+  "notes": "\"Now let's zoom in. Here is how SuDu runs a company, module by module, with the real documents.\n\nOn the left, the outside world. Customers order on WhatsApp or email; the AI reads the message and creates the order. Suppliers quote and invoice by email.\n\nSales handles quotation, sales order, sales invoice, customer payment, credit notes and returns. When a sales order is confirmed, two things can happen. If the goods are in stock, it goes to the warehouse as a goods delivery. If they need to be made, it goes to the factory as a production order.\n\nPurchasing handles the requisition, the purchase order, the purchase invoice and returns. A purchase order turns into goods receiving in the warehouse.\n\nThe warehouse, WMS, is the centre: goods receiving, putting on shelves, picking, packing, goods delivery, stock counts and return receiving. Every carton is scanned, so the stock is accurate. It sends materials to the factory, and the factory sends finished goods back as a production receipt.\n\nThe factory, MES: the BOM, the production order, the schedule, material issue, reporting and QC, and the production receipt. Every job is visible.\n\nUnderneath everything sits accounting: SQL Account or AutoCount. Invoices, credit notes, payments and purchase invoices go into it automatically, so your accounts stay where they are.\n\nAbove the modules, the AI agents do the work at each step. And standing on the floor, the next step: humanoid robots in the warehouse and factory, and an auto-driving truck on the delivery route, all run by the same system.\"\n\nNote: physical AI is the roadmap, not on sale today.\nNext: \"Now look at the same system from the side.\"",
+  "enter": "zoom",
+  "thumb": "thumbs/26-map-detail.jpg"
+ },
+ {
+  "file": "slides/27-layers-3d.html",
+  "label": "4 layers in 3D",
+  "section": "SuDu AI",
+  "notes": "\"Here is how SuDu is built, one layer at a time. It starts with the foundation: SQL Account.\"\n\n(Next: the plate flips up.) Layer 1, SQL Account: \"Your accounting. Invoices, credit notes, payments, e-invoice, tax, your P&L. It keeps your accounts right, and it records what has already happened. Every document SuDu creates goes down here automatically.\"\n\n(Next: WMS lands on top.) Layer 2, WMS: \"On top sits the warehouse. Receiving, putting on the shelf, picking, packing, delivery, transfers, counts, batch and expiry. Every carton is scanned the moment it moves, so the stock figure is always true.\"\n\n(Next: MES lands on top.) Layer 3, MES: \"If you manufacture, the factory. The BOM, the production order, material issue, output, QC, scrap and machine time. Every job planned, tracked and costed as it happens.\"\n\n(Next: AI agents land on top.) Layer 4, AI agents: \"And on top, the AI agents, reading every layer below and doing the routine work. Nothing is saved until a person approves.\"\n\n(Next: all four fold into the stack.) \"4 layers, 1 system. Each stands on the one below, and the AI runs them all.\"\n\nThis slide has 5 extra Next presses.\nNext: \"Every company is walking the same road. Where is yours?\"",
+  "steps": 5,
+  "thumb": "thumbs/27-layers-3d.jpg"
+ },
+ {
+  "file": "slides/28-five-stages.html",
+  "label": "5 stages",
+  "section": "SuDu AI",
+  "notes": "\"Think about the industrial revolutions: steam, then electricity, then computers. Each one changed who did the work, and the factories that moved first won. The same thing happens in how a company is run.\n\nBusiness 1.0, until about 1980: handwritten. Orders in a book, stock counted by hand. Slow, and nobody sees the whole picture.\n\nBusiness 2.0, the 1980s and 1990s: spreadsheets. Excel files passed around by email. Faster, but many versions and typing mistakes.\n\nBusiness 3.0, from the 1990s until now: software. SQL Account, and a separate system for each team. Much better, but the systems do not talk, and people still key everything in. This is where most companies in this room are today.\n\nBusiness 4.0 is already here. ChatGPT arrived at the end of 2022 and could only talk. Since 2025, AI agents do the work: they read the WhatsApp order, create the documents, chase the payment, inside an AI-native ERP, and people approve. That is what SuDu does today, and what you will see in the demo.\n\nAnd business 5.0 is next: physical AI. Humanoid robots and self-driving trucks do the physical work, run by the same system. AI-native ERP plus robots: the autonomous enterprise.\n\n(Pause while the competitor marker climbs.) Here is the point. The future is not coming; it is here. Your competitor can already be at 4.0 while you are at 3.0, and in every revolution so far, the ones who moved first took the customers. The gap grows every year.\"\n\nPoint at the two bars on each card: manual work and cost fall with every era, and fall the most at 4.0 and 5.0.\nNote: the years are rounded eras, not exact dates; the manual-work and cost bars are an illustration, not measured figures. Physical AI timing (late 2020s) is an outlook, and it is not on sale today.\nNext: \"So can I just connect ChatGPT or Claude to SQL Account myself? Here is a question I get every week.\"",
+  "thumb": "thumbs/28-five-stages.jpg"
+ },
+ {
+  "file": "slides/29-plug-straight-in.html",
+  "label": "Why not plug it straight in?",
+  "section": "SuDu AI",
+  "notes": "\"Every week someone asks me: my nephew, or my IT guy, says he can connect ChatGPT, Claude or Codex straight to my SQL Account this weekend. Can he? Yes, he probably can. Here is what can go wrong.\n\nOne: no permission control. It can read every figure and change any of them, and nothing asks you first. It is like giving a new temp the master key and the company chop on day one.\n\nTwo: it can freeze the server. SQL Account keeps its data in a database. One heavy question, like every sale for five years, can lock it, and nobody in the office can issue an invoice until it recovers.\n\nThree: it messes up your accounts. Writing straight into the database skips SQL Account's own checks: the running numbers, the stock update, the accounts. Your records stop matching each other, and you may not notice for months.\n\nSo the agent is not the danger. Direct access is. The safe way is a proper connection: permission for every user, a person approves before anything is saved into SQL Account, every action is logged, and SQL Account's own rules are kept. That is what SuDu's sync tool does.\"\n\nNote: say \"can freeze\", not \"will crash\". Claude is made by Anthropic and Codex by OpenAI; both logos are shown only to name the tools.\nNext: \"So AI needs something underneath it.\"",
+  "thumb": "thumbs/29-plug-straight-in.jpg"
+ },
+ {
+  "file": "slides/30-the-house.html",
+  "label": "What AI needs underneath",
+  "section": "SuDu AI",
+  "notes": "\"Most people only look at the roof. The AI is the exciting part. But a roof needs a house under it, and AI on messy data only makes mistakes faster. So build from the foundation up. For each level, 1 risk and 1 question to check yourself.\n\n1, the foundation: clean data. 1 code per item, fixed units, and stock that matches the shelf because every carton is scanned and every job recorded. Without it, the AI quotes the wrong price and promises stock you do not have. Check: when you count, does the system match the shelf?\n\n2, the door: a safe connection. The AI goes through a controlled door that keeps your accounting rules, never straight into the database. Without it, 1 wrong command can freeze the server or break your accounts. Check: does any tool write straight into your SQL database?\n\n3, the walls: permissions and approvals. Who may see what, do what, and say yes, with every action logged. Without them, the AI can change anything, and nobody knows who did what. Check: is it written down who approves discounts, credit and purchases?\n\n4, the roof: the AI Agents doing the daily work. Without them, people keep typing and chasing by hand. Check: which job eats the most hours each week?\n\nFor the next part, I will show you the whole house, working.\"\n\nThe house builds itself from the ground up; the numbered dots match the 4 levels. This is thread 2; it returns later in the deck.\nNext: \"So we do not replace SQL Account. We build the house around it.\"",
+  "thumb": "thumbs/30-the-house.jpg"
+ },
+ {
+  "file": "slides/31-sql-stays.html",
+  "label": "SQL Account stays",
+  "section": "SuDu AI",
+  "notes": "\"You keep SQL Account. Your accounts team keeps working in it exactly as they do today. SQL Account keeps the records: it knows your customers, prices and credit terms. SuDu does the daily work using that knowledge. And every result goes back into SQL Account. This is the door of the house: SuDu connects through its own tool, with permission control. Nothing writes straight into your database.\"\n\nNote: confirm with the product team exactly which documents post back to SQL Account in the version on sale.\nNext: \"Now the foundation.\"",
+  "thumb": "thumbs/31-sql-stays.jpg"
+ },
+ {
+  "file": "slides/32-foundation.html",
+  "label": "The foundation: WMS and MES",
+  "section": "SuDu AI",
+  "notes": "\"The foundation is simple: scan it once, where it happens. In the warehouse, the storekeeper scans the carton when it arrives, when it goes on the shelf, when it is picked. No paper, no typing later. One of our customers cut their stock differences by ninety percent. In the factory it is the same idea: scan the job, record what was used and what was made. Another customer cut manual data entry by eighty percent. If you have no factory, ignore the right side. The point is the same. Scanned, not typed.\"\n\nNote: the company profile credits -90% stock discrepancy to Twin Arrow and -80% manual data entry to BHPetrol. Name them only with permission.\nNext: \"On top of that clean data sits the AI team.\"",
+  "thumb": "thumbs/32-foundation.jpg"
+ },
+ {
+  "file": "slides/33-ai-team.html",
+  "label": "The AI team",
+  "section": "SuDu AI",
+  "notes": "\"You do not get one AI that does everything. You get a team, like your own office. One takes orders. One watches stock. One chases payments. And they all follow one rule: normal cases they handle on their own. Anything unusual goes to a manager. Enough slides. Let me show you a working day.\"\n\nNext: hand over to the demo.",
+  "thumb": "thumbs/33-ai-team.jpg"
+ },
+ {
+  "file": "slides/34-demo-day.html",
+  "label": "Live demo",
+  "section": "SuDu AI",
+  "notes": "\"Let me introduce the team. 6 AI agents work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: the Setting up intro slide.",
+  "thumb": "thumbs/34-demo-day.jpg"
+ },
+ {
+  "file": "slides/35-intro-01.html",
+  "label": "Demo: Setting up",
+  "section": "SuDu AI",
+  "notes": "\"Before any agent works, we set it up once: WhatsApp, contacts, posting, stock, approvals and prices. Every agent then uses these settings.\"\n\nNext: \"Setting up, step by step.\"",
+  "thumb": "thumbs/35-intro-01.jpg"
+ },
+ {
+  "file": "slides/36-uc-01.html",
+  "label": "Demo: Setting up ",
+  "section": "SuDu AI",
+  "notes": "\"Setting up: set it up once. Link WhatsApp. Set up contacts. Auto-save to SQL Account. Check the stock balance. Set approvals: credit limit, minimum price. Load past prices. Done once. Every agent uses these settings.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nPrep: historical prices to be prepared by Jordan Lee.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Sales AI intro slide.",
+  "thumb": "thumbs/36-uc-01.jpg"
+ },
+ {
+  "file": "slides/37-intro-02.html",
+  "label": "Demo: Sales AI",
+  "section": "SuDu AI",
+  "notes": "\"Part 2: Sales AI. Meet Sasha. Takes orders from WhatsApp, PDF and chat. Sasha will show you 3 jobs.\"\n\nNext: \"Sales AI, use case 1: create a sales order.\"",
+  "thumb": "thumbs/37-intro-02.jpg"
+ },
+ {
+  "file": "slides/38-uc-02.html",
+  "label": "Demo: Sales AI 1 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Sales AI, use case 1 of 3: create a sales order. Type the order in plain words. Or upload the customer's PDF or photo. Check the draft, then approve. Prices come from the customer's history.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Sales AI: send the so or invoice to the customer.\"",
+  "thumb": "thumbs/38-uc-02.jpg"
+ },
+ {
+  "file": "slides/39-uc-03.html",
+  "label": "Demo: Sales AI 2 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Sales AI, use case 2 of 3: send the so or invoice to the customer. Add the customer's WhatsApp number in Contacts. Ask: \"Send SI-2001 to Jaya Grocer\". The PDF lands in their WhatsApp. No download, no forwarding.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Sales AI: turn the sales order into an invoice.\"",
+  "thumb": "thumbs/39-uc-03.jpg"
+ },
+ {
+  "file": "slides/40-uc-04.html",
+  "label": "Demo: Sales AI 3 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Sales AI, use case 3 of 3: turn the sales order into an invoice. Ask in plain words. It copies every line from the SO. Saved into SQL Account. No retyping between SO and invoice.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Inventory AI intro slide.",
+  "thumb": "thumbs/40-uc-04.jpg"
+ },
+ {
+  "file": "slides/41-intro-03.html",
+  "label": "Demo: Inventory AI",
+  "section": "SuDu AI",
+  "notes": "\"Part 3: Inventory AI. Meet Ivan. Checks stock, sends stock reports. Ivan will show you 3 jobs.\"\n\nNext: \"Inventory AI, use case 1: check stock balance.\"",
+  "thumb": "thumbs/41-intro-03.jpg"
+ },
+ {
+  "file": "slides/42-uc-05.html",
+  "label": "Demo: Inventory AI 1 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Inventory AI, use case 1 of 3: check stock balance. Type /accounting to ask SQL Account directly. Or ask the ERP, after it updates. Get the answer in seconds. /accounting reads straight from SQL Account.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Inventory AI: create a stock report.\"",
+  "thumb": "thumbs/42-uc-05.jpg"
+ },
+ {
+  "file": "slides/43-uc-06.html",
+  "label": "Demo: Inventory AI 2 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Inventory AI, use case 2 of 3: create a stock report. Ask for a PDF report and send it on WhatsApp. Or ask for a live dashboard. Change it by asking again. A PDF to share, or a dashboard that keeps updating.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Inventory AI: send a report on a schedule.\"",
+  "thumb": "thumbs/43-uc-06.jpg"
+ },
+ {
+  "file": "slides/44-uc-07.html",
+  "label": "Demo: Inventory AI 3 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Inventory AI, use case 3 of 3: send a report on a schedule. Ask once, in plain words. It becomes a routine. The report arrives every week. Ask once. It runs every week.\"\n\nDo: show it live on the real screen (web or mobile app, routine, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Purchase AI intro slide.",
+  "thumb": "thumbs/44-uc-07.jpg"
+ },
+ {
+  "file": "slides/45-intro-04.html",
+  "label": "Demo: Purchase AI",
+  "section": "SuDu AI",
+  "notes": "\"Part 4: Purchase AI. Meet Puteri. Makes POs, records supplier invoices. Puteri will show you 3 jobs.\"\n\nNext: \"Purchase AI, use case 1: create a purchase order.\"",
+  "thumb": "thumbs/45-intro-04.jpg"
+ },
+ {
+  "file": "slides/46-uc-08.html",
+  "label": "Demo: Purchase AI 1 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Purchase AI, use case 1 of 3: create a purchase order. Type it in plain words. Or upload a photo of a handwritten list. Approve and send. Even messy handwriting becomes a clean PO.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Purchase AI: supplier invoice to purchase invoice.\"",
+  "thumb": "thumbs/46-uc-08.jpg"
+ },
+ {
+  "file": "slides/47-uc-09.html",
+  "label": "Demo: Purchase AI 2 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Purchase AI, use case 2 of 3: supplier invoice to purchase invoice. Upload the supplier's invoice. It matches the PO and goods received. Saved as a purchase invoice. Wrong qty or price is caught first.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Purchase AI: chase late deliveries.\"",
+  "thumb": "thumbs/47-uc-09.jpg"
+ },
+ {
+  "file": "slides/48-uc-10.html",
+  "label": "Demo: Purchase AI 3 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Purchase AI, use case 3 of 3: chase late deliveries. Set a task: chase POs not yet received. It messages the supplier on WhatsApp. The reply goes back to the buyer. No more calling suppliers one by one.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Collection AI intro slide.",
+  "thumb": "thumbs/48-uc-10.jpg"
+ },
+ {
+  "file": "slides/49-intro-05.html",
+  "label": "Demo: Collection AI",
+  "section": "SuDu AI",
+  "notes": "\"Part 5: Collection AI. Meet Cody. Chases overdue payments, reads bank slips. Cody will show you 3 jobs.\"\n\nNext: \"Collection AI, use case 1: check overdue customers.\"",
+  "thumb": "thumbs/49-intro-05.jpg"
+ },
+ {
+  "file": "slides/50-uc-11.html",
+  "label": "Demo: Collection AI 1 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Collection AI, use case 1 of 3: check overdue customers. Create a routine to check overdue customers. It opens a task with the list. Send each statement on WhatsApp. Every weekday, nobody has to remember.\"\n\nDo: show it live on the real screen (web or mobile app, routine, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Collection AI: customer asks for more time.\"",
+  "thumb": "thumbs/50-uc-11.jpg"
+ },
+ {
+  "file": "slides/51-uc-12.html",
+  "label": "Demo: Collection AI 2 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Collection AI, use case 2 of 3: customer asks for more time. The customer replies on WhatsApp. The reply shows up in the task. You approve the next step. You decide. It follows up on the day.\"\n\nDo: show it live on the real screen (WhatsApp, web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Collection AI: customer sends a bank slip.\"",
+  "thumb": "thumbs/51-uc-12.jpg"
+ },
+ {
+  "file": "slides/52-uc-13.html",
+  "label": "Demo: Collection AI 3 of 3",
+  "section": "SuDu AI",
+  "notes": "\"Collection AI, use case 3 of 3: customer sends a bank slip. The customer sends the slip on WhatsApp. It reads the amount and matches invoices. A customer payment is created. No slips lost in the chat.\"\n\nDo: show it live on the real screen (WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Up Sales AI intro slide.",
+  "thumb": "thumbs/52-uc-13.jpg"
+ },
+ {
+  "file": "slides/53-intro-06.html",
+  "label": "Demo: Up Sales AI",
+  "section": "SuDu AI",
+  "notes": "\"Part 6: Up Sales AI. Meet Uma. Wins back lost customers. Uma will show you 1 job.\"\n\nNext: \"Up Sales AI, use case 1: win back lost customers.\"",
+  "thumb": "thumbs/53-intro-06.jpg"
+ },
+ {
+  "file": "slides/54-uc-14.html",
+  "label": "Demo: Up Sales AI 1 of 1",
+  "section": "SuDu AI",
+  "notes": "\"Up Sales AI, use case 1 of 1: win back lost customers. Find customers with no order in 30 days. Send them a promotion on WhatsApp. Attach a promo PDF. Customers come back before they forget you.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Finance AI intro slide.",
+  "thumb": "thumbs/54-uc-14.jpg"
+ },
+ {
+  "file": "slides/55-intro-07.html",
+  "label": "Demo: Finance AI",
+  "section": "SuDu AI",
+  "notes": "\"Part 7: Finance AI. Meet Felix. Explains the numbers, builds dashboards. Felix will show you 2 jobs.\"\n\nNext: \"Finance AI, use case 1: ask for financial numbers.\"",
+  "thumb": "thumbs/55-intro-07.jpg"
+ },
+ {
+  "file": "slides/56-uc-15.html",
+  "label": "Demo: Finance AI 1 of 2",
+  "section": "SuDu AI",
+  "notes": "\"Finance AI, use case 1 of 2: ask for financial numbers. Ask in plain words. Profit and loss, sales, who owes you. Answers straight from SQL Account. An afternoon in Excel becomes 1 question.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Finance AI: create a financial dashboard.\"",
+  "thumb": "thumbs/56-uc-15.jpg"
+ },
+ {
+  "file": "slides/57-uc-16.html",
+  "label": "Demo: Finance AI 2 of 2",
+  "section": "SuDu AI",
+  "notes": "\"Finance AI, use case 2 of 2: create a financial dashboard. Ask for a PDF and send it on WhatsApp. Or ask for a live dashboard. Share it with your partners. Your numbers, any time.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"So that is the whole team at work. Now, what does it never do without you?\"",
+  "thumb": "thumbs/57-uc-16.jpg"
+ },
+ {
+  "file": "slides/58-you-stay-the-boss.html",
+  "label": "You stay the boss",
+  "section": "SuDu AI",
+  "notes": "\"You just saw it do a lot. So let me tell you what it does not do. It does not save anything you have not approved. It never moves money: it prepares the payment voucher, and you release the payment in your bank. It only reads the WhatsApp groups you switch on. And every single thing it did is recorded, so you can check it. You are still the boss. Now, would this work in your company? Let's find out.\"\n\nNext: the readiness check.",
+  "thumb": "thumbs/58-you-stay-the-boss.jpg"
+ },
+ {
+  "file": "slides/59-readiness-check.html",
+  "label": "AI readiness check",
+  "section": "Workshop",
+  "notes": "\"Worksheet, box 2. Eight questions about your own company. Be honest: nobody sees this but you and your table host. 1 point for every yes.\"\n\nThen, as they work, why each one matters:\n1 One code per item — it cannot tell whether two codes are the same Milo.\n2 Fixed units — \"10\" could mean ten cartons or ten pieces.\n3 System matches shelf — it will promise stock you do not have.\n4 Orders in one place — it can only read the chats it is connected to.\n5 Credit limits set — it cannot check a limit that is not there.\n6 Price list up to date — it will quote last year's price.\n7 Approvers written down — it needs to know who to ask.\n8 Phone numbers saved — it cannot message someone it cannot find.\n\nDo: eight minutes to answer, then the score slide and five minutes to talk at the table.\nNext: \"Add up your score.\"",
+  "thumb": "thumbs/59-readiness-check.jpg"
+ },
+ {
+  "file": "slides/60-your-score.html",
+  "label": "What your score means",
+  "section": "Workshop",
+  "notes": "\"There is no bad score. It only tells you which step comes first. Zero to three: your foundation needs work before any AI will help you, and I would rather tell you that today than sell you a roof. Four to six, which is most companies: you can start with one AI job right now, on the data you already have in SQL Account. Seven or eight: you are ready for the whole house.\"\n\nDo: table hosts note each company's score on their lead sheet.\nNext: \"1 more check: how big does your house need to be?\"",
+  "thumb": "thumbs/60-your-score.jpg"
+ },
+ {
+  "file": "slides/61-need-wms-mes.html",
+  "label": "Do you need WMS and MES?",
+  "section": "Workshop",
+  "notes": "\"The readiness check told you where to start. This one tells you how big the house needs to be. 2 short lists, 5 questions each. Tick every yes, and count each side on its own.\n\nWMS, the warehouse: more than 1 warehouse or many racks; staff wasting time looking for stock; batch or expiry dates, or stock thrown away because it expired; a stock count that does not match the system; more than 30 orders a day to pick and pack. Every yes is a problem a WMS fixes.\n\nMES, the factory: you make, mix or assemble your own products; you issue raw materials by a recipe or BOM; you cannot tell how far a job has gone; the real cost or waste of each batch is unclear; you plan production on paper or in Excel.\n\nScore: 0, SQL Account plus AI agents is enough for now. 1 or 2, start with the agents and add it later. 3 or more, you need it, so plan it from day 1.\n\nIf you do not make anything, skip the MES side: it is 0.\"\n\nDo: table hosts note both scores on the lead sheet next to the readiness score.\nNext: \"So let's choose that first job.\"",
+  "thumb": "thumbs/61-need-wms-mes.jpg"
+ },
+ {
+  "file": "slides/62-first-ai-job.html",
+  "label": "Build your first AI job",
+  "section": "Workshop",
+  "notes": "\"Worksheet, box 3. Pick one job from the list, the one that would help your office most. Then write it in six lines, exactly the way you would explain it to a new clerk on their first day. When does it happen? What does it look at? What does it do? When should it not do it? When is it finished? Who does it tell? If you can explain it in six lines, an AI agent can do it.\"\n\nDo: five minutes to pick, twelve to write, three to copy the number from box 1 next to it. Table hosts each choose one good example for the next slide.\nSecond example (take WhatsApp orders): WHEN a customer sends an order in the order group · LOOK AT price list, stock and credit limit · DO create the sales order and reply with a confirmation · UNLESS item unclear, stock short or over the limit · STOP WHEN the customer has the confirmation · TELL the sales manager when a rule is broken.\nNext: \"Who is brave enough to let us set theirs up, right now?\"",
+  "thumb": "thumbs/62-first-ai-job.jpg"
+ },
+ {
+  "file": "slides/63-watch-yours-run.html",
+  "label": "Watch yours run",
+  "section": "Workshop",
+  "notes": "\"Read me your six lines.\" (The driver types them in.) \"Now watch.\" (The driver runs it once on the sample company.) \"That took a few minutes with sample data. In your company we take about a week, because we use your real customers and your real rules, and we test it before it sends anything.\"\n\nDo: take the volunteer a table host already chose (reminders and stock checks are safest). Driver sets it up in SuDu and runs it once. Second volunteer if time allows.\nBackup: open a job prepared in advance: \"Here is one a customer wrote last month.\"\nNext: \"So how do you actually start?\"",
+  "thumb": "thumbs/63-watch-yours-run.jpg"
+ },
+ {
+  "file": "slides/64-starting-point.html",
+  "label": "Your starting point",
+  "section": "Diagnosis",
+  "notes": "\"Find your score. Low score: start with the foundation, and add the AI when your data is ready. Middle score: start with the AI agent on the data you already have, one job at a time. High score: take the whole system. Whichever you choose, it is the same system, so you never throw anything away when you add the next part.\"\n\nNext: \"What do you get back?\"",
+  "thumb": "thumbs/64-starting-point.jpg"
+ },
+ {
+  "file": "slides/65-what-it-gives-back.html",
+  "label": "What it gives back",
+  "section": "Diagnosis",
+  "notes": "\"This is our estimate for a distributor with about forty orders a day: three hundred and fifty-eight hours of manual work a month, down to twenty-nine. Now look at box 1 on your worksheet. That is your number, not mine. Keep it in front of you for the next slide.\"\n\nEach square is one hour. Say \"estimate\" out loud.\nNext: \"Here is what it costs.\"",
+  "thumb": "thumbs/65-what-it-gives-back.jpg"
+ },
+ {
+  "file": "slides/66-plans.html",
+  "label": "Plans and prices",
+  "section": "Diagnosis",
+  "notes": "\"Five plans, and I will make it simple. Most companies in this room should start at [recommended plan]. Compare the yearly price with the number in your box 1.\"\n\nTO CONFIRM: the highlighted row is Standard because taking WhatsApp orders, as shown in the demo, starts there. Change it if you pick another plan. Check prices are current.\nNext: \"And how long does it take?\"",
+  "thumb": "thumbs/66-plans.jpg"
+ },
+ {
+  "file": "slides/67-live-in-30-days.html",
+  "label": "Live in 30 days",
+  "section": "Diagnosis",
+  "notes": "\"Thirty days. In the first week your first job is already running, and at the start it only drafts: a person approves everything until you trust it. We need 3 things from you: your data, one person who approves, and one person who uses it every day. When a project runs late, it is almost always because one of those three is missing.\"\n\nNext: \"So here is your next step.\"",
+  "thumb": "thumbs/67-live-in-30-days.jpg"
+ },
+ {
+  "file": "slides/68-next-step.html",
+  "label": "Your next step",
+  "section": "Diagnosis",
+  "notes": "\"You already did the hard part this afternoon. You have your number, your score and your first AI job. The next step is free: we come to your office for forty-five minutes, start from that worksheet, and show your job working on your own data. If you already know you want to start, there is a seminar offer for the next fourteen days. Hand your worksheet to your table host now. It is also your lucky draw ticket.\"\n\nDo: table hosts collect worksheets and photograph them before handing them back.\nNote: do not go back over the problem here. People who hesitate are afraid of choosing wrong: stress free, short, and a person approves everything.\nNext: questions.",
+  "thumb": "thumbs/68-next-step.jpg"
+ },
+ {
+  "file": "slides/69-questions.html",
+  "label": "Questions",
+  "section": "Questions",
+  "notes": "Take questions for about ten minutes, then the lucky draw, then the closing line (slide 33).\nIf the room is quiet: \"Let me ask the one everybody is thinking: do I have to stop using SQL Account?\"\n\nPrepared answers:\n· Stop using SQL Account? No. It stays; SuDu works around it and sends records back.\n· AutoCount? Yes, it connects to AutoCount as well.\n· Replace my staff? It takes over the typing and chasing. Staff check, approve and deal with customers.\n· Mistakes? Important steps wait for approval, everything is recorded, every new job starts draft-only.\n· Data safe / used for training? [Confirm with product team.]\n· Messy data? Yes, start anyway: the readiness check, and we clean item codes during setup.\n· Languages? [Confirm: BM, English, Chinese, mixed.]\n· Grants? [Confirm HRD Corp and digitalisation grant position.]",
+  "thumb": "thumbs/69-questions.jpg"
+ },
+ {
+  "file": "slides/70-closing.html",
+  "label": "Closing line",
+  "section": "Spare",
+  "notes": "Leave this up while people talk to the team.",
+  "thumb": "thumbs/70-closing.jpg"
+ },
+ {
+  "file": "slides/71-is-my-data-safe.html",
+  "label": "Is my data safe?",
+  "section": "Spare",
+  "notes": "Spare. Fill in the three lines from the product team's confirmed answer before using this slide.",
+  "thumb": "thumbs/71-is-my-data-safe.jpg"
+ },
+ {
+  "file": "slides/72-if-ai-is-wrong.html",
+  "label": "What if the AI is wrong?",
+  "section": "Spare",
+  "notes": "Spare. Every new job starts in draft-only mode, a person approves, everything is recorded, and you can switch it off at any time.",
+  "thumb": "thumbs/72-if-ai-is-wrong.jpg"
+ }
+];
+  window.DECK_WIDTH = 1920;
+  window.DECK_HEIGHT = 1080;
+  window.GALLERY_CARD_W = 300;       // 画廊卡片基准宽度
+  window.GALLERY_DRIFT_SECONDS = 80; // 画廊漂移一圈时长
+  window.DECK_OVERVIEW = 'grid';
+</script>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; font-family: -apple-system, "Helvetica Neue", sans-serif; background: #000; }
+
+  .overview { position: fixed; inset: 0; }
+  body[data-mode="present"] .overview { display: none; }
+  body[data-mode="present"] .start-btn { display: none; }
+  body[data-mode="overview"] #present-ui { display: none; }
+  body[data-ov="grid"]    #ov-gallery { display: none; }
+  body[data-ov="gallery"] #ov-grid    { display: none; }
+  body[data-ov="gallery"][data-mode="overview"] { background: #0a0805; }
+  body[data-ov="grid"][data-mode="overview"]    { background: #E4EEE9; }
+
+  /* ════════ 模式 1 · 自适应网格墙（一屏装得下→居中轻斜；装不下→舒适大小竖向滚动）════════ */
+  #ov-grid { display: flex; justify-content: center; perspective: 2200px; perspective-origin: 50% 42%;
+    background: radial-gradient(120% 90% at 50% 0%, #EEF5F1, #D9E6E0 75%); }
+  body[data-grid="fit"]    #ov-grid { overflow: hidden;   align-items: center; }
+  body[data-grid="scroll"] #ov-grid { overflow-y: auto; overflow-x: hidden; align-items: flex-start; padding: 74px 0 110px; }
+  .wall-wrap { }
+  body[data-grid="fit"]    .wall-wrap { transform: translateY(-3vh); }
+  .wall { display: grid; gap: 20px; transform-origin: center center; margin: 0 auto; }  /* 不用 preserve-3d：整墙作单个倾斜平面，命中测试可靠 */
+  #ov-grid .card {
+    position: relative; aspect-ratio: 16/9; border-radius: 9px; overflow: hidden; background: #fff; cursor: pointer;
+    box-shadow: 0 16px 34px rgba(40,34,24,0.20), 0 3px 10px rgba(40,34,24,0.12);
+    transition: transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s;
+  }
+  #ov-grid .card:hover {
+    transform: scale(1.18);
+    box-shadow: 0 48px 92px rgba(40,34,24,0.36), 0 14px 30px rgba(40,34,24,0.22); z-index: 20;
+  }
+
+  /* ════════ 模式 2 · 无限画廊 ════════ */
+  #ov-gallery { overflow: hidden; perspective: 2200px; perspective-origin: 50% 42%;
+    background: radial-gradient(130% 120% at 50% 38%, #1b1610, #0a0805 82%); }
+  .stage3d { --rx: 18; --rz: 9; position: absolute; inset: 0; transform-style: preserve-3d; transform: scale(1.22) rotateX(18deg) rotateZ(-9deg); transform-origin: center center; }
+  .breathe { position: absolute; inset: 0; animation: breathe 26s ease-in-out infinite; transform-origin: center center; transform-style: preserve-3d; }
+  .drift-layer { position: absolute; top: 0; left: 0; will-change: transform; animation: drift var(--driftSec, 80s) linear infinite; transform-style: preserve-3d; }
+  #ov-gallery:hover .drift-layer { animation-play-state: paused; }
+  .gallery { display: grid; }
+  #ov-gallery .card {
+    position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; background: #fff; cursor: pointer;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.42), 0 3px 9px rgba(0,0,0,0.3);
+    transition: transform .34s cubic-bezier(.2,.7,.2,1), box-shadow .34s; transform-style: preserve-3d; will-change: transform;
+  }
+  #ov-gallery .card:hover {
+    transform: translateZ(60px) rotateX(calc(var(--rx,18)*-1deg)) rotateZ(calc(var(--rz,9)*1deg)) scale(1.06);
+    box-shadow: 0 30px 64px rgba(0,0,0,0.55), 0 8px 20px rgba(0,0,0,0.4); z-index: 30;
+  }
+  .vignette { position: fixed; inset: 0; pointer-events: none; z-index: 20; box-shadow: inset 0 0 240px 70px rgba(8,6,3,0.62); }
+  @keyframes drift { from { transform: translate3d(0,0,0); } to { transform: translate3d(calc(var(--dx)*-1), calc(var(--dy)*-1), 0); } }
+  @keyframes breathe { 0%,100% { transform: scale(1.0); } 50% { transform: scale(1.045); } }
+
+  /* 卡片通用内容 */
+  .card .thumb { position: absolute; top: 0; left: 0; width: 1920px; height: 1080px; transform-origin: top left; pointer-events: none; }
+  .card .thumb iframe { width: 1920px; height: 1080px; border: 0; display: block; background: #fff; pointer-events: none; }
+  .card .thumb-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; background: #021A17; }
+  .card .num { position: absolute; bottom: 6px; left: 7px; background: rgba(16,12,7,0.76); color: #fff; font-size: 11px; line-height: 1; padding: 4px 7px; border-radius: 5px; font-variant-numeric: tabular-nums; letter-spacing: 0.03em; z-index: 3; pointer-events: none; max-width: 90%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #ov-gallery .card .num { opacity: 0; transition: opacity .25s; }
+  #ov-gallery .card:hover .num { opacity: 1; }
+
+  .overview-title { position: fixed; top: 24px; left: 0; right: 0; text-align: center; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; z-index: 40; pointer-events: none; }
+  body[data-ov="grid"]    .overview-title { color: #5a5346; opacity: 0.66; }
+  body[data-ov="gallery"] .overview-title { color: rgba(244,238,224,0.7); text-shadow: 0 2px 12px rgba(0,0,0,0.6); }
+
+  .start-btn { position: fixed; bottom: 26px; right: 26px; border: 0; padding: 13px 24px; border-radius: 999px; font-size: 15px; font-family: inherit; letter-spacing: 0.04em; cursor: pointer; z-index: 200; transition: transform .18s, box-shadow .18s; }
+  body[data-ov="grid"]    .start-btn { background: #1a1712; color: #fff; box-shadow: 0 8px 28px rgba(40,34,24,0.28); }
+  body[data-ov="gallery"] .start-btn { background: #f4eee0; color: #1a1712; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+  .start-btn:hover { transform: translateY(-2px); }
+
+  /* ════════ 演示模式 ════════ */
+  #stage { position: fixed; top: 50%; left: 50%; transform-origin: top left; will-change: transform; background: #021A17; box-shadow: 0 10px 60px rgba(0,0,0,0.4); overflow: hidden; }
+  #stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: #021A17; opacity: 0; transition: opacity .35s ease; }
+  #stage iframe.live { opacity: 1; z-index: 1; }
+  #stage iframe.prev { opacity: 1; z-index: 0; transition: none; }
+  /* zoom transition: overview map <-> detail map */
+  #stage iframe.zout { z-index: 2; animation: zout .9s cubic-bezier(.55,0,.25,1) forwards; transform-origin: 62% 55%; }
+  #stage iframe.zin  { animation: zin .9s cubic-bezier(.2,.7,.2,1) forwards; transform-origin: 62% 55%; }
+  #stage iframe.zback { z-index: 2; animation: zback .8s cubic-bezier(.55,0,.25,1) forwards; transform-origin: 62% 55%; }
+  #stage iframe.zret  { animation: zret .8s cubic-bezier(.2,.7,.2,1) forwards; transform-origin: 62% 55%; }
+  @keyframes zout  { from { transform: scale(1); opacity: 1; } to { transform: scale(1.7); opacity: 0; } }
+  @keyframes zin   { from { transform: scale(.88); opacity: 0; } 35% { opacity: 1; } to { transform: scale(1); opacity: 1; } }
+  @keyframes zback { from { transform: scale(1); opacity: 1; } to { transform: scale(.85); opacity: 0; } }
+  @keyframes zret  { from { transform: scale(1.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .counter { position: fixed; bottom: 20px; right: 20px; background: rgba(0,0,0,0.65); color: #fff; padding: 6px 14px; border-radius: 999px; font-size: 13px; letter-spacing: 0.05em; font-variant-numeric: tabular-nums; z-index: 100; opacity: 0.7; }
+  .counter .label { color: rgba(255,255,255,0.7); margin-left: 8px; }
+  .overview-btn { position: fixed; top: 20px; left: 20px; background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.85); border: 0; padding: 7px 14px; border-radius: 999px; font-size: 13px; font-family: inherit; cursor: pointer; z-index: 100; opacity: 0.6; }
+  .overview-btn:hover { opacity: 1; }
+  .nav-zone { position: fixed; top: 0; bottom: 0; width: 15%; cursor: pointer; z-index: 50; }
+  .nav-zone.left { left: 0; } .nav-zone.right { right: 0; }
+  .nav-hint { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 999px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; font-size: 22px; opacity: 0; transition: opacity .2s; }
+  .nav-zone.left .nav-hint { left: 20px; } .nav-zone.right .nav-hint { right: 20px; }
+  .nav-zone:hover .nav-hint { opacity: 1; }
+
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    html, body { background: #fff; overflow: visible; height: auto; }
+    body[data-mode] .overview { display: none !important; }
+    #stage { position: static; transform: none !important; box-shadow: none; }
+    .counter, .nav-zone, .overview-btn, .start-btn { display: none !important; }
+    .print-stack { display: block; }
+    .print-stack iframe { width: 1920px; height: 1080px; page-break-after: always; display: block; }
+  }
+
+  /* SuDu additions: progress hairline, speaker notes, quiet chrome */
+  #progress { position: fixed; left: 0; top: 0; height: 3px; background: #00F5A9; box-shadow: 0 0 10px rgba(0,245,169,.7); z-index: 120; transition: width .5s cubic-bezier(.16,1,.3,1); }
+  body[data-mode="overview"] #progress { display: none; }
+  #present-ui .counter, #present-ui .overview-btn { transition: opacity .4s; }
+  body.idle #present-ui .counter, body.idle #present-ui .overview-btn { opacity: 0; }
+  #notes { position: fixed; left: 0; right: 0; bottom: 0; max-height: 42vh; overflow: auto; background: rgba(2,26,23,.94); color: #E8F5EF; z-index: 150;
+    padding: 22px 32px 26px; font: 17px/1.55 -apple-system, "Helvetica Neue", sans-serif; white-space: pre-wrap; transform: translateY(100%); transition: transform .35s cubic-bezier(.16,1,.3,1);
+    border-top: 2px solid #00F5A9; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+  #notes b { display: block; font: 600 12px/1 ui-monospace, Menlo, monospace; letter-spacing: .16em; color: #00F5A9; margin-bottom: 12px; text-transform: uppercase; }
+  body.notes #notes { transform: none; }
+  @media print { #progress, #notes { display: none !important; } }
+</style>
+</head>
+<body data-mode="overview">
+
+<div id="ov-grid" class="overview">
+  <div class="overview-title">Hire Your First AI Agent · click any slide to present · N notes · Esc overview</div>
+  <div class="wall-wrap"><div class="wall" id="wall"></div></div>
+</div>
+
+<div id="ov-gallery" class="overview">
+  <div class="stage3d"><div class="breathe"><div class="drift-layer" id="driftLayer"><div class="gallery" id="gallery"></div></div></div></div>
+  <div class="vignette"></div>
+  <div class="overview-title">Hire Your First AI Agent · click any slide to present</div>
+</div>
+
+<button class="start-btn" id="startBtn">▶ Present</button>
+
+<div id="present-ui">
+  <div id="stage"><iframe id="frame" class="live" src="about:blank"></iframe><iframe id="frame2" src="about:blank"></iframe></div>
+  <button class="overview-btn" id="overviewBtn">⊞ Overview</button>
+  <div class="nav-zone left"  id="navL"><div class="nav-hint">‹</div></div>
+  <div class="nav-zone right" id="navR"><div class="nav-hint">›</div></div>
+  <div class="counter" id="counter">1 / 1</div>
+</div>
+
+<div class="print-stack" id="printStack" style="display:none;"></div>
+<div id="progress"></div>
+<div id="notes"></div>
+
+<script>
+(function () {
+  const W = window.DECK_WIDTH || 1920;
+  const H = window.DECK_HEIGHT || 1080;
+  const deck = window.DECK_MANIFEST || [];
+  const CARD_W = window.GALLERY_CARD_W || 300;
+  const DRIFT_SEC = window.GALLERY_DRIFT_SECONDS || 80;
+  const stage = document.getElementById('stage');
+  const frames = [document.getElementById('frame'), document.getElementById('frame2')];
+  let liveF = 0, wantFile = null;
+  const counter = document.getElementById('counter');
+  const printStack = document.getElementById('printStack');
+  const wall = document.getElementById('wall');
+  const gallery = document.getElementById('gallery');
+  const driftLayer = document.getElementById('driftLayer');
+  const storageKey = 'deck-index-' + location.pathname;
+  let current = 0;
+
+  stage.style.width = W + 'px'; stage.style.height = H + 'px';
+  driftLayer.style.setProperty('--driftSec', DRIFT_SEC + 's');
+
+  // 概览模式：URL ?ov= > window.DECK_OVERVIEW > 随机(秒%5==0 → 20% 画廊)
+  const qp = new URLSearchParams(location.search).get('ov');
+  // 用户未指定时按秒数随机：网格(iframe 真页面) 60% / 无限画廊(图片缩略图) 40%。可用 ?ov=grid|gallery 或 window.DECK_OVERVIEW 固定。
+  const OVERVIEW = qp || window.DECK_OVERVIEW || ((new Date().getSeconds() % 5 < 2) ? 'gallery' : 'grid');
+  document.body.setAttribute('data-ov', OVERVIEW === 'gallery' ? 'gallery' : 'grid');
+
+  function setMode(mode) {
+    document.body.setAttribute('data-mode', mode);
+    if (mode === 'present') { fit(); show(current); }
+    else { requestAnimationFrame(buildOverview); }
+  }
+
+  /* ─ 媒体（缩略图优先，否则 iframe） ─ */
+  function makeCard(idx, useScale, useImg) {
+    const card = document.createElement('div');
+    card.className = 'card'; card.dataset.idx = idx;
+    const item = deck[idx];
+    if (useImg && item.thumb) {
+      // 仅画廊用：预渲染缩略图，扛无限平铺的性能
+      const im = document.createElement('img');
+      im.className = 'thumb-img'; im.src = item.thumb; im.decoding = 'async';
+      card.appendChild(im);
+    } else {
+      // 网格默认用：真实 HTML 子页面（清晰、所见即所得）
+      const thumb = document.createElement('div');
+      thumb.className = 'thumb';
+      if (useScale != null) thumb.style.transform = 'scale(' + useScale + ')';
+      const ifr = document.createElement('iframe');
+      ifr.src = item.file; ifr.setAttribute('scrolling', 'no');
+      thumb.appendChild(ifr); card.appendChild(thumb);
+    }
+    const num = document.createElement('div');
+    num.className = 'num';
+    num.textContent = (idx + 1) + (item.label ? ' · ' + item.label : '');
+    card.appendChild(num);
+    card.addEventListener('click', () => { current = idx; setMode('present'); });
+    return card;
+  }
+
+  function buildOverview() {
+    if (document.body.getAttribute('data-mode') !== 'overview') return;
+    if (OVERVIEW === 'gallery') buildGallery(); else buildGrid();
+  }
+
+  /* ════════ 网格墙（自适应） ════════ */
+  function buildGrid() {
+    const n = deck.length; if (!n) return;
+    wall.innerHTML = '';
+    for (let i = 0; i < n; i++) wall.appendChild(makeCard(i, null, true));  // thumbnails: no live slides in the overview
+    layoutWall();
+  }
+  const GRID_PAD = 74;  // #ov-grid scroll 顶部 padding，算动态 transform-origin 用
+  function layoutWall() {
+    const n = deck.length; if (!n) return;
+    const vw = innerWidth, vh = innerHeight, gap = 26;
+    const availW = vw * 0.86;                                   // 留 rotateZ 横向余量（强对角也不裁切）
+    const target = 280;
+    let cols = Math.max(3, Math.min(9, Math.floor((availW + gap) / (target + gap))));
+    cols = Math.min(cols, n);
+    const rows = Math.ceil(n / cols);
+    const cardW = Math.min(target + 40, (availW - (cols - 1) * gap) / cols);
+    const cardH = cardW * 9 / 16;
+    const baseW = cols * cardW + (cols - 1) * gap;
+    const wallH = rows * cardH + (rows - 1) * gap;
+    wall.style.gridTemplateColumns = 'repeat(' + cols + ', 1fr)';
+    wall.style.gap = gap + 'px';
+    wall.style.width = baseW + 'px';
+    // 单平面(无 preserve-3d)→任意角度都不重叠、可点；fit 与 scroll 都给强对角倾斜
+    if (wallH <= vh * 0.80) {
+      document.body.setAttribute('data-grid', 'fit');
+      const rx = Math.max(11, Math.min(15, 15 - (rows - 2) * 1.1));
+      const rz = Math.max(8, Math.min(11, 11 - (rows - 2) * 0.7));
+      wall.style.setProperty('--rx', rx); wall.style.setProperty('--rz', rz);
+      wall.style.transformOrigin = 'center center';
+      const tilt = 'rotateX(' + rx + 'deg) rotateZ(-' + rz + 'deg)';
+      wall.style.transform = tilt;
+      const r = wall.getBoundingClientRect();
+      let s = Math.min(vw * 0.92 / r.width, vh * 0.80 / r.height);
+      s = Math.max(0.6, Math.min(s, 1.6));
+      wall.style.transform = 'scale(' + s + ') ' + tilt;
+    } else {
+      // 多页：舒适大小竖向滚动 + 强对角倾斜；transform-origin 跟随滚动→消除高墙 rotateZ 把远端行甩出屏幕
+      document.body.setAttribute('data-grid', 'scroll');
+      wall.style.setProperty('--rx', 14); wall.style.setProperty('--rz', 7);
+      wall.style.transform = 'rotateX(14deg) rotateZ(-7deg)';
+      updateScrollOrigin();
+    }
+    wall.querySelectorAll('.card .thumb').forEach(t => { const c = t.parentElement; if (c.clientWidth) t.style.transform = 'scale(' + (c.clientWidth / W) + ')'; });
+  }
+  function updateScrollOrigin() {
+    if (document.body.getAttribute('data-grid') !== 'scroll') return;
+    const ovg = document.getElementById('ov-grid');
+    wall.style.transformOrigin = '50% ' + (ovg.scrollTop + window.innerHeight / 2 - GRID_PAD) + 'px';
+  }
+
+  /* ════════ 无限画廊（洗牌不重复） ════════ */
+  function mulberry32(a) { return function () { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function shuffledRange(n, seed) { const rnd = mulberry32(seed); const a = Array.from({ length: n }, (_, i) => i); for (let i = n - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); const tmp = a[i]; a[i] = a[j]; a[j] = tmp; } return a; }
+
+  function buildGallery() {
+    const n = deck.length; if (!n) return;
+    const vw = innerWidth, vh = innerHeight, gap = 18;
+    const cardW = CARD_W, cardH = cardW * 9 / 16;
+    const cellW = cardW + gap, cellH = cardH + gap;
+    const visCols = Math.ceil(vw / cellW), visRows = Math.ceil(vh / cellH);
+    // tile：宽够铺满；行数取「够铺满」与「装下全部 N 页」的较大者 → 看完所有页才重复
+    const tileCols = visCols + 1;
+    const tileRows = Math.max(visRows + 1, Math.ceil(n / tileCols));
+    const tileCells = tileCols * tileRows;
+    const perm = shuffledRange(n, 0x9e3779b9);        // 洗牌一次，打散规则感
+    const tilePage = new Array(tileCells);
+    for (let k = 0; k < tileCells; k++) tilePage[k] = perm[k % n];
+
+    const cols = tileCols * 2, rows = tileRows * 2;    // 2× tile 保证无缝漂移
+    driftLayer.style.setProperty('--dx', (tileCols * cellW) + 'px');
+    driftLayer.style.setProperty('--dy', (tileRows * cellH) + 'px');
+    gallery.style.gridTemplateColumns = 'repeat(' + cols + ', ' + cardW + 'px)';
+    gallery.style.gridAutoRows = cardH + 'px';
+    gallery.style.gap = gap + 'px';
+    gallery.innerHTML = '';
+    const scale = cardW / W;
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const idx = tilePage[(r % tileRows) * tileCols + (c % tileCols)];
+        gallery.appendChild(makeCard(idx, scale, true));  // 画廊 = 图片缩略图（性能）
+      }
+    }
+  }
+
+  /* ════════ 演示 ════════ */
+  function fit() {
+    const s = Math.min(innerWidth / W, innerHeight / H);
+    stage.style.transform = 'translate(' + ((innerWidth - W * s) / 2) + 'px, ' + ((innerHeight - H * s) / 2) + 'px) scale(' + s + ')';
+    stage.style.top = '0'; stage.style.left = '0';
+  }
+  function show(idx) {
+    if (idx < 0 || idx >= deck.length) return;
+    const fromIdx = current;
+    current = idx;
+    step = 0;
+    // zoom between a slide and the one marked enter:'zoom' right after it
+    const zoomIn = idx === fromIdx + 1 && deck[idx].enter === 'zoom';
+    const zoomOut = idx === fromIdx - 1 && deck[fromIdx] && deck[fromIdx].enter === 'zoom';
+    const file = deck[idx].file;
+    if (frames[liveF].getAttribute('src') !== file && wantFile !== file) {
+      wantFile = file;
+      const back = frames[1 - liveF];
+      back.onload = () => {
+        if (wantFile !== file) return;            // a newer slide was asked for meanwhile
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          const old = frames[liveF];
+          const zo = zoomIn ? 'zout' : zoomOut ? 'zback' : '', zi = zoomIn ? 'zin' : zoomOut ? 'zret' : '';
+          frames.forEach(f => f.classList.remove('zout', 'zin', 'zback', 'zret'));
+          old.classList.add('prev'); old.classList.remove('live');
+          if (zo) { old.classList.add(zo); back.classList.add(zi); }
+          back.classList.add('live'); liveF = 1 - liveF; wantFile = null;
+          if (document.activeElement === old) { old.blur(); window.focus(); }
+          setTimeout(() => { old.classList.remove('prev', zo || 'x'); back.classList.remove(zi || 'x');
+            if (!old.classList.contains('live')) old.src = 'about:blank'; }, zo ? 950 : 400);
+        }));
+      };
+      back.src = file;
+    }
+    counter.innerHTML = (idx + 1) + ' / ' + deck.length + ' <span class="label">' + (deck[idx].label || '') + '</span>';
+    document.getElementById('progress').style.width = ((idx + 1) / deck.length * 100) + '%';
+    document.getElementById('notes').innerHTML = '<b>' + (idx + 1) + ' · ' + (deck[idx].section || '') + ' · ' + (deck[idx].label || '') + '</b>' + (deck[idx].notes || '').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    try { localStorage.setItem(storageKey, String(idx)); } catch (_) {}
+    if (location.hash !== '#' + (idx + 1)) history.replaceState(null, '', '#' + (idx + 1));
+  }
+  // in-slide steps: a slide with "steps": N gets N extra Next presses before the deck moves on
+  let step = 0;
+  function liveFrame() { return frames.find(f => f.classList.contains('live')) || frames[0]; }
+  function sendStep() { try { liveFrame().contentWindow.postMessage({ deckStep: step }, '*'); } catch (_) {} }
+  function next() {
+    const n = deck[current].steps || 0;
+    if (step < n) { step++; sendStep(); return; }
+    show(Math.min(current + 1, deck.length - 1));
+  }
+  function prev() {
+    if (step > 0) { step--; sendStep(); return; }
+    show(Math.max(current - 1, 0));
+  }
+
+  function handleKey(e) {
+    if (e.key === 'n' || e.key === 'N') { document.body.classList.toggle('notes'); return; }
+    if (e.key === 'g' || e.key === 'G') { setMode(document.body.getAttribute('data-mode') === 'present' ? 'overview' : 'present'); return; }
+    if (e.key === 'f' || e.key === 'F') { if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {}); else document.exitFullscreen(); return; }
+    if (e.key === 'Escape') { if (document.body.getAttribute('data-mode') === 'present') { e.preventDefault(); setMode('overview'); } return; }
+    if (e.key === 'p' || e.key === 'P') { window.print(); return; }
+    if (e.key === 'l' || e.key === 'L') { const zh = /index-zh\.html$/.test(location.pathname); location.href = (zh ? 'index.html' : 'index-zh.html') + '#' + (current + 1); return; }
+    if (document.body.getAttribute('data-mode') !== 'present') return;
+    switch (e.key) {
+      case 'ArrowRight': case ' ': case 'PageDown': e.preventDefault(); next(); break;
+      case 'ArrowLeft': case 'PageUp': e.preventDefault(); prev(); break;
+      case 'Home': e.preventDefault(); show(0); break;
+      case 'End': e.preventDefault(); show(deck.length - 1); break;
+      default: if (e.key >= '1' && e.key <= '9') { const i = parseInt(e.key, 10) - 1; if (i < deck.length) { e.preventDefault(); show(i); } }
+    }
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    handleKey(e);
+  });
+  window.addEventListener('message', (m) => { if (m.data && m.data.deckKey) handleKey({ key: m.data.deckKey, preventDefault() {} }); });
+  let idleT; const wake = () => { document.body.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => document.body.classList.add('idle'), 2200); };
+  window.addEventListener('mousemove', wake); wake();
+  document.getElementById('navL').addEventListener('click', prev);
+  document.getElementById('navR').addEventListener('click', next);
+  document.getElementById('startBtn').addEventListener('click', () => setMode('present'));
+  document.getElementById('overviewBtn').addEventListener('click', () => setMode('overview'));
+  let rT;
+  window.addEventListener('resize', () => { fit(); clearTimeout(rT); rT = setTimeout(() => { if (document.body.getAttribute('data-mode') === 'overview') { if (OVERVIEW === 'gallery') buildGallery(); else layoutWall(); } }, 140); });
+  document.getElementById('ov-grid').addEventListener('scroll', updateScrollOrigin, { passive: true });
+  window.addEventListener('hashchange', () => { const m = location.hash.match(/^#(\d+)$/); if (m) { current = parseInt(m[1], 10) - 1; setMode('present'); } });
+
+  const hashMatch = location.hash.match(/^#(\d+)$/);
+  if (hashMatch) current = Math.min(parseInt(hashMatch[1], 10) - 1, deck.length - 1);
+  else { try { const v = parseInt(localStorage.getItem(storageKey), 10); if (!isNaN(v) && v >= 0 && v < deck.length) current = v; } catch (_) {} }
+
+  fit(); show(current);
+  if (hashMatch) setMode('present'); else setMode('overview');
+
+
+
+  window.addEventListener('beforeprint', () => { printStack.innerHTML = ''; deck.forEach(item => { const f = document.createElement('iframe'); f.src = item.file; printStack.appendChild(f); }); printStack.style.display = 'block'; stage.style.display = 'none'; });
+  window.addEventListener('afterprint', () => { printStack.innerHTML = ''; printStack.style.display = 'none'; stage.style.display = ''; });
+})();
+</script>
+</body>
+</html>

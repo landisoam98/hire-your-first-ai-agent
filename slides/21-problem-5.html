@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Problem 5: cash comes in late · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.h1 { margin-top: 18px; }
+.tl { position:relative; height: 360px; margin-top: 70px; }
+.tl .rail { position:absolute; left: 60px; right: 284px; top: 20px; height: 6px; border-radius: 3px; background: rgba(242,251,247,.1); overflow:hidden; }
+.tl .rail b { position:absolute; inset: 0; width: 0; background: linear-gradient(90deg, #00F5A9, #FFB547 40%, #FF8A5B); animation: rl 2.4s cubic-bezier(.4,0,.2,1) .7s forwards; }
+@keyframes rl { to { width: 100%; } }
+.cs { position:absolute; top: 0; width: 0; }
+.cs i { position:absolute; left: -23px; top: 0; width: 46px; height: 46px; border-radius: 50%; background: var(--night); border: 5px solid #FFB547; }
+.cs:first-of-type i { border-color: var(--neon); }
+.cs i.end { border-color: #FF8A5B; background: #FF8A5B; box-shadow: 0 0 40px rgba(255,138,91,.6); }
+.cs b { position:absolute; left: -23px; top: 70px; font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--neon); white-space: nowrap; }
+.cs h3 { position:absolute; left: -23px; top: 108px; width: 330px; font-size: 38px; font-weight: 700; letter-spacing: -.02em; }
+.cs span { position:absolute; left: -23px; top: 200px; white-space: nowrap; font-size: 24px; font-weight: 600; color: #FFB08F; background: rgba(255,138,91,.12); padding: 7px 13px; border-radius: 10px; }
+.wait { font-size: 40px; font-weight: 700; margin-top: 10px; }
+.wait em { font-style: normal; color: #FFB08F; }
+</style>
+</head>
+<body class="dark" data-section="The problem" data-sparks="9,1" style="--gx:80%;--gy:40%;--mx:80%;--my:40%">
+<main class="slide">
+<div class="prob f" style="--d:0s">PROBLEM 5 OF 5<i><b></b><b></b><b></b><b></b><b class="on"></b></i><span>Cash comes in late</span></div>
+<h1 class="h1 r" style="--d:.1s">Delivered today. Paid 2 months later.</h1>
+<div class="tl"><div class="rail"><b></b></div><div class="cs pop" style="left:60px;--d:0.80s"><i></i><b>DAY 0</b><h3>Goods delivered</h3></div><div class="cs pop" style="left:500px;--d:1.30s"><i></i><b>DAY 3</b><h3>Invoice typed and sent</h3><span>Paperwork piles up</span></div><div class="cs pop" style="left:940px;--d:1.80s"><i></i><b>DAY 33</b><h3>Payment due</h3><span>Customer forgets</span></div><div class="cs pop" style="left:1380px;--d:2.30s"><i class="end"></i><b>DAY 63</b><h3>Money in the bank</h3><span>Slip lost in the chat</span></div></div>
+<p class="wait r" style="--d:3.2s">Your money waits <em>63 days</em>, and you pay salaries in the meantime.</p>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

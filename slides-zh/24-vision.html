@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>我们的愿景 · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.bg .tiles { display: none; }
+.bg .glow { width: 1300px; height: 900px; opacity: .45; animation: none; }
+.bg .glow.b { display: none; }
+body { background: #010C0A; }
+#globe { position:absolute; left: 1135px; top: 0; width: 900px; height: 820px; z-index: 0; pointer-events:none; }
+#floor { position:absolute; left: 0; top: 695px; width: 1920px; height: 385px; z-index: 0; pointer-events:none; }
+.horizon { position:absolute; left: 0; right: 0; top: 694px; height: 2px; z-index: 0; background: linear-gradient(90deg, transparent, rgba(0,245,169,.9) 25%, #F2FBF7 80%, rgba(0,245,169,.9) 90%, transparent); box-shadow: 0 0 40px 8px rgba(0,245,169,.35); transform: scaleX(0); animation: grow 1.6s var(--ease) .4s forwards; }
+.dawn { position:absolute; left: 1135px; width: 900px; top: 560px; height: 280px; z-index: 0; background: radial-gradient(50% 50% at 50% 50%, rgba(0,245,169,.32), transparent 70%); opacity: 0; animation: fadein 2s ease 1.2s forwards; }
+@keyframes grow { to { transform: scaleX(1); } }
+@keyframes fadein { to { opacity: 1; } }
+.slide { padding-top: 120px; }
+.kicker { font-size: 24px; letter-spacing: .3em; color: var(--neon); display:flex; align-items:center; gap: 18px; }
+.kicker::after { content:""; width: 120px; height: 2px; background: linear-gradient(90deg, var(--neon), transparent); }
+.vh { position:relative; z-index: 1; font-size: 132px; line-height: 1.02; font-weight: 650; letter-spacing: -.048em; margin-top: 36px; }
+.vh .w { display:inline-block; overflow:hidden; vertical-align: bottom; padding-bottom: .08em; margin-bottom: -.08em; }
+.vh .w i { display:inline-block; font-style: normal; transform: translateY(108%); animation: up 1.1s var(--ease) forwards; animation-delay: var(--d); }
+.vh .w i:not(.n) { background: linear-gradient(105deg, #F2FBF7 42%, #00F5A9 50%, #F2FBF7 58%) 100% 0 / 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: up 1.1s var(--ease) forwards, sheen 2.2s ease-in-out forwards; animation-delay: var(--d), 2.6s; }
+@keyframes sheen { to { background-position: -50% 0; } }
+.vh .w i.n { color: var(--neon); font-variant-ligatures: none; }
+@keyframes up { to { transform: none; } }
+.say { position:absolute; left: 128px; top: 744px; max-width: 1180px; font-size: 34px; line-height: 1.42; color: var(--on-dark-2); z-index: 1; }
+.say b { color: var(--on-dark); font-weight: 650; }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="dark" data-section="SuDu AI" data-sparks="none" style="--gx:78%;--gy:62%">
+<main class="slide">
+<canvas id="floor"></canvas><div class="dawn"></div><div class="horizon"></div>
+<canvas id="globe"></canvas>
+<div class="kicker f" style="--d:.1s">我们的愿景</div>
+<h1 class="vh"><span class="w"><i class="" style="--d:0.30s">打造</i></span> <span class="w"><i class="" style="--d:0.39s"></i></span> <span class="w"><i class="" style="--d:0.48s"></i></span> <span class="w"><i class="" style="--d:0.57s">一个完全</i></span><br><span class="w"><i class="" style="--d:0.66s">自主的</i></span> <span class="w"><i class="" style="--d:0.75s">AI</i></span> <span class="w"><i class="" style="--d:0.84s">，让它</i></span><br><span class="w"><i class="n" style="--d:1.00s">亲自运营</i></span> <span class="w"><i class="n" style="--d:1.11s"></i></span> <span class="w"><i class="n" style="--d:1.22s">一家公司。</i></span></h1>
+<p class="say r" style="--d:1.9s"><b>SuDu AI 就是为此而生的 AI 原生 ERP：</b> 1 个系统管所有运作，AI 负责决策和执行，机器人负责体力活。</p>
+
+<script>
+(function () {
+  const STATIC = navigator.webdriver || location.hash === '#static' || document.documentElement.classList.contains('static');
+  const t0 = performance.now();
+
+  /* ---------------- the globe: the business running on its surface ---------------- */
+  const cv = document.getElementById('globe'), ctx = cv.getContext('2d');
+  const W = 900, H = 820, DPR = 2;
+  cv.width = W * DPR; cv.height = H * DPR; ctx.scale(DPR, DPR);
+  const cx = 450, cy = 405, R = 270, TILT = -0.32, FOV = 1100;
+  const rad = d => d * Math.PI / 180;
+  const sph = (lat, lon) => [Math.cos(rad(lat)) * Math.sin(rad(lon)), -Math.sin(rad(lat)), Math.cos(rad(lat)) * Math.cos(rad(lon))];
+  const P = [], N = 1100, ga = Math.PI * (3 - Math.sqrt(5));
+  for (let i = 0; i < N; i++) { const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), t = ga * i; P.push([Math.cos(t) * r, y, Math.sin(t) * r]); }
+  // main cycle (big nodes) plus the jobs around it (smaller nodes)
+  const MAIN = [['ORDER', 18, 0], ['BUY', -14, 46], ['RECEIVE', 30, 92], ['STORE', -26, 138], ['MAKE', 14, 184], ['SHIP', -32, 228], ['BILL', 26, 272], ['COLLECT', -8, 318]];
+  const MORE = [['QUOTE', 46, 338], ['CREDIT CHECK', 50, 22], ['APPROVE', -12, 18], ['PAY SUPPLIER', -52, 52], ['REORDER', 22, 56],
+    ['QC CHECK', 58, 100], ['PUT AWAY', -2, 112], ['COUNT', -56, 120], ['PICK', 4, 158], ['PLAN', 48, 170], ['ISSUE', -54, 182],
+    ['PACK', -8, 206], ['ROBOTS', 44, 220], ['DELIVER', -56, 250], ['REPORT', 54, 270], ['BOOKS', -40, 290], ['REMIND', 16, 342]];
+  const EXTRA = ['PRICE LIST','PROMOTION','REPEAT ORDER','WHATSAPP ORDER','SALES ORDER','DELIVERY ORDER','PROOF OF DELIVERY','RETURN','CREDIT NOTE',
+    'E-INVOICE','RECEIPT','BANK SLIP','STATEMENT','AGEING','CASH FLOW','PAYMENT VOUCHER','SUPPLIER INVOICE','PURCHASE REQUEST','PURCHASE ORDER','GRN',
+    'SCAN','LABEL','BIN','BATCH','EXPIRY','FIFO','TRANSFER','CYCLE COUNT','STOCK ALERT','LOAD TRUCK','ROUTE','DISPATCH',
+    'FORECAST','MRP','BOM','WORK ORDER','MACHINE','OEE','SCRAP','COSTING','RAW MATERIAL','FINISHED GOODS',
+    'DASHBOARD','AUDIT TRAIL','APPROVAL RULE','AMR','ROBOT ARM','DRONE COUNT'];
+  const NODES = MAIN.map(([n, la, lo]) => ({ n, v: sph(la, lo), main: true })).concat(MORE.map(([n, la, lo]) => ({ n, v: sph(la, lo), main: false })));
+  {
+    const ang = (p, q) => Math.acos(Math.min(1, p[0]*q[0] + p[1]*q[1] + p[2]*q[2]));
+    const M = 110, cand = [];
+    for (let i = 0; i < M; i++) {
+      const y = 1 - ((i + 0.5) / M) * 2, r = Math.sqrt(1 - y * y), th = ga * i + 0.9, v = [Math.cos(th) * r, y, Math.sin(th) * r];
+      if (Math.abs(y) > 0.94) continue;
+      if (NODES.some(o => ang(o.v, v) < (o.main ? 0.2 : 0.16))) continue;
+      cand.push(v);
+    }
+    EXTRA.forEach((n, k) => NODES.push({ n, v: cand[Math.floor(k * cand.length / EXTRA.length)], main: false, small: true }));
+  }
+  const byName = Object.fromEntries(NODES.map(o => [o.n, o]));
+  // links: the main cycle, plus every node tied to its two nearest neighbours
+  const key = (a, b) => [a, b].sort().join('|'), seen = new Set(), LINKS = [];
+  const add = (a, b, main) => { const k = key(a, b); if (a === b || seen.has(k)) return; seen.add(k); LINKS.push({ a: byName[a].v, b: byName[b].v, main, ph: (LINKS.length * 0.37) % 1, sp: main ? 0.55 : 0.32 + (LINKS.length % 5) * 0.06 }); };
+  MAIN.forEach((m, i) => add(m[0], MAIN[(i + 1) % MAIN.length][0], true));
+  NODES.forEach(o => {
+    NODES.filter(q => q !== o).map(q => ({ q, d: Math.acos(Math.min(1, o.v[0]*q.v[0] + o.v[1]*q.v[1] + o.v[2]*q.v[2])) }))
+      .sort((x, y) => x.d - y.d).slice(0, 2).forEach(({ q }) => add(o.n, q.n, false));
+  });
+  const slerp = (a, b, t) => { const d = Math.acos(Math.min(1, a[0]*b[0]+a[1]*b[1]+a[2]*b[2])), s = Math.sin(d) || 1e-6;
+    const k1 = Math.sin((1 - t) * d) / s, k2 = Math.sin(t * d) / s; return [a[0]*k1+b[0]*k2, a[1]*k1+b[1]*k2, a[2]*k1+b[2]*k2]; };
+  function proj(v, rot, scale, lift) {
+    let [x, y, z] = v; const c = Math.cos(rot), s = Math.sin(rot);
+    [x, z] = [x * c + z * s, -x * s + z * c];
+    const ct = Math.cos(TILT), st = Math.sin(TILT); [y, z] = [y * ct - z * st, y * st + z * ct];
+    const r = R * scale, k = FOV / (FOV - z * r);
+    return { x: cx + x * r * k, y: cy + lift + y * r * k, z, k };
+  }
+  const arcPt = (a, b, u, hgt, rot, scale, lift) => { const v = slerp(a, b, u), h = 1 + hgt * Math.sin(Math.PI * u); return proj([v[0]*h, v[1]*h, v[2]*h], rot, scale, lift); };
+  function drawGlobe(t) {
+    const intro = STATIC ? 1 : Math.min(1, Math.max(0, (t - 0.7) / 2.2)), e = 1 - Math.pow(1 - intro, 3);
+    const scale = 0.7 + 0.3 * e, lift = (1 - e) * 160, rot = t * 0.16 + 0.4;
+    ctx.clearRect(0, 0, W, H); ctx.globalAlpha = e;
+    let g = ctx.createRadialGradient(cx, cy + lift, 0, cx, cy + lift, R * scale * 1.25);
+    g.addColorStop(0, 'rgba(0,245,169,.22)'); g.addColorStop(.62, 'rgba(0,165,122,.10)'); g.addColorStop(1, 'rgba(0,245,169,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy + lift, R * scale * 1.25, 0, 7); ctx.fill();
+    ctx.strokeStyle = 'rgba(0,245,169,.35)'; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.arc(cx, cy + lift, R * scale * 1.003, 0, 7); ctx.stroke();
+    [[1.22, 0.3, 0.5, 0], [1.36, 0.2, -0.35, 2.1]].forEach(([m, flat, ang, ph], i) => {
+      const rx = R * scale * m, ry = rx * flat;
+      ctx.save(); ctx.translate(cx, cy + lift); ctx.rotate(ang);
+      ctx.strokeStyle = 'rgba(242,251,247,.16)'; ctx.setLineDash([3, 9]); ctx.beginPath(); ctx.ellipse(0, 0, rx, ry, 0, 0, 7); ctx.stroke(); ctx.setLineDash([]);
+      const a = t * (0.5 - i * 0.18) + ph; ctx.fillStyle = '#00F5A9';
+      ctx.beginPath(); ctx.arc(Math.cos(a) * rx, Math.sin(a) * ry, 5 - i, 0, 7); ctx.fill(); ctx.restore();
+    });
+    for (const v of P) {
+      const p = proj(v, rot, scale, lift), f = (p.z + 1) / 2;
+      ctx.fillStyle = 'rgba(0,245,169,' + (0.05 + 0.4 * f * f).toFixed(3) + ')';
+      ctx.beginPath(); ctx.arc(p.x, p.y, (0.6 + 1.2 * f) * p.k, 0, 7); ctx.fill();
+    }
+    // arcs: main cycle bright and high, the rest finer and lower
+    LINKS.forEach(L => {
+      const hgt = L.main ? 0.08 : 0.04, steps = L.main ? 22 : 10; let prev = null;
+      ctx.lineWidth = L.main ? 2.2 : 1.5;
+      for (let s = 0; s <= steps; s++) {
+        const p = arcPt(L.a, L.b, s / steps, hgt, rot, scale, lift);
+        if (prev) { const f = Math.max(0, (p.z + 1) / 2) ** 2;
+          ctx.strokeStyle = 'rgba(0,245,169,' + ((L.main ? 0.08 : 0.07) + (L.main ? 0.5 : 0.48) * f).toFixed(3) + ')';
+          ctx.beginPath(); ctx.moveTo(prev.x, prev.y); ctx.lineTo(p.x, p.y); ctx.stroke(); }
+        prev = p;
+      }
+      const p = arcPt(L.a, L.b, (t * L.sp + L.ph) % 1, hgt, rot, scale, lift);
+      if (p.z > -0.2) { ctx.fillStyle = L.main ? '#F2FBF7' : 'rgba(242,251,247,.8)'; ctx.beginPath(); ctx.arc(p.x, p.y, (L.main ? 4.5 : 3) * p.k, 0, 7); ctx.fill(); }
+    });
+    // nodes, then labels (front side only, no overlapping labels)
+    const boxes = [], hit = (x, y, w, h) => boxes.some(q => x < q.x + q.w && x + w > q.x && y < q.y + q.h && y + h > q.y);
+    const shown = NODES.map(o => ({ o, p: proj(o.v, rot, scale, lift) })).filter(({ p }) => p.z > -0.15)
+      .sort((a, b) => (b.o.main - a.o.main) || (b.p.z - a.p.z));
+    shown.forEach(({ o, p }) => {
+      const f = Math.max(0, p.z), r0 = o.main ? 7 : o.small ? 4 : 4.8;
+      if (!o.main) { ctx.fillStyle = 'rgba(0,245,169,' + (0.12 + 0.18 * f).toFixed(2) + ')'; ctx.beginPath(); ctx.arc(p.x, p.y, r0 * 2.2 * p.k, 0, 7); ctx.fill(); }
+      ctx.fillStyle = o.main ? '#00F5A9' : 'rgba(0,245,169,' + (0.6 + 0.4 * f).toFixed(2) + ')';
+      ctx.beginPath(); ctx.arc(p.x, p.y, r0 * p.k, 0, 7); ctx.fill();
+      if (o.main) {
+        ctx.strokeStyle = 'rgba(0,245,169,' + (0.5 * f).toFixed(2) + ')'; ctx.lineWidth = 1.5;
+        const ring = 12 + 6 * ((t * 1.2 + o.v[0] + 2) % 1); ctx.beginPath(); ctx.arc(p.x, p.y, ring * p.k, 0, 7); ctx.stroke();
+      }
+      if (!(o.main || f > (o.small ? 0.62 : 0.4))) return;
+      ctx.font = o.main ? '600 19px "JetBrains Mono", Menlo, monospace' : '500 16px "JetBrains Mono", Menlo, monospace'; ctx.textBaseline = 'middle';
+      const tw = ctx.measureText(o.n).width, gap = o.main ? 16 : 10, lx = p.x + gap + tw > 770 ? p.x - gap - tw : p.x + gap, ly = p.y - gap;
+      if (!o.main && hit(lx - 4, ly - 11, tw + 8, 22)) return;
+      boxes.push({ x: lx - 4, y: ly - 11, w: tw + 8, h: 22 });
+      const th = o.small ? 0.62 : 0.4;
+      ctx.fillStyle = o.main ? 'rgba(242,251,247,' + Math.min(1, 0.25 + f).toFixed(2) + ')' : 'rgba(169,196,186,' + Math.min(1, (f - th) * 3).toFixed(2) + ')';
+      ctx.fillText(o.n, lx, ly);
+    });
+    ctx.globalAlpha = 1;
+  }
+
+  /* ---------------- the floor: perspective grid drawn on canvas (no CSS 3D) ---------------- */
+  const fv = document.getElementById('floor'), fx = fv.getContext('2d');
+  const FW = 1920, FH = 385; fv.width = FW * DPR; fv.height = FH * DPR; fx.scale(DPR, DPR);
+  const F = 900, CAM = 0.684, GAP = 0.12, VX = 960;   // focal length, camera height, grid spacing, vanishing x
+  function drawFloor(t) {
+    const fin = STATIC ? 1 : Math.min(1, Math.max(0, (t - 0.6) / 2));
+    fx.clearRect(0, 0, FW, FH); if (!fin) return;
+    const off = (t * 0.06) % GAP;                      // the grid slides toward us
+    for (let k = 0; k < 110; k++) {
+      const Z = 1.55 + k * GAP - off; if (Z < 1.4) continue;
+      const y = F * CAM / Z; if (y < 2) continue;
+      const a = Math.min(1, (y / FH) * 1.7) * 0.8 * fin, sz = Math.max(1, 6.2 / Z);
+      const stepX = Z > 7 ? GAP * 2 : GAP, maxX = (VX + 40) * Z / F;
+      fx.fillStyle = 'rgba(0,245,169,' + a.toFixed(3) + ')';
+      for (let X = -Math.floor(maxX / stepX) * stepX; X <= maxX; X += stepX) fx.fillRect(VX + F * X / Z - sz / 2, y - sz / 4, sz, sz / 2);
+    }
+    // lanes converging on the horizon
+    fx.lineWidth = 1.5;
+    for (let i = -10; i <= 10; i++) {
+      const X = i * 0.96, xn = VX + F * X / 1.4;
+      const grd = fx.createLinearGradient(0, FH, 0, 0);
+      grd.addColorStop(0, 'rgba(0,245,169,' + (0.28 * fin).toFixed(2) + ')'); grd.addColorStop(1, 'rgba(0,245,169,0)');
+      fx.strokeStyle = grd; fx.beginPath(); fx.moveTo(xn, F * CAM / 1.4); fx.lineTo(VX, 0); fx.stroke();
+    }
+    // light beams rushing toward the viewer
+    [0, 0.5].forEach(ph => {
+      const u = ((t / 3.6) + ph) % 1, Z = 14 / (1 + u * 9), y = F * CAM / Z, th = Math.max(2, 90 / Z);
+      const grd = fx.createLinearGradient(0, y - th, 0, y + th);
+      grd.addColorStop(0, 'rgba(0,245,169,0)'); grd.addColorStop(.5, 'rgba(0,245,169,' + (0.28 * fin * Math.min(1, u * 4)).toFixed(3) + ')'); grd.addColorStop(1, 'rgba(0,245,169,0)');
+      fx.fillStyle = grd; fx.fillRect(0, y - th, FW, th * 2);
+    });
+  }
+
+  function frame(now) {
+    const t = STATIC ? 9 : (now - t0) / 1000;
+    drawGlobe(t); drawFloor(t);
+    if (!STATIC) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  /* ---------------- "runs a company." decodes from machine characters ---------------- */
+  if (!STATIC) {
+    const GL = '01<>/#*+=∆□◇';
+    const els = [...document.querySelectorAll('.vh .n')], fins = els.map(el => el.textContent);
+    els.forEach(el => { el.style.visibility = 'hidden'; });
+    document.fonts.ready.then(() => els.forEach((el, k) => {
+      const fin = fins[k];
+      el.style.width = el.getBoundingClientRect().width + 'px';   // measured with the real font: no jitter while decoding
+      el.style.whiteSpace = 'nowrap'; el.style.visibility = '';
+      el.textContent = fin.replace(/\S/g, () => GL[Math.random() * GL.length | 0]);
+      setTimeout(() => {
+        const t1 = performance.now();
+        (function tick(n) {
+          const p = Math.min(1, (n - t1) / 900), keep = Math.floor(p * fin.length);
+          el.textContent = fin.split('').map((c, i) => i < keep ? c : GL[Math.random() * GL.length | 0]).join('');
+          if (p < 1) requestAnimationFrame(tick); else { el.textContent = fin; el.style.width = ''; }
+        })(t1);
+      }, 1300 + k * 160);
+    }));
+  }
+})();
+</script>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

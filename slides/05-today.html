@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Today at a glance · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.slide { padding-top: 80px; }
+.wrap { flex:1; display:grid; grid-template-columns: 640px 1fr; gap: 90px; min-height: 0; }
+.lf { display:flex; flex-direction:column; }
+.kicker { font-size: 22px; }
+.h1 { font-size: 84px; line-height: 1.02; margin-top: 16px; }
+.lead { font-size: 30px; line-height: 1.4; margin-top: 22px; }
+.lead b { color: var(--ink); }
+.tk { margin-top: auto; margin-bottom: 40px; padding: 26px 30px; border-radius: 26px; background: var(--ink); color: var(--on-dark); box-shadow: 0 30px 60px -36px rgba(2,34,31,.7); }
+.tk h3 { font-size: 30px; font-weight: 800; letter-spacing: -.01em; }
+.tk h3 em { font-style: normal; color: var(--neon); }
+.tk ul { list-style:none; display:grid; gap: 14px; margin-top: 18px; }
+.tk li { display:flex; gap: 16px; align-items:center; }
+.tk li i { flex:none; width: 44px; height: 44px; border-radius: 12px; background: rgba(0,245,169,.14); color: var(--neon); display:grid; place-items:center; font-style: normal; font-weight: 800; font-size: 21px; }
+.tk li b { display:block; font-size: 26px; font-weight: 750; }
+.tk li span { display:block; font-size: 21px; color: var(--on-dark-2); }
+.tl { position:relative; display:flex; flex-direction:column; justify-content:space-between; padding: 6px 0 46px; }
+.tl .ln { position:absolute; left: 39px; top: 46px; bottom: 92px; width: 3px; background: rgba(2,34,31,.1); border-radius: 2px; overflow:hidden; }
+.tl .ln::after { content:""; position:absolute; inset: 0; background: linear-gradient(180deg, var(--emerald), var(--neon)); transform-origin: top; animation: tlg 1.8s cubic-bezier(.65,0,.2,1) .4s both; }
+@keyframes tlg { from { transform: scaleY(0); } }
+.ag { position:relative; display:grid; grid-template-columns: 80px 1fr; gap: 28px; align-items:center; opacity: 0; animation: agin .7s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: var(--d); }
+@keyframes agin { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: none; } }
+.ag .dot { width: 80px; height: 80px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--emerald), 0 14px 26px -16px rgba(2,34,31,.5); display:grid; place-items:center; color: var(--green); position:relative; z-index:1; }
+.ag .tx { padding: 18px 28px; border-radius: 22px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 18px 32px -26px rgba(2,34,31,.45); }
+.ag small { font-family: var(--mono); font-size: 17px; font-weight: 700; letter-spacing: .14em; color: var(--green); }
+.ag b { display:block; font-size: 38px; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; margin-top: 2px; }
+.ag span { display:block; font-size: 25px; line-height: 1.35; color: var(--ink-2); margin-top: 4px; }
+</style>
+</head>
+<body class="light" data-section="Speaker intro" data-sparks="none" style="--gx:85%;--gy:35%;--mx:85%;--my:35%">
+<main class="slide">
+<div class="wrap">
+  <div class="lf">
+    <div class="kicker r" style="--d:.05s">Today &middot; 2:00 to 5:00 pm</div>
+    <h1 class="h1 r" style="--d:.15s">Hire your first AI Agent, in 5 parts</h1>
+    <p class="lead r" style="--d:.3s">No tech talk. First what AI really is, then your problems, then the AI at work. Then <b>you plan your own first step</b>.</p>
+    <div class="tk r" style="--d:1.5s"><h3>You leave with <em>3 things</em></h3><ul><li><i>1</i><span><b>Your own number</b>what manual work costs you a year</span></li><li><i>2</i><span><b>Your readiness score</b>and whether you need WMS or MES</span></li><li><i>3</i><span><b>Your first AI job</b>written down, ready to run</span></li></ul></div>
+  </div>
+  <div class="tl"><div class="ln"></div><div class="ag" style="--d:0.55s"><div class="dot"><i><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 10h.01M9 15c1.5 1.5 4.5 1.5 6 0"/></svg></i></div><div class="tx"><small>PART 1</small><b>What is an AI Agent?</b><span>How an LLM works, why AI Agents were invented, what they need</span></div></div><div class="ag" style="--d:0.71s"><div class="dot"><i><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/></svg></i></div><div class="tx"><small>PART 2</small><b>The problem</b><span>5 problems every office has, and what they cost you</span></div></div><div class="ag" style="--d:0.87s"><div class="dot"><i><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></i></div><div class="tx"><small>PART 3</small><b>SuDu AI</b><span>The system, then 6 AI Agents at work, live</span></div></div><div class="ag" style="--d:1.03s"><div class="dot"><i><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg></i></div><div class="tx"><small>PART 4</small><b>Workshop</b><span>Score your company and write your first AI job</span></div></div><div class="ag" style="--d:1.19s"><div class="dot"><i><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v3H9z"/><path d="M7 5H5v16h14V5h-2"/><path d="M9 13l2 2 4-4"/></svg></i></div><div class="tx"><small>PART 5</small><b>Diagnosis</b><span>Where to start, what it saves you, and your next step</span></div></div></div>
+</div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

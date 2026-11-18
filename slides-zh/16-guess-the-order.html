@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>猜猜这张订单 · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.h1 { margin-top: 18px; }
+.chat { position:relative; margin-top: 110px; width: 1664px; }
+.bub { position:absolute; left: 0; top: -22px; bottom: -64px; width: 640px; border-radius: 30px 30px 30px 8px; background: #fff; box-shadow: 0 40px 80px -30px rgba(0,0,0,.6); }
+.bub .meta { position:absolute; right: 26px; bottom: 18px; font-family: var(--mono); font-size: 20px; color: var(--ink-3); }
+.who { position:absolute; left: 0; top: -70px; display:flex; align-items:center; gap: 12px; font-size: 22px; color: var(--on-dark-2); }
+.who b { width: 34px; height: 34px; border-radius: 50%; background: #25D366; display:grid; place-items:center; }
+.who svg { width: 20px; height: 20px; color: #fff; }
+.ln { position:relative; display:grid; grid-template-columns: 640px 1fr; align-items:center; min-height: 50px; }
+.ln.gap { min-height: 22px; }
+.ln .tx { padding-left: 40px; font-size: 38px; color: var(--ink); line-height: 1.2; }
+.ln.b .tx { font-weight: 700; }
+.an { display:flex; align-items:center; gap: 14px; margin-left: 30px; font-size: 30px; font-weight: 600; color: var(--on-dark);
+  opacity: 0; transform: translateX(-24px); transition: opacity .45s ease, transform .5s cubic-bezier(.2,.8,.2,1); transition-delay: calc(var(--i) * .35s); }
+.an::before { content:""; width: 60px; height: 2px; background: #FF8A5B; margin-left: -30px; }
+.an i { font-style: normal; flex:none; width: 40px; height: 40px; border-radius: 50%; background: #FF8A5B; color: #1A0F0A; display:grid; place-items:center; font-weight: 800; }
+body[data-step="1"] .an { opacity: 1; transform: none; }
+.ans { position:absolute; right: 128px; bottom: 130px; max-width: 760px; text-align:right; font-size: 34px; font-weight: 700; color: #FFB08F; opacity: 0; transition: opacity .6s ease 2s; }
+body[data-step="1"] .ans { opacity: 1; }
+.boss { position:absolute; right: 128px; top: 110px; width: 230px; height: 230px; transition: opacity .4s; }
+body[data-step="1"] .boss { opacity: 0; }
+
+.pow { position:absolute; left: 128px; right: 128px; top: 270px; z-index: 5; opacity: 0; transform: translateY(40px) scale(.97); pointer-events: none;
+  transition: opacity .6s ease, transform .8s cubic-bezier(.2,.8,.2,1); display:grid; grid-template-columns: 1fr 470px; gap: 40px; align-items:start; }
+body[data-step="2"] .pow { opacity: 1; transform: none; }
+body[data-step="2"] .chat, body[data-step="2"] .boss { visibility: hidden; }
+.po { position:relative; background: #fff; color: #111; border-radius: 10px; padding: 26px 30px 20px; font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 1.35;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 50px 90px -30px rgba(0,0,0,.7); transform: rotate(-1deg); overflow:hidden; }
+.po .wm { position:absolute; right: 30px; bottom: 90px; font-size: 110px; font-weight: 900; letter-spacing: .1em; color: rgba(200,40,40,.1); transform: rotate(-14deg); pointer-events:none; }
+.poh { display:grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 18px; }
+.po .co { font-size: 19px; }
+.po .dl { margin-top: 10px; border: 1px solid #333; padding: 8px 10px; }
+.po .mid { padding-top: 26px; }
+.po .rt { text-align:right; }
+.po .tt { text-decoration: underline; font-size: 19px; }
+.po .bc { height: 46px; margin: 10px 0 0 auto; width: 240px; background: repeating-linear-gradient(90deg, #111 0 2px, #fff 2px 4px, #111 4px 5px, #fff 5px 8px, #111 8px 11px, #fff 11px 12px); }
+.po table { width: 100%; border-collapse: collapse; margin-top: 18px; }
+.po th, .po td { border: 1px solid #555; padding: 6px 8px; text-align:left; vertical-align: top; }
+.po th { font-weight: 600; background: #f3f3f3; }
+.po .n { text-align:right; }
+.po small { color: #555; }
+.po tr.it td { background: rgba(255,138,91,.0); transition: background .5s ease 1s; }
+body[data-step="2"] .po tr.it td { background: rgba(255,138,91,.18); }
+.po .tot td { font-weight: 700; border: 0; border-top: 2px solid #333; }
+.po .pof { margin-top: 18px; font-size: 14px; color: #444; }
+.poc h3 { font-size: 46px; font-weight: 700; letter-spacing: -.02em; line-height: 1.1; }
+.poc p { font-size: 28px; color: var(--on-dark-2); margin-top: 16px; line-height: 1.4; }
+.poc ul { list-style:none; margin-top: 26px; display:grid; gap: 14px; }
+.poc li { display:flex; gap: 12px; align-items:center; font-size: 27px; font-weight: 600; }
+.poc li i { font-style: normal; flex:none; width: 38px; height: 38px; border-radius: 50%; background: #FF8A5B; color: #1A0F0A; display:grid; place-items:center; font-weight: 800; }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="dark" data-section="问题" data-sparks="9,1" style="--gx:30%;--gy:60%;--mx:30%;--my:60%">
+<main class="slide">
+<div class="prob f" style="--d:0s">问题 1/5<i><b class="on"></b><b></b><b></b><b></b><b></b></i><span>订单靠人手输入</span></div>
+<h1 class="h1 r" style="--d:.1s">这位客户订了什么？</h1>
+<div class="chat pop" style="--d:.5s">
+  <div class="who"><b><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5z"/></svg></b>WhatsApp · 今天 8:12 am</div>
+  <div class="bub"><span class="meta">8:12 am ✓✓</span></div>
+  <div class="ln b"><span class="tx">Jaya Grocer KL</span></div><div class="ln gap"><span class="tx"></span></div><div class="ln"><span class="tx">中国</span><span class="an" style="--i:0"><i>?</i>是标题？品牌？还是产地？</span></div><div class="ln"><span class="tx">Bwg besar</span></div><div class="ln"><span class="tx">10kg x ---</span><span class="an" style="--i:1"><i>?</i>Bawang besar。几包 10 kg？</span></div><div class="ln gap"><span class="tx"></span></div><div class="ln"><span class="tx">Ayam cincang</span></div><div class="ln"><span class="tx">8ekor x ---</span><span class="an" style="--i:2"><i>?</i>鸡肉碎，8 只。要几份？</span></div><div class="ln gap"><span class="tx"></span></div><div class="ln"><span class="tx">25mm clear 1pc</span><span class="an" style="--i:3"><i>?</i>这是哪个货品？哪个编号？</span></div><div class="ln gap"><span class="tx"></span></div><div class="ln"><span class="tx">Pls arrange delivery be4 12pm - <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#C0392B" stroke-width="2.2" stroke-linecap="round" style="vertical-align:-6px"><circle cx="12" cy="12" r="9"/><path d="M12 6v6"/></svg></span><span class="an" style="--i:4"><i>?</i>12 pm 前。哪一天？</span></div>
+</div>
+<img class="av boss pop" style="--d:1.4s" src="../assets/av/boss-facepalm.svg" alt="一头雾水的老板">
+<div class="ans">你办公室里有人要破解这些。每张订单，每一天。</div>
+<div class="pow"><div class="po"><div class="wm">样本</div>
+  <div class="poh"><div><b class="co">Seri Mewah Hypermarket Sdn Bhd</b><div class="dl"><u>Deliver To:</u><br>Seri Mewah Hypermarket (Kepong Branch)<br>Lot 12, Jalan Kepong Baru 3,<br>52100 Kepong, Kuala Lumpur<br>Tel: 03-6250 0000</div></div>
+    <div class="mid">Supplier Code : MJF01<br>Supplier Name : Maju Jaya Foods Sdn Bhd<br>Credit Code : 30 DAYS<br>Department : Grocery</div>
+    <div class="rt"><b class="tt">Purchase Order (PO)</b><br>PO No : <b>PO26111504SMK</b><br>PO Date : 15/11/2026<br>Delivery Date : 16/11/2026<br>Cancel Date : 17/11/2026<div class="bc"></div></div></div>
+  <table><tr class="hd"><th>No.</th><th>Stock Code</th><th>Brand</th><th>Stock Description</th><th>U/M</th><th class="n">Qty</th><th class="n">Unit Cost</th><th class="n">Nett Cost</th></tr><tr class="it"><td>1</td><td>020114</td><td>MJ</td><td>Bawang Putih Kopek 1kg<br><small>9550000114012</small></td><td>BAG (10)</td><td class="n">4</td><td class="n">50.00</td><td class="n">200.00</td></tr><tr class="it"><td>2</td><td>020115</td><td>MJ</td><td>Bawang Putih Kopek 500g<br><small>9550000115019</small></td><td>PKT (1)</td><td class="n">30</td><td class="n">2.50</td><td class="n">75.00</td></tr><tr class="it"><td>3</td><td>020131</td><td>MJ</td><td>Bawang Besar China 10kg<br><small>9550000131026</small></td><td>BAG (1)</td><td class="n">6</td><td class="n">28.00</td><td class="n">168.00</td></tr>
+  <tr class="tot"><td colspan="5">Total:</td><td class="n">40</td><td></td><td class="n">443.00</td></tr></table>
+  <div class="pof">1) Quote our PO number on your DO / Invoice. 2) Loading time 9:00am to 12:30pm. 3) Goods must have at least 6 months shelf life.</div></div>
+  <div class="poc"><h3>或者，订单以 PDF Purchase Order 发来。</h3><p>整齐一些，但还是要人手重打。</p>
+    <ul><li><i>1</i>把对方的货品编号对上你的</li><li><i>2</i>核对价格和单位（一 BAG 10 包？）</li><li><i>3</i>逐行输入 SQL Account</li><li><i>4</i>下一张 PO 再来一遍</li></ul></div>
+</div>
+<script>
+(function () {
+  document.body.dataset.step = '0';
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') document.body.dataset.step = String(e.data.deckStep); });
+})();
+</script>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

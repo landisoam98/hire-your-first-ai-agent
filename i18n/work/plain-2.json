@@ -1,0 +1,110 @@
+[
+ {
+  "slide": "23",
+  "old": "'Your stock and your books in SQL Account'",
+  "new": "'Your stock and your accounts in SQL Account'",
+  "why": "\"the books\" is accounting jargon"
+ },
+ {
+  "slide": "23",
+  "old": "Your stock and your books. Your WhatsApp",
+  "new": "Your stock and your accounts. Your WhatsApp",
+  "why": "notes match on-screen change"
+ },
+ {
+  "slide": "26",
+  "old": "('Frozen, then shipped', 'Ready to use'",
+  "new": "('Locked, then released', 'Ready to use'",
+  "why": "\"shipped\" is software jargon"
+ },
+ {
+  "slide": "31",
+  "old": "'Which items is this order?'",
+  "new": "'Which items are in this order?'",
+  "why": "fix broken grammar"
+ },
+ {
+  "slide": "35",
+  "old": "'It makes the books messy'",
+  "new": "'It messes up your accounts'",
+  "why": "\"the books\" is accounting jargon"
+ },
+ {
+  "slide": "35",
+  "old": "'Running numbers, stock updates and double entry stop agreeing.'",
+  "new": "'Running numbers, stock and accounts stop matching.'",
+  "why": "drop \"double entry\" jargon"
+ },
+ {
+  "slide": "35",
+  "old": "Three: it makes the books messy. Writing straight into the database skips SQL Account's own checks: the running numbers, the stock update, the double entry. Your books stop agreeing with each other",
+  "new": "Three: it messes up your accounts. Writing straight into the database skips SQL Account's own checks: the running numbers, the stock update, the accounts. Your records stop matching each other",
+  "why": "notes match on-screen change"
+ },
+ {
+  "slide": "35",
+  "old": "'A person approves before posting'",
+  "new": "'A person approves before it is saved'",
+  "why": "\"posting\" is accounting jargon"
+ },
+ {
+  "slide": "35",
+  "old": "approves before anything is posted, every action",
+  "new": "approves before anything is saved into SQL Account, every action",
+  "why": "notes match on-screen change"
+ },
+ {
+  "slide": "36",
+  "old": "Most people shop for the roof. <b>",
+  "new": "Most people only look at the roof. <b>",
+  "why": "idiom unclear for 2nd-language readers"
+ },
+ {
+  "slide": "36",
+  "old": "\"\\\"Most people shop for the roof. The AI",
+  "new": "\"\\\"Most people only look at the roof. The AI",
+  "why": "notes match on-screen change"
+ },
+ {
+  "slide": "36",
+  "old": "'1 wrong command can freeze the server or break the books.'",
+  "new": "'1 wrong command can freeze the server or break your accounts.'",
+  "why": "\"the books\" is accounting jargon"
+ },
+ {
+  "slide": "36",
+  "old": "Without it, 1 wrong command can freeze the server or break the books.",
+  "new": "Without it, 1 wrong command can freeze the server or break your accounts.",
+  "why": "notes match on-screen change"
+ },
+ {
+  "slide": "37",
+  "old": "SQL Account is the master mind. <span",
+  "new": "SQL Account keeps the records. <span",
+  "why": "\"master mind\" is an odd idiom"
+ },
+ {
+  "slide": "37",
+  "old": "SQL Account is the master mind: it knows",
+  "new": "SQL Account keeps the records: it knows",
+  "why": "notes match on-screen change"
+ },
+ {
+  "slide": "37",
+  "old": "'Credit', 'The books'",
+  "new": "'Credit', 'Your accounts'",
+  "why": "\"the books\" is accounting jargon"
+ },
+ {
+  "slide": "37",
+  "old": "Connected through SuDu’s own sync tool, with permission control.",
+  "new": "Connected by SuDu’s own tool, with permission control.",
+  "why": "drop \"sync\" IT jargon"
+ },
+ {
+  "slide": "37",
+  "old": "SuDu connects through its own sync tool, with permission control.",
+  "new": "SuDu connects through its own tool, with permission control.",
+  "why": "notes match on-screen change"
+ }
+]

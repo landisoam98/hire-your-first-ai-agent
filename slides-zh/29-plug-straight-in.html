@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>为什么不直接接上去？ · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.slide { padding-top: 84px; }
+.top { }
+.h1 { font-size: 62px; max-width: 1600px; }
+.lead { font-size: 30px; margin-top: 12px; }
+.lead b { color: #B4451F; }
+.wire { display:flex; align-items:center; gap: 24px; margin-top: 30px; }
+.lg { display:flex; gap: 14px; }
+.lg div { display:flex; align-items:center; gap: 14px; padding: 16px 24px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px var(--line); font-size: 28px; font-weight: 700; }
+.lg img { width: 46px; height: 46px; }
+.cable { flex:1; position:relative; height: 4px; border-top: 4px dashed #FF8A5B; }
+.cable b { position:absolute; left: 50%; top: -52px; transform: translateX(-50%); font-size: 18px; font-weight: 700; color: #B4451F; white-space: nowrap; font-family: var(--mono); letter-spacing: .08em; }
+.cable i { position:absolute; left: 50%; top: -18px; transform: translateX(-50%); width: 32px; height: 32px; border-radius: 50%; background: #FF8A5B; color: #fff; display:grid; place-items:center; font-style: normal; font-weight: 800; font-size: 22px; }
+.db { padding: 16px 26px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px var(--line); text-align:center; }
+.db img { height: 38px; display:block; }
+.db span { display:block; font-size: 18px; color: var(--ink-3); margin-top: 6px; }
+.row { display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; }
+.dg { padding: 26px 28px; border-radius: 24px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -30px rgba(2,34,31,.35); border-top: 6px solid #FF8A5B; }
+.dg .hd { display:flex; align-items:center; justify-content:space-between; }
+.dg .i { width: 64px; height: 64px; border-radius: 18px; background: rgba(255,138,91,.14); color: #B4451F; display:grid; place-items:center; }
+.dg .n { font-size: 44px; font-weight: 700; color: rgba(180,69,31,.35); }
+.dg h3 { font-size: 34px; font-weight: 700; letter-spacing: -.02em; margin-top: 16px; }
+.dg p { font-size: 25px; line-height: 1.35; color: var(--ink-2); margin-top: 8px; }
+.dg p.eg { color: var(--ink-3); font-style: italic; font-size: 23px; }
+.safe { margin-top: 24px; display:flex; flex-direction:column; align-items:flex-start; gap: 14px; padding: 22px 30px; border-radius: 22px; background: var(--ink); color: var(--on-dark); }
+.safe > b { font-size: 28px; font-weight: 700; white-space: nowrap; }
+.safe > b em { font-style: normal; color: var(--neon); }
+.safe .ck { display:flex; gap: 10px; flex-wrap: wrap; align-items:center; }
+.safe .ck > em { font-style: normal; font-size: 22px; font-weight: 700; color: var(--on-dark-2); margin-right: 6px; }
+.safe .ck span { display:flex; align-items:center; gap: 8px; font-size: 21px; font-weight: 600; padding: 8px 12px; border-radius: 10px; background: rgba(0,245,169,.12); color: var(--on-dark); white-space: nowrap; }
+.safe .ck svg { color: var(--neon); }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="light" data-section="SuDu AI" data-sparks="9,0" style="--gx:85%;--gy:20%;--mx:85%;--my:25%">
+<main class="slide">
+<div class="top">
+  <div>
+    <h1 class="h1 r" style="--d:.05s">“我可以直接把 Claude 或 Codex 接到 SQL Account 吗？”</h1>
+    <p class="lead r" style="--d:.25s">程序员一个周末就能搞定。 <b>但可能会出这些问题。</b></p>
+  </div>
+</div>
+<div class="wire r" style="--d:.4s">
+    <div class="lg"><div><img src="../assets/logos/claude.svg" alt="Claude 标志">Claude</div><div><img src="../assets/logos/openai.svg" alt="OpenAI 标志">Codex</div></div>
+    <div class="cable"><b>直接接入</b><i>!</i></div>
+    <div class="db"><img src="../assets/sql-h.png" alt="SQL Account"><span>你的公司数据库</span></div>
+</div>
+<div class="row"><div class="dg r" style="--d:0.90s"><div class="hd"><span class="i"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></svg></span><span class="n">1</span></div><h3>没有权限控制</h3><p>每个数字它都能看、都能改，事先不会问你。</p><p class="eg">就像第 1 天就把总钥匙和公司印章交给新来的临时工。</p></div><div class="dg r" style="--d:1.08s"><div class="hd"><span class="i"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7"/><path d="M9 4l3 2 3-2M9 20l3-2 3 2"/></svg></span><span class="n">2</span></div><h3>可能把服务器卡死</h3><p>1 个大查询，比如“5 年来的每一笔销售”，就可能锁住数据库。</p><p class="eg">恢复之前，整个办公室都开不了 Invoice。</p></div><div class="dg r" style="--d:1.26s"><div class="hd"><span class="i"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-6 6 6 9 0s6 6 9 0"/><path d="M3 7c4 4 7-4 10 1M11 16c3 4 6-3 10 1"/></svg></span><span class="n">3</span></div><h3>会把你的账搞乱</h3><p>直接写进数据库，会跳过 SQL Account 自己的检查。</p><p class="eg">单号、库存和账目对不上。</p></div></div>
+<div class="safe r" style="--d:1.6s"><b>危险的不是 AI Agent， <em>而是直接接入。</em></b><div class="ck"><em>安全做法，通过 SuDu：</em><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>每个用户都有权限设定</span><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>存进去之前要有人批准</span><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>每个动作都有记录</span><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>保留 SQL Account 自己的规则</span></div></div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>
