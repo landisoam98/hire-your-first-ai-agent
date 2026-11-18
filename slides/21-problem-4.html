@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Problem 4: stock never right · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.slide { padding-top: 84px; }
+.h1 { margin-top: 14px; font-size: 66px; }
+.wrap { flex:1; display:grid; grid-template-columns: 470px 1fr; gap: 34px; margin-top: 26px; }
+.vs { display:grid; grid-template-rows: 1fr auto 1fr; gap: 10px; }
+.sd { border-radius: 24px; padding: 20px 26px; display:flex; flex-direction:column; justify-content:center; }
+.sd h4 { font-family: var(--mono); font-size: 17px; letter-spacing: .12em; font-weight: 700; color: var(--ink-3); }
+.sd .n { font-size: 110px; font-weight: 750; letter-spacing: -.05em; line-height: 1; margin-top: 6px; }
+.sd .n small { font-size: 34px; color: var(--ink-3); margin-left: 8px; letter-spacing: 0; }
+.bk { background: var(--ink); color: var(--on-dark); } .bk h4, .bk .n small { color: var(--on-dark-3); }
+.bk img { height: 28px; margin-top: 8px; align-self:flex-start; }
+.crates { display:flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.crates i { width: 30px; height: 26px; border-radius: 5px; background: #D9B88C; box-shadow: inset 0 -5px 0 rgba(0,0,0,.12); }
+.crates i.gh { background: transparent; box-shadow: inset 0 0 0 2px rgba(180,69,31,.35); }
+.gap { display:flex; align-items:center; justify-content:center; gap: 12px; font-size: 40px; font-weight: 800; color: #B4451F; }
+.gap span { font-size: 20px; letter-spacing: .1em; }
+.rt h3 { font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .12em; color: #B4451F; }
+.cg { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+.cz { display:grid; grid-template-columns: 60px 1fr; gap: 14px; align-items:start; padding: 16px 18px; border-radius: 18px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 16px 28px -22px rgba(2,34,31,.35); border-left: 5px solid #FF8A5B; }
+.cz .ic { width: 60px; height: 60px; border-radius: 16px; background: rgba(255,138,91,.14); color: #B4451F; display:grid; place-items:center; }
+.cz b { font-size: 28px; font-weight: 700; letter-spacing: -.01em; }
+.cz p { font-size: 22px; color: var(--ink-2); line-height: 1.3; margin-top: 4px; }
+.cost { display:grid; grid-template-columns: auto repeat(4, 1fr); gap: 12px; margin-top: 18px; align-items:stretch; }
+.cost .lb { display:flex; align-items:center; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .12em; color: var(--ink-3); padding-right: 6px; }
+.cs { padding: 14px 18px; border-radius: 16px; background: var(--ink); color: var(--on-dark); }
+.cs b { display:block; font-size: 23px; font-weight: 700; line-height: 1.2; }
+.cs span { display:block; font-size: 19px; color: #FFB08F; margin-top: 4px; }
+</style>
+</head>
+<body class="light" data-section="The problem" data-sparks="9,0" style="--gx:20%;--gy:50%;--mx:20%;--my:50%">
+<main class="slide">
+<div class="prob f" style="--d:0s">PROBLEM 4 OF 5<i><b></b><b></b><b></b><b class="on"></b><b></b></i><span>Stock that is never right</span></div>
+<h1 class="h1 r" style="--d:.1s">The system says 40. The shelf has 12.</h1>
+<div class="wrap">
+  <div class="vs">
+    <div class="sd bk r" style="--d:.3s"><h4>SQL ACCOUNT SAYS</h4><div class="n"><span data-count="40" data-delay=".5">0</span><small>ctn</small></div><img src="../assets/sql-h-white.png" alt="SQL Account"></div>
+    <div class="gap pop" style="--d:1.2s">&minus;28 <span>MISSING</span></div>
+    <div class="glass sd r" style="--d:.45s"><h4>THE SHELF HAS</h4><div class="n"><span data-count="12" data-delay=".7">0</span><small>ctn</small></div><div class="crates"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="gh"></i><i class="gh"></i><i class="gh"></i><i class="gh"></i><i class="gh"></i><i class="gh"></i><i class="gh"></i><i class="gh"></i></div></div>
+  </div>
+  <div class="rt"><h3 class="f" style="--d:.5s">WHY IT HAPPENS</h3><div class="cg"><div class="cz r" style="--d:0.60s"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span><div><b>Manual Picking</b><p>Pick lists written by hand. Wrong item, wrong quantity, and nobody updates the system.</p></div></div><div class="cz r" style="--d:0.72s"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 4l9 5.5V20H3z"/><path d="M8 20v-6h8v6"/></svg></span><div><b>No fixed shelf spot</b><p>Goods are left wherever there is space. Nobody records which shelf.</p></div></div><div class="cz r" style="--d:0.84s"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M8 11h6"/></svg></span><div><b>Stock cannot be found</b><p>It is in the warehouse, but nobody knows where. Staff spend hours searching.</p></div></div><div class="cz r" style="--d:0.96s"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg></span><div><b>Oldest stock not sent first</b><p>New cartons go out first. The old ones sit at the back and expire.</p></div></div><div class="cz r" style="--d:1.08s"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M8 10l8 4M16 10l-8 4"/></svg></span><div><b>UOM mixed up</b><p>10 pieces keyed as 10 cartons. The numbers get more wrong every day.</p></div></div><div class="cz r" style="--d:1.20s"><span class="ic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M9 9h6"/></svg></span><div><b>Typed in the next day</b><p>Goods move today, the system knows tomorrow. In between, every figure is wrong.</p></div></div></div></div>
+</div>
+<div class="cost"><span class="lb f" style="--d:1.4s">WHAT IT COSTS</span><div class="cs r" style="--d:1.50s"><b>Promised stock you don&rsquo;t have</b><span>Angry customers, lost orders</span></div><div class="cs r" style="--d:1.60s"><b>Expired stock thrown out</b><span>Money lost</span></div><div class="cs r" style="--d:1.70s"><b>Hours lost searching</b><span>Staff walking, not picking</span></div><div class="cs r" style="--d:1.80s"><b>Month-end stock count</b><span>The warehouse stops for a day</span></div></div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

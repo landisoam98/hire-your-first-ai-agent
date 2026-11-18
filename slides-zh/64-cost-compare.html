@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>人手 vs AI 成本 · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.slide { padding-top: 96px; }
+.h1 { font-size: 80px; margin-top: 14px; }
+.h1 em { font-style: normal; color: var(--green); }
+.wrap { flex:1; display:grid; grid-template-columns: 1fr 560px; gap: 40px; margin-top: 46px; min-height: 0; }
+.wrap > div:first-child { display:flex; flex-direction:column; }
+.cmp { flex:1; display:flex; flex-direction:column; gap: 26px; }
+.cmp .row { flex:1; display:flex; flex-direction:column; justify-content:center; }
+.row { padding: 30px 36px; border-radius: 30px; }
+.row .hd { display:flex; align-items:baseline; justify-content:space-between; gap: 20px; }
+.row h3 { font-size: 36px; font-weight: 750; letter-spacing: -.02em; }
+.row h3 small { font-size: 24px; font-weight: 500; color: var(--ink-3); margin-left: 12px; }
+.row .tot { font-size: 64px; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+.row .tot small { font-size: 26px; font-weight: 600; letter-spacing: 0; color: var(--ink-3); margin-left: 6px; }
+.bar { display:flex; height: 56px; border-radius: 14px; overflow:hidden; margin-top: 22px; background: #EEF1EF; }
+.bar i { display:flex; align-items:center; padding: 0 16px; font-style: normal; font-size: 21px; font-weight: 700; white-space: nowrap; transform-origin: left; animation: grow 1.4s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d); }
+@keyframes grow { from { transform: scaleX(0); } }
+html.static .bar i { animation: none; }
+.man .tot { color: #B4451F; }
+.man .bar i { background: #FF8A5B; color: #1A0F0A; }
+.ai .bar i.s { background: var(--ink); color: var(--neon); }
+.ai .bar i.h { background: var(--emerald); color: #fff; }
+.ai .tot { color: var(--green); }
+.lines { display:flex; gap: 26px; flex-wrap: wrap; margin-top: 16px; font-size: 24px; color: var(--ink-2); }
+.lines b { color: var(--ink); font-weight: 700; }
+/* savings */
+.sv { border-radius: 34px; background: var(--ink); color: var(--on-dark); padding: 44px 46px; display:flex; flex-direction:column; box-shadow: 0 40px 80px -40px rgba(2,34,31,.7), 0 0 100px rgba(0,245,169,.2); }
+.sv .k { font-family: var(--mono); font-size: 22px; font-weight: 700; letter-spacing: .14em; color: var(--neon); }
+.sv .pc { font-size: 170px; font-weight: 800; letter-spacing: -.06em; line-height: .95; color: var(--neon); margin-top: 14px; }
+.sv .pc small { font-size: 48px; letter-spacing: -.02em; color: var(--on-dark); margin-left: 10px; }
+.sv .yr { margin-top: 26px; padding-top: 24px; border-top: 1px solid rgba(242,251,247,.16); }
+.sv .yr b { display:block; font-size: 66px; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+.sv .yr span { display:block; font-size: 26px; color: var(--on-dark-2); margin-top: 8px; }
+.sv .pb { margin-top: auto; display:flex; align-items:center; gap: 14px; font-size: 24px; font-weight: 650; padding: 16px 20px; border-radius: 16px; background: rgba(0,245,169,.12); }
+.sv .pb svg { flex:none; color: var(--neon); }
+.note { margin-top: 18px; font-size: 21px; color: var(--ink-3); }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="light" data-section="正式启动" data-sparks="9,0" style="--gx:80%;--gy:50%;--mx:80%;--my:50%">
+<main class="slide">
+<div class="kicker r" style="--d:.05s">成本比一比</div>
+<h1 class="h1 r" style="--d:.1s">人手 vs AI：每月省下 <em>RM<span data-count="23556" data-delay="1.6" data-dur="1.4">0</span></em></h1>
+<div class="wrap">
+  <div>
+    <div class="cmp">
+      <div class="glass row man r" style="--d:.35s">
+        <div class="hd"><h3>人手<small>7 人 · 1,211 小时</small></h3><div class="tot">RM25,556<small>/ 月</small></div></div>
+        <div class="bar"><i style="width:100%;--d:.7s">7 个全职员工的成本</i></div>
+        <div class="lines"><span>Sales <b>RM10,350</b></span><span>Finance <b>RM7,820</b></span><span>采购 <b>RM3,680</b></span><span>库存 <b>RM3,706</b></span></div>
+      </div>
+      <div class="glass row ai r" style="--d:.55s">
+        <div class="hd"><h3>用 SuDu AI<small>AI 做日常工作，人只负责批准</small></h3><div class="tot">RM2,000<small>/ 月</small></div></div>
+        <div class="bar"><i class="s" style="width:7.83%;--d:1s"></i></div>
+        <div class="lines"><span>SuDu AI 配套 <b>RM2,000 / 月</b></span><span>员工转去 <b>服务顾客、跟进业务</b></span></div>
+      </div>
+    </div>
+    <p class="note r" style="--d:1.4s">估算：以每天约 80 张订单的批发商为例，人手成本含 EPF、SOCSO（见上一页）。你的数字视你的单量而定。</p>
+  </div>
+  <div class="sv r" style="--d:.8s">
+    <span class="k">每月成本减少</span>
+    <div class="pc">92%<small>↓</small></div>
+    <div class="yr"><b>≈ RM282,672</b><span>一年省下的成本</span></div>
+    <div class="pb"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>安装费不到 1 个月就回本</div>
+  </div>
+</div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

@@ -92,7 +92,7 @@ slide('01-cover', 'Cover', SEC[0], 'dark bare', 'data-sparks="6,1 9,2 8,5 5,4" s
 .wrap { display:grid; grid-template-columns: 1fr 760px; align-items:center; height:100%; }
 .display { font-size: 150px; margin: 26px 0 40px; }
 .lead { max-width: 900px; }
-.meta { margin-top: 56px; font-size: 26px; color: var(--on-dark-2); letter-spacing: .02em; }
+.meta { margin-top: 56px; font-size: 26px; line-height: 1.6; color: var(--on-dark-2); letter-spacing: .02em; }
 .partner { position:absolute; left:128px; bottom:64px; display:flex; align-items:center; gap:28px; color: var(--on-dark-3); font-size: 24px; }
 .partner img { height: 40px; } .partner img.sql { height: 30px; }
 .hero { position:relative; width:760px; height:760px; display:grid; place-items:center; }
@@ -107,7 +107,7 @@ slide('01-cover', 'Cover', SEC[0], 'dark bare', 'data-sparks="6,1 9,2 8,5 5,4" s
     <div class="kicker r" style="--d:.2s;font-size:26px">AI seminar for SQL Account users</div>
     <h1 class="display r" style="--d:.35s">Hire Your First <span class="sig" style="--sd:1.3s">AI Agent</span></h1>
     <p class="lead r" style="--d:.6s">What AI needs, what it does, and where your company should start.</p>
-    <p class="meta mono r" style="--d:.8s"><span class="ph">[Date]</span> &nbsp;·&nbsp; <span class="ph">[Venue]</span> &nbsp;·&nbsp; 2:00 to 5:00 pm</p>
+    <p class="meta mono r" style="--d:.8s">18/11/2026 &amp; 19/11/2026<br>Esoft Alor Setar &nbsp;·&nbsp; 10:30 am to 3:30 pm</p>
   </div>
   <div class="hero">
     <svg class="orbit" viewBox="0 0 760 760" fill="none">
@@ -127,8 +127,8 @@ def words(text, d0, step, cls=''):
         out.append('<span class="w"><i class="%s" style="--d:%.2fs">%s</i></span>' % (cls, d0 + i * step, w))
     return ' '.join(out)
 
-VISION_H = (words('To build a fully', .3, .09) + '<br>' + words('autonomous AI that', .66, .09) + '<br>'
-            + words('runs a company.', 1.0, .11, 'n'))
+VISION_H = ('<span class="w"><i class="" style="--d:0.30s">To build an AI that</i></span><br>'
+            '<span class="w"><i class="n" style="--d:0.55s">runs a company</i></span><span class="w"><i class="" style="--d:0.75s">on its own</i></span>')
 
 GLOBE_JS = r'''
 <script>
@@ -323,25 +323,26 @@ body { background: #010C0A; }
 .slide { padding-top: 120px; }
 .kicker { font-size: 24px; letter-spacing: .3em; color: var(--neon); display:flex; align-items:center; gap: 18px; }
 .kicker::after { content:""; width: 120px; height: 2px; background: linear-gradient(90deg, var(--neon), transparent); }
-.vh { position:relative; z-index: 1; font-size: 132px; line-height: 1.02; font-weight: 650; letter-spacing: -.048em; margin-top: 36px; }
+.vh { position:relative; z-index: 1; font-size: 120px; line-height: 1.02; font-weight: 650; letter-spacing: -.048em; margin-top: 36px; }
 .vh .w { display:inline-block; overflow:hidden; vertical-align: bottom; padding-bottom: .08em; margin-bottom: -.08em; }
 .vh .w i { display:inline-block; font-style: normal; transform: translateY(108%); animation: up 1.1s var(--ease) forwards; animation-delay: var(--d); }
 .vh .w i:not(.n) { background: linear-gradient(105deg, #F2FBF7 42%, #00F5A9 50%, #F2FBF7 58%) 100% 0 / 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
   animation: up 1.1s var(--ease) forwards, sheen 2.2s ease-in-out forwards; animation-delay: var(--d), 2.6s; }
 @keyframes sheen { to { background-position: -50% 0; } }
 .vh .w i.n { color: var(--neon); font-variant-ligatures: none; }
+.vh .w + .w:lang(en) { display: table; }   /* English runs longer: 3rd line */
 @keyframes up { to { transform: none; } }
-.say { position:absolute; left: 128px; top: 744px; max-width: 1180px; font-size: 34px; line-height: 1.42; color: var(--on-dark-2); z-index: 1; }
+.say { position:absolute; left: 128px; top: 744px; max-width: none; white-space: nowrap; font-size: 34px; line-height: 1.42; color: var(--on-dark-2); z-index: 1; }
 .say b { color: var(--on-dark); font-weight: 650; }
 ''', '''
 <canvas id="floor"></canvas><div class="dawn"></div><div class="horizon"></div>
 <canvas id="globe"></canvas>
 <div class="kicker f" style="--d:.1s">OUR VISION</div>
 <h1 class="vh">%s</h1>
-<p class="say r" style="--d:1.9s"><b>SuDu AI is the AI-native ERP built to get there:</b> 1 system for every operation, AI that decides and acts, and robots that do the physical work.</p>
+<p class="say r" style="--d:1.9s"><b>SuDu AI is the AI ERP built for this, to serve businesses</b><br>1 system runs every process. AI executes, analyses and reminds. People make the decisions.</p>
 %s
 ''' % (VISION_H, GLOBE_JS),
-"(Let the line land. Pause for two seconds before speaking.)\n\n\"Our vision at SuDu is to build a fully autonomous AI that runs a company. Not a chatbot. Not a report. An AI that runs the operation. Look at the sphere: every point is a job in your company. Order, buy, receive, store, make, ship, bill, collect, and all the jobs around them: quote, credit check, pick, pack, count, plan, quality check, pay the supplier, report. Every one is connected, and the work keeps moving around it on its own.\n\nThat is why SuDu is built as an AI-native ERP. Most software adds AI on top: a chatbot sits beside the old system, and people still key in, click and chase. We built the system itself for AI, so it can read every order, every stock count and every payment, decide, and do the work, with people approving what matters. And the last step is physical: robots that move, pick and count, run by the same system.\n\nThat is where we are going. Let me show you what it looks like today.\"\n\nNext: the map.")
+"(Let the line land. Pause for two seconds before speaking.)\n\n\"Our vision at SuDu is to build an AI that runs a company on its own. Not a chatbot. Not a report. An AI that runs the operation. Look at the sphere: every point is a job in your company. Order, buy, receive, store, make, ship, bill, collect, and all the jobs around them: quote, credit check, pick, pack, count, plan, quality check, pay the supplier, report. Every one is connected, and the work keeps moving around it on its own.\n\nThat is why SuDu is the AI ERP built for this, to serve businesses: 1 system runs every process, AI executes, analyses and reminds, and people make the decisions. Most software adds AI on top: a chatbot sits beside the old system, and people still key in, click and chase. We built the system itself for AI, so it can read every order, every stock count and every payment, decide, and do the work, with people approving what matters. And the last step is physical: robots that move, pick and count, run by the same system.\n\nThat is where we are going. Let me show you what it looks like today.\"\n\nNext: the map.")
 
 ROBOT_AMR = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="30" width="44" height="16" rx="4"/><circle cx="20" cy="50" r="4"/><circle cx="44" cy="50" r="4"/><rect x="18" y="14" width="28" height="16" rx="2"/><path d="M32 14v16"/></svg>'
 ROBOT_ARM = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 56h26"/><path d="M18 56v-8h14v8"/><path d="M25 48L20 30l22-12"/><circle cx="20" cy="30" r="4"/><circle cx="42" cy="18" r="4"/><path d="M46 18l8-4M46 20l8 4"/></svg>'
@@ -448,7 +449,7 @@ slide('03-the-map', 'The SuDu map', SEC[0], 'light', 'data-sparks="none" style="
 .conn .c.hot { background: rgba(0,245,169,.22); }
 .ai .chips i.hot { background: var(--neon); color: var(--ink); }
 ''', '''
-<h1 class="h1 r" style="--d:.1s">1 AI-native ERP runs the whole company</h1>
+<h1 class="h1 r" style="--d:.1s">1 AI ERP to run your company</h1>
 <div class="map">
   <div class="glass side r" id="n-cust" style="top:175px;--d:.3s">%(people)s<b>Customers</b><span>order and pay</span></div>
   <div class="glass side r" id="n-sup" style="top:375px;--d:.4s">%(box)s<b>Suppliers</b><span>sell you stock</span></div>
@@ -502,7 +503,7 @@ slide('03-the-map', 'The SuDu map', SEC[0], 'light', 'data-sparks="none" style="
 })();
 </script>
 ''' % dict(people=PEOPLE, box=BOX, wa=WA, mail=MAIL, ufo=UFO, blocks=OV_BLOCKS, flow=OV_FLOW, truck=TRUCK, hum=HUMANOID, lines=OV_LINES),
-"\"First, the big picture, in plain words.\n\nThe big box is SuDu: one ERP, one system, one database. Inside it the work flows left to right. Supply chain: selling and buying, so orders are in one place. The warehouse, WMS: every carton is scanned, so stock is accurate. The factory, MES: every job is tracked, so you can see every job. And finance: everything goes into SQL Account, so your accounts are always up to date.\n\nOn the left, customers and suppliers reach the system the way they already work: WhatsApp and email. Across the top, the AI agents read everything and do the work at every step. At the bottom, the next step: physical AI, an auto-driving truck and a humanoid robot, run by the same system.\n\nWatch one order travel through it.\" (It loops by itself, about 17 seconds.)\n\nNote: physical AI is the roadmap, not on sale today.\nNext: \"Now let's zoom in and look at the real documents.\"")
+"\"First, the big picture, in plain words.\n\nThe big box is SuDu: one ERP, one system, one database. Inside it the work flows left to right. Supply chain: selling and buying, so orders are in one place. The warehouse, WMS: every carton is scanned, so stock is accurate. The factory, MES: every job is tracked, so you can see every job. And finance: everything goes into SQL Account, so your accounts are always up to date.\n\nOn the left, customers and suppliers reach the system the way they already work: WhatsApp and email. Across the top, the AI agents read everything and do the work at every step. At the bottom, the next step: physical AI, an auto-driving truck and a humanoid robot, run by the same system.\n\nWatch one order travel through it.\" (It loops by itself, about 17 seconds.)\n\nNote: physical AI is the roadmap, not on sale today.\nNext: \"Now let's look at the same system from the side.\"")
 
 
 def pulse(d, dur, begin='0s', r=6, color='#00A57A', cls='cn'):
@@ -515,124 +516,6 @@ DOC = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="curre
 HUMANOID = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="6" width="20" height="15" rx="5"/><path d="M27 13h.01M37 13h.01"/><path d="M32 2v4"/><rect x="20" y="24" width="24" height="20" rx="4"/><path d="M20 28l-8 10 4 6M44 28l8 10-4 6"/><path d="M26 44v16M38 44v16"/></svg>'
 TRUCK = '<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="22" width="34" height="22" rx="2"/><path d="M38 30h12l8 9v5H38z"/><circle cx="16" cy="48" r="5"/><circle cx="48" cy="48" r="5"/><path d="M44 12a10 10 0 0 1 10 0M41 7a16 16 0 0 1 16 0"/><circle cx="49" cy="17" r="1.5" fill="currentColor"/></svg>'
 
-# ---- board coordinates (1680 x 920); the board is tilted in 3D, everything on it follows ----
-def card(cid, x, y, w, h, code, name, docs, d):
-    li = ''.join('<li>%s<span>%s</span></li>' % (DOC, x_) for x_ in docs)
-    return ('<div class="cd" id="%s" style="left:%dpx;top:%dpx;width:%dpx;height:%dpx;--d:%.2fs"><div class="hd"><b>%s</b><span>%s</span></div><ul>%s</ul></div>'
-            % (cid, x, y, w, h, d, code, name, li))
-
-def tag(x, y, text, d):
-    return '<span class="tg" style="left:%dpx;top:%dpx;--d:%.2fs">%s</span>' % (x, y, d, text)
-
-def std(x, y, inner, d, z=0, cls=''):
-    return ('<div class="std %s" style="left:%dpx;top:%dpx;--z:%dpx"><div class="si" style="--d:%.2fs">%s</div></div>' % (cls, x, y, z, d, inner))
-
-def beam(x, y, h, d):
-    return '<span class="beam" style="left:%dpx;top:%dpx;--h:%dpx;--d:%.2fs"></span>' % (x, y, h, d)
-
-MAP3D_LINES = ''.join([
-    pulse('M280 145 H400', '1.1s', '0s'),                                   # customers -> sales (order)
-    pulse('M280 555 H400', '1.1s', '.4s'),                                  # suppliers <-> purchasing (PO)
-    pulse('M740 290 H900', '1.2s', '0s'),                                   # sales order -> goods delivery
-    pulse('M740 610 H900', '1.2s', '.3s'),                                  # purchase order -> goods receiving
-    pulse('M740 175 H1360', '2.2s', '.2s'),                                 # sales order -> production order
-    pulse('M1240 290 H1360', '1s', '.1s'),                                  # materials -> production
-    pulse('M1360 390 H1240', '1s', '.6s'),                                  # production receipt -> stock
-    pulse('M900 372 H160 V232', '3s', '0s', 7, '#00F5A9', 'cn dl'),         # goods delivery -> customer (truck lane)
-    pulse('M400 300 H340 V850 H400', '3.2s', '0s', 5, '#7C5CFF', 'cn ps'),  # sales postings -> accounting
-    pulse('M400 690 H340', '1s', '.5s', 5, '#7C5CFF', 'cn ps'),             # purchasing postings join the bus
-    pulse('M1070 532 V788', '1.6s', '.2s', 5, '#7C5CFF', 'cn ps'),          # stock value -> accounting
-    pulse('M1510 352 V788', '2s', '.4s', 5, '#7C5CFF', 'cn ps'),            # production cost -> accounting
-])
-
-MAP3D_BOARD = ''.join([
-    '<svg class="ln" viewBox="0 0 1680 920" fill="none">%s</svg>' % MAP3D_LINES,
-    '<div class="cd ext" id="m-cust" style="left:40px;top:60px;width:240px;height:170px;--d:.9s"><div class="ico">%s</div><b>Customers</b><span>order on WhatsApp or email</span></div>' % WA,
-    '<div class="cd ext" id="m-sup" style="left:40px;top:470px;width:240px;height:170px;--d:1s"><div class="ico">%s</div><b>Suppliers</b><span>quote and invoice by email</span></div>' % MAIL,
-    card('m-sales', 400, 20, 340, 312, 'SALES', 'Sell', ['Quotation', 'Sales Order', 'Sales Invoice', 'Customer Payment', 'Credit Note', 'Sales Return'], 1.05),
-    card('m-pur', 400, 410, 340, 250, 'PURCHASING', 'Buy', ['Purchase Requisition', 'Purchase Order', 'Purchase Invoice', 'Purchase Return'], 1.15),
-    card('m-wms', 900, 200, 340, 332, 'WMS', 'Warehouse', ['Goods Receiving', 'Put on shelf', 'Picking', 'Packing', 'Goods Delivery', 'Stock Count', 'Return Receiving'], 1.25),
-    card('m-mes', 1360, 20, 300, 332, 'MES', 'Factory', ['BOM', 'Production Order', 'Schedule', 'Material Issue', 'Reporting and QC', 'Production Receipt'], 1.35),
-    ('<div class="cd acc" id="m-acc" style="left:400px;top:788px;width:1260px;height:124px;--d:1.45s"><div class="l"><img src="../assets/sql-h.png" alt="SQL Account">'
-     '<span>or AutoCount &nbsp;·&nbsp; <b>Accounting</b></span></div><div class="r"><em>Goes in automatically</em>'
-     '<i>%sSales Invoice</i><i>%sCredit Note</i><i>%sCustomer Payment</i><i>%sPurchase Invoice</i></div></div>') % (DOC, DOC, DOC, DOC),
-    tag(340, 128, 'Order', 1.8), tag(340, 538, 'PO', 1.9), tag(820, 273, 'Goods Delivery', 2.0), tag(820, 593, 'Goods Receiving', 2.05),
-    tag(1070, 158, 'Production Order', 2.1), tag(1300, 273, 'Materials', 2.15), tag(1300, 373, 'Receipt', 2.2), tag(160, 300, 'Delivery', 2.25),
-    # AI agents float above the modules
-    beam(690, 60, 50, 2.4), std(690, 60, '<span class="ai">Sales AI</span>', 2.5, 50),
-    beam(680, 424, 90, 2.45), std(680, 424, '<span class="ai">Purchase AI</span>', 2.55, 90),
-    beam(1170, 214, 90, 2.5), std(1170, 214, '<span class="ai">Inventory AI</span>', 2.6, 90),
-    beam(1580, 800, 80, 2.55), std(1580, 800, '<span class="ai">Finance AI</span>', 2.65, 80),
-    # physical AI stands on the board
-    std(1220, 520, '<span class="rb">%s</span><span class="rl">Humanoid robot</span>' % HUMANOID, 2.8),
-    std(1640, 340, '<span class="rb">%s</span><span class="rl">Humanoid robot</span>' % HUMANOID, 2.9),
-    std(330, 382, '<span class="rb tr">%s</span><span class="rl">Auto-driving truck</span>' % TRUCK, 3.0),
-])
-
-slide('03-map-detail', 'The map in detail', SEC[0], 'light', 'data-sparks="none" style="--gx:55%;--gy:70%;--mx:55%;--my:65%"', '''
-.slide { padding-top: 84px; }
-.h1 { font-size: 62px; }
-.lead { font-size: 27px; margin-top: 10px; max-width: 1180px; }
-.key { position:absolute; right: 128px; top: 104px; display:flex; flex-direction:column; gap: 10px; font-size: 20px; color: var(--ink-2); z-index: 3; }
-.key span { display:flex; align-items:center; gap: 10px; }
-.key i { width: 34px; height: 0; border-top: 3px dashed rgba(2,34,31,.45); }
-.key i.p { border-top-color: #7C5CFF; }
-.key i.d { border-top: 3px solid #00C389; }
-.view { position:absolute; left: 0; right: 0; top: 214px; bottom: 0; overflow: visible; perspective: 2100px; perspective-origin: 50% -10%; z-index: 1; }
-.tilt { position:absolute; left: 120px; top: -92px; width: 1680px; height: 920px; transform-style: preserve-3d; transform-origin: 50% 40%;
-  transform: rotateX(36deg) scale(.8); animation: cam 1.5s cubic-bezier(.3,.1,.2,1) .25s both; }
-@keyframes cam { from { transform: rotateX(0deg) scale(.7); } to { transform: rotateX(36deg) scale(.8); } }
-html.static .tilt { animation: none; }
-@keyframes lay { from { transform: rotateX(4deg) translateY(120px) scale(.72); opacity: 0; } to { transform: rotateX(36deg) scale(.8); opacity: 1; } }
-.sway { position:absolute; inset: 0; transform-style: preserve-3d; }
-@keyframes sway { from { transform: rotateZ(-1.4deg); } to { transform: rotateZ(1.4deg); } }
-.board { position:absolute; inset: -30px; border-radius: 40px; transform-style: preserve-3d;
-  background: radial-gradient(circle, rgba(2,34,31,.13) 1.4px, transparent 1.8px) 0 0 / 40px 40px, linear-gradient(160deg, #F4FBF8, #E3F3EC);
-  box-shadow: 0 0 0 1px rgba(2,34,31,.08), 0 80px 120px -40px rgba(2,34,31,.35); }
-.layer { position:absolute; left: 30px; top: 30px; width: 1680px; height: 920px; transform-style: preserve-3d; }
-.ln { position:absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.ln .cn { stroke: rgba(2,34,31,.32); stroke-width: 3; stroke-dasharray: 2 9; stroke-linecap: round; }
-.ln .dl { stroke: #00C389; stroke-dasharray: none; stroke-width: 4; opacity: .7; }
-.ln .ps { stroke: #7C5CFF; stroke-opacity: .55; }
-.cd { position:absolute; border-radius: 22px; background: #fff; padding: 18px 22px; transform: translateZ(14px);
-  box-shadow: 0 0 0 1px rgba(2,34,31,.08), 0 1px 0 #fff inset, 0 24px 40px -18px rgba(2,34,31,.35); }
-.cd .hd { display:flex; align-items:baseline; gap: 10px; margin-bottom: 10px; }
-.cd .hd b { font-family: var(--mono); font-size: 19px; font-weight: 700; color: #fff; background: var(--ink); padding: 3px 9px; border-radius: 7px; letter-spacing: .05em; }
-.cd .hd span { font-size: 30px; font-weight: 700; letter-spacing: -.02em; }
-.cd ul { list-style: none; display:grid; gap: 4px; }
-.cd li { display:flex; align-items:center; gap: 9px; font-size: 23px; color: var(--ink-2); }
-.cd li svg { color: var(--emerald); flex: none; }
-#m-wms { box-shadow: 0 0 0 2px var(--emerald), 0 24px 40px -18px rgba(2,34,31,.35); }
-.cd.ext { display:flex; flex-direction:column; justify-content:center; background: #F2FBF7; }
-.cd.ext .ico { width: 54px; height: 54px; border-radius: 16px; background: var(--ink); color: var(--neon); display:grid; place-items:center; }
-.cd.ext .ico svg { width: 32px; height: 32px; }
-.cd.ext b { font-size: 30px; font-weight: 700; margin-top: 10px; }
-.cd.ext span { font-size: 20px; color: var(--ink-3); line-height: 1.25; }
-.cd.acc { display:flex; align-items:center; gap: 28px; background: linear-gradient(110deg, #F3EEFF, #EAF2FF); box-shadow: 0 0 0 2px rgba(124,92,255,.35), 0 24px 40px -18px rgba(2,34,31,.35); }
-.cd.acc .l { display:flex; flex-direction:column; gap: 6px; flex: none; }
-.cd.acc .l img { height: 34px; }
-.cd.acc .l span { font-size: 20px; color: var(--ink-2); } .cd.acc .l b { color: var(--ink); }
-.cd.acc .r { display:flex; align-items:center; gap: 10px; flex-wrap: wrap; margin-left: auto; }
-.cd.acc em { font-style: normal; font-family: var(--mono); font-size: 17px; letter-spacing: .08em; color: #5B43D6; margin-right: 6px; }
-.cd.acc i { font-style: normal; display:flex; align-items:center; gap: 6px; font-size: 21px; font-weight: 600; padding: 8px 12px; border-radius: 10px; background: #fff; color: var(--ink); box-shadow: 0 0 0 1px rgba(124,92,255,.25); }
-.cd.acc i svg { color: #7C5CFF; }
-.tg { position:absolute; transform: translate(-50%, -50%) translateZ(6px); white-space: nowrap; font-size: 18px; font-weight: 700; color: var(--ink); background: #fff; padding: 5px 10px; border-radius: 999px; box-shadow: 0 0 0 1.5px rgba(0,165,122,.45); }
-/* standees: stand upright on the tilted board */
-.std { position:absolute; width: 0; height: 0; transform-style: preserve-3d; }
-.std .si { position:absolute; left: 0; bottom: 0; transform-origin: 50% 100%; transform: translateX(-50%) translateZ(var(--z)) rotateX(-36deg); display:flex; flex-direction:column; align-items:center; gap: 6px; }
-.std .ai { white-space: nowrap; font-size: 20px; font-weight: 700; padding: 8px 14px; border-radius: 999px; background: var(--ink); color: var(--neon); box-shadow: 0 0 30px rgba(0,245,169,.45); }
-.std .rb { width: 74px; height: 74px; border-radius: 50%; background: #fff; display:grid; place-items:center; color: var(--ink); box-shadow: 0 0 0 2px var(--neon), 0 16px 30px -10px rgba(2,34,31,.45); }
-.std .rb svg { width: 46px; height: 46px; }
-.std .rl { white-space: nowrap; font-size: 17px; font-weight: 700; color: var(--ink); background: var(--neon); padding: 3px 9px; border-radius: 7px; }
-.beam { position:absolute; width: 2px; height: var(--h); margin-left: -1px; transform-origin: 50% 0; transform: rotateX(-90deg);
-  background: linear-gradient(to bottom, rgba(0,245,169,.9), rgba(0,245,169,0)); }
-''', '''
-<h1 class="h1 r" style="--d:.1s">1 system. Every document connected.</h1>
-<p class="lead r" style="--d:.25s">1 order, from WhatsApp to SQL Account. Nobody types it 2x.</p>
-<div class="key f" style="--d:2.6s"><span><i></i>document flow</span><span><i class="d"></i>delivery</span><span><i class="p"></i>goes to accounting</span></div>
-<div class="view"><div class="tilt"><div class="sway"><div class="board"></div><div class="layer">%s</div></div></div></div>
-''' % MAP3D_BOARD,
-"\"Now let's zoom in. Here is how SuDu runs a company, module by module, with the real documents.\n\nOn the left, the outside world. Customers order on WhatsApp or email; the AI reads the message and creates the order. Suppliers quote and invoice by email.\n\nSales handles quotation, sales order, sales invoice, customer payment, credit notes and returns. When a sales order is confirmed, two things can happen. If the goods are in stock, it goes to the warehouse as a goods delivery. If they need to be made, it goes to the factory as a production order.\n\nPurchasing handles the requisition, the purchase order, the purchase invoice and returns. A purchase order turns into goods receiving in the warehouse.\n\nThe warehouse, WMS, is the centre: goods receiving, putting on shelves, picking, packing, goods delivery, stock counts and return receiving. Every carton is scanned, so the stock is accurate. It sends materials to the factory, and the factory sends finished goods back as a production receipt.\n\nThe factory, MES: the BOM, the production order, the schedule, material issue, reporting and QC, and the production receipt. Every job is visible.\n\nUnderneath everything sits accounting: SQL Account or AutoCount. Invoices, credit notes, payments and purchase invoices go into it automatically, so your accounts stay where they are.\n\nAbove the modules, the AI agents do the work at each step. And standing on the floor, the next step: humanoid robots in the warehouse and factory, and an auto-driving truck on the delivery route, all run by the same system.\"\n\nNote: physical AI is the roadmap, not on sale today.\nNext: \"Now look at the same system from the side.\"")
 
 STACK = [  # bottom to top: key, title, sub, chips on the plate
     ('sql', 'SQL Account', 'Layer 1 · Accounting', ['Invoices', 'Payments', 'Tax', 'Reports']),
@@ -1349,7 +1232,7 @@ html.static .mesh { animation: none; }
 WHO_HTML = '''
 <div class="mesh"></div>
 <div class="top">
-  <div><div class="kicker r" style="--d:.05s">Who we are</div><h1 class="h1 r" style="--d:.15s">Built in Malaysia.<br>Running in <span class="g"><span data-count="6" data-delay=".9">0</span> countries.</span></h1></div>
+  <div><div class="kicker r" style="--d:.05s">Who we are</div><h1 class="h1 r" style="--d:.15s">An AI product from Malaysia.<br>Running in <span class="g"><span data-count="6" data-delay=".9">0</span> countries.</span></h1></div>
   <div class="flip pop" style="--d:.5s"><div class="fi"><div class="fc"><b>速度</b><span>SPEED<br>in Chinese</span></div><div class="fc bk"><b>Sudu</b><span>SPOON<br>in Malay</span></div></div></div>
 </div>
 <div class="stats">
@@ -1369,7 +1252,7 @@ WHO_HTML = '''
 '''
 
 slide('02-who-we-are', 'Who we are', SEC[0], 'light', 'data-sparks="9,0" style="--gx:85%;--gy:20%;--mx:80%;--my:30%"', WHO_CSS, WHO_HTML,
-"\"Good afternoon. A little about SuDu AI before we start.\n\nSuDu means two things. In Chinese, 速度 means speed: fast to set up, fast results. In Malay, sudu means spoon: easy enough to spoon-feed.\n\nWe started in 2021 by building the warehouse and factory systems, and refined them for two years. In 2022 we started building the AI. In 2023 we launched in Malaysia, in 2025 we went to Singapore and China, and this year the AI went live. Today more than 100 companies run their warehouse or factory on SuDu, and we have users in 6 countries.\n\nCompanies like Petronas, BHPetrol, YTL Hotels and Twin Arrow run on SuDu. We are certified by MDEC and HRD Corp, and we are an official SQL Account partner.\"\n\nDo: keep it under two minutes.\nSource: SuDu company profile, pages 1 to 3.\nNext: \"And here is who you will be listening to today.\"")
+"\"Hello everyone. A little about SuDu AI before we start.\n\nSuDu means two things. In Chinese, 速度 means speed: fast to set up, fast results. In Malay, sudu means spoon: easy enough to spoon-feed.\n\nWe started in 2021 by building the warehouse and factory systems, and refined them for two years. In 2022 we started building the AI. In 2023 we launched in Malaysia, in 2025 we went to Singapore and China, and this year the AI went live. Today more than 100 companies run their warehouse or factory on SuDu, and we have users in 6 countries.\n\nCompanies like Petronas, BHPetrol, YTL Hotels and Twin Arrow run on SuDu. We are certified by MDEC and HRD Corp, and we are an official SQL Account partner.\"\n\nDo: keep it under two minutes.\nSource: SuDu company profile, pages 1 to 3.\nNext: \"And here is who you will be listening to today.\"")
 
 SPK_CSS = '''
 .wrap { flex:1; display:grid; grid-template-columns: 600px 1fr; gap: 90px; align-items:center; }
@@ -1411,7 +1294,7 @@ SPK_HTML = '''
     <div class="kicker r" style="--d:.1s">Your speaker today</div>
     <div class="nm r" style="--d:.25s">Landis Soam</div>
     <div class="role r" style="--d:.4s">CEO and Founder, SuDu AI</div>
-    <p class="bio r" style="--d:.55s">IT background. Led Industry 4.0 projects at GDEX, Top Glove and other global firms. Founded SuDu AI 5 years ago.</p>
+    <p class="bio r" style="--d:.55s">IT background. Led Industry 4.0 projects at GDEX, Top Glove and other global firms.<br>Founded SuDu AI 5 years ago.</p>
     <div class="tiles">
       <div class="glass r" style="--d:.75s"><b><span data-count="8" data-delay=".9">0</span>+</b><span>years in IT</span></div>
       <div class="glass r" style="--d:.85s"><b><span data-count="6" data-delay="1">0</span>+</b><span>years in supply chain</span></div>
@@ -1440,7 +1323,7 @@ OWEN_HTML = '''
     <div class="kicker r" style="--d:.1s">Your speaker today</div>
     <div class="nm r" style="--d:.25s">Owen Ng</div>
     <div class="role r" style="--d:.4s">CRO and Founder, SuDu AI</div>
-    <p class="bio r" style="--d:.55s">From supply chain to SAP to SuDu AI: putting Malaysian warehouses, factories and sales on 1 system.</p>
+    <p class="bio r" style="--d:.55s">From supply chain and SAP to SuDu AI: bringing sales, purchasing, warehouse and factory work together in 1 system.</p>
     <div class="tiles" style="grid-template-columns: repeat(3, 1fr)">
       <div class="glass r" style="--d:.75s"><b><span data-count="7" data-delay=".9">0</span>+</b><span>years in supply chain</span></div>
       <div class="glass r" style="--d:.85s"><b data-count="2" data-delay="1">0</b><span>years of SAP projects</span></div>
@@ -1454,7 +1337,7 @@ OWEN_HTML = '''
 '''
 
 slide('02-speaker-owen', 'Speaker: Owen', SEC[0], 'dark', 'data-sparks="9,1 1,5" style="--gx:22%;--gy:50%;--mx:25%;--my:50%"', SPK_CSS, OWEN_HTML,
-"\"And I'm Owen, CRO and co-founder of SuDu AI. I started in supply chain, spent two years on SAP projects, and for the last five years I have been building SuDu: the warehouse system, the factory system and the AI assistant, so that Malaysian warehouses, factories and sales can run on one system.\"\n\nDo: under one minute.\nSource: SuDu company profile, page 5.\nNext: \"Before we start, here is our afternoon.\"")
+"\"And I'm Owen, CRO and co-founder of SuDu AI. I started in supply chain, spent two years on SAP projects, and for the last five years I have been building SuDu: the warehouse system, the factory system and the AI assistant, bringing sales, purchasing, warehouse and factory work together in one system.\"\n\nDo: under one minute.\nSource: SuDu company profile, page 5.\nNext: \"Before we start, here is what we cover today.\"")
 
 slide('03-tell-us', 'Tell us your problem', SEC[0], 'light', 'data-sparks="2,1 8,4" style="--gx:22%;--gy:50%;--mx:25%"', '''
 .wrap { display:grid; grid-template-columns: 460px 1fr; gap: 130px; align-items:center; height:100%; }
@@ -1462,20 +1345,20 @@ ol { list-style:none; margin-top: 56px; display:grid; gap: 34px; counter-reset: 
 li { display:grid; grid-template-columns: 76px 1fr; align-items:baseline; font-size: 40px; line-height: 1.25; font-weight: 500; letter-spacing: -.01em; counter-increment: q; }
 li::before { content: counter(q); font-family: var(--mono); font-size: 28px; color: var(--green); }
 .small { margin-top: 52px; padding-left: 76px; font-size: 28px; }
+.qrimg { position:absolute; inset: 62px; width: calc(100% - 124px); height: calc(100% - 124px); image-rendering: pixelated; }
 ''', '''
 <div class="wrap">
-  %s
+  <div class="qr glass pop" style="--d:.2s"><img class="qrimg" src="../assets/qr-survey.png" alt="Problem poll QR code"><div class="frame"></div><div class="scan"></div></div>
   <div>
     <h1 class="h1 r" style="--d:.1s">Scan and answer 3 questions</h1>
     <ol>
       <li class="r" style="--d:.5s">Which job eats the most time in your office?</li>
       <li class="r" style="--d:.65s">How many people key in data or chase payments?</li>
-      <li class="r" style="--d:.8s">How much do you trust your stock figures?</li>
+      <li class="r" style="--d:.8s">How much do you trust your stock and finance figures?</li>
     </ol>
-    <p class="small r" style="--d:1.1s">Takes 1 minute.</p>
   </div>
 </div>
-''' % qr('QR CODE', 'Problem poll<br>[link to add]'), "\"Take out your phone and scan this. Three questions, one minute. Your answers will be on this screen in a few minutes. By 5 pm each of you will leave with three things written on the worksheet in front of you: your number, your readiness score, and your first AI job.\"\n\nDo: table hosts help anyone who cannot scan. The demo driver watches the answers come in.\nForm: name, company, mobile; Q1 keying in orders / chasing payments / checking stock / typing up paper forms / making reports; Q2 1 person / 2 to 3 / 4 or more; Q3 fully / mostly / not much; consent line.\nNext: \"While the answers come in, here are the five problems we hear most.\"")
+''', "\"Take out your phone and scan this. Three questions, one minute. Your answers will be on this screen in a few minutes. By the end of today each of you will leave with three things written on the worksheet in front of you: your number, your readiness score, and your first AI job.\"\n\nDo: table hosts help anyone who cannot scan. The demo driver watches the answers come in.\nForm: name, company, mobile; Q1 keying in orders / chasing payments / checking stock / typing up paper forms / making reports; Q2 1 person / 2 to 3 / 4 or more; Q3 (stock and finance figures) fully / mostly / not much; consent line.\nNext: \"While the answers come in, here are the five problems we hear most.\"")
 
 # ============================================================ 2 · THE PROBLEM
 TOP5 = [
@@ -1516,8 +1399,9 @@ slide('03-top-5-issues', 'Top 5 issues', SEC[1], 'light', 'data-sparks="9,0" sty
 .iss:first-child h3 { color: var(--on-dark); }
 .iss:first-child p { color: var(--on-dark-2); }
 .iss:first-child .tg { color: #FFB08F; background: rgba(255,138,91,.16); }
+h1 .sig:lang(en) { margin-left: .26em; }
 ''', '''
-<h1 class="h1 r" style="--d:.1s">The 5 problems we hear in <span class="sig" style="--sd:1.4s">every office</span></h1>
+<h1 class="h1 r" style="--d:.1s">The 5 problems we hear in<span class="sig" style="--sd:1.4s">every business</span></h1>
 <div class="list">''' + _top5() + '''</div>
 ''',
 "\"While your answers come in, here are the five problems we hear in almost every company we visit.\n\nOne: orders typed in by hand. Every WhatsApp and email order is keyed in again, and it takes a team of people to do it.\n\nTwo: routine work done by people. Chasing overdue payments, sending statements, checking the same reports every morning.\n\nThree: problems found too late. Sales drop, a good customer stops ordering, stock runs out, and nobody notices until it hurts.\n\nFour: stock that is never right. The system says forty cartons, the shelf has twelve.\n\nAnd five: cash comes in late. The invoice goes out days after the delivery, and the bank slip is lost somewhere in the chat.\n\nPut your hand up if you have at least three of these.\" (Pause.)\n\nDo: let the hands go up; it is the same point the poll will make with data.\nNote: issue 5 is our suggestion; swap it for the room's top answer if the poll shows something else.\nNext: \"Let me show you how problem number one starts.\"")
@@ -1775,11 +1659,11 @@ slide('07-problem-3', 'Problem 3: found too late', SEC[1], 'dark', 'data-sparks=
 
 # ---------------- Problem 4: stock never right ----------------
 P4_CAUSES = [
-    ('<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>', 'Picking on paper', 'Pick lists written by hand. Wrong item, wrong quantity, and nobody updates the system.'),
+    ('<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>', 'Manual Picking', 'Pick lists written by hand. Wrong item, wrong quantity, and nobody updates the system.'),
     ('<path d="M3 9.5L12 4l9 5.5V20H3z"/><path d="M8 20v-6h8v6"/>', 'No fixed shelf spot', 'Goods are left wherever there is space. Nobody records which shelf.'),
     ('<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M8 11h6"/>', 'Stock cannot be found', 'It is in the warehouse, but nobody knows where. Staff spend hours searching.'),
     ('<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/>', 'Oldest stock not sent first', 'New cartons go out first. The old ones sit at the back and expire.'),
-    ('<path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M8 10l8 4M16 10l-8 4"/>', 'Cartons mixed with pieces', '10 pieces keyed as 10 cartons. The numbers get more wrong every day.'),
+    ('<path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M8 10l8 4M16 10l-8 4"/>', 'UOM mixed up', '10 pieces keyed as 10 cartons. The numbers get more wrong every day.'),
     ('<path d="M4 5h16v11H9l-5 4z"/><path d="M9 9h6"/>', 'Typed in the next day', 'Goods move today, the system knows tomorrow. In between, every figure is wrong.'),
 ]
 P4_COST = [('Promised stock you don&rsquo;t have', 'Angry customers, lost orders'), ('Expired stock thrown out', 'Money lost'),
@@ -1829,7 +1713,7 @@ slide('07-problem-4', 'Problem 4: stock never right', SEC[1], 'light', 'data-spa
 </div>
 <div class="cost"><span class="lb f" style="--d:1.4s">WHAT IT COSTS</span>''' + P4K + '''</div>
 ''',
-"\"Problem four: stock. SQL Account says forty cartons. Somebody walks to the shelf: twelve. Where did twenty-eight go? Here is what really happens in most warehouses.\n\nPicking is done on paper, so the wrong item or quantity goes out and nobody updates the system. There is no fixed shelf spot, so goods are left wherever there is space and nobody records which shelf. So stock cannot be found: it is in the warehouse, but nobody knows where. The oldest stock is not sent first, so the old cartons sit at the back and expire. Pieces get keyed as cartons. And everything is typed in the next day.\n\nWhat does it cost? You promise stock you don't have. Expired stock is thrown out. Staff spend hours searching. And the warehouse stops for a day at every month-end count.\n\nHands up if your stock count never matches the system.\" (Pause.) \"If you don't trust the number, you can't let a person, or an AI, promise stock to a customer.\"\n\nNext: \"And problem 5, the one that hurts the most: cash.\"")
+"\"Problem four: stock. SQL Account says forty cartons. Somebody walks to the shelf: twelve. Where did twenty-eight go? Here is what really happens in most warehouses.\n\nManual picking: picking is done on paper, so the wrong item or quantity goes out and nobody updates the system. There is no fixed shelf spot, so goods are left wherever there is space and nobody records which shelf. So stock cannot be found: it is in the warehouse, but nobody knows where. The oldest stock is not sent first, so the old cartons sit at the back and expire. UOM mixed up: pieces get keyed as cartons. And everything is typed in the next day.\n\nWhat does it cost? You promise stock you don't have. Expired stock is thrown out. Staff spend hours searching. And the warehouse stops for a day at every month-end count.\n\nHands up if your stock count never matches the system.\" (Pause.) \"If you don't trust the number, you can't let a person, or an AI, promise stock to a customer.\"\n\nNext: \"And problem 5, the one that hurts the most: cash.\"")
 
 # ---------------- Problem 5: cash comes in late ----------------
 CASH = [('DAY 0', 'Goods delivered', '', 0), ('DAY 3', 'Invoice typed and sent', 'Paperwork piles up', 1), ('DAY 33', 'Payment due', 'Customer forgets', 2), ('DAY 63', 'Money in the bank', 'Slip lost in the chat', 3)]
@@ -1893,14 +1777,14 @@ slide('07-count-your-number', 'Count your own number', SEC[1], 'light', 'data-sp
   <span class="op f" style="--d:.8s">&times;</span>
   <div class="glass st r" style="--d:.9s"><span class="k">STEP 2</span><h3>Weeks in a year</h3><span class="hint">Every week, all year</span><div class="v">52<small>weeks</small></div></div>
   <span class="op f" style="--d:1.2s">&times;</span>
-  <div class="glass st r" style="--d:1.3s"><span class="k">STEP 3</span><h3>Cost of 1 hour of a clerk</h3><span class="hint">Salary plus EPF and SOCSO</span><div class="v">RM16</div></div>
+  <div class="glass st r" style="--d:1.3s"><span class="k">STEP 3</span><h3>Cost of 1 staff hour</h3><span class="hint">Salary plus EPF and SOCSO</span><div class="v">RM16</div></div>
   <span class="op f" style="--d:1.6s">=</span>
   <div class="st res r" style="--d:1.7s"><span class="k">YOUR NUMBER</span><h3>Money spent on typing and chasing</h3><span class="hint">25 &times; 52 &times; RM16</span>
     <div class="v">RM<span data-count="20800" data-delay="2" data-dur="1.6">0</span><small class="yr">a year</small></div></div>
 </div>
-<div class="foot2 r" style="--d:2.4s">''' + ws(1, 'Write your own number. Rough is fine.', '2.4s').replace('class="ws r"', 'class="ws"') + '''<span>1 minute. Nobody will read it out.</span></div>
+<div class="foot2 r" style="--d:2.4s"><div class="ws" style="--d:2.4s">''' + ic(PEN, 30) + '''Work out your rough monthly staff cost and write it in your notes.</div></div>
 ''',
-"\"Let's put a number on all five problems, your own number. Three steps.\n\nStep one: how many hours a week does your team spend on manual work, all staff added together? In my example: keying in orders ten hours, chasing payments eight, checking stock seven. Twenty-five hours a week.\n\nStep two: times fifty-two weeks in a year.\n\nStep three: times sixteen ringgit, roughly what one hour of a clerk costs you with EPF and SOCSO.\n\nTwenty-five times fifty-two times sixteen: twenty thousand eight hundred ringgit a year, spent on typing and chasing. Now do yours in box 1 of your worksheet. One minute. Rough is fine, nobody will read it out.\"\n\nDo: one minute of silence. Table hosts help with the sums.\nNote: RM16 an hour is a clerk at about RM3,400 a month all-in, over 208 working hours. Adjust for your audience.\nNext: \"The usual answer is to hire another clerk. That only puts more people on the same typing. So how do you fix this, when you already have SQL Account?\"")
+"\"Let's put a number on all five problems, your own number. Three steps.\n\nStep one: how many hours a week does your team spend on manual work, all staff added together? In my example: keying in orders ten hours, chasing payments eight, checking stock seven. Twenty-five hours a week.\n\nStep two: times fifty-two weeks in a year.\n\nStep three: times sixteen ringgit, roughly what one staff hour costs you with EPF and SOCSO.\n\nTwenty-five times fifty-two times sixteen: twenty thousand eight hundred ringgit a year, spent on typing and chasing. Now work out your rough monthly staff cost and write it in your notes.\"\n\nDo: one minute of silence. Table hosts help with the sums.\nNote: RM16 an hour is a staff member at about RM3,400 a month all-in, over 208 working hours. Adjust for your audience.\nNext: \"The usual answer is to hire another clerk. That only puts more people on the same typing. So how do you fix this, when you already have SQL Account?\"")
 
 AI_SECTION = '''
 <div class="c">
@@ -1920,7 +1804,7 @@ AI_SECTION = '''
 AA_ARR = ic('<path d="M5 12h14M13 6l6 6-6 6"/>', 34, 2.2)
 
 # ---------------- 1 · section opener ----------------
-AA_STEPS = [('How AI grew up', 'from rules to agents', '<path d="M3 20h4v-5h4v-5h4V5h6"/>'),
+AA_STEPS = [('How AI learns', 'from rules to agents', '<path d="M3 20h4v-5h4v-5h4V5h6"/>'),
             ('The brain', 'what an LLM is, how it learned', '<path d="M12 5a3 3 0 00-5.9-.7A3 3 0 004 9a3 3 0 00.5 5.5A3 3 0 008 19a3 3 0 004 1V5z"/><path d="M12 5a3 3 0 015.9-.7A3 3 0 0120 9a3 3 0 01-.5 5.5A3 3 0 0116 19a3 3 0 01-4 1"/>'),
             ('The agent', 'a brain that does the work', '<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M3 13v3M21 13v3"/>')]
 slide('08-section-ai', 'Section: What is AI?', SEC[2], 'dark bare', 'data-sparks="none"', MIN_CSS + '''
@@ -1949,7 +1833,7 @@ html.static .path .run { display: none; }
   </div>
 </div>
 ''',
-"\"So what is AI, really? Forget the headlines. We will go in 3 steps.\n\nOne: how AI grew up, from hand-written rules to agents. Two: the brain, the thing people call an LLM, and how it learned. Three: the agent, a brain that can actually do the work.\"\n\nNext: \"First, how did we get here? 70 years in 1 slide.\"")
+"\"So what is AI, really? Forget the headlines. We will go in 3 steps.\n\nOne: how AI learns, from hand-written rules to agents. Two: the brain, the thing people call an LLM, and how it learned. Three: the agent, a brain that can actually do the work.\"\n\nNext: \"First, how did we get here? 70 years in 1 slide.\"")
 
 # ---------------- 2 · 70 years of AI ----------------
 AA_HIST = [('1950s&ndash;80s', 'Rules', 'People wrote every rule by hand.'),
@@ -2803,7 +2687,7 @@ body[data-w="1"] .why [style*="--d"] { opacity: 1; transform: none; transition-d
 ''', '''
 <div class="why">
   <div class="mk" style="--d:.05s;opacity:1;transform:none">Why we need an AI Agent</div>
-  <h1 class="mt" style="--d:.15s">A chatbot <em>talks</em>. Your business needs work <em>done</em>.</h1>
+  <h1 class="mt" style="--d:.15s">A chatbot <em>talks</em>.<br>Your business needs work <em>done</em>.</h1>
   <div class="q" style="--d:.35s"><i>''' + ic('<path d="M4 5h16v11H9l-5 4z"/>', 22, 2.2) + '''</i>Jaya Grocer: Bwg besar 10kg x 20, deliver before 12pm</div>
   <div class="cmp">
     <div class="bad" style="--d:.6s"><small>BRAIN ONLY &middot; CHATGPT ON ITS OWN</small><h3>Tells you what to do</h3>
@@ -2844,9 +2728,9 @@ body[data-w="1"] .why [style*="--d"] { opacity: 1; transform: none; transition-d
 
 # ---------------- 16 · the agent loop ----------------
 AC_NODES = [('Think', -90), ('Act', 30), ('Check', 150)]
-AC_ROUNDS = [('1', 'Find the items', 'Big onions, 10 kg. 42 bags in stock.', ''),
-             ('2', 'Check the credit', 'Order is RM560. Only RM180 left.', ''),
-             ('3', 'Over the limit', 'Rule: the boss decides. It asks, then waits.', 'warn')]
+AC_ROUNDS = [('1', 'Find the item', 'Big onions, 10 kg. 42 bags in stock.', ''),
+             ('2', 'Check credit limit &amp; term', 'Order is RM560. Only RM180 left.', ''),
+             ('3', 'Over credit limit &amp; term', 'Rule: the boss decides. It asks, then waits.', 'warn')]
 def AC_loop_svg():
     import math
     cx, cy, r = 280, 270, 200
@@ -2890,7 +2774,7 @@ html.static .run { display: none; }
 .rd.warn b::after { content:""; display:inline-block; width: 12px; height: 12px; border-radius: 50%; background: #FFB547; margin-left: 14px; vertical-align: middle; }
 ''', '''
 <div class="mk u" style="--d:.05s">How an agent works</div>
-<h1 class="mt u" style="--d:.2s">It works in a <em>loop</em>, until the job is done</h1>
+<h1 class="mt u" style="--d:.2s">It works <em>on repeat</em>, until the job is done</h1>
 <p class="ml u" style="--d:.4s">Think, act, check, repeat. It stops when the job is done, or when it needs you.</p>
 <div class="wrap">
   ''' + AC_loop_svg() + '''
@@ -2898,7 +2782,7 @@ html.static .run { display: none; }
       '<div class="rd %s u" style="--d:%.2fs"><i>%s</i><div><b>%s</b><p>%s</p></div></div>' % (c, 1.8 + k * .3, n, t, p) for k, (n, t, p, c) in enumerate(AC_ROUNDS)) + '''</div>
 </div>
 ''',
-"\"So how does an agent actually work? It does not answer in 1 shot like a chatbot. It goes round a loop. [Point at the circle] Think: plan the next step. Act: use 1 tool. Check: did it work? Am I done? Is this safe? If not done, round again.\n\nWatch it on 1 WhatsApp order from Jaya Grocer. Round 1: find the items. It searches and finds big onions, 10 kg bags, 42 bags in stock. Round 2: check the credit. The order is RM560, and only RM180 is left on the credit limit. Round 3: over the limit. The rule says the boss decides. So it sends the request for approval and waits.\n\nThat is the whole idea. It loops until the job is done, then reports to you. Or, when it is unsure or the step is risky, it stops and asks a person.\"\n\nNext: \"Think of it like hiring a new graduate.\"")
+"\"So how does an agent actually work? It does not answer in 1 shot like a chatbot. It works on repeat until the job is done. [Point at the circle] Think: plan the next step. Act: use 1 tool. Check: did it work? Am I done? Is this safe? If not done, round again.\n\nWatch it on 1 WhatsApp order from Jaya Grocer. Round 1: find the item. It searches and finds big onions, 10 kg bags, 42 bags in stock. Round 2: check the credit limit and term. The order is RM560, and only RM180 is left on the credit limit. Round 3: over the credit limit and term. The rule says the boss decides. So it sends the request for approval and waits.\n\nThat is the whole idea. It loops until the job is done, then reports to you. Or, when it is unsure or the step is risky, it stops and asks a person.\"\n\nNext: \"Think of it like hiring a new graduate.\"")
 
 # ---------------- 17 · brain to staff ----------------
 AC_HIRE = [  # icon, clerk gets, agent gets, plain example
@@ -2929,7 +2813,7 @@ slide('22-brain-to-staff', 'From brain to staff member', SEC[2], 'light', 'data-
 <div class="mk u" style="--d:.05s">From brain to staff</div>
 <h1 class="mt u" style="--d:.2s">Set up an AI Agent like a <em>new hire</em></h1>
 <div class="gd">
-  <div class="gh u" style="--d:.4s"><img src="../assets/av/meiling-typing.svg" alt=""><b>A new clerk gets</b></div><div></div>
+  <div class="gh u" style="--d:.4s"><img src="../assets/av/meiling-typing.svg" alt=""><b>A new staff member gets</b></div><div></div>
   <div class="gh ai u" style="--d:.5s"><img src="../assets/av/agent-grad.svg" alt=""><b>Your AI Agent gets</b></div>
   ''' + ''.join('<div class="cl ux" style="--d:%.2fs">%s</div><div class="mid uf" style="--d:%.2fs"><i>%s</i></div><div class="ag u" style="--d:%.2fs"><b>%s</b><span>%s</span></div>'
                 % (.7 + k * .2, a, .8 + k * .2, ic(p, 28, 2), .9 + k * .2, b, e) for k, (p, a, b, e) in enumerate(AC_HIRE)) + '''
@@ -3245,23 +3129,25 @@ def _layer_rows():
 
 # ---------------- slide: today, at a glance ----------------
 AGENDA = [('<circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 10h.01M9 15c1.5 1.5 4.5 1.5 6 0"/>', 'What is an AI Agent?', 'How an LLM works, why AI Agents were invented, what they need'),
-          ('<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/>', 'The problem', '5 problems every office has, and what they cost you'),
+          ('<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/>', 'Problems businesses face', '5 problems every office has, and what they cost you'),
           ('<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/>', 'SuDu AI', 'The system, then 6 AI Agents at work, live'),
           ('<path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/>', 'Workshop', 'Score your company and write your first AI job'),
-          ('<path d="M9 3h6v3H9z"/><path d="M7 5H5v16h14V5h-2"/><path d="M9 13l2 2 4-4"/>', 'Diagnosis', 'Where to start, what it saves you, and your next step')]
-TAKE = [('Your own number', 'what manual work costs you a year'), ('Your readiness score', 'and whether you need WMS or MES'), ('Your first AI job', 'written down, ready to run')]
+          ('<path d="M9 3h6v3H9z"/><path d="M7 5H5v16h14V5h-2"/><path d="M9 13l2 2 4-4"/>', 'Get started', 'Where to start, what it saves you, and your next step')]
 def _agenda():
     out = ''
     for k, (p, t, s_) in enumerate(AGENDA):
         out += ('<div class="ag" style="--d:%.2fs"><div class="dot"><i>%s</i></div><div class="tx"><small>PART %d</small><b>%s</b><span>%s</span></div></div>'
                 % (.55 + k * .16, ic(p, 30), k + 1, t, s_))
     return out
-slide('03-today', 'Today at a glance', SEC[0], 'light', 'data-sparks="none" style="--gx:85%;--gy:35%;--mx:85%;--my:35%"', '''
+slide('03-today', 'Today', SEC[0], 'light', 'data-sparks="none" style="--gx:85%;--gy:35%;--mx:85%;--my:35%"', '''
 .slide { padding-top: 80px; }
 .wrap { flex:1; display:grid; grid-template-columns: 640px 1fr; gap: 90px; min-height: 0; }
 .lf { display:flex; flex-direction:column; }
 .kicker { font-size: 22px; }
-.h1 { font-size: 84px; line-height: 1.02; margin-top: 16px; }
+.h1 { font-size: 160px; line-height: 1; margin-top: 22px; letter-spacing: -.04em; }
+.sub { font-size: 40px; font-weight: 650; color: var(--ink-2); margin-top: 26px; }
+.sub em { font-style: normal; color: var(--green); }
+.lf { justify-content: center; padding-bottom: 60px; }
 .lead { font-size: 30px; line-height: 1.4; margin-top: 22px; }
 .lead b { color: var(--ink); }
 .tk { margin-top: auto; margin-bottom: 40px; padding: 26px 30px; border-radius: 26px; background: var(--ink); color: var(--on-dark); box-shadow: 0 30px 60px -36px rgba(2,34,31,.7); }
@@ -3286,15 +3172,63 @@ slide('03-today', 'Today at a glance', SEC[0], 'light', 'data-sparks="none" styl
 ''', '''
 <div class="wrap">
   <div class="lf">
-    <div class="kicker r" style="--d:.05s">Today &middot; 2:00 to 5:00 pm</div>
-    <h1 class="h1 r" style="--d:.15s">Hire your first AI Agent, in 5 parts</h1>
-    <p class="lead r" style="--d:.3s">No tech talk. First what AI really is, then your problems, then the AI at work. Then <b>you plan your own first step</b>.</p>
-    <div class="tk r" style="--d:1.5s"><h3>You leave with <em>3 things</em></h3><ul>''' + ''.join('<li><i>%d</i><span><b>%s</b>%s</span></li>' % (k + 1, t, s_) for k, (t, s_) in enumerate(TAKE)) + '''</ul></div>
+    <div class="kicker r" style="--d:.05s">Hire Your First AI Agent</div>
+    <h1 class="h1 r" style="--d:.15s">Today</h1>
+    <p class="sub r" style="--d:.3s">in <em>5</em> parts</p>
   </div>
   <div class="tl"><div class="ln"></div>''' + _agenda() + '''</div>
 </div>
 ''',
-"\"Here is our afternoon, in 5 parts. No tech talk.\n\nPart 1, what is an AI Agent: how an LLM really works, why people invented the AI Agent, and what it needs to work in a real company. Part 2, the problem: the 5 problems we see in almost every office, and what they cost you. You will put your own number on it. Part 3, SuDu AI: the system, and then 6 AI Agents doing real jobs live on the screen, sales, stock, buying, payments and finance. Part 4, the workshop: you score your own company, check if you need a WMS or MES, and write your first AI job. Part 5, the diagnosis: where your company should start, what it saves you, and your next step.\n\nSo you leave with 3 things on your worksheet: your own number, what manual work costs you a year; your readiness score; and your first AI job, written down and ready to run.\"\n\nNext: \"Let's start with the big question: what is AI, really?\"")
+"\"Here is what we cover today, in 5 parts.\n\nPart 1, what is an AI Agent: how an LLM really works, why people invented the AI Agent, and what it needs to work in a real company. Part 2, the problems businesses face: the 5 problems we see in almost every office, and what they cost you. You will work out your own company's cost. Part 3, SuDu AI: the system, and then 6 AI Agents doing real jobs live on the screen, sales, stock, buying, payments and finance. Part 4, the workshop: you score your own company, check if you need a WMS or MES, and write your first AI job. Part 5, get started: where your company should start, what it saves you, and your next step.\"\n\nNext: \"So what do you take home today?\"")
+
+TK_GIFT = '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13"/><path d="M12 8C10.5 5 7 4.5 7 6.5S10 8 12 8zM12 8c1.5-3 5-3.5 5-1.5S14 8 12 8z"/>'
+TK_BULB = '<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 00-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0012 3z"/>'
+TK_ROUTE = '<circle cx="5" cy="18" r="2.2"/><circle cx="19" cy="6" r="2.2"/><path d="M7 18h7a3.5 3.5 0 000-7h-4a3.5 3.5 0 010-7h7"/>'
+def _tk_ic(p):
+    return '<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg></span>'
+slide('03-takeaways', 'What you take home', SEC[0], 'light', 'data-sparks="9,0 1,5" style="--gx:82%;--gy:28%;--mx:80%;--my:30%"', '''
+.slide { padding-top: 96px; }
+.top { display:flex; align-items:flex-end; justify-content:space-between; gap: 40px; }
+.h1 { font-size: 120px; line-height: 1; letter-spacing: -.04em; margin-top: 18px; }
+.sub { font-size: 42px; font-weight: 650; color: var(--ink-2); margin-top: 24px; }
+.sub em { font-style: normal; color: var(--green); }
+.top .av { width: 230px; height: 230px; flex: none; margin-bottom: -10px; }
+.cards { flex:1; display:grid; grid-template-columns: repeat(3, 1fr); gap: 34px; margin-top: 56px; margin-bottom: 10px; }
+.cd { position:relative; padding: 44px 44px 46px; border-radius: 34px; display:flex; flex-direction:column; overflow:hidden; }
+.cd .n { font-family: var(--mono); font-size: 26px; font-weight: 700; letter-spacing: .1em; color: var(--green); }
+.cd .ic { width: 112px; height: 112px; border-radius: 30px; display:grid; place-items:center; background: var(--mint); color: var(--green); margin-top: 30px; }
+.cd .ic svg { width: 58px; height: 58px; }
+.cd b { display:block; font-size: 54px; font-weight: 750; letter-spacing: -.025em; line-height: 1.18; margin-top: auto; text-wrap: balance; }
+.cd .big { position:absolute; right: 26px; top: -18px; font-size: 260px; font-weight: 800; letter-spacing: -.06em; line-height: 1; color: rgba(2,34,31,.045); pointer-events:none; }
+/* the gift: dark card, neon accent */
+.cd.hi { background: var(--ink); color: var(--on-dark); box-shadow: 0 40px 80px -40px rgba(2,34,31,.7); }
+.cd.hi .n { color: var(--neon); }
+.cd.hi .ic { background: rgba(0,245,169,.14); color: var(--neon); }
+.cd.hi .big { color: rgba(0,245,169,.08); }
+.cd.hi b em { font-style: normal; color: var(--neon); }
+.cd.hi b em:lang(en) { margin-left: .25em; }
+.cd.hi .tag { position:absolute; right: 36px; top: 40px; font-size: 24px; font-weight: 800; letter-spacing: .04em; padding: 8px 18px; border-radius: 999px; background: var(--neon); color: var(--ink); }
+''', '''
+<div class="top">
+  <div>
+    <div class="kicker r" style="--d:.05s">Hire Your First AI Agent</div>
+    <h1 class="h1 r" style="--d:.15s">What you take home</h1>
+    <p class="sub r" style="--d:.3s">Leave with <em>3</em> things</p>
+  </div>
+  <img class="av pop" style="--d:.45s" src="../assets/av/agent-thumbs.svg" alt="The SuDu agent giving a thumbs up">
+</div>
+<div class="cards">
+  <div class="glass cd r" style="--d:.6s"><span class="big">1</span><span class="n">01</span>
+    ''' + _tk_ic(TK_BULB) + '''
+    <b>A clear picture of AI</b></div>
+  <div class="glass cd r" style="--d:.8s"><span class="big">2</span><span class="n">02</span>
+    ''' + _tk_ic(TK_ROUTE) + '''
+    <b>Know how to plan<br>AI for your business</b></div>
+  <div class="cd hi r" style="--d:1s"><span class="big">3</span><span class="n">03</span>
+    ''' + _tk_ic(TK_GIFT) + '''
+    <b>Get a<em>free</em><br>Demo AI Account</b></div>
+</div>
+''', "\"By the end of today, you take home 3 things.\n\nOne: a clear picture of AI. What AI really is, how an AI Agent works, what it can and cannot do, with no tech talk.\n\nTwo: you know how to plan AI for your business. Where your company should start, and which job is best to hand to AI first.\n\nThree: a free Demo AI Account. Go back and try it yourself: watch AI Agents work on sample data.\"\n\nNext: \"Let's start with the big question: what is AI, really?\"")
 
 slide('12-why-sudu', 'Why SuDu if I have SQL Account', SEC[0], 'light', 'data-sparks="9,0" style="--gx:80%;--gy:30%;--mx:80%;--my:30%"', '''
 .slide { padding-top: 84px; }
@@ -3365,7 +3299,7 @@ body[data-s="0"] .rest { opacity: 0; transform: translateY(40px); pointer-events
 def danger(icon, t, s, d):
     return '<div class="glass dg r" style="--d:%s"><div class="i">%s</div><h3>%s</h3><p>%s</p></div>' % (d, ic(icon, 44), t, s)
 DANGERS = [
-    (KEY, 'No permission control', 'It can read every figure and change any of them. Nothing asks you first.',
+    (KEY, 'No access control', 'It can read every figure and change any of them. Nothing asks you first.',
      'Like giving a new temp the master key and the company chop on day 1.'),
     (SNOW, 'It can freeze the server', '1 heavy question, like &ldquo;every sale for 5 years&rdquo;, can lock the database.',
      'Nobody in the office can issue an invoice until it recovers.'),
@@ -3426,7 +3360,7 @@ slide('13-plug-straight-in', 'Why not plug it straight in?', SEC[2], 'light', 'd
 <div class="row">''' + _dangers() + '''</div>
 <div class="safe r" style="--d:1.6s"><b>The agent is not the danger. <em>Direct access is.</em></b><div class="ck"><em>The safe way, through SuDu:</em>''' + ''.join('<span>' + ic(CHECK, 20, 3) + x + '</span>' for x in SAFE) + '''</div></div>
 ''',
-"\"Every week someone asks me: my nephew, or my IT guy, says he can connect ChatGPT, Claude or Codex straight to my SQL Account this weekend. Can he? Yes, he probably can. Here is what can go wrong.\n\nOne: no permission control. It can read every figure and change any of them, and nothing asks you first. It is like giving a new temp the master key and the company chop on day one.\n\nTwo: it can freeze the server. SQL Account keeps its data in a database. One heavy question, like every sale for five years, can lock it, and nobody in the office can issue an invoice until it recovers.\n\nThree: it messes up your accounts. Writing straight into the database skips SQL Account's own checks: the running numbers, the stock update, the accounts. Your records stop matching each other, and you may not notice for months.\n\nSo the agent is not the danger. Direct access is. The safe way is a proper connection: permission for every user, a person approves before anything is saved into SQL Account, every action is logged, and SQL Account's own rules are kept. That is what SuDu's sync tool does.\"\n\nNote: say \"can freeze\", not \"will crash\". Claude is made by Anthropic and Codex by OpenAI; both logos are shown only to name the tools.\nNext: \"So AI needs something underneath it.\"")
+"\"Every week someone asks me: my nephew, or my IT guy, says he can connect ChatGPT, Claude or Codex straight to my SQL Account this weekend. Can he? Yes, he probably can. Here is what can go wrong.\n\nOne: no access control. It can read every figure and change any of them, and nothing asks you first. It is like giving a new temp the master key and the company chop on day one.\n\nTwo: it can freeze the server. SQL Account keeps its data in a database. One heavy question, like every sale for five years, can lock it, and nobody in the office can issue an invoice until it recovers.\n\nThree: it messes up your accounts. Writing straight into the database skips SQL Account's own checks: the running numbers, the stock update, the accounts. Your records stop matching each other, and you may not notice for months.\n\nSo the agent is not the danger. Direct access is. The safe way is a proper connection: permission for every user, a person approves before anything is saved into SQL Account, every action is logged, and SQL Account's own rules are kept. That is what SuDu's sync tool does.\"\n\nNote: say \"can freeze\", not \"will crash\". Claude is made by Anthropic and Codex by OpenAI; both logos are shown only to name the tools.\nNext: \"So AI needs something underneath it.\"")
 
 HOUSE = [  # top to bottom: n, part, title, what, without, check, marker (x, y), delay
     ('4', 'ROOF', 'AI Agents', 'Do the daily work: orders, stock, payments, reports.',
@@ -3473,7 +3407,7 @@ slide('14-the-house', 'What AI needs underneath', SEC[2], 'light', 'data-sparks=
 .lv .no { color: #8A3417; } .lv .no svg { color: #B4451F; }
 .lv .ck { color: var(--green); } .lv .ck svg { color: var(--emerald); }
 ''', '''
-<h1 class="h1 r" style="--d:.05s">AI needs a house under it</h1>
+<h1 class="h1 r" style="--d:.05s">AI is like a house</h1>
 <p class="lead r" style="--d:.2s">Most people only look at the roof. <b>AI on messy data only makes mistakes faster.</b> Build from the foundation up.</p>
 <div class="wrap">
   <div class="hs">
@@ -3491,7 +3425,7 @@ slide('14-the-house', 'What AI needs underneath', SEC[2], 'light', 'data-sparks=
   <img class="av pop" style="--d:3.6s" src="../assets/av/agent-salute.svg" alt="The agent on the roof"></div>
   <div class="lvs">''' + _house_rows() + '''</div>
 </div>
-''', "\"Most people only look at the roof. The AI is the exciting part. But a roof needs a house under it, and AI on messy data only makes mistakes faster. So build from the foundation up. For each level, 1 risk and 1 question to check yourself.\n\n1, the foundation: clean data. 1 code per item, fixed units, and stock that matches the shelf because every carton is scanned and every job recorded. Without it, the AI quotes the wrong price and promises stock you do not have. Check: when you count, does the system match the shelf?\n\n2, the door: a safe connection. The AI goes through a controlled door that keeps your accounting rules, never straight into the database. Without it, 1 wrong command can freeze the server or break your accounts. Check: does any tool write straight into your SQL database?\n\n3, the walls: permissions and approvals. Who may see what, do what, and say yes, with every action logged. Without them, the AI can change anything, and nobody knows who did what. Check: is it written down who approves discounts, credit and purchases?\n\n4, the roof: the AI Agents doing the daily work. Without them, people keep typing and chasing by hand. Check: which job eats the most hours each week?\n\nFor the next part, I will show you the whole house, working.\"\n\nThe house builds itself from the ground up; the numbered dots match the 4 levels. This is thread 2; it returns later in the deck.\nNext: \"So we do not replace SQL Account. We build the house around it.\"")
+''', "\"AI is like a house. Most people only look at the roof. The AI is the exciting part. But a roof needs a house under it, and AI on messy data only makes mistakes faster. So build from the foundation up. For each level, 1 risk and 1 question to check yourself.\n\n1, the foundation: clean data. 1 code per item, fixed units, and stock that matches the shelf because every carton is scanned and every job recorded. Without it, the AI quotes the wrong price and promises stock you do not have. Check: when you count, does the system match the shelf?\n\n2, the door: a safe connection. The AI goes through a controlled door that keeps your accounting rules, never straight into the database. Without it, 1 wrong command can freeze the server or break your accounts. Check: does any tool write straight into your SQL database?\n\n3, the walls: permissions and approvals. Who may see what, do what, and say yes, with every action logged. Without them, the AI can change anything, and nobody knows who did what. Check: is it written down who approves discounts, credit and purchases?\n\n4, the roof: the AI Agents doing the daily work. Without them, people keep typing and chasing by hand. Check: which job eats the most hours each week?\n\nFor the next part, I will show you the whole house, working.\"\n\nThe house builds itself from the ground up; the numbered dots match the 4 levels. This is thread 2; it returns later in the deck.\nNext: \"So we do not replace SQL Account. We build the house around it.\"")
 
 # ============================================================ 4 · SUDU AI AND LIVE DEMO
 def col16(h, items, d, mid=False):
@@ -3537,18 +3471,19 @@ slide('17-foundation', 'The foundation: WMS and MES', SEC[3], 'light', 'data-spa
 .res .n { font-size: 124px; font-weight: 650; letter-spacing: -.05em; line-height: 1; color: var(--green); }
 .res .t { font-size: 32px; font-weight: 600; line-height: 1.2; }
 .res .t small { display:block; font-size: 24px; font-weight: 500; color: var(--ink-3); margin-top: 6px; }
+h1 .sig:lang(en) { margin-left: .26em; }
 ''', '''
-<h1 class="h1 r" style="--d:.1s">Scan it 1x, and the data is <span class="sig" style="--sd:1.1s">clean</span></h1>
+<h1 class="h1 r" style="--d:.1s">AI + mobile app make work<span class="sig" style="--sd:1.1s">easier</span></h1>
 <div class="cols">
   <div class="glass c r" style="--d:.3s">
     <img class="av pop" style="--d:.6s" src="../assets/av/rahman-scan.svg" alt="Rahman scanning a carton">
     <div><div class="k">WAREHOUSE · WMS</div><p class="steps">Receive, put away, pick, deliver, count. All by scanning.</p></div>
-    <div class="res"><span class="n">−<span data-count="90" data-delay="1.2">0</span>%</span><span class="t">Stock differences down<small class="ph">[Customer name]</small></span></div>
+    <div class="res"><span class="n">−<span data-count="90" data-delay="1.2">0</span>%</span><span class="t">Stock differences down</span></div>
   </div>
   <div class="glass c r" style="--d:.5s">
     <div class="phone pop" style="--d:.8s"><div class="ph2"><div class="tag"></div><div class="bar"></div></div></div>
     <div><div class="k">FACTORY · MES</div><p class="steps">Plan, issue materials, report output.</p></div>
-    <div class="res"><span class="n">−<span data-count="80" data-delay="1.4">0</span>%</span><span class="t">Manual data entry down<small class="ph">[Customer name]</small></span></div>
+    <div class="res"><span class="n">−<span data-count="80" data-delay="1.4">0</span>%</span><span class="t">Manual data entry down</span></div>
   </div>
 </div>
 ''', "\"The foundation is simple: scan it once, where it happens. In the warehouse, the storekeeper scans the carton when it arrives, when it goes on the shelf, when it is picked. No paper, no typing later. One of our customers cut their stock differences by ninety percent. In the factory it is the same idea: scan the job, record what was used and what was made. Another customer cut manual data entry by eighty percent. If you have no factory, ignore the right side. The point is the same. Scanned, not typed.\"\n\nNote: the company profile credits -90% stock discrepancy to Twin Arrow and -80% manual data entry to BHPetrol. Name them only with permission.\nNext: \"On top of that clean data sits the AI team.\"")
@@ -3565,12 +3500,13 @@ slide('18-ai-team', 'The AI team', SEC[3], 'light', 'data-sparks="9,1 1,5" style
 .m span { font-size: 28px; color: var(--ink-2); line-height: 1.25; margin-top: 4px; }
 .end { margin-top: auto; text-align:center; font-size: 34px; font-weight: 600; letter-spacing: -.01em; }
 .end span { color: var(--ink-3); font-weight: 500; }
+.end span:lang(en) { margin-left: .28em; }
 ''', '''
 <h1 class="h1 r" style="--d:.1s">7 agents, each with 1 job</h1>
 <div class="team">%s</div>
-<p class="end r" style="--d:1.4s">Normal cases run on their own. <span>Special cases go to a manager.</span></p>
+<p class="end r" style="--d:1.4s">AI handles the normal cases,<span>people decide the special ones.</span></p>
 ''' % t18,
-"\"You do not get one AI that does everything. You get a team, like your own office. One takes orders. One watches stock. One chases payments. And they all follow one rule: normal cases they handle on their own. Anything unusual goes to a manager. Enough slides. Let me show you a working day.\"\n\nNext: hand over to the demo.")
+"\"You do not get one AI that does everything. You get a team, like your own office. One takes orders. One watches stock. One chases payments. And they all follow one rule: the AI handles the normal cases, and the special cases go to a person to decide. Enough slides. Let me show you a working day.\"\n\nNext: hand over to the demo.")
 
 # demo day — stops on a sun arc
 # ---------------- Live demo: setting up + use cases, one slide each ----------------
@@ -3752,9 +3688,9 @@ USECASES = [
    ['The customer replies on WhatsApp', 'The reply shows up in the task', 'You approve the next step'],
    'You decide. It follows up on the day.',
    ui([('a', card('Kedai Ali replied', ('d', 'Approve?'), '<div class="tx">&ldquo;Jumaat saya bayar.&rdquo;</div><div class="kv"><span>Overdue</span><b>RM4,820</b><span>Plan</span><b>Remind again Friday, 10:00 am</b></div>', ['Approve', 'Reply myself']))], 'Tasks')),
-  ('Collection AI', '3 of 3', 'Customer sends a bank slip', ['wa'],
-   ['The customer sends the slip on WhatsApp', 'It reads the amount and matches invoices', 'A customer payment is created'],
-   'No slips lost in the chat.',
+  ('Collection AI', '3 of 3', 'Customer sends a|payment receipt', ['wa'],
+   ['The customer sends the payment receipt on WhatsApp', 'It reads the amount and matches invoices', 'A customer payment is created'],
+   'No payment receipts lost in the chat.',
    wa('Kedai Ali', [('c', 'Dah bank in boss' + att('bank-slip.jpg', 'img')), ('a', 'Received RM2,640, matched to INV-3301 and INV-3307. Thank you!'),
                     ('s', 'Customer Payment OR-1102 created in SQL Account')])),
   ('Up Sales AI', '1 of 1', 'Win back lost customers', ['web', 'wa'],
@@ -3809,18 +3745,18 @@ def demo_section():
         cards += ('<div class="tm r" style="--d:%.2fs"><div class="ph"><img class="av" src="../assets/av/%s" alt=""></div>'
                   '<b>%s</b><span class="ag">%s</span><p>%s</p></div>' % (0.45 + i * .1, av, nm, ag, job))
     html = ('<div class="kicker r" style="--d:.05s">Live demo &middot; Meet the AI team</div>'
-            '<h1 class="h1 r" style="--d:.15s">6 agents at Maju Jaya Foods</h1>'
+            '<h1 class="h1 r" style="--d:.15s">The 6 AI Agents in today&rsquo;s demo</h1>'
             '<p class="lead r" style="--d:.3s">A sample food distributor that runs SQL Account, with SuDu AI connected. Each agent has one job.</p>'
             '<div class="row">' + cards + '</div>')
     slide('19-demo-day', 'Live demo', SEC[3], 'light', 'data-sparks="none" style="--gx:50%;--gy:40%"', TEAM_CSS, html,
-          "\"Let me introduce the team. 6 AI agents work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: the Setting up intro slide.")
+          "\"Let me introduce the 6 AI Agents in today's demo. They work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: the Setting up intro slide.")
 
 
 def demo_uc(i):
     agent, nof, title, chans, steps, watch, mock = USECASES[i]
     st = ''.join('<li class="r" style="--d:%.2fs"><i>%d</i><span>%s</span></li>' % (0.4 + k * .12, k + 1, x) for k, x in enumerate(steps))
     sub = ('Use case ' + nof) if nof else 'Before the demo'
-    plain = lambda t: re.sub('<[^>]+>', '', t).replace('&rsquo;', "'").replace('&ldquo;', '"').replace('&rdquo;', '"').replace('&middot;', '·')
+    plain = lambda t: re.sub('<[^>]+>', '', t).replace('&rsquo;', "'").replace('&ldquo;', '"').replace('&rdquo;', '"').replace('&middot;', '·').replace('|', ' ')
     nxt = USECASES[i + 1] if i + 1 < len(USECASES) else None
     note = ("\"" + agent + (", use case " + nof if nof else "") + ": " + plain(title).lower() + ". " + ' '.join(plain(x) + '.' for x in steps) + " " + plain(watch) + "\"\n\n"
             "Do: show it live on the real screen (" + ', '.join({'web': 'web or mobile app', 'wa': 'WhatsApp', 'rt': 'routine'}[c] for c in chans) + "), then come back to this slide."
@@ -3831,7 +3767,7 @@ def demo_uc(i):
 <div class="grid2">
   <div class="lf">
     <div class="ag r" style="--d:.05s"><img class="av" src="../assets/av/''' + AGENT_AV[agent] + '''" alt=""><div><b>''' + ({t[1]: t[0].upper() + ' &middot; ' for t in TEAM}.get(agent, '')) + agent.upper() + '''</b><span>''' + sub + '''</span></div></div>
-    <h1 class="r" style="--d:.15s">''' + title + '''</h1>
+    <h1 class="r" style="--d:.15s">''' + title.replace('|', '<br>') + '''</h1>
     <div class="chn r" style="--d:.25s">''' + ''.join(CH[c] for c in chans) + '''</div>
     <ol>''' + st + '''</ol>
     <p class="wt r" style="--d:1.2s">''' + ic(CHECK, 28, 3) + '''<b>''' + watch + '''</b></p>
@@ -3884,10 +3820,10 @@ def demo_intro(agent):
         meet = 'Meet <b>' + nm + '</b>. ' + job + '.'
         tag = nm + ' &middot; <b>' + agent + '</b>'
         rows = ''.join('<li class="r" style="--d:%.2fs"><i>%02d</i><span>%s</span><em>%s</em></li>'
-                       % (0.55 + j * .12, j + 1, u[2], ''.join('<u>' + {'web': 'Web', 'wa': 'WhatsApp', 'rt': 'Routine'}[c] + '</u>' for c in u[3])) for j, u in enumerate(ucs))
+                       % (0.55 + j * .12, j + 1, u[2].replace('|', ' '), ''.join('<u>' + {'web': 'Web', 'wa': 'WhatsApp', 'rt': 'Routine'}[c] + '</u>' for c in u[3])) for j, u in enumerate(ucs))
         cap, cls = '%d USE CASE%s' % (len(ucs), '' if len(ucs) == 1 else 'S'), ''
     else:
-        av, meet, tag = AGENT_AV[agent], 'Done once, before the agents start. <b>Every agent uses these settings.</b>', '<b>Step 0</b>'
+        av, meet, tag = AGENT_AV[agent], 'Done once, before the agents start.<br><b style="white-space:nowrap">Every AI Agent needs basic setup.</b>', '<b>Step 1</b>'
         rows = ''.join('<li class="r" style="--d:%.2fs"><i>%02d</i><span>%s</span><em></em></li>' % (0.55 + j * .1, j + 1, s_) for j, s_ in enumerate(ucs[0][4]))
         cap, cls = '%d THINGS TO SET' % len(ucs[0][4]), ' six'
     prog = ''.join('<div class="%s"><i></i>%s</div>' % ('dn' if j < k else 'on' if j == k else '', a.replace(' AI', '')) for j, a in enumerate(DEMO_ORDER))
@@ -3899,12 +3835,12 @@ def demo_intro(agent):
             '</div><div class="port pop" style="--d:.25s"><div class="orb"></div><div class="disc"></div><img src="../assets/av/' + av + '" alt=""><span class="tag">' + tag + '</span></div></div>'
             '<div class="prog r" style="--d:.5s">' + prog + '</div>')
     first = ucs[0]
-    plain = lambda t: re.sub('<[^>]+>', '', t).replace('&rsquo;', "'").replace('&middot;', '·')
+    plain = lambda t: re.sub('<[^>]+>', '', t).replace('&rsquo;', "'").replace('&middot;', '·').replace('|', ' ')
     if team:
         note = ("\"Part %d: %s. Meet %s. %s. %s will show you %d %s.\"\n\nNext: \"%s, use case 1: %s.\""
                 % (k + 1, agent, team[0], plain(team[3]), team[0], len(ucs), 'job' if len(ucs) == 1 else 'jobs', agent, plain(first[2]).lower()))
     else:
-        note = "\"Before any agent works, we set it up once: WhatsApp, contacts, posting, stock, approvals and prices. Every agent then uses these settings.\"\n\nNext: \"Setting up, step by step.\""
+        note = "\"Step 1: before any agent works, we set it up once: WhatsApp, contacts, posting, stock, approvals and prices. Every AI Agent needs this basic setup.\"\n\nNext: \"Setting up, step by step.\""
     slide('19-intro-%02d' % (k + 1), 'Demo: ' + agent, SEC[3], 'light', 'data-sparks="none"', INTRO_CSS, html, note)
 
 demo_section()
@@ -3913,7 +3849,7 @@ for _i in range(len(USECASES)):
         demo_intro(USECASES[_i][0])
     demo_uc(_i)
 
-slide('20-you-stay-the-boss', 'You stay the boss', SEC[3], 'light', 'data-sparks="1,1 6,5" style="--gx:75%;--gy:50%;--mx:75%;--my:50%"', '''
+slide('20-you-stay-the-boss', '4 things AI never does', SEC[3], 'light', 'data-sparks="1,1 6,5" style="--gx:75%;--gy:50%;--mx:75%;--my:50%"', '''
 .wrap { flex:1; display:grid; grid-template-columns: 1fr 700px; gap: 80px; align-items:center; }
 ol { list-style:none; display:grid; gap: 30px; margin-top: 50px; counter-reset: n; }
 li { display:grid; grid-template-columns: 70px 1fr; font-size: 42px; line-height: 1.2; font-weight: 550; letter-spacing: -.015em; counter-increment: n; }
@@ -3935,9 +3871,31 @@ li::before { content: counter(n); font-family: var(--mono); font-size: 28px; col
   <div class="shot r" style="--d:.6s"><img src="../assets/shot-approve.png" alt="Approval card: Create sales order, waiting for you"><span class="pill cap pop" style="--d:1.6s">%s Waiting for your approval</span></div>
 </div>
 ''' % ic(LOCK, 26),
-"\"You just saw it do a lot. So let me tell you what it does not do. It does not save anything you have not approved. It never moves money: it prepares the payment voucher, and you release the payment in your bank. It only reads the WhatsApp groups you switch on. And every single thing it did is recorded, so you can check it. You are still the boss. Now, would this work in your company? Let's find out.\"\n\nNext: the readiness check.")
+"\"You just saw it do a lot. So let me tell you the 4 things AI never does. It does not save anything you have not approved. It never changes your financial figures. It only reads the WhatsApp groups you allow. And every single thing it did is recorded, so you can check it any time. You are still the boss. Now, would this work in your company? Let's find out.\"\n\nNext: \"Would this work in your company? Let's score it.\"")
 
 # ============================================================ 5 · WORKSHOP
+slide('23-readiness-qr', 'Scan: AI readiness', SEC[5], 'light', 'data-sparks="2,1 8,4" style="--gx:22%;--gy:50%;--mx:25%"', '''
+.wrap { display:grid; grid-template-columns: 460px 1fr; gap: 130px; align-items:center; height:100%; }
+ol { list-style:none; margin-top: 44px; display:grid; gap: 34px; counter-reset: q; }
+li { display:grid; grid-template-columns: 76px 1fr; align-items:baseline; font-size: 40px; line-height: 1.25; font-weight: 500; letter-spacing: -.01em; counter-increment: q; }
+li::before { content: counter(q); font-family: var(--mono); font-size: 28px; color: var(--green); }
+.small { margin-top: 52px; padding-left: 76px; font-size: 28px; }
+.qrimg { position:absolute; inset: 62px; width: calc(100% - 124px); height: calc(100% - 124px); image-rendering: pixelated; }
+''', '''
+<div class="wrap">
+  <div class="qr glass pop" style="--d:.2s"><img class="qrimg" src="../assets/qr-readiness.png" alt="AI readiness check QR code"><div class="frame"></div><div class="scan"></div></div>
+  <div>
+    <h1 class="h1 r" style="--d:.1s">Is your company ready for AI?</h1>
+    <p class="lead r" style="--d:.3s;margin-top:22px">Scan and answer 8 questions to see your AI readiness straight away.</p>
+    <ol>
+      <li class="r" style="--d:.5s">Is your data clean? Item codes, units, stock</li>
+      <li class="r" style="--d:.65s">Are your rules clear? Credit limits, price list, who approves</li>
+      <li class="r" style="--d:.8s">Are your orders and contacts complete?</li>
+    </ol>
+  </div>
+</div>
+''', "\"Take out your phone and scan this QR code. 8 questions about your own company. Answer honestly, it takes a few minutes. Is your data clean? Are your rules clear? Are your orders and contacts complete? When you finish, you see straight away whether your company is ready for AI.\"\n\nDo: table hosts help anyone who cannot scan.\nNext: \"Let's go through the questions 1 by 1.\"")
+
 qs = ['Does every item have exactly 1 code?', 'Is the unit fixed for each item: carton, piece or kg?', 'Does the stock in your system match the shelf when you count?', 'Do orders arrive in 1 place, not on 5 phones?',
       'Does every customer have a credit limit and payment term in SQL Account?', 'Is your price list in the system up to date?', 'Is it written down who approves discounts, credit and purchases?', 'Are your customers’ and suppliers’ phone numbers saved in the system?']
 q23 = ''.join('<div class="q r" style="--d:%.2fs"><i></i><span class="n">%d</span><span>%s</span></div>' % (0.4 + i * 0.1, i + 1, q) for i, q in enumerate(qs))
@@ -3952,32 +3910,8 @@ slide('23-readiness-check', 'AI readiness check', SEC[5], 'light', 'data-sparks=
 <div class="top"><div><h1 class="h1 r" style="--d:.1s">Is your company ready for AI?</h1><p class="sub r" style="--d:.25s">1 point for every yes.</p></div>%s</div>
 <div class="grid">%s</div>
 ''' % (ws(2, 'Score out of 8', '1.3s'), q23),
-"\"Worksheet, box 2. Eight questions about your own company. Be honest: nobody sees this but you and your table host. 1 point for every yes.\"\n\nThen, as they work, why each one matters:\n1 One code per item — it cannot tell whether two codes are the same Milo.\n2 Fixed units — \"10\" could mean ten cartons or ten pieces.\n3 System matches shelf — it will promise stock you do not have.\n4 Orders in one place — it can only read the chats it is connected to.\n5 Credit limits set — it cannot check a limit that is not there.\n6 Price list up to date — it will quote last year's price.\n7 Approvers written down — it needs to know who to ask.\n8 Phone numbers saved — it cannot message someone it cannot find.\n\nDo: eight minutes to answer, then the score slide and five minutes to talk at the table.\nNext: \"Add up your score.\"")
+"\"Worksheet, box 2. Eight questions about your own company. Be honest: nobody sees this but you and your table host. 1 point for every yes.\"\n\nThen, as they work, why each one matters:\n1 One code per item — it cannot tell whether two codes are the same Milo.\n2 Fixed units — \"10\" could mean ten cartons or ten pieces.\n3 System matches shelf — it will promise customers stock you do not have.\n4 Orders in one place — it can only read the chats it is connected to.\n5 Credit limits set — it cannot check a limit that is not there.\n6 Price list up to date — it will quote last year's price.\n7 Approvers written down — it needs to know who to ask.\n8 Phone numbers saved — it cannot message someone it cannot find.\n\nDo: eight minutes to answer, then five minutes to talk at the table. 1 to 3 points: foundation first; 4 to 6: start with the AI Agent; 7 or 8: ready for the whole system.\nNext: \"1 more check: how big does your house need to be?\"")
 
-def house(level):
-    # mini house: 1 foundation, 2 + walls/door, 3 + roof and signal
-    f = '<path d="M8 86h104v12H8z" fill="#00F5A9" fill-opacity=".35"/>'
-    w = '<path d="M20 86V50h80v36M52 86V64h16v22"/>' if level >= 2 else '<path d="M20 86V50h80v36" stroke-dasharray="3 7" opacity=".35"/>'
-    r = '<path d="M12 52L60 18l48 34" stroke-width="5"/><circle cx="60" cy="12" r="7" fill="#00F5A9" stroke="none"/>' if level >= 3 else '<path d="M12 52L60 18l48 34" stroke-dasharray="3 7" opacity=".35"/>'
-    return '<svg viewBox="0 0 120 104" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">%s<path d="M8 86h104v12H8z"/>%s%s</svg>' % (f, w, r)
-slide('24-your-score', 'What your score means', SEC[5], 'light', 'data-sparks="9,1 1,5" style="--gx:50%;--gy:55%;--mx:50%;--my:55%"', '''
-.cols { flex:1; display:grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 54px; }
-.c { padding: 44px 44px; display:flex; flex-direction:column; }
-.c svg { width: 230px; height: 200px; color: var(--ink); margin-left: -18px; }
-.sc { font-family: var(--mono); font-size: 64px; font-weight: 600; letter-spacing: -.03em; margin-top: 34px; }
-.c h3 { font-size: 40px; font-weight: 650; letter-spacing: -.02em; margin-top: 10px; }
-.c p { font-size: 30px; line-height: 1.38; color: var(--ink-2); margin-top: 16px; }
-.c.on { background: var(--ink); color: var(--on-dark); border-radius: 30px; box-shadow: 0 0 90px rgba(0,245,169,.22); }
-.c.on svg { color: var(--on-dark); } .c.on p { color: var(--on-dark-2); } .c.on .sc { color: var(--neon); }
-''', '''
-<h1 class="h1 r" style="--d:.1s">Where to start</h1>
-<div class="cols">
-  <div class="glass c r" style="--d:.3s">%s<div class="sc">0 to 3</div><h3>The foundation.</h3><p>Clean up item codes and stock first.</p></div>
-  <div class="c on r" style="--d:.5s">%s<div class="sc">4 to 6</div><h3>1 AI job.</h3><p>Start with 1 job on your SQL Account data.</p></div>
-  <div class="glass c r" style="--d:.7s">%s<div class="sc">7 to 8</div><h3>The whole house.</h3><p>You are ready for the full system.</p></div>
-</div>
-''' % (house(1), house(2), house(3)),
-"\"There is no bad score. It only tells you which step comes first. Zero to three: your foundation needs work before any AI will help you, and I would rather tell you that today than sell you a roof. Four to six, which is most companies: you can start with one AI job right now, on the data you already have in SQL Account. Seven or eight: you are ready for the whole house.\"\n\nDo: table hosts note each company's score on their lead sheet.\nNext: \"1 more check: how big does your house need to be?\"")
 
 NEED = [
     ('wms', 'WMS', 'Warehouse', [
@@ -4026,107 +3960,131 @@ slide('24-need-wms-mes', 'Do you need WMS and MES?', SEC[5], 'light', 'data-spar
   <div class="hi r" style="--d:2.2s"><b>3 to 5</b><span>You need it. Plan it from day 1.</span></div>
 </div>
 ''',
-"\"The readiness check told you where to start. This one tells you how big the house needs to be. 2 short lists, 5 questions each. Tick every yes, and count each side on its own.\n\nWMS, the warehouse: more than 1 warehouse or many racks; staff wasting time looking for stock; batch or expiry dates, or stock thrown away because it expired; a stock count that does not match the system; more than 30 orders a day to pick and pack. Every yes is a problem a WMS fixes.\n\nMES, the factory: you make, mix or assemble your own products; you issue raw materials by a recipe or BOM; you cannot tell how far a job has gone; the real cost or waste of each batch is unclear; you plan production on paper or in Excel.\n\nScore: 0, SQL Account plus AI agents is enough for now. 1 or 2, start with the agents and add it later. 3 or more, you need it, so plan it from day 1.\n\nIf you do not make anything, skip the MES side: it is 0.\"\n\nDo: table hosts note both scores on the lead sheet next to the readiness score.\nNext: \"So let's choose that first job.\"")
+"\"The readiness check told you where to start. This one tells you how big the house needs to be. 2 short lists, 5 questions each. Tick every yes, and count each side on its own.\n\nWMS, the warehouse: more than 1 warehouse or many racks; staff wasting time looking for stock; batch or expiry dates, or stock thrown away because it expired; a stock count that does not match the system; more than 30 orders a day to pick and pack. Every yes is a problem a WMS fixes.\n\nMES, the factory: you make, mix or assemble your own products; you issue raw materials by a recipe or BOM; you cannot tell how far a job has gone; the real cost or waste of each batch is unclear; you plan production on paper or in Excel.\n\nScore: 0, SQL Account plus AI agents is enough for now. 1 or 2, start with the agents and add it later. 3 or more, you need it, so plan it from day 1.\n\nIf you do not make anything, skip the MES side: it is 0.\"\n\nDo: table hosts note both scores on the lead sheet next to the readiness score.\nNext: \"So how do you start? Just 3 steps.\"")
 
-jobs = ['Take WhatsApp orders', 'Send invoices', 'Chase overdue customers', 'Record bank slips', 'Check stock every morning', 'Reorder stock', 'Answer “bila nak bayar?”', 'Key in supplier invoices', 'Remind lost customers', 'Send promotions']
-j25 = ''.join('<li class="%s r" style="--d:%.2fs">%s</li>' % ('on' if j.startswith('Chase') else '', 0.3 + i * 0.06, j) for i, j in enumerate(jobs))
-six = [('WHEN', 'Every weekday at 9 am'), ('LOOK AT', 'Invoices more than 30 days overdue'), ('DO', 'Send a polite reminder with the statement'), ('UNLESS', 'They promised a date, or are marked “do not chase”'), ('STOP WHEN', 'The money is in the bank'), ('TELL', 'Mei Ling when a slip comes in')]
-s25 = ''.join('<div class="ln r" style="--d:%.2fs"><b>%s</b><span>%s</span></div>' % (1.0 + i * 0.15, k, v) for i, (k, v) in enumerate(six))
-slide('25-first-ai-job', 'Build your first AI job', SEC[5], 'light', 'data-sparks="9,5" style="--gx:80%;--gy:60%;--mx:80%;--my:60%"', '''
-.top { display:flex; justify-content:space-between; align-items:flex-start; }
-.wrap { flex:1; display:grid; grid-template-columns: 470px 1fr; gap: 48px; margin-top: 34px; }
-.pick h3, .tab h3 { font-size: 24px; color: var(--ink-3); font-weight: 500; margin-bottom: 14px; }
-.pick ul { list-style:none; display:grid; gap: 8px; }
-.pick li { font-size: 26px; padding: 9px 18px; border-radius: 12px; color: var(--ink-2); }
-.pick li.on { background: var(--ink); color: var(--on-dark); font-weight: 600; }
-.tab { padding: 34px 44px; }
-.ln { display:grid; grid-template-columns: 210px 1fr; align-items:center; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 31px; line-height: 1.3; }
-.ln:last-child { border: 0; }
-.ln b { font-family: var(--mono); font-size: 22px; letter-spacing: .1em; color: var(--green); font-weight: 600; }
-''', '''
-<div class="top"><h1 class="h1 r" style="--d:.1s">Write it like you would teach a new clerk</h1>%s</div>
-<div class="wrap">
-  <div class="pick"><h3 class="f" style="--d:.2s">Pick one:</h3><ul>%s</ul></div>
-  <div class="glass tab r" style="--d:.8s"><h3>Example: chase overdue customers</h3>%s</div>
-</div>
-''' % (ws(3, '6 lines', '2.2s'), j25, s25),
-"\"Worksheet, box 3. Pick one job from the list, the one that would help your office most. Then write it in six lines, exactly the way you would explain it to a new clerk on their first day. When does it happen? What does it look at? What does it do? When should it not do it? When is it finished? Who does it tell? If you can explain it in six lines, an AI agent can do it.\"\n\nDo: five minutes to pick, twelve to write, three to copy the number from box 1 next to it. Table hosts each choose one good example for the next slide.\nSecond example (take WhatsApp orders): WHEN a customer sends an order in the order group · LOOK AT price list, stock and credit limit · DO create the sales order and reply with a confirmation · UNLESS item unclear, stock short or over the limit · STOP WHEN the customer has the confirmation · TELL the sales manager when a rule is broken.\nNext: \"Who is brave enough to let us set theirs up, right now?\"")
 
-six26 = ''.join('<div class="ln r" style="--d:%.2fs"><b>%s</b><span class="blank">%s</span></div>' % (0.4 + i * 0.12, k, '<i class="caret"></i>' if i == 0 else '') for i, (k, v) in enumerate(six))
-slide('26-watch-yours-run', 'Watch yours run', SEC[5], 'dark', 'data-sparks="9,1 1,5" style="--gx:80%;--gy:40%;--mx:80%;--my:40%"', '''
-.rows { flex:1; display:grid; align-content:center; gap: 6px; margin-top: 30px; max-width: 1500px; }
-.ln { display:grid; grid-template-columns: 260px 1fr; align-items:end; padding: 20px 0; }
-.ln b { font-family: var(--mono); font-size: 28px; letter-spacing: .1em; color: var(--neon); font-weight: 600; }
-.blank { height: 56px; border-bottom: 2px solid rgba(242,251,247,.25); display:flex; align-items:center; }
-.caret { display:inline-block; width: 4px; height: 44px; background: var(--neon); animation: blink 1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-''', '''
-<h1 class="h1 r" style="--d:.1s">Let’s set one up, live</h1>
-<div class="rows">%s</div>
-''' % six26,
-"\"Read me your six lines.\" (The driver types them in.) \"Now watch.\" (The driver runs it once on the sample company.) \"That took a few minutes with sample data. In your company we take about a week, because we use your real customers and your real rules, and we test it before it sends anything.\"\n\nDo: take the volunteer a table host already chose (reminders and stock checks are safest). Driver sets it up in SuDu and runs it once. Second volunteer if time allows.\nBackup: open a job prepared in advance: \"Here is one a customer wrote last month.\"\nNext: \"So how do you actually start?\"")
 
 # ============================================================ 6 · HOW TO START
-paths = [(1, '0 to 3', 'Foundation first.', 'WMS, and MES if you manufacture.', 'Clean item codes and scanned stock.'),
-         (2, '4 to 6', 'AI agent first.', 'Works on your SQL Account data.', '1 job running every day.'),
-         (3, '7 to 8', 'The full system.', 'AI agent, WMS and MES together.', 'Orders, stock and payments connected.')]
-p27 = ''.join('<div class="%s c r" style="--d:%.2fs"><div class="hd">%s<span class="sc">%s</span></div><h3>%s</h3><p>%s</p><div class="m"><b>First month</b>%s</div></div>'
-              % ('c-on' if l == 2 else 'glass', 0.3 + i * 0.2, house(l), s, h, g, m) for i, (l, s, h, g, m) in enumerate(paths))
-slide('27-starting-point', 'Your starting point', SEC[6], 'light', 'data-sparks="9,1 1,5" style="--gx:50%;--gy:55%;--mx:50%;--my:55%"', '''
-.cols { flex:1; display:grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
-.c { padding: 40px 42px; display:flex; flex-direction:column; border-radius: 30px; }
-.hd { display:flex; align-items:center; justify-content:space-between; }
-.hd svg { width: 110px; height: 96px; }
-.sc { font-family: var(--mono); font-size: 40px; font-weight: 600; color: var(--green); }
-.c h3 { font-size: 42px; font-weight: 650; letter-spacing: -.02em; margin-top: 30px; }
-.c p { font-size: 30px; line-height: 1.38; color: var(--ink-2); margin-top: 12px; }
-.m { margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line); font-size: 28px; line-height: 1.35; }
-.m b { display:block; font-family: var(--mono); font-size: 20px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; margin-bottom: 8px; }
-.c-on { background: var(--ink); color: var(--on-dark); box-shadow: 0 0 90px rgba(0,245,169,.22); }
-.c-on p { color: var(--on-dark-2); } .c-on .sc, .c-on .m b { color: var(--neon); } .c-on .m { border-color: rgba(242,251,247,.15); }
-''', '''
-<h1 class="h1 r" style="--d:.1s">3 ways to start, by your score</h1>
-<div class="cols">%s</div>
-''' % p27,
-"\"Find your score. Low score: start with the foundation, and add the AI when your data is ready. Middle score: start with the AI agent on the data you already have, one job at a time. High score: take the whole system. Whichever you choose, it is the same system, so you never throw anything away when you add the next part.\"\n\nNext: \"What do you get back?\"")
 
-cells = ''.join('<i class="%s" style="--d:%.3fs"></i>' % ('keep' if k < 29 else '', k * 0.0028) for k in range(358))
-desks = [('Sales', '161 h', '14 h'), ('Purchasing', '60 h', '4 h'), ('Stock', '39 h', 'under 2 h'), ('Finance', '88 h', 'about 7 h'), ('Repeat sales', '10 h', '3 h')]
-d28 = ''.join('<tr><td>%s</td><td>%s</td><td>%s</td></tr>' % x for x in desks)
-slide('28-what-it-gives-back', 'What it gives back', SEC[6], 'light', 'data-sparks="9,1 1,5" style="--gx:30%;--gy:60%;--mx:30%;--my:60%"', '''
-.wrap { flex:1; display:grid; grid-template-columns: 760px 1fr; gap: 80px; margin-top: 44px; align-items:start; }
-.dots { display:grid; grid-template-columns: repeat(26, 22px); gap: 7px; }
-.dots i { width: 22px; height: 22px; border-radius: 6px; background: var(--ink); opacity: 0; animation: fade .3s forwards var(--d), dim 1s 2.6s forwards; }
-.dots i.keep { animation: fade .3s forwards var(--d), glow 1s 2.6s forwards; }
-@keyframes dim { to { opacity: .1; } }
-@keyframes glow { to { opacity: 1; background: var(--neon); box-shadow: 0 0 12px rgba(0,245,169,.7); } }
-.lg { display:flex; gap: 40px; margin-top: 26px; font-size: 26px; color: var(--ink-2); }
-.lg span::before { content:""; display:inline-block; width: 18px; height: 18px; border-radius: 5px; margin-right: 10px; vertical-align: -2px; background: rgba(2,34,31,.12); }
-.lg span.k::before { background: var(--neon); }
-table { width: 100%; border-collapse: collapse; font-size: 30px; }
-th { font-family: var(--mono); font-size: 20px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); text-align:left; font-weight: 600; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
-td { padding: 15px 0; border-bottom: 1px solid var(--line); }
-td:nth-child(n+2), th:nth-child(n+2) { text-align:right; font-feature-settings: "tnum"; }
-td:nth-child(3) { color: var(--green); font-weight: 600; }
-tr.t td { font-weight: 700; font-size: 36px; border-bottom: 0; padding-top: 22px; }
-.note { font-size: 24px; color: var(--ink-3); margin-top: 22px; line-height: 1.4; }
+slide('28-what-it-gives-back', 'Manual work cost', SEC[6], 'light', 'data-sparks="9,0" style="--gx:30%;--gy:60%;--mx:30%;--my:60%"', '''
+.slide { padding-top: 96px; }
+.h1 { font-size: 80px; margin-top: 14px; }
+.h1 em { font-style: normal; color: #B4451F; }
+.wrap { flex:1; display:grid; grid-template-columns: 1fr 520px; gap: 40px; margin-top: 44px; min-height: 0; }
+.tb { padding: 30px 40px 26px; display:flex; flex-direction:column; }
+.tr { display:grid; grid-template-columns: 76px 1fr 110px 150px 190px; align-items:center; gap: 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.tr.h { padding: 0 0 12px; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .1em; color: var(--ink-3); }
+.tr .ic { width: 64px; height: 64px; border-radius: 18px; background: rgba(255,138,91,.14); color: #B4451F; display:grid; place-items:center; }
+.tr .ic svg { width: 34px; height: 34px; }
+.tr b { display:block; font-size: 32px; font-weight: 750; letter-spacing: -.02em; }
+.tr small { display:block; font-size: 22px; color: var(--ink-3); margin-top: 2px; }
+.tr .n { font-size: 30px; font-weight: 650; text-align:right; color: var(--ink-2); }
+.tr .rm { font-size: 34px; font-weight: 750; text-align:right; letter-spacing: -.02em; }
+.tr.t { border: 0; margin-top: auto; padding-top: 20px; border-top: 3px solid var(--ink); }
+.tr.t b, .tr.t .n, .tr.t .rm { color: var(--ink); font-weight: 800; }
+.tr.t .rm { color: #B4451F; font-size: 40px; }
+.sd { border-radius: 34px; background: var(--ink); color: var(--on-dark); padding: 44px 46px; display:flex; flex-direction:column; box-shadow: 0 40px 80px -40px rgba(2,34,31,.7); }
+.sd .k { font-family: var(--mono); font-size: 22px; font-weight: 700; letter-spacing: .14em; color: #FFB08F; }
+.sd .yr { font-size: 80px; font-weight: 800; letter-spacing: -.05em; line-height: 1; margin-top: 16px; }
+.sd .yr small { display:block; font-size: 28px; font-weight: 600; letter-spacing: 0; color: var(--on-dark-2); margin-top: 10px; }
+.sd .eq { margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(242,251,247,.16); font-size: 30px; line-height: 1.45; color: var(--on-dark-2); }
+.sd .eq b { color: var(--on-dark); font-weight: 750; }
+.sd .ppl { display:flex; gap: 10px; margin-top: auto; }
+.sd .ppl i { width: 46px; height: 46px; border-radius: 50%; background: rgba(255,138,91,.2); color: #FFB08F; display:grid; place-items:center; }
+.note { margin-top: 16px; font-size: 21px; color: var(--ink-3); }
+.sd .eq b:lang(en) { margin-right: .25em; }
 ''', '''
-<h1 class="h1 r" style="--d:.1s">358 hours of manual work a month, down to <span class="sig" style="--sd:3.2s">29</span></h1>
+<div class="kicker r" style="--d:.05s">Your manual work cost</div>
+<h1 class="h1 r" style="--d:.1s">Manual work, every month: <em>RM<span data-count="25556" data-delay=".9" data-dur="1.6">0</span></em></h1>
 <div class="wrap">
-  <div><div class="dots">%s</div><div class="lg f" style="--d:3s"><span>1 hour by hand</span><span class="k">1 hour with SuDu AI</span></div></div>
-  <div class="r" style="--d:.6s">
-    <table><tr><th>Team</th><th>By hand</th><th>With SuDu AI</th></tr>%s<tr class="t"><td>Total</td><td>358 h</td><td>29 h</td></tr></table>
-    <p class="note">SuDu estimate for a distributor with about 40 orders a day. Your figures depend on your volume.</p>
+  <div>
+    <div class="glass tb r" style="--d:.3s">
+      <div class="tr h"><span></span><span>Team · manual work</span><span style="text-align:right">Staff</span><span style="text-align:right">Hrs / month</span><span style="text-align:right">Cost / month</span></div>
+      <div class="tr r" style="--d:.5s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span><div><b>Sales</b><small>Keying in orders, replying to customers</small></div><span class="n">3</span><span class="n">519 h</span><span class="rm">RM10,350</span></div>
+      <div class="tr r" style="--d:.62s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-2-1.5L14 21l-2-1.5L10 21l-2-1.5L6 21z"/><path d="M9 8h6M9 11.5h6M9 15h4"/></svg></span><div><b>Finance</b><small>Invoices, chasing payments, reconciling</small></div><span class="n">2</span><span class="n">346 h</span><span class="rm">RM7,820</span></div>
+      <div class="tr r" style="--d:.74s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.5l2.2 10.5h10.8L21 7H7"/><circle cx="9.5" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg></span><div><b>Purchasing</b><small>POs, chasing deliveries, keying in supplier invoices</small></div><span class="n">1</span><span class="n">173 h</span><span class="rm">RM3,680</span></div>
+      <div class="tr r" style="--d:.86s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5l9 4.5 9-4.5M12 12v9"/></svg></span><div><b>Stock</b><small>Checking stock, making reports</small></div><span class="n">1</span><span class="n">173 h</span><span class="rm">RM3,706</span></div>
+      <div class="tr t r" style="--d:1s"><span></span><b>Total</b><span class="n">7</span><span class="n">1,211 h</span><span class="rm">RM25,556</span></div>
+    </div>
+    <p class="note r" style="--d:1.3s">Estimate: a wholesaler with about 80 orders a day, incl. EPF and SOCSO. Yours will differ.</p>
+  </div>
+  <div class="sd r" style="--d:.7s">
+    <span class="k">Over a year</span>
+    <div class="yr">RM306,672<small>spent on typing, chasing and checking stock</small></div>
+    <p class="eq">That is <b>7 full-time staff</b>doing the same manual work every day.</p>
+    <div class="ppl"><i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></i><i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></i><i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></i><i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></i><i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></i><i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></i><i><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></i></div>
   </div>
 </div>
-''' % (cells, d28),
-"\"This is our estimate for a distributor with about forty orders a day: three hundred and fifty-eight hours of manual work a month, down to twenty-nine. Now look at box 1 on your worksheet. That is your number, not mine. Keep it in front of you for the next slide.\"\n\nEach square is one hour. Say \"estimate\" out loud.\nNext: \"Here is what it costs.\"")
+''', "\"First, the cost of manual work. Take a wholesaler with about 80 orders a day. Sales: 3 people key in orders and reply to customers, 519 hours a month, costing RM10,350. Finance: 2 people do invoices, chase payments and reconcile, 346 hours, RM7,820. Purchasing: 1 person does POs, chases deliveries and keys in supplier invoices, RM3,680. Stock: 1 person checks stock and makes reports, RM3,706.\n\nAdded up: 7 people, 1,211 hours a month, costing RM25,556. That is RM306,672 a year, spent on the same manual work. Now look at the staff cost you worked out yourself, and compare.\"\n\nNote: this is an estimate; monthly cost includes EPF and SOCSO. Say \"estimate\" out loud.\nNext: \"And with AI?\"")
 
-plans = [('Lite', 'RM599', 'RM5,999', 'sends documents and notices on WhatsApp'),
-         ('Basic', 'RM850', 'RM9,500', 'runs daily jobs: chasing payments, morning checks'), ('Standard', 'RM1,200', 'RM12,000', 'takes customer orders on WhatsApp'),
+slide('28-cost-compare', 'Manual vs AI cost', SEC[6], 'light', 'data-sparks="9,0" style="--gx:80%;--gy:50%;--mx:80%;--my:50%"', '''
+.slide { padding-top: 96px; }
+.h1 { font-size: 80px; margin-top: 14px; }
+.h1 em { font-style: normal; color: var(--green); }
+.wrap { flex:1; display:grid; grid-template-columns: 1fr 560px; gap: 40px; margin-top: 46px; min-height: 0; }
+.wrap > div:first-child { display:flex; flex-direction:column; }
+.cmp { flex:1; display:flex; flex-direction:column; gap: 26px; }
+.cmp .row { flex:1; display:flex; flex-direction:column; justify-content:center; }
+.row { padding: 30px 36px; border-radius: 30px; }
+.row .hd { display:flex; align-items:baseline; justify-content:space-between; gap: 20px; }
+.row h3 { font-size: 36px; font-weight: 750; letter-spacing: -.02em; }
+.row h3 small { font-size: 24px; font-weight: 500; color: var(--ink-3); margin-left: 12px; }
+.row .tot { font-size: 64px; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+.row .tot small { font-size: 26px; font-weight: 600; letter-spacing: 0; color: var(--ink-3); margin-left: 6px; }
+.bar { display:flex; height: 56px; border-radius: 14px; overflow:hidden; margin-top: 22px; background: #EEF1EF; }
+.bar i { display:flex; align-items:center; padding: 0 16px; font-style: normal; font-size: 21px; font-weight: 700; white-space: nowrap; transform-origin: left; animation: grow 1.4s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d); }
+@keyframes grow { from { transform: scaleX(0); } }
+html.static .bar i { animation: none; }
+.man .tot { color: #B4451F; }
+.man .bar i { background: #FF8A5B; color: #1A0F0A; }
+.ai .bar i.s { background: var(--ink); color: var(--neon); }
+.ai .bar i.h { background: var(--emerald); color: #fff; }
+.ai .tot { color: var(--green); }
+.lines { display:flex; gap: 26px; flex-wrap: wrap; margin-top: 16px; font-size: 24px; color: var(--ink-2); }
+.lines b { color: var(--ink); font-weight: 700; }
+/* savings */
+.sv { border-radius: 34px; background: var(--ink); color: var(--on-dark); padding: 44px 46px; display:flex; flex-direction:column; box-shadow: 0 40px 80px -40px rgba(2,34,31,.7), 0 0 100px rgba(0,245,169,.2); }
+.sv .k { font-family: var(--mono); font-size: 22px; font-weight: 700; letter-spacing: .14em; color: var(--neon); }
+.sv .pc { font-size: 170px; font-weight: 800; letter-spacing: -.06em; line-height: .95; color: var(--neon); margin-top: 14px; }
+.sv .pc small { font-size: 48px; letter-spacing: -.02em; color: var(--on-dark); margin-left: 10px; }
+.sv .yr { margin-top: 26px; padding-top: 24px; border-top: 1px solid rgba(242,251,247,.16); }
+.sv .yr b { display:block; font-size: 66px; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+.sv .yr span { display:block; font-size: 26px; color: var(--on-dark-2); margin-top: 8px; }
+.sv .pb { margin-top: auto; display:flex; align-items:center; gap: 14px; font-size: 24px; font-weight: 650; padding: 16px 20px; border-radius: 16px; background: rgba(0,245,169,.12); }
+.sv .pb svg { flex:none; color: var(--neon); }
+.note { margin-top: 18px; font-size: 21px; color: var(--ink-3); }
+''', '''
+<div class="kicker r" style="--d:.05s">Compare the cost</div>
+<h1 class="h1 r" style="--d:.1s">Manual vs AI, monthly saving: <em>RM<span data-count="23556" data-delay="1.6" data-dur="1.4">0</span></em></h1>
+<div class="wrap">
+  <div>
+    <div class="cmp">
+      <div class="glass row man r" style="--d:.35s">
+        <div class="hd"><h3>Manual<small>7 people · 1,211 hours</small></h3><div class="tot">RM25,556<small>/ month</small></div></div>
+        <div class="bar"><i style="width:100%;--d:.7s">The cost of 7 full-time staff</i></div>
+        <div class="lines"><span>Sales <b>RM10,350</b></span><span>Finance <b>RM7,820</b></span><span>Purchasing <b>RM3,680</b></span><span>Stock <b>RM3,706</b></span></div>
+      </div>
+      <div class="glass row ai r" style="--d:.55s">
+        <div class="hd"><h3>With SuDu AI<small>AI works, people approve</small></h3><div class="tot">RM2,000<small>/ month</small></div></div>
+        <div class="bar"><i class="s" style="width:7.83%;--d:1s"></i></div>
+        <div class="lines"><span>SuDu AI plan <b>RM2,000 / month</b></span><span>Staff move to <b>serving customers and growing sales</b></span></div>
+      </div>
+    </div>
+    <p class="note r" style="--d:1.4s">Estimate: a wholesaler with about 80 orders a day, incl. EPF and SOCSO (previous slide). Yours will differ.</p>
+  </div>
+  <div class="sv r" style="--d:.8s">
+    <span class="k">Monthly cost cut by</span>
+    <div class="pc">92%<small>↓</small></div>
+    <div class="yr"><b>≈ RM282,672</b><span>saved in a year</span></div>
+    <div class="pb"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>The setup fee pays for itself in under 1 month</div>
+  </div>
+</div>
+''', "\"Manual: RM25,556 a month. With SuDu AI: RM2,000 a month. The AI does the daily work, people only approve.\n\nYou save RM23,556 a month, a 92% cut in cost. That is about RM282,672 a year. The setup fee pays for itself in under 1 month. And the people you free up can move to serving customers and growing sales.\"\n\nNote: this is an estimate, using the manual cost on the previous slide and a RM2,000 a month plan (Pro); say \"estimate\" out loud. It does not yet count what HRDF can cover.\nNext: \"Here are the plans.\"")
+
+plans = [('Basic', 'RM850', 'RM9,500', 'runs daily jobs: chasing payments, morning checks'), ('Standard', 'RM1,200', 'RM12,000', 'takes customer orders on WhatsApp'),
          ('Pro', 'RM2,000', 'RM19,000', 'group companies and more warehouse work'), ('Max', 'RM3,500', 'RM35,000', 'everything, with your own SuDu contact person')]
 p29 = ''.join('<tr class="%s r" style="--d:%.2fs"><td><b>%s</b>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>' %
-              ('on' if n == 'Standard' else '', 0.35 + i * 0.1, n, ' <span class="tag">Most start here</span>' if n == 'Standard' else '', m, s, a) for i, (n, m, s, a) in enumerate(plans))
+              ('on' if n == 'Standard' else '', 0.45 + i * 0.1, n, ' <span class="tag">Most start here</span>' if n == 'Standard' else '', m, s, a) for i, (n, m, s, a) in enumerate(plans))
 slide('29-plans', 'Plans and prices', SEC[6], 'light', 'data-sparks="9,1" style="--gx:85%;--gy:20%;--mx:85%;--my:20%"', '''
 table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 44px; font-size: 30px; table-layout: fixed; }
 th:nth-child(1) { width: 420px; } th:nth-child(2) { width: 210px; } th:nth-child(3) { width: 240px; }
@@ -4145,29 +4103,107 @@ tr.on td:first-child { border-radius: 18px 0 0 18px; } tr.on td:last-child { bor
 <table><tr class="f" style="--d:.2s"><th>Plan</th><th>Per month</th><th>Setup, 1x</th><th>The agent…</th></tr>%s</table>
 <p class="note f" style="--d:1.1s">Billed yearly. Standard is where most companies start.</p>
 ''' % p29,
-"\"Five plans, and I will make it simple. Most companies in this room should start at [recommended plan]. Compare the yearly price with the number in your box 1.\"\n\nTO CONFIRM: the highlighted row is Standard because taking WhatsApp orders, as shown in the demo, starts there. Change it if you pick another plan. Check prices are current.\nNext: \"And how long does it take?\"")
+"\"4 plans, starting from Basic, and I will make it simple. Most companies in this room should start at [recommended plan]. Compare the yearly price with the number in your box 1.\"\n\nTO CONFIRM: the highlighted row is Standard because taking WhatsApp orders, as shown in the demo, starts there. Change it if you pick another plan. Check prices are current.\nNext: \"And the fees are HRDF claimable.\"")
 
-tl = [('Day 0', 'Start', 'we pick your first job.'), ('Day 1 to 3', 'Setup', 'your data in, SQL Account connected.'), ('Week 1', 'Live', 'your first job is live.'), ('Week 2 to 3', 'Grow', 'we add the next jobs.'), ('Week 4', 'Running', 'it runs on its own.')]
-t30 = ''.join('<div class="s pop" style="--d:%.2fs"><i></i><div class="w">%s</div><div class="t"><b>%s:</b> %s</div></div>' % (0.6 + i * 0.4, w, a, b) for i, (w, a, b) in enumerate(tl))
-slide('30-live-in-30-days', 'Live in 30 days', SEC[6], 'light', 'data-sparks="9,1 1,5" style="--gx:50%;--gy:45%;--mx:50%;--my:45%"', '''
-.tl { position:relative; display:grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: auto; }
-.tl svg { position:absolute; left: 0; top: 0; width: 100%; height: 22px; overflow:visible; }
-.s i { display:block; width: 26px; height: 26px; border-radius: 50%; background: var(--paper); border: 5px solid var(--ink); position:relative; z-index:1; }
-.s:nth-child(4) i { background: var(--neon); border-color: var(--ink); box-shadow: 0 0 0 10px rgba(0,245,169,.2); }
-.w { font-family: var(--mono); font-size: 26px; font-weight: 600; color: var(--green); margin-top: 30px; }
-.t { font-size: 32px; line-height: 1.35; color: var(--ink-2); margin-top: 12px; padding-right: 20px; }
-.t b { color: var(--ink); font-weight: 650; }
-.need { margin-top: auto; display:flex; align-items:center; gap: 22px; flex-wrap: wrap; font-size: 32px; font-weight: 600; }
-.need span { font-weight: 500; font-size: 30px; padding: 14px 26px; border-radius: 999px; background:#fff; box-shadow: 0 0 0 1px var(--line); }
+slide('29-hrdf', 'HRDF Claimable', SEC[6], 'light', 'data-sparks="9,0 1,5" style="--gx:80%;--gy:25%;--mx:80%;--my:30%"', '''
+.slide { padding-top: 96px; }
+.h1 { font-size: 104px; line-height: 1; letter-spacing: -.04em; margin-top: 18px; }
+.sub { font-size: 40px; font-weight: 650; color: var(--ink-2); margin-top: 22px; }
+.sub em { font-style: normal; color: var(--green); }
+.row { flex:1; display:grid; grid-template-columns: 1fr 210px 1fr 96px 1fr; align-items: stretch; margin-top: 52px; margin-bottom: 10px; }
+.cd { padding: 40px 38px 42px; border-radius: 34px; display:flex; flex-direction:column; align-items:flex-start; }
+.cd .lg { width: 220px; height: 220px; border-radius: 50%; background: #fff; display:grid; place-items:center; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -26px rgba(2,34,31,.45); }
+.cd .lg img { width: 192px; height: 192px; object-fit: contain; }
+.cd small { font-family: var(--mono); font-size: 20px; font-weight: 700; letter-spacing: .14em; color: var(--green); margin-top: auto; }
+.cd b { display:block; font-size: 44px; font-weight: 750; letter-spacing: -.025em; line-height: 1.15; margin-top: 10px; }
+.cd p { font-size: 26px; line-height: 1.4; color: var(--ink-2); margin-top: 10px; }
+/* connectors between cards */
+.go { display:flex; flex-direction:column; align-items:center; justify-content:center; gap: 14px; text-align:center; }
+.go span { font-size: 25px; font-weight: 750; line-height: 1.3; color: var(--green); padding: 10px 14px; border-radius: 14px; background: var(--mint); }
+.go svg { width: 150px; height: 40px; color: var(--green); overflow: visible; }
+.go svg path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw .9s var(--ease) forwards; animation-delay: var(--d, 0s); }
+.plus { display:grid; place-items:center; }
+.plus i { font-style: normal; width: 60px; height: 60px; border-radius: 50%; background: var(--ink); color: var(--neon); display:grid; place-items:center; font-size: 40px; font-weight: 700; line-height: 1; }
+/* the deal: dark card, neon accent */
+.cd.hi .ic { width: 112px; height: 112px; border-radius: 30px; display:grid; place-items:center; background: rgba(0,245,169,.14); color: var(--neon); }
+.cd.hi .ic svg { width: 60px; height: 60px; }
+.cd.hi .es { width: 100%; height: 220px; border-radius: 28px; background: #fff; display:grid; place-items:center; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -26px rgba(2,34,31,.45); }
+.cd.hi .es img { width: 86%; height: 170px; object-fit: contain; }
+.cd.hi .ph { color: var(--neon); }
 ''', '''
-<h1 class="h1 r" style="--d:.1s">Working in week 1, done in 30 days</h1>
-<div class="tl">
-  <svg viewBox="0 0 1664 22" preserveAspectRatio="none"><path class="draw" pathLength="1" style="--d:.4s;--dur:2.4s" d="M13 13 H1363" stroke="#02221F" stroke-width="4"/></svg>
-  %s
+<div class="kicker r" style="--d:.05s">Training grant</div>
+<h1 class="h1 r" style="--d:.15s">HRDF Claimable</h1>
+<p class="sub r" style="--d:.3s"><em>Esoft</em> exclusive offer, HRDF claimable</p>
+<div class="row">
+  <div class="glass cd r" style="--d:.55s">
+    <span class="lg pop" style="--d:.9s"><img src="../assets/logos/hrdcorp-registered-tp.png" alt="HRD Corp Registered Training Provider logo"></span>
+    <small>ESOFT</small><b>Authorised Training Provider</b><p>A training provider registered with HRD Corp.</p></div>
+  <div class="go f" style="--d:1.1s"><span>Esoft helps you<br>claim HRDF</span>
+    <svg viewBox="0 0 150 40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" style="--d:1.2s" d="M8 20 H140 M124 6 L140 20 L124 34"/></svg></div>
+  <div class="glass cd r" style="--d:.75s">
+    <span class="lg pop" style="--d:1.1s"><img src="../assets/logos/hrdcorp-claimable.png" alt="HRD Corp Claimable logo"></span>
+    <small>HRDF</small><b>HRDF Claimable</b><p>Eligible companies can claim the HRD Corp grant.</p></div>
+  <div class="plus f" style="--d:1.4s"><i>+</i></div>
+  <div class="glass cd hi r" style="--d:.95s">
+    <span class="es pop" style="--d:1.3s"><img src="../assets/logos/esoft.png" alt="Esoft logo"></span>
+    <b style="margin-top:auto">Esoft exclusive offer</b><p>Esoft customers get extra discounts!</p></div>
 </div>
-<div class="need r" style="--d:2.8s">We need 3 things from you: <span>your data</span><span>1 approver</span><span>1 daily user</span></div>
-''' % t30,
-"\"Thirty days. In the first week your first job is already running, and at the start it only drafts: a person approves everything until you trust it. We need 3 things from you: your data, one person who approves, and one person who uses it every day. When a project runs late, it is almost always because one of those three is missing.\"\n\nNext: \"So here is your next step.\"")
+''', "\"One more piece of good news: an Esoft exclusive offer, and it is HRDF claimable. Esoft is an Authorised Training Provider registered with HRD Corp. Esoft helps you apply, and eligible companies can claim HRDF. On top of that, there is an Esoft exclusive offer today.\"\n\nTO CONFIRM: which fees can be claimed under HRDF.\nNext: \"So here is your next step.\"")
+
+slide('30-live-in-30-days', 'Onboarding', SEC[6], 'light', 'data-sparks="9,0" style="--gx:78%;--gy:40%;--mx:70%;--my:40%"', '''
+.slide { padding-top: 96px; }
+.h1 { font-size: 80px; margin-top: 14px; }
+.h1 em { font-style: normal; color: var(--green); }
+.steps { flex:1; display:grid; grid-template-columns: 1fr 64px 1fr 64px 1fr; align-items: stretch; margin-top: 50px; margin-bottom: 6px; }
+.st { position:relative; padding: 40px 40px 38px; border-radius: 34px; display:flex; flex-direction:column; overflow:hidden; }
+.st .big { position:absolute; right: 22px; top: -30px; font-size: 250px; font-weight: 800; letter-spacing: -.06em; line-height: 1; color: rgba(2,34,31,.045); pointer-events:none; }
+.st .tp { display:flex; align-items:center; gap: 18px; }
+.st .ic { flex:none; width: 92px; height: 92px; border-radius: 26px; display:grid; place-items:center; background: var(--mint); color: var(--green); }
+.st .ic svg { width: 50px; height: 50px; }
+.st .k { font-family: var(--mono); font-size: 22px; font-weight: 700; letter-spacing: .14em; color: var(--green); }
+.st h3 { font-size: 52px; font-weight: 750; letter-spacing: -.03em; line-height: 1.1; margin-top: 26px; }
+.st .en { align-self:flex-start; display:inline-block; margin-top: 12px; font-size: 24px; font-weight: 700; padding: 6px 14px; border-radius: 10px; background: var(--mint); color: var(--green); }
+.st p { font-size: 27px; line-height: 1.45; color: var(--ink-2); margin-top: 20px; }
+.st ul { list-style:none; margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line); display:grid; gap: 12px; }
+.st li { display:flex; align-items:center; gap: 12px; font-size: 26px; font-weight: 650; color: var(--ink); }
+.st li svg { flex:none; color: var(--emerald); }
+.ar { display:grid; place-items:center; color: var(--green); }
+.ar svg { width: 46px; height: 46px; }
+/* step 3: the payoff, dark */
+.st.go { background: var(--ink); color: var(--on-dark); box-shadow: 0 40px 80px -40px rgba(2,34,31,.7), 0 0 100px rgba(0,245,169,.18); }
+.st.go .big { color: rgba(0,245,169,.08); }
+.st.go .ic { background: rgba(0,245,169,.14); color: var(--neon); }
+.st.go .k { color: var(--neon); }
+.st.go .en { background: rgba(0,245,169,.14); color: var(--neon); }
+.st.go p { color: var(--on-dark-2); }
+.st.go ul { border-color: rgba(242,251,247,.14); }
+.st.go li { color: var(--on-dark); } .st.go li svg { color: var(--neon); }
+''', '''
+<div class="kicker r" style="--d:.05s">Onboarding</div>
+<h1 class="h1 r" style="--d:.1s"><em>3</em> steps to start using your AI</h1>
+<div class="steps">
+  <div class="glass st r" style="--d:.35s"><span class="big">1</span>
+    <div class="tp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V3M15 7V3M7 7h10v4a5 5 0 01-10 0z"/><path d="M12 16v5"/></svg></span><span class="k">STEP 1</span></div>
+    <h3>AI setup</h3><span class="en">SQL Integration</span>
+    <p>The SuDu sync tool connects SQL Account safely. Customers, items, prices, stock and credit limits sync on their own, and nothing writes straight into your database.</p>
+    <ul><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Connect SQL Account</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Sync customers, items and prices</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Set permissions and approvers</li></ul>
+  </div>
+  <div class="ar f" style="--d:.9s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  <div class="glass st r" style="--d:.6s"><span class="big">2</span>
+    <div class="tp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h12v16H6a2 2 0 00-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg></span><span class="k">STEP 2</span></div>
+    <h3>Train the AI</h3><span class="en">Skill / SOP · Item Code</span>
+    <p>Like teaching a new staff member: write your way of working as Skills and SOPs. Then teach it your customers&rsquo; words: which item code in your system is &ldquo;bwg besar&rdquo;.</p>
+    <ul><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Write down Skills and SOPs</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Match item codes</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Test with last month&rsquo;s orders</li></ul>
+  </div>
+  <div class="ar f" style="--d:1.1s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  <div class="st go r" style="--d:.85s"><span class="big">3</span>
+    <div class="tp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-4 4-8 9-9 2 0 3 0 3 0s0 1 0 3c-1 5-5 8-9 9z"/><circle cx="14.5" cy="9.5" r="1.5"/></svg></span><span class="k">STEP 3</span></div>
+    <h3>Start using your AI</h3><span class="en">Go Live</span>
+    <p>The AI takes orders, chases payments, checks stock and makes reports. At first it only drafts, and nothing is saved until you approve. Once you trust it, add jobs 1 at a time.</p>
+    <ul><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Drafts first, you approve</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Every action is logged</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Add 1 job at a time</li></ul>
+  </div>
+</div>
+''', "\"Starting takes just 3 steps.\n\nStep 1, AI setup: we connect your SQL Account safely with the SuDu sync tool. Customers, items, prices, stock and credit limits sync across on their own, and nothing writes straight into your database. We also set permissions: who can approve what.\n\nStep 2, train the AI: just like teaching a new staff member. Write your way of working as Skills and SOPs, for example when to chase a payment, and who to ask when an order is over the credit limit. Then match the item codes: when a customer writes “bwg besar”, the AI has to know which item code that is in your system. We test it first with your orders from last month.\n\nStep 3, start using your AI: it takes orders, chases payments, checks stock and makes reports. At first it only drafts, nothing is saved until you approve, and every action is logged. Once you trust it, add jobs 1 at a time.\n\nWe need 3 things from you: your data, 1 approver and 1 daily user.\"\n\nNext: \"So what does manual work really cost you?\"")
 
 slide('31-next-step', 'Your next step', SEC[6], 'light', 'data-sparks="9,1 1,5" style="--gx:35%;--gy:55%;--mx:40%;--my:55%"', '''
 .cards { flex:1; display:grid; grid-template-columns: 1.45fr 1fr; gap: 32px; margin-top: 46px; }
@@ -4176,19 +4212,62 @@ slide('31-next-step', 'Your next step', SEC[6], 'light', 'data-sparks="9,1 1,5" 
 .big h3 span { color: var(--neon); }
 .big p { font-size: 32px; line-height: 1.42; color: var(--on-dark-2); margin-top: 26px; max-width: 820px; }
 .big .av { position:absolute; right: 44px; bottom: 40px; width: 200px; height: 200px; }
-.sm { padding: 52px 50px; display:flex; flex-direction:column; } .sm p:last-child { margin-top: auto; padding-top: 30px; border-top: 1px solid var(--line); }
+.sm { padding: 52px 50px; display:flex; flex-direction:column; }
 .sm h3 { font-size: 40px; font-weight: 650; letter-spacing: -.02em; }
 .sm p { font-size: 30px; line-height: 1.42; color: var(--ink-2); margin-top: 22px; }
+.sm .deal { margin-top: auto; padding-top: 28px; border-top: 1px solid var(--line); }
+.sm .deal small { display:block; font-size: 32px; font-weight: 650; color: var(--ink); }
+.sm .deal b { display:flex; align-items:baseline; gap: 16px; font-size: 150px; font-weight: 800; letter-spacing: -.05em; line-height: 1; color: var(--green); margin-top: 8px; }
+.sm .deal b span { font-size: 56px; letter-spacing: -.02em; color: var(--ink); }
 .band { margin-top: 32px; }
 ''', '''
 <h1 class="h1 r" style="--d:.1s">Book your free AI Workflow Assessment</h1>
 <div class="cards">
-  <div class="big r" style="--d:.3s"><h3><span>Free, 45 minutes,</span><br>at your office.</h3><p>We start from your score and your first AI job, show it working on your own data, and recommend 1 plan.</p><img class="av pop" style="--d:1s" src="../assets/av/agent-thumbs.svg" alt=""></div>
-  <div class="glass sm r" style="--d:.5s"><h3>Ready to start now?</h3><p>Sign within 14 days: <span class="ph">[offer]</span>.</p><p>We take on <span class="ph">[N]</span> new companies a month.</p></div>
+  <div class="big r" style="--d:.3s"><h3><span>Free, 45 minutes</span><br>Online Demo</h3><p>Online, we run your first AI job on your own data, then recommend 1 plan.</p><img class="av pop" style="--d:1s" src="../assets/av/agent-thumbs.svg" alt=""></div>
+  <div class="glass sm r" style="--d:.5s"><h3>Ready to start now?</h3><div class="deal"><small>Sign within 14 days and get</small><b>20%<span>off</span></b></div></div>
 </div>
-<div class="band">%s</div>
-''' % ws(4, 'Hand your worksheet to your table host.', '1.2s'),
-"\"You already did the hard part this afternoon. You have your number, your score and your first AI job. The next step is free: we come to your office for forty-five minutes, start from that worksheet, and show your job working on your own data. If you already know you want to start, there is a seminar offer for the next fourteen days. Hand your worksheet to your table host now. It is also your lucky draw ticket.\"\n\nDo: table hosts collect worksheets and photograph them before handing them back.\nNote: do not go back over the problem here. People who hesitate are afraid of choosing wrong: stress free, short, and a person approves everything.\nNext: questions.")
+''', "\"You already did the hard part today. You have your number, your score and your first AI job. The next step is free: a 45-minute Online Demo, where we run your first AI job on your own data. If you already know you want to start, sign within 14 days and get 20% off.\"\n\nNote: do not go back over the problem here. People who hesitate are afraid of choosing wrong: stress free, short, and a person approves everything.\nNext: \"One last thing.\"")
+
+slide('31-dont-wait', "Don't wait", SEC[6], 'dark', 'data-sparks="none" style="--gx:85%;--gy:30%;--mx:80%;--my:35%"', '''
+body { background: #010C0A; }
+.bg .tiles { opacity: .6; }
+.slide { padding-top: 120px; }
+.q1 { font-size: 92px; font-weight: 650; letter-spacing: -.04em; line-height: 1.1; color: var(--on-dark-2); }
+.q2 { font-size: 132px; font-weight: 800; letter-spacing: -.05em; line-height: 1.04; margin-top: 10px; color: var(--on-dark); }
+.q2 em { font-style: normal; color: var(--neon); }
+.q3 { display:inline-flex; align-items:center; gap: 18px; margin-top: 40px; font-size: 44px; font-weight: 750; letter-spacing: -.02em; color: #FFB08F; }
+.q3 i { width: 18px; height: 18px; border-radius: 50%; background: #FF8A5B; box-shadow: 0 0 0 0 rgba(255,138,91,.6); animation: ping 1.6s infinite; }
+@keyframes ping { 70% { box-shadow: 0 0 0 18px rgba(255,138,91,0); } 100% { box-shadow: 0 0 0 0 rgba(255,138,91,0); } }
+/* race */
+.race { margin-top: auto; display:grid; gap: 20px; max-width: 1400px; }
+.ln { display:grid; grid-template-columns: 220px 1fr; align-items:center; gap: 26px; }
+.ln b { font-size: 30px; font-weight: 700; color: var(--on-dark); }
+.ln b small { display:block; font-size: 21px; font-weight: 500; color: var(--on-dark-3); margin-top: 2px; }
+.tr { position:relative; height: 22px; border-radius: 11px; background: rgba(242,251,247,.08); }
+.tr i { position:absolute; left: 0; top: 0; bottom: 0; border-radius: 11px; width: var(--w); transform-origin: left; animation: run 2.4s cubic-bezier(.2,.8,.2,1) both; animation-delay: var(--d); }
+.tr i::after { content:""; position:absolute; right: -8px; top: -8px; width: 38px; height: 38px; border-radius: 50%; }
+@keyframes run { from { transform: scaleX(0); } }
+html.static .tr i, html.static .q3 i { animation: none; }
+.them .tr i { background: linear-gradient(90deg, var(--emerald), var(--neon)); box-shadow: 0 0 30px rgba(0,245,169,.45); }
+.them .tr i::after { background: var(--neon); box-shadow: 0 0 0 8px rgba(0,245,169,.2); }
+.you .tr i { background: rgba(242,251,247,.35); }
+.you .tr i::after { background: #F2FBF7; }
+.cta { display:flex; align-items:center; gap: 24px; margin-top: 54px; }
+.cta .bt { display:inline-flex; align-items:center; gap: 16px; font-size: 34px; font-weight: 750; padding: 22px 34px; border-radius: 999px; background: var(--neon); color: var(--ink); box-shadow: 0 0 60px rgba(0,245,169,.4); }
+.cta span { font-size: 28px; color: var(--on-dark-2); }
+.cta span b { color: var(--neon); }
+.av { position:absolute; right: 128px; top: 150px; width: 330px; height: 330px; }
+''', '''
+<img class="av pop" style="--d:1.2s" src="../assets/av/agent-liftoff.svg" alt="The SuDu agent lifting off">
+<p class="q1 r" style="--d:.15s">You can wait a little longer,</p>
+<h1 class="q2 r" style="--d:.5s">but your competitors<br><em>won&rsquo;t wait for you!</em></h1>
+<div class="q3 r" style="--d:1.1s"><i></i>They already use AI.</div>
+<div class="race">
+  <div class="ln them r" style="--d:1.5s"><b>Competitors<small>already using AI</small></b><div class="tr"><i style="--w:88%;--d:1.8s"></i></div></div>
+  <div class="ln you r" style="--d:1.6s"><b>You<small>still keying in by hand</small></b><div class="tr"><i style="--w:26%;--d:1.9s"></i></div></div>
+</div>
+<div class="cta r" style="--d:2.6s"><span class="bt"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Book a 45-minute Online Demo today</span><span>Sign within 14 days and get <b>20% off</b></span></div>
+''', "(Pause. Let the first line land.) \"You can wait a little longer. But your competitors won't wait for you!\n\nThey already use AI: orders come in by themselves, payments are chased faster, stock figures are right. In every industrial revolution, the ones who moved first took the customers. The gap grows every month.\n\nBook your 45-minute Online Demo today, and see AI work on your own data. Sign within 14 days and get 20% off.\"\n\nNext: questions.")
 
 # ============================================================ 7 · Q&A + SPARES
 slide('32-questions', 'Questions', SEC[7], 'dark', 'data-sparks="2,1 8,1 5,5" style="--gx:50%;--gy:42%;--mx:50%;--my:45%"', '''
@@ -4200,7 +4279,7 @@ slide('32-questions', 'Questions', SEC[7], 'dark', 'data-sparks="2,1 8,1 5,5" st
 <div class="c">
   <img class="av pop" style="--d:.2s" src="../assets/av/agent-typing.svg" alt="The agent with a headset">
   <h1 class="display r" style="--d:.4s">What would you like to ask?</h1>
-  <p class="small r" style="--d:.7s">The SuDu team is here until 5:45 pm.</p>
+  <p class="small r" style="--d:.7s">The seminar ends at 3:30 pm. The SuDu team is here until 5:45 pm.</p>
 </div>
 ''', "Take questions for about ten minutes, then the lucky draw, then the closing line (slide 33).\nIf the room is quiet: \"Let me ask the one everybody is thinking: do I have to stop using SQL Account?\"\n\nPrepared answers:\n· Stop using SQL Account? No. It stays; SuDu works around it and sends records back.\n· AutoCount? Yes, it connects to AutoCount as well.\n· Replace my staff? It takes over the typing and chasing. Staff check, approve and deal with customers.\n· Mistakes? Important steps wait for approval, everything is recorded, every new job starts draft-only.\n· Data safe / used for training? [Confirm with product team.]\n· Messy data? Yes, start anyway: the readiness check, and we clean item codes during setup.\n· Languages? [Confirm: BM, English, Chinese, mixed.]\n· Grants? [Confirm HRD Corp and digitalisation grant position.]")
 
@@ -4218,31 +4297,7 @@ slide('33-closing', 'Closing line', SEC[8], 'dark bare', 'data-sparks="2,1 8,1 9
 <img class="logo f" style="--d:1.4s" src="../assets/logo-white.png" alt="SuDu AI">
 ''', "Leave this up while people talk to the team.")
 
-slide('34-is-my-data-safe', 'Is my data safe?', SEC[8], 'light', 'data-sparks="9,1 1,5" style="--gx:75%;--gy:50%;--mx:75%;--my:50%"', '''
-.rows { flex:1; display:grid; align-content:center; gap: 26px; max-width: 1400px; }
-.row { display:grid; grid-template-columns: 90px 1fr; align-items:center; padding: 30px 40px; font-size: 38px; }
-.row svg { color: var(--green); }
-''', '''
-<h1 class="h1 r" style="--d:.1s">Is my data safe?</h1>
-<div class="rows">
-  <div class="glass row r" style="--d:.3s">%s<span class="ph">[Where your data is stored]</span></div>
-  <div class="glass row r" style="--d:.45s">%s<span class="ph">[Who can see it]</span></div>
-  <div class="glass row r" style="--d:.6s">%s<span class="ph">[Whether it is used to train the AI]</span></div>
-</div>
-''' % (ic(CAB, 44), ic(EYE, 44), ic(LOCK, 44)),
-"Spare. Fill in the three lines from the product team's confirmed answer before using this slide.")
 
-w35 = [(NOTE, 'Draft first.'), (CHECK, 'A person approves.'), (LIST, 'Everything recorded.'), (POWER, 'Switch it off at any time.')]
-r35 = ''.join('<div class="glass it r" style="--d:%.2fs"><span>%s</span><b>%s</b></div>' % (0.3 + i * 0.15, ic(a, 52), b) for i, (a, b) in enumerate(w35))
-slide('35-if-ai-is-wrong', 'What if the AI is wrong?', SEC[8], 'light', 'data-sparks="9,1 1,5" style="--gx:50%;--gy:60%;--mx:50%;--my:60%"', '''
-.grid { flex:1; display:grid; grid-template-columns: repeat(4, 1fr); gap: 28px; align-content:center; }
-.it { padding: 48px 40px; display:flex; flex-direction:column; gap: 40px; min-height: 380px; }
-.it span { width: 96px; height: 96px; border-radius: 26px; background: var(--mint); color: var(--green); display:grid; place-items:center; }
-.it b { font-size: 42px; font-weight: 650; letter-spacing: -.02em; line-height: 1.12; margin-top: auto; }
-''', '''
-<h1 class="h1 r" style="--d:.1s">What if the AI is wrong?</h1>
-<div class="grid">%s</div>
-''' % r35, "Spare. Every new job starts in draft-only mode, a person approves, everything is recorded, and you can switch it off at any time.")
 
 # ---------------------------------------------------------------- write
 def main():
@@ -4257,16 +4312,16 @@ def main():
     demo = keys[keys.index('demo-day'):keys.index('you-stay-the-boss') + 1]   # demo intros + use cases, as defined
     SECTIONS = [
         ('Company intro', ['cover', 'who-we-are']),
-        ('Speaker intro', ['speaker', 'speaker-owen', 'today']),
+        ('Speaker intro', ['speaker', 'speaker-owen', 'today', 'takeaways']),
         ('What is an AI Agent?', ['section-ai', 'ai-history', 'what-is-llm', 'how-much-it-read',
                                   'what-is-agent', 'agent-loop', 'brain-to-staff', 'tools-and-memory']),
         ('The problem', ['tell-us', 'top-5-issues', 'guess-the-order', 'typed-three-times', 'problem-2', 'problem-3', 'problem-4', 'problem-5', 'count-your-number']),
-        ('SuDu AI', ['why-sudu', 'vision', 'the-map', 'map-detail', 'layers-3d', 'five-stages', 'plug-straight-in', 'the-house',
+        ('SuDu AI', ['why-sudu', 'vision', 'the-map', 'layers-3d', 'five-stages', 'plug-straight-in', 'the-house',
                      'sql-stays', 'foundation', 'ai-team'] + demo),
-        ('Workshop', ['readiness-check', 'your-score', 'need-wms-mes', 'first-ai-job', 'watch-yours-run']),
-        ('Diagnosis', ['starting-point', 'what-it-gives-back', 'plans', 'live-in-30-days', 'next-step']),
+        ('Workshop', ['readiness-qr', 'readiness-check', 'need-wms-mes']),
+        ('Get started', ['live-in-30-days', 'what-it-gives-back', 'cost-compare', 'plans', 'hrdf', 'next-step', 'dont-wait']),
         ('Questions', ['questions']),
-        ('Spare', ['closing', 'is-my-data-safe', 'if-ai-is-wrong']),
+        ('Spare', ['closing']),
     ]
     by = {key(x): x for x in S}
     order = [k for _, ks in SECTIONS for k in ks]
@@ -4281,8 +4336,6 @@ def main():
         with open(os.path.join(HERE, 'slides', s['file'] + '.html'), 'w') as fh:
             fh.write(html)
         item = {'file': 'slides/%s.html' % s['file'], 'label': s['label'], 'section': s['section'], 'notes': s['notes']}
-        if s['file'].endswith('map-detail'):
-            item['enter'] = 'zoom'
         if s['file'].endswith('layers-3d'):
             item['steps'] = 5
         if s['file'].endswith('what-is-agent'):

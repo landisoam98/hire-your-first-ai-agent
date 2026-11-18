@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>扫码：AI 准备度 · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.wrap { display:grid; grid-template-columns: 460px 1fr; gap: 130px; align-items:center; height:100%; }
+ol { list-style:none; margin-top: 44px; display:grid; gap: 34px; counter-reset: q; }
+li { display:grid; grid-template-columns: 76px 1fr; align-items:baseline; font-size: 40px; line-height: 1.25; font-weight: 500; letter-spacing: -.01em; counter-increment: q; }
+li::before { content: counter(q); font-family: var(--mono); font-size: 28px; color: var(--green); }
+.small { margin-top: 52px; padding-left: 76px; font-size: 28px; }
+.qrimg { position:absolute; inset: 62px; width: calc(100% - 124px); height: calc(100% - 124px); image-rendering: pixelated; }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="light" data-section="Workshop" data-sparks="2,1 8,4" style="--gx:22%;--gy:50%;--mx:25%">
+<main class="slide">
+<div class="wrap">
+  <div class="qr glass pop" style="--d:.2s"><img class="qrimg" src="../assets/qr-readiness.png" alt="AI 准备度检查二维码"><div class="frame"></div><div class="scan"></div></div>
+  <div>
+    <h1 class="h1 r" style="--d:.1s">你的公司准备好用 AI 了吗？</h1>
+    <p class="lead r" style="--d:.3s;margin-top:22px">扫码回答 8 个问题，马上知道你的 AI 准备度。</p>
+    <ol>
+      <li class="r" style="--d:.5s">你的数据干净吗？货品编号、单位、库存</li>
+      <li class="r" style="--d:.65s">你的规则清楚吗？信用额度、价格表、谁批准</li>
+      <li class="r" style="--d:.8s">你的订单和联系人齐全吗？</li>
+    </ol>
+  </div>
+</div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

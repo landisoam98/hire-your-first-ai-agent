@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scan: AI readiness · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.wrap { display:grid; grid-template-columns: 460px 1fr; gap: 130px; align-items:center; height:100%; }
+ol { list-style:none; margin-top: 44px; display:grid; gap: 34px; counter-reset: q; }
+li { display:grid; grid-template-columns: 76px 1fr; align-items:baseline; font-size: 40px; line-height: 1.25; font-weight: 500; letter-spacing: -.01em; counter-increment: q; }
+li::before { content: counter(q); font-family: var(--mono); font-size: 28px; color: var(--green); }
+.small { margin-top: 52px; padding-left: 76px; font-size: 28px; }
+.qrimg { position:absolute; inset: 62px; width: calc(100% - 124px); height: calc(100% - 124px); image-rendering: pixelated; }
+</style>
+</head>
+<body class="light" data-section="Workshop" data-sparks="2,1 8,4" style="--gx:22%;--gy:50%;--mx:25%">
+<main class="slide">
+<div class="wrap">
+  <div class="qr glass pop" style="--d:.2s"><img class="qrimg" src="../assets/qr-readiness.png" alt="AI readiness check QR code"><div class="frame"></div><div class="scan"></div></div>
+  <div>
+    <h1 class="h1 r" style="--d:.1s">Is your company ready for AI?</h1>
+    <p class="lead r" style="--d:.3s;margin-top:22px">Scan and answer 8 questions to see your AI readiness straight away.</p>
+    <ol>
+      <li class="r" style="--d:.5s">Is your data clean? Item codes, units, stock</li>
+      <li class="r" style="--d:.65s">Are your rules clear? Credit limits, price list, who approves</li>
+      <li class="r" style="--d:.8s">Are your orders and contacts complete?</li>
+    </ol>
+  </div>
+</div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

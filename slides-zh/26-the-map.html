@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>SuDu 全景图 · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.slide { padding-top: 84px; }
+.h1 { font-size: 66px; }
+.map { position:relative; width: 1664px; height: 722px; margin-top: 26px; }
+.map svg.lines { position:absolute; inset:0; width:100%; height:100%; overflow:visible; z-index: 3; pointer-events:none; }
+.map .cn { stroke: rgba(2,34,31,.3); stroke-width: 3; stroke-dasharray: 2 8; stroke-linecap: round; fill:none; }
+.side { position:absolute; left: 0; width: 210px; height: 150px; padding: 20px 20px; border-radius: 22px; }
+.side svg { width: 40px; height: 40px; color: var(--green); }
+.side b { display:block; font-size: 28px; font-weight: 650; margin-top: 8px; }
+.side span { display:block; font-size: 22px; color: var(--ink-3); margin-top: 2px; }
+.conn { position:absolute; left: 222px; top: 175px; width: 96px; height: 350px; border-radius: 48px; background: var(--ink); color: var(--on-dark); display:flex; flex-direction:column; align-items:center; justify-content:space-around; padding: 18px 0; }
+.conn .c { display:flex; flex-direction:column; align-items:center; gap: 6px; border-radius: 16px; padding: 8px 4px; }
+.conn svg { width: 44px; height: 44px; color: var(--neon); }
+.conn span { font-family: var(--mono); font-size: 16px; font-weight: 600; letter-spacing: .02em; }
+.conn-k { position:absolute; left: 222px; width: 96px; top: 140px; text-align:center; font-family: var(--mono); font-size: 16px; font-weight: 600; letter-spacing: .1em; color: var(--ink-3); }
+.erp { position:absolute; left: 340px; top: 0; width: 1324px; height: 548px; border-radius: 34px; border: 2.5px solid var(--ink); background: rgba(255,255,255,.4); }
+.erp .tab { position:absolute; left: 26px; top: 12px; font-family: var(--mono); font-size: 19px; letter-spacing: .1em; font-weight: 600; color: var(--ink); }
+.ai { position:absolute; left: 26px; right: 26px; top: 48px; height: 80px; border-radius: 20px; background: var(--ink); color: var(--on-dark); display:flex; align-items:center; gap: 18px; padding: 0 24px; box-shadow: 0 0 50px rgba(0,245,169,.22); }
+.ai > svg { width: 46px; height: 46px; color: var(--neon); flex:none; }
+.ai .t { flex:none; } .ai .t b { font-size: 28px; font-weight: 650; } .ai .t span { font-size: 22px; color: var(--on-dark-2); margin-left: 10px; }
+.ai .chips { margin-left: auto; display:flex; gap: 6px; }
+.ai .chips i { white-space: nowrap; font-style: normal; font-size: 18px; font-weight: 600; padding: 7px 11px; border-radius: 999px; background: rgba(0,245,169,.12); color: var(--neon); }
+.blk { position:absolute; top: 158px; width: 256px; height: 364px; padding: 22px 16px 18px 20px; border-radius: 24px; display:flex; flex-direction:column; }
+.blk .hd { display:flex; align-items:center; justify-content:space-between; }
+.blk .ico { width: 64px; height: 64px; border-radius: 18px; background: var(--ink); color: var(--neon); display:grid; place-items:center; }
+.blk .ico svg { width: 36px; height: 36px; }
+.blk .hd b { font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--green); background: var(--mint); padding: 4px 9px; border-radius: 7px; letter-spacing: .06em; }
+.blk h3 { font-size: 36px; font-weight: 700; letter-spacing: -.02em; margin-top: 16px; }
+.blk .sqll { height: 24px; margin-top: 6px; align-self: flex-start; }
+.blk p { font-size: 25px; line-height: 1.32; color: var(--ink-2); margin-top: 8px; }
+.badge { margin-top: auto; display:flex; align-items:center; gap: 6px; white-space: nowrap; letter-spacing: -.01em; font-size: 19px; font-weight: 700; color: var(--ink); background: var(--mint); border: 1.5px solid rgba(0,165,122,.35); padding: 9px 9px; border-radius: 12px; }
+.badge svg { color: var(--green); flex:none; }
+.blk .badge { line-height: 1.15; }
+.fl { position:absolute; top: 340px; width: 0; z-index: 4; }
+.fl i { position:absolute; left: -26px; top: -26px; width: 52px; height: 52px; border-radius: 50%; background: var(--neon); color: var(--ink); display:grid; place-items:center; box-shadow: 0 0 0 6px rgba(0,245,169,.2), 0 10px 24px -8px rgba(2,34,31,.4); }
+.fl i svg { width: 28px; height: 28px; }
+.fl span { position:absolute; left: -41px; width: 82px; top: 34px; text-align:center; font-size: 18px; line-height: 1.2; font-weight: 700; color: var(--green); }
+#n-fin { background: linear-gradient(160deg, #F4EEFF, #EAF3FF); }
+.phys { position:absolute; left: 340px; top: 582px; width: 1324px; height: 138px; border-radius: 28px; border: 2.5px dashed rgba(2,34,31,.35); display:flex; align-items:center; gap: 22px; padding: 0 24px; }
+.phys .lbl b { display:block; font-size: 30px; font-weight: 700; }
+.phys .lbl span { font-size: 22px; color: var(--ink-3); }
+.robot { position:absolute; top: 14px; height: 106px; display:flex; align-items:center; gap: 16px; padding: 0 22px 0 16px; border-radius: 20px; }
+.robot svg { width: 64px; height: 64px; color: var(--ink); flex:none; }
+.robot b { display:block; font-size: 26px; font-weight: 700; }
+.robot span { font-size: 22px; color: var(--ink-2); }
+.phys .pill { position:absolute; right: 24px; background: var(--neon); color: var(--ink); }
+.token { position:absolute; left: -15px; top: -15px; width: 30px; height: 30px; border-radius: 50%; z-index: 5; pointer-events:none; opacity: 0; transition: opacity .4s;
+  background: radial-gradient(circle, #F2FBF7 0 28%, #00F5A9 30% 55%, rgba(0,245,169,0) 72%); box-shadow: 0 0 30px 10px rgba(0,245,169,.45); }
+.token.on { opacity: 1; }
+.cap { position:absolute; right: 26px; top: 8px; display:flex; align-items:center; gap: 12px; opacity: 0; }
+.cap.in { animation: capin .5s var(--ease) forwards; }
+@keyframes capin { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.cap b { font-family: var(--mono); font-size: 17px; letter-spacing: .1em; font-weight: 600; color: var(--ink); background: var(--neon); padding: 4px 9px; border-radius: 8px; }
+.cap span { font-size: 23px; font-weight: 600; color: var(--ink); }
+.side, .blk, .robot, .conn .c, .ai .chips i { transition: box-shadow .45s, transform .45s, background .45s, color .45s; }
+.side.hot, .blk.hot, .robot.hot { box-shadow: 0 0 0 3px var(--neon), 0 0 40px rgba(0,245,169,.45), 0 30px 60px -30px rgba(2,34,31,.4); transform: translateY(-4px); }
+.conn .c.hot { background: rgba(0,245,169,.22); }
+.ai .chips i.hot { background: var(--neon); color: var(--ink); }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="light" data-section="SuDu AI" data-sparks="none" style="--gx:62%;--gy:55%;--mx:60%;--my:55%">
+<main class="slide">
+<h1 class="h1 r" style="--d:.1s">1 个 AI ERP，运营你的公司</h1>
+<div class="map">
+  <div class="glass side r" id="n-cust" style="top:175px;--d:.3s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.6c2.6.2 4.3 1.9 5 4.9"/></svg><b>顾客</b><span>下单和付款</span></div>
+  <div class="glass side r" id="n-sup" style="top:375px;--d:.4s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5l9 4.5 9-4.5M12 12v9"/></svg><b>供应商</b><span>供货给你</span></div>
+  <div class="conn-k f" style="--d:.5s">连接</div>
+  <div class="conn r" style="--d:.5s"><div class="c" id="c-wa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1.2-1.6-2-1-1 .8a5 5 0 0 1-2.4-2.4l.8-1-1-2z"/></svg><span>WhatsApp</span></div><div class="c" id="c-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6l8.5 7 8.5-7"/></svg><span>Email</span></div></div>
+  <div class="erp f" style="--d:.2s">
+    <div class="tab">SUDU ERP + AI</div><div class="cap" id="cap"><b id="cap-n"></b><span id="cap-t"></span></div>
+    <div class="ai r" style="--d:1.4s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="13" rx="10" ry="4"/><path d="M7 11.5a5 5 0 0110 0"/><path d="M8 19l-1 2M16 19l1 2M12 17v4"/></svg><div class="t"><b>AI Agent</b><span>读取、决策、执行</span></div>
+      <div class="chips"><i id="a-sales">Sales</i><i id="a-purchase">Purchase</i><i id="a-inventory">Inventory</i><i id="a-collection">Collection</i><i>Payment</i><i>Up Sales</i><i id="a-finance">Finance</i></div></div>
+    <div class="glass blk r" id="n-scm" style="left:26px;--d:0.60s"><div class="hd"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.5l2.2 10.5h10.8L21 7H7"/><circle cx="9.5" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg></span><b>SCM</b></div><h3>销售与采购</h3><p>接单和采购。</p><div class="badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>订单集中 1 处</div></div><div class="glass blk r" id="n-wms" style="left:364px;--d:0.80s"><div class="hd"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 4l9 5.5V20H3z"/><path d="M7 20v-6h10v6M7 17h10"/></svg></span><b>WMS</b></div><h3>仓库</h3><p>每一箱进出都扫描。</p><div class="badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>库存准确</div></div><div class="glass blk r" id="n-mes" style="left:702px;--d:1.00s"><div class="hd"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V10l5 3V10l5 3V10l5 3V5h3v15z"/><path d="M7 17h2M12 17h2"/></svg></span><b>MES</b></div><h3>工厂</h3><p>每张工单都有计划、有追踪。</p><div class="badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>生产<br>看得见</div></div><div class="glass blk r" id="n-fin" style="left:1040px;--d:1.20s"><div class="hd"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-2-1.5L14 21l-2-1.5L10 21l-2-1.5L6 21z"/><path d="M9 8h6M9 11.5h6M9 15h4"/></svg></span><b>财务</b></div><h3>Finance</h3><img class="sqll" src="../assets/sql-h.png" alt="SQL Account"><p>Invoice 和付款自动记录。</p><div class="badge"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>账目随时最新</div></div>
+    <div class="fl pop" style="left:323px;--d:1.50s"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><span>订单</span></div><div class="fl pop" style="left:661px;--d:1.65s"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><span>物料</span></div><div class="fl pop" style="left:999px;--d:1.80s"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i><span>Invoice</span></div>
+  </div>
+  <div class="phys r" style="--d:1.8s"><div class="lbl"><b>实体 AI</b><span>机器人，由<br>同一个系统驱动</span></div>
+    <div class="glass robot" id="r-truck" style="left:262px"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="22" width="34" height="22" rx="2"/><path d="M38 30h12l8 9v5H38z"/><circle cx="16" cy="48" r="5"/><circle cx="48" cy="48" r="5"/><path d="M44 12a10 10 0 0 1 10 0M41 7a16 16 0 0 1 16 0"/><circle cx="49" cy="17" r="1.5" fill="currentColor"/></svg><div><b>自动驾驶货车</b><span>负责送货</span></div></div>
+    <div class="glass robot" id="r-hum" style="left:624px"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="6" width="20" height="15" rx="5"/><path d="M27 13h.01M37 13h.01"/><path d="M32 2v4"/><rect x="20" y="24" width="24" height="20" rx="4"/><path d="M20 28l-8 10 4 6M44 28l8 10-4 6"/><path d="M26 44v16M38 44v16"/></svg><div><b>人形机器人</b><span>搬运、拣货、生产</span></div></div>
+    <span class="pill">下一步</span></div>
+  <svg class="lines f" style="--d:1.2s" viewBox="0 0 1664 722" fill="none"><path d="M210 250 H222" class="cn"/><circle r="6" fill="#00A57A"><animateMotion dur="0.9s" begin="0s" repeatCount="indefinite" path="M210 250 H222"/></circle><path d="M210 450 H222" class="cn"/><circle r="6" fill="#00A57A"><animateMotion dur="0.9s" begin=".4s" repeatCount="indefinite" path="M210 450 H222"/></circle><path d="M318 250 H364" class="cn"/><circle r="6" fill="#00A57A"><animateMotion dur="1.1s" begin=".2s" repeatCount="indefinite" path="M318 250 H364"/></circle><path d="M318 450 H364" class="cn"/><circle r="6" fill="#00A57A"><animateMotion dur="1.1s" begin=".6s" repeatCount="indefinite" path="M318 450 H364"/></circle><path d="M494 128 V158" class="cn"/><circle r="5" fill="#00F5A9"><animateMotion dur="1s" begin="0s" repeatCount="indefinite" path="M494 128 V158"/></circle><path d="M832 128 V158" class="cn"/><circle r="5" fill="#00F5A9"><animateMotion dur="1s" begin=".25s" repeatCount="indefinite" path="M832 128 V158"/></circle><path d="M1170 128 V158" class="cn"/><circle r="5" fill="#00F5A9"><animateMotion dur="1s" begin=".5s" repeatCount="indefinite" path="M1170 128 V158"/></circle><path d="M1508 128 V158" class="cn"/><circle r="5" fill="#00F5A9"><animateMotion dur="1s" begin=".75s" repeatCount="indefinite" path="M1508 128 V158"/></circle><path d="M760 596 V522" class="cn"/><circle r="6" fill="#00A57A"><animateMotion dur="1.2s" begin="0s" repeatCount="indefinite" path="M760 596 V522"/></circle><path d="M1080 596 V522" class="cn"/><circle r="6" fill="#00A57A"><animateMotion dur="1.2s" begin=".4s" repeatCount="indefinite" path="M1080 596 V522"/></circle><path d="M1220 596 V522" class="cn"/><circle r="6" fill="#00A57A"><animateMotion dur="1.2s" begin=".8s" repeatCount="indefinite" path="M1220 596 V522"/></circle></svg>
+  <div class="token" id="token"></div>
+</div>
+<script>
+(function () {
+  if (navigator.webdriver || location.hash === '#static' || document.documentElement.classList.contains('static')) return;
+  const STEPS = [
+    [210, 250, '顾客在 WhatsApp 下单', ['n-cust', 'c-wa', 'a-sales']],
+    [494, 158, 'Sales 接单并检查信用额度', ['n-scm', 'a-sales']],
+    [210, 450, '缺货部分用 Email 向供应商订货', ['n-sup', 'c-mail', 'a-purchase']],
+    [832, 158, '仓库扫描每一箱入库：库存保持准确', ['n-wms', 'a-inventory']],
+    [1170, 158, '工厂生产，每一步都看得到', ['n-mes', 'r-hum']],
+    [760, 522, '仓库打包，货车送货', ['n-wms', 'r-truck', 'a-inventory']],
+    [1508, 158, 'Invoice 和付款进入 SQL Account', ['n-fin', 'a-collection', 'a-finance']],
+  ];
+  const tok = document.getElementById('token'), capN = document.getElementById('cap-n'), capT = document.getElementById('cap-t'), cap = document.getElementById('cap');
+  const MOVE = 750, STAY = 1700, START = 3000;
+  let i = -1, from = [STEPS[0][0], STEPS[0][1]];
+  function go() {
+    document.querySelectorAll('.hot').forEach(e => e.classList.remove('hot'));
+    i = (i + 1) % STEPS.length;
+    const [x, y, txt, on] = STEPS[i], a = [...from], t0 = performance.now();
+    cap.classList.remove('in'); void cap.offsetWidth;
+    capN.textContent = 'STEP ' + (i + 1) + ' / ' + STEPS.length; capT.textContent = txt; cap.classList.add('in');
+    tok.classList.add('on');
+    (function mv(n) {
+      const p = Math.min(1, (n - t0) / MOVE), e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+      tok.style.transform = 'translate(' + (a[0] + (x - a[0]) * e) + 'px,' + (a[1] + (y - a[1]) * e) + 'px)';
+      if (p < 1) requestAnimationFrame(mv);
+      else { on.forEach(id => document.getElementById(id).classList.add('hot')); from = [x, y]; setTimeout(go, STAY); }
+    })(t0);
+  }
+  tok.style.transform = 'translate(' + from[0] + 'px,' + from[1] + 'px)';
+  setTimeout(go, START);
+})();
+</script>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

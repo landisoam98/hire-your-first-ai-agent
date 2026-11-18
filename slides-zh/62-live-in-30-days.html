@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>Onboarding · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.slide { padding-top: 96px; }
+.h1 { font-size: 80px; margin-top: 14px; }
+.h1 em { font-style: normal; color: var(--green); }
+.steps { flex:1; display:grid; grid-template-columns: 1fr 64px 1fr 64px 1fr; align-items: stretch; margin-top: 50px; margin-bottom: 6px; }
+.st { position:relative; padding: 40px 40px 38px; border-radius: 34px; display:flex; flex-direction:column; overflow:hidden; }
+.st .big { position:absolute; right: 22px; top: -30px; font-size: 250px; font-weight: 800; letter-spacing: -.06em; line-height: 1; color: rgba(2,34,31,.045); pointer-events:none; }
+.st .tp { display:flex; align-items:center; gap: 18px; }
+.st .ic { flex:none; width: 92px; height: 92px; border-radius: 26px; display:grid; place-items:center; background: var(--mint); color: var(--green); }
+.st .ic svg { width: 50px; height: 50px; }
+.st .k { font-family: var(--mono); font-size: 22px; font-weight: 700; letter-spacing: .14em; color: var(--green); }
+.st h3 { font-size: 52px; font-weight: 750; letter-spacing: -.03em; line-height: 1.1; margin-top: 26px; }
+.st .en { align-self:flex-start; display:inline-block; margin-top: 12px; font-size: 24px; font-weight: 700; padding: 6px 14px; border-radius: 10px; background: var(--mint); color: var(--green); }
+.st p { font-size: 27px; line-height: 1.45; color: var(--ink-2); margin-top: 20px; }
+.st ul { list-style:none; margin-top: auto; padding-top: 22px; border-top: 1px solid var(--line); display:grid; gap: 12px; }
+.st li { display:flex; align-items:center; gap: 12px; font-size: 26px; font-weight: 650; color: var(--ink); }
+.st li svg { flex:none; color: var(--emerald); }
+.ar { display:grid; place-items:center; color: var(--green); }
+.ar svg { width: 46px; height: 46px; }
+/* step 3: the payoff, dark */
+.st.go { background: var(--ink); color: var(--on-dark); box-shadow: 0 40px 80px -40px rgba(2,34,31,.7), 0 0 100px rgba(0,245,169,.18); }
+.st.go .big { color: rgba(0,245,169,.08); }
+.st.go .ic { background: rgba(0,245,169,.14); color: var(--neon); }
+.st.go .k { color: var(--neon); }
+.st.go .en { background: rgba(0,245,169,.14); color: var(--neon); }
+.st.go p { color: var(--on-dark-2); }
+.st.go ul { border-color: rgba(242,251,247,.14); }
+.st.go li { color: var(--on-dark); } .st.go li svg { color: var(--neon); }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="light" data-section="正式启动" data-sparks="9,0" style="--gx:78%;--gy:40%;--mx:70%;--my:40%">
+<main class="slide">
+<div class="kicker r" style="--d:.05s">Onboarding</div>
+<h1 class="h1 r" style="--d:.1s"><em>3</em> 步，开始用你的 AI</h1>
+<div class="steps">
+  <div class="glass st r" style="--d:.35s"><span class="big">1</span>
+    <div class="tp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V3M15 7V3M7 7h10v4a5 5 0 01-10 0z"/><path d="M12 16v5"/></svg></span><span class="k">STEP 1</span></div>
+    <h3>AI 设置</h3><span class="en">SQL Integration</span>
+    <p>用 SuDu 同步工具安全连接 SQL Account。顾客、货品、价格、库存和信用额度自动同步，不直接写进你的数据库。</p>
+    <ul><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>连接 SQL Account</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>同步顾客、货品和价格</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>设好权限和批准人</li></ul>
+  </div>
+  <div class="ar f" style="--d:.9s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  <div class="glass st r" style="--d:.6s"><span class="big">2</span>
+    <div class="tp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h12v16H6a2 2 0 00-2 2z"/><path d="M4 19V5M8 7h6M8 11h6"/></svg></span><span class="k">STEP 2</span></div>
+    <h3>训练 AI</h3><span class="en">Skill / SOP · Item Code</span>
+    <p>像教新员工一样，把你的做法写成 Skill 和 SOP。再教它顾客的叫法：“bwg besar” 就是你系统里的哪个 item code。</p>
+    <ul><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>写下 Skill 和 SOP</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>对上 item code</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>用上个月的订单测试</li></ul>
+  </div>
+  <div class="ar f" style="--d:1.1s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+  <div class="st go r" style="--d:.85s"><span class="big">3</span>
+    <div class="tp"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-4 4-8 9-9 2 0 3 0 3 0s0 1 0 3c-1 5-5 8-9 9z"/><circle cx="14.5" cy="9.5" r="1.5"/></svg></span><span class="k">STEP 3</span></div>
+    <h3>开始用你的 AI</h3><span class="en">Go Live</span>
+    <p>AI 开始接单、追款、查库存、做报表。一开始只出草稿，你批准了才保存。信任建立后，再一个一个加工作。</p>
+    <ul><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>先出草稿，你来批准</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>每个动作都有记录</li><li><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>一次加一个工作</li></ul>
+  </div>
+</div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>
