@@ -4669,7 +4669,7 @@ def demo_section():
             '<p class="lead r" style="--d:.3s">A sample food distributor that runs SQL Account, with SuDu AI connected. Each agent has one job.</p>'
             '<div class="row">' + cards + '</div>')
     slide('19-demo-day', 'Live demo', SEC[3], 'light', 'data-sparks="none" style="--gx:50%;--gy:40%"', TEAM_CSS, html,
-          "\"Let me introduce the 6 AI Agents in today's demo. They work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: \"Before any agent works, we set it up once.\"")
+          "\"Let me introduce the 6 AI Agents in today's demo. They work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: \"Before we start, 1 quick note about today's demo account.\"")
 
 
 def demo_uc(i):
@@ -4764,6 +4764,44 @@ def demo_intro(agent):
     slide('19-intro-%02d' % (k + 1), 'Demo: ' + agent, SEC[3], 'light', 'data-sparks="none"', INTRO_CSS, html, note)
 
 demo_section()
+
+# ---------------- demo account disclaimer ----------------
+def _disc_cards():
+    out = ''
+    for k, (nm, ag, av, *_r) in enumerate(TEAM):
+        off = ag == 'Collection AI'
+        out += ('<div class="dc%s u" style="--d:%.2fs"><div class="ph"><img src="../assets/av/%s" alt=""></div><b>%s</b><span>%s</span><em>%s</em></div>'
+                % (' off' if off else '', .7 + k * .1, av, nm, ag, 'Slides only today' if off else 'Live demo'))
+    return out
+slide('19-demo-note', 'Demo account note', SEC[3], 'light', 'data-sparks="none"', MIN_CSS + '''
+body { background: #FBFAF6; }
+.mt { font-size: 72px; }
+.nt { display:flex; align-items:flex-start; gap: 22px; margin-top: 34px; padding: 26px 32px; border-radius: 24px; background: #FFF6E8; box-shadow: inset 0 0 0 2px rgba(255,181,71,.55); }
+.nt i { flex:none; display:grid; place-items:center; width: 60px; height: 60px; border-radius: 50%; background: #FFB547; color: var(--ink); }
+.nt p { font-size: 34px; line-height: 1.4; color: var(--ink); }
+.nt p b { color: #8A3417; }
+.row { display:grid; grid-template-columns: repeat(6, 1fr); gap: 18px; margin-top: 44px; }
+.dc { position:relative; padding: 22px 14px 20px; border-radius: 22px; background: #fff; text-align:center; display:flex; flex-direction:column; align-items:center; box-shadow: 0 0 0 1px rgba(2,34,31,.06), 0 20px 36px -30px rgba(2,34,31,.4); }
+.dc .ph { width: 120px; height: 120px; border-radius: 50%; display:grid; place-items:center; box-shadow: 0 0 0 1px rgba(2,34,31,.08); }
+.dc img { width: 112px; height: 112px; }
+.dc b { font-size: 32px; font-weight: 750; margin-top: 14px; }
+.dc span { font-size: 22px; color: var(--ink-3); margin-top: 2px; }
+.dc em { font-style: normal; margin-top: 14px; font-size: 20px; font-weight: 750; padding: 6px 14px; border-radius: 999px; background: var(--mint); color: var(--green); }
+.dc.off { background: #F4F4F1; box-shadow: inset 0 0 0 2px rgba(255,181,71,.6); }
+.dc.off img { filter: grayscale(1); opacity: .55; }
+.dc.off b, .dc.off span { color: var(--ink-3); }
+.dc.off em { background: #FFF1DC; color: #8A3417; }
+.ft { margin-top: auto; margin-bottom: 56px; font-size: 28px; color: var(--ink-2); }
+.ft b { color: var(--ink); }
+''', '''
+<div class="mk u" style="--d:.05s">Before the demo</div>
+<h1 class="mt u" style="--d:.15s">A quick note: this is a <em>demo account</em></h1>
+<div class="nt u" style="--d:.4s"><i>''' + ic('<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/>', 30, 2.4) + '''</i>
+  <p>In a demo account we can&rsquo;t sync the full data from SQL Account, such as the <b>opening ledger</b>. So <b>Collection AI can&rsquo;t run its tasks live today</b>.</p></div>
+<div class="row">''' + _disc_cards() + '''</div>
+<p class="ft u" style="--d:1.5s">For Collection AI, we&rsquo;ll walk you through the slides. <b>On your own account with full data, it runs live.</b></p>
+''',
+"\"Before we start the demo, 1 quick note. What you are about to see runs on a demo account. In a demo account, we cannot sync the full data from SQL Account, for example the opening ledger, the balances each customer already owes. Collection AI needs exactly that data to know who is overdue. So today, Sales, Inventory, Purchase, Up Sales and Finance AI run live, and for Collection AI I will walk you through the slides instead. On your own account, with your full data synced, Collection AI runs live like the others.\"\n\nNext: \"Before any agent works, we set it up once.\"")
 for _i in range(len(USECASES)):
     if _i == 0 or USECASES[_i - 1][0] != USECASES[_i][0]:
         demo_intro(USECASES[_i][0])

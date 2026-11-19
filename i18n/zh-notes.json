@@ -36,8 +36,8 @@
   "zh": "无。主持人欢迎大家，用一句话交棒。直接进入第 2 页。"
  },
  "demo-day": {
-  "en": "\"Let me introduce the 6 AI Agents in today's demo. They work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: \"Before any agent works, we set it up once.\"",
-  "zh": "“我来介绍今天 demo 的 6 个 AI Agent。它们为 Maju Jaya Foods 工作，这是一家示范公司，用的是示范数据。Sasha 接订单。Ivan 看库存。Puteri 负责采购。Cody 追钱。Uma 把流失的顾客拉回来。Felix 管数字。我们先设定一次，然后每一个都在屏幕上做真正的工作。”\n\n接下来每一页是 1 个用例。现场演示，然后回到这一页。\n下一页：“在任何 AI Agent 开始工作之前，我们先设置一次。”"
+  "en": "\"Let me introduce the 6 AI Agents in today's demo. They work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: \"Before we start, 1 quick note about today's demo account.\"",
+  "zh": "“我来介绍今天 demo 的 6 个 AI Agent。它们为 Maju Jaya Foods 工作，这是一家示范公司，用的是示范数据。Sasha 接订单。Ivan 看库存。Puteri 负责采购。Cody 追钱。Uma 把流失的顾客拉回来。Felix 管数字。我们先设定一次，然后每一个都在屏幕上做真正的工作。”\n\n接下来每一页是 1 个用例。现场演示，然后回到这一页。\n下一页：“开始之前，先简单说明一下今天的 Demo 账号。”"
  },
  "dense-moe": {
   "en": "\"The last thing on the list: how the brain is built. There are 2 ways, and the easiest way to see them is an office.\n\nImagine your office gets 1 email.\n\nThe first way is called dense. Everyone reads every email. All 16 people stop and work on it.\" (point at the people lighting up) \"It works, but it is slow and costly, and the bigger the office, the more every email costs.\n\nThe second way is called mixture of experts. A receptionist reads the email first and sends it only to the 2 people who know the topic. Everyone else keeps working on other things. So you can have a very big office, but each email is cheap and fast.\n\nA real example: DeepSeek V4 has 1.6 trillion dials in total, but only 49 billion of them work on each word. That is why many of the newest models are built this way.\"\n\nNote: figures from Meta (Llama 3) and the DeepSeek-V4 paper (June 2026). Llama 3 70B is dense: all 70B dials work on every word.\nNext: \"Whatever way it is built, every AI brain shares 1 big weakness.\"",
@@ -430,5 +430,9 @@
  "faq": {
   "en": "\"Before the demo, let me answer the 2 questions I get asked the most, at every seminar.\n\nOne: I already have SQL Account, why do I still need SuDu? Two: can I just connect Claude or Codex straight to SQL Account?\"\n\nNext: \"Question 1.\"",
   "zh": "“演示之前，我先回答 2 个每场讲座都会被问到的问题。\n\n第一：我已经有 SQL Account 了，为什么还需要 SuDu？第二：我可以直接把 Claude 或 Codex 接到 SQL Account 吗？”\n\n下一页：“第 1 个问题。”"
+ },
+ "demo-note": {
+  "en": "\"Before we start the demo, 1 quick note. What you are about to see runs on a demo account. In a demo account, we cannot sync the full data from SQL Account, for example the opening ledger, the balances each customer already owes. Collection AI needs exactly that data to know who is overdue. So today, Sales, Inventory, Purchase, Up Sales and Finance AI run live, and for Collection AI I will walk you through the slides instead. On your own account, with your full data synced, Collection AI runs live like the others.\"\n\nNext: \"Before any agent works, we set it up once.\"",
+  "zh": "“开始演示之前，先说明一下。接下来大家看到的，是在一个 Demo 账号上运行的。Demo 账号无法从 SQL Account 同步完整数据，例如 Opening Ledger，也就是每位顾客原本就欠的余额。Collection AI 正需要这些数据，才知道谁逾期。所以今天，Sales、Inventory、Purchase、Up Sales 和 Finance AI 会现场运行，Collection AI 的部分我会用幻灯片为大家讲解。用你自己的账号、同步完整数据后，Collection AI 就会像其他 AI Agent 一样现场运作。”\n\n下一页：“任何 AI Agent 开工之前，我们先设置一次。”"
  }
 }
