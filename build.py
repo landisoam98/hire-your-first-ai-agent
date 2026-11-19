@@ -3462,7 +3462,7 @@ slide('22-brain-to-staff', 'From brain to staff member', SEC[2], 'light', 'data-
 </div>
 <div class="end u" style="--d:2.2s">Brain + this setup = <em>the harness</em></div>
 ''',
-"\"A brilliant brain alone only talks. Think about hiring a brilliant graduate: talent is not enough. You give them 6 things, and an AI Agent needs the same 6.\n\n[Go down the list] A job description: for the AI, its instructions: the goal, and when the job counts as done. Without it, it does too much, or the wrong job. Logins and keys: its tools, 1 for each action. Without them, it can only give advice. The files: its memory: your records, and what you taught it. Without it, it forgets the customer and guesses the price. Your SOP: its rules and skills. Without them, it does the job its own way. A supervisor: permission, who says yes. Without it, nobody checks before stock or money moves. And probation: testing. You try it on last month's orders first, then you watch it. Without that, the same mistake repeats quietly.\n\nThe brain plus this setup has a name: the harness. Every company can rent the same brain. The harness decides whether it helps or hurts.\"\n\nNext: \"Now, be honest: who is really the boss of your company?\"")
+"\"A brilliant brain alone only talks. Think about hiring a brilliant graduate: talent is not enough. You give them 6 things, and an AI Agent needs the same 6.\n\n[Go down the list] A job description: for the AI, its instructions: the goal, and when the job counts as done. Without it, it does too much, or the wrong job. Logins and keys: its tools, 1 for each action. Without them, it can only give advice. The files: its memory: your records, and what you taught it. Without it, it forgets the customer and guesses the price. Your SOP: its rules and skills. Without them, it does the job its own way. A supervisor: permission, who says yes. Without it, nobody checks before stock or money moves. And probation: testing. You try it on last month's orders first, then you watch it. Without that, the same mistake repeats quietly.\n\nThe brain plus this setup has a name: the harness. Every company can rent the same brain. The harness decides whether it helps or hurts.\"\n\nNext: \"Now, let me ask you to imagine something.\"")
 
 # ---------------- 18 · harness ----------------
 AC_RING = ['Tools', 'Memory', 'Rules', 'Permission', 'The loop', 'Tests']
@@ -3699,7 +3699,7 @@ html.static .mi img { opacity: 1; transform: none; animation: none; }
 ''', '''
 <div class="mi"><img src="../assets/img/meme-before-after.webp" alt="Meme: before AI and after AI"></div>
 ''',
-"(This one is for a laugh. Let it land.)\n\n\"Be honest: before AI, who is really the boss of your company? The problems. Staff on leave, high costs, wrong stock, slow work, can't hire anyone. After AI, the boss is the boss again, and the AI does the hard work.\"\n\nNext: \"Now, let me ask you to imagine something.\"")
+"(This one is for a laugh. Let it land.)\n\n\"Be honest: before AI, who is really the boss of your company? The problems. Staff on leave, high costs, wrong stock, slow work, can't hire anyone. After AI, the boss is the boss again, and the AI does the hard work.\"\n\nNext: \"So how does AI help? Let's start with the big question: what is AI, really?\"")
 
 slide('24-tools-and-memory', 'No tools, no work', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
 .chain { display:flex; align-items:stretch; justify-content:space-between; margin-top: 70px; }
@@ -4110,7 +4110,7 @@ slide('03-takeaways', 'What you take home', SEC[0], 'light', 'data-sparks="9,0 1
     ''' + _tk_ic(TK_GIFT) + '''
     <b>Get a<em>free</em><br>Demo AI Account</b></div>
 </div>
-''', "\"By the end of today, you take home 3 things.\n\nOne: a clear picture of AI. What AI really is, how an AI Agent works, what it can and cannot do, with no tech talk.\n\nTwo: you know how to plan AI for your business. Where your company should start, and which job is best to hand to AI first.\n\nThree: a free Demo AI Account. Go back and try it yourself: watch AI Agents work on sample data.\"\n\nNext: \"Let's start with the big question: what is AI, really?\"")
+''', "\"By the end of today, you take home 3 things.\n\nOne: a clear picture of AI. What AI really is, how an AI Agent works, what it can and cannot do, with no tech talk.\n\nTwo: you know how to plan AI for your business. Where your company should start, and which job is best to hand to AI first.\n\nThree: a free Demo AI Account. Go back and try it yourself: watch AI Agents work on sample data.\"\n\nNext: \"But first, be honest: who is really the boss of your company?\"")
 
 # ---------------- video: SuDu WMS seminar preview (plays after "No tools, no work") ----------------
 slide('24-video-wms', 'Video: SuDu WMS', SEC[3], 'dark bare', 'data-sparks="none"', '''
@@ -5400,10 +5400,10 @@ def main():
     demo = keys[keys.index('demo-day'):keys.index('you-stay-the-boss') + 1]   # demo intros + use cases, as defined
     SECTIONS = [
         ('Company intro', ['cover', 'who-we-are']),
-        ('Speaker intro', ['speaker', 'speaker-owen', 'today', 'takeaways']),
+        ('Speaker intro', ['speaker', 'speaker-owen', 'today', 'takeaways', 'meme-img']),
         ('What is an AI Agent?', ['section-ai', 'ai-types', 'how-much-it-read',
                                   'why-agent', 'agent-intro', 'what-is-agent', 'good-vs-bad-agent', 'brain-to-staff']),
-        ('SuDu AI', ['meme-img', 'imagine', 'video-figure', 'vision', 'the-map', 'five-stages', 'layers-3d']),
+        ('SuDu AI', ['imagine', 'video-figure', 'vision', 'the-map', 'five-stages', 'layers-3d']),
         ('The problem', ['section-problem', 'tell-us', 'top-5-issues', 'guess-the-order', 'typed-three-times', 'problem-2', 'problem-3', 'problem-4', 'problem-5', 'count-your-number', 'ai-guru', 'new-way']),
         ('SuDu AI', ['tools-and-memory', 'video-wms', 'faq', 'why-sudu', 'plug-straight-in', 'the-house',
                      'meme-pool', 'section-demo'] + [k for k in demo if k not in DROP]),
