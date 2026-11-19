@@ -503,7 +503,7 @@ slide('03-the-map', 'The SuDu map', SEC[0], 'light', 'data-sparks="none" style="
 })();
 </script>
 ''' % dict(people=PEOPLE, box=BOX, wa=WA, mail=MAIL, ufo=UFO, blocks=OV_BLOCKS, flow=OV_FLOW, truck=TRUCK, hum=HUMANOID, lines=OV_LINES),
-"\"First, the big picture, in plain words.\n\nThe big box is SuDu: one ERP, one system, one database. Inside it the work flows left to right. Supply chain: selling and buying, so orders are in one place. The warehouse, WMS: every carton is scanned, so stock is accurate. The factory, MES: every job is tracked, so you can see every job. And finance: everything goes into SQL Account, so your accounts are always up to date.\n\nOn the left, customers and suppliers reach the system the way they already work: WhatsApp and email. Across the top, the AI agents read everything and do the work at every step. At the bottom, the next step: physical AI, an auto-driving truck and a humanoid robot, run by the same system.\n\nWatch one order travel through it.\" (It loops by itself, about 17 seconds.)\n\nNote: physical AI is the roadmap, not on sale today.\nNext: \"Now let's look at the same system from the side.\"")
+"\"First, the big picture, in plain words.\n\nThe big box is SuDu: one ERP, one system, one database. Inside it the work flows left to right. Supply chain: selling and buying, so orders are in one place. The warehouse, WMS: every carton is scanned, so stock is accurate. The factory, MES: every job is tracked, so you can see every job. And finance: everything goes into SQL Account, so your accounts are always up to date.\n\nOn the left, customers and suppliers reach the system the way they already work: WhatsApp and email. Across the top, the AI agents read everything and do the work at every step. At the bottom, the next step: physical AI, an auto-driving truck and a humanoid robot, run by the same system.\n\nWatch one order travel through it.\" (It loops by itself, about 17 seconds.)\n\nNote: physical AI is the roadmap, not on sale today.\nNext: \"Every company is walking the same road. Where is yours?\"")
 
 
 def pulse(d, dur, begin='0s', r=6, color='#00A57A', cls='cn'):
@@ -941,7 +941,7 @@ slide('03-layers-3d', '4 layers in 3D', SEC[0], 'light', 'data-sparks="none" sty
 ''' + _flip_heads() + '''
 <div class="scene">''' + _flip_layers() + '''</div>
 ''' + FLIP_JS,
-"\"Here is how SuDu is built, one layer at a time. It starts with the foundation: SQL Account.\"\n\n(Next: the plate flips up.) Layer 1, SQL Account: \"Your accounting. Invoices, credit notes, payments, e-invoice, tax, your P&L. It keeps your accounts right, and it records what has already happened. Every document SuDu creates goes down here automatically.\"\n\n(Next: WMS lands on top.) Layer 2, WMS: \"On top sits the warehouse. Receiving, putting on the shelf, picking, packing, delivery, transfers, counts, batch and expiry. Every carton is scanned the moment it moves, so the stock figure is always true.\"\n\n(Next: MES lands on top.) Layer 3, MES: \"If you manufacture, the factory. The BOM, the production order, material issue, output, QC, scrap and machine time. Every job planned, tracked and costed as it happens.\"\n\n(Next: AI agents land on top.) Layer 4, AI agents: \"And on top, the AI agents, reading every layer below and doing the routine work. Nothing is saved until a person approves.\"\n\n(Next: all four fold into the stack.) \"4 layers, 1 system. Each stands on the one below, and the AI runs them all.\"\n\nThis slide has 5 extra Next presses.\nNext: \"Every company is walking the same road. Where is yours?\"")
+"\"Here is how SuDu is built, one layer at a time. It starts with the foundation: SQL Account.\"\n\n(Next: the plate flips up.) Layer 1, SQL Account: \"Your accounting. Invoices, credit notes, payments, e-invoice, tax, your P&L. It keeps your accounts right, and it records what has already happened. Every document SuDu creates goes down here automatically.\"\n\n(Next: WMS lands on top.) Layer 2, WMS: \"On top sits the warehouse. Receiving, putting on the shelf, picking, packing, delivery, transfers, counts, batch and expiry. Every carton is scanned the moment it moves, so the stock figure is always true.\"\n\n(Next: MES lands on top.) Layer 3, MES: \"If you manufacture, the factory. The BOM, the production order, material issue, output, QC, scrap and machine time. Every job planned, tracked and costed as it happens.\"\n\n(Next: AI agents land on top.) Layer 4, AI agents: \"And on top, the AI agents, reading every layer below and doing the routine work. Nothing is saved until a person approves.\"\n\n(Next: all four fold into the stack.) \"4 layers, 1 system. Each stands on the one below, and the AI runs them all.\"\n\nThis slide has 5 extra Next presses.\nNext: \"That is SuDu. Now let's talk about you.\"")
 
 STAGE_ICONS = [
     '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 11h7M9 15h7M9 19h4"/>',
@@ -1111,7 +1111,7 @@ html.static .streak { display: none; }
   <div class="gap"><span>The gap grows every year</span></div>
 </div>
 ''' % dict(curve=STAGE_CURVE, graph=_stage_graph(), xl=SX[4], xf=SX[0], fx=CX[4]),
-"\"Think about the industrial revolutions: steam, then electricity, then computers. Each one changed who did the work, and the factories that moved first won. The same thing happens in how a company is run.\n\nBusiness 1.0, until about 1980: handwritten. Orders in a book, stock counted by hand. Slow, and nobody sees the whole picture.\n\nBusiness 2.0, the 1980s and 1990s: spreadsheets. Excel files passed around by email. Faster, but many versions and typing mistakes.\n\nBusiness 3.0, from the 1990s until now: software. SQL Account, and a separate system for each team. Much better, but the systems do not talk, and people still key everything in. This is where most companies in this room are today.\n\nBusiness 4.0 is already here. ChatGPT arrived at the end of 2022 and could only talk. Since 2025, AI agents do the work: they read the WhatsApp order, create the documents, chase the payment, inside an AI-native ERP, and people approve. That is what SuDu does today, and what you will see in the demo.\n\nAnd business 5.0 is next: physical AI. Humanoid robots and self-driving trucks do the physical work, run by the same system. AI-native ERP plus robots: the autonomous enterprise.\n\n(Pause while the competitor marker climbs.) Here is the point. The future is not coming; it is here. Your competitor can already be at 4.0 while you are at 3.0, and in every revolution so far, the ones who moved first took the customers. The gap grows every year.\"\n\nPoint at the two bars on each card: manual work and cost fall with every era, and fall the most at 4.0 and 5.0.\nNote: the years are rounded eras, not exact dates; the manual-work and cost bars are an illustration, not measured figures. Physical AI timing (late 2020s) is an outlook, and it is not on sale today.\nNext: \"So can I just connect ChatGPT or Claude to SQL Account myself? Here is a question I get every week.\"")
+"\"Think about the industrial revolutions: steam, then electricity, then computers. Each one changed who did the work, and the factories that moved first won. The same thing happens in how a company is run.\n\nBusiness 1.0, until about 1980: handwritten. Orders in a book, stock counted by hand. Slow, and nobody sees the whole picture.\n\nBusiness 2.0, the 1980s and 1990s: spreadsheets. Excel files passed around by email. Faster, but many versions and typing mistakes.\n\nBusiness 3.0, from the 1990s until now: software. SQL Account, and a separate system for each team. Much better, but the systems do not talk, and people still key everything in. This is where most companies in this room are today.\n\nBusiness 4.0 is already here. ChatGPT arrived at the end of 2022 and could only talk. Since 2025, AI agents do the work: they read the WhatsApp order, create the documents, chase the payment, inside an AI-native ERP, and people approve. That is what SuDu does today, and what you will see in the demo.\n\nAnd business 5.0 is next: physical AI. Humanoid robots and self-driving trucks do the physical work, run by the same system. AI-native ERP plus robots: the autonomous enterprise.\n\n(Pause while the competitor marker climbs.) Here is the point. The future is not coming; it is here. Your competitor can already be at 4.0 while you are at 3.0, and in every revolution so far, the ones who moved first took the customers. The gap grows every year.\"\n\nPoint at the two bars on each card: manual work and cost fall with every era, and fall the most at 4.0 and 5.0.\nNote: the years are rounded eras, not exact dates; the manual-work and cost bars are an illustration, not measured figures. Physical AI timing (late 2020s) is an outlook, and it is not on sale today.\nNext: \"Now let's look at how SuDu is built, from the side.\"")
 
 FLAGS_HTML = open(os.path.join(HERE, '_flags.html')).read() if os.path.exists(os.path.join(HERE, '_flags.html')) else ''
 JOURNEY = [
@@ -1358,7 +1358,7 @@ li::before { content: counter(q); font-family: var(--mono); font-size: 28px; col
     </ol>
   </div>
 </div>
-''', "\"Take out your phone and scan this. Three questions, one minute. Your answers will be on this screen in a few minutes. By the end of today each of you will leave with three things written on the worksheet in front of you: your number, your readiness score, and your first AI job.\"\n\nDo: table hosts help anyone who cannot scan. The demo driver watches the answers come in.\nForm: name, company, mobile; Q1 keying in orders / chasing payments / checking stock / typing up paper forms / making reports; Q2 1 person / 2 to 3 / 4 or more; Q3 (stock and finance figures) fully / mostly / not much; consent line.\nNext: \"While the answers come in, here are the five problems we hear most.\"")
+''', "\"Take out your phone and scan this. Three questions, one minute. Your answers will be on this screen in a few minutes. By the end of today each of you will leave with three things written on the worksheet in front of you: your number, your readiness score, and your first AI job.\"\n\nDo: coaches help anyone who cannot scan. The demo driver watches the answers come in.\nForm: name, company, mobile; Q1 keying in orders / chasing payments / checking stock / typing up paper forms / making reports; Q2 1 person / 2 to 3 / 4 or more; Q3 (stock and finance figures) fully / mostly / not much; consent line.\nNext: \"While the answers come in, here are the five problems we hear most.\"")
 
 # ============================================================ 2 · THE PROBLEM
 TOP5 = [
@@ -1784,7 +1784,7 @@ slide('07-count-your-number', 'Count your own number', SEC[1], 'light', 'data-sp
 </div>
 <div class="foot2 r" style="--d:2.4s"><div class="ws" style="--d:2.4s">''' + ic(PEN, 30) + '''Work out your rough monthly staff cost and write it in your notes.</div></div>
 ''',
-"\"Let's put a number on all five problems, your own number. Three steps.\n\nStep one: how many hours a week does your team spend on manual work, all staff added together? In my example: keying in orders ten hours, chasing payments eight, checking stock seven. Twenty-five hours a week.\n\nStep two: times fifty-two weeks in a year.\n\nStep three: times sixteen ringgit, roughly what one staff hour costs you with EPF and SOCSO.\n\nTwenty-five times fifty-two times sixteen: twenty thousand eight hundred ringgit a year, spent on typing and chasing. Now work out your rough monthly staff cost and write it in your notes.\"\n\nDo: one minute of silence. Table hosts help with the sums.\nNote: RM16 an hour is a staff member at about RM3,400 a month all-in, over 208 working hours. Adjust for your audience.\nNext: \"The usual answer is to hire another clerk. That only puts more people on the same typing. So how do you fix this, when you already have SQL Account?\"")
+"\"Let's put a number on all five problems, your own number. Three steps.\n\nStep one: how many hours a week does your team spend on manual work, all staff added together? In my example: keying in orders ten hours, chasing payments eight, checking stock seven. Twenty-five hours a week.\n\nStep two: times fifty-two weeks in a year.\n\nStep three: times sixteen ringgit, roughly what one staff hour costs you with EPF and SOCSO.\n\nTwenty-five times fifty-two times sixteen: twenty thousand eight hundred ringgit a year, spent on typing and chasing. Now work out your rough monthly staff cost and write it in your notes.\"\n\nDo: one minute of silence. Coaches help with the sums.\nNote: RM16 an hour is a staff member at about RM3,400 a month all-in, over 208 working hours. Adjust for your audience.\nNext: \"The usual answer is to hire another clerk. That only puts more people on the same typing. Can an AI Agent fix it? Only if it has 1 thing: tools.\"")
 
 AI_SECTION = '''
 <div class="c">
@@ -1804,7 +1804,7 @@ AI_SECTION = '''
 AA_ARR = ic('<path d="M5 12h14M13 6l6 6-6 6"/>', 34, 2.2)
 
 # ---------------- 1 · section opener ----------------
-AA_STEPS = [('How AI learns', 'from rules to agents', '<path d="M3 20h4v-5h4v-5h4V5h6"/>'),
+AA_STEPS = [('Types of AI', 'the 5 you already use', '<path d="M3 20h4v-5h4v-5h4V5h6"/>'),
             ('The brain', 'what an LLM is, how it learned', '<path d="M12 5a3 3 0 00-5.9-.7A3 3 0 004 9a3 3 0 00.5 5.5A3 3 0 008 19a3 3 0 004 1V5z"/><path d="M12 5a3 3 0 015.9-.7A3 3 0 0120 9a3 3 0 01-.5 5.5A3 3 0 0116 19a3 3 0 01-4 1"/>'),
             ('The agent', 'a brain that does the work', '<rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M3 13v3M21 13v3"/>')]
 slide('08-section-ai', 'Section: What is AI?', SEC[2], 'dark bare', 'data-sparks="none"', MIN_CSS + '''
@@ -1833,8 +1833,225 @@ html.static .path .run { display: none; }
   </div>
 </div>
 ''',
-"\"So what is AI, really? Forget the headlines. We will go in 3 steps.\n\nOne: how AI learns, from hand-written rules to agents. Two: the brain, the thing people call an LLM, and how it learned. Three: the agent, a brain that can actually do the work.\"\n\nNext: \"First, how did we get here? 70 years in 1 slide.\"")
+"\"So what is AI, really? Forget the headlines. We will go in 3 steps.\n\nOne: the 5 types of AI you already use every day. Two: the brain, the thing people call an LLM, and how much it read. Three: the agent, a brain that can actually do the work.\"\n\nNext: \"First, the 5 types of AI you already use.\"")
 
+# ---------------- section page: Part 2 · the problem ----------------
+_sa = next(x for x in S if x['file'] == '08-section-ai')
+PB_STEPS = [('Tell us', 'your biggest problem', CHAT), ('Top 5 issues', 'what we hear most', LIST), ('Your number', 'what it costs you', COIN)]
+slide('03-section-problem', 'Section: The problem', SEC[1], 'dark bare', 'data-sparks="none"', _sa['css'], '''
+<div class="c">
+  <div class="mk u" style="--d:.1s">Part 2</div>
+  <h1 class="big u" style="--d:.25s">The <em>problem</em></h1>
+  <div class="path">
+    <div class="ln ug" style="--d:.9s"></div>
+    <span class="run"></span>
+    ''' + ''.join('<div class="st u" style="--d:%.2fs"><i>%s</i><small>STEP %d</small><b>%s</b><span>%s</span></div>' % (.7 + k * .35, ic(p, 42, 1.8), k + 1, t_, s_) for k, (t_, s_, p) in enumerate(PB_STEPS)) + '''
+  </div>
+</div>
+''',
+"\"That is SuDu. Now let's talk about you: the problems businesses like yours face every day. 3 steps.\n\nOne: you tell us your biggest problem, right now, on your phone. Two: the top 5 issues we hear most. Three: you put a number on what it costs you.\"\n\nNext: \"Take out your phone.\"")
+
+
+# ---------------- section page: Part 4 · workshop ----------------
+WK_STEPS = [('Find your group', 'by the number on your tag', '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>'),
+            ('Meet your coach', '1 SuDu coach per group', HAND),
+            ('Check your company', 'do you need WMS and MES?', CHECK)]
+slide('23-section-workshop', 'Section: Workshop', SEC[5], 'dark bare', 'data-sparks="none"', _sa['css'], '''
+<div class="c">
+  <div class="mk u" style="--d:.1s">Part 4</div>
+  <h1 class="big u" style="--d:.25s"><em>Workshop</em></h1>
+  <div class="path">
+    <div class="ln ug" style="--d:.9s"></div>
+    <span class="run"></span>
+    ''' + ''.join('<div class="st u" style="--d:%.2fs"><i>%s</i><small>STEP %d</small><b>%s</b><span>%s</span></div>' % (.7 + k * .35, ic(p, 42, 1.8), k + 1, t_, s_) for k, (t_, s_, p) in enumerate(WK_STEPS)) + '''
+  </div>
+</div>
+''',
+"\"Now it is your turn. This is the workshop part. 3 steps.\n\nOne: find your group, using the number on your name tag. Two: meet your coach; every group has 1 SuDu coach. Three: check your own company: do you need a WMS and an MES?\"\n\nNext: \"First, find your number.\"")
+
+# ---------------- section page: live demo (7 parts) ----------------
+DM_PARTS = ['Setting up', 'Sales', 'Inventory', 'Purchase', 'Collection', 'Up Sales', 'Finance']
+slide('19-section-demo', 'Section: Live demo', SEC[3], 'dark bare', 'data-sparks="none"', _sa['css'] + '''
+.dm { position:relative; display:grid; grid-template-columns: repeat(7, 220px); margin-top: 110px; }
+.dm .ln { position:absolute; left: 110px; right: 110px; top: 35px; height: 2px; background: rgba(0,245,169,.45); }
+.dm .st { position:relative; display:flex; flex-direction:column; align-items:center; }
+.dm i { font-style: normal; width: 72px; height: 72px; border-radius: 50%; display:grid; place-items:center; background: #03201C; border: 2px solid var(--neon); color: var(--neon); font-family: var(--mono); font-size: 26px; font-weight: 700; box-shadow: 0 0 30px rgba(0,245,169,.18); }
+.dm b { font-size: 30px; font-weight: 700; letter-spacing: -.01em; margin-top: 20px; }
+.sub { font-size: 34px; color: var(--on-dark-2); margin-top: 26px; } .sub b { color: var(--on-dark); }
+''', '''
+<div class="c">
+  <div class="mk u" style="--d:.1s">Part 3 &middot; SuDu AI</div>
+  <h1 class="big u" style="--d:.25s">Live <em>demo</em></h1>
+  <p class="sub u" style="--d:.45s"><b>1</b> sample company &middot; <b>6</b> AI Agents &middot; <b>7</b> parts</p>
+  <div class="dm">
+    <div class="ln ug" style="--d:.9s"></div>
+    ''' + ''.join('<div class="st u" style="--d:%.2fs"><i>%d</i><b>%s</b></div>' % (.8 + k * .15, k + 1, n) for k, n in enumerate(DM_PARTS)) + '''
+  </div>
+</div>
+''',
+"\"Enough talking. Let me show you. This is a live demo on a sample company, Maju Jaya Foods, with sample data. 6 AI Agents, 7 parts: setting up, then sales, inventory, purchase, collection, up sales and finance. Watch what each agent does, and where it stops and asks a person.\"\n\nNext: \"First, meet the 6 AI Agents.\"")
+
+# ---------------- imagine: the big vision, before SuDu (a Figure AI factory video plays after it) ----------------
+IM_STEPS = [  # when, icon, title, line
+    ('TODAY', '<rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"/>', 'AI runs the office',
+     'Orders, invoices, stock and payments, done by AI Agents.'),
+    ('NEXT', '<path d="M12 3v3M8 6h8l1 5H7z"/><rect x="6" y="11" width="12" height="7" rx="2"/><path d="M9 18v3M15 18v3M4 13H2M22 13h-2"/>', 'AI walks the floor',
+     'Physical AI: robots that pick, pack and build, next to your people.'),
+    ('ONE DAY', '<path d="M12 2l2.4 5 5.6.8-4 3.9 1 5.5L12 14.6 7 17.2l1-5.5-4-3.9 5.6-.8z"/>', 'The company runs itself',
+     'You set the goal. AI does the rest, and still asks you.'),
+]
+slide('14-imagine', 'Imagine', SEC[3], 'dark bare', 'data-sparks="none"', MIN_CSS + '''
+.c { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+.im { font-family: var(--mono); font-size: 24px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--neon); }
+.big { font-size: 112px; font-weight: 800; letter-spacing: -.045em; line-height: 1.02; margin-top: 26px; max-width: 1560px; text-wrap: balance; }
+.big em { font-style: normal; background: linear-gradient(90deg, #00F5A9, #7CFFD6 50%, #00F5A9); -webkit-background-clip: text; background-clip: text; color: transparent;
+  background-size: 200% 100%; animation: shine 5s linear 1.5s infinite; white-space: nowrap; }
+@keyframes shine { to { background-position: -200% 0; } }
+html.static .big em { animation: none; }
+.tl { position:relative; display:grid; grid-template-columns: repeat(3, 480px); gap: 40px; margin-top: 90px; }
+.tl .ln { position:absolute; left: 240px; right: 240px; top: 48px; height: 2px; background: linear-gradient(90deg, rgba(0,245,169,.6), rgba(0,245,169,.2)); }
+.tl .run { position:absolute; left: 240px; top: 42px; width: 14px; height: 14px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 18px 4px rgba(0,245,169,.6); opacity: 0; animation: run 3.4s cubic-bezier(.6,0,.4,1) 3s infinite; }
+@keyframes run { 0% { transform: translateX(0); opacity: 0; } 10%, 90% { opacity: 1; } 100% { transform: translateX(1040px); opacity: 0; } }
+html.static .tl .run { display:none; }
+.tl .st { position:relative; display:flex; flex-direction:column; align-items:center; }
+.tl i { font-style: normal; width: 96px; height: 96px; border-radius: 50%; display:grid; place-items:center; background: #03201C; border: 2px solid var(--neon); color: var(--neon); box-shadow: 0 0 40px rgba(0,245,169,.2); }
+.tl .st:last-child i { width: 110px; height: 110px; margin-top: -7px; background: var(--neon); color: #03201C; box-shadow: 0 0 70px rgba(0,245,169,.55); }
+.tl small { font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .18em; color: var(--neon); margin-top: 22px; }
+.tl b { font-size: 40px; font-weight: 750; letter-spacing: -.02em; margin-top: 6px; }
+.tl span { font-size: 26px; line-height: 1.38; color: var(--on-dark-2); margin-top: 8px; max-width: 420px; }
+.end { margin-top: 80px; font-size: 38px; font-weight: 700; color: var(--on-dark); }
+/* ---- cinematic layer ---- */
+body { background: #010F0D; overflow: hidden; }
+#warp { position:absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+.floor { position:absolute; left: -50%; right: -50%; bottom: 0; height: 46%; z-index: 0; transform: perspective(900px) rotateX(60deg); transform-origin: 50% 100%;
+  background-image: linear-gradient(rgba(0,245,169,.28) 2px, transparent 2px), linear-gradient(90deg, rgba(0,245,169,.22) 2px, transparent 2px);
+  background-size: 120px 120px; animation: flr 3.2s linear infinite, fin 2s ease .4s both;
+  -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 90%); mask-image: linear-gradient(to top, #000 0%, transparent 90%); }
+@keyframes flr { to { background-position: 0 120px, 0 0; } }
+@keyframes fin { from { opacity: 0; } to { opacity: .9; } }
+.horizon { position:absolute; left: 0; right: 0; top: 52%; height: 260px; transform: translateY(-50%); z-index: 0; pointer-events:none;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(0,245,169,.22), transparent 70%); animation: fin 2.4s ease .3s both; }
+.c { position:relative; z-index: 1; }
+.vig { position:absolute; inset: 0; z-index: 0; pointer-events:none; background: radial-gradient(60% 55% at 50% 45%, rgba(1,15,13,.75), rgba(1,15,13,0) 75%); }
+.im { animation: imIn 1.6s cubic-bezier(.2,.7,.2,1) .2s both; text-shadow: 0 0 24px rgba(0,245,169,.7); }
+@keyframes imIn { from { opacity: 0; letter-spacing: 1.2em; filter: blur(10px); } to { opacity: 1; letter-spacing: .3em; filter: none; } }
+.big { animation: focus 1.6s cubic-bezier(.2,.7,.2,1) .7s both; text-shadow: 0 10px 60px rgba(0,0,0,.5); }
+@keyframes focus { from { opacity: 0; filter: blur(22px); transform: scale(1.12); } to { opacity: 1; filter: none; transform: none; } }
+.big em { filter: drop-shadow(0 0 30px rgba(0,245,169,.35)); }
+/* timeline */
+.tl .st { opacity: 0; transform: translateY(30px) scale(.9); animation: stIn .9s cubic-bezier(.3,1.5,.5,1) forwards; animation-delay: var(--d); }
+@keyframes stIn { to { opacity: 1; transform: none; } }
+.tl i { position:relative; }
+.tl i::before, .tl i::after { content:""; position:absolute; inset: -2px; border-radius: 50%; border: 2px solid var(--neon); opacity: 0; animation: pulse 2.6s ease-out infinite; animation-delay: calc(var(--d) + .9s); }
+.tl i::after { animation-delay: calc(var(--d) + 2.2s); }
+@keyframes pulse { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.9); opacity: 0; } }
+.tl i svg { animation: bob 3.2s ease-in-out infinite; animation-delay: var(--d); }
+@keyframes bob { 50% { transform: translateY(-5px); } }
+.tl .st:last-child i { overflow: visible; }
+.tl .rays { position:absolute; left: 50%; top: 48px; width: 360px; height: 360px; margin: -180px 0 0 -180px; border-radius: 50%; z-index: -1; pointer-events:none;
+  background: repeating-conic-gradient(from 0deg, rgba(0,245,169,.22) 0 6deg, transparent 6deg 24deg);
+  -webkit-mask-image: radial-gradient(circle, #000 18%, transparent 68%); mask-image: radial-gradient(circle, #000 18%, transparent 68%);
+  opacity: 0; animation: rays 18s linear infinite, fin 1.6s ease forwards; animation-delay: 0s, calc(var(--d) + .6s); }
+@keyframes rays { to { transform: rotate(360deg); } }
+.tl .ln { transform-origin: left; transform: scaleX(0); animation: grow 2.4s cubic-bezier(.65,0,.25,1) 1.7s forwards; box-shadow: 0 0 12px rgba(0,245,169,.6); }
+@keyframes grow { to { transform: none; } }
+/* ending sweep */
+.end { position:relative; opacity: 0; animation: stIn .9s cubic-bezier(.2,.7,.2,1) 3.4s forwards; }
+.end em { position:relative; font-style: normal; background: linear-gradient(100deg, #00F5A9 40%, #FFFFFF 50%, #00F5A9 60%); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: sweep 3.5s ease-in-out 4.2s infinite; }
+@keyframes sweep { 0% { background-position: 100% 0; } 60%, 100% { background-position: 0 0; } }
+html.static .floor, html.static .horizon { animation: none; opacity: .9; }
+html.static .im, html.static .big, html.static .tl .st, html.static .end, html.static .tl .ln { animation: none; opacity: 1; filter: none; transform: none; }
+html.static .tl .rays { animation: none; opacity: 1; }
+html.static .tl i::before, html.static .tl i::after, html.static .tl i svg, html.static .end em { animation: none; }
+html.static .end em { background-position: 0 0; }
+''', '''
+<canvas id="warp" width="1920" height="1080"></canvas>
+<div class="horizon"></div>
+<div class="floor"></div>
+<div class="vig"></div>
+<div class="c">
+  <div class="im" style="--d:.2s">Imagine</div>
+  <h1 class="big" style="--d:.6s">A day when AI <em>runs your whole company</em>.</h1>
+  <div class="tl">
+    <div class="ln ug" style="--d:1.6s"></div>
+    <span class="run"></span>
+    ''' + ''.join('<div class="st" style="--d:%.2fs">%s<i>%s</i><small>%s</small><b>%s</b><span>%s</span></div>' % (1.9 + k * .55, '<span class="rays"></span>' if k == 2 else '', ic(p, 46, 1.8), w, h, s_) for k, (w, p, h, s_) in enumerate(IM_STEPS)) + '''
+  </div>
+  <p class="end">Sounds far away? <em>It has already started.</em></p>
+</div>
+<script>
+(function () {
+  var cv = document.getElementById('warp'), x = cv.getContext('2d'), W = 1920, H = 1080, CX = W / 2, CY = H * .42;
+  var STATIC = navigator.webdriver || location.hash === '#static' || document.documentElement.classList.contains('static');
+  var N = 420, S = [];
+  function rnd(a, b) { return a + Math.random() * (b - a); }
+  function star(s) { s.a = rnd(0, Math.PI * 2); s.r = rnd(4, 60); s.v = rnd(.6, 1.6); s.g = Math.random() < .25; return s; }
+  for (var i = 0; i < N; i++) { var s = star({}); s.r = rnd(4, 1100); S.push(s); }
+  var t0 = performance.now();
+  function frame(now) {
+    var t = (now - t0) / 1000;
+    var warp = STATIC ? .04 : (t < .3 ? t / .3 : t < 2.4 ? 1 : Math.max(.03, 1 - (t - 2.4) / 1.4));   /* burst, then a slow cruise */
+    x.fillStyle = 'rgba(1,15,13,' + (warp > .5 ? .28 : .6) + ')'; x.fillRect(0, 0, W, H);
+    for (var i = 0; i < N; i++) {
+      var s = S[i], r0 = s.r;
+      s.r += s.v * (2 + s.r * .045) * (warp * 9 + .4);
+      if (s.r > 1250) { star(s); r0 = s.r; }
+      var c = Math.cos(s.a), sn = Math.sin(s.a);
+      var al = Math.min(1, s.r / 500) * (.3 + .7 * Math.min(1, warp * 1.4));
+      x.strokeStyle = s.g ? 'rgba(0,245,169,' + al + ')' : 'rgba(230,255,246,' + (al * .8) + ')';
+      x.lineWidth = (s.g ? 2.2 : 1.4) * (.6 + .4 * Math.min(1, warp * 2));
+      x.beginPath(); x.moveTo(CX + c * r0, CY + sn * r0 * .62); x.lineTo(CX + c * s.r, CY + sn * s.r * .62); x.stroke();
+    }
+    if (!STATIC) requestAnimationFrame(frame);
+  }
+  if (STATIC) { for (var k = 0; k < 40; k++) frame(t0 + k * 16); } else requestAnimationFrame(frame);
+})();
+</script>
+''',
+"(Slow down. Let the room picture it.)\n\n\"Let me ask you to imagine something. A day when AI runs your whole company.\n\nToday, AI Agents already run the office: they take the orders, make the invoices, watch the stock and chase the payments. You saw what that looks like.\n\nNext, AI walks onto the floor. Physical AI: robots that pick, pack and build, working next to your people.\n\nAnd one day, the company runs itself. You set the goal. AI does the rest, and it still asks you before the big decisions.\n\nSounds far away? It has already started. Watch this.\"\n\nNext: the video, F.03 at BMW.")
+
+# ---------------- video: Figure AI F.03 at BMW (plays after "Imagine") ----------------
+slide('14-video-figure', 'Video: F.03 at BMW', SEC[3], 'dark bare', 'data-sparks="none"', '''
+body { background: #000; }
+.slide { padding: 0 !important; }
+.vw { position:absolute; inset: 0; background: #000; }
+.vw video { width: 100%; height: 100%; object-fit: contain; display:block; cursor: pointer; }
+.src { position:absolute; left: 48px; bottom: 36px; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .14em; color: rgba(242,251,247,.6); text-transform: uppercase; }
+body .deck-foot, body .foot { display:none !important; }
+''', '''
+<div class="vw"><video id="v" src="../assets/video/f03-bmw.mp4" playsinline preload="auto"></video></div>
+<div class="src">Video: Figure AI &middot; F.03 at BMW</div>
+<script>
+(function () {
+  var v = document.getElementById('v');
+  var STATIC = navigator.webdriver || location.hash === '#static';
+  if (STATIC) { v.addEventListener('loadedmetadata', function () { v.currentTime = Math.min(12, v.duration / 3); }); return; }
+  function go() { var p = v.play(); if (p && p.catch) p.catch(function () { v.muted = true; v.play(); }); }
+  if (v.readyState >= 2) go(); else v.addEventListener('canplay', go, { once: true });
+  v.addEventListener('click', function () { if (v.muted) { v.muted = false; return; } v.paused ? v.play() : v.pause(); });
+})();
+</script>
+''',
+"(The video plays: about 1 minute, Figure AI's F.03 robot working on the BMW factory floor. Let it run. Do not talk over it.)\n\n\"That is not a movie. That is a real robot, in a real car factory, today.\"\n\nDo: click the video to pause or play. If it starts with no sound, click it once to turn the sound on.\nNext: \"That is where the world is going. And that is exactly what SuDu is building.\"")
+
+
+# ---------------- section page: frequently asked questions (before FAQ 1 and FAQ 2) ----------------
+FQ = [('I already have SQL Account.', 'Why do I still need SuDu AI?'), ('Can I just connect Claude or Codex', 'straight to SQL Account?')]
+slide('24-faq', 'Frequently asked questions', SEC[3], 'dark bare', 'data-sparks="none"', _sa['css'] + '''
+.fq { display:grid; grid-template-columns: repeat(2, 640px); gap: 60px; margin-top: 100px; }
+.fq > div { position:relative; text-align:left; padding: 34px 38px; border-radius: 30px; background: rgba(242,251,247,.05); box-shadow: inset 0 0 0 1px rgba(0,245,169,.3), 0 0 50px rgba(0,245,169,.08); }
+.fq small { font-family: var(--mono); font-size: 20px; font-weight: 700; letter-spacing: .18em; color: var(--neon); }
+.fq b { display:block; font-size: 40px; font-weight: 750; letter-spacing: -.015em; line-height: 1.22; margin-top: 12px; color: var(--on-dark); }
+.fq .qm { position:absolute; right: 26px; top: 6px; font-size: 120px; font-weight: 800; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px rgba(0,245,169,.3); }
+''', '''
+<div class="c">
+  <div class="mk u" style="--d:.1s">Before the demo</div>
+  <h1 class="big u" style="--d:.25s;font-size:150px">Frequently asked <em>questions</em></h1>
+  <div class="fq">''' + ''.join('<div class="u" style="--d:%.2fs"><span class="qm">?</span><small>FAQ %d</small><b>&ldquo;%s<br>%s&rdquo;</b></div>' % (.8 + k * .3, k + 1, a, b) for k, (a, b) in enumerate(FQ)) + '''</div>
+</div>
+''',
+"\"Before the demo, let me answer the 2 questions I get asked the most, at every seminar.\n\nOne: I already have SQL Account, why do I still need SuDu? Two: can I just connect Claude or Codex straight to SQL Account?\"\n\nNext: \"Question 1.\"")
 # ---------------- 2 · 70 years of AI ----------------
 AA_HIST = [('1950s&ndash;80s', 'Rules', 'People wrote every rule by hand.'),
            ('2000s', 'Machine learning', 'It learns patterns from past examples.'),
@@ -1948,21 +2165,7 @@ def _aa_cards():
                 '<p class="lim">%s</p></div></div></div></div>'
                 % (k + 1, AA_ILL[k], yr, dots, nm, like, how, chips, use, lim))
     return out
-slide('08-ai-history', '70 years of AI', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
-.tl { margin-top: 56px; transform-origin: 50% 0; transition: transform 1.1s cubic-bezier(.2,.75,.15,1), opacity .9s ease; }
-body:not([data-s="0"]) .tl { transform: translateY(-14px) scale(.94); opacity: .22; }
-.row { position:relative; display:grid; grid-template-columns: repeat(5, 1fr); gap: 28px; }
-.row .ln { position:absolute; left: 0; right: 120px; top: 13px; height: 2px; background: var(--ink); opacity: .85; }
-.row .ln.ug { animation-duration: 2.2s; }
-.st i { display:block; width: 28px; height: 28px; border-radius: 50%; background: #FAFAF7; border: 3px solid var(--ink); }
-.st small { display:block; font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--green); margin-top: 26px; }
-.st b { display:block; white-space: nowrap; font-size: 37px; font-weight: 750; letter-spacing: -.02em; line-height: 1.1; margin-top: 8px; }
-.st p { font-size: 26px; line-height: 1.38; color: var(--ink-2); margin-top: 10px; }
-.st.now i { background: var(--green); border-color: var(--green); box-shadow: 0 0 0 8px rgba(0,108,72,.15); }
-.st.now b { color: var(--green); }
-.st em { display:inline-block; font-style: normal; font-size: 20px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #fff; background: var(--green); padding: 6px 12px; border-radius: 6px; margin-top: 14px; }
-.hint { margin-top: 70px; font-size: 24px; color: var(--ink-3); }
-/* ---- 3D card stage ---- */
+AA_CARD_CSS = '''/* ---- 3D card stage ---- */
 .stg { position:absolute; left: 128px; right: 128px; top: 312px; bottom: 104px; perspective: 2200px; perspective-origin: 50% 30%; pointer-events: none; }
 .dt { position:absolute; inset: 0; transform-style: preserve-3d; opacity: 0; transform: translate3d(70%, 40px, -700px) rotateY(-62deg);
   transition: transform 1.15s cubic-bezier(.2,.75,.12,1), opacity .7s ease; will-change: transform, opacity; }
@@ -2032,7 +2235,22 @@ body:not([data-s="0"]) .tl { transform: translateY(-14px) scale(.94); opacity: .
 .il .bar { transform-box: fill-box; transform-origin: left; transform: scaleX(0); } .dt.go .il .bar { animation: bgr .9s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--t); }
 @keyframes bgr { to { transform: none; } }
 .il .cur { opacity: 0; } .dt.go .il .cur { animation: cur .5s steps(1) 2s 3 forwards; } @keyframes cur { 0% { opacity: 1; } 50% { opacity: 0; } }
-''', '''
+'''
+slide('08-ai-history', '70 years of AI', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
+.tl { margin-top: 56px; transform-origin: 50% 0; transition: transform 1.1s cubic-bezier(.2,.75,.15,1), opacity .9s ease; }
+body:not([data-s="0"]) .tl { transform: translateY(-14px) scale(.94); opacity: .22; }
+.row { position:relative; display:grid; grid-template-columns: repeat(5, 1fr); gap: 28px; }
+.row .ln { position:absolute; left: 0; right: 120px; top: 13px; height: 2px; background: var(--ink); opacity: .85; }
+.row .ln.ug { animation-duration: 2.2s; }
+.st i { display:block; width: 28px; height: 28px; border-radius: 50%; background: #FAFAF7; border: 3px solid var(--ink); }
+.st small { display:block; font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--green); margin-top: 26px; }
+.st b { display:block; white-space: nowrap; font-size: 37px; font-weight: 750; letter-spacing: -.02em; line-height: 1.1; margin-top: 8px; }
+.st p { font-size: 26px; line-height: 1.38; color: var(--ink-2); margin-top: 10px; }
+.st.now i { background: var(--green); border-color: var(--green); box-shadow: 0 0 0 8px rgba(0,108,72,.15); }
+.st.now b { color: var(--green); }
+.st em { display:inline-block; font-style: normal; font-size: 20px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #fff; background: var(--green); padding: 6px 12px; border-radius: 6px; margin-top: 14px; }
+.hint { margin-top: 70px; font-size: 24px; color: var(--ink-3); }
+''' + AA_CARD_CSS + '''''', '''
 <div class="mk u" style="--d:.05s">How AI grew up</div>
 <h1 class="mt u" style="--d:.15s">AI did not appear <em>overnight</em></h1>
 <p class="ml u" style="--d:.3s">70 years, 5 big steps. Each one stands on the one before.</p>
@@ -2064,6 +2282,170 @@ body:not([data-s="0"]) .tl { transform: translateY(-14px) scale(.94); opacity: .
 </script>
 ''',
 "\"Before we open up the brain, 1 minute of history, because ChatGPT did not come from nowhere. 70 years, 5 big steps. Let me open them 1 by 1.\"\n\n(Next) Rules, 1950s to 80s: \"Think of a recipe book: the computer follows every step exactly. Watch this order of RM6,000: the rule says over the credit limit, block it. You use rules every day: Excel formulas, the credit-limit check in SQL Account. The problem: a new situation with no rule, and it is stuck.\"\n\n(Next) Machine learning, 2000s: \"Think of a clerk who has seen 10,000 invoices and just knows who pays late. You show the computer past customers, green paid on time, orange paid late. It finds the line between them by itself. Then a new customer comes in: Kedai Ali, 80 percent chance of paying late. That is how spam filters and credit scores work. But it needs neat tables, and 1 model answers only 1 question.\"\n\n(Next) Deep learning, 2012: \"Think of a child who learns what a cat is by seeing 1,000 cats. Many layers look at a photo, layer by layer, and it says: damaged carton, 94 percent sure. Face unlock, Siri, Google Translate all work like this. In your company: reading a handwritten order or a bank slip. But each model does only 1 job, and it cannot talk with you.\"\n\n(Next) LLM, 2018 to 2020: \"Think of your phone's autocomplete, but it read the whole internet. The customer asks: can you deliver tomorrow? It writes: yes, we can deliver... and for the next word it scores every option: tomorrow 82 percent. It picks it. Then the next word, and the next. ChatGPT, Claude, Gemini, DeepSeek. It replies to emails, summarises PDFs. But it only talks; it cannot act in your systems.\"\n\n(Next) AI agents, 2025: \"Think of a new staff member. It reads the WhatsApp order, checks the stock, drafts the Sales Order, and then asks you to approve. Round and round the loop until the job is done. That is where we are today.\"\n\nThis slide has 5 extra Next presses; each card flies in, in 3D, and plays its own short animation.\nNext: \"Now let's open up the brain of today's AI: the LLM.\"")
+
+
+# ---------------- 2b · types of AI, by what they do (overview + 5 detail cards, like 70 years of AI) ----------------
+AT_TYPES = [  # icon, name, technology, does, think of it like, how it works, in real life, in your company, limit
+    ('<path d="M3 20h18"/><path d="M5 16l4-5 4 3 6-8"/><path d="M15 6h4v4"/>', 'Predictive AI', 'Machine learning', 'Guesses what comes next',
+     'Like a weather forecast, but for your sales and your customers.',
+     'It learns from <b>past numbers</b> and guesses the next one.',
+     ['Grab arrival time', 'Bank fraud alert', 'Shopee picks for you'],
+     'Who will pay late? What will run out?', 'Only as good as your past data. A new product has no history.'),
+    ('<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>', 'Vision AI', 'Deep learning', 'Sees and reads pictures',
+     'Like a car park guard who never blinks and reads every plate.',
+     'A camera takes a photo. It finds the <b>plate</b> and reads the letters.',
+     ['Car park plate reader', 'Face unlock', 'Google Lens'],
+     'Read a handwritten order or a bank slip', 'Dirty plate or bad light? It can misread.'),
+    ('<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/>', 'Voice AI', 'Deep learning', 'Hears and speaks',
+     'Like a secretary who listens to every voice note and types it out.',
+     'It turns <b>sound into text</b>, and text back into speech.',
+     ['Hey Siri', 'YouTube captions', 'Car voice control'],
+     'A WhatsApp voice note becomes an order', 'A noisy shop or heavy slang? It mishears sometimes.'),
+    ('<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 16l-5-5L5 21"/>', 'Diffusion AI', 'Diffusion model', 'Makes pictures and videos',
+     'Like a sculptor: starts from a block of noise and chips away until a picture appears.',
+     'It starts from <b>random noise</b> and cleans it, step by step, into a picture or video.',
+     ['AI short dramas', 'Midjourney', 'Sora'],
+     'Product photos and promo videos, no studio', 'Hands, faces and words can come out wrong. Check before you post.'),
+    ('<rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"/>', 'AI Agent', 'LLM + tools', 'Does the work',
+     'Like a new staff member: reads, checks, does the job, then asks you.',
+     'An LLM with <b>tools</b>. It opens your systems and works step by step.',
+     ['Claude Code', 'OpenAI Codex'],
+     'WhatsApp order &rarr; Sales Order, you approve', 'A person still approves before anything is posted.'),
+]
+AT_ILL = [
+# ---- 1 · predictive: past months rise, the trend line runs on, next month is forecast
+'''<svg class="il" viewBox="0 0 640 440">
+<path class="dl" style="--t:.3s" pathLength="1" d="M30 360 H610"/>
+''' + ''.join('<g class="a" style="--t:%.2fs"><rect x="%d" y="%d" width="52" height="%d" rx="8" fill="#C9D4CC"/><text x="%d" y="392" class="t3">%s</text></g>'
+              % (.5 + k * .15, 60 + k * 80, 360 - h, h, 86 + k * 80, m) for k, (m, h) in enumerate([('Jun', 150), ('Jul', 170), ('Aug', 140), ('Sep', 190), ('Oct', 210), ('Nov', 230)])) + '''
+<g class="p" style="--t:2.2s"><rect x="540" y="100" width="52" height="260" rx="8" fill="#E6F6EE" stroke="#006C48" stroke-width="3" stroke-dasharray="8 6"/></g>
+<text class="a t3" style="--t:2.2s" x="566" y="392">Dec</text>
+<path class="dl" style="--t:1.5s;stroke:#006C48" pathLength="1" d="M86 210 L166 190 L246 220 L326 170 L406 150 L486 130 L566 100"/>
+<circle class="p" style="--t:2.5s" cx="566" cy="100" r="10" fill="#006C48"/>
+<g class="a" style="--t:2.8s"><rect x="210" y="24" width="330" height="50" rx="14" fill="#02221F"/><text x="375" y="56" class="t4">December: 1,240 cartons</text></g>
+</svg>''',
+# ---- 2 · vision: a car rolls up, the camera reads the plate, the barrier lifts
+'''<svg class="il" viewBox="0 0 640 440">
+<rect x="0" y="378" width="640" height="10" rx="5" fill="#DCE3DF"/>
+<g class="car">
+<path d="M90 250 L130 172 Q140 152 165 152 H315 Q340 152 350 172 L390 250 Z" fill="#2F4A43"/>
+<path d="M142 240 L166 178 H314 L338 240 Z" fill="#A9C4BA"/>
+<rect x="70" y="240" width="340" height="100" rx="26" fill="#3C5C53"/>
+<circle cx="115" cy="282" r="17" fill="#FFE8A8"/><circle cx="365" cy="282" r="17" fill="#FFE8A8"/>
+<rect x="85" y="334" width="60" height="44" rx="10" fill="#02221F"/><rect x="335" y="334" width="60" height="44" rx="10" fill="#02221F"/>
+<rect x="180" y="296" width="120" height="36" rx="6" fill="#fff" stroke="#02221F" stroke-width="2.5"/><text x="240" y="321" class="t5">WXY 1234</text>
+</g>
+<rect x="452" y="96" width="12" height="286" rx="4" fill="#02221F"/>
+<g class="a" style="--t:1s"><rect x="418" y="70" width="80" height="38" rx="10" fill="#02221F"/><circle cx="430" cy="89" r="9" fill="#00F5A9"/>
+<circle class="ring" cx="430" cy="89" r="16" fill="none" stroke="#00F5A9" stroke-width="3"/></g>
+<path class="dl" style="--t:1.4s;stroke:#00A57A;stroke-width:2" pathLength="1" d="M424 98 L306 292"/>
+<rect x="548" y="226" width="56" height="156" rx="10" fill="#02221F"/><rect x="560" y="250" width="32" height="8" rx="4" fill="#00F5A9" opacity=".7"/>
+<rect class="dl box" style="--t:1.8s" pathLength="1" x="170" y="288" width="140" height="52" rx="6" fill="none"/>
+<g class="a" style="--t:2.3s"><rect x="60" y="34" width="300" height="84" rx="16" fill="#02221F"/><text x="210" y="68" class="t8">WXY 1234</text><text x="210" y="100" class="t9">Season pass &middot; open the gate</text></g>
+<g class="arm"><rect x="300" y="226" width="280" height="18" rx="9" fill="#fff" stroke="#02221F" stroke-width="2.5"/>''' + ''.join('<rect x="%d" y="227.5" width="26" height="15" fill="#E5484D"/>' % x for x in (318, 374, 430, 486)) + '''</g>
+<circle cx="576" cy="235" r="9" fill="#fff" stroke="#02221F" stroke-width="3"/>
+</svg>''',
+# ---- 3 · voice: a WhatsApp voice note plays, it is typed out, it becomes an order line
+'''<svg class="il" viewBox="0 0 640 440">
+<g class="a" style="--t:.4s"><rect x="20" y="30" width="400" height="84" rx="24" fill="#DCF8C6"/><path d="M46 56 l26 16 l-26 16z" fill="#02221F"/>
+''' + ''.join('<rect class="vb" style="--t:%.2fs" x="%d" y="%d" width="6" height="%d" rx="3" fill="#00A57A"/>' % (.6 + (k % 5) * .12, 92 + k * 12, 72 - h // 2, h) for k, h in enumerate([14, 26, 40, 22, 34, 48, 30, 18, 38, 52, 28, 16, 36, 24, 44, 20, 12, 30, 22, 14])) + '''
+<text x="384" y="104" class="t3">0:06</text></g>
+<path class="dl" style="--t:1.2s" pathLength="1" d="M210 124 V174"/>
+<text class="a t3m2" style="--t:1.2s" x="230" y="156">SPEECH TO TEXT</text>
+<g class="a" style="--t:1.4s"><rect x="20" y="186" width="600" height="80" rx="20" fill="#fff" stroke="#DDE3DF" stroke-width="2"/></g>
+''' + ''.join('<text class="a w" style="--t:%.2fs" x="%d" y="236">%s</text>' % (1.6 + k * .22, x, w) for k, (x, w) in enumerate([(46, 'Boss,'), (124, 'esok'), (192, 'hantar'), (284, '10'), (324, 'carton'), (414, 'Milo')])) + '''
+<path class="dl" style="--t:3s" pathLength="1" d="M320 274 V306"/>
+<g class="p" style="--t:3.3s"><rect x="130" y="312" width="380" height="92" rx="20" fill="#02221F"/><text x="320" y="348" class="t9">New order line</text><text x="320" y="384" class="t4">10 ctn Milo &middot; deliver tomorrow</text></g>
+</svg>''',
+# ---- 4 · diffusion: an AI short drama frame comes out of noise, step by step
+'''<svg class="il" viewBox="0 0 640 440"><defs><linearGradient id="dfsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C5CFF"/><stop offset=".55" stop-color="#FF8A5B"/><stop offset="1" stop-color="#FFB547"/></linearGradient><clipPath id="dfc0"><rect x="20" y="104" width="150" height="266" rx="16"/></clipPath><clipPath id="dfc1"><rect x="245" y="104" width="150" height="266" rx="16"/></clipPath><clipPath id="dfc2"><rect x="470" y="104" width="150" height="266" rx="16"/></clipPath></defs>
+<g class="a" style="--t:.4s"><rect x="40" y="20" width="560" height="62" rx="22" fill="#02221F"/><text x="320" y="59" class="t6">Short drama: the boss finds out his clerk is an AI</text></g>
+<g class="a" style="--t:.9s"><g clip-path="url(#dfc0)"><g opacity="1"><rect x="20" y="104" width="15" height="15" fill="#02221F"/><rect x="35" y="104" width="15" height="15" fill="#7C5CFF"/><rect x="50" y="104" width="15" height="15" fill="#F2FBF7"/><rect x="65" y="104" width="15" height="15" fill="#FFB547"/><rect x="80" y="104" width="15" height="15" fill="#FF8A5B"/><rect x="95" y="104" width="15" height="15" fill="#E5484D"/><rect x="110" y="104" width="15" height="15" fill="#FF8A5B"/><rect x="125" y="104" width="15" height="15" fill="#02221F"/><rect x="140" y="104" width="15" height="15" fill="#FFB547"/><rect x="155" y="104" width="15" height="15" fill="#E5484D"/><rect x="20" y="119" width="15" height="15" fill="#4DA3FF"/><rect x="35" y="119" width="15" height="15" fill="#FFB547"/><rect x="50" y="119" width="15" height="15" fill="#FF8A5B"/><rect x="65" y="119" width="15" height="15" fill="#F2FBF7"/><rect x="80" y="119" width="15" height="15" fill="#F2FBF7"/><rect x="95" y="119" width="15" height="15" fill="#FF8A5B"/><rect x="110" y="119" width="15" height="15" fill="#4DA3FF"/><rect x="125" y="119" width="15" height="15" fill="#FF8A5B"/><rect x="140" y="119" width="15" height="15" fill="#E5484D"/><rect x="155" y="119" width="15" height="15" fill="#F2FBF7"/><rect x="20" y="134" width="15" height="15" fill="#FFB547"/><rect x="35" y="134" width="15" height="15" fill="#FF8A5B"/><rect x="50" y="134" width="15" height="15" fill="#4DA3FF"/><rect x="65" y="134" width="15" height="15" fill="#FFB547"/><rect x="80" y="134" width="15" height="15" fill="#F2FBF7"/><rect x="95" y="134" width="15" height="15" fill="#FFB547"/><rect x="110" y="134" width="15" height="15" fill="#4DA3FF"/><rect x="125" y="134" width="15" height="15" fill="#FFB547"/><rect x="140" y="134" width="15" height="15" fill="#E5484D"/><rect x="155" y="134" width="15" height="15" fill="#7C5CFF"/><rect x="20" y="149" width="15" height="15" fill="#00A57A"/><rect x="35" y="149" width="15" height="15" fill="#F2FBF7"/><rect x="50" y="149" width="15" height="15" fill="#7C5CFF"/><rect x="65" y="149" width="15" height="15" fill="#E5484D"/><rect x="80" y="149" width="15" height="15" fill="#FF8A5B"/><rect x="95" y="149" width="15" height="15" fill="#00A57A"/><rect x="110" y="149" width="15" height="15" fill="#E5484D"/><rect x="125" y="149" width="15" height="15" fill="#7C5CFF"/><rect x="140" y="149" width="15" height="15" fill="#FF8A5B"/><rect x="155" y="149" width="15" height="15" fill="#4DA3FF"/><rect x="20" y="164" width="15" height="15" fill="#02221F"/><rect x="35" y="164" width="15" height="15" fill="#FF8A5B"/><rect x="50" y="164" width="15" height="15" fill="#E5484D"/><rect x="65" y="164" width="15" height="15" fill="#FF8A5B"/><rect x="80" y="164" width="15" height="15" fill="#FFB547"/><rect x="95" y="164" width="15" height="15" fill="#4DA3FF"/><rect x="110" y="164" width="15" height="15" fill="#C9D4CC"/><rect x="125" y="164" width="15" height="15" fill="#E5484D"/><rect x="140" y="164" width="15" height="15" fill="#F2FBF7"/><rect x="155" y="164" width="15" height="15" fill="#02221F"/><rect x="20" y="179" width="15" height="15" fill="#C9D4CC"/><rect x="35" y="179" width="15" height="15" fill="#C9D4CC"/><rect x="50" y="179" width="15" height="15" fill="#02221F"/><rect x="65" y="179" width="15" height="15" fill="#00A57A"/><rect x="80" y="179" width="15" height="15" fill="#4DA3FF"/><rect x="95" y="179" width="15" height="15" fill="#7C5CFF"/><rect x="110" y="179" width="15" height="15" fill="#4DA3FF"/><rect x="125" y="179" width="15" height="15" fill="#FF8A5B"/><rect x="140" y="179" width="15" height="15" fill="#00A57A"/><rect x="155" y="179" width="15" height="15" fill="#E5484D"/><rect x="20" y="194" width="15" height="15" fill="#C9D4CC"/><rect x="35" y="194" width="15" height="15" fill="#02221F"/><rect x="50" y="194" width="15" height="15" fill="#C9D4CC"/><rect x="65" y="194" width="15" height="15" fill="#00A57A"/><rect x="80" y="194" width="15" height="15" fill="#FF8A5B"/><rect x="95" y="194" width="15" height="15" fill="#FF8A5B"/><rect x="110" y="194" width="15" height="15" fill="#E5484D"/><rect x="125" y="194" width="15" height="15" fill="#F2FBF7"/><rect x="140" y="194" width="15" height="15" fill="#7C5CFF"/><rect x="155" y="194" width="15" height="15" fill="#02221F"/><rect x="20" y="209" width="15" height="15" fill="#7C5CFF"/><rect x="35" y="209" width="15" height="15" fill="#C9D4CC"/><rect x="50" y="209" width="15" height="15" fill="#F2FBF7"/><rect x="65" y="209" width="15" height="15" fill="#FFB547"/><rect x="80" y="209" width="15" height="15" fill="#FF8A5B"/><rect x="95" y="209" width="15" height="15" fill="#E5484D"/><rect x="110" y="209" width="15" height="15" fill="#02221F"/><rect x="125" y="209" width="15" height="15" fill="#02221F"/><rect x="140" y="209" width="15" height="15" fill="#02221F"/><rect x="155" y="209" width="15" height="15" fill="#C9D4CC"/><rect x="20" y="224" width="15" height="15" fill="#C9D4CC"/><rect x="35" y="224" width="15" height="15" fill="#FF8A5B"/><rect x="50" y="224" width="15" height="15" fill="#FF8A5B"/><rect x="65" y="224" width="15" height="15" fill="#00A57A"/><rect x="80" y="224" width="15" height="15" fill="#C9D4CC"/><rect x="95" y="224" width="15" height="15" fill="#FF8A5B"/><rect x="110" y="224" width="15" height="15" fill="#FFB547"/><rect x="125" y="224" width="15" height="15" fill="#00A57A"/><rect x="140" y="224" width="15" height="15" fill="#C9D4CC"/><rect x="155" y="224" width="15" height="15" fill="#00A57A"/><rect x="20" y="239" width="15" height="15" fill="#F2FBF7"/><rect x="35" y="239" width="15" height="15" fill="#02221F"/><rect x="50" y="239" width="15" height="15" fill="#FFB547"/><rect x="65" y="239" width="15" height="15" fill="#C9D4CC"/><rect x="80" y="239" width="15" height="15" fill="#02221F"/><rect x="95" y="239" width="15" height="15" fill="#7C5CFF"/><rect x="110" y="239" width="15" height="15" fill="#FF8A5B"/><rect x="125" y="239" width="15" height="15" fill="#C9D4CC"/><rect x="140" y="239" width="15" height="15" fill="#FFB547"/><rect x="155" y="239" width="15" height="15" fill="#4DA3FF"/><rect x="20" y="254" width="15" height="15" fill="#00A57A"/><rect x="35" y="254" width="15" height="15" fill="#7C5CFF"/><rect x="50" y="254" width="15" height="15" fill="#4DA3FF"/><rect x="65" y="254" width="15" height="15" fill="#F2FBF7"/><rect x="80" y="254" width="15" height="15" fill="#F2FBF7"/><rect x="95" y="254" width="15" height="15" fill="#C9D4CC"/><rect x="110" y="254" width="15" height="15" fill="#FF8A5B"/><rect x="125" y="254" width="15" height="15" fill="#7C5CFF"/><rect x="140" y="254" width="15" height="15" fill="#C9D4CC"/><rect x="155" y="254" width="15" height="15" fill="#F2FBF7"/><rect x="20" y="269" width="15" height="15" fill="#E5484D"/><rect x="35" y="269" width="15" height="15" fill="#00A57A"/><rect x="50" y="269" width="15" height="15" fill="#7C5CFF"/><rect x="65" y="269" width="15" height="15" fill="#F2FBF7"/><rect x="80" y="269" width="15" height="15" fill="#E5484D"/><rect x="95" y="269" width="15" height="15" fill="#00A57A"/><rect x="110" y="269" width="15" height="15" fill="#F2FBF7"/><rect x="125" y="269" width="15" height="15" fill="#02221F"/><rect x="140" y="269" width="15" height="15" fill="#F2FBF7"/><rect x="155" y="269" width="15" height="15" fill="#4DA3FF"/><rect x="20" y="284" width="15" height="15" fill="#7C5CFF"/><rect x="35" y="284" width="15" height="15" fill="#FF8A5B"/><rect x="50" y="284" width="15" height="15" fill="#7C5CFF"/><rect x="65" y="284" width="15" height="15" fill="#7C5CFF"/><rect x="80" y="284" width="15" height="15" fill="#4DA3FF"/><rect x="95" y="284" width="15" height="15" fill="#4DA3FF"/><rect x="110" y="284" width="15" height="15" fill="#FFB547"/><rect x="125" y="284" width="15" height="15" fill="#C9D4CC"/><rect x="140" y="284" width="15" height="15" fill="#7C5CFF"/><rect x="155" y="284" width="15" height="15" fill="#00A57A"/><rect x="20" y="299" width="15" height="15" fill="#00A57A"/><rect x="35" y="299" width="15" height="15" fill="#FFB547"/><rect x="50" y="299" width="15" height="15" fill="#7C5CFF"/><rect x="65" y="299" width="15" height="15" fill="#F2FBF7"/><rect x="80" y="299" width="15" height="15" fill="#E5484D"/><rect x="95" y="299" width="15" height="15" fill="#02221F"/><rect x="110" y="299" width="15" height="15" fill="#02221F"/><rect x="125" y="299" width="15" height="15" fill="#7C5CFF"/><rect x="140" y="299" width="15" height="15" fill="#E5484D"/><rect x="155" y="299" width="15" height="15" fill="#FFB547"/><rect x="20" y="314" width="15" height="15" fill="#C9D4CC"/><rect x="35" y="314" width="15" height="15" fill="#E5484D"/><rect x="50" y="314" width="15" height="15" fill="#F2FBF7"/><rect x="65" y="314" width="15" height="15" fill="#F2FBF7"/><rect x="80" y="314" width="15" height="15" fill="#F2FBF7"/><rect x="95" y="314" width="15" height="15" fill="#F2FBF7"/><rect x="110" y="314" width="15" height="15" fill="#FF8A5B"/><rect x="125" y="314" width="15" height="15" fill="#C9D4CC"/><rect x="140" y="314" width="15" height="15" fill="#F2FBF7"/><rect x="155" y="314" width="15" height="15" fill="#FFB547"/><rect x="20" y="329" width="15" height="15" fill="#4DA3FF"/><rect x="35" y="329" width="15" height="15" fill="#FF8A5B"/><rect x="50" y="329" width="15" height="15" fill="#4DA3FF"/><rect x="65" y="329" width="15" height="15" fill="#C9D4CC"/><rect x="80" y="329" width="15" height="15" fill="#7C5CFF"/><rect x="95" y="329" width="15" height="15" fill="#FF8A5B"/><rect x="110" y="329" width="15" height="15" fill="#02221F"/><rect x="125" y="329" width="15" height="15" fill="#FFB547"/><rect x="140" y="329" width="15" height="15" fill="#FF8A5B"/><rect x="155" y="329" width="15" height="15" fill="#FFB547"/><rect x="20" y="344" width="15" height="15" fill="#7C5CFF"/><rect x="35" y="344" width="15" height="15" fill="#E5484D"/><rect x="50" y="344" width="15" height="15" fill="#FF8A5B"/><rect x="65" y="344" width="15" height="15" fill="#02221F"/><rect x="80" y="344" width="15" height="15" fill="#FFB547"/><rect x="95" y="344" width="15" height="15" fill="#FF8A5B"/><rect x="110" y="344" width="15" height="15" fill="#4DA3FF"/><rect x="125" y="344" width="15" height="15" fill="#F2FBF7"/><rect x="140" y="344" width="15" height="15" fill="#7C5CFF"/><rect x="155" y="344" width="15" height="15" fill="#00A57A"/><rect x="20" y="359" width="15" height="15" fill="#02221F"/><rect x="35" y="359" width="15" height="15" fill="#02221F"/><rect x="50" y="359" width="15" height="15" fill="#C9D4CC"/><rect x="65" y="359" width="15" height="15" fill="#FF8A5B"/><rect x="80" y="359" width="15" height="15" fill="#FF8A5B"/><rect x="95" y="359" width="15" height="15" fill="#C9D4CC"/><rect x="110" y="359" width="15" height="15" fill="#C9D4CC"/><rect x="125" y="359" width="15" height="15" fill="#C9D4CC"/><rect x="140" y="359" width="15" height="15" fill="#C9D4CC"/><rect x="155" y="359" width="15" height="15" fill="#00A57A"/></g></g><text x="95" y="396" class="t3">Step 1: noise</text></g><path class="dl" style="--t:1.5s" pathLength="1" d="M180 237 H235"/><path class="dl" style="--t:2.3s" pathLength="1" d="M405 237 H460"/><g class="a" style="--t:1.7s"><g clip-path="url(#dfc1)"><rect x="245" y="104" width="150" height="266" fill="url(#dfsky)"/><circle cx="345" cy="194" r="26" fill="#FFE8A8"/><rect x="245" y="260" width="26" height="70" fill="#0E3A33"/><rect x="269" y="220" width="20" height="110" fill="#0E3A33"/><rect x="287" y="246" width="30" height="84" fill="#0E3A33"/><rect x="315" y="200" width="22" height="130" fill="#0E3A33"/><rect x="335" y="234" width="34" height="96" fill="#0E3A33"/><rect x="367" y="212" width="28" height="118" fill="#0E3A33"/><rect x="245" y="330" width="150" height="40" fill="#02221F"/><g fill="#02221F"><circle cx="287" cy="254" r="14"/><rect x="270" y="270" width="34" height="62" rx="14"/><circle cx="353" cy="258" r="13"/><rect x="337" y="273" width="32" height="58" rx="14"/></g><g opacity="0.55"><rect x="245" y="104" width="15" height="15" fill="#FF8A5B"/><rect x="260" y="104" width="15" height="15" fill="#7C5CFF"/><rect x="275" y="104" width="15" height="15" fill="#FF8A5B"/><rect x="290" y="104" width="15" height="15" fill="#02221F"/><rect x="305" y="104" width="15" height="15" fill="#00A57A"/><rect x="320" y="104" width="15" height="15" fill="#C9D4CC"/><rect x="335" y="104" width="15" height="15" fill="#7C5CFF"/><rect x="350" y="104" width="15" height="15" fill="#E5484D"/><rect x="365" y="104" width="15" height="15" fill="#FFB547"/><rect x="380" y="104" width="15" height="15" fill="#4DA3FF"/><rect x="245" y="119" width="15" height="15" fill="#E5484D"/><rect x="260" y="119" width="15" height="15" fill="#02221F"/><rect x="275" y="119" width="15" height="15" fill="#7C5CFF"/><rect x="290" y="119" width="15" height="15" fill="#E5484D"/><rect x="305" y="119" width="15" height="15" fill="#FFB547"/><rect x="320" y="119" width="15" height="15" fill="#E5484D"/><rect x="335" y="119" width="15" height="15" fill="#00A57A"/><rect x="350" y="119" width="15" height="15" fill="#FF8A5B"/><rect x="365" y="119" width="15" height="15" fill="#00A57A"/><rect x="380" y="119" width="15" height="15" fill="#E5484D"/><rect x="245" y="134" width="15" height="15" fill="#02221F"/><rect x="260" y="134" width="15" height="15" fill="#7C5CFF"/><rect x="275" y="134" width="15" height="15" fill="#02221F"/><rect x="290" y="134" width="15" height="15" fill="#4DA3FF"/><rect x="305" y="134" width="15" height="15" fill="#E5484D"/><rect x="320" y="134" width="15" height="15" fill="#E5484D"/><rect x="335" y="134" width="15" height="15" fill="#E5484D"/><rect x="350" y="134" width="15" height="15" fill="#02221F"/><rect x="365" y="134" width="15" height="15" fill="#4DA3FF"/><rect x="380" y="134" width="15" height="15" fill="#4DA3FF"/><rect x="245" y="149" width="15" height="15" fill="#4DA3FF"/><rect x="260" y="149" width="15" height="15" fill="#F2FBF7"/><rect x="275" y="149" width="15" height="15" fill="#4DA3FF"/><rect x="290" y="149" width="15" height="15" fill="#4DA3FF"/><rect x="305" y="149" width="15" height="15" fill="#E5484D"/><rect x="320" y="149" width="15" height="15" fill="#C9D4CC"/><rect x="335" y="149" width="15" height="15" fill="#02221F"/><rect x="350" y="149" width="15" height="15" fill="#FFB547"/><rect x="365" y="149" width="15" height="15" fill="#FFB547"/><rect x="380" y="149" width="15" height="15" fill="#00A57A"/><rect x="245" y="164" width="15" height="15" fill="#C9D4CC"/><rect x="260" y="164" width="15" height="15" fill="#00A57A"/><rect x="275" y="164" width="15" height="15" fill="#4DA3FF"/><rect x="290" y="164" width="15" height="15" fill="#02221F"/><rect x="305" y="164" width="15" height="15" fill="#C9D4CC"/><rect x="320" y="164" width="15" height="15" fill="#02221F"/><rect x="335" y="164" width="15" height="15" fill="#02221F"/><rect x="350" y="164" width="15" height="15" fill="#FF8A5B"/><rect x="365" y="164" width="15" height="15" fill="#4DA3FF"/><rect x="380" y="164" width="15" height="15" fill="#FF8A5B"/><rect x="245" y="179" width="15" height="15" fill="#4DA3FF"/><rect x="260" y="179" width="15" height="15" fill="#C9D4CC"/><rect x="275" y="179" width="15" height="15" fill="#4DA3FF"/><rect x="290" y="179" width="15" height="15" fill="#02221F"/><rect x="305" y="179" width="15" height="15" fill="#4DA3FF"/><rect x="320" y="179" width="15" height="15" fill="#C9D4CC"/><rect x="335" y="179" width="15" height="15" fill="#FFB547"/><rect x="350" y="179" width="15" height="15" fill="#C9D4CC"/><rect x="365" y="179" width="15" height="15" fill="#02221F"/><rect x="380" y="179" width="15" height="15" fill="#FF8A5B"/><rect x="245" y="194" width="15" height="15" fill="#FF8A5B"/><rect x="260" y="194" width="15" height="15" fill="#F2FBF7"/><rect x="275" y="194" width="15" height="15" fill="#4DA3FF"/><rect x="290" y="194" width="15" height="15" fill="#C9D4CC"/><rect x="305" y="194" width="15" height="15" fill="#7C5CFF"/><rect x="320" y="194" width="15" height="15" fill="#F2FBF7"/><rect x="335" y="194" width="15" height="15" fill="#02221F"/><rect x="350" y="194" width="15" height="15" fill="#FF8A5B"/><rect x="365" y="194" width="15" height="15" fill="#F2FBF7"/><rect x="380" y="194" width="15" height="15" fill="#C9D4CC"/><rect x="245" y="209" width="15" height="15" fill="#F2FBF7"/><rect x="260" y="209" width="15" height="15" fill="#FF8A5B"/><rect x="275" y="209" width="15" height="15" fill="#7C5CFF"/><rect x="290" y="209" width="15" height="15" fill="#7C5CFF"/><rect x="305" y="209" width="15" height="15" fill="#7C5CFF"/><rect x="320" y="209" width="15" height="15" fill="#FFB547"/><rect x="335" y="209" width="15" height="15" fill="#7C5CFF"/><rect x="350" y="209" width="15" height="15" fill="#C9D4CC"/><rect x="365" y="209" width="15" height="15" fill="#7C5CFF"/><rect x="380" y="209" width="15" height="15" fill="#C9D4CC"/><rect x="245" y="224" width="15" height="15" fill="#02221F"/><rect x="260" y="224" width="15" height="15" fill="#7C5CFF"/><rect x="275" y="224" width="15" height="15" fill="#E5484D"/><rect x="290" y="224" width="15" height="15" fill="#E5484D"/><rect x="305" y="224" width="15" height="15" fill="#7C5CFF"/><rect x="320" y="224" width="15" height="15" fill="#FFB547"/><rect x="335" y="224" width="15" height="15" fill="#FFB547"/><rect x="350" y="224" width="15" height="15" fill="#FF8A5B"/><rect x="365" y="224" width="15" height="15" fill="#E5484D"/><rect x="380" y="224" width="15" height="15" fill="#7C5CFF"/><rect x="245" y="239" width="15" height="15" fill="#F2FBF7"/><rect x="260" y="239" width="15" height="15" fill="#4DA3FF"/><rect x="275" y="239" width="15" height="15" fill="#4DA3FF"/><rect x="290" y="239" width="15" height="15" fill="#FFB547"/><rect x="305" y="239" width="15" height="15" fill="#00A57A"/><rect x="320" y="239" width="15" height="15" fill="#4DA3FF"/><rect x="335" y="239" width="15" height="15" fill="#00A57A"/><rect x="350" y="239" width="15" height="15" fill="#E5484D"/><rect x="365" y="239" width="15" height="15" fill="#4DA3FF"/><rect x="380" y="239" width="15" height="15" fill="#02221F"/><rect x="245" y="254" width="15" height="15" fill="#00A57A"/><rect x="260" y="254" width="15" height="15" fill="#E5484D"/><rect x="275" y="254" width="15" height="15" fill="#F2FBF7"/><rect x="290" y="254" width="15" height="15" fill="#7C5CFF"/><rect x="305" y="254" width="15" height="15" fill="#FFB547"/><rect x="320" y="254" width="15" height="15" fill="#02221F"/><rect x="335" y="254" width="15" height="15" fill="#C9D4CC"/><rect x="350" y="254" width="15" height="15" fill="#E5484D"/><rect x="365" y="254" width="15" height="15" fill="#F2FBF7"/><rect x="380" y="254" width="15" height="15" fill="#E5484D"/><rect x="245" y="269" width="15" height="15" fill="#7C5CFF"/><rect x="260" y="269" width="15" height="15" fill="#E5484D"/><rect x="275" y="269" width="15" height="15" fill="#7C5CFF"/><rect x="290" y="269" width="15" height="15" fill="#E5484D"/><rect x="305" y="269" width="15" height="15" fill="#E5484D"/><rect x="320" y="269" width="15" height="15" fill="#FFB547"/><rect x="335" y="269" width="15" height="15" fill="#C9D4CC"/><rect x="350" y="269" width="15" height="15" fill="#7C5CFF"/><rect x="365" y="269" width="15" height="15" fill="#FFB547"/><rect x="380" y="269" width="15" height="15" fill="#7C5CFF"/><rect x="245" y="284" width="15" height="15" fill="#7C5CFF"/><rect x="260" y="284" width="15" height="15" fill="#7C5CFF"/><rect x="275" y="284" width="15" height="15" fill="#C9D4CC"/><rect x="290" y="284" width="15" height="15" fill="#FF8A5B"/><rect x="305" y="284" width="15" height="15" fill="#E5484D"/><rect x="320" y="284" width="15" height="15" fill="#FFB547"/><rect x="335" y="284" width="15" height="15" fill="#02221F"/><rect x="350" y="284" width="15" height="15" fill="#E5484D"/><rect x="365" y="284" width="15" height="15" fill="#E5484D"/><rect x="380" y="284" width="15" height="15" fill="#E5484D"/><rect x="245" y="299" width="15" height="15" fill="#C9D4CC"/><rect x="260" y="299" width="15" height="15" fill="#FF8A5B"/><rect x="275" y="299" width="15" height="15" fill="#E5484D"/><rect x="290" y="299" width="15" height="15" fill="#FFB547"/><rect x="305" y="299" width="15" height="15" fill="#4DA3FF"/><rect x="320" y="299" width="15" height="15" fill="#4DA3FF"/><rect x="335" y="299" width="15" height="15" fill="#00A57A"/><rect x="350" y="299" width="15" height="15" fill="#FFB547"/><rect x="365" y="299" width="15" height="15" fill="#FF8A5B"/><rect x="380" y="299" width="15" height="15" fill="#E5484D"/><rect x="245" y="314" width="15" height="15" fill="#C9D4CC"/><rect x="260" y="314" width="15" height="15" fill="#E5484D"/><rect x="275" y="314" width="15" height="15" fill="#FFB547"/><rect x="290" y="314" width="15" height="15" fill="#FF8A5B"/><rect x="305" y="314" width="15" height="15" fill="#C9D4CC"/><rect x="320" y="314" width="15" height="15" fill="#02221F"/><rect x="335" y="314" width="15" height="15" fill="#E5484D"/><rect x="350" y="314" width="15" height="15" fill="#E5484D"/><rect x="365" y="314" width="15" height="15" fill="#4DA3FF"/><rect x="380" y="314" width="15" height="15" fill="#00A57A"/><rect x="245" y="329" width="15" height="15" fill="#C9D4CC"/><rect x="260" y="329" width="15" height="15" fill="#E5484D"/><rect x="275" y="329" width="15" height="15" fill="#E5484D"/><rect x="290" y="329" width="15" height="15" fill="#C9D4CC"/><rect x="305" y="329" width="15" height="15" fill="#E5484D"/><rect x="320" y="329" width="15" height="15" fill="#4DA3FF"/><rect x="335" y="329" width="15" height="15" fill="#E5484D"/><rect x="350" y="329" width="15" height="15" fill="#00A57A"/><rect x="365" y="329" width="15" height="15" fill="#E5484D"/><rect x="380" y="329" width="15" height="15" fill="#4DA3FF"/><rect x="245" y="344" width="15" height="15" fill="#C9D4CC"/><rect x="260" y="344" width="15" height="15" fill="#7C5CFF"/><rect x="275" y="344" width="15" height="15" fill="#F2FBF7"/><rect x="290" y="344" width="15" height="15" fill="#FF8A5B"/><rect x="305" y="344" width="15" height="15" fill="#F2FBF7"/><rect x="320" y="344" width="15" height="15" fill="#C9D4CC"/><rect x="335" y="344" width="15" height="15" fill="#02221F"/><rect x="350" y="344" width="15" height="15" fill="#FF8A5B"/><rect x="365" y="344" width="15" height="15" fill="#4DA3FF"/><rect x="380" y="344" width="15" height="15" fill="#F2FBF7"/><rect x="245" y="359" width="15" height="15" fill="#FF8A5B"/><rect x="260" y="359" width="15" height="15" fill="#4DA3FF"/><rect x="275" y="359" width="15" height="15" fill="#00A57A"/><rect x="290" y="359" width="15" height="15" fill="#FF8A5B"/><rect x="305" y="359" width="15" height="15" fill="#7C5CFF"/><rect x="320" y="359" width="15" height="15" fill="#02221F"/><rect x="335" y="359" width="15" height="15" fill="#7C5CFF"/><rect x="350" y="359" width="15" height="15" fill="#00A57A"/><rect x="365" y="359" width="15" height="15" fill="#7C5CFF"/><rect x="380" y="359" width="15" height="15" fill="#C9D4CC"/></g></g><text x="320" y="396" class="t3">Step 25</text></g><g class="a" style="--t:2.5s"><g clip-path="url(#dfc2)"><rect x="470" y="104" width="150" height="266" fill="url(#dfsky)"/><circle cx="570" cy="194" r="26" fill="#FFE8A8"/><rect x="470" y="260" width="26" height="70" fill="#0E3A33"/><rect x="494" y="220" width="20" height="110" fill="#0E3A33"/><rect x="512" y="246" width="30" height="84" fill="#0E3A33"/><rect x="540" y="200" width="22" height="130" fill="#0E3A33"/><rect x="560" y="234" width="34" height="96" fill="#0E3A33"/><rect x="592" y="212" width="28" height="118" fill="#0E3A33"/><rect x="470" y="330" width="150" height="40" fill="#02221F"/><g fill="#02221F"><circle cx="512" cy="254" r="14"/><rect x="495" y="270" width="34" height="62" rx="14"/><circle cx="578" cy="258" r="13"/><rect x="562" y="273" width="32" height="58" rx="14"/></g><g class="dn"><g opacity="0.55"><rect x="470" y="104" width="15" height="15" fill="#4DA3FF"/><rect x="485" y="104" width="15" height="15" fill="#FF8A5B"/><rect x="500" y="104" width="15" height="15" fill="#F2FBF7"/><rect x="515" y="104" width="15" height="15" fill="#C9D4CC"/><rect x="530" y="104" width="15" height="15" fill="#7C5CFF"/><rect x="545" y="104" width="15" height="15" fill="#4DA3FF"/><rect x="560" y="104" width="15" height="15" fill="#7C5CFF"/><rect x="575" y="104" width="15" height="15" fill="#F2FBF7"/><rect x="590" y="104" width="15" height="15" fill="#E5484D"/><rect x="605" y="104" width="15" height="15" fill="#F2FBF7"/><rect x="470" y="119" width="15" height="15" fill="#02221F"/><rect x="485" y="119" width="15" height="15" fill="#F2FBF7"/><rect x="500" y="119" width="15" height="15" fill="#4DA3FF"/><rect x="515" y="119" width="15" height="15" fill="#02221F"/><rect x="530" y="119" width="15" height="15" fill="#02221F"/><rect x="545" y="119" width="15" height="15" fill="#FF8A5B"/><rect x="560" y="119" width="15" height="15" fill="#02221F"/><rect x="575" y="119" width="15" height="15" fill="#FFB547"/><rect x="590" y="119" width="15" height="15" fill="#02221F"/><rect x="605" y="119" width="15" height="15" fill="#E5484D"/><rect x="470" y="134" width="15" height="15" fill="#C9D4CC"/><rect x="485" y="134" width="15" height="15" fill="#C9D4CC"/><rect x="500" y="134" width="15" height="15" fill="#FFB547"/><rect x="515" y="134" width="15" height="15" fill="#F2FBF7"/><rect x="530" y="134" width="15" height="15" fill="#02221F"/><rect x="545" y="134" width="15" height="15" fill="#E5484D"/><rect x="560" y="134" width="15" height="15" fill="#00A57A"/><rect x="575" y="134" width="15" height="15" fill="#E5484D"/><rect x="590" y="134" width="15" height="15" fill="#FF8A5B"/><rect x="605" y="134" width="15" height="15" fill="#FF8A5B"/><rect x="470" y="149" width="15" height="15" fill="#4DA3FF"/><rect x="485" y="149" width="15" height="15" fill="#FF8A5B"/><rect x="500" y="149" width="15" height="15" fill="#FF8A5B"/><rect x="515" y="149" width="15" height="15" fill="#00A57A"/><rect x="530" y="149" width="15" height="15" fill="#00A57A"/><rect x="545" y="149" width="15" height="15" fill="#FFB547"/><rect x="560" y="149" width="15" height="15" fill="#7C5CFF"/><rect x="575" y="149" width="15" height="15" fill="#00A57A"/><rect x="590" y="149" width="15" height="15" fill="#7C5CFF"/><rect x="605" y="149" width="15" height="15" fill="#F2FBF7"/><rect x="470" y="164" width="15" height="15" fill="#00A57A"/><rect x="485" y="164" width="15" height="15" fill="#F2FBF7"/><rect x="500" y="164" width="15" height="15" fill="#7C5CFF"/><rect x="515" y="164" width="15" height="15" fill="#E5484D"/><rect x="530" y="164" width="15" height="15" fill="#E5484D"/><rect x="545" y="164" width="15" height="15" fill="#C9D4CC"/><rect x="560" y="164" width="15" height="15" fill="#02221F"/><rect x="575" y="164" width="15" height="15" fill="#FF8A5B"/><rect x="590" y="164" width="15" height="15" fill="#00A57A"/><rect x="605" y="164" width="15" height="15" fill="#FFB547"/><rect x="470" y="179" width="15" height="15" fill="#7C5CFF"/><rect x="485" y="179" width="15" height="15" fill="#F2FBF7"/><rect x="500" y="179" width="15" height="15" fill="#FF8A5B"/><rect x="515" y="179" width="15" height="15" fill="#00A57A"/><rect x="530" y="179" width="15" height="15" fill="#FFB547"/><rect x="545" y="179" width="15" height="15" fill="#FF8A5B"/><rect x="560" y="179" width="15" height="15" fill="#00A57A"/><rect x="575" y="179" width="15" height="15" fill="#FF8A5B"/><rect x="590" y="179" width="15" height="15" fill="#4DA3FF"/><rect x="605" y="179" width="15" height="15" fill="#FF8A5B"/><rect x="470" y="194" width="15" height="15" fill="#00A57A"/><rect x="485" y="194" width="15" height="15" fill="#FF8A5B"/><rect x="500" y="194" width="15" height="15" fill="#C9D4CC"/><rect x="515" y="194" width="15" height="15" fill="#FFB547"/><rect x="530" y="194" width="15" height="15" fill="#02221F"/><rect x="545" y="194" width="15" height="15" fill="#E5484D"/><rect x="560" y="194" width="15" height="15" fill="#F2FBF7"/><rect x="575" y="194" width="15" height="15" fill="#00A57A"/><rect x="590" y="194" width="15" height="15" fill="#7C5CFF"/><rect x="605" y="194" width="15" height="15" fill="#FFB547"/><rect x="470" y="209" width="15" height="15" fill="#E5484D"/><rect x="485" y="209" width="15" height="15" fill="#4DA3FF"/><rect x="500" y="209" width="15" height="15" fill="#FF8A5B"/><rect x="515" y="209" width="15" height="15" fill="#7C5CFF"/><rect x="530" y="209" width="15" height="15" fill="#00A57A"/><rect x="545" y="209" width="15" height="15" fill="#FFB547"/><rect x="560" y="209" width="15" height="15" fill="#7C5CFF"/><rect x="575" y="209" width="15" height="15" fill="#4DA3FF"/><rect x="590" y="209" width="15" height="15" fill="#00A57A"/><rect x="605" y="209" width="15" height="15" fill="#00A57A"/><rect x="470" y="224" width="15" height="15" fill="#E5484D"/><rect x="485" y="224" width="15" height="15" fill="#4DA3FF"/><rect x="500" y="224" width="15" height="15" fill="#00A57A"/><rect x="515" y="224" width="15" height="15" fill="#C9D4CC"/><rect x="530" y="224" width="15" height="15" fill="#E5484D"/><rect x="545" y="224" width="15" height="15" fill="#7C5CFF"/><rect x="560" y="224" width="15" height="15" fill="#00A57A"/><rect x="575" y="224" width="15" height="15" fill="#02221F"/><rect x="590" y="224" width="15" height="15" fill="#FFB547"/><rect x="605" y="224" width="15" height="15" fill="#00A57A"/><rect x="470" y="239" width="15" height="15" fill="#FFB547"/><rect x="485" y="239" width="15" height="15" fill="#FFB547"/><rect x="500" y="239" width="15" height="15" fill="#FFB547"/><rect x="515" y="239" width="15" height="15" fill="#E5484D"/><rect x="530" y="239" width="15" height="15" fill="#E5484D"/><rect x="545" y="239" width="15" height="15" fill="#4DA3FF"/><rect x="560" y="239" width="15" height="15" fill="#E5484D"/><rect x="575" y="239" width="15" height="15" fill="#C9D4CC"/><rect x="590" y="239" width="15" height="15" fill="#4DA3FF"/><rect x="605" y="239" width="15" height="15" fill="#C9D4CC"/><rect x="470" y="254" width="15" height="15" fill="#FF8A5B"/><rect x="485" y="254" width="15" height="15" fill="#F2FBF7"/><rect x="500" y="254" width="15" height="15" fill="#C9D4CC"/><rect x="515" y="254" width="15" height="15" fill="#E5484D"/><rect x="530" y="254" width="15" height="15" fill="#F2FBF7"/><rect x="545" y="254" width="15" height="15" fill="#E5484D"/><rect x="560" y="254" width="15" height="15" fill="#00A57A"/><rect x="575" y="254" width="15" height="15" fill="#4DA3FF"/><rect x="590" y="254" width="15" height="15" fill="#4DA3FF"/><rect x="605" y="254" width="15" height="15" fill="#02221F"/><rect x="470" y="269" width="15" height="15" fill="#4DA3FF"/><rect x="485" y="269" width="15" height="15" fill="#7C5CFF"/><rect x="500" y="269" width="15" height="15" fill="#F2FBF7"/><rect x="515" y="269" width="15" height="15" fill="#02221F"/><rect x="530" y="269" width="15" height="15" fill="#FFB547"/><rect x="545" y="269" width="15" height="15" fill="#7C5CFF"/><rect x="560" y="269" width="15" height="15" fill="#FFB547"/><rect x="575" y="269" width="15" height="15" fill="#FF8A5B"/><rect x="590" y="269" width="15" height="15" fill="#00A57A"/><rect x="605" y="269" width="15" height="15" fill="#F2FBF7"/><rect x="470" y="284" width="15" height="15" fill="#7C5CFF"/><rect x="485" y="284" width="15" height="15" fill="#FFB547"/><rect x="500" y="284" width="15" height="15" fill="#FF8A5B"/><rect x="515" y="284" width="15" height="15" fill="#F2FBF7"/><rect x="530" y="284" width="15" height="15" fill="#E5484D"/><rect x="545" y="284" width="15" height="15" fill="#00A57A"/><rect x="560" y="284" width="15" height="15" fill="#4DA3FF"/><rect x="575" y="284" width="15" height="15" fill="#00A57A"/><rect x="590" y="284" width="15" height="15" fill="#FFB547"/><rect x="605" y="284" width="15" height="15" fill="#C9D4CC"/><rect x="470" y="299" width="15" height="15" fill="#7C5CFF"/><rect x="485" y="299" width="15" height="15" fill="#7C5CFF"/><rect x="500" y="299" width="15" height="15" fill="#00A57A"/><rect x="515" y="299" width="15" height="15" fill="#C9D4CC"/><rect x="530" y="299" width="15" height="15" fill="#FFB547"/><rect x="545" y="299" width="15" height="15" fill="#00A57A"/><rect x="560" y="299" width="15" height="15" fill="#02221F"/><rect x="575" y="299" width="15" height="15" fill="#02221F"/><rect x="590" y="299" width="15" height="15" fill="#E5484D"/><rect x="605" y="299" width="15" height="15" fill="#02221F"/><rect x="470" y="314" width="15" height="15" fill="#4DA3FF"/><rect x="485" y="314" width="15" height="15" fill="#FFB547"/><rect x="500" y="314" width="15" height="15" fill="#00A57A"/><rect x="515" y="314" width="15" height="15" fill="#4DA3FF"/><rect x="530" y="314" width="15" height="15" fill="#02221F"/><rect x="545" y="314" width="15" height="15" fill="#7C5CFF"/><rect x="560" y="314" width="15" height="15" fill="#FFB547"/><rect x="575" y="314" width="15" height="15" fill="#02221F"/><rect x="590" y="314" width="15" height="15" fill="#F2FBF7"/><rect x="605" y="314" width="15" height="15" fill="#FF8A5B"/><rect x="470" y="329" width="15" height="15" fill="#C9D4CC"/><rect x="485" y="329" width="15" height="15" fill="#00A57A"/><rect x="500" y="329" width="15" height="15" fill="#E5484D"/><rect x="515" y="329" width="15" height="15" fill="#4DA3FF"/><rect x="530" y="329" width="15" height="15" fill="#4DA3FF"/><rect x="545" y="329" width="15" height="15" fill="#E5484D"/><rect x="560" y="329" width="15" height="15" fill="#FFB547"/><rect x="575" y="329" width="15" height="15" fill="#FF8A5B"/><rect x="590" y="329" width="15" height="15" fill="#00A57A"/><rect x="605" y="329" width="15" height="15" fill="#FF8A5B"/><rect x="470" y="344" width="15" height="15" fill="#7C5CFF"/><rect x="485" y="344" width="15" height="15" fill="#F2FBF7"/><rect x="500" y="344" width="15" height="15" fill="#FFB547"/><rect x="515" y="344" width="15" height="15" fill="#F2FBF7"/><rect x="530" y="344" width="15" height="15" fill="#FFB547"/><rect x="545" y="344" width="15" height="15" fill="#00A57A"/><rect x="560" y="344" width="15" height="15" fill="#00A57A"/><rect x="575" y="344" width="15" height="15" fill="#4DA3FF"/><rect x="590" y="344" width="15" height="15" fill="#FF8A5B"/><rect x="605" y="344" width="15" height="15" fill="#E5484D"/><rect x="470" y="359" width="15" height="15" fill="#7C5CFF"/><rect x="485" y="359" width="15" height="15" fill="#F2FBF7"/><rect x="500" y="359" width="15" height="15" fill="#02221F"/><rect x="515" y="359" width="15" height="15" fill="#C9D4CC"/><rect x="530" y="359" width="15" height="15" fill="#7C5CFF"/><rect x="545" y="359" width="15" height="15" fill="#00A57A"/><rect x="560" y="359" width="15" height="15" fill="#7C5CFF"/><rect x="575" y="359" width="15" height="15" fill="#FFB547"/><rect x="590" y="359" width="15" height="15" fill="#E5484D"/><rect x="605" y="359" width="15" height="15" fill="#F2FBF7"/></g></g><rect x="478" y="300" width="134" height="26" rx="6" fill="rgba(2,34,31,.72)"/><text x="545" y="318" class="t9" style="fill:#fff;font-size:15px">Boss, I am the AI.</text></g><text x="545" y="396" class="t3">Step 50: done</text></g><g class="p" style="--t:3.6s"><circle cx="545" cy="210" r="30" fill="rgba(255,255,255,.92)"/><path d="M537 196 l24 14 l-24 14z" fill="#02221F"/></g><g class="p" style="--t:3.9s"><rect x="438" y="118" width="96" height="30" rx="8" fill="#E5484D"/><text x="486" y="139" class="t3" style="fill:#fff;font-size:16px;font-weight:800">EP 1</text></g>
+</svg>''',
+# ---- 5 · agent: 1 WhatsApp order, it works through each system, then waits for you
+'''<svg class="il" viewBox="0 0 640 440">
+<g class="a" style="--t:.4s"><rect x="20" y="20" width="440" height="62" rx="22" fill="#DCF8C6"/><text x="44" y="59" class="t7">Mega Mart: 20 ctn Milo, Friday</text></g>
+''' + ''.join('<g class="a" style="--t:%.2fs"><rect x="20" y="%d" width="600" height="60" rx="16" fill="#fff" stroke="#DDE3DF" stroke-width="2"/>'
+              '<circle cx="56" cy="%d" r="16" fill="#DCE3DF"/><text x="90" y="%d" class="t7">%s</text><text x="600" y="%d" class="t3m" style="text-anchor:end">%s</text></g>'
+              % (.7 + k * .15, 106 + k * 76, 136 + k * 76, 144 + k * 76, s_, 143 + k * 76, tool)
+              for k, (s_, tool) in enumerate([('Read the order', 'WHATSAPP'), ('Check the stock', 'SQL ACCOUNT'), ('Draft the Sales Order', 'SALES ORDER'), ('Ask the boss', 'APPROVAL')])) + ''.join(
+    '<g class="ok" style="--t:%.2fs"><g transform="translate(56 %d)"><circle r="16" fill="#006C48"/>%s</g></g>' % (1.5 + k * .6, 136 + k * 76, AA_TICK) for k in range(3)) + '''
+<g class="p" style="--t:3.4s"><circle cx="56" cy="364" r="16" fill="#FFB547"/><circle class="ring" cx="56" cy="364" r="16" fill="none" stroke="#FFB547" stroke-width="3"/></g>
+<g class="p" style="--t:3.5s"><rect x="300" y="346" width="170" height="36" rx="10" fill="#FFF1D6"/><text x="385" y="371" class="t3s2 h">Waiting for you</text></g>
+</svg>''',
+]
+def _at_cards():
+    out = ''
+    for k, (_, nm, tg, do, like, how, ex, use, lim) in enumerate(AT_TYPES):
+        chips = ''.join('<span>%s%s</span>' % (('<img src="../assets/logos/%s" alt="">' % AA_LOGO[x]) if x in AA_LOGO else '', x) for x in ex)
+        dots = ''.join('<i class="%s"></i>' % ('on' if j == k else '') for j in range(5))
+        out += ('<div class="dt" data-k="%d"><div class="fl"><div class="card">'
+                '<div class="stage">%s</div>'
+                '<div class="tx"><div class="top"><small>%s</small><span class="dots">%s</span></div><h2>%s</h2>'
+                '<div class="like"><small>THINK OF IT LIKE</small><p>%s</p></div>'
+                '<p class="how">%s</p>'
+                '<div class="rw"><small>IN REAL LIFE</small><div class="chips">%s</div></div>'
+                '<div class="rw"><small>IN YOUR COMPANY</small><p class="use">%s</p></div>'
+                '<p class="lim">%s</p></div></div></div></div>'
+                % (k + 1, AT_ILL[k], tg, dots, nm, like, how, chips, use, lim))
+    return out
+slide('08-ai-types', 'Types of AI', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
+.ty { display:grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 26px; margin-top: 60px; transform-origin: 50% 0;
+  transition: transform 1.1s cubic-bezier(.2,.75,.15,1), opacity .9s ease; }
+body:not([data-s="0"]) .ty { transform: translateY(-14px) scale(.94); opacity: .22; }
+.ty > div { position:relative; padding: 30px 26px 30px; border-radius: 28px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 40px 70px -50px rgba(2,34,31,.45); }
+.ty .hd { display:flex; align-items:flex-start; justify-content:space-between; gap: 10px; }
+.ty .tg { font-family: var(--mono); font-size: 16px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; color: var(--green); padding: 7px 11px; border-radius: 8px; background: var(--mint); border: 1px dashed rgba(0,108,72,.35); }
+.ty .ic { flex:none; width: 84px; height: 84px; border-radius: 24px; background: var(--mint); color: var(--green); display:grid; place-items:center; }
+.ty small { display:block; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .14em; color: var(--ink-3); margin-top: 28px; }
+.ty h2 { font-size: 42px; font-weight: 800; letter-spacing: -.025em; line-height: 1.05; margin-top: 8px; }
+.ty .do { font-size: 29px; font-weight: 650; color: var(--green); margin-top: 10px; line-height: 1.25; }
+.ty > div.now { background: var(--ink); color: var(--on-dark); box-shadow: 0 0 0 3px var(--neon), 0 50px 80px -40px rgba(0,108,72,.6); }
+.ty .now .ic { background: rgba(0,245,169,.14); color: var(--neon); }
+.ty .now small { color: var(--on-dark-3); } .ty .now .do { color: var(--neon); }
+.ty .now .tg { color: var(--neon); background: rgba(0,245,169,.1); border-color: rgba(0,245,169,.4); }
+.ty .now em { position:absolute; top: -18px; right: 24px; font-style: normal; font-size: 18px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink); background: var(--neon); padding: 7px 14px; border-radius: 8px; }
+''' + AA_CARD_CSS + '''
+/* ---- scene parts only this slide uses ---- */
+.il .car { opacity: 0; transform: translateY(46px) scale(.9); transform-box: fill-box; transform-origin: 50% 100%; }
+.dt.go .il .car { animation: carin 1s cubic-bezier(.2,.7,.2,1) .3s forwards; }
+@keyframes carin { to { opacity: 1; transform: none; } }
+.il .arm { transform-box: view-box; transform-origin: 576px 235px; }
+.dt.go .il .arm { animation: arm 1.1s cubic-bezier(.3,1.25,.5,1) 3s forwards; }
+@keyframes arm { to { transform: rotate(86deg); } }
+.il .dn { opacity: 1; } .dt.go .il .dn { animation: dnz 1.2s ease 2.9s forwards; } @keyframes dnz { to { opacity: 0; } }
+.il .vb { transform-box: fill-box; transform-origin: center; }
+.dt.go .il .vb { animation: vb .7s ease-in-out infinite alternate; animation-delay: var(--t); }
+@keyframes vb { from { transform: scaleY(.35); } to { transform: scaleY(1); } }
+''', '''
+<div class="mk u" style="--d:.05s">Types of AI</div>
+<h1 class="mt u" style="--d:.15s">5 types of AI, by <em>what they do</em></h1>
+<p class="ml u" style="--d:.3s">You already use most of them every day. Today is about the last one.</p>
+<div class="ty">''' + ''.join(
+    '<div class="u%s" style="--d:%.2fs">%s<div class="hd"><span class="ic">%s</span><span class="tg">%s</span></div><small>TYPE %d</small><h2>%s</h2><p class="do">%s</p></div>'
+    % (' now' if k == 4 else '', .55 + k * .18, '<em>Today</em>' if k == 4 else '', ic(p, 42, 1.9), tg, k + 1, nm, do)
+    for k, (p, nm, tg, do, *_rest) in enumerate(AT_TYPES)) + '''</div>
+<div class="stg">''' + _at_cards() + '''</div>
+<script>
+(function () {
+  var B = document.body, cards = [].slice.call(document.querySelectorAll('.dt'));
+  function set(n) {
+    B.dataset.s = String(n);
+    cards.forEach(function (c) {
+      var k = +c.dataset.k;
+      c.classList.toggle('past', k < n); var was = c.classList.contains('on');
+      c.classList.toggle('on', k === n);
+      if (k === n && !was) { c.classList.remove('go'); void c.offsetWidth; c.classList.add('go'); }
+      if (k !== n) c.classList.remove('go');
+    });
+  }
+  set(0);
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') set(e.data.deckStep); });
+})();
+</script>
+''',
+"\"Before we open up the brain, 1 quick map. People say AI as if it is 1 thing. It is not. Sort it by what it does and you get 5 types. You already use most of them every day. Let me show you where.\"\n\n(Next) Predictive AI, built on machine learning: \"Think of a weather forecast, but for your sales. When Grab tells you the driver arrives in 4 minutes, or your bank sends a fraud alert, or Shopee picks products for you, that is predictive AI. It learns from past numbers and guesses the next one: here, December, 1,240 cartons. In your company: who will pay late, what will run out. Its limit: a new product has no history.\"\n\n(Next) Vision AI, built on deep learning: \"You see this every day at the car park. The car rolls up, the camera reads WXY 1234, checks the season pass, and the barrier lifts. No ticket, no guard. Face unlock and Google Lens work the same way. In your company: reading a handwritten order or a bank slip. Dirty plate, bad light: it can misread.\"\n\n(Next) Voice AI: \"Hey Siri, YouTube captions, talking to your car. It turns sound into text. Your customer sends a voice note: Boss, esok hantar 10 carton Milo. It types it out, and it becomes an order line. A noisy shop or heavy slang, and it mishears sometimes.\"\n\n(Next) Diffusion AI, built on a diffusion model: \"Have you watched those AI short dramas on TikTok or YouTube? Many of them were never filmed. You type 1 line: the boss finds out his clerk is an AI. It starts from pure noise, like TV static, and cleans it a little at every step. Step 25, you can see a city. Step 50, done: episode 1. Midjourney and Sora work the same way. In your company: product photos and promo videos, without a studio. Hands, faces and words can still come out wrong, so check before you post.\"\n\n(Next) AI Agent, the LLM plus tools: \"This one does the work. 1 WhatsApp order: it reads it, checks the stock in SQL Account, drafts the Sales Order, and then waits for you. An agent uses the other 4 as its eyes, ears and voice. That is what today is about.\"\n\nThis slide has 5 extra Next presses; each card flies in, in 3D, and plays its own short scene.\nNext: \"The brain behind ChatGPT and every AI agent is the LLM. Let's open it up.\"")
 
 
 # ---------------- 3 · machine learning ----------------
@@ -2210,13 +2592,66 @@ slide('08-how-much-it-read', 'How much an AI has read', SEC[2], 'dark', 'data-sp
 .mc > span { font-size: 28px; color: var(--on-dark); font-weight: 600; }
 html.static .ht, html.static .cnt, html.static .tiny { display:none; }
 html.static .zoom { transform: scale(.1); } html.static .stack { height: 8200px; } html.static .cap1 { display:none; }
+/* ---- step 0: what an LLM is ---- */
+.intro { flex:1; display:flex; flex-direction:column; }
+body:not([data-s="0"]) .intro { display:none; }
+.guess { flex:1; display:none; flex-direction:column; }
+body[data-s="1"] .guess { display:flex; }
+.gq { display:grid; grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: auto; margin-bottom: 40px; }
+.gq > div { position:relative; display:flex; flex-direction:column; padding: 30px 30px 28px; border-radius: 28px; background: rgba(242,251,247,.06); box-shadow: 0 0 0 1px rgba(242,251,247,.14); }
+.gq .lt { width: 72px; height: 72px; border-radius: 50%; display:grid; place-items:center; font-size: 38px; font-weight: 800; color: #02221F; background: var(--neon); }
+.gq .bks { display:flex; align-items:flex-end; gap: 4px; height: 100px; margin-top: 20px; }
+.gq .bks i { flex:1; border-radius: 4px 4px 0 0; background: repeating-linear-gradient(to top, #FFB547 0 14px, #03201C 14px 16px, #00C389 16px 30px, #03201C 30px 32px, #7C5CFF 32px 46px, #03201C 46px 48px);
+  transform-origin: bottom; transform: scaleY(0); animation: gbk 1s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d); }
+@keyframes gbk { to { transform: none; } }
+html.static .gq .bks i { transform: none; animation: none; }
+.gq b { display:block; font-size: 44px; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; margin-top: 16px; }
+.gq b small { display:block; font-size: 28px; font-weight: 650; color: var(--on-dark-2); letter-spacing: -.01em; margin-top: 4px; }
+.gq .sk { display:flex; align-items:center; gap: 14px; margin-top: 18px; padding: 14px 16px; border-radius: 16px; background: rgba(0,245,169,.08); }
+.gq .sk i { flex:none; width: 50px; height: 50px; border-radius: 14px; display:grid; place-items:center; background: rgba(0,245,169,.16); color: var(--neon); }
+.gq .sk div { font-size: 22px; line-height: 1.3; color: var(--on-dark-2); }
+.gq .sk span { display:block; font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .14em; color: var(--on-dark-3); }
+.gq .sk em { font-style: normal; font-weight: 800; color: var(--neon); }
+.gq p { margin-top: 14px; padding-top: 16px; border-top: 1px solid rgba(242,251,247,.16); font-size: 24px; color: var(--on-dark-2); }
+.gq p span { display:block; font-family: var(--mono); font-size: 16px; font-weight: 700; letter-spacing: .14em; color: var(--on-dark-3); margin-bottom: 4px; }
+.gq p em { font-style: normal; font-weight: 700; color: var(--on-dark); }
+.hand { display:inline-flex; align-items:center; gap: 14px; margin-top: 30px; font-size: 30px; font-weight: 650; color: var(--neon); }
+#p2host { flex:1; display:none; }
+body[data-s="2"] #p2host { display:flex; }
+.intro .lgs { margin-bottom: 20px; }
+#p2host > .wrap { flex:1; }
+.intro .mt { max-width: 1500px; }
+.lgs { display:flex; gap: 14px; margin-top: 34px; }
+.lgs span { display:flex; align-items:center; gap: 10px; font-size: 26px; font-weight: 650; padding: 10px 20px; border-radius: 999px; background: rgba(242,251,247,.08); box-shadow: 0 0 0 1px rgba(242,251,247,.14); }
+.lgs img { width: 26px; height: 26px; filter: brightness(0) invert(1); }
+.intro .m3 { margin-bottom: 30px; }
+.intro .m3 b em { font-style: normal; color: var(--neon); }
+.tkn { font-size: 26px; color: var(--on-dark-2); margin-bottom: 40px; } .tkn b { color: var(--on-dark); }
 ''', '''
-<div class="wrap">
+<div class="intro">
+  <div class="mk u" style="--d:.05s">The brain</div>
+  <h1 class="mt u" style="--d:.15s">An LLM is a brain that learned <em>language</em></h1>
+  <p class="ml u" style="--d:.3s"><b>LLM</b> = Large Language Model. It learned how people write by reading a <b>huge amount of text</b>.</p>
+  <div class="lgs u" style="--d:.45s"><span><img src="../assets/logos/openai.svg" alt="">ChatGPT</span><span><img src="../assets/logos/claude.svg" alt="">Claude</span><span>Gemini</span><span>DeepSeek</span></div>
+  <div class="m3">
+    <div class="u" style="--d:.7s"><b><em>Large</em></b><p>Trained on a huge amount of data: websites, books and news, in 100+ languages.</p></div>
+    <div class="u" style="--d:.85s"><b><em>Language</em></b><p>Words go in, words come out. It reads and writes like a person.</p></div>
+    <div class="u" style="--d:1s"><b><em>Model</em></b><p>It learned the patterns, so it can guess the next word, 1 at a time.</p></div>
+  </div>
+  <p class="tkn u" style="--d:1.2s">It reads text in small pieces called <b>tokens</b>. 1 token &asymp; &frac34; of a word.</p>
+</div>
+<div class="guess">
+  <div class="mk u" style="--d:.05s">Quick guess</div>
+  <h1 class="mt u" style="--d:.15s">How much did an LLM read to <em>learn language</em>?</h1>
+  <div class="hand u" style="--d:.35s">''' + ic(HAND, 40, 2) + '''Raise your hand: A, B, C or D?</div>
+  <div class="gq"><div class="u" style="--d:0.60s"><span class="lt">A</span><div class="bks"><i style="--d:0.90s;height:8%"></i></div><b>10,000<small>books</small></b><div class="sk"><i><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21V7l4-4 4 4v14"/><path d="M6 21h12M10 10h4M10 14h4M10 18h4"/></svg></i><div><span>STACKED UP</span><em>250 m</em> a 70-storey tower</div></div><p><span>READING 1 BOOK A DAY</span><em>27 years</em></p></div><div class="u" style="--d:0.80s"><span class="lt">B</span><div class="bks"><i style="--d:1.10s;height:14%"></i><i style="--d:1.14s;height:21%"></i><i style="--d:1.18s;height:28%"></i></div><b>1 million<small>books</small></b><div class="sk"><i><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20l7-12 4 6 3-4 6 10z"/><path d="M8.2 10.5l1.8 1.5 1.5-1.3"/></svg></i><div><span>STACKED UP</span><em>25 km</em> 6 Mount Kinabalus</div></div><p><span>READING 1 BOOK A DAY</span><em>2,700 years</em></p></div><div class="u" style="--d:1.00s"><span class="lt">C</span><div class="bks"><i style="--d:1.30s;height:20%"></i><i style="--d:1.34s;height:27%"></i><i style="--d:1.38s;height:34%"></i><i style="--d:1.42s;height:41%"></i><i style="--d:1.46s;height:48%"></i><i style="--d:1.50s;height:55%"></i><i style="--d:1.54s;height:62%"></i></div><b>20 million<small>books</small></b><div class="sk"><i><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M3 4l4 4M17 16l4 4M7 4L4 7M20 17l-3 3M12 9V5M12 19v-4"/></svg></i><div><span>STACKED UP</span><em>500 km</em> past the space station</div></div><p><span>READING 1 BOOK A DAY</span><em>55,000 years</em></p></div><div class="u" style="--d:1.20s"><span class="lt">D</span><div class="bks"><i style="--d:1.50s;height:26%"></i><i style="--d:1.54s;height:33%"></i><i style="--d:1.58s;height:40%"></i><i style="--d:1.62s;height:47%"></i><i style="--d:1.66s;height:54%"></i><i style="--d:1.70s;height:61%"></i><i style="--d:1.74s;height:68%"></i><i style="--d:1.78s;height:75%"></i><i style="--d:1.82s;height:82%"></i><i style="--d:1.86s;height:89%"></i><i style="--d:1.90s;height:96%"></i><i style="--d:1.94s;height:100%"></i><i style="--d:1.98s;height:100%"></i><i style="--d:2.02s;height:100%"></i></div><b>100 million<small>books</small></b><div class="sk"><i><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></i><div><span>STACKED UP</span><em>2,500 km</em> 6x the space station</div></div><p><span>READING 1 BOOK A DAY</span><em>274,000 years</em></p></div></div>
+</div>
+<template id="p2"><div class="wrap">
   <div class="lf">
     <div class="mk u" style="--d:.05s">How much it read</div>
-    <h2 class="h2 u" style="--d:.15s">DeepSeek V4 (2026) read more than</h2>
-    <div class="hero u" style="--d:.3s"><span data-count="32" data-delay=".5" data-dur="1.6">0</span> trillion<small>tokens of text</small></div>
-    <p class="bk u" style="--d:.7s">&asymp; <b>240 million books</b> of 400 pages</p>
+    <h2 class="h2 u" style="--d:.15s">Even more than D. DeepSeek V4 (2026) read about</h2>
+    <div class="hero u" style="--d:.3s"><span data-count="240" data-zh="2.4" data-zhdec="1" data-delay=".5" data-dur="1.6">0</span> million<small>books of 400 pages</small></div>
+    <p class="bk u" style="--d:.7s">&asymp; <b>32 trillion tokens</b> of text</p>
     <div class="facts">''' + ''.join('<div class="fx u" style="--d:%.1fs"><b>%s</b><span>%s</span></div>' % (d_, n, t) for n, t, d_ in AA_FACTS) + '''</div>
   </div>
   <div class="sc">
@@ -2239,8 +2674,38 @@ html.static .zoom { transform: scale(.1); } html.static .stack { height: 8200px;
     <div class="cnt"><b>&times;<span data-count="13000" data-delay="3.8" data-dur="2.4">0</span></b><span>Twin Towers of books</span></div>
   </div>
 </div>
+</template>
+<div id="p2host"></div>
+<script>
+(function () {
+  var B = document.body, host = document.getElementById('p2host'), tpl = document.getElementById('p2');
+  var STATIC = document.documentElement.classList.contains('static');
+  var fmt = function (n) { return n.toLocaleString('en-US'); };
+  function counters(root) {
+    root.querySelectorAll('[data-count]').forEach(function (el) {
+      var ZH = /^zh/.test(document.documentElement.lang) && el.dataset.zh;
+      var to = parseFloat(ZH ? el.dataset.zh : el.dataset.count), dec = ZH ? parseInt(el.dataset.zhdec || '0', 10) : 0;
+      var dur = (parseFloat(el.dataset.dur) || 1.4) * 1000, delay = (parseFloat(el.dataset.delay) || 0) * 1000;
+      var show = function (v) { el.textContent = dec ? v.toFixed(dec) : fmt(Math.round(v)); };
+      if (STATIC) { show(to); return; }
+      show(0);
+      setTimeout(function () {
+        var t0 = performance.now();
+        (function tick(t) { var p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 4); show(to * e); if (p < 1) requestAnimationFrame(tick); })(t0);
+      }, delay);
+    });
+  }
+  function set(n) {
+    B.dataset.s = String(n);
+    host.innerHTML = '';
+    if (n >= 2) { host.appendChild(tpl.content.cloneNode(true)); counters(host); }
+  }
+  set(0);
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') set(e.data.deckStep); });
+})();
+</script>
 ''',
-"\"How much does an LLM read? Take DeepSeek V4, from 2026. It was trained on more than 32 trillion tokens. A token is a small piece of text; more on that in 2 slides. As books of 400 pages, that is about 240 million books. 2 years earlier, Llama 3 read 15 trillion, about 110 million books, so it doubled in 2 years.\n\nWatch: if you stacked the books...\" (the pile reaches the top of the Twin Towers) \"...that is 1 Twin Tower. Keep going.\" (the view pulls back) \"13,000 Twin Towers. The pile is about 6,000 km tall, 15 times higher than the space station. Laid flat, the books would cover 800 football fields.\" (the view changes to Earth and Moon) \"And if you tore out every page and laid them end to end, they would reach the Moon 50 times over.\"\n\nNote: rough figures from the published token counts (DeepSeek-V4 paper: 32T+ tokens; Meta: Llama 3, 15T+). Working: 1 token = 0.75 word; a 400-page book = 100,000 words, 2.5 cm thick, 12 x 20 cm pages; a football field = 7,140 m2. Say \"about\". The stack itself does not reach the Moon; the pages laid end to end do.\nNext: \"So it is a very clever brain. But can it do your work? Not on its own.\"")
+"\"ChatGPT, Claude, Gemini, DeepSeek. You know the names. Inside each one is the same thing: an LLM, a large language model. Large, because it was trained on a huge amount of data: websites, books, news, in more than 100 languages. Language, because words go in and words come out. Model, because it learned the patterns of how people write, so it can guess the next word, 1 at a time. It reads text in small pieces called tokens; 1 token is about three quarters of a word.\"\n\n(Next) \"Quick guess. To learn language, how much did it read? A, 10,000 books. B, 1 million. C, 20 million. D, 100 million. Stacked up, A is a 70-storey tower. B is 6 Mount Kinabalus. C goes past the space station. D is 6 times higher than the space station. If you read 1 book a day, A takes you 27 years. D takes you 274,000 years. Raise your hand: A? B? C? D?\" (count the hands, then Next)\n\n(Next) \"Who said D? Still not enough. Take DeepSeek V4, from 2026: about 240 million books of 400 pages, more than 2 times D. In tokens, those small pieces of text, that is more than 32 trillion. 2 years earlier, Llama 3 read 15 trillion, about 110 million books, so it doubled in 2 years.\n\nWatch: if you stacked the books...\" (the pile reaches the top of the Twin Towers) \"...that is 1 Twin Tower. Keep going.\" (the view pulls back) \"13,000 Twin Towers. The pile is about 6,000 km tall, 15 times higher than the space station. Laid flat, the books would cover 800 football fields.\" (the view changes to Earth and Moon) \"And if you tore out every page and laid them end to end, they would reach the Moon 50 times over.\"\n\nNote: rough figures from the published token counts (DeepSeek-V4 paper: 32T+ tokens; Meta: Llama 3, 15T+). Working: 1 token = 0.75 word; a 400-page book = 100,000 words, 2.5 cm thick, 12 x 20 cm pages; a football field = 7,140 m2. Say \"about\". The stack itself does not reach the Moon; the pages laid end to end do.\nThis slide has 2 extra Next presses: the LLM intro, the guess (A to D; the real answer is even bigger than D), then the 32 trillion scene.\nNext: \"So it is a very clever brain. But can it do your work? Not on its own.\"")
 
 # ---------------- 6 · what it read, and never saw ----------------
 AA_GLOBE = '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>'
@@ -2642,20 +3107,33 @@ body[data-w="1"] .ag2 { opacity: 0; transform: translateY(40px); }
 body[data-w="1"] .ag2 * { animation-play-state: paused; }
 .why { position:absolute; left: 128px; right: 128px; top: 92px; bottom: 120px; display:flex; flex-direction:column; transition: opacity .6s ease, transform .8s cubic-bezier(.2,.75,.15,1); }
 body:not([data-w="1"]) .why { opacity: 0; transform: translateY(-30px); pointer-events: none; }
-.why .mt { font-size: 74px; }
-.why .q { margin-top: 40px; display:inline-flex; align-self:flex-start; align-items:center; gap: 14px; font-size: 36px; padding: 16px 26px; border-radius: 6px 26px 26px 26px; background: #fff; color: var(--ink); font-weight: 600; }
+.why .mt { font-size: 64px; white-space: nowrap; }
+.why .q { margin-top: 30px; display:inline-flex; align-self:flex-start; align-items:center; gap: 14px; font-size: 36px; padding: 16px 26px; border-radius: 6px 26px 26px 26px; background: #fff; color: var(--ink); font-weight: 600; }
 .why .q i { font-style: normal; display:grid; place-items:center; width: 40px; height: 40px; border-radius: 50%; background: #25D366; color: #fff; }
-.why .cmp { display:grid; grid-template-columns: 1fr 1fr; gap: 44px; margin-top: 44px; }
+.why .cmp { flex:1; min-height: 0; display:grid; grid-template-columns: 1fr 1fr; gap: 44px; margin-top: 34px; margin-bottom: 30px; }
+.why .cmp > div { display:flex; flex-direction:column; overflow:hidden; padding: 0 !important; }
+.why .pic { position:relative; flex:1; min-height: 0; overflow:hidden; background: rgba(242,251,247,.05); }
+.why .ag .pic { background: radial-gradient(120% 100% at 30% 0%, rgba(0,245,169,.22), rgba(0,245,169,.04) 70%); }
+.why .pic .av { position:absolute; left: 26px; bottom: -14px; height: 92%; }
+.why .pic .cb { position:absolute; left: 47%; right: 30px; top: 30px; padding: 20px 24px; border-radius: 6px 24px 24px 24px; background: #fff; color: var(--ink); font-size: 26px; line-height: 1.35; font-style: italic; box-shadow: 0 24px 40px -24px rgba(0,0,0,.6); }
+.why .pic .cb span { display:block; font-style: normal; font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .14em; color: var(--ink-3); margin-bottom: 6px; }
+.why .pic .shot { position:absolute; left: 30px; right: 150px; top: 24px; transform: rotate(-2deg); border-radius: 18px; overflow:hidden; box-shadow: 0 30px 60px -20px rgba(0,0,0,.65); }
+.why .pic .shot img { display:block; width: 100%; }
+.why .pic .av2 { position:absolute; right: 6px; bottom: -10px; height: 74%; }
+.why .pic .tg { position:absolute; right: 22px; top: 26px; display:flex; align-items:center; gap: 8px; font-size: 21px; font-weight: 700; color: #02221F; background: var(--neon); padding: 8px 14px; border-radius: 999px; box-shadow: 0 10px 24px -8px rgba(0,245,169,.6); }
+.why .cap { display:grid; grid-template-columns: auto 1fr; align-items:baseline; column-gap: 22px; padding: 18px 30px 22px; }
+.why .cap small { grid-column: 1 / -1; }
+.why .cap .res { justify-self: end; }
 .why .cmp > div { padding: 34px 38px; border-radius: 26px; border: 1px solid rgba(242,251,247,.16); background: rgba(242,251,247,.04); }
 .why .cmp .ag { border-color: rgba(0,245,169,.55); background: rgba(0,245,169,.07); }
 .why .cmp small { font-family: var(--mono); font-size: 21px; font-weight: 700; letter-spacing: .14em; color: var(--on-dark-3); }
 .why .cmp .ag small { color: var(--neon); }
-.why .cmp h3 { font-size: 50px; font-weight: 800; letter-spacing: -.02em; margin-top: 6px; }
+.why .cmp h3 { font-size: 40px; font-weight: 800; letter-spacing: -.02em; margin-top: 6px; }
 .why .cmp .say { font-size: 32px; line-height: 1.38; color: var(--on-dark-2); margin-top: 14px; font-style: italic; }
 .why .cmp ul { list-style:none; display:grid; gap: 14px; margin-top: 20px; }
 .why .cmp li { display:flex; align-items:center; gap: 14px; font-size: 33px; color: var(--on-dark); }
 .why .cmp li svg { color: var(--neon); flex:none; }
-.why .cmp .res { margin-top: 24px; font-size: 34px; font-weight: 750; }
+.why .cmp .res { margin-top: 0; font-size: 28px; font-weight: 750; }
 .why .cmp .bad .res { color: #FFB547; } .why .cmp .ag .res { color: var(--neon); }
 .why .bt { margin-top: auto; font-size: 36px; color: var(--on-dark-2); }
 .why .bt b { color: var(--on-dark); }
@@ -2687,15 +3165,19 @@ body[data-w="1"] .why [style*="--d"] { opacity: 1; transform: none; transition-d
 ''', '''
 <div class="why">
   <div class="mk" style="--d:.05s;opacity:1;transform:none">Why we need an AI Agent</div>
-  <h1 class="mt" style="--d:.15s">A chatbot <em>talks</em>.<br>Your business needs work <em>done</em>.</h1>
-  <div class="q" style="--d:.35s"><i>''' + ic('<path d="M4 5h16v11H9l-5 4z"/>', 22, 2.2) + '''</i>Jaya Grocer: Bwg besar 10kg x 20, deliver before 12pm</div>
+  <h1 class="mt" style="--d:.15s">A chatbot <em>talks</em>. Your business needs work <em>done</em>.</h1>
+  <div class="q" style="--d:.35s"><i>''' + ic('<path d="M4 5h16v11H9l-5 4z"/>', 22, 2.2) + '''</i>Ali bin Osman: 2 grade C egg, 2 grade B egg</div>
   <div class="cmp">
-    <div class="bad" style="--d:.6s"><small>BRAIN ONLY &middot; CHATGPT ON ITS OWN</small><h3>Tells you what to do</h3>
-      <p class="say">&ldquo;Open SQL Account, create a Sales Order for 20 bags, check stock, then reply to the customer.&rdquo;</p>
-      <p class="res">You still do all the typing.</p></div>
-    <div class="ag" style="--d:.85s"><small>AI AGENT</small><h3>Does it for you</h3>
-      <ul>''' + ''.join('<li>%s%s</li>' % (ic(CHECK, 26, 3), x) for x in ['Checks stock: 42 bags', 'Drafts the Sales Order in your system', 'Replies on WhatsApp']) + '''</ul>
-      <p class="res">You just approve.</p></div>
+    <div class="bad" style="--d:.6s">
+      <div class="pic"><img class="av" src="../assets/av/meiling-typing.svg" alt="Mei Ling typing">
+        <div class="cb"><span>CHATBOT REPLIES</span>Open SQL Account, create a Sales Order, check the stock, then reply&hellip;</div></div>
+      <div class="cap"><small>CHATBOT</small><h3>Tells you what to do</h3><p class="res">You still do all the typing.</p></div>
+    </div>
+    <div class="ag" style="--d:.85s">
+      <div class="pic"><div class="shot"><img src="../assets/shot-approve.png" alt="SuDu approval card: Sales Order for Ali, waiting for you"></div>
+        <img class="av2" src="../assets/av/agent-thumbs.svg" alt="The SuDu agent"><span class="tg">''' + ic(CHECK, 22, 3) + '''Sales Order drafted</span></div>
+      <div class="cap"><small>AI AGENT</small><h3>Does it for you</h3><p class="res">You just approve.</p></div>
+    </div>
   </div>
   <p class="bt" style="--d:1.2s">It can&rsquo;t click, it forgets, it doesn&rsquo;t know your rules, nothing stops it. <b>So we give the brain 4 things.</b></p>
 </div>
@@ -2724,7 +3206,7 @@ body[data-w="1"] .why [style*="--d"] { opacity: 1; transform: none; transition-d
 })();
 </script>
 ''',
-"\"Why do we need an AI Agent at all? Look at a normal WhatsApp order: 20 bags of big onions before 12. Ask ChatGPT on its own and it tells you what to do: open SQL Account, create a Sales Order, check stock, reply to the customer. Helpful, but you still do all the typing. An AI Agent does it for you: it checks stock, drafts the Sales Order in your system, replies on WhatsApp, and you just approve. Why can't the chatbot do that? It cannot click, it forgets, it does not know your rules, and nothing stops it. So we give the brain 4 things.\"\n\n(Next: the robot appears) \"A brain alone only talks. So, step by step, people gave it more: tools in 2023, and from 2025 agents that work on their own. If the LLM is the brain, an AI agent is the brain with hands, and with limits. Here it is as a robot with 5 parts. A brain alone only talks; it tells you what to do. Give it the other 4 parts and it does the work for you. Let me take them 1 at a time.\"\n\n(Next) Brain: \"The head is the language model. It understands the message and plans the next step. It understands meaning, not keywords: bwg, bawang and onion are the same thing. Here it reads big onions, 10 kg bags, and sees the quantity is missing, so it asks. But on its own it has never seen your company. Like a smart graduate on day 1.\"\n\n(Next) Tools: \"The hands, and the part people forget. Each tool is 1 action in a real system. Some tools only look: check stock, read an invoice. Some tools act: create an order, send a message. The brain cannot click a button. Without tools, it can only tell you what to do. No tools, no work.\"\n\n(Next) Memory: \"The filing cabinet in its chest. Most people do not know this: the brain forgets everything after each chat. So it looks things up in your records: customers, prices, stock, fresh every time. Jaya Grocer's last price for big onions: RM28 a bag. Which also means: messy records in, wrong answers out.\"\n\n(Next) Rules and skills: \"The rulebook in its hand. Your way of working, written down. Rules say what must never happen: over the credit limit, stop and ask the boss. Skills are the steps for 1 job: read the order, match the items, check stock, draft, send for approval. Plain words, so your manager can read and change them.\"\n\n(Next) Permission: \"The badge on its chest, and what makes it safe. What can it see? Only the data its job needs. What can it do? Only what you allow: draft yes, delete no, move money never. And anything important waits for a person, and every action is logged. This is the difference between a helper and a risk.\"\n\n(Next) \"Put the 5 together on 1 WhatsApp order: the brain reads it, memory finds the customer and the stock, the tools draft the order in your ERP, the rules make it ask when an item is unclear, and permission means you approve before anything is saved.\"\n\nThis slide has 7 extra Next presses: the robot, then the 5 parts, then 1 order.\nNext: \"So how does it actually work? It goes round a loop.\"")
+"\"Why do we need an AI Agent at all? Look at a normal WhatsApp order: Ali wants 2 grade C eggs and 2 grade B eggs. On the left is Mei Ling with a chatbot. It tells her what to do: open SQL Account, create a Sales Order, check the stock, reply to the customer. Helpful, but she still does all the typing. On the right is an AI Agent. It does the job: this is the real Sales Order it drafted in SuDu, customer, items and prices filled in, waiting for 1 click. You just approve. Why can't the chatbot do that? It cannot click, it forgets, it does not know your rules, and nothing stops it. So we give the brain 4 things.\"\n\n(Next: the robot appears) \"A brain alone only talks. So, step by step, people gave it more: tools in 2023, and from 2025 agents that work on their own. If the LLM is the brain, an AI agent is the brain with hands, and with limits. Here it is as a robot with 5 parts. A brain alone only talks; it tells you what to do. Give it the other 4 parts and it does the work for you. Let me take them 1 at a time.\"\n\n(Next) Brain: \"The head is the language model. It understands the message and plans the next step. It understands meaning, not keywords: bwg, bawang and onion are the same thing. Here it reads big onions, 10 kg bags, and sees the quantity is missing, so it asks. But on its own it has never seen your company. Like a smart graduate on day 1.\"\n\n(Next) Tools: \"The hands, and the part people forget. Each tool is 1 action in a real system. Some tools only look: check stock, read an invoice. Some tools act: create an order, send a message. The brain cannot click a button. Without tools, it can only tell you what to do. No tools, no work.\"\n\n(Next) Memory: \"The filing cabinet in its chest. Most people do not know this: the brain forgets everything after each chat. So it looks things up in your records: customers, prices, stock, fresh every time. Jaya Grocer's last price for big onions: RM28 a bag. Which also means: messy records in, wrong answers out.\"\n\n(Next) Rules and skills: \"The rulebook in its hand. Your way of working, written down. Rules say what must never happen: over the credit limit, stop and ask the boss. Skills are the steps for 1 job: read the order, match the items, check stock, draft, send for approval. Plain words, so your manager can read and change them.\"\n\n(Next) Permission: \"The badge on its chest, and what makes it safe. What can it see? Only the data its job needs. What can it do? Only what you allow: draft yes, delete no, move money never. And anything important waits for a person, and every action is logged. This is the difference between a helper and a risk.\"\n\n(Next) \"Put the 5 together on 1 WhatsApp order: the brain reads it, memory finds the customer and the stock, the tools draft the order in your ERP, the rules make it ask when an item is unclear, and permission means you approve before anything is saved.\"\n\nThis slide has 7 extra Next presses: the robot, then the 5 parts, then 1 order.\nNext: \"So how does it actually work? It goes round a loop.\"")
 
 # ---------------- 16 · the agent loop ----------------
 AC_NODES = [('Think', -90), ('Act', 30), ('Check', 150)]
@@ -2752,6 +3234,166 @@ def AC_loop_svg():
         o += ('<g class="nd" style="--d:%.2fs"><circle cx="%.1f" cy="%.1f" r="66" fill="#fff" stroke="#02221F" stroke-width="3"/>'
               '<text class="nn" x="%.1f" y="%.1f" text-anchor="middle">%s</text></g>' % (.6 + k * .35, x, y, x, y + 11, n))
     return o + '</svg>'
+
+# ---------------- why we need an AI agent (split out of "what is an AI agent": it was step 0) ----------------
+_wa = S[-1]
+assert _wa['file'] == '20-what-is-agent', _wa['file']
+_wh = _wa['html']
+_why_html = _wh[_wh.index('<div class="why">'):_wh.index('<div class="ag2">')]
+_wn = _wa['notes']
+_cut = _wn.index('\n\n(Next: the robot appears) ')
+slide('20-why-agent', 'Why we need an AI agent', SEC[2], 'dark', 'data-sparks="none" data-w="1"', _wa['css'], _why_html, _wn[:_cut] + '\n\nNext: "So let\'s meet the AI Agent."')
+_wa['notes'] = _wn[_cut + len('\n\n(Next: the robot appears) '):]
+_wa['notes'] = _wa['notes'].replace('This slide has 7 extra Next presses: the robot, then the 5 parts, then 1 order.', 'This slide has 6 extra Next presses: the 5 parts, then 1 order.').replace('Next: "So how does it actually work? It goes round a loop."', 'Next: "But not every agent is a good agent. Meet 2 of them."')
+assert 'Meet 2 of them' in _wa['notes']
+_wa['html'] = _wh.replace("function set(n) { B.dataset.w = n === 0 ? '1' : '0'; B.dataset.s = String(Math.max(0, n - 1)); }",
+                          "function set(n) { B.dataset.w = '0'; B.dataset.s = String(n); }")
+assert _wa['html'] != _wh
+
+# ---------------- quiz: chatbot or AI agent? (1 step: reveal) ----------------
+QZ = [  # icon, job, answer is agent?, why
+    ('<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>', 'Write a polite reply to a customer who paid late', False, 'Just words. Any chatbot can write it.'),
+    ('<path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4M12 11v10"/>', 'Check if we still have 20 bags of onions', True, 'It must open your stock in SQL Account.'),
+    ('<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 015 .5c0 1.5-2.5 2-2.5 3.5M12 17h.01"/>', 'Explain what an e&#8209;Invoice is', False, 'General knowledge. No system needed.'),
+    ('<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h4"/>', 'Create the Sales Order and send the DO', True, 'It must click inside your system.'),
+]
+slide('20-agent-quiz', 'Quiz: chatbot or AI agent?', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
+.qz { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; margin-top: auto; margin-bottom: 50px; }
+.qz > div { position:relative; display:flex; flex-direction:column; min-height: 550px; padding: 30px 28px 28px; border-radius: 28px; background: #fff;
+  box-shadow: 0 0 0 1px var(--line), 0 40px 70px -50px rgba(2,34,31,.45); transition: box-shadow .5s ease, transform .6s cubic-bezier(.3,1.4,.5,1); }
+.qz .n { font-family: var(--mono); font-size: 20px; font-weight: 700; color: var(--ink-3); }
+.qz .ic { width: 96px; height: 96px; border-radius: 28px; display:grid; place-items:center; background: var(--mint); color: var(--green); margin-top: 16px; }
+.qz h2 { font-size: 36px; font-weight: 750; letter-spacing: -.02em; line-height: 1.2; margin-top: 24px; }
+.qz .ask { margin-top: auto; display:flex; gap: 10px; }
+.qz .ask span { flex:1; text-align:center; font-size: 22px; font-weight: 700; padding: 12px 0; border-radius: 14px; border: 2px dashed var(--line); color: var(--ink-3); }
+.qz .ans { position:absolute; left: 28px; right: 28px; bottom: 28px; padding: 18px 20px; border-radius: 18px; opacity: 0; transform: translateY(20px) scale(.96);
+  transition: opacity .45s ease, transform .6s cubic-bezier(.3,1.5,.5,1); }
+.qz .ans b { display:flex; align-items:center; gap: 10px; font-size: 28px; font-weight: 800; }
+.qz .ans p { font-size: 22px; line-height: 1.35; margin-top: 6px; }
+.qz .bot .ans { background: #EEF1EC; color: var(--ink); } .qz .bot .ans p { color: var(--ink-2); }
+.qz .agt .ans { background: var(--ink); color: var(--on-dark); } .qz .agt .ans b { color: var(--neon); } .qz .agt .ans p { color: var(--on-dark-2); }
+body[data-s="1"] .qz .ans { opacity: 1; transform: none; }
+''' + ''.join('body[data-s="1"] .qz > div:nth-child(%d) .ans { transition-delay: %.2fs; }\n' % (k + 1, k * .25) for k in range(4)) + '''
+body[data-s="1"] .qz .agt { box-shadow: 0 0 0 3px var(--green), 0 40px 70px -40px rgba(0,108,72,.55); transform: translateY(-10px); }
+.shout { display:inline-flex; align-items:center; gap: 14px; margin-top: 26px; font-size: 30px; font-weight: 650; color: var(--green); }
+''', '''
+<div class="mk u" style="--d:.05s">Quick quiz</div>
+<h1 class="mt u" style="--d:.15s">Chatbot or <em>AI Agent</em>?</h1>
+<div class="shout u" style="--d:.3s">''' + ic(HAND, 40, 2) + '''Who can do this job? Shout it out.</div>
+<div class="qz">''' + ''.join(
+    '<div class="u %s" style="--d:%.2fs"><span class="n">JOB %d</span><span class="ic">%s</span><h2>%s</h2>'
+    '<div class="ask"><span>Chatbot</span><span>AI Agent</span></div>'
+    '<div class="ans"><b>%s%s</b><p>%s</p></div></div>'
+    % ('agt' if ag else 'bot', .5 + k * .15, k + 1, ic(p, 48, 1.9), job, ic(CHECK, 28, 3), 'Needs an AI Agent' if ag else 'A chatbot can', why)
+    for k, (p, job, ag, why) in enumerate(QZ)) + '''</div>
+<script>
+(function () {
+  document.body.dataset.s = '0';
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') document.body.dataset.s = String(e.data.deckStep); });
+})();
+</script>
+''',
+"\"Quick quiz before we open it up. 4 jobs. For each one, shout: chatbot, or AI Agent?\n\nJob 1: write a polite reply to a customer who paid late.\" (let them shout) \"Job 2: check if we still have 20 bags of onions. Job 3: explain what an e-Invoice is. Job 4: create the Sales Order and send the DO.\"\n\n(Next) \"Job 1 and job 3: a chatbot can do them. They are just words. Job 2 and job 4 need an AI Agent, because it has to open your system and click. Here is the rule: if the job is only words, a chatbot can help. If the job touches your system, you need an agent.\"\n\nThis slide has 1 extra Next press: the answers.\nNext: \"So let's meet the AI Agent.\"")
+
+# ---------------- meet your AI agent (intro before the robot) ----------------
+MI_FACTS = [('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', 'Works 24/7', 'No leave, no MC, no overtime'),
+            ('<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/>', 'Uses your systems', 'WhatsApp, SQL Account, Excel'),
+            ('<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>', 'Asks before it acts', 'Nothing is posted without you')]
+slide('20-agent-intro', 'Meet your AI agent', SEC[2], 'dark', 'data-sparks="none"', MIN_CSS + '''
+.wrap { flex:1; display:grid; grid-template-columns: 720px 1fr; gap: 60px; align-items:center; }
+.hero { position:relative; width: 720px; height: 720px; display:grid; place-items:center; }
+.hero svg.orbit { position:absolute; inset: 0; }
+.hero .rg { transform-origin: 360px 360px; animation: spin 50s linear infinite; } .hero .rg.b { animation-duration: 80s; animation-direction: reverse; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.hero img { width: 470px; height: 470px; position:relative; }
+.mi .mt { font-size: 84px; }
+.fc { display:grid; gap: 22px; margin-top: 50px; }
+.fc > div { display:grid; grid-template-columns: 84px 1fr; gap: 24px; align-items:center; }
+.fc i { width: 84px; height: 84px; border-radius: 24px; display:grid; place-items:center; background: rgba(0,245,169,.12); color: var(--neon); }
+.fc b { display:block; font-size: 38px; font-weight: 750; letter-spacing: -.02em; }
+.fc span { display:block; font-size: 27px; color: var(--on-dark-2); margin-top: 2px; }
+''', '''
+<div class="wrap">
+  <div class="hero">
+    <svg class="orbit" viewBox="0 0 720 720" fill="none">
+      <g class="rg"><circle cx="360" cy="360" r="330" stroke="rgba(242,251,247,.14)" stroke-dasharray="2 10"/><circle cx="360" cy="30" r="7" fill="#00F5A9"/></g>
+      <g class="rg b"><circle cx="360" cy="360" r="280" stroke="rgba(0,245,169,.22)"/><circle cx="640" cy="360" r="5" fill="#00F5A9" opacity=".7"/></g>
+    </svg>
+    <img class="u" style="--d:.3s" src="../assets/av/agent-hi.svg" alt="The SuDu agent waving">
+  </div>
+  <div class="mi">
+    <div class="mk u" style="--d:.1s">Meet your AI Agent</div>
+    <h1 class="mt u" style="--d:.2s">Not a chatbot.<br><em>A new staff member.</em></h1>
+    <p class="ml u" style="--d:.4s">It reads your messages, opens your systems, does the job, and <b>asks you</b> before anything is posted.</p>
+    <div class="fc">''' + ''.join('<div class="u" style="--d:%.2fs"><i>%s</i><div><b>%s</b><span>%s</span></div></div>' % (.7 + k * .18, ic(p, 40, 1.9), b, s_) for k, (p, b, s_) in enumerate(MI_FACTS)) + '''</div>
+  </div>
+</div>
+''',
+"\"So, meet your AI Agent. It is not a chatbot that only talks. Think of it as a new staff member. It reads your WhatsApp messages, opens your systems like SQL Account and Excel, does the job, and asks you before anything is posted.\n\n3 things to remember. It works 24/7: no leave, no MC, no overtime. It uses the systems you already have. And it asks before it acts: nothing goes into your books without you.\"\n\nNext: \"So what is inside it? Let's open it up, as a robot with 5 parts.\"")
+
+# ---------------- good agent vs bad agent (replaces the agent loop) ----------------
+GB_ROWS = [  # time, what happens, bad agent, good agent
+    ('9:00 am', '3 WhatsApp orders come in', 'Zzz&hellip; does nothing until you type &ldquo;create the orders&rdquo;.',
+     'Drafts 3 Sales Orders. &ldquo;Boss, approve?&rdquo;'),
+    ('11:30 am', 'Milo stock is down to 2 days', 'Says nothing. You find out when a customer shouts.',
+     '&ldquo;Milo runs out Friday. PO to the supplier is drafted.&rdquo;'),
+    ('4:00 pm', 'Kedai Ali is 45 days late', 'Nobody asked, so it never reminds.',
+     'Sends a polite reminder. &ldquo;RM3,200 promised by Friday.&rdquo;'),
+]
+slide('21-good-vs-bad-agent', 'Good agent vs bad agent', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
+.mt { font-size: 70px; }
+.gb { display:grid; grid-template-columns: 330px 1fr 1fr; column-gap: 26px; margin-top: 36px; flex:1; min-height: 0; grid-template-rows: auto repeat(3, 1fr) auto; row-gap: 14px; }
+.gb .who { display:flex; align-items:center; gap: 20px; padding: 14px 24px; border-radius: 24px; }
+.gb .who img { width: 104px; height: 104px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px var(--line); flex:none; }
+.gb .who b { display:block; font-size: 38px; font-weight: 800; letter-spacing: -.02em; }
+.gb .who span { display:block; font-size: 23px; font-weight: 600; margin-top: 2px; }
+.gb .bad.who { background: #FFF1D6; } .gb .bad.who span { color: #8A3417; }
+.gb .good.who { background: var(--ink); color: var(--on-dark); } .gb .good.who span { color: var(--neon); }
+.gb .ev { display:flex; flex-direction:column; justify-content:center; padding-left: 6px; border-left: 4px solid var(--ink); padding: 0 0 0 20px; }
+.gb .ev small { font-family: var(--mono); font-size: 20px; font-weight: 700; color: var(--green); }
+.gb .ev b { font-size: 30px; font-weight: 750; letter-spacing: -.01em; line-height: 1.2; margin-top: 4px; }
+.gb .c { display:flex; align-items:center; gap: 18px; padding: 18px 24px; border-radius: 22px; font-size: 27px; line-height: 1.32; }
+.gb .c i { flex:none; width: 54px; height: 54px; border-radius: 50%; display:grid; place-items:center; font-style: normal; }
+.gb .c.bad { background: #FBF7EF; color: #5B4A33; box-shadow: inset 0 0 0 2px #F1E2C2; } .gb .c.bad i { background: #FFE2A8; color: #8A3417; }
+.gb .c.good { background: #EAF7F1; color: var(--ink); box-shadow: inset 0 0 0 2px rgba(0,108,72,.25); font-weight: 600; } .gb .c.good i { background: var(--green); color: #fff; }
+.gb .zz { font-weight: 800; color: #C77800; }
+.gb .sc { display:flex; align-items:center; justify-content:space-between; padding: 18px 26px; border-radius: 22px; }
+.gb .sc b { font-size: 54px; font-weight: 800; letter-spacing: -.03em; } .gb .sc span { font-size: 25px; font-weight: 600; text-align:right; }
+.gb .sc.bad { background: #FFF1D6; } .gb .sc.bad b { color: #C77800; } .gb .sc.bad span { color: #8A3417; }
+.gb .sc.good { background: var(--green); color: #fff; } .gb .sc.good span { color: #E6F6EE; }
+.gb .sl { display:flex; align-items:center; font-family: var(--mono); font-size: 20px; font-weight: 700; letter-spacing: .14em; color: var(--ink-3); }
+.st { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .6s cubic-bezier(.3,1.3,.5,1); }
+.st.good { transition-delay: .35s; }
+''' + ''.join('body[data-s="%d"] .s%d' % (n, k) + (', ' if False else '') + ' { opacity: 1; transform: none; }\n' for n in range(1, 5) for k in range(1, n + 1)) + '''
+html.static .st { opacity: 1; transform: none; }
+.zzz { display:inline-block; animation: zzz 1.6s ease-in-out infinite; } @keyframes zzz { 50% { transform: translateY(-5px) rotate(-6deg); } }
+''', '''
+<div class="mk u" style="--d:.05s">Good agent vs bad agent</div>
+<h1 class="mt u" style="--d:.15s">Same AI. Very <em>different</em> staff.</h1>
+<p class="ml u" style="--d:.3s">A bad agent waits for your prompt. A good agent <b>sees the work and starts it</b>.</p>
+<div class="gb">
+  <div></div>
+  <div class="who bad u" style="--d:.5s"><img src="../assets/av/malas-tudung.svg" alt="Ah Malas with a coffee"><div><b>Ah Malas</b><span>Only does what you type</span></div></div>
+  <div class="who good u" style="--d:.7s"><img src="../assets/av/agent-salute.svg" alt="Ah Rajin saluting"><div><b>Ah Rajin</b><span>Does the work before you ask</span></div></div>
+''' + ''.join(
+    '<div class="ev st s%d"><small>%s</small><b>%s</b></div>'
+    '<div class="c bad st s%d"><i>%s</i><span>%s</span></div>'
+    '<div class="c good st s%d"><i>%s</i><span>%s</span></div>'
+    % (k + 1, tm, ev, k + 1, '<span class="zz zzz">z</span>' if k == 0 else ic('<path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/>', 28, 2.4), bad,
+       k + 1, ic(CHECK, 28, 3), good) for k, (tm, ev, bad, good) in enumerate(GB_ROWS)) + '''
+  <div class="sl st s4">BY 5 PM</div>
+  <div class="sc bad st s4"><b>1 job</b><span>the 1 you typed</span></div>
+  <div class="sc good st s4"><b>5 jobs</b><span>done before you asked,<br>all waiting for your OK</span></div>
+</div>
+<script>
+(function () {
+  document.body.dataset.s = '0';
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') document.body.dataset.s = String(e.data.deckStep); });
+})();
+</script>
+''',
+"\"Now, not every agent is a good agent. Meet 2 of them. Ah Malas, with his coffee: he only does what you type. And Ah Rajin: he sees the work and starts it before you ask. Same AI inside. Very different staff. Let's follow them through 1 day.\"\n\n(Next) 9 am: \"3 WhatsApp orders come in. Ah Malas? Zzz. Nothing happens until you sit down and type: create the orders. Ah Rajin has already drafted 3 Sales Orders: Boss, approve?\"\n\n(Next) 11:30: \"Milo stock is down to 2 days. Ah Malas says nothing; you find out when a customer shouts at you. Ah Rajin: Milo runs out on Friday, and the PO to the supplier is already drafted.\"\n\n(Next) 4 pm: \"Kedai Ali is 45 days late. Nobody asked Ah Malas, so he never reminds. Ah Rajin sends a polite reminder and comes back with: RM3,200 promised by Friday.\"\n\n(Next) \"By 5 pm, Ah Malas did 1 job: the 1 you typed. Ah Rajin did 5, all waiting for your OK. And here is the important part: Ah Rajin is still not allowed to post anything on his own. Proactive does not mean out of control. It means he does the preparing, and you do the deciding.\n\nSo what makes a good agent? It knows the goal, it watches your data, it acts first, and it still asks you. That is how we set up every SuDu agent.\"\n\nThis slide has 4 extra Next presses: 3 moments of the day, then the score.\nNext: \"How do you turn the brain into a good staff member? The same way you set up a new hire.\"")
+
 
 slide('21-agent-loop', 'The agent loop', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
 .wrap { flex:1; display:grid; grid-template-columns: 560px 1fr; gap: 110px; margin-top: 30px; min-height: 0; align-items:center; }
@@ -2820,7 +3462,7 @@ slide('22-brain-to-staff', 'From brain to staff member', SEC[2], 'light', 'data-
 </div>
 <div class="end u" style="--d:2.2s">Brain + this setup = <em>the harness</em></div>
 ''',
-"\"A brilliant brain alone only talks. Think about hiring a brilliant graduate: talent is not enough. You give them 6 things, and an AI Agent needs the same 6.\n\n[Go down the list] A job description: for the AI, its instructions: the goal, and when the job counts as done. Without it, it does too much, or the wrong job. Logins and keys: its tools, 1 for each action. Without them, it can only give advice. The files: its memory: your records, and what you taught it. Without it, it forgets the customer and guesses the price. Your SOP: its rules and skills. Without them, it does the job its own way. A supervisor: permission, who says yes. Without it, nobody checks before stock or money moves. And probation: testing. You try it on last month's orders first, then you watch it. Without that, the same mistake repeats quietly.\n\nThe brain plus this setup has a name: the harness. Every company can rent the same brain. The harness decides whether it helps or hurts.\"\n\nNext: \"And 1 part of that setup matters more than people think: the tools.\"")
+"\"A brilliant brain alone only talks. Think about hiring a brilliant graduate: talent is not enough. You give them 6 things, and an AI Agent needs the same 6.\n\n[Go down the list] A job description: for the AI, its instructions: the goal, and when the job counts as done. Without it, it does too much, or the wrong job. Logins and keys: its tools, 1 for each action. Without them, it can only give advice. The files: its memory: your records, and what you taught it. Without it, it forgets the customer and guesses the price. Your SOP: its rules and skills. Without them, it does the job its own way. A supervisor: permission, who says yes. Without it, nobody checks before stock or money moves. And probation: testing. You try it on last month's orders first, then you watch it. Without that, the same mistake repeats quietly.\n\nThe brain plus this setup has a name: the harness. Every company can rent the same brain. The harness decides whether it helps or hurts.\"\n\nNext: \"Now, be honest: who is really the boss of your company?\"")
 
 # ---------------- 18 · harness ----------------
 AC_RING = ['Tools', 'Memory', 'Rules', 'Permission', 'The loop', 'Tests']
@@ -2853,38 +3495,278 @@ def AC_harness_svg():
 # ---------------- 19 · no tools, no work ----------------
 AC_RUN = [('Check stock', '42 bags'), ('Check credit', 'Within limit'), ('Create sales order', 'SO-00451'), ('Send on WhatsApp', 'PDF sent')]
 
+# ---------------- AI without tools is a guru (after the problems, before the tools) ----------------
+GU_SAYS = ['You should check your stock first.', 'You should chase Kedai Ali.', 'You should key in orders faster.']
+GU_TOOLS = [('<path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8M7 17h10"/>', 'WMS', 'Scans, counts and picks your stock'),
+            ('<path d="M3 21V11l6 4v-4l6 4V5h6v16z"/><path d="M7 18h2M12 18h2M17 18h2"/>', 'MES', 'Tracks every job and every batch'),
+            ('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/>', 'SQL Account', 'Orders, invoices and payments')]
+slide('25-ai-guru', 'AI without tools', SEC[1], 'light', 'data-sparks="none"', MIN_CSS + '''
+.two { display:grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 36px; height: 560px; margin-bottom: 28px; }
+.two > div { position:relative; display:flex; flex-direction:column; border-radius: 32px; padding: 30px 36px; overflow:hidden; }
+.gu { background: #FBF7EF; box-shadow: inset 0 0 0 2px #F1E2C2; }
+.ok { background: var(--ink); color: var(--on-dark); box-shadow: 0 0 0 3px var(--green), 0 50px 80px -40px rgba(0,108,72,.6); }
+.two h3 { font-size: 40px; font-weight: 800; letter-spacing: -.02em; }
+.gu h3 { color: #8A3417; } .ok h3 { color: var(--neon); }
+.two h3 span { display:block; font-family: var(--mono); font-size: 16px; font-weight: 700; letter-spacing: .16em; color: var(--ink-3); margin-bottom: 6px; }
+.ok h3 span { color: var(--on-dark-3); }
+.gsc { position:relative; flex:1; display:flex; align-items:center; gap: 26px; margin-top: 16px; }
+.gsc img { width: 220px; height: 220px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px #F1E2C2, 0 20px 40px -20px rgba(90,60,20,.45); flex:none; animation: bob 3.6s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateY(-6px) rotate(-2deg); } }
+.bub { display:grid; gap: 14px; align-self: center; }
+.bub p { position:relative; font-size: 26px; font-weight: 600; line-height: 1.3; color: #5B4A33; background: #fff; padding: 14px 20px; border-radius: 6px 22px 22px 22px; box-shadow: 0 0 0 1px #F1E2C2, 0 14px 28px -18px rgba(90,60,20,.4);
+  opacity: 0; transform: translateX(-14px) scale(.96); animation: pop .5s cubic-bezier(.3,1.5,.5,1) forwards; animation-delay: var(--d); }
+@keyframes pop { to { opacity: 1; transform: none; } }
+.stamp { position:absolute; right: 30px; top: 26px; padding: 14px 22px 12px; border: 5px solid #D2452B; border-radius: 16px; color: #D2452B; text-align:center; transform: rotate(-9deg) scale(2.2); opacity: 0;
+  animation: stamp .45s cubic-bezier(.5,0,.6,1.6) 2.4s forwards; background: rgba(255,255,255,.6); }
+.stamp b { display:block; font-size: 48px; font-weight: 900; letter-spacing: .06em; line-height: 1; }
+.stamp small { display:block; font-family: var(--mono); font-size: 16px; font-weight: 700; letter-spacing: .16em; margin-top: 6px; }
+@keyframes stamp { to { opacity: 1; transform: rotate(-9deg) scale(1); } }
+.tls { display:grid; gap: 14px; margin-top: 20px; }
+.tls > div { display:grid; grid-template-columns: 76px 1fr; gap: 20px; align-items:center; padding: 14px 20px; border-radius: 20px; background: rgba(242,251,247,.06); box-shadow: inset 0 0 0 1px rgba(242,251,247,.12);
+  opacity: 0; transform: translateY(14px); animation: pop .55s cubic-bezier(.3,1.4,.5,1) forwards; animation-delay: var(--d); }
+.tls i { width: 76px; height: 76px; border-radius: 22px; display:grid; place-items:center; color: var(--neon); background: rgba(0,245,169,.12); }
+.tls b { display:block; font-size: 32px; font-weight: 800; letter-spacing: -.01em; }
+.tls span { display:block; font-size: 24px; color: var(--on-dark-2); margin-top: 2px; }
+.ok .vd { display:flex; align-items:center; gap: 12px; margin-top: auto; font-size: 28px; font-weight: 750; color: var(--neon); }
+.bt { font-size: 32px; color: var(--ink-2); } .bt b { color: var(--ink); }
+html.static .bub p, html.static .tls > div, html.static .stamp { opacity: 1; animation: none; transform: none; }
+html.static .stamp { transform: rotate(-9deg); } html.static .gsc img { animation: none; }
+/* ---- steps 0-1: the question, then the answer ---- */
+.q0 { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+.p2 { display:none; flex:1; flex-direction:column; }
+body[data-s="2"] .q0 { display:none; } body[data-s="2"] .p2 { display:flex; }
+.q0 .qk { font-family: var(--mono); font-size: 22px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--green); }
+.q0 .qq { font-size: 92px; font-weight: 800; letter-spacing: -.035em; line-height: 1.08; margin-top: 22px; max-width: 1500px; text-wrap: balance; }
+.q0 .an { margin-top: 60px; font-size: 170px; font-weight: 900; letter-spacing: -.04em; line-height: 1; color: #D2452B;
+  opacity: 0; transform: scale(1.6) rotate(-4deg); filter: blur(8px); transition: opacity .35s ease, transform .55s cubic-bezier(.3,1.6,.5,1), filter .35s ease; }
+body[data-s="1"] .q0 .an { opacity: 1; transform: rotate(-4deg); filter: none; }
+.q0 .an2 { font-size: 30px; color: var(--ink-2); margin-top: 26px; opacity: 0; transform: translateY(14px); transition: opacity .5s ease .45s, transform .6s ease .45s; }
+body[data-s="1"] .q0 .an2 { opacity: 1; transform: none; }
+''', '''
+<div class="q0">
+  <div class="qk u" style="--d:.05s">Quick question</div>
+  <h1 class="qq u" style="--d:.2s">Once you start using AI, are these problems solved?</h1>
+  <div class="an">Not necessarily.</div>
+  <p class="an2">AI on its own can think. It cannot do.</p>
+</div>
+<div class="p2">
+<div class="mk u" style="--d:.05s">So how do we fix it?</div>
+<h1 class="mt u" style="--d:.15s">AI without tools is just a <em>Guru</em>.</h1>
+<p class="ml u" style="--d:.3s">It thinks. It gives advice. But it cannot do the work.</p>
+<div class="two">
+  <div class="gu u" style="--d:.5s"><h3><span>AI WITHOUT TOOLS</span>The AI Guru</h3>
+    <div class="gsc"><img src="../assets/av/agent-shades.svg" alt="The AI Guru in sunglasses">
+      <div class="bub">''' + ''.join('<p style="--d:%.2fs">%s</p>' % (1.0 + k * .4, x) for k, x in enumerate(GU_SAYS)) + '''</div></div>
+    <div class="stamp"><b>只会讲，不会做</b><small>ALL TALK, NO ACTION</small></div></div>
+  <div class="ok u" style="--d:.8s"><h3><span>AI WITH SUDU TOOLS</span>The AI that does the work</h3>
+    <div class="tls">''' + ''.join('<div style="--d:%.2fs"><i>%s</i><div><b>%s</b><span>%s</span></div></div>' % (1.4 + k * .3, ic(p, 40, 1.9), n, s_) for k, (p, n, s_) in enumerate(GU_TOOLS)) + '''</div>
+    <div class="vd">''' + ic(CHECK, 28, 3) + '''It checks, counts, keys in and chases. You approve.</div></div>
+</div>
+<p class="bt u" style="--d:2.8s">To fix these 5 problems, AI needs hands. <b>SuDu gives it the hands: WMS and MES, on top of SQL Account.</b></p>
+</div>
+<script>
+(function () {
+  document.body.dataset.s = '0';
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') document.body.dataset.s = String(e.data.deckStep); });
+})();
+</script>
+''',
+"\"Quick question. Once you start using AI, are these problems solved?\" (let the room answer; most will say yes)\n\n(Next) \"Not necessarily. AI on its own can think. It cannot do.\"\n\n(Next) \"Here is the catch. AI without tools is just a guru. You know the type: very confident, very good advice. You should check your stock first. You should chase Kedai Ali. You should key in your orders faster. Thank you, guru.\" (pause) \"In Chinese we have a phrase for this: 只会讲，不会做. All talk, no action.\" (let the room laugh)\n\n"
+"\"AI is the same. On its own, it can only think and suggest. To actually do the work, it needs tools: hands inside your business. That is what SuDu gives it. WMS for the warehouse: it scans, counts and picks your stock. MES for the factory: it tracks every job and every batch. All on top of SQL Account, where your orders, invoices and payments already live. Now the AI checks, counts, keys in and chases, and you approve.\"\n\nThis slide has 2 extra Next presses: the question, then \"Not necessarily\", then the Guru.\nNext: \"So with tools, the way we work changes.\"")
+
+# ---------------- a new way of working: AI thinks and executes, people set rules and monitor ----------------
+NW_AI = [('<path d="M12 5a3 3 0 00-5.9-.7A3 3 0 004 9a3 3 0 00.5 5.5A3 3 0 008 19a3 3 0 004 1V5z"/><path d="M12 5a3 3 0 015.9-.7A3 3 0 0120 9a3 3 0 01-.5 5.5A3 3 0 0116 19a3 3 0 01-4 1"/>', 'Thinks', 'Reads the order, plans every step'),
+         ('<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>', 'Executes', 'Checks stock, keys in, sends, chases')]
+NW_FEED = ['Read 3 WhatsApp orders', 'Drafted 3 Sales Orders', 'Sent 2 payment reminders']
+NW_YOU = [('<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/>', 'Set the rules', 'Credit limits, prices, who approves'),
+          ('<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>', 'Monitor', 'See every action on 1 screen'),
+          ('<path d="M4 12.5l5 5L20 6.5"/>', 'Approve', 'Nothing is posted without you')]
+slide('25-new-way', 'A new way of working', SEC[1], 'light', 'data-sparks="none"', MIN_CSS + '''
+.nw { display:grid; grid-template-columns: 1fr 150px 1fr; align-items: stretch; margin-top: 34px; height: 580px; margin-bottom: 24px; }
+.nw .col { position:relative; display:flex; flex-direction:column; border-radius: 32px; padding: 28px 34px 26px; }
+.nw .ai { background: var(--ink); color: var(--on-dark); box-shadow: 0 0 0 3px var(--green), 0 50px 80px -40px rgba(0,108,72,.6); }
+.nw .you { background: #fff; box-shadow: 0 0 0 1px var(--line), 0 40px 70px -50px rgba(2,34,31,.45); }
+.nw .who { display:flex; align-items:center; gap: 22px; }
+.nw .av { position:relative; width: 110px; height: 110px; flex:none; }
+.nw .av img.p { width: 110px; height: 110px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px var(--line); }
+.nw .av .logo { position:absolute; left: 50%; top: -22px; transform: translateX(-50%); height: 42px; padding: 6px 10px; border-radius: 10px; background: #fff; box-shadow: 0 6px 18px -6px rgba(0,0,0,.5); }
+.nw .who small { display:block; font-family: var(--mono); font-size: 16px; font-weight: 700; letter-spacing: .16em; color: var(--ink-3); }
+.nw .ai .who small { color: var(--on-dark-3); }
+.nw .who b { display:block; font-size: 42px; font-weight: 800; letter-spacing: -.02em; margin-top: 4px; }
+.nw .ai .who b { color: var(--neon); } .nw .you .who b { color: var(--ink); }
+.nw .rl { display:grid; gap: 10px; margin-top: auto; }
+.nw .fd { margin-top: 18px; padding: 12px 18px; border-radius: 18px; background: rgba(0,245,169,.06); box-shadow: inset 0 0 0 1px rgba(0,245,169,.25); }
+.nw .fd small { display:flex; align-items:center; gap: 10px; font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .16em; color: var(--neon); }
+.nw .fd small i { width: 9px; height: 9px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 10px var(--neon); animation: blink 1.4s ease-in-out infinite; }
+@keyframes blink { 50% { opacity: .25; } }
+.nw .fd p { display:flex; align-items:center; gap: 10px; font-size: 21px; color: var(--on-dark); margin-top: 5px; opacity: 0; animation: pop .45s ease forwards; animation-delay: var(--d); }
+.nw .fd p svg { color: var(--neon); flex:none; }
+html.static .nw .fd p { opacity: 1; animation: none; }
+.nw .rl > div { display:grid; grid-template-columns: 60px 1fr; gap: 16px; align-items:center; padding: 11px 16px; border-radius: 20px; opacity: 0; transform: translateY(14px); animation: pop .55s cubic-bezier(.3,1.4,.5,1) forwards; animation-delay: var(--d); }
+@keyframes pop { to { opacity: 1; transform: none; } }
+.nw .ai .rl > div { background: rgba(242,251,247,.06); box-shadow: inset 0 0 0 1px rgba(242,251,247,.12); }
+.nw .you .rl > div { background: #F3F6F4; }
+.nw .rl i { width: 60px; height: 60px; border-radius: 20px; display:grid; place-items:center; }
+.nw .ai .rl i { color: var(--neon); background: rgba(0,245,169,.12); } .nw .you .rl i { color: var(--green); background: var(--mint); }
+.nw .rl b { display:block; font-size: 30px; font-weight: 800; letter-spacing: -.01em; }
+.nw .rl span { display:block; font-size: 23px; margin-top: 2px; } .nw .ai .rl span { color: var(--on-dark-2); } .nw .you .rl span { color: var(--ink-2); }
+.nw .mid { display:flex; flex-direction:column; justify-content:center; align-items:center; gap: 40px; }
+.nw .ar { display:flex; flex-direction:column; align-items:center; gap: 6px; font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .14em; color: var(--green); }
+.nw .ar svg { animation: nudge 1.8s ease-in-out infinite; } .nw .ar.b svg { animation-name: nudgeb; }
+@keyframes nudge { 50% { transform: translateX(-8px); } } @keyframes nudgeb { 50% { transform: translateX(8px); } }
+.bt { display:flex; gap: 40px; font-size: 28px; color: var(--ink-2); }
+.bt div { display:flex; align-items:baseline; gap: 14px; } .bt small { font-family: var(--mono); font-size: 16px; font-weight: 700; letter-spacing: .14em; color: var(--ink-3); }
+.bt b { color: var(--ink); } .bt .now small { color: var(--green); } .bt .now b { color: var(--green); }
+html.static .nw .rl > div { opacity: 1; transform: none; animation: none; } html.static .nw .ar svg { animation: none; }
+''', '''
+<div class="mk u" style="--d:.05s">A new way of working</div>
+<h1 class="mt u" style="--d:.15s">AI does the work. <em>You run the rules.</em></h1>
+<p class="ml u" style="--d:.3s">With tools, AI thinks and executes. People set the rules and keep watch.</p>
+<div class="nw">
+  <div class="col ai u" style="--d:.5s"><div class="who"><div class="av"><img class="p" src="../assets/av/agent-thumbs.svg" alt="The SuDu AI Agent"><img class="logo" src="../assets/logo-dark.png" alt="SuDu AI"></div>
+    <div><small>THE AI AGENT</small><b>Does the work</b></div></div>
+    <div class="fd"><small><i></i>WORKING NOW</small>''' + ''.join('<p style="--d:%.2fs">%s%s</p>' % (2.0 + k * .4, ic(CHECK, 22, 3), x) for k, x in enumerate(NW_FEED)) + '''</div>
+    <div class="rl">''' + ''.join('<div style="--d:%.2fs"><i>%s</i><div><b>%s</b><span>%s</span></div></div>' % (1.0 + k * .25, ic(p, 36, 1.9), h, s_) for k, (p, h, s_) in enumerate(NW_AI)) + '''</div></div>
+  <div class="mid"><span class="ar u" style="--d:1.6s">''' + ic('<path d="M19 12H5M11 6l-6 6 6 6"/>', 44, 2.4) + '''RULES</span><span class="ar b u" style="--d:1.8s">''' + ic('<path d="M5 12h14M13 6l6 6-6 6"/>', 44, 2.4) + '''REPORTS</span></div>
+  <div class="col you u" style="--d:.7s"><div class="who"><div class="av"><img class="p" src="../assets/av/boss-wow.svg" alt="The boss"></div>
+    <div><small>YOU</small><b>Run the rules</b></div></div>
+    <div class="rl">''' + ''.join('<div style="--d:%.2fs"><i>%s</i><div><b>%s</b><span>%s</span></div></div>' % (1.2 + k * .25, ic(p, 36, 1.9), h, s_) for k, (p, h, s_) in enumerate(NW_YOU)) + '''</div></div>
+</div>
+<div class="bt u" style="--d:2.2s"><div><small>BEFORE</small><span>People do the work. Software keeps the records.</span></div><div class="now"><small>NOW</small><b>AI does the work. People run it.</b></div></div>
+''',
+"\"So with tools, the way we work changes. The AI Agent does the work: it thinks, it reads the order and plans every step, and it executes: checks the stock, keys in, sends, chases.\n\nAnd you? You run the rules. You set them: credit limits, prices, who approves what. You monitor: every action on 1 screen. And you approve: nothing is posted without you. Rules go to the AI, reports come back to you.\n\nBefore, people did the work and software kept the records. Now, AI does the work, and people run it. That is a new way of working.\"\n\nNext: \"And the part that makes this possible is the tools.\"")
+
+# ---------------- meme: before AI the problems run the boss, after AI the boss runs the AI ----------------
+MM_PROB = [('Staff on leave', 8, 10, -8), ('High costs', 64, 6, 6), ('Wrong stock', 2, 58, 5), ('Slow work', 66, 56, -6), ('Can&rsquo;t hire', 30, 84, 3)]
+MM_DONE = [('Orders keyed in', 4, 4), ('Stock counted', 60, 4), ('Payments chased', 2, 80), ('Reports done', 62, 80)]
+slide('25-meme', 'Before AI, after AI', SEC[1], 'dark bare', 'data-sparks="none"', MIN_CSS + '''
+body { background: #010F0D; }
+.c { flex:1; display:flex; flex-direction:column; }
+.mk { color: var(--neon); }
+.mt { color: var(--on-dark); font-size: 74px; }
+.mt em { color: var(--neon); }
+.pn { display:grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 36px; flex:1; min-height: 0; margin-bottom: 40px; }
+.pn > div { position:relative; display:flex; flex-direction:column; border-radius: 30px; overflow:hidden; padding: 24px; }
+.bf { background: linear-gradient(160deg, #3A1712, #1C0B08); box-shadow: 0 0 0 3px #D2452B; }
+.af { background: linear-gradient(160deg, #06352D, #021A17); box-shadow: 0 0 0 3px var(--neon), 0 0 60px rgba(0,245,169,.25); }
+.cap { position:relative; z-index: 2; align-self:center; font-size: 52px; font-weight: 900; letter-spacing: .02em; text-transform: uppercase; color: #fff; padding: 6px 26px; border-radius: 12px; }
+.bf .cap { background: #D2452B; } .af .cap { background: var(--neon); color: #02221F; }
+.stg { position:relative; flex:1; }
+.stg .boss { position:absolute; left: 50%; top: 50%; width: 230px; height: 230px; margin: -115px 0 0 -115px; border-radius: 50%; background: #fff; }
+.bf .boss { animation: shake .35s ease-in-out infinite; box-shadow: 0 0 0 8px rgba(210,69,43,.35); }
+@keyframes shake { 0%, 100% { transform: translate(0, 0) rotate(0); } 25% { transform: translate(-4px, 2px) rotate(-3deg); } 75% { transform: translate(4px, -2px) rotate(3deg); } }
+.af .boss { box-shadow: 0 0 0 8px rgba(0,245,169,.3); animation: chill 3s ease-in-out infinite; }
+@keyframes chill { 50% { transform: translateY(-6px); } }
+.sw { position:absolute; left: calc(50% + 70px); top: calc(50% - 130px); font-size: 60px; font-weight: 900; color: #FFB547; animation: drop 1.2s ease-in infinite; }
+@keyframes drop { 0% { opacity: 0; transform: translateY(-10px); } 30% { opacity: 1; } 100% { opacity: 0; transform: translateY(40px); } }
+.tg { position:absolute; z-index: 1; font-size: 30px; font-weight: 800; padding: 12px 20px; border-radius: 14px; white-space: nowrap; opacity: 0; animation: hit .45s cubic-bezier(.3,1.7,.5,1) forwards, wob 2.2s ease-in-out infinite; animation-delay: var(--d), calc(var(--d) + .45s); }
+.bf .tg { background: #FFE2A8; color: #8A3417; box-shadow: 0 12px 24px -10px rgba(0,0,0,.6); transform: rotate(var(--r)); }
+@keyframes hit { from { opacity: 0; transform: scale(2.2) rotate(var(--r)); } to { opacity: 1; transform: scale(1) rotate(var(--r)); } }
+@keyframes wob { 50% { transform: scale(1.05) rotate(calc(var(--r) * -1)); } }
+.af .tg { display:flex; align-items:center; gap: 10px; background: rgba(0,245,169,.14); color: var(--on-dark); box-shadow: inset 0 0 0 2px rgba(0,245,169,.45); animation: hit2 .5s cubic-bezier(.3,1.4,.5,1) forwards; animation-delay: var(--d); }
+.af .tg svg { color: var(--neon); }
+@keyframes hit2 { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.af .agt { position:absolute; width: 96px; height: 96px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px rgba(0,245,169,.4); }
+.af .agt.a1 { left: calc(50% - 236px); top: calc(50% - 48px); } .af .agt.a2 { left: calc(50% + 140px); top: calc(50% - 48px); }
+.af .agt { animation: chill 2.4s ease-in-out infinite; } .af .agt.a2 { animation-delay: .6s; }
+.sub { position:relative; z-index: 2; align-self:center; font-size: 34px; font-weight: 800; color: #fff; text-align:center; }
+.af .sub { color: var(--neon); }
+html.static .tg { opacity: 1; animation: none; } html.static .bf .tg { transform: rotate(var(--r)); } html.static .boss, html.static .agt { animation: none; } html.static .sw { display:none; }
+''', '''
+<div class="c">
+  <div class="mk u" style="--d:.05s">Be honest</div>
+  <h1 class="mt u" style="--d:.15s">Who is the boss <em>of your company</em>?</h1>
+  <div class="pn">
+    <div class="bf u" style="--d:.4s"><span class="cap">Before AI</span>
+      <div class="stg"><img class="boss" src="../assets/av/boss-facepalm.svg" alt="The boss, stressed"><span class="sw">!</span>''' + ''.join('<span class="tg" style="--d:%.2fs;--r:%ddeg;left:%d%%;top:%d%%">%s</span>' % (.9 + k * .3, r, x, y, n) for k, (n, x, y, r) in enumerate(MM_PROB)) + '''</div>
+      <span class="sub">The problems run the boss.</span></div>
+    <div class="af u" style="--d:.7s"><span class="cap">After AI</span>
+      <div class="stg"><img class="boss" src="../assets/av/boss-wow.svg" alt="The boss, relaxed"><img class="agt a1" src="../assets/av/agent-typing.svg" alt=""><img class="agt a2" src="../assets/av/agent-thumbs.svg" alt="">''' + ''.join('<span class="tg" style="--d:%.2fs;left:%d%%;top:%d%%">%s%s</span>' % (2.6 + k * .3, x, y, ic(CHECK, 24, 3), n) for k, (n, x, y) in enumerate(MM_DONE)) + '''</div>
+      <span class="sub">The boss runs the AI.</span></div>
+  </div>
+</div>
+''',
+"(This one is for a laugh. Let it land.)\n\n\"Be honest: who is the boss of your company? Before AI, it is the problems. Staff on leave. High costs. Wrong stock. Slow work. Can't hire anyone. The boss gets beaten up every day.\" (pause)\n\n\"After AI: orders keyed in, stock counted, payments chased, reports done. The AI does the work, and the boss is the boss again.\"\n\nNext: \"And the part that makes this possible is the tools.\"")
+
+# ---------------- meme image (the user's own picture): before AI, after AI ----------------
+slide('25-meme-img', 'Before AI, after AI (meme)', SEC[1], 'light bare', 'data-sparks="none"', '''
+body { background: #FFFFFF; }
+.slide { padding: 0 !important; }
+.mi { position:absolute; inset: 0; display:grid; place-items:center; background: #FFFFFF; }
+.mi img { height: 96%; width: auto; max-width: 96%; object-fit: contain; display:block; opacity: 0; transform: scale(.96); animation: mIn .8s cubic-bezier(.2,.75,.15,1) .1s forwards; }
+@keyframes mIn { to { opacity: 1; transform: none; } }
+html.static .mi img { opacity: 1; transform: none; animation: none; }
+''', '''
+<div class="mi"><img src="../assets/img/meme-before-after.webp" alt="Meme: before AI and after AI"></div>
+''',
+"(This one is for a laugh. Let it land.)\n\n\"Be honest: before AI, who is really the boss of your company? The problems. Staff on leave, high costs, wrong stock, slow work, can't hire anyone. After AI, the boss is the boss again, and the AI does the hard work.\"\n\nNext: \"Now, let me ask you to imagine something.\"")
+
 slide('24-tools-and-memory', 'No tools, no work', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
-.msg { display:flex; align-items:center; gap: 18px; margin-top: 40px; }
-.msg .wa { width: 54px; height: 54px; border-radius: 50%; background: #25D366; color: #fff; display:grid; place-items:center; flex:none; }
-.msg .mq b { font-weight: 750; }
-.two { display:grid; grid-template-columns: 1fr 1fr; gap: 100px; margin-top: 44px; }
-.col h3 { font-size: 38px; font-weight: 750; letter-spacing: -.02em; padding-top: 20px; border-top: 3px solid var(--ink-3); }
-.col h3 span { font-size: 26px; font-weight: 500; color: var(--ink-3); margin-left: 12px; }
-.col.yes h3 { border-color: var(--green); } .col.yes h3 span { color: var(--green); }
-.say { margin-top: 22px; font-size: 28px; line-height: 1.4; color: var(--ink-2); padding: 16px 24px; border-radius: 6px 22px 22px 22px; background: #EFF1EE; }
-.col ul { list-style:none; margin-top: 12px; }
-.col li { display:flex; justify-content:space-between; align-items:center; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 28px; }
-.col li .rs { display:flex; align-items:center; gap: 8px; font-weight: 700; color: var(--green); }
-.vd { margin-top: 22px; display:flex; align-items:center; gap: 12px; font-size: 30px; font-weight: 750; }
-.no .vd { color: var(--ink-3); } .yes .vd { color: var(--green); }
+.chain { display:flex; align-items:stretch; justify-content:space-between; margin-top: 70px; }
+.chain .ar { align-self: center; }
+.chain .nd { width: 440px; display:flex; flex-direction:column; align-items:center; text-align:center; padding: 40px 30px 36px; border-radius: 32px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 40px 70px -50px rgba(2,34,31,.45); }
+.chain .nd.last { background: var(--ink); color: var(--on-dark); box-shadow: 0 0 0 3px var(--green), 0 50px 80px -40px rgba(0,108,72,.6); }
+.chain .pic { width: 170px; height: 170px; border-radius: 50%; display:grid; place-items:center; background: var(--mint); color: var(--green); overflow:hidden; }
+.chain .pic img { width: 100%; height: 100%; }
+.chain .pic i { display:flex; }
+.chain .last .pic { background: rgba(0,245,169,.14); color: var(--neon); }
+.chain b { font-size: 46px; font-weight: 800; letter-spacing: -.025em; margin-top: 26px; }
+.chain .nd span { font-size: 27px; color: var(--ink-2); margin-top: 8px; } .chain .last span { color: var(--on-dark-2); }
+.chain .ar { color: var(--green); display:flex; }
 .erp { margin-top: auto; margin-bottom: 50px; font-size: 30px; color: var(--ink-2); }
+.p0, .p1 { flex:1; display:flex; flex-direction:column; }
+.p1 { display:none; } body[data-s="1"] .p0 { display:none; } body[data-s="1"] .p1 { display:flex; }
+.e2 { display:grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; height: 490px; margin-bottom: 24px; }
+.e2 > div { position:relative; display:flex; flex-direction:column; border-radius: 30px; padding: 30px 34px; overflow:hidden; }
+.e2 .bd { background: #FBF7EF; box-shadow: inset 0 0 0 2px #F1E2C2; }
+.e2 .gd { background: #EAF7F1; box-shadow: inset 0 0 0 3px var(--green); }
+.e2 h3 { font-size: 40px; font-weight: 800; letter-spacing: -.02em; }
+.e2 .bd h3 { color: #8A3417; } .e2 .gd h3 { color: var(--green); }
+.e2 .scene { position:relative; flex:1; min-height: 0; margin-top: 10px; }
+.e2 .av { position:absolute; width: 170px; height: 170px; border-radius: 50%; box-shadow: 0 0 0 1px var(--line), 0 20px 40px -20px rgba(2,34,31,.4); background:#fff; }
+.e2 .bd .av { left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.e2 .qm { position:absolute; left: calc(50% + 60px); top: calc(50% - 120px); font-size: 64px; font-weight: 800; color: #C77800; }
+.e2 .src { position:absolute; display:flex; align-items:center; gap: 12px; padding: 14px 18px; border-radius: 16px; background: #fff; font-size: 24px; font-weight: 650; color: #5B4A33; box-shadow: 0 0 0 1px #F1E2C2, 0 14px 30px -18px rgba(90,60,20,.45); }
+.e2 .src i { color: #C77800; display:flex; }
+.e2 .src.s1 { left: 0; top: 4%; transform: rotate(-4deg); } .e2 .src.s2 { right: 0; top: 8%; transform: rotate(3deg); }
+.e2 .src.s3 { left: 2%; bottom: 8%; transform: rotate(3deg); } .e2 .src.s4 { right: 2%; bottom: 4%; transform: rotate(-3deg); }
+.e2 .hub { position:absolute; left: 50%; top: 50%; margin: -78px 0 0 -130px; width: 260px; padding: 22px 18px; border-radius: 26px; background: #fff; text-align:center; box-shadow: 0 0 0 3px var(--green), 0 26px 50px -24px rgba(0,108,72,.55); }
+.e2 .hub img { height: 42px; } .e2 .hub b { display:block; font-size: 22px; font-weight: 700; color: var(--ink); margin-top: 8px; } .e2 .hub span { display:block; font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .1em; color: var(--ink-3); margin-top: 4px; }
+.e2 .tl { position:absolute; display:flex; align-items:center; gap: 10px; padding: 12px 18px; border-radius: 999px; background: var(--green); color: #fff; font-size: 23px; font-weight: 700; box-shadow: 0 12px 26px -14px rgba(0,108,72,.7); }
+.e2 .tl.t1 { left: 0; top: 4%; } .e2 .tl.t2 { right: 0; top: 4%; } .e2 .tl.t3 { left: 0; bottom: 4%; } .e2 .tl.t4 { right: 0; bottom: 4%; }
+.e2 svg.wires { position:absolute; inset: 0; width: 100%; height: 100%; }
+.e2 .gd .av { width: 120px; height: 120px; right: 50%; top: -6px; transform: translateX(50%); display:none; }
+.e2 .vd2 { display:flex; align-items:center; gap: 12px; font-size: 28px; font-weight: 750; margin-top: 14px; }
+.e2 .bd .vd2 { color: #8A3417; } .e2 .gd .vd2 { color: var(--green); }
+.bt2 { font-size: 32px; color: var(--ink-2); } .bt2 b { color: var(--ink); }
+
 .erp b { color: var(--ink); }
 ''', '''
+<div class="p0">
 <div class="mk u" style="--d:.05s">Tools</div>
 <h1 class="mt u" style="--d:.2s">No tools, no <em>work</em></h1>
-<p class="ml u" style="--d:.4s">A brain alone gives advice. With tools, it does the job inside your systems.</p>
-<div class="msg u" style="--d:.7s"><span class="wa">''' + ic(AC_CHAT, 26) + '''</span><span class="mq"><b>Jaya Grocer:</b> Bwg besar 10kg x 20. Pls deliver be4 12pm</span></div>
-<div class="two">
-  <div class="col no u" style="--d:1.0s"><h3>Brain only<span>a chatbot</span></h3>
-    <div class="say">&ldquo;Open SQL Account, create a sales order for 20 bags, then send it to the customer.&rdquo;</div>
-    <div class="vd u" style="--d:1.5s">''' + ic(AC_X, 26, 2.6) + '''You still do all the work.</div></div>
-  <div class="col yes u" style="--d:1.2s"><h3>Brain + tools<span>an AI agent</span></h3>
-    <ul>''' + ''.join('<li class="u" style="--d:%.2fs"><span>%s</span><span class="rs">%s%s</span></li>' % (1.6 + k * .3, t, r, TICK) for k, (t, r) in enumerate(AC_RUN)) + '''</ul>
-    <div class="vd u" style="--d:2.9s">''' + ic(CHECK, 26, 2.6) + '''Done. You just approve.</div></div>
+<p class="ml u" style="--d:.4s">A brain alone gives advice. Tools let it do the job.</p>
+<div class="chain"><div class="nd u" style="--d:0.60s"><div class="pic"><img src="../assets/av/agent-hi.svg" alt="The SuDu agent"></div><b>The brain</b><span>Understands and plans</span></div><span class="ar u" style="--d:1.10s"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="nd u" style="--d:0.95s"><div class="pic"><i><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V5.5a1.5 1.5 0 013 0V12M11 11V4a1.5 1.5 0 013 0v7M14 11V5.5a1.5 1.5 0 013 0V14c0 4-3 7-7 7-3 0-4.6-1.6-6-4l-2-4a1.5 1.5 0 012.6-1.5L8 15"/></svg></i></div><b>The tools</b><span>Check stock, create orders, send</span></div><span class="ar u" style="--d:1.45s"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="nd u last" style="--d:1.30s"><div class="pic"><i><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></i></div><b>Your ERP</b><span>Where stock, orders and money live</span></div></div>
+<p class="erp u" style="--d:1.8s">Every tool works inside your <b>ERP</b>, the core of the company: customers, stock, invoices, money.</p>
 </div>
-<p class="erp u" style="--d:3.1s">Every tool works inside your <b>ERP</b>, the core of the company: customers, stock, invoices, money.</p>
+<div class="p1">
+<div class="mk u" style="--d:.05s">Tools need an ERP</div>
+<h1 class="mt u" style="--d:.15s">No proper ERP, <em>no AI work</em></h1>
+<p class="ml u" style="--d:.3s">Every tool is a button inside your ERP. If your company runs on paper and chats, there is <b>no button to press</b>.</p>
+<div class="e2">
+  <div class="bd u" style="--d:.5s"><h3>Without a proper ERP</h3><div class="scene"><div class="src s1 u" style="--d:0.80s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 19V5"/></svg></i>Paper notebook</div><div class="src s2 u" style="--d:0.95s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></i>Excel on 3 PCs</div><div class="src s3 u" style="--d:1.10s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></i>WhatsApp chats</div><div class="src s4 u" style="--d:1.25s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></i>In the boss&rsquo;s head</div><img class="av" src="../assets/av/agent-mind.svg" alt="The agent, puzzled"><span class="qm">?</span></div><div class="vd2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Nothing to check, nothing to click. It can only guess.</div></div>
+  <div class="gd u" style="--d:.8s"><h3>With SuDu</h3><div class="scene"><svg class="wires" viewBox="0 0 100 100" preserveAspectRatio="none"><g stroke="#00A57A" stroke-width=".5" stroke-dasharray="2 2" fill="none"><path d="M22 12 L50 50"/><path d="M78 12 L50 50"/><path d="M22 88 L50 50"/><path d="M78 88 L50 50"/></g></svg><div class="hub u" style="--d:1.1s"><img src="../assets/logo-dark.png" alt="SuDu AI"><b>1 place for all your data</b><span>SQL ACCOUNT &middot; WMS &middot; MES</span></div><div class="tl t1 u" style="--d:1.30s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Check stock</div><div class="tl t2 u" style="--d:1.45s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Create Sales Order</div><div class="tl t3 u" style="--d:1.60s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Send the DO</div><div class="tl t4 u" style="--d:1.75s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Record payment</div></div><div class="vd2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Every tool has a real button. The agent does the job.</div></div>
+</div>
+<p class="bt2 u" style="--d:2s">That is why SuDu comes first: <b>an AI Agent is only as good as the system it works in.</b></p>
+</div>
+<script>
+(function () {
+  document.body.dataset.s = '0';
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') document.body.dataset.s = String(e.data.deckStep); });
+})();
+</script>
 ''',
-"\"Here is the part people forget. The smartest brain in the world, with no tools, can only talk.\n\nSame WhatsApp from Jaya Grocer: 20 bags of big onions before 12. [Point left] A chatbot, a brain only, replies: open SQL Account, create a sales order, send it to the customer. Helpful advice, and you still do all the work.\n\n[Point right] An AI agent, brain plus tools, does it: checks stock, 42 bags. Checks credit, within limit. Creates the sales order. Sends the PDF on WhatsApp. Done; you just approve.\n\nNow look where every one of those tools goes: into your ERP. Your ERP is the core of the company: customers, prices, stock, invoices and money. The agent's memory lives there too. It looks things up fresh every time, so if your records are messy, its answers are wrong.\n\nSo: no ERP, no tools. No tools, no work.\n\nThat is what an AI Agent is. Now let's leave the technology and talk about you.\"\n\nNext: \"Now let's talk about your company. Before I say anything else, I want to hear from you.\"")
+"\"Here is the part people forget. The smartest brain in the world, with no tools, can only talk. The brain understands and plans. The tools are its hands: check stock, create an order, send a message. And every tool works inside 1 place: your ERP, where your customers, stock, orders and money live.\"\n\n(Next) \"And here is the catch. Every tool is a button inside your ERP. Look at the left: many companies run on a paper notebook, Excel on 3 different PCs, WhatsApp chats, and things only the boss remembers. Give an AI Agent that company, and what can it do? Nothing to check, nothing to click. It can only guess, and a guess is dangerous. On the right is SuDu: 1 place for all your data, SQL Account, warehouse and factory, and every job has a real button: check stock, create the Sales Order, send the DO, record the payment. Now the agent can do the work. So remember: an AI Agent is only as good as the system it works in. That is why SuDu comes first.\"\n\nThis slide has 1 extra Next press: why tools need a proper ERP.\nNext: \"Let me show you what that looks like in a real warehouse.\"")
 
 
 # ---------------- slide: what is an AI agent ----------------
@@ -3230,6 +4112,43 @@ slide('03-takeaways', 'What you take home', SEC[0], 'light', 'data-sparks="9,0 1
 </div>
 ''', "\"By the end of today, you take home 3 things.\n\nOne: a clear picture of AI. What AI really is, how an AI Agent works, what it can and cannot do, with no tech talk.\n\nTwo: you know how to plan AI for your business. Where your company should start, and which job is best to hand to AI first.\n\nThree: a free Demo AI Account. Go back and try it yourself: watch AI Agents work on sample data.\"\n\nNext: \"Let's start with the big question: what is AI, really?\"")
 
+# ---------------- video: SuDu WMS seminar preview (plays after "No tools, no work") ----------------
+slide('24-video-wms', 'Video: SuDu WMS', SEC[3], 'dark bare', 'data-sparks="none"', '''
+body { background: #000; }
+.slide { padding: 0 !important; }
+.vw { position:absolute; inset: 0; background: #000; }
+.vw video { width: 100%; height: 100%; object-fit: contain; display:block; cursor: pointer; }
+.src { position:absolute; left: 48px; bottom: 36px; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .14em; color: rgba(242,251,247,.6); text-transform: uppercase; }
+body .deck-foot, body .foot { display:none !important; }
+''', '''
+<div class="vw"><video id="v" src="../assets/video/wms-preview.mp4" playsinline preload="auto"></video></div>
+<div class="src">Video: SuDu WMS &middot; seminar preview</div>
+<script>
+(function () {
+  var v = document.getElementById('v');
+  var STATIC = navigator.webdriver || location.hash === '#static';
+  if (STATIC) { v.addEventListener('loadedmetadata', function () { v.currentTime = Math.min(20, v.duration / 4); }); return; }
+  function go() { var p = v.play(); if (p && p.catch) p.catch(function () { v.muted = true; v.play(); }); }
+  if (v.readyState >= 2) go(); else v.addEventListener('canplay', go, { once: true });
+  v.addEventListener('click', function () { if (v.muted) { v.muted = false; return; } v.paused ? v.play() : v.pause(); });
+})();
+</script>
+''',
+"(The video plays: about 3 minutes, the SuDu WMS preview with subtitles. Let it run.)\n\n\"That is what tools look like in a real warehouse: every carton scanned, every bin known, every count matching the system.\"\n\nDo: click the video to pause or play. If it starts with no sound, click it once to turn the sound on.\nNext: \"Before the demo, the 2 questions I get asked the most.\"")
+
+# ---------------- meme image (the user's own picture): the pool, AI Agent vs the admins ----------------
+slide('12-meme-pool', 'Meme: who gets saved', SEC[3], 'light bare', 'data-sparks="none"', '''
+body { background: #FFFFFF; }
+.slide { padding: 0 !important; }
+.mi { position:absolute; inset: 0; display:grid; place-items:center; background: #FFFFFF; }
+.mi img { height: 100%; width: 100%; object-fit: contain; display:block; opacity: 0; transform: scale(.96); animation: mIn .8s cubic-bezier(.2,.75,.15,1) .1s forwards; }
+@keyframes mIn { to { opacity: 1; transform: none; } }
+html.static .mi img { opacity: 1; transform: none; animation: none; }
+''', '''
+<div class="mi"><img src="../assets/img/meme-pool.webp" alt="Meme: the boss saves the AI Agent while the admins sink"></div>
+''',
+"(This one is for a laugh. Let it land.)\n\n\"Be honest, admins in the room. The boss is busy playing with the new AI Agent. The admin preparing the report is drowning. And the admin keying in orders? Already at the bottom of the pool, since last year.\" (pause for the laugh)\n\n\"That is exactly why we built SuDu: so nobody in your company has to drown in reports and keying in again.\"\n\nNext: \"Enough talking. Let me show you.\"")
+
 slide('12-why-sudu', 'Why SuDu if I have SQL Account', SEC[0], 'light', 'data-sparks="9,0" style="--gx:80%;--gy:30%;--mx:80%;--my:30%"', '''
 .slide { padding-top: 84px; }
 .h1 { font-size: 64px; max-width: 1500px; }
@@ -3262,7 +4181,7 @@ slide('12-why-sudu', 'Why SuDu if I have SQL Account', SEC[0], 'light', 'data-sp
 .rest { flex:1; display:flex; flex-direction:column; min-height: 0; transition: opacity .6s ease .8s, transform .8s cubic-bezier(.2,.8,.2,1) .75s; }
 body[data-s="0"] .rest { opacity: 0; transform: translateY(40px); pointer-events: none; transition: opacity .35s ease, transform .5s ease; }
 ''', '''
-<div class="ttlw"><h1 class="h1 r" style="--d:.05s">&ldquo;I already have SQL Account.<br>Why do I still need SuDu AI?&rdquo;</h1></div>
+<div class="ttlw"><div class="kicker r" style="--d:0s">FAQ 1</div><h1 class="h1 r" style="--d:.05s">&ldquo;I already have SQL Account.<br>Why do I still need SuDu AI?&rdquo;</h1></div>
 <div class="rest">
 <p class="lead r" style="--d:.2s">Because accounting is only the first layer of a company.</p>
 <div class="stk">''' + _layer_rows() + '''<div class="brk f" style="--d:1.6s"><i></i><span>AI OPERATES ALL 3 LAYERS</span></div></div>
@@ -3294,7 +4213,7 @@ body[data-s="0"] .rest { opacity: 0; transform: translateY(40px); pointer-events
 })();
 </script>
 ''',
-"\"(The question fills the screen. Let it sit.) Here is the question I hear most: I already have SQL Account, why do I need SuDu?\" (Next: the answer appears.) \"Good question, because SQL Account is excellent. Think of your company in layers.\n\nLayer one, the foundation, is accounting. SQL Account keeps your accounts: invoices, payments, tax, reports. But notice: it records what has already happened.\n\nLayer two is the warehouse. A warehouse system runs the floor: every carton is scanned when it arrives, goes on a shelf, is picked and is shipped. The stock moves are recorded the moment they happen, so your stock figure is real and accurate.\n\nLayer three, if you manufacture, is the factory: MES, a manufacturing execution system. It plans each job, issues materials against the BOM, and records output, scrap and machine time as they happen. So at any moment you can see where every job is, whether it is late, and what it really cost. No more waiting for the paper logsheet tomorrow. You can see every job.\n\nAnd layer four sits on top: the AI agents. They read all three layers and do the work: take orders, buy stock, chase payments, spot problems early, and people approve. SQL Account tells you what already happened. SuDu runs what happens next.\"\n\nNext: \"So where is SuDu going?\"")
+"\"(The question fills the screen. Let it sit.) Here is the question I hear most: I already have SQL Account, why do I need SuDu?\" (Next: the answer appears.) \"Good question, because SQL Account is excellent. Think of your company in layers.\n\nLayer one, the foundation, is accounting. SQL Account keeps your accounts: invoices, payments, tax, reports. But notice: it records what has already happened.\n\nLayer two is the warehouse. A warehouse system runs the floor: every carton is scanned when it arrives, goes on a shelf, is picked and is shipped. The stock moves are recorded the moment they happen, so your stock figure is real and accurate.\n\nLayer three, if you manufacture, is the factory: MES, a manufacturing execution system. It plans each job, issues materials against the BOM, and records output, scrap and machine time as they happen. So at any moment you can see where every job is, whether it is late, and what it really cost. No more waiting for the paper logsheet tomorrow. You can see every job.\n\nAnd layer four sits on top: the AI agents. They read all three layers and do the work: take orders, buy stock, chase payments, spot problems early, and people approve. SQL Account tells you what already happened. SuDu runs what happens next.\"\n\nNext: \"So can I just connect ChatGPT or Claude to SQL Account myself? Here is a question I get every week.\"")
 
 def danger(icon, t, s, d):
     return '<div class="glass dg r" style="--d:%s"><div class="i">%s</div><h3>%s</h3><p>%s</p></div>' % (d, ic(icon, 44), t, s)
@@ -3348,6 +4267,7 @@ slide('13-plug-straight-in', 'Why not plug it straight in?', SEC[2], 'light', 'd
 ''', '''
 <div class="top">
   <div>
+    <div class="kicker r" style="--d:0s">FAQ 2</div>
     <h1 class="h1 r" style="--d:.05s">&ldquo;Can I just connect Claude or Codex straight to SQL Account?&rdquo;</h1>
     <p class="lead r" style="--d:.25s">A programmer can do it in a weekend. <b>Here is what can go wrong.</b></p>
   </div>
@@ -3425,7 +4345,7 @@ slide('14-the-house', 'What AI needs underneath', SEC[2], 'light', 'data-sparks=
   <img class="av pop" style="--d:3.6s" src="../assets/av/agent-salute.svg" alt="The agent on the roof"></div>
   <div class="lvs">''' + _house_rows() + '''</div>
 </div>
-''', "\"AI is like a house. Most people only look at the roof. The AI is the exciting part. But a roof needs a house under it, and AI on messy data only makes mistakes faster. So build from the foundation up. For each level, 1 risk and 1 question to check yourself.\n\n1, the foundation: clean data. 1 code per item, fixed units, and stock that matches the shelf because every carton is scanned and every job recorded. Without it, the AI quotes the wrong price and promises stock you do not have. Check: when you count, does the system match the shelf?\n\n2, the door: a safe connection. The AI goes through a controlled door that keeps your accounting rules, never straight into the database. Without it, 1 wrong command can freeze the server or break your accounts. Check: does any tool write straight into your SQL database?\n\n3, the walls: permissions and approvals. Who may see what, do what, and say yes, with every action logged. Without them, the AI can change anything, and nobody knows who did what. Check: is it written down who approves discounts, credit and purchases?\n\n4, the roof: the AI Agents doing the daily work. Without them, people keep typing and chasing by hand. Check: which job eats the most hours each week?\n\nFor the next part, I will show you the whole house, working.\"\n\nThe house builds itself from the ground up; the numbered dots match the 4 levels. This is thread 2; it returns later in the deck.\nNext: \"So we do not replace SQL Account. We build the house around it.\"")
+''', "\"AI is like a house. Most people only look at the roof. The AI is the exciting part. But a roof needs a house under it, and AI on messy data only makes mistakes faster. So build from the foundation up. For each level, 1 risk and 1 question to check yourself.\n\n1, the foundation: clean data. 1 code per item, fixed units, and stock that matches the shelf because every carton is scanned and every job recorded. Without it, the AI quotes the wrong price and promises stock you do not have. Check: when you count, does the system match the shelf?\n\n2, the door: a safe connection. The AI goes through a controlled door that keeps your accounting rules, never straight into the database. Without it, 1 wrong command can freeze the server or break your accounts. Check: does any tool write straight into your SQL database?\n\n3, the walls: permissions and approvals. Who may see what, do what, and say yes, with every action logged. Without them, the AI can change anything, and nobody knows who did what. Check: is it written down who approves discounts, credit and purchases?\n\n4, the roof: the AI Agents doing the daily work. Without them, people keep typing and chasing by hand. Check: which job eats the most hours each week?\n\nFor the next part, I will show you the whole house, working.\"\n\nThe house builds itself from the ground up; the numbered dots match the 4 levels. This is thread 2; it returns later in the deck.\nNext: \"Before the demo, 1 picture every admin in this room will understand.\"")
 
 # ============================================================ 4 · SUDU AI AND LIVE DEMO
 def col16(h, items, d, mid=False):
@@ -3749,7 +4669,7 @@ def demo_section():
             '<p class="lead r" style="--d:.3s">A sample food distributor that runs SQL Account, with SuDu AI connected. Each agent has one job.</p>'
             '<div class="row">' + cards + '</div>')
     slide('19-demo-day', 'Live demo', SEC[3], 'light', 'data-sparks="none" style="--gx:50%;--gy:40%"', TEAM_CSS, html,
-          "\"Let me introduce the 6 AI Agents in today's demo. They work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: the Setting up intro slide.")
+          "\"Let me introduce the 6 AI Agents in today's demo. They work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: \"Before any agent works, we set it up once.\"")
 
 
 def demo_uc(i):
@@ -3874,6 +4794,30 @@ li::before { content: counter(n); font-family: var(--mono); font-size: 28px; col
 "\"You just saw it do a lot. So let me tell you the 4 things AI never does. It does not save anything you have not approved. It never changes your financial figures. It only reads the WhatsApp groups you allow. And every single thing it did is recorded, so you can check it any time. You are still the boss. Now, would this work in your company? Let's find out.\"\n\nNext: \"Would this work in your company? Let's score it.\"")
 
 # ============================================================ 5 · WORKSHOP
+WG_GROUPS = [  # group number on the name tag, colour
+    ('1', '#00A57A'),
+    ('2', '#4DA3FF'),
+    ('3', '#FFB547'),
+]
+WG_COACH = [('Guides you through the workshop', '1 step at a time'),
+            ('Checks your answers', 'with you, at your table'),
+            ('Tells you where to start', 'for your own company')]
+WG_PERSON = '<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>'
+slide('23-workshop-groups', 'Workshop groups', SEC[5], 'light', 'data-sparks="none"', MIN_CSS + '''
+.gp { display:grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; margin-top: auto; margin-bottom: 60px; }
+.gp > div { display:flex; flex-direction:column; align-items:center; text-align:center; padding: 44px 24px 40px; border-radius: 32px; background: #fff;
+  box-shadow: 0 0 0 1px var(--line), 0 40px 70px -50px rgba(2,34,31,.45); border-top: 10px solid var(--c); }
+.gp .n { width: 190px; height: 190px; border-radius: 50%; display:grid; place-items:center; font-size: 116px; font-weight: 800; color: #02221F; background: var(--c); box-shadow: 0 24px 50px -24px var(--c); }
+.gp small { font-family: var(--mono); font-size: 20px; font-weight: 700; letter-spacing: .16em; color: var(--ink-3); margin-top: 30px; }
+.gp b { font-size: 34px; font-weight: 700; letter-spacing: -.01em; margin-top: 8px; }
+.gp .co { display:flex; align-items:center; gap: 12px; margin-top: 22px; padding: 12px 22px; border-radius: 999px; background: var(--mint); color: var(--green); font-size: 24px; font-weight: 700; }
+''', '''
+<div class="mk u" style="--d:.05s">Workshop</div>
+<h1 class="mt u" style="--d:.15s">Find your number. <em>Join your group.</em></h1>
+<p class="ml u" style="--d:.3s">Your name tag has a number: <b>1, 2 or 3</b>. Sit with your group. Your coach will guide you through every step.</p>
+<div class="gp">''' + ''.join('<div class="u" style="--d:%.2fs;--c:%s"><span class="n">%s</span><small>GROUP</small><b>Number %s on your tag</b><span class="co">%sYour coach guides you here</span></div>' % (.5 + k * .15, c, l, l, ic(WG_PERSON, 24, 2)) for k, (l, c) in enumerate(WG_GROUPS)) + '''</div>
+''', "\"Before we start the workshop, let's sit in groups. Look at your name tag: you have a number, 1, 2 or 3. Find the table with your number and sit with your group.\n\nEach group has 1 SuDu coach. Your coach will guide you through every step of the workshop, check your answers with you, and tell you where your company should start. Stuck at any point? Raise your hand, and your coach comes to you.\"\n\nDo: coaches stand up and hold up their group number so people can find them. Give 2 minutes to move.\nPrep: give every participant a name tag with 1, 2 or 3 at registration, spread evenly; put a group number card on each table; say each coach's name out loud here.\nNext: \"Everyone with your group? Let's start.\"")
+
 slide('23-readiness-qr', 'Scan: AI readiness', SEC[5], 'light', 'data-sparks="2,1 8,4" style="--gx:22%;--gy:50%;--mx:25%"', '''
 .wrap { display:grid; grid-template-columns: 460px 1fr; gap: 130px; align-items:center; height:100%; }
 ol { list-style:none; margin-top: 44px; display:grid; gap: 34px; counter-reset: q; }
@@ -3894,7 +4838,7 @@ li::before { content: counter(q); font-family: var(--mono); font-size: 28px; col
     </ol>
   </div>
 </div>
-''', "\"Take out your phone and scan this QR code. 8 questions about your own company. Answer honestly, it takes a few minutes. Is your data clean? Are your rules clear? Are your orders and contacts complete? When you finish, you see straight away whether your company is ready for AI.\"\n\nDo: table hosts help anyone who cannot scan.\nNext: \"Let's go through the questions 1 by 1.\"")
+''', "\"Take out your phone and scan this QR code. 8 questions about your own company. Answer honestly, it takes a few minutes. Is your data clean? Are your rules clear? Are your orders and contacts complete? When you finish, you see straight away whether your company is ready for AI.\"\n\nDo: coaches help anyone who cannot scan.\nNext: \"Let's go through the questions 1 by 1.\"")
 
 qs = ['Does every item have exactly 1 code?', 'Is the unit fixed for each item: carton, piece or kg?', 'Does the stock in your system match the shelf when you count?', 'Do orders arrive in 1 place, not on 5 phones?',
       'Does every customer have a credit limit and payment term in SQL Account?', 'Is your price list in the system up to date?', 'Is it written down who approves discounts, credit and purchases?', 'Are your customers’ and suppliers’ phone numbers saved in the system?']
@@ -3910,7 +4854,7 @@ slide('23-readiness-check', 'AI readiness check', SEC[5], 'light', 'data-sparks=
 <div class="top"><div><h1 class="h1 r" style="--d:.1s">Is your company ready for AI?</h1><p class="sub r" style="--d:.25s">1 point for every yes.</p></div>%s</div>
 <div class="grid">%s</div>
 ''' % (ws(2, 'Score out of 8', '1.3s'), q23),
-"\"Worksheet, box 2. Eight questions about your own company. Be honest: nobody sees this but you and your table host. 1 point for every yes.\"\n\nThen, as they work, why each one matters:\n1 One code per item — it cannot tell whether two codes are the same Milo.\n2 Fixed units — \"10\" could mean ten cartons or ten pieces.\n3 System matches shelf — it will promise customers stock you do not have.\n4 Orders in one place — it can only read the chats it is connected to.\n5 Credit limits set — it cannot check a limit that is not there.\n6 Price list up to date — it will quote last year's price.\n7 Approvers written down — it needs to know who to ask.\n8 Phone numbers saved — it cannot message someone it cannot find.\n\nDo: eight minutes to answer, then five minutes to talk at the table. 1 to 3 points: foundation first; 4 to 6: start with the AI Agent; 7 or 8: ready for the whole system.\nNext: \"1 more check: how big does your house need to be?\"")
+"\"Worksheet, box 2. Eight questions about your own company. Be honest: nobody sees this but you and your coach. 1 point for every yes.\"\n\nThen, as they work, why each one matters:\n1 One code per item — it cannot tell whether two codes are the same Milo.\n2 Fixed units — \"10\" could mean ten cartons or ten pieces.\n3 System matches shelf — it will promise customers stock you do not have.\n4 Orders in one place — it can only read the chats it is connected to.\n5 Credit limits set — it cannot check a limit that is not there.\n6 Price list up to date — it will quote last year's price.\n7 Approvers written down — it needs to know who to ask.\n8 Phone numbers saved — it cannot message someone it cannot find.\n\nDo: eight minutes to answer, then five minutes to talk at the table. 1 to 3 points: foundation first; 4 to 6: start with the AI Agent; 7 or 8: ready for the whole system.\nNext: \"1 more check: how big does your house need to be?\"")
 
 
 NEED = [
@@ -3960,7 +4904,7 @@ slide('24-need-wms-mes', 'Do you need WMS and MES?', SEC[5], 'light', 'data-spar
   <div class="hi r" style="--d:2.2s"><b>3 to 5</b><span>You need it. Plan it from day 1.</span></div>
 </div>
 ''',
-"\"The readiness check told you where to start. This one tells you how big the house needs to be. 2 short lists, 5 questions each. Tick every yes, and count each side on its own.\n\nWMS, the warehouse: more than 1 warehouse or many racks; staff wasting time looking for stock; batch or expiry dates, or stock thrown away because it expired; a stock count that does not match the system; more than 30 orders a day to pick and pack. Every yes is a problem a WMS fixes.\n\nMES, the factory: you make, mix or assemble your own products; you issue raw materials by a recipe or BOM; you cannot tell how far a job has gone; the real cost or waste of each batch is unclear; you plan production on paper or in Excel.\n\nScore: 0, SQL Account plus AI agents is enough for now. 1 or 2, start with the agents and add it later. 3 or more, you need it, so plan it from day 1.\n\nIf you do not make anything, skip the MES side: it is 0.\"\n\nDo: table hosts note both scores on the lead sheet next to the readiness score.\nNext: \"So how do you start? Just 3 steps.\"")
+"\"First question for your company: how big does the house need to be? 2 short lists, 5 questions each. Tick every yes, and count each side on its own.\n\nWMS, the warehouse: more than 1 warehouse or many racks; staff wasting time looking for stock; batch or expiry dates, or stock thrown away because it expired; a stock count that does not match the system; more than 30 orders a day to pick and pack. Every yes is a problem a WMS fixes.\n\nMES, the factory: you make, mix or assemble your own products; you issue raw materials by a recipe or BOM; you cannot tell how far a job has gone; the real cost or waste of each batch is unclear; you plan production on paper or in Excel.\n\nScore: 0, SQL Account plus AI agents is enough for now. 1 or 2, start with the agents and add it later. 3 or more, you need it, so plan it from day 1.\n\nIf you do not make anything, skip the MES side: it is 0.\"\n\nDo: coaches note both scores on the lead sheet next to the readiness score.\nNext: \"So how do you start? Just 3 steps.\"")
 
 
 
@@ -4226,7 +5170,149 @@ slide('31-next-step', 'Your next step', SEC[6], 'light', 'data-sparks="9,1 1,5" 
   <div class="big r" style="--d:.3s"><h3><span>Free, 45 minutes</span><br>Online Demo</h3><p>Online, we run your first AI job on your own data, then recommend 1 plan.</p><img class="av pop" style="--d:1s" src="../assets/av/agent-thumbs.svg" alt=""></div>
   <div class="glass sm r" style="--d:.5s"><h3>Ready to start now?</h3><div class="deal"><small>Sign within 14 days and get</small><b>20%<span>off</span></b></div></div>
 </div>
-''', "\"You already did the hard part today. You have your number, your score and your first AI job. The next step is free: a 45-minute Online Demo, where we run your first AI job on your own data. If you already know you want to start, sign within 14 days and get 20% off.\"\n\nNote: do not go back over the problem here. People who hesitate are afraid of choosing wrong: stress free, short, and a person approves everything.\nNext: \"One last thing.\"")
+''', "\"You already did the hard part today. You have your number, your score and your first AI job. The next step is free: a 45-minute Online Demo, where we run your first AI job on your own data. If you already know you want to start, sign within 14 days and get 20% off.\"\n\nNote: do not go back over the problem here. People who hesitate are afraid of choosing wrong: stress free, short, and a person approves everything.\nNext: \"And if you want to go deeper, 3 courses are coming.\"")
+
+# ---------------- upcoming courses ----------------
+UC_COURSES = [  # icon, tag, name, tagline, for, 3 things you learn
+    ('<path d="M3 21V8l9-5 9 5v13"/><path d="M7 21v-8h10v8M7 17h10"/>', 'WAREHOUSE', 'Smart Warehouse Bootcamp', 'Right stock, right shelf, every time',
+     'Storekeepers and warehouse managers',
+     ['Set up bins, batches and expiry dates', 'Scan in, pick and pack with WMS', 'Stock counts that match the system']),
+    ('<path d="M3 21V11l6 4v-4l6 4V5h6v16z"/><path d="M7 18h2M12 18h2M17 18h2"/>', 'FACTORY', 'Smart Factory Bootcamp', 'Plan, track and cost every batch',
+     'Factory owners and production managers',
+     ['BOM and work orders, done right', 'Track every job on the floor', 'Real cost and waste for each batch']),
+    ('<rect x="4" y="7" width="16" height="12" rx="3"/><path d="M12 3v4M9 12h.01M15 12h.01M9 16h6"/>', 'ADVANCED', 'AI Agent Masterclass', 'Build and run your own AI team',
+     'Owners and managers ready for the next step',
+     ['Write rules and skills for your agents', 'Set approvals and permissions', 'Measure the time and money it saves']),
+]
+UC_DETAIL = [  # module title, what you do  (card 01, opened on Next)
+    ('Map your warehouse', 'Zones, racks and bins, with batch and expiry for every item.'),
+    ('Scan, don&rsquo;t type', 'Receive, put away, pick and pack with the WMS scanner.'),
+    ('Count without stopping', 'Cycle counts that match SQL Account, no shutdown day.'),
+    ('Let AI watch the stock', 'Inventory AI warns you before stock runs out or expires.'),
+]
+UC_PRICE = {0: 'RM399'}   # price per person, by card index
+UC_TAKE = ['Your own bin map', 'A scanning flow for your team', 'A stock count plan']
+slide('31-courses', 'Upcoming courses', SEC[6], 'dark bare', 'data-sparks="none"', MIN_CSS + '''
+body { background: #010F0D; overflow: hidden; }
+.aur { position:absolute; inset: -20%; z-index: 0; pointer-events:none; filter: blur(60px); opacity: .9;
+  background: radial-gradient(35% 30% at 20% 30%, rgba(0,245,169,.22), transparent 70%), radial-gradient(30% 28% at 80% 20%, rgba(77,163,255,.16), transparent 70%),
+              radial-gradient(40% 30% at 60% 85%, rgba(124,92,255,.14), transparent 70%);
+  animation: aur 16s ease-in-out infinite alternate; }
+@keyframes aur { to { transform: translate(4%, -3%) rotate(6deg) scale(1.08); } }
+.grain { position:absolute; inset: 0; z-index: 0; pointer-events:none; opacity: .5;
+  background-image: linear-gradient(rgba(242,251,247,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(242,251,247,.035) 1px, transparent 1px); background-size: 80px 80px;
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 40%, #000, transparent); mask-image: radial-gradient(70% 60% at 50% 40%, #000, transparent); }
+.top, .cs { position:relative; z-index: 1; }
+.mk { color: var(--neon); }
+.mt { color: var(--on-dark); font-size: 84px; }
+.mt em { background: linear-gradient(90deg, #00F5A9, #7CFFD6, #4DA3FF); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.ml { color: var(--on-dark-2); }
+.cs { display:grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 32px; margin-top: 54px; align-items: stretch; }
+.cd { position:relative; border-radius: 32px; padding: 2px; overflow:hidden; opacity: 0; transform: translateY(40px) scale(.97); animation: cin 1s cubic-bezier(.2,.75,.15,1) forwards; animation-delay: var(--d); }
+@keyframes cin { to { opacity: 1; transform: none; } }
+.cd::before { content:""; position:absolute; inset: 0; border-radius: 32px; background: linear-gradient(160deg, rgba(242,251,247,.22), rgba(242,251,247,.04) 40%, rgba(242,251,247,.12)); }
+.cd.on::before { inset: -60%; border-radius: 0; background: conic-gradient(from 0deg, transparent 0 62%, #00F5A9 74%, #7CFFD6 78%, transparent 90%); animation: spin 5s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.cd .in { position:relative; height: 100%; display:flex; flex-direction:column; padding: 36px 36px 32px; border-radius: 30px;
+  background: linear-gradient(165deg, rgba(10,48,42,.96), rgba(3,26,23,.97)); box-shadow: inset 0 1px 0 rgba(242,251,247,.08); }
+.cd.on .in { background: radial-gradient(120% 70% at 20% 0%, rgba(0,245,169,.16), transparent 60%), linear-gradient(165deg, rgba(8,54,46,.98), rgba(2,26,23,.98)); }
+.cd .no { position:absolute; right: 26px; top: 6px; font-size: 150px; font-weight: 800; letter-spacing: -.06em; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px rgba(242,251,247,.12); }
+.cd.on .no { -webkit-text-stroke-color: rgba(0,245,169,.35); }
+.cd .hd { display:flex; align-items:center; gap: 16px; }
+.cd .ic { position:relative; width: 84px; height: 84px; border-radius: 24px; display:grid; place-items:center; color: var(--neon); background: rgba(0,245,169,.1); box-shadow: 0 0 0 1px rgba(0,245,169,.3), 0 0 40px rgba(0,245,169,.18); }
+.cd .ic svg { animation: flo 4s ease-in-out infinite; } @keyframes flo { 50% { transform: translateY(-4px); } }
+.cd .tg { font-family: var(--mono); font-size: 16px; font-weight: 700; letter-spacing: .18em; color: var(--on-dark-2); padding: 8px 12px; border-radius: 8px; box-shadow: inset 0 0 0 1px rgba(242,251,247,.2); }
+.cd.on .tg { color: #02221F; background: var(--neon); box-shadow: 0 0 24px rgba(0,245,169,.45); }
+.cd h2 { position:relative; font-size: 46px; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; margin-top: 30px; color: var(--on-dark); }
+.cd.on h2 { font-size: 54px; }
+.cd .tl { font-size: 27px; font-weight: 650; margin-top: 10px; color: var(--neon); }
+.cd .fr { font-size: 22px; color: var(--on-dark-2); margin-top: 20px; }
+.cd .fr span { display:block; font-family: var(--mono); font-size: 14px; font-weight: 700; letter-spacing: .18em; color: var(--on-dark-3); margin-bottom: 4px; }
+.cd ul { list-style:none; display:grid; gap: 12px; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(242,251,247,.12); }
+.cd li { display:flex; align-items:flex-start; gap: 12px; font-size: 24px; line-height: 1.3; color: var(--on-dark); }
+.cd li svg { flex:none; color: var(--neon); margin-top: 3px; }
+.cd .pr { margin-top: auto; padding-top: 22px; display:flex; align-items:baseline; gap: 12px; }
+.cd .pr b { font-size: 56px; font-weight: 800; letter-spacing: -.03em; line-height: 1; color: var(--on-dark); text-shadow: 0 0 30px rgba(0,245,169,.35); }
+.cd.on .pr b { background: linear-gradient(90deg, #FFFFFF, #7CFFD6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.cd .pr span { font-size: 24px; font-weight: 600; color: var(--on-dark-2); }
+.cd .pr + .dt { margin-top: 0; padding-top: 14px; }
+.cd .dt { margin-top: auto; padding-top: 24px; display:flex; align-items:center; gap: 10px; font-family: var(--mono); font-size: 16px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--on-dark-3); }
+.cd .dt i { width: 9px; height: 9px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 12px var(--neon); animation: blink 1.6s ease-in-out infinite; }
+@keyframes blink { 50% { opacity: .25; } }
+/* ---- Next: card 01 opens ---- */
+.cs .cd { transition: opacity .6s ease, transform .8s cubic-bezier(.2,.75,.15,1), filter .6s ease; }
+body[data-s="1"] .cs .cd:not(.on) { opacity: 0 !important; transform: translateY(30px) scale(.94) !important; filter: blur(6px); }
+body[data-s="1"] .cs .cd.on { opacity: 0 !important; transform: translateY(30px) scale(.94) !important; filter: blur(6px); }
+.ex.cd { position:absolute; z-index: 3; display:none; animation: none; opacity: 0; transform: translateY(26px) scale(.985); filter: blur(6px);
+  transition: opacity .8s ease, transform 1s cubic-bezier(.2,.75,.15,1), filter .8s ease; }
+.ex.show { opacity: 1; transform: none; filter: none; }
+.ex .in { display:grid; grid-template-columns: 560px 1fr; column-gap: 56px; }
+.ex .lft { display:flex; flex-direction:column; }
+.ex .no { font-size: 240px; right: 36px; top: auto; bottom: -46px; }
+.ex .dx, .ex .lft { z-index: 1; }
+.ex .dx { opacity: 0; transform: translateX(30px); transition: opacity .5s ease, transform .7s cubic-bezier(.2,.75,.15,1); display:flex; flex-direction:column; padding-top: 8px; position:relative; }
+.ex.full .dx { opacity: 1; transform: none; transition-delay: .15s; }
+.ex .dx small, .ex .tk small { display:block; font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .18em; color: var(--on-dark-3); }
+.ex .md { display:grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; }
+.ex .md > div { padding: 20px 22px; border-radius: 20px; background: rgba(242,251,247,.05); box-shadow: inset 0 0 0 1px rgba(242,251,247,.1); opacity: 0; transform: translateY(16px); transition: opacity .45s ease, transform .6s cubic-bezier(.3,1.3,.5,1); }
+.ex.full .md > div { opacity: 1; transform: none; }
+.ex.full .md > div:nth-child(1) { transition-delay: 0.30s; }
+.ex.full .md > div:nth-child(2) { transition-delay: 0.42s; }
+.ex.full .md > div:nth-child(3) { transition-delay: 0.54s; }
+.ex.full .md > div:nth-child(4) { transition-delay: 0.66s; }
+
+.ex .md i { font-style: normal; font-family: var(--mono); font-size: 16px; font-weight: 700; color: var(--neon); }
+.ex .md b { display:block; font-size: 28px; font-weight: 750; letter-spacing: -.01em; color: var(--on-dark); margin-top: 4px; }
+.ex .md p { font-size: 22px; line-height: 1.35; color: var(--on-dark-2); margin-top: 6px; }
+.ex .tk { margin-top: 22px; }
+.ex .tk div { display:flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+.ex .tk span { display:flex; align-items:center; gap: 8px; font-size: 22px; font-weight: 650; color: #02221F; background: var(--neon); padding: 10px 16px; border-radius: 999px; box-shadow: 0 0 24px rgba(0,245,169,.35); }
+.ex .lft ul { margin-top: 18px; }
+html.static .cd { opacity: 1; transform: none; animation: none; } html.static .aur, html.static .cd.on::before, html.static .cd .ic svg, html.static .cd .dt i { animation: none; }
+''', '''
+<div class="aur"></div><div class="grain"></div>
+<div class="top">
+<div class="mk u" style="--d:.05s">What&rsquo;s next</div>
+<h1 class="mt u" style="--d:.15s">Keep learning: <em>upcoming courses</em></h1>
+<p class="ml u" style="--d:.3s">Today was day 1. Go deeper with your team.</p>
+</div>
+<div class="cs">''' + ''.join(
+    '<div class="cd%s" style="--d:%.2fs"><div class="in"><span class="no">0%d</span><div class="hd"><span class="ic">%s</span><span class="tg">%s</span></div><h2>%s</h2><p class="tl">%s</p>'
+    '<p class="fr"><span>FOR</span>%s</p><ul>%s</ul>%s<p class="dt"><i></i>Dates coming soon</p></div></div>'
+    % (' on' if k == 0 else '', .5 + k * .2, k + 1, ic(p, 44, 1.9), tg, nm, tl, fr, ''.join('<li>%s%s</li>' % (ic(CHECK, 22, 3), x) for x in ls),
+       ('<p class="pr"><b>%s</b><span>per person</span></p>' % UC_PRICE[k]) if k in UC_PRICE else '')
+    for k, (p, tg, nm, tl, fr, ls) in enumerate(UC_COURSES)) + '''</div>
+<div class="ex cd on" id="ex"><div class="in"><span class="no">01</span>
+  <div class="lft"><div class="hd"><span class="ic">''' + ic(UC_COURSES[0][0], 44, 1.9) + '''</span><span class="tg">''' + UC_COURSES[0][1] + '''</span></div>
+    <h2>''' + UC_COURSES[0][2] + '''</h2><p class="tl">''' + UC_COURSES[0][3] + '''</p>
+    <p class="fr"><span>FOR</span>''' + UC_COURSES[0][4] + '''</p><ul>''' + ''.join('<li>%s%s</li>' % (ic(CHECK, 22, 3), x) for x in UC_COURSES[0][5]) + '''</ul>
+    <p class="pr"><b>''' + UC_PRICE[0] + '''</b><span>per person</span></p><p class="dt"><i></i>Dates coming soon</p></div>
+  <div class="dx"><small>WHAT YOU WILL DO</small><div class="md">''' + ''.join('<div><i>0%d</i><b>%s</b><p>%s</p></div>' % (k + 1, h, d_) for k, (h, d_) in enumerate(UC_DETAIL)) + '''</div>
+    <div class="tk"><small>YOU LEAVE WITH</small><div>''' + ''.join('<span>%s%s</span>' % (ic(CHECK, 20, 3), x) for x in UC_TAKE) + '''</div></div></div>
+</div></div>
+<script>
+(function () {
+  var B = document.body, ex = document.getElementById('ex'), cs = document.querySelector('.cs'), timer;
+  function box(el, extra) { return { l: cs.offsetLeft + (extra ? 0 : el.offsetLeft), t: cs.offsetTop + (extra ? 0 : el.offsetTop), w: el.offsetWidth, h: el.offsetHeight }; }
+  function put(r) { ex.style.left = r.l + 'px'; ex.style.top = r.t + 'px'; ex.style.width = r.w + 'px'; ex.style.height = r.h + 'px'; }
+  function set(n) {
+    B.dataset.s = String(n); clearTimeout(timer);
+    if (n >= 1) {
+      put(box(cs, true)); ex.style.display = 'block'; void ex.offsetWidth;
+      timer = setTimeout(function () { ex.classList.add('show'); setTimeout(function () { ex.classList.add('full'); }, 300); }, 250);
+    } else if (ex.style.display === 'block') {
+      ex.classList.remove('show', 'full');
+      timer = setTimeout(function () { ex.style.display = 'none'; }, 800);
+    }
+  }
+  set(0);
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') set(e.data.deckStep); });
+})();
+</script>
+''',
+"\"Today was day 1. If you want to go deeper with your team, we have 3 courses coming.\n\n"
+"The Smart Warehouse Bootcamp is for storekeepers and warehouse managers: bins, batches and expiry dates, scanning in, picking and packing with WMS, and stock counts that finally match the system.\n\n"
+"The Smart Factory Bootcamp is for factory owners and production managers: BOM and work orders done right, tracking every job on the floor, and the real cost and waste of each batch.\n\nAnd the AI Agent Masterclass is the advanced course: you learn to write rules and skills for your agents, set approvals and permissions, and measure the time and money it saves. Build and run your own AI team.\n\nDates are coming soon. Tell your coach which one you want, and we will let you know first.\"\n\n(Next: card 1 opens) \"Let me open the first one, the Smart Warehouse Bootcamp: RM399 per person. 4 things you will do: map your warehouse, zones, racks and bins, with batch and expiry for every item. Scan, don't type: receive, put away, pick and pack with the WMS scanner. Count without stopping: cycle counts that match SQL Account, no shutdown day. And let AI watch the stock: Inventory AI warns you before stock runs out or expires. You leave with your own bin map, a scanning flow for your team and a stock count plan.\"\n\nThis slide has 1 extra Next press: card 1 opens.\n\nNote: dates, fees and HRDF status to be confirmed before the seminar.\nNext: \"And 1 last thing: don't wait.\"")
 
 slide('31-dont-wait', "Don't wait", SEC[6], 'dark', 'data-sparks="none" style="--gx:85%;--gy:30%;--mx:80%;--my:35%"', '''
 body { background: #010C0A; }
@@ -4308,20 +5394,22 @@ def main():
     manifest = []
     # ---- running order: 1 list per section. Change the order here; every slide must appear once. ----
     key = lambda x: re.sub(r'^\d+-', '', x['file'])
+    DROP = {'ai-history', 'what-is-llm', 'agent-loop', 'agent-quiz', 'sql-stays', 'foundation', 'intro-01', 'readiness-qr', 'readiness-check', 'closing', 'ai-team', 'meme'}   # kept in this file, left out of the deck
+    S[:] = [x for x in S if key(x) not in DROP]
     keys = [key(x) for x in S]
     demo = keys[keys.index('demo-day'):keys.index('you-stay-the-boss') + 1]   # demo intros + use cases, as defined
     SECTIONS = [
         ('Company intro', ['cover', 'who-we-are']),
         ('Speaker intro', ['speaker', 'speaker-owen', 'today', 'takeaways']),
-        ('What is an AI Agent?', ['section-ai', 'ai-history', 'what-is-llm', 'how-much-it-read',
-                                  'what-is-agent', 'agent-loop', 'brain-to-staff', 'tools-and-memory']),
-        ('The problem', ['tell-us', 'top-5-issues', 'guess-the-order', 'typed-three-times', 'problem-2', 'problem-3', 'problem-4', 'problem-5', 'count-your-number']),
-        ('SuDu AI', ['why-sudu', 'vision', 'the-map', 'layers-3d', 'five-stages', 'plug-straight-in', 'the-house',
-                     'sql-stays', 'foundation', 'ai-team'] + demo),
-        ('Workshop', ['readiness-qr', 'readiness-check', 'need-wms-mes']),
-        ('Get started', ['live-in-30-days', 'what-it-gives-back', 'cost-compare', 'plans', 'hrdf', 'next-step', 'dont-wait']),
+        ('What is an AI Agent?', ['section-ai', 'ai-types', 'how-much-it-read',
+                                  'why-agent', 'agent-intro', 'what-is-agent', 'good-vs-bad-agent', 'brain-to-staff']),
+        ('SuDu AI', ['meme-img', 'imagine', 'video-figure', 'vision', 'the-map', 'five-stages', 'layers-3d']),
+        ('The problem', ['section-problem', 'tell-us', 'top-5-issues', 'guess-the-order', 'typed-three-times', 'problem-2', 'problem-3', 'problem-4', 'problem-5', 'count-your-number', 'ai-guru', 'new-way']),
+        ('SuDu AI', ['tools-and-memory', 'video-wms', 'faq', 'why-sudu', 'plug-straight-in', 'the-house',
+                     'meme-pool', 'section-demo'] + [k for k in demo if k not in DROP]),
+        ('Workshop', ['section-workshop', 'workshop-groups', 'need-wms-mes']),
+        ('Get started', ['live-in-30-days', 'what-it-gives-back', 'cost-compare', 'plans', 'hrdf', 'next-step', 'courses', 'dont-wait']),
         ('Questions', ['questions']),
-        ('Spare', ['closing']),
     ]
     by = {key(x): x for x in S}
     order = [k for _, ks in SECTIONS for k in ks]
@@ -4339,9 +5427,23 @@ def main():
         if s['file'].endswith('layers-3d'):
             item['steps'] = 5
         if s['file'].endswith('what-is-agent'):
-            item['steps'] = 7
+            item['steps'] = 6
+        if s['file'].endswith('tools-and-memory'):
+            item['steps'] = 1
+        if s['file'].endswith('ai-guru'):
+            item['steps'] = 2
+        if s['file'].endswith('courses'):
+            item['steps'] = 1
+        if s['file'].endswith('agent-quiz'):
+            item['steps'] = 1
+        if s['file'].endswith('good-vs-bad-agent'):
+            item['steps'] = 4
         if s['file'].endswith('ai-history'):
             item['steps'] = 5
+        if s['file'].endswith('ai-types'):
+            item['steps'] = 5
+        if s['file'].endswith('how-much-it-read'):
+            item['steps'] = 2
         if s['file'].endswith('what-is-llm'):
             item['steps'] = 1
         if s['file'].endswith('guess-the-order'):

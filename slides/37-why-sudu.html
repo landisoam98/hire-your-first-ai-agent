@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Why SuDu if I have SQL Account · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.slide { padding-top: 84px; }
+.h1 { font-size: 64px; max-width: 1500px; }
+.lead { font-size: 30px; margin-top: 10px; }
+.stk { position:relative; flex:1; display:grid; grid-template-rows: 1.15fr 1fr 1fr 1fr; gap: 12px; margin-top: 28px; margin-right: 150px; }
+.ly { display:grid; grid-template-columns: 70px 330px 1fr 260px; align-items:center; gap: 22px; padding: 0 26px 0 18px; border-radius: 22px; background: #fff;
+  box-shadow: 0 0 0 1px var(--line), 0 20px 40px -30px rgba(2,34,31,.35); }
+.ly .no { width: 54px; height: 54px; border-radius: 16px; background: var(--mint); color: var(--green); display:grid; place-items:center; font-size: 28px; font-weight: 700; }
+.ly .nm b { display:block; font-size: 40px; font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
+.ly .nm img { height: 40px; display:block; }
+.ly .nm span { display:block; font-size: 22px; font-weight: 600; color: var(--green); margin-top: 6px; }
+.ly p { font-size: 24px; line-height: 1.32; color: var(--ink-2); }
+.ly .bd { justify-self: end; display:flex; align-items:center; gap: 8px; white-space: nowrap; font-size: 21px; font-weight: 700; padding: 9px 13px; border-radius: 12px; background: var(--mint); color: var(--ink); }
+.ly .bd svg { color: var(--green); flex:none; }
+.ly.sql { background: linear-gradient(110deg, #F3EEFF, #EAF2FF); }
+.ly.sql .no { background: rgba(124,92,255,.15); color: #5B43D6; }
+.ly.ai { background: var(--ink); box-shadow: 0 0 60px rgba(0,245,169,.22); }
+.ly.ai .no { background: var(--neon); color: var(--ink); }
+.ly.ai .nm b { color: var(--on-dark); } .ly.ai .nm span { color: var(--neon); } .ly.ai p { color: var(--on-dark-2); }
+.ly.ai .bd { background: var(--neon); }
+.ly.ai .bd svg { color: var(--ink); }
+.brk { position:absolute; right: -128px; top: calc(25% + 10px); bottom: 6px; width: 100px; }
+.brk i { position:absolute; left: 0; top: 0; bottom: 0; width: 26px; border: 3px solid var(--emerald); border-left: 0; border-radius: 0 16px 16px 0; }
+.brk span { position:absolute; left: 40px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; white-space: nowrap; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .12em; color: var(--green); }
+.end { margin-top: 22px; font-size: 32px; font-weight: 600; }
+.end span { color: var(--ink-3); font-weight: 500; }
+.end .sig { color: var(--ink); font-weight: 600; }
+/* 2-stage reveal: big title first, then the content */
+.ttlw { display:inline-block; align-self:flex-start; transform-origin: 0 0; transition: transform 1.05s cubic-bezier(.65,0,.15,1); will-change: transform; }
+.rest { flex:1; display:flex; flex-direction:column; min-height: 0; transition: opacity .6s ease .8s, transform .8s cubic-bezier(.2,.8,.2,1) .75s; }
+body[data-s="0"] .rest { opacity: 0; transform: translateY(40px); pointer-events: none; transition: opacity .35s ease, transform .5s ease; }
+</style>
+</head>
+<body class="light" data-section="SuDu AI" data-sparks="9,0" style="--gx:80%;--gy:30%;--mx:80%;--my:30%">
+<main class="slide">
+<div class="ttlw"><div class="kicker r" style="--d:0s">FAQ 1</div><h1 class="h1 r" style="--d:.05s">&ldquo;I already have SQL Account.<br>Why do I still need SuDu AI?&rdquo;</h1></div>
+<div class="rest">
+<p class="lead r" style="--d:.2s">Because accounting is only the first layer of a company.</p>
+<div class="stk"><div class="ly ai r" style="--d:1.20s"><span class="no">4</span><div class="nm"><b>AI agents</b><span>Operates all 3 layers</span></div><p>Reads every layer and does the work: takes orders, buys stock, chases payments, spots problems early. People approve.</p><div class="bd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Runs the company</div></div><div class="ly mes r" style="--d:0.95s"><span class="no">3</span><div class="nm"><b>MES</b><span>Factory, in real time</span></div><p>Plans each job, gives out materials by the BOM, records output, scrap and machine time as it happens. Every job&rsquo;s progress and true cost, live.</p><div class="bd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Production you can see</div></div><div class="ly wms r" style="--d:0.70s"><span class="no">2</span><div class="nm"><b>WMS</b><span>Warehouse, in real time</span></div><p>Every carton scanned in, put on the shelf, picked and shipped. Stock moves are recorded the moment they happen.</p><div class="bd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Stock accurate</div></div><div class="ly sql r" style="--d:0.45s"><span class="no">1</span><div class="nm"><img src="../assets/sql-h.png" alt="SQL Account"><span>The foundation: accounting</span></div><p>Keeps your accounts: invoices, payments, tax and reports. It records what has already happened.</p><div class="bd"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Accounts right</div></div><div class="brk f" style="--d:1.6s"><i></i><span>AI OPERATES ALL 3 LAYERS</span></div></div>
+<p class="end r" style="--d:1.7s">SQL Account tells you what <span class="sig" style="--sd:2.3s">already happened.</span> <span>SuDu runs what happens next.</span></p>
+</div>
+<script>
+(function () {
+  var B = document.body, w = document.querySelector('.ttlw'), rest = document.querySelector('.rest');
+  var STATIC = navigator.webdriver || location.hash === '#static', big = 'none';
+  function measure() {                       // where the title sits normally -> big and centred
+    var prev = w.style.transform; w.style.transition = 'none'; w.style.transform = 'none';
+    var sl = document.querySelector('.slide').getBoundingClientRect(), k = sl.width / 1920, r = w.getBoundingClientRect();
+    var x = (r.left - sl.left) / k, y = (r.top - sl.top) / k, wd = r.width / k, ht = r.height / k, sc = Math.min(2.2, 1720 / wd);
+    big = 'translate(' + (960 - x - sc * wd / 2) + 'px,' + (520 - y - sc * ht / 2) + 'px) scale(' + sc + ')';
+    w.style.transform = prev; void w.offsetWidth; w.style.transition = '';
+  }
+  function replay() { rest.querySelectorAll('.r,.f,.pop,.sig,.draw').forEach(function (el) { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; }); }
+  function set(n, instant) {
+    if (instant) w.style.transition = 'none';
+    if (n >= 1) { if (B.dataset.s !== '1') { B.dataset.s = '1'; w.style.transform = 'none'; rest.querySelectorAll('.r,.f,.pop,.sig,.draw').forEach(function (el) { el.style.animation = 'none'; }); setTimeout(replay, instant ? 0 : 750); } }
+    else { B.dataset.s = '0'; w.style.transform = big; }
+    if (instant) { void w.offsetWidth; w.style.transition = ''; }
+  }
+  if (STATIC) { B.dataset.s = '1'; return; }
+  B.dataset.s = '0'; measure(); set(0, true);
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () { if (B.dataset.s === '0') { measure(); set(0, true); } });
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') set(e.data.deckStep); });
+  if (window.parent === window) addEventListener('keydown', function (e) { if (e.key === 'ArrowRight' || e.key === ' ') set(1); if (e.key === 'ArrowLeft') set(0); });
+})();
+</script>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

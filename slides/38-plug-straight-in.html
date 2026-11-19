@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Why not plug it straight in? · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+.slide { padding-top: 84px; }
+.top { }
+.h1 { font-size: 62px; max-width: 1600px; }
+.lead { font-size: 30px; margin-top: 12px; }
+.lead b { color: #B4451F; }
+.wire { display:flex; align-items:center; gap: 24px; margin-top: 30px; }
+.lg { display:flex; gap: 14px; }
+.lg div { display:flex; align-items:center; gap: 14px; padding: 16px 24px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px var(--line); font-size: 28px; font-weight: 700; }
+.lg img { width: 46px; height: 46px; }
+.cable { flex:1; position:relative; height: 4px; border-top: 4px dashed #FF8A5B; }
+.cable b { position:absolute; left: 50%; top: -52px; transform: translateX(-50%); font-size: 18px; font-weight: 700; color: #B4451F; white-space: nowrap; font-family: var(--mono); letter-spacing: .08em; }
+.cable i { position:absolute; left: 50%; top: -18px; transform: translateX(-50%); width: 32px; height: 32px; border-radius: 50%; background: #FF8A5B; color: #fff; display:grid; place-items:center; font-style: normal; font-weight: 800; font-size: 22px; }
+.db { padding: 16px 26px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px var(--line); text-align:center; }
+.db img { height: 38px; display:block; }
+.db span { display:block; font-size: 18px; color: var(--ink-3); margin-top: 6px; }
+.row { display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; }
+.dg { padding: 26px 28px; border-radius: 24px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -30px rgba(2,34,31,.35); border-top: 6px solid #FF8A5B; }
+.dg .hd { display:flex; align-items:center; justify-content:space-between; }
+.dg .i { width: 64px; height: 64px; border-radius: 18px; background: rgba(255,138,91,.14); color: #B4451F; display:grid; place-items:center; }
+.dg .n { font-size: 44px; font-weight: 700; color: rgba(180,69,31,.35); }
+.dg h3 { font-size: 34px; font-weight: 700; letter-spacing: -.02em; margin-top: 16px; }
+.dg p { font-size: 25px; line-height: 1.35; color: var(--ink-2); margin-top: 8px; }
+.dg p.eg { color: var(--ink-3); font-style: italic; font-size: 23px; }
+.safe { margin-top: 24px; display:flex; flex-direction:column; align-items:flex-start; gap: 14px; padding: 22px 30px; border-radius: 22px; background: var(--ink); color: var(--on-dark); }
+.safe > b { font-size: 28px; font-weight: 700; white-space: nowrap; }
+.safe > b em { font-style: normal; color: var(--neon); }
+.safe .ck { display:flex; gap: 10px; flex-wrap: wrap; align-items:center; }
+.safe .ck > em { font-style: normal; font-size: 22px; font-weight: 700; color: var(--on-dark-2); margin-right: 6px; }
+.safe .ck span { display:flex; align-items:center; gap: 8px; font-size: 21px; font-weight: 600; padding: 8px 12px; border-radius: 10px; background: rgba(0,245,169,.12); color: var(--on-dark); white-space: nowrap; }
+.safe .ck svg { color: var(--neon); }
+</style>
+</head>
+<body class="light" data-section="SuDu AI" data-sparks="9,0" style="--gx:85%;--gy:20%;--mx:85%;--my:25%">
+<main class="slide">
+<div class="top">
+  <div>
+    <div class="kicker r" style="--d:0s">FAQ 2</div>
+    <h1 class="h1 r" style="--d:.05s">&ldquo;Can I just connect Claude or Codex straight to SQL Account?&rdquo;</h1>
+    <p class="lead r" style="--d:.25s">A programmer can do it in a weekend. <b>Here is what can go wrong.</b></p>
+  </div>
+</div>
+<div class="wire r" style="--d:.4s">
+    <div class="lg"><div><img src="../assets/logos/claude.svg" alt="Claude logo">Claude</div><div><img src="../assets/logos/openai.svg" alt="OpenAI logo">Codex</div></div>
+    <div class="cable"><b>DIRECT ACCESS</b><i>!</i></div>
+    <div class="db"><img src="../assets/sql-h.png" alt="SQL Account"><span>your company database</span></div>
+</div>
+<div class="row"><div class="dg r" style="--d:0.90s"><div class="hd"><span class="i"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></svg></span><span class="n">1</span></div><h3>No access control</h3><p>It can read every figure and change any of them. Nothing asks you first.</p><p class="eg">Like giving a new temp the master key and the company chop on day 1.</p></div><div class="dg r" style="--d:1.08s"><div class="hd"><span class="i"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7"/><path d="M9 4l3 2 3-2M9 20l3-2 3 2"/></svg></span><span class="n">2</span></div><h3>It can freeze the server</h3><p>1 heavy question, like &ldquo;every sale for 5 years&rdquo;, can lock the database.</p><p class="eg">Nobody in the office can issue an invoice until it recovers.</p></div><div class="dg r" style="--d:1.26s"><div class="hd"><span class="i"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-6 6 6 9 0s6 6 9 0"/><path d="M3 7c4 4 7-4 10 1M11 16c3 4 6-3 10 1"/></svg></span><span class="n">3</span></div><h3>It messes up your accounts</h3><p>Writing straight into the database skips SQL Account&rsquo;s own checks.</p><p class="eg">Running numbers, stock and accounts stop matching.</p></div></div>
+<div class="safe r" style="--d:1.6s"><b>The agent is not the danger. <em>Direct access is.</em></b><div class="ck"><em>The safe way, through SuDu:</em><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Permission for every user</span><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>A person approves before it is saved</span><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Every action logged</span><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>SQL Account&rsquo;s own rules kept</span></div></div>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

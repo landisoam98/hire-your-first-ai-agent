@@ -64,455 +64,508 @@
   "file": "slides-zh/07-section-ai.html",
   "label": "章节：什么是 AI？",
   "section": "什么是 AI Agent？",
-  "notes": "“那 AI 到底是什么？先别管新闻标题。我们分 3 步来讲。\n\n第一：AI 如何学习，从人手写的规则，到 AI Agent。第二：大脑，就是大家说的 LLM，还有它是怎么学会的。第三：AI Agent，一个真的能做事的大脑。”\n\n下一页：“首先，我们是怎么走到今天的？70 年，1 页讲完。”",
+  "notes": "“那 AI 到底是什么？先别管新闻标题。我们分 3 步来讲。\n\n第一：你每天都在用的 5 种 AI。第二：大脑，就是大家说的 LLM，还有它读了多少东西。第三：AI Agent，一个真的能做事的大脑。”\n\n下一页：“首先，看看你每天都在用的 5 种 AI。”",
   "thumb": "thumbs-zh/07-section-ai.jpg"
  },
  {
-  "file": "slides-zh/08-ai-history.html",
-  "label": "AI 的 70 年",
+  "file": "slides-zh/08-ai-types.html",
+  "label": "AI 的类型",
   "section": "什么是 AI Agent？",
-  "notes": "“在打开这个大脑之前，先花 1 分钟讲历史，因为 ChatGPT 不是凭空冒出来的。70 年，5 大步。我们一步一步打开来看。”\n\n（下一步）规则，1950 到 80 年代：“想象一本食谱：电脑一步一步照做。看这张 RM6,000 的订单：规则说超过信用额度，就挡下。你每天都在用规则：Excel 公式、SQL Account 的信用额度检查。问题是：遇到没写规则的新情况，它就卡住。”\n\n（下一步）机器学习，2000 年代：“想象一个看过 10,000 张 Invoice 的老文员，一看就知道谁会迟付。你给电脑看过去的顾客，绿色是准时付款，橙色是迟付。它自己找出两者之间的那条线。然后来了一个新顾客：Kedai Ali，80% 的机会会迟付。垃圾邮件过滤和信用评分都是这样运作的。但它需要整齐的表格，而且 1 个模型只答 1 个问题。”\n\n（下一步）深度学习，2012 年：“想象一个小孩，看过 1,000 只猫，就认得什么是猫。很多层一层一层看一张照片，然后说：破损纸箱，94% 确定。刷脸解锁、Siri、Google Translate 都是这样运作的。在你公司：读手写订单或银行单据。但每个模型只做 1 件事，而且它不会跟你聊天。”\n\n（下一步）LLM，2018 到 2020 年：“想象手机的自动补字，只是它读过整个互联网。顾客问：明天可以送货吗？它写：好的，我们会在……下一个词，它给每个选项打分：明天 82%。它选了这个。然后再下一个词，再下一个。ChatGPT、Claude、Gemini、DeepSeek。它会回 Email、总结 PDF。但它只会说，不能在你的系统里做事。”\n\n（下一步）AI Agent，2025 年：“想象一个新员工。它读 WhatsApp 订单、查库存、开 Sales Order 草稿，然后请你批准。一圈一圈做，直到把事情做完。这就是我们今天所在的位置。”\n\n这一页有 5 次额外的下一步；每张卡片以 3D 方式飞进来，播放它自己的小动画。\n下一页：“现在我们来打开今天 AI 的大脑：LLM。”",
+  "notes": "“在打开大脑之前，先看 1 张小地图。大家讲 AI，好像它只是 1 样东西。其实不是。按它做什么来分，有 5 种。大部分你每天都在用。我带你看看在哪里。”\n\n（下一步）预测型 AI，背后是机器学习：“想成天气预报，只是预报你的销售。Grab 说司机 4 分钟到，银行发盗刷提醒，Shopee 帮你推荐商品，这些都是预测型 AI。它从过去的数字学习，猜出下一个：这里是 12 月，1,240 箱。在你公司：谁会迟付款，什么货快没了。它的限制：新产品没有历史数据。”\n\n（下一步）视觉 AI，背后是深度学习：“停车场你天天见。车开到闸口，摄像头读出 WXY 1234，查到是月票，闸门就开了。不用票，不用保安。刷脸解锁、Google Lens 也是一样的原理。在你公司：读手写订单或银行单据。车牌脏了、光线差，它可能读错。”\n\n（下一步）语音 AI：“Hey Siri、YouTube 自动字幕、跟你的车讲话。它把声音变成文字。客户发一条语音：Boss, esok hantar 10 carton Milo。它打成文字，变成一张订单。店里吵或口音重，有时会听错。”\n\n（下一步）Diffusion AI，背后是扩散模型：“你有没有在 TikTok 或 YouTube 上看过 AI 短剧？很多根本没有拍过。你打 1 句话：老板发现他的文员是 AI。它从一片噪点开始，就像电视的雪花，每一步清理一点。第 25 步，看得到城市了。第 50 步，完成：第 1 集。Midjourney 和 Sora 也是一样的原理。在你公司：产品照片和宣传视频，不用摄影棚。手、脸和文字还是可能出错，所以发布前先检查。”\n\n（下一步）AI Agent，就是 LLM 加上工具：“这一种直接把工作做完。1 张 WhatsApp 订单：它读订单、在 SQL Account 查库存、草拟 Sales Order，然后等你批准。AI Agent 把前面 4 种当成它的眼睛、耳朵和嘴巴。今天讲的就是它。”\n\n这一页多按 5 次 Next；每张卡片以 3D 飞进来，并播放它自己的小动画。\n下一页：“ChatGPT 和每一个 AI Agent 背后的大脑，就是 LLM。我们来打开看看。”",
   "steps": 5,
-  "thumb": "thumbs-zh/08-ai-history.jpg"
+  "thumb": "thumbs-zh/08-ai-types.jpg"
  },
  {
-  "file": "slides-zh/09-what-is-llm.html",
-  "label": "什么是 LLM？",
-  "section": "什么是 AI Agent？",
-  "notes": "“ChatGPT、Claude、Gemini、DeepSeek。这些名字大家都知道。每一个里面都是同一种东西：一个 LLM，大语言模型。叫“大”，因为它读了超级多的文字。叫“语言”，因为进去的是文字，出来的也是文字。\n\n它到底在做什么？只做 1 件事。我们来试试。Terima kasih, see you……”（停一下，让大家接下去）“……tomorrow。你们也做到了。它看着前面的字，挑出最有可能的下一个词。然后再下一个，再下一个。做得够好，看起来就像听得懂。\n\n记住这句话：它不是去查答案。它是 1 个词 1 个词预测出来的。今天后面讲的所有东西，都是从这里来的。”\n\n（下一步）“小小更正一下：它其实不是看词。就像玩 LEGO：它把你的信息拆成一块块小积木，叫做 Token，然后一次加 1 块来写回答。Token 就是一小块文字：一个词、半个词，或一个逗号。Terima kasih, see you tomorrow 会变成 8 块：Ter、ima、kas、ih、逗号、see、you、tomorrow。短的英文单词是 1 个 Token；马来文常常变成 2 到 3 个。粗略记法：1 个 Token 大约是 ¾ 个英文单词。为什么要知道？因为 AI 是用 Token 来计算的：你按 Token 付钱，它的记忆也用 Token 来算。所以大家说它预测下一个词，其实它预测的是下一个 Token。”\n\n这一页有 1 次额外的下一步。\n备注：切法只是示意；每个模型切法有点不同。\n下一页：“要预测得这么准，它得读书。读很多很多。”",
-  "steps": 1,
-  "thumb": "thumbs-zh/09-what-is-llm.jpg"
- },
- {
-  "file": "slides-zh/10-how-much-it-read.html",
+  "file": "slides-zh/09-how-much-it-read.html",
   "label": "AI 读了多少",
   "section": "什么是 AI Agent？",
-  "notes": "“LLM 到底读了多少？拿 DeepSeek V4 来说，2026 年的。它用超过 32 万亿个 Token 来训练。Token 就是一小块文字，再过 2 页会讲。换成 400 页的书，大概是 2.4 亿本书。2 年前，Llama 3 读了 15 万亿，大概 1.1 亿本书，所以 2 年就翻了一倍。\n\n看好了，如果把这些书叠起来……”（书堆叠到双峰塔顶）“……这是 1 座双峰塔。继续。”（画面往后拉）“13,000 座双峰塔。这堆书大概 6,000 公里高，比太空站高 15 倍。平铺下来，这些书可以盖满 800 个足球场。”（画面换成地球和月球）“如果把每一页撕下来，首尾相接排好，可以到月球 50 趟。”\n\n备注：数字是根据公开的 Token 数粗略估算的（DeepSeek-V4 论文：32T+ Token；Meta：Llama 3，15T+）。算法：1 个 Token ≈ 0.75 个英文词；一本 400 页的书 = 100,000 个词，2.5 公分厚，书页 12 x 20 公分；一个足球场 = 7,140 平方米。讲的时候说“大概”。书堆本身没有到月球；是书页首尾相接才到。\n下一页：“所以它是一个很聪明的大脑。但它能帮你做事吗？单靠它自己，不行。”",
-  "thumb": "thumbs-zh/10-how-much-it-read.jpg"
+  "notes": "“ChatGPT、Claude、Gemini、DeepSeek，这些名字大家都听过。它们里面都是同一样东西：LLM，大型语言模型。大型，是因为它用海量数据训练：网站、书本、新闻，100 多种语言。语言，是因为文字进去，文字出来。模型，是因为它学会了人写字的规律，所以能一个字一个字猜出下一个。它把文字切成小块来读，叫做 Token；1 个 Token 大约是四分之三个英文词。”\n\n（下一步）“猜一猜。为了学会语言，它读了多少？A，1 万本书。B，100 万本。C，2,000 万本。D，1 亿本。叠起来的话，A 是一栋 70 层高楼。B 是 6 座神山。C 超过太空站。D 比太空站高 6 倍。如果你一天读 1 本书，A 要 27 年，D 要 274,000 年。举手：A？B？C？D？”（数一数举手的人，再按 Next）\n\n（下一步）“谁选 D？还是不够。拿 DeepSeek V4 来说，2026 年的：大约 2.4 亿本 400 页的书，是 D 的 2 倍多。换成 Token，就是刚才说的那些小块文字，超过 32 万亿个。2 年前，Llama 3 读了 15 万亿，大概 1.1 亿本书，所以 2 年就翻了一倍。\n\n看好了，如果把这些书叠起来……”（书堆叠到双峰塔顶）“……这是 1 座双峰塔。继续。”（画面往后拉）“13,000 座双峰塔。这堆书大概 6,000 公里高，比太空站高 15 倍。平铺下来，这些书可以盖满 800 个足球场。”（画面换成地球和月球）“如果把每一页撕下来，首尾相接排好，可以到月球 50 趟。”\n\n备注：数字是根据公开的 Token 数粗略估算的（DeepSeek-V4 论文：32T+ Token；Meta：Llama 3，15T+）。算法：1 个 Token ≈ 0.75 个英文词；一本 400 页的书 = 100,000 个词，2.5 公分厚，书页 12 x 20 公分；一个足球场 = 7,140 平方米。讲的时候说“大概”。书堆本身没有到月球；是书页首尾相接才到。\n这一页多按 2 次 Next：先讲 LLM 是什么，再猜一猜（A 到 D，真正的答案比 D 还大），最后播 32 万亿的画面。\n下一页：“所以它是一个很聪明的大脑。但它能帮你做事吗？单靠它自己，不行。”",
+  "steps": 2,
+  "thumb": "thumbs-zh/09-how-much-it-read.jpg"
  },
  {
-  "file": "slides-zh/11-what-is-agent.html",
+  "file": "slides-zh/10-why-agent.html",
+  "label": "为什么需要 AI Agent",
+  "section": "什么是 AI Agent？",
+  "notes": "“为什么我们需要 AI Agent？看一张普通的 WhatsApp 订单：Ali 要 2 盒 grade C 鸡蛋、2 盒 grade B 鸡蛋。左边是 Mei Ling 在用聊天机器人。它告诉她怎么做：打开 SQL Account、开 Sales Order、查库存、回复客户。有帮助，但打字的还是她。右边是 AI Agent。它直接把事做完：这是它在 SuDu 里真正拟好的 Sales Order，客户、货品、价钱都填好了，只等你按 1 下。你只需要批准。为什么聊天机器人做不到？它不会点击、会忘记、不懂你的规矩，也没有人管着它。所以我们给大脑 4 样东西。”\n\n下一页：“那我们来认识 AI Agent。”",
+  "thumb": "thumbs-zh/10-why-agent.jpg"
+ },
+ {
+  "file": "slides-zh/11-agent-intro.html",
+  "label": "认识你的 AI Agent",
+  "section": "什么是 AI Agent？",
+  "notes": "“来，认识你的 AI Agent。它不是只会讲话的聊天机器人。把它想成一位新员工。它读你的 WhatsApp 信息，打开你的系统，比如 SQL Account 和 Excel，把工作做完，而且入账前一定先问你。\n\n记住 3 件事。它全天候工作：不请假、不拿 MC、不用加班费。它用你现有的系统。它先问才动手：没有你，什么都不会进你的账。”\n\n下一页：“那它里面有什么？我们把它打开，画成一个有 5 个部分的机器人。”",
+  "thumb": "thumbs-zh/11-agent-intro.jpg"
+ },
+ {
+  "file": "slides-zh/12-what-is-agent.html",
   "label": "什么是 AI Agent？",
   "section": "什么是 AI Agent？",
-  "notes": "“为什么我们需要 AI Agent？看一张普通的 WhatsApp 订单：20 包大葱头，12 点前送到。单问 ChatGPT，它会告诉你怎么做：打开 SQL Account、开 Sales Order、查库存、回复顾客。有帮助，但打字的还是你。AI Agent 会帮你做完：它查库存、在你的系统里开好 Sales Order 草稿、在 WhatsApp 回复，你只需要批准。为什么聊天机器人做不到？它不会点击、会忘记、不懂你的规矩，也没有人管着它。所以我们给大脑 4 样东西。”\n\n（下一步：机器人出现）“大脑单靠自己只会讲。所以，大家一步一步给它加东西：2023 年加上工具，2025 年开始有能自己做事的 AI Agent。如果 LLM 是大脑，那 AI Agent 就是有双手、也有限制的大脑。这里把它画成一个机器人，有 5 个部分。大脑单靠自己只会讲；它只能教你怎么做。把另外 4 个部分给它，它就帮你把事做完。我们一个一个来看。”\n\n（下一步）大脑：“头部就是语言模型。它看懂信息，计划下一步。它懂的是意思，不是关键词：bwg、bawang、onion 都是同一样东西。这里它读出是大洋葱、10 kg 装，也发现没写数量，所以它会问。但单靠它自己，它从来没见过你的公司。就像第 1 天上班、很聪明的毕业生。”\n\n（下一步）工具：“双手，也是大家最容易忘记的部分。每个工具是真实系统里的 1 个动作。有些工具只是看：查库存、读 Invoice。有些工具会动手：开订单、发信息。大脑自己按不了按钮。没有工具，它只能教你怎么做。没有工具，就做不了事。”\n\n（下一步）记忆：“胸口里的档案柜。大部分人不知道：每次聊完，大脑就什么都忘了。所以它要去你的记录里查：顾客、价格、库存，每次都查最新的。Jaya Grocer 上次的大洋葱价：每包 RM28。这也代表：记录乱，答案就错。”\n\n（下一步）规则与技能：“它手上的规则本。把你的做法写下来。规则讲的是什么绝对不能发生：超过信用额度，就停下来问老板。技能是做 1 件工作的步骤：读订单、对货品、查库存、起草、送去批准。用白话写，你的经理也能看、也能改。”\n\n（下一步）权限：“胸前的工作证，也是让它安全的关键。它能看什么？只看它工作需要的资料。它能做什么？只做你允许的：起草可以，删除不行，动钱绝对不行。重要的事都要等人来定，而且每个动作都有记录。帮手和风险的分别，就在这里。”\n\n（下一步）“把 5 个部分放在 1 张 WhatsApp 订单上：大脑读订单，记忆找出顾客和库存，工具在你的 ERP 起草订单，规则让它在货品不清楚时开口问，权限就是你批准了才会保存。”\n\n这一页要多按 6 次 Next。\n下一页：“那它到底是怎么运作的？它会绕一个循环。”",
-  "steps": 7,
-  "thumb": "thumbs-zh/11-what-is-agent.jpg"
+  "notes": "“大脑单靠自己只会讲。所以，大家一步一步给它加东西：2023 年加上工具，2025 年开始有能自己做事的 AI Agent。如果 LLM 是大脑，那 AI Agent 就是有双手、也有限制的大脑。这里把它画成一个机器人，有 5 个部分。大脑单靠自己只会讲；它只能教你怎么做。把另外 4 个部分给它，它就帮你把事做完。我们一个一个来看。”\n\n（下一步）大脑：“头部就是语言模型。它看懂信息，计划下一步。它懂的是意思，不是关键词：bwg、bawang、onion 都是同一样东西。这里它读出是大洋葱、10 kg 装，也发现没写数量，所以它会问。但单靠它自己，它从来没见过你的公司。就像第 1 天上班、很聪明的毕业生。”\n\n（下一步）工具：“双手，也是大家最容易忘记的部分。每个工具是真实系统里的 1 个动作。有些工具只是看：查库存、读 Invoice。有些工具会动手：开订单、发信息。大脑自己按不了按钮。没有工具，它只能教你怎么做。没有工具，就做不了事。”\n\n（下一步）记忆：“胸口里的档案柜。大部分人不知道：每次聊完，大脑就什么都忘了。所以它要去你的记录里查：顾客、价格、库存，每次都查最新的。Jaya Grocer 上次的大洋葱价：每包 RM28。这也代表：记录乱，答案就错。”\n\n（下一步）规则与技能：“它手上的规则本。把你的做法写下来。规则讲的是什么绝对不能发生：超过信用额度，就停下来问老板。技能是做 1 件工作的步骤：读订单、对货品、查库存、起草、送去批准。用白话写，你的经理也能看、也能改。”\n\n（下一步）权限：“胸前的工作证，也是让它安全的关键。它能看什么？只看它工作需要的资料。它能做什么？只做你允许的：起草可以，删除不行，动钱绝对不行。重要的事都要等人来定，而且每个动作都有记录。帮手和风险的分别，就在这里。”\n\n（下一步）“把 5 个部分放在 1 张 WhatsApp 订单上：大脑读订单，记忆找出顾客和库存，工具在你的 ERP 起草订单，规则让它在货品不清楚时开口问，权限就是你批准了才会保存。”\n\n这一页多按 6 次 Next：5 个部分，再看 1 张订单。\n下一页：“但不是每个 AI Agent 都是好 AI Agent。来认识 2 位。”",
+  "steps": 6,
+  "thumb": "thumbs-zh/12-what-is-agent.jpg"
  },
  {
-  "file": "slides-zh/12-agent-loop.html",
-  "label": "AI Agent 的循环",
+  "file": "slides-zh/13-good-vs-bad-agent.html",
+  "label": "好 AI Agent 与坏 AI Agent",
   "section": "什么是 AI Agent？",
-  "notes": "“那 AI Agent 到底是怎么做事的？它不像聊天机器人那样一次就回答。它会 repeat 做事，直到完成。[指着圆圈] 想：计划下一步。做：用 1 个工具。检查：成功了吗？做完了吗？安全吗？还没做完，就再绕一圈。\n\n我们用 Jaya Grocer 的 1 张 WhatsApp 订单来看。第 1 轮：找 item。它搜一搜，找到大洋葱、10 kg 装，库存 42 包。第 2 轮：查 credit limit & term。订单是 RM560，credit limit 只剩 RM180。第 3 轮：超出 credit limit & term。规则说老板决定。所以它把申请送去批准，然后等。\n\n整个概念就是这样。它一直循环，直到做完，再向你汇报。或者，遇到不确定、或者步骤有风险，它就停下来问人。”\n\n下一页：“你可以把它想成请一个刚毕业的新人。”",
-  "thumb": "thumbs-zh/12-agent-loop.jpg"
+  "notes": "“不是每个 AI Agent 都是好 AI Agent。来认识 2 位。Ah Malas，手上拿着咖啡：你打什么，他才做什么。还有 Ah Rajin：他看到工作，你还没开口就先做。里面是同样的 AI，却是完全不同的员工。我们跟着他们过 1 天。”\n\n（下一步）早上 9 点：“进来 3 张 WhatsApp 订单。Ah Malas？Zzz。你没坐下来打“开订单”，什么都不会发生。Ah Rajin 已经拟好 3 张 Sales Order：老板，批准吗？”\n\n（下一步）11:30：“Milo 库存只够 2 天。Ah Malas 一声不响；客户骂上门你才知道。Ah Rajin：Milo 星期五会卖完，给供应商的 PO 已经拟好了。”\n\n（下一步）下午 4 点：“Kedai Ali 迟付款 45 天。没人叫 Ah Malas，他就从不提醒。Ah Rajin 发出客气的提醒，还带回消息：RM3,200 答应星期五付。”\n\n（下一步）“到下午 5 点，Ah Malas 做了 1 件事：就是你打的那 1 件。Ah Rajin 做了 5 件，全部等你批准。重点是：Ah Rajin 还是不能自己入账。主动不等于失控。意思是他负责准备，你负责决定。\n\n那怎样才是好 AI Agent？它知道目标，它盯着你的数据，它先动手，而且它还是会问你。每一个 SuDu AI Agent 都是这样设置的。”\n\n这一页多按 4 次 Next：一天里的 3 个时刻，再看比分。\n下一页：“怎么把大脑变成一位好员工？就像你安排一位新员工那样。”",
+  "steps": 4,
+  "thumb": "thumbs-zh/13-good-vs-bad-agent.jpg"
  },
  {
-  "file": "slides-zh/13-brain-to-staff.html",
+  "file": "slides-zh/14-brain-to-staff.html",
   "label": "从大脑到员工",
   "section": "什么是 AI Agent？",
-  "notes": "“再聪明的大脑，单靠自己也只会讲。想想你请一个很优秀的毕业生：光有才华是不够的。你会给他 6 样东西，AI Agent 也需要同样这 6 样。\n\n[一行一行往下讲] 职位说明：对 AI 来说就是指示，目标是什么，怎样才算做完。没有它，它会做太多，或者做错工作。账号和钥匙：就是它的工具，每个动作 1 个。没有它们，它只能给建议。档案：就是它的记忆，你的记录，还有你教过它的东西。没有它，它会忘记顾客、乱猜价格。你的 SOP：就是它的规则与技能。没有它们，它就照自己的方式做事。主管：就是权限，谁来点头。没有它，库存或钱动之前，没人把关。还有试用期：就是测试。你先拿上个月的订单试，然后盯着它做。没有这一步，同一个错误会静静地一直重复。\n\n大脑加上这套配置，有个名字：harness，驾驭框架。每家公司都能租到同一个大脑。帮你还是害你，由 harness 决定。”\n\n下一页：“而这套配置里，有 1 个部分比大家想的更重要：工具。”",
-  "thumb": "thumbs-zh/13-brain-to-staff.jpg"
+  "notes": "“再聪明的大脑，单靠自己也只会讲。想想你请一个很优秀的毕业生：光有才华是不够的。你会给他 6 样东西，AI Agent 也需要同样这 6 样。\n\n[一行一行往下讲] 职位说明：对 AI 来说就是指示，目标是什么，怎样才算做完。没有它，它会做太多，或者做错工作。账号和钥匙：就是它的工具，每个动作 1 个。没有它们，它只能给建议。档案：就是它的记忆，你的记录，还有你教过它的东西。没有它，它会忘记顾客、乱猜价格。你的 SOP：就是它的规则与技能。没有它们，它就照自己的方式做事。主管：就是权限，谁来点头。没有它，库存或钱动之前，没人把关。还有试用期：就是测试。你先拿上个月的订单试，然后盯着它做。没有这一步，同一个错误会静静地一直重复。\n\n大脑加上这套配置，有个名字：harness，驾驭框架。每家公司都能租到同一个大脑。帮你还是害你，由 harness 决定。”\n\n下一页：“说真的，你公司真正的老板是谁？”",
+  "thumb": "thumbs-zh/14-brain-to-staff.jpg"
  },
  {
-  "file": "slides-zh/14-tools-and-memory.html",
-  "label": "没有工具，就做不了事",
-  "section": "什么是 AI Agent？",
-  "notes": "“这是大家最容易忘记的部分。全世界最聪明的大脑，没有工具，也只能讲。\n\n同样是 Jaya Grocer 的 WhatsApp：12 点前要 20 包大洋葱。[指左边] 聊天机器人，只有大脑，它会回：打开 SQL Account，开一张 Sales Order，发给顾客。建议很有用，但事情还是全靠你做。\n\n[指右边] AI Agent，大脑加工具，它直接做：查库存，42 包。查信用额度，没超。开 Sales Order。用 WhatsApp 发 PDF。做完了；你只需要批准。\n\n现在看看这些工具全都去了哪里：你的 ERP。ERP 是公司的核心：顾客、价格、库存、Invoice 和钱。AI Agent 的记忆也在那里。它每次都查最新的，所以如果你的记录乱，它的答案就会错。\n\n所以：没有 ERP，就没有工具。没有工具，就做不了事。\n\n这就是 AI Agent。现在我们先放下技术，来谈谈你。”\n\n下一页：“现在来谈谈你的公司。在我讲任何东西之前，我想先听听你们的想法。”",
-  "thumb": "thumbs-zh/14-tools-and-memory.jpg"
+  "file": "slides-zh/15-meme-img.html",
+  "label": "使用 AI 前，使用 AI 后",
+  "section": "SuDu AI",
+  "notes": "（这一页是给大家笑的，让它停一下。）\n\n“说真的，用 AI 之前，你公司真正的老板是谁？是那些问题。员工请假、高开销、库存不准、低效率、请不到人。用 AI 之后，老板又做回老板，辛苦的工作交给 AI。”\n\n下一页：“现在，请大家想象一件事。”",
+  "thumb": "thumbs-zh/15-meme-img.jpg"
  },
  {
-  "file": "slides-zh/15-tell-us.html",
+  "file": "slides-zh/16-imagine.html",
+  "label": "想象一下",
+  "section": "SuDu AI",
+  "notes": "（放慢速度，让全场去想象。）\n\n“请大家想象一件事。有一天，AI 能运营你的整家公司。\n\n今天，AI Agent 已经在管办公室：接订单、开发票、看库存、追款。刚才你已经看到是什么样子。\n\n下一步，AI 会走进车间。实体 AI：机器人在你的员工身边拣货、包装、组装。\n\n有一天，公司会自己运转。你定目标，其余交给 AI，而且重大决定前它还是会先问你。\n\n听起来很遥远？其实已经开始了。来看这个。”\n\n下一页：视频，F.03 在 BMW。",
+  "thumb": "thumbs-zh/16-imagine.jpg"
+ },
+ {
+  "file": "slides-zh/17-video-figure.html",
+  "label": "视频：F.03 在 BMW",
+  "section": "SuDu AI",
+  "notes": "（视频播放：大约 1 分钟，Figure AI 的 F.03 机器人在 BMW 工厂车间工作。让它播完，不要边播边讲。）\n\n“这不是电影。这是真的机器人，在真的汽车工厂里，就在今天。”\n\n操作：点一下视频可以暂停或继续。如果开始时没有声音，点一下视频就会打开声音。\n下一页：“这就是世界要去的方向。而这正是 SuDu 在打造的。”",
+  "thumb": "thumbs-zh/17-video-figure.jpg"
+ },
+ {
+  "file": "slides-zh/18-vision.html",
+  "label": "我们的愿景",
+  "section": "SuDu AI",
+  "notes": "（让这句话停留一下。先停两秒再开口。）\n\n“SuDu 的愿景，是打造一个能自动化运营公司的 AI。不是聊天机器人，不是报表，而是一个运营公司的 AI。看这个球体：每一个点都是你公司里的一项工作。接单、采购、收货、存货、生产、出货、开单、收款，还有围绕它们的所有工作：报价、信用检查、拣货、打包、盘点、计划、品质检查、付款给供应商、做报表。每一项都连在一起，工作在上面自己不停地运转。\n\n这就是为什么 SuDu 是为此服务企业的 AI ERP：1 个系统管理所有流程，AI 负责执行、分析、提醒，人类负责决策。大部分软件只是在上面加 AI：旧系统旁边放一个聊天机器人，人还是要输入、点击、追。我们是为 AI 打造整个系统，所以它能读取每张订单、每次盘点、每笔付款，做决策、做事，重要的事由人来批准。最后一步是实体的：由同一个系统驱动的机器人，负责搬运、拣货和盘点。\n\n这就是我们的方向。现在让我给大家看看它今天的样子。”\n\n下一页：全景图。",
+  "thumb": "thumbs-zh/18-vision.jpg"
+ },
+ {
+  "file": "slides-zh/19-the-map.html",
+  "label": "SuDu 全景图",
+  "section": "SuDu AI",
+  "notes": "“先看全貌，用大白话讲。\n\n这个大框就是 SuDu：1 个 ERP，1 个系统，1 个数据库。里面的工作从左流到右。供应链：卖和买，所以订单都在同一个地方。仓库，WMS：每一箱都扫描，所以库存准确。工厂，MES：每张工单都追踪，所以每张工单你都看得到。还有财务：所有东西都进到 SQL Account，所以你的账永远是最新的。\n\n左边，顾客和供应商照他们本来的方式联系你：WhatsApp 和 Email。上面一排，AI Agent 读取所有资料，在每一步做事。最下面是下一步：实体 AI，一辆自动驾驶货车和一个人形机器人，由同一个系统来管。\n\n看一张订单怎么走完全程。”（它会自己循环播放，大约 17 秒。）\n\n备注：实体 AI 是路线图，今天还没有在卖。\n下一页：“每家公司都在走同一条路。你的公司走到哪里了？”",
+  "thumb": "thumbs-zh/19-the-map.jpg"
+ },
+ {
+  "file": "slides-zh/20-five-stages.html",
+  "label": "5 个阶段",
+  "section": "SuDu AI",
+  "notes": "“想想工业革命：蒸汽，然后是电，然后是电脑。每一次都改变了由谁来做工作，而先行动的工厂都赢了。公司的运营方式也一样。\n\n商业 1.0，大约到 1980 年：手写。订单写在簿子里，库存靠手点。很慢，也没人看得到全貌。\n\n商业 2.0，1980 和 1990 年代：电子表格。Excel 文件用 Email 传来传去。快了一些，但版本很多，常常打错。\n\n商业 3.0，从 1990 年代到现在：软件。SQL Account，加上每个部门各自一套系统。好很多，但系统之间不相通，人还是要把所有东西输入进去。今天在座大部分公司就在这里。\n\n商业 4.0 已经来了。ChatGPT 在 2022 年底出现，当时只会聊天。从 2025 年起，AI Agent 开始做事：读 WhatsApp 订单、开单据、追款，在 AI 原生 ERP 里面完成，由人来批准。这就是 SuDu 今天在做的，等一下的演示你会看到。\n\n接下来是商业 5.0：实体 AI。人形机器人和自动驾驶货车做体力活，由同一个系统驱动。AI 原生 ERP 加上机器人：自主运营的企业。\n\n（等竞争对手的标记往上爬时停一下。）重点是：未来不是快要来，而是已经来了。你的竞争对手可能已经在 4.0，而你还在 3.0。到目前为止的每一次革命，先行动的人都抢走了顾客。差距每年都在扩大。”\n\n指着每张卡上的两条柱：人手工作和成本每个时代都在下降，到 4.0 和 5.0 降得最多。\n备注：年份是大概的时代划分，不是精确日期；人手工作和成本的柱只是示意，不是实测数字。实体 AI 的时间（2020 年代后期）只是展望，目前还没有销售。\n下一页：“现在从侧面看看 SuDu 是怎么搭起来的。”",
+  "thumb": "thumbs-zh/20-five-stages.jpg"
+ },
+ {
+  "file": "slides-zh/21-layers-3d.html",
+  "label": "3D 看 4 层",
+  "section": "SuDu AI",
+  "notes": "“这就是 SuDu 的结构，一层一层来看。先从地基开始：SQL Account。”\n\n（下一步：底板翻起来。）第 1 层，SQL Account：“你的会计。Invoice、Credit Note、付款、e-Invoice、税务、你的 P&L。它让你的账目正确，记录的是已经发生的事。SuDu 开出的每张单据都会自动进到这里。”\n\n（下一步：WMS 落在上面。）第 2 层，WMS：“上面是仓库。收货、上架、拣货、打包、送货、转仓、盘点、Batch 和有效期。每一箱一动就扫描，所以库存数字永远是真的。”\n\n（下一步：MES 落在上面。）第 3 层，MES：“如果你有生产，就是工厂。BOM、Production Order、发料、产出、QC、废料和机器时间。每张工单都实时计划、追踪和计算成本。”\n\n（下一步：AI Agent 落在最上面。）第 4 层，AI Agent：“最上面是 AI Agent，读取下面每一层，做日常工作。没有人批准，什么都不会存进去。”\n\n（下一步：四层合成一叠。）“4 层，1 个系统。每一层都建在下一层之上，由 AI 全部运营。”\n\n这一页有 5 次额外的“下一步”。\n下一页：“这就是 SuDu。现在来谈谈你。”",
+  "steps": 5,
+  "thumb": "thumbs-zh/21-layers-3d.jpg"
+ },
+ {
+  "file": "slides-zh/22-section-problem.html",
+  "label": "章节：问题",
+  "section": "问题",
+  "notes": "“这就是 SuDu。现在来讲讲你：像你这样的企业每天遇到的问题。分 3 步。\n\n第一：你现在就用手机告诉我们你最大的问题。第二：我们最常听到的 5 大问题。第三：你算出它让你花了多少钱。”\n\n下一页：“拿出你的手机。”",
+  "thumb": "thumbs-zh/22-section-problem.jpg"
+ },
+ {
+  "file": "slides-zh/23-tell-us.html",
   "label": "说说你的问题",
   "section": "问题",
-  "notes": "“请拿出手机扫一下这个。三个问题，一分钟。几分钟后，你们的答案就会出现在这个屏幕上。今天结束时，每个人都会带着写在面前作业纸上的三样东西离开：你的数字、你的准备度分数，还有你的第一个 AI 工作。”\n\n操作：桌长帮忙不会扫码的人。演示操作员留意答案进来。\n表格：姓名、公司、手机；Q1 输入订单 / 追款 / 查库存 / 把纸本表格打进电脑 / 做报表；Q2 1 个人 / 2 到 3 个 / 4 个或以上；Q3（库存和财务数据）完全信任 / 大部分信任 / 不太信任；同意声明。\n下一页：“答案进来的同时，先看看我们最常听到的五个问题。”",
-  "thumb": "thumbs-zh/15-tell-us.jpg"
+  "notes": "“请拿出手机扫一下这个。三个问题，一分钟。几分钟后，你们的答案就会出现在这个屏幕上。今天结束时，每个人都会带着写在面前作业纸上的三样东西离开：你的数字、你的准备度分数，还有你的第一个 AI 工作。”\n\n操作：教练帮忙不会扫码的人。演示操作员留意答案进来。\n表格：姓名、公司、手机；Q1 输入订单 / 追款 / 查库存 / 把纸本表格打进电脑 / 做报表；Q2 1 个人 / 2 到 3 个 / 4 个或以上；Q3（库存和财务数据）完全信任 / 大部分信任 / 不太信任；同意声明。\n下一页：“答案进来的同时，先看看我们最常听到的五个问题。”",
+  "thumb": "thumbs-zh/23-tell-us.jpg"
  },
  {
-  "file": "slides-zh/16-top-5-issues.html",
+  "file": "slides-zh/24-top-5-issues.html",
   "label": "5 大问题",
   "section": "问题",
   "notes": "“大家的答案还在进来，我先讲我们几乎每家公司都会听到的 5 个问题。\n\n第一：订单靠人手输入。每张 WhatsApp 和 Email 订单都要再打一次，要一整队人来做。\n\n第二：日常工作靠人做。追逾期款、发对账单、每天早上看同样的报表。\n\n第三：问题发现太迟。销售下跌、好顾客不再下单、库存断货，等到痛了才有人发现。\n\n第四：库存永远不准。系统写 40 箱，货架上只有 12 箱。\n\n第五：钱收得慢。送货后好几天才发 Invoice，银行单据还不知道丢在哪个聊天里。\n\n这 5 个里面中了至少 3 个的，请举手。”（停顿。）\n\n操作：让大家举手；这跟投票用数据要讲的是同一个重点。\n备注：问题 5 是我们的建议；如果投票结果显示别的，换成现场最多人选的答案。\n下一页：“我让你们看看问题一是怎么开始的。”",
-  "thumb": "thumbs-zh/16-top-5-issues.jpg"
+  "thumb": "thumbs-zh/24-top-5-issues.jpg"
  },
  {
-  "file": "slides-zh/17-guess-the-order.html",
+  "file": "slides-zh/25-guess-the-order.html",
   "label": "猜猜这张订单",
   "section": "问题",
   "notes": "“这是一张真实的订单，来自真实的顾客聊天。跟你同桌的人一起看：这位顾客到底订了什么？给你们二十秒。”（停一下，让两桌回答。）\n\n（下一步：问号出现。）“China：是标题、品牌，还是洋葱的产地？Bwg besar，十公斤，乘以多少？几包？Ayam cincang，八 ekor，乘以多少？二十五 mil clear，一个：在你的系统里是哪个货品、哪个编号？还有十二点前送货：是哪一天？\n\n公司外面的人根本看不懂。但你公司里面有人在破解它，每张订单、每一天：打开聊天、猜、翻查上一张订单、找编号，然后打进 SQL Account。”\n\n（下一步：一张 PDF Purchase Order 滑进来。）“有些顾客比较整齐，他们发 PDF Purchase Order。好一点，但还是要有人把对方的货品编号对上你的，核对价格和单位，一包十个还是一个，然后逐行输入 SQL Account。接着是下一张 PO。”（这张 PO 是模拟的，名字都是虚构的。）\n\n这一页有 2 次额外的“下一步”：先是问题，然后是 PDF。\n下一页：“而同一张订单，还会被一打再打。”",
   "steps": 2,
-  "thumb": "thumbs-zh/17-guess-the-order.jpg"
+  "thumb": "thumbs-zh/25-guess-the-order.jpg"
  },
  {
-  "file": "slides-zh/18-typed-three-times.html",
+  "file": "slides-zh/26-typed-three-times.html",
   "label": "人手输入",
   "section": "问题",
   "notes": "“跟着一张破解好的订单走一遍。它从 WhatsApp、PDF 或电话进来，一般的批发商每天大约 80 张。然后有人把它输入 SQL Account：新开 Sales Order、选顾客，然后一行一行、一栏一栏：货品编号、数量、单位、价格。每张大约 4 分钟。\n\n然后仓库需要 Picking List。订单已经在 SQL Account 里了，但很多公司还是有人把它再打一次进 Excel：货品、数量、哪个货架。打印、拣货、打包。又是 2 分钟。\n\n加起来：80 张订单乘 6 分钟，就是每天 8 小时。等于 1 个全职员工只在打字。而且同一张订单打了两次，就有 2 次机会打错编号，或者把 10 件看成 10 箱。\n\n你的账是对的；SQL Account 做好了它的工作。问题出在账目周围所有的打字工作。这不是谁的错，是工作本来就是这样安排的。”\n\n操作：讲到每张卡时就指着它。备注：80 张订单、4 分钟和 2 分钟只是例子；问问现场观众他们的数字。\n下一页：“第二个问题：日常工作。”",
-  "thumb": "thumbs-zh/18-typed-three-times.jpg"
+  "thumb": "thumbs-zh/26-typed-three-times.jpg"
  },
  {
-  "file": "slides-zh/19-problem-2.html",
+  "file": "slides-zh/27-problem-2.html",
   "label": "问题 2：日常工作",
   "section": "问题",
   "notes": "“第二个问题。看看这张清单。查看谁逾期。在 WhatsApp 发十五条付款提醒。把银行单据对上 Invoice。发对账单。检查库存。整理销售报表。你办公室里每天都有人在做这些。到了明天，清单又从头开始。这些都不需要做决定，但全部都需要一个人，今天就要做。”\n\n下一页：“第三个问题更糟，因为你看不到它。”",
-  "thumb": "thumbs-zh/19-problem-2.jpg"
+  "thumb": "thumbs-zh/27-problem-2.jpg"
  },
  {
-  "file": "slides-zh/20-problem-3.html",
+  "file": "slides-zh/28-problem-3.html",
   "label": "问题 3：发现太迟",
   "section": "问题",
   "notes": "“问题三：问题发现得太迟。这是一个示例顾客。每个星期，九到十箱。然后订单越来越少，然后就停了。可能是竞争对手找上他了。办公室里没人发现，因为没有人每个星期盯着每一个顾客。七个星期后，有人问：Ah Seng 怎么了？那时候他已经走了。库存也一样：顾客打电话来，你才知道缺货了。销售也一样：要到月底报表你才看到下滑，那已经是开始下滑一个月之后了。”\n\n备注：这是示例数据，要讲明。\n下一页：“问题四：你的库存数字。”",
-  "thumb": "thumbs-zh/20-problem-3.jpg"
+  "thumb": "thumbs-zh/28-problem-3.jpg"
  },
  {
-  "file": "slides-zh/21-problem-4.html",
+  "file": "slides-zh/29-problem-4.html",
   "label": "问题 4：库存永远不准",
   "section": "问题",
   "notes": "“问题四：库存。SQL Account 写 40 箱。有人走去货架看：12 箱。另外 28 箱去哪里了？大部分仓库真正发生的是这样。\n\nManual Picking：拣货用纸，所以拿错货、拿错数量，也没人更新系统。没有固定货位，哪里有空位就放哪里，也没人记录放在哪个货架。所以货找不到：明明在仓库里，就是没人知道在哪里。最旧的货没有先出，旧箱子放在后面就过期了。UOM 混在一起：件数被打成箱数。而且什么都是隔天才输入。\n\n代价是什么？你答应给顾客你没有的货。过期货只能丢掉。员工花好几个小时找货。每到月底盘点，仓库就要停工一天。\n\n你的盘点从来对不上系统的，请举手。”（停顿。）“如果你不相信这个数字，你就不能让一个人，或者一个 AI，答应顾客有货。”\n\n下一页：“还有问题 5，最痛的那个：现金。”",
-  "thumb": "thumbs-zh/21-problem-4.jpg"
+  "thumb": "thumbs-zh/29-problem-4.jpg"
  },
  {
-  "file": "slides-zh/22-problem-5.html",
+  "file": "slides-zh/30-problem-5.html",
   "label": "问题 5：钱收得慢",
   "section": "问题",
   "notes": "",
-  "thumb": "thumbs-zh/22-problem-5.jpg"
+  "thumb": "thumbs-zh/30-problem-5.jpg"
  },
  {
-  "file": "slides-zh/23-count-your-number.html",
+  "file": "slides-zh/31-count-your-number.html",
   "label": "算出你自己的数字",
   "section": "问题",
-  "notes": "“我们给这 5 个问题算一个数字，你自己的数字。三个步骤。\n\n第一步：你的团队每个星期花多少小时在人手工作上？所有员工加起来。我的例子：输入订单十个小时，追收款八个小时，查库存七个小时。一个星期二十五个小时。\n\n第二步：乘以一年五十二个星期。\n\n第三步：乘以十六令吉，大约是一个员工一小时的成本，包括 EPF 和 SOCSO。\n\n二十五乘五十二乘十六：一年两万零八百令吉，花在打单和追款上。现在把你每个月的人工 costing 大概算出来，写在笔记上。”\n\n操作：安静一分钟。桌长帮忙算。\n备注：一小时 RM16 是一个月总成本大约 RM3,400 的员工，除以 208 个工作小时。按现场听众调整。\n下一页：“一般的做法是再请一个文员。但那只是让更多人做同样的打字工作。那么，你已经有 SQL Account 了，要怎么解决？”",
-  "thumb": "thumbs-zh/23-count-your-number.jpg"
+  "notes": "“我们给这 5 个问题算一个数字，你自己的数字。三个步骤。\n\n第一步：你的团队每个星期花多少小时在人手工作上？所有员工加起来。我的例子：输入订单十个小时，追收款八个小时，查库存七个小时。一个星期二十五个小时。\n\n第二步：乘以一年五十二个星期。\n\n第三步：乘以十六令吉，大约是一个员工一小时的成本，包括 EPF 和 SOCSO。\n\n二十五乘五十二乘十六：一年两万零八百令吉，花在打单和追款上。现在把你每个月的人工 costing 大概算出来，写在笔记上。”\n\n操作：安静一分钟。教练帮忙算。\n备注：一小时 RM16 是一个月总成本大约 RM3,400 的员工，除以 208 个工作小时。按现场听众调整。\n下一页：“一般的做法是再请一个文员。但那只是让更多人做同样的打字工作。AI Agent 能解决吗？只要它有 1 样东西：工具。”",
+  "thumb": "thumbs-zh/31-count-your-number.jpg"
  },
  {
-  "file": "slides-zh/24-why-sudu.html",
+  "file": "slides-zh/32-ai-guru.html",
+  "label": "没有工具的 AI",
+  "section": "问题",
+  "notes": "“问大家一个问题。是不是使用了 AI 后，这些问题就能被解决？”（让大家回答；大部分人会说是）\n\n（下一步）“不一定。单靠 AI，只会想，不会做。”\n\n（下一步）“重点来了。没有工具的 AI，只是一位大师。你们都认识这种人：很有自信，建议很好听。你应该先查一下库存。你应该去追 Kedai Ali 的账。你应该打单快一点。谢谢你，大师。”（停一下）“中文有一句话专门讲这种人：只会讲，不会做。”（让大家笑）\n\n“AI 也一样。单靠它自己，只能想、只能给建议。要真的把事做完，它需要工具：伸进你生意里的一双手。这就是 SuDu 给它的。仓库用 WMS：扫码、盘点、拣货。工厂用 MES：追踪每一份工作、每一批货。全部建在 SQL Account 上，你的订单、发票和收付款本来就在那里。这样 AI 才会去查、去点、去打单、去追款，而你来批准。”\n\n这一页多按 2 次 Next：先问问题，再出“不一定”，最后是 AI 大师。\n下一页：“所以有了工具，工作方式就不一样了。”",
+  "steps": 2,
+  "thumb": "thumbs-zh/32-ai-guru.jpg"
+ },
+ {
+  "file": "slides-zh/33-new-way.html",
+  "label": "全新的工作方式",
+  "section": "问题",
+  "notes": "“所以有了工具，工作方式就不一样了。AI Agent 负责做事：它会思考，读订单、计划每一步；它也会执行：查库存、打单、发送、追款。\n\n那你呢？你掌管规矩。你定规矩：信用额度、价格、谁批准什么。你监督：每个动作都在 1 个画面上看得到。你批准：没有你，什么都不入账。规矩交给 AI，汇报回到你手上。\n\n以前，人做事，软件记录。现在，AI 做事，人来掌管。这就是全新的工作方式。”\n\n下一页：“而让这一切成真的，就是工具。”",
+  "thumb": "thumbs-zh/33-new-way.jpg"
+ },
+ {
+  "file": "slides-zh/34-tools-and-memory.html",
+  "label": "没有工具，就做不了事",
+  "section": "SuDu AI",
+  "notes": "“这是大家最容易忘记的部分。世界上最聪明的大脑，没有工具，也只能讲话。大脑负责看懂和计划。工具是它的双手：查库存、开订单、发信息。而每个工具都在 1 个地方运作：你的 ERP，你的客户、库存、订单和钱都在那里。”\n\n（下一步）“关键在这里。每个工具都是你 ERP 里的一个按钮。看左边：很多公司靠一本纸本簿子、3 台不同电脑里的 Excel、WhatsApp 聊天记录，还有只有老板记得的东西在运作。把 AI Agent 放进这样的公司，它能做什么？没东西可查，没东西可按。它只能猜，而猜是很危险的。右边是 SuDu：所有数据都在 1 个地方，SQL Account、仓库和工厂，每份工作都有真正的按钮：查库存、开 Sales Order、发 DO、记录收款。这样 AI Agent 才能做事。所以记住：AI Agent 有多好，要看它所在的系统有多好。这就是为什么 SuDu 要先到位。”\n\n这一页多按 1 次 Next：为什么工具需要好的 ERP。\n下一页：“我来给你看看，在真正的仓库里是什么样子。”",
+  "steps": 1,
+  "thumb": "thumbs-zh/34-tools-and-memory.jpg"
+ },
+ {
+  "file": "slides-zh/35-video-wms.html",
+  "label": "视频：SuDu WMS",
+  "section": "SuDu AI",
+  "notes": "（视频播放：大约 3 分钟，SuDu WMS 预览，有字幕。让它播完。）\n\n“这就是工具在真正的仓库里的样子：每一箱都扫码，每个货位都清楚，每次盘点都和系统一致。”\n\n操作：点一下视频可以暂停或继续。如果开始时没有声音，点一下视频就会打开声音。\n下一页：“演示之前，先回答 2 个我最常被问的问题。”",
+  "thumb": "thumbs-zh/35-video-wms.jpg"
+ },
+ {
+  "file": "slides-zh/36-faq.html",
+  "label": "常见问题",
+  "section": "SuDu AI",
+  "notes": "“演示之前，我先回答 2 个每场讲座都会被问到的问题。\n\n第一：我已经有 SQL Account 了，为什么还需要 SuDu？第二：我可以直接把 Claude 或 Codex 接到 SQL Account 吗？”\n\n下一页：“第 1 个问题。”",
+  "thumb": "thumbs-zh/36-faq.jpg"
+ },
+ {
+  "file": "slides-zh/37-why-sudu.html",
   "label": "有了 SQL Account 为何还要 SuDu",
   "section": "SuDu AI",
-  "notes": "（问题占满整个画面，让它停一下。）“我最常听到的问题是：我已经有 SQL Account 了，为什么还需要 SuDu？”（下一步：答案出现。）“问得好，因为 SQL Account 本身很好。我们把公司想成一层一层的。\n\n第一层，地基，是会计。SQL Account 管你的账：Invoice、付款、税务、报表。但请注意：它记录的是已经发生的事。\n\n第二层是仓库。仓库系统管现场：每一箱货到了就扫描，上架、拣货、出货。库存一动就马上记录，所以你的库存数字是真实、准确的。\n\n第三层，如果你有生产，就是工厂：MES，生产执行系统。它安排每张工单，按 BOM 发料，实时记录产量、废料和机器时间。所以任何时候你都看得到每张工单做到哪里、有没有延误、实际成本多少。不用再等明天的纸本记录表。每张工单你都看得到。\n\n第四层在最上面：AI Agent。它们读取这三层的所有数据，然后动手做事：接单、采购、追款、提早发现问题，由人来批准。SQL Account 告诉你已经发生了什么。SuDu 负责接下来要发生的事。”\n\n下一页：“那 SuDu 要往哪里走？”",
+  "notes": "（问题占满整个画面，让它停一下。）“我最常听到的问题是：我已经有 SQL Account 了，为什么还需要 SuDu？”（下一步：答案出现。）“问得好，因为 SQL Account 本身很好。我们把公司想成一层一层的。\n\n第一层，地基，是会计。SQL Account 管你的账：Invoice、付款、税务、报表。但请注意：它记录的是已经发生的事。\n\n第二层是仓库。仓库系统管现场：每一箱货到了就扫描，上架、拣货、出货。库存一动就马上记录，所以你的库存数字是真实、准确的。\n\n第三层，如果你有生产，就是工厂：MES，生产执行系统。它安排每张工单，按 BOM 发料，实时记录产量、废料和机器时间。所以任何时候你都看得到每张工单做到哪里、有没有延误、实际成本多少。不用再等明天的纸本记录表。每张工单你都看得到。\n\n第四层在最上面：AI Agent。它们读取这三层的所有数据，然后动手做事：接单、采购、追款、提早发现问题，由人来批准。SQL Account 告诉你已经发生了什么。SuDu 负责接下来要发生的事。”\n\n下一页：“那我可以自己把 ChatGPT 或 Claude 直接接到 SQL Account 吗？这是我每个星期都会被问到的问题。”",
   "steps": 1,
-  "thumb": "thumbs-zh/24-why-sudu.jpg"
+  "thumb": "thumbs-zh/37-why-sudu.jpg"
  },
  {
-  "file": "slides-zh/25-vision.html",
-  "label": "我们的愿景",
-  "section": "SuDu AI",
-  "notes": "（让这句话停留一下。先停两秒再开口。）\n\n“SuDu 的愿景，是打造一个能自动化运营公司的 AI。不是聊天机器人，不是报表，而是一个运营公司的 AI。看这个球体：每一个点都是你公司里的一项工作。接单、采购、收货、存货、生产、出货、开单、收款，还有围绕它们的所有工作：报价、信用检查、拣货、打包、盘点、计划、品质检查、付款给供应商、做报表。每一项都连在一起，工作在上面自己不停地运转。\n\n这就是为什么 SuDu 是为此服务企业的 AI ERP：1 个系统管理所有流程，AI 负责执行、分析、提醒，人类负责决策。大部分软件只是在上面加 AI：旧系统旁边放一个聊天机器人，人还是要输入、点击、追。我们是为 AI 打造整个系统，所以它能读取每张订单、每次盘点、每笔付款，做决策、做事，重要的事由人来批准。最后一步是实体的：由同一个系统驱动的机器人，负责搬运、拣货和盘点。\n\n这就是我们的方向。现在让我给大家看看它今天的样子。”\n\n下一页：全景图。",
-  "thumb": "thumbs-zh/25-vision.jpg"
- },
- {
-  "file": "slides-zh/26-the-map.html",
-  "label": "SuDu 全景图",
-  "section": "SuDu AI",
-  "notes": "“先看全貌，用大白话讲。\n\n这个大框就是 SuDu：1 个 ERP，1 个系统，1 个数据库。里面的工作从左流到右。供应链：卖和买，所以订单都在同一个地方。仓库，WMS：每一箱都扫描，所以库存准确。工厂，MES：每张工单都追踪，所以每张工单你都看得到。还有财务：所有东西都进到 SQL Account，所以你的账永远是最新的。\n\n左边，顾客和供应商照他们本来的方式联系你：WhatsApp 和 Email。上面一排，AI Agent 读取所有资料，在每一步做事。最下面是下一步：实体 AI，一辆自动驾驶货车和一个人形机器人，由同一个系统来管。\n\n看一张订单怎么走完全程。”（它会自己循环播放，大约 17 秒。）\n\n备注：实体 AI 是路线图，今天还没有在卖。\n下一页：“现在从侧面看同一个系统。”",
-  "thumb": "thumbs-zh/26-the-map.jpg"
- },
- {
-  "file": "slides-zh/27-layers-3d.html",
-  "label": "3D 看 4 层",
-  "section": "SuDu AI",
-  "notes": "“这就是 SuDu 的结构，一层一层来看。先从地基开始：SQL Account。”\n\n（下一步：底板翻起来。）第 1 层，SQL Account：“你的会计。Invoice、Credit Note、付款、e-Invoice、税务、你的 P&L。它让你的账目正确，记录的是已经发生的事。SuDu 开出的每张单据都会自动进到这里。”\n\n（下一步：WMS 落在上面。）第 2 层，WMS：“上面是仓库。收货、上架、拣货、打包、送货、转仓、盘点、Batch 和有效期。每一箱一动就扫描，所以库存数字永远是真的。”\n\n（下一步：MES 落在上面。）第 3 层，MES：“如果你有生产，就是工厂。BOM、Production Order、发料、产出、QC、废料和机器时间。每张工单都实时计划、追踪和计算成本。”\n\n（下一步：AI Agent 落在最上面。）第 4 层，AI Agent：“最上面是 AI Agent，读取下面每一层，做日常工作。没有人批准，什么都不会存进去。”\n\n（下一步：四层合成一叠。）“4 层，1 个系统。每一层都建在下一层之上，由 AI 全部运营。”\n\n这一页有 5 次额外的“下一步”。\n下一页：“每家公司都在走同一条路。你的公司走到哪里了？”",
-  "steps": 5,
-  "thumb": "thumbs-zh/27-layers-3d.jpg"
- },
- {
-  "file": "slides-zh/28-five-stages.html",
-  "label": "5 个阶段",
-  "section": "SuDu AI",
-  "notes": "“想想工业革命：蒸汽，然后是电，然后是电脑。每一次都改变了由谁来做工作，而先行动的工厂都赢了。公司的运营方式也一样。\n\n商业 1.0，大约到 1980 年：手写。订单写在簿子里，库存靠手点。很慢，也没人看得到全貌。\n\n商业 2.0，1980 和 1990 年代：电子表格。Excel 文件用 Email 传来传去。快了一些，但版本很多，常常打错。\n\n商业 3.0，从 1990 年代到现在：软件。SQL Account，加上每个部门各自一套系统。好很多，但系统之间不相通，人还是要把所有东西输入进去。今天在座大部分公司就在这里。\n\n商业 4.0 已经来了。ChatGPT 在 2022 年底出现，当时只会聊天。从 2025 年起，AI Agent 开始做事：读 WhatsApp 订单、开单据、追款，在 AI 原生 ERP 里面完成，由人来批准。这就是 SuDu 今天在做的，等一下的演示你会看到。\n\n接下来是商业 5.0：实体 AI。人形机器人和自动驾驶货车做体力活，由同一个系统驱动。AI 原生 ERP 加上机器人：自主运营的企业。\n\n（等竞争对手的标记往上爬时停一下。）重点是：未来不是快要来，而是已经来了。你的竞争对手可能已经在 4.0，而你还在 3.0。到目前为止的每一次革命，先行动的人都抢走了顾客。差距每年都在扩大。”\n\n指着每张卡上的两条柱：人手工作和成本每个时代都在下降，到 4.0 和 5.0 降得最多。\n备注：年份是大概的时代划分，不是精确日期；人手工作和成本的柱只是示意，不是实测数字。实体 AI 的时间（2020 年代后期）只是展望，目前还没有销售。\n下一页：“那我可以自己把 ChatGPT 或 Claude 直接接到 SQL Account 吗？这是我每个星期都会被问到的问题。”",
-  "thumb": "thumbs-zh/28-five-stages.jpg"
- },
- {
-  "file": "slides-zh/29-plug-straight-in.html",
+  "file": "slides-zh/38-plug-straight-in.html",
   "label": "为什么不直接接上去？",
   "section": "SuDu AI",
   "notes": "“每个星期都有人问我：我侄子，或者我的 IT 说，他这个周末就能把 ChatGPT、Claude 或 Codex 直接接到我的 SQL Account。可以吗？可以，他大概做得到。但这些地方会出问题。\n\n第一：没有 access control。它能读每一个数字，也能改任何一个，而且不会先问你。就像第一天就把总钥匙和公司印章交给一个新来的临时工。\n\n第二：它可能把 server 卡死。SQL Account 把资料放在数据库里。一个很重的问题，比如 5 年来的每一笔销售，就能把它锁住，整个办公室都开不了 Invoice，要等它恢复。\n\n第三：它会把你的账搞乱。直接写进数据库，就跳过了 SQL Account 自己的检查：单号、库存更新、账目。你的记录彼此对不上，可能几个月都没发现。\n\n所以危险的不是 AI Agent，是直接接进去。安全的做法是正规的连接：每个用户都有权限，存进 SQL Account 之前要有人批准，每个动作都有记录，SQL Account 自己的规则也照样遵守。这就是 SuDu 的同步工具在做的事。”\n\n备注：要说“可能会卡死”，不要说“一定会当机”。Claude 是 Anthropic 做的，Codex 是 OpenAI 做的；两个标志只是用来指出是哪个工具。\n下一页：“所以 AI 底下需要有东西撑着。”",
-  "thumb": "thumbs-zh/29-plug-straight-in.jpg"
+  "thumb": "thumbs-zh/38-plug-straight-in.jpg"
  },
  {
-  "file": "slides-zh/30-the-house.html",
+  "file": "slides-zh/39-the-house.html",
   "label": "AI 底下需要什么",
   "section": "SuDu AI",
-  "notes": "“AI 就像一栋房子。大多数人只看屋顶。AI 是最吸引人的部分。但屋顶下面要有房子，数据乱，AI 只会更快出错。所以要从地基盖起。每一层，我讲 1 个风险，再给你 1 个问题自己检查。\n\n1，地基：干净的数据。每样货 1 个编号、单位固定、库存和货架对得上，因为每一箱都扫描、每张工单都有记录。没有它，AI 会报错价格，答应给你没有的货。检查：盘点时，系统和货架对得上吗？\n\n2，门：安全的连接。AI 走一道受控的门，守住你的会计规则，绝不直接进数据库。没有它，1 个错误指令就能卡死服务器，或把你的账搞乱。检查：有没有工具直接写进你的 SQL 数据库？\n\n3，墙：权限与批准。谁能看什么、做什么、批准什么，每个动作都有记录。没有它，AI 什么都能改，也没人知道谁做了什么。检查：谁批准折扣、信用额度和采购，有没有写下来？\n\n4，屋顶：AI Agent 做日常工作。没有它，员工继续人手打单、人手追。检查：哪份工作每周最花时间？\n\n接下来，我让你们看整栋房子运作起来。”\n\n房子会从地面自己盖起来；编号圆点对应 4 层。这是第 2 条主线，后面还会再出现。\n下一页：“所以我们不取代 SQL Account。我们围绕它盖房子。”",
-  "thumb": "thumbs-zh/30-the-house.jpg"
+  "notes": "“AI 就像一栋房子。大多数人只看屋顶。AI 是最吸引人的部分。但屋顶下面要有房子，数据乱，AI 只会更快出错。所以要从地基盖起。每一层，我讲 1 个风险，再给你 1 个问题自己检查。\n\n1，地基：干净的数据。每样货 1 个编号、单位固定、库存和货架对得上，因为每一箱都扫描、每张工单都有记录。没有它，AI 会报错价格，答应给你没有的货。检查：盘点时，系统和货架对得上吗？\n\n2，门：安全的连接。AI 走一道受控的门，守住你的会计规则，绝不直接进数据库。没有它，1 个错误指令就能卡死服务器，或把你的账搞乱。检查：有没有工具直接写进你的 SQL 数据库？\n\n3，墙：权限与批准。谁能看什么、做什么、批准什么，每个动作都有记录。没有它，AI 什么都能改，也没人知道谁做了什么。检查：谁批准折扣、信用额度和采购，有没有写下来？\n\n4，屋顶：AI Agent 做日常工作。没有它，员工继续人手打单、人手追。检查：哪份工作每周最花时间？\n\n接下来，我让你们看整栋房子运作起来。”\n\n房子会从地面自己盖起来；编号圆点对应 4 层。这是第 2 条主线，后面还会再出现。\n下一页：“演示之前，先给大家看 1 张图，在座每一位 Admin 都会懂。”",
+  "thumb": "thumbs-zh/39-the-house.jpg"
  },
  {
-  "file": "slides-zh/31-sql-stays.html",
-  "label": "SQL Account 照用",
+  "file": "slides-zh/40-meme-pool.html",
+  "label": "梗图：谁被救起来",
   "section": "SuDu AI",
-  "notes": "“你继续用 SQL Account。你的会计团队照今天的方式在里面工作。SQL Account 保存记录：它知道你的顾客、价格和信用条件。SuDu 用这些资料做日常工作。每个结果都回到 SQL Account。这就是房子的门：SuDu 用自己的工具连接，有权限控制。没有任何东西直接写进你的数据库。”\n\n备注：跟产品团队确认，在卖的版本里到底哪些单据会传回 SQL Account。\n下一页：“现在讲地基。”",
-  "thumb": "thumbs-zh/31-sql-stays.jpg"
+  "notes": "（这一页是给大家笑的，让它停一下。）\n\n“在座的 Admin，说真的。老板忙着玩新的 AI Agent。准备 Report 的 Admin 快要淹死了。那 Key 单的 Admin 呢？去年就已经沉到池底了。”（停一下让大家笑）\n\n“这就是我们打造 SuDu 的原因：让你公司里没有人再被 Report 和打单淹没。”\n\n下一页：“讲够了。我来做给你看。”",
+  "thumb": "thumbs-zh/40-meme-pool.jpg"
  },
  {
-  "file": "slides-zh/32-foundation.html",
-  "label": "地基：WMS 和 MES",
+  "file": "slides-zh/41-section-demo.html",
+  "label": "章节：现场演示",
   "section": "SuDu AI",
-  "notes": "“地基很简单：在发生的地方，扫描一次。在仓库，货到的时候、上架的时候、拣货的时候，仓管员都扫描那一箱货。不用纸，不用事后打字。我们有一个顾客，库存差异减少了百分之九十。工厂也是同样的道理：扫描工单，记录用了什么、做出了什么。另一个顾客的人手输入减少了百分之八十。如果你没有工厂，右边可以不看。重点一样：靠扫描，不靠打字。”\n\n备注：公司简介里，库存差异 -90% 归功于 Twin Arrow，人手输入 -80% 归功于 BHPetrol。必须获得许可才能说出名字。\n下一页：“在这些干净的数据上面，就是 AI 团队。”",
-  "thumb": "thumbs-zh/32-foundation.jpg"
+  "notes": "“讲够了。我来做给你看。这是用一家示范公司 Maju Jaya Foods 做的现场演示，用的是示范数据。6 个 AI Agent，7 个部分：设置，然后是销售、库存、采购、收款、追加销售和财务。留意每个 AI Agent 做了什么，还有它在哪里停下来问人。”\n\n下一页：“首先，认识 6 个 AI Agent。”",
+  "thumb": "thumbs-zh/41-section-demo.jpg"
  },
  {
-  "file": "slides-zh/33-ai-team.html",
-  "label": "AI 团队",
-  "section": "SuDu AI",
-  "notes": "“你得到的不是一个什么都做的 AI，而是一个团队，就像你自己的办公室。一个接订单，一个看库存，一个追款。它们都遵守一条规则：一般情况 AI 处理，特别情况交给人做决定。幻灯片讲够了，我让你看看一个工作日。”\n\n下一页：交给演示。",
-  "thumb": "thumbs-zh/33-ai-team.jpg"
- },
- {
-  "file": "slides-zh/34-demo-day.html",
+  "file": "slides-zh/42-demo-day.html",
   "label": "现场演示",
   "section": "SuDu AI",
-  "notes": "“我来介绍今天 demo 的 6 个 AI Agent。它们为 Maju Jaya Foods 工作，这是一家示范公司，用的是示范数据。Sasha 接订单。Ivan 看库存。Puteri 负责采购。Cody 追钱。Uma 把流失的顾客拉回来。Felix 管数字。我们先设定一次，然后每一个都在屏幕上做真正的工作。”\n\n接下来每一页是 1 个用例。现场演示，然后回到这一页。\n下一页：设置的介绍页。",
-  "thumb": "thumbs-zh/34-demo-day.jpg"
+  "notes": "“我来介绍今天 demo 的 6 个 AI Agent。它们为 Maju Jaya Foods 工作，这是一家示范公司，用的是示范数据。Sasha 接订单。Ivan 看库存。Puteri 负责采购。Cody 追钱。Uma 把流失的顾客拉回来。Felix 管数字。我们先设定一次，然后每一个都在屏幕上做真正的工作。”\n\n接下来每一页是 1 个用例。现场演示，然后回到这一页。\n下一页：“在任何 AI Agent 开始工作之前，我们先设置一次。”",
+  "thumb": "thumbs-zh/42-demo-day.jpg"
  },
  {
-  "file": "slides-zh/35-intro-01.html",
-  "label": "演示：Setup",
-  "section": "SuDu AI",
-  "notes": "“第 1 步：任何 AI Agent 开工之前，我们先设置一次：WhatsApp、联系人、过账、库存、批准和价格。每个 AI Agent 都需要基本设置。”\n\n下一页：“设置，一步一步来。”",
-  "thumb": "thumbs-zh/35-intro-01.jpg"
- },
- {
-  "file": "slides-zh/36-uc-01.html",
+  "file": "slides-zh/43-uc-01.html",
   "label": "演示：设置",
   "section": "SuDu AI",
   "notes": "“设置：设置一次就好。连接 WhatsApp。设置联系人。自动存进 SQL Account。核对库存余额。设置批准：信用额度、最低价。导入以前的价格。设置一次，每个 AI Agent 都用这些设置。”\n\n操作：在真实画面上现场演示（网页或手机 app），然后回到这一页。\n准备：以前的价格由 Jordan Lee 准备。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：Sales AI 的介绍页。",
-  "thumb": "thumbs-zh/36-uc-01.jpg"
+  "thumb": "thumbs-zh/43-uc-01.jpg"
  },
  {
-  "file": "slides-zh/37-intro-02.html",
+  "file": "slides-zh/44-intro-02.html",
   "label": "演示：Sales AI",
   "section": "SuDu AI",
   "notes": "“第 2 部分：Sales AI。认识一下 Sasha。它接 WhatsApp、PDF 和聊天里的订单。Sasha 会给你看 3 件工作。”\n\n下一页：“Sales AI，用例 1：开 Sales Order。”",
-  "thumb": "thumbs-zh/37-intro-02.jpg"
+  "thumb": "thumbs-zh/44-intro-02.jpg"
  },
  {
-  "file": "slides-zh/38-uc-02.html",
+  "file": "slides-zh/45-uc-02.html",
   "label": "演示：Sales AI 1/3",
   "section": "SuDu AI",
   "notes": "“Sales AI，用例 1/3：开 Sales Order。用平常的话打订单。或者上传顾客的 PDF 或照片。检查草稿，然后批准。价格取自顾客的历史记录。”\n\n操作：在真实画面上现场演示（网页或手机 app），然后回到这一页。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：“Sales AI：把 SO 或 Invoice 发给顾客。”",
-  "thumb": "thumbs-zh/38-uc-02.jpg"
+  "thumb": "thumbs-zh/45-uc-02.jpg"
  },
  {
-  "file": "slides-zh/39-uc-03.html",
+  "file": "slides-zh/46-uc-03.html",
   "label": "演示：Sales AI 2/3",
   "section": "SuDu AI",
   "notes": "“Sales AI，用例 2/3：把 SO 或 Invoice 发给顾客。在联系人里加上顾客的 WhatsApp 号码。说：‘把 SI-2001 发给 Jaya Grocer’。PDF 就直接到顾客的 WhatsApp。不用下载，不用转发。”\n\n操作：在真实画面上现场演示（网页或手机 app、WhatsApp），然后回到这一页。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：“Sales AI：把 Sales Order 转成 Invoice。”",
-  "thumb": "thumbs-zh/39-uc-03.jpg"
+  "thumb": "thumbs-zh/46-uc-03.jpg"
  },
  {
-  "file": "slides-zh/40-uc-04.html",
+  "file": "slides-zh/47-uc-04.html",
   "label": "演示：Sales AI 3/3",
   "section": "SuDu AI",
   "notes": "“Sales AI，用例 3/3：把 Sales Order 转成 Invoice。用大白话说。它从 SO 复制每一行。存进 SQL Account。SO 转 Invoice，不用重打。”\n\n操作：在真实画面上现场演示（网页或手机 app），然后回到这一页。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：Inventory AI 的介绍页。",
-  "thumb": "thumbs-zh/40-uc-04.jpg"
+  "thumb": "thumbs-zh/47-uc-04.jpg"
  },
  {
-  "file": "slides-zh/41-intro-03.html",
+  "file": "slides-zh/48-intro-03.html",
   "label": "演示：Inventory AI",
   "section": "SuDu AI",
   "notes": "“第 3 部分：Inventory AI。认识一下 Ivan。它查库存，发库存报告。Ivan 会给你看 3 件工作。”\n\n下一页：“Inventory AI，用例 1：查库存余额。”",
-  "thumb": "thumbs-zh/41-intro-03.jpg"
+  "thumb": "thumbs-zh/48-intro-03.jpg"
  },
  {
-  "file": "slides-zh/42-uc-05.html",
+  "file": "slides-zh/49-uc-05.html",
   "label": "演示：Inventory AI 1/3",
   "section": "SuDu AI",
   "notes": "“Inventory AI，用例 1/3：查库存余额。输入 /accounting 直接问 SQL Account。或者在 ERP 更新后问它。几秒就有答案。/accounting 是直接读取 SQL Account 的。”\n\n操作：在真实画面上现场演示（网页或手机 app），然后回到这一页。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：“Inventory AI：做库存报告。”",
-  "thumb": "thumbs-zh/42-uc-05.jpg"
+  "thumb": "thumbs-zh/49-uc-05.jpg"
  },
  {
-  "file": "slides-zh/43-uc-06.html",
+  "file": "slides-zh/50-uc-06.html",
   "label": "演示：Inventory AI 2/3",
   "section": "SuDu AI",
   "notes": "“Inventory AI，用例 2/3：做库存报告。要一份 PDF 报告，发到 WhatsApp。或者要一个实时 Dashboard。想改，再问一次就好。PDF 方便分享，Dashboard 一直自动更新。”\n\n操作：在真实画面上现场演示（网页或手机 app、WhatsApp），然后回到这一页。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：“Inventory AI：按时间表自动发报告。”",
-  "thumb": "thumbs-zh/43-uc-06.jpg"
+  "thumb": "thumbs-zh/50-uc-06.jpg"
  },
  {
-  "file": "slides-zh/44-uc-07.html",
+  "file": "slides-zh/51-uc-07.html",
   "label": "演示：Inventory AI 3/3",
   "section": "SuDu AI",
   "notes": "“Inventory AI，用例 3/3：按时间表自动发报告。用大白话说一次，它就变成一个 Routine。报告每周准时送到。说一次，每周自动跑。”\n\n操作：在真实画面上现场演示（网页或手机 app、Routine、WhatsApp），然后回到这一页。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：Purchase AI 的介绍页。",
-  "thumb": "thumbs-zh/44-uc-07.jpg"
+  "thumb": "thumbs-zh/51-uc-07.jpg"
  },
  {
-  "file": "slides-zh/45-intro-04.html",
+  "file": "slides-zh/52-intro-04.html",
   "label": "演示：Purchase AI",
   "section": "SuDu AI",
   "notes": "“第 4 部分：Purchase AI。来认识 Puteri。她负责开 PO、记录 Supplier 发票。Puteri 会给大家看 3 个工作。”\n\n下一页：“Purchase AI，用例 1：开 Purchase Order。”",
-  "thumb": "thumbs-zh/45-intro-04.jpg"
+  "thumb": "thumbs-zh/52-intro-04.jpg"
  },
  {
-  "file": "slides-zh/46-uc-08.html",
+  "file": "slides-zh/53-uc-08.html",
   "label": "演示：Purchase AI 1/3",
   "section": "SuDu AI",
   "notes": "“Purchase AI，用例 1/3：开 Purchase Order。用大白话打出来，或者上传手写单的照片。批准，然后发出。字再潦草，也能变成整齐的 PO。”\n\n操作：在真实画面上现场演示（网页或手机 app），然后回到这一页。\n备注：示范公司和示范数据；投影片上的画面是真实画面的示意图。\n下一页：“Purchase AI：supplier 发票转 Purchase Invoice。”",
-  "thumb": "thumbs-zh/46-uc-08.jpg"
+  "thumb": "thumbs-zh/53-uc-08.jpg"
  },
  {
-  "file": "slides-zh/47-uc-09.html",
+  "file": "slides-zh/54-uc-09.html",
   "label": "演示：Purchase AI 2/3",
   "section": "SuDu AI",
   "notes": "“Purchase AI，用例 2/3：supplier 发票转 Purchase Invoice。上传 supplier 的发票。它自动对上 PO 和收货记录。存成 Purchase Invoice。数量或价格不对，会先被抓出来。”\n\n操作：在真实画面上现场演示（网页或手机 app），然后回到这一页。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：“Purchase AI：追迟交的货。”",
-  "thumb": "thumbs-zh/47-uc-09.jpg"
+  "thumb": "thumbs-zh/54-uc-09.jpg"
  },
  {
-  "file": "slides-zh/48-uc-10.html",
+  "file": "slides-zh/55-uc-10.html",
   "label": "演示：Purchase AI 3/3",
   "section": "SuDu AI",
   "notes": "“Purchase AI，用例 3/3：追迟交的货。设一个 Task：追还没到货的 PO。它在 WhatsApp 联系 supplier，回复转给采购员。不用再一个个打电话给 supplier。”\n\n操作：在真实画面上现场演示（网页或手机 app、WhatsApp），然后回到这一页。\n备注：示范公司和示范数据；投影片上的画面是真实画面的示意图。\n下一页：Collection AI 介绍页。",
-  "thumb": "thumbs-zh/48-uc-10.jpg"
+  "thumb": "thumbs-zh/55-uc-10.jpg"
  },
  {
-  "file": "slides-zh/49-intro-05.html",
+  "file": "slides-zh/56-intro-05.html",
   "label": "演示：Collection AI",
   "section": "SuDu AI",
   "notes": "“第 5 部分：Collection AI。来认识 Cody。他负责追逾期付款、读转账单。Cody 会给大家看 3 个工作。”\n\n下一页：“Collection AI，用例 1：查逾期顾客。”",
-  "thumb": "thumbs-zh/49-intro-05.jpg"
+  "thumb": "thumbs-zh/56-intro-05.jpg"
  },
  {
-  "file": "slides-zh/50-uc-11.html",
+  "file": "slides-zh/57-uc-11.html",
   "label": "演示：Collection AI 1/3",
   "section": "SuDu AI",
   "notes": "“Collection AI，用例 1/3：查逾期顾客。建一个 Routine 查逾期顾客。它开一个 Task，附上名单。每份对账单用 WhatsApp 发出。每个工作日自动跑，没人需要记。”\n\n操作：在真实画面上现场演示（网页或手机 app、Routine、WhatsApp），然后回到这一页。\n备注：示范公司和示范数据；投影片上的画面是真实画面的示意图。\n下一页：“Collection AI：顾客要求宽限。”",
-  "thumb": "thumbs-zh/50-uc-11.jpg"
+  "thumb": "thumbs-zh/57-uc-11.jpg"
  },
  {
-  "file": "slides-zh/51-uc-12.html",
+  "file": "slides-zh/58-uc-12.html",
   "label": "演示：Collection AI 2/3",
   "section": "SuDu AI",
   "notes": "“Collection AI，用例 2/3：顾客要求宽限。顾客在 WhatsApp 回复，回复出现在 Task 里。你批准下一步。你来决定，它到时跟进。”\n\n操作：在真实画面上现场演示（WhatsApp、网页或手机 app），然后回到这一页。\n备注：示范公司和示范数据；投影片上的画面是真实画面的示意图。\n下一页：“Collection AI：顾客发来 payment receipt。”",
-  "thumb": "thumbs-zh/51-uc-12.jpg"
+  "thumb": "thumbs-zh/58-uc-12.jpg"
  },
  {
-  "file": "slides-zh/52-uc-13.html",
+  "file": "slides-zh/59-uc-13.html",
   "label": "演示：Collection AI 3/3",
   "section": "SuDu AI",
   "notes": "“Collection AI，用例 3/3：顾客发来 payment receipt。顾客在 WhatsApp 发来 payment receipt。它读出金额，对上 Invoice。自动开好 Customer Payment。Payment receipt 不再淹没在聊天里。”\n\n操作：在真实画面上现场演示（WhatsApp），然后回到这一页。\n备注：示范公司和示范数据；投影片上的画面是真实画面的示意图。\n下一页：Up Sales AI 介绍页。",
-  "thumb": "thumbs-zh/52-uc-13.jpg"
+  "thumb": "thumbs-zh/59-uc-13.jpg"
  },
  {
-  "file": "slides-zh/53-intro-06.html",
+  "file": "slides-zh/60-intro-06.html",
   "label": "演示：Up Sales AI",
   "section": "SuDu AI",
   "notes": "“第 6 部分：Up Sales AI。来认识 Uma。她负责把流失的顾客拉回来。Uma 会给大家看 1 个工作。”\n\n下一页：“Up Sales AI，用例 1：拉回流失顾客。”",
-  "thumb": "thumbs-zh/53-intro-06.jpg"
+  "thumb": "thumbs-zh/60-intro-06.jpg"
  },
  {
-  "file": "slides-zh/54-uc-14.html",
+  "file": "slides-zh/61-uc-14.html",
   "label": "演示：Up Sales AI 1/1",
   "section": "SuDu AI",
   "notes": "“Up Sales AI，用例 1/1：拉回流失顾客。找出 30 天没下单的顾客，用 WhatsApp 发促销给他们，附上促销 PDF。趁顾客还没忘记你，把他们拉回来。”\n\n操作：在真实画面上现场演示（网页或手机 app、WhatsApp），然后回到这一页。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：Finance AI 的介绍页。",
-  "thumb": "thumbs-zh/54-uc-14.jpg"
+  "thumb": "thumbs-zh/61-uc-14.jpg"
  },
  {
-  "file": "slides-zh/55-intro-07.html",
+  "file": "slides-zh/62-intro-07.html",
   "label": "演示：Finance AI",
   "section": "SuDu AI",
   "notes": "“第 7 部分：Finance AI。来认识 Felix。他负责解释数字、做 Dashboard。Felix 会给大家看 2 个工作。”\n\n下一页：“Finance AI，用例 1：问财务数字。”",
-  "thumb": "thumbs-zh/55-intro-07.jpg"
+  "thumb": "thumbs-zh/62-intro-07.jpg"
  },
  {
-  "file": "slides-zh/56-uc-15.html",
+  "file": "slides-zh/63-uc-15.html",
   "label": "演示：Finance AI 1/2",
   "section": "SuDu AI",
   "notes": "“Finance AI，用例 1/2：问财务数字。用大白话问。盈亏、销售、谁欠你钱，答案直接来自 SQL Account。在 Excel 忙一个下午，变成问 1 个问题。”\n\n操作：在真实画面上现场演示（网页或手机 app），然后回到这一页。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：“Finance AI：做财务 Dashboard。”",
-  "thumb": "thumbs-zh/56-uc-15.jpg"
+  "thumb": "thumbs-zh/63-uc-15.jpg"
  },
  {
-  "file": "slides-zh/57-uc-16.html",
+  "file": "slides-zh/64-uc-16.html",
   "label": "演示：Finance AI 2/2",
   "section": "SuDu AI",
   "notes": "“Finance AI，用例 2/2：做财务 Dashboard。要一份 PDF，发到 WhatsApp。或者要一个实时 Dashboard。分享给你的合伙人。你的数字，随时看。”\n\n操作：在真实画面上现场演示（网页或手机 app、WhatsApp），然后回到这一页。\n备注：示范公司和示范数据；幻灯片上的画面是真实画面的示意。\n下一页：“整个团队的工作就是这样。那么，有什么事是它没有你就绝不会做的？”",
-  "thumb": "thumbs-zh/57-uc-16.jpg"
+  "thumb": "thumbs-zh/64-uc-16.jpg"
  },
  {
-  "file": "slides-zh/58-you-stay-the-boss.html",
+  "file": "slides-zh/65-you-stay-the-boss.html",
   "label": "AI 绝不做的 4 件事",
   "section": "SuDu AI",
   "notes": "“你们刚才看到它做了很多事。那我来讲讲 AI 绝不做的 4 件事。你没批准的东西，它什么都不会存进去。它绝不改动财务数据。它只读你允许的 WhatsApp 群组。而且它做的每一件事都有记录，你可以随时查。你还是老板。那么，这套在你公司行得通吗？我们来看看。”\n\n下一页：“这套在你公司行得通吗？我们来打分。”",
-  "thumb": "thumbs-zh/58-you-stay-the-boss.jpg"
+  "thumb": "thumbs-zh/65-you-stay-the-boss.jpg"
  },
  {
-  "file": "slides-zh/59-readiness-qr.html",
-  "label": "扫码：AI 准备度",
+  "file": "slides-zh/66-section-workshop.html",
+  "label": "章节：工作坊",
+  "section": "工作坊",
+  "notes": "“现在轮到你了。这是工作坊环节。分 3 步。\n\n第一：用你名牌上的号码，找到你的组。第二：认识你的教练；每组有 1 位 SuDu 教练。第三：检查你自己的公司：你需要 WMS 和 MES 吗？”\n\n下一页：“首先，找到你的号码。”",
+  "thumb": "thumbs-zh/66-section-workshop.jpg"
+ },
+ {
+  "file": "slides-zh/67-workshop-groups.html",
+  "label": "工作坊分组",
   "section": "Workshop",
-  "notes": "“请拿出手机扫这个二维码。8 个关于你自己公司的问题，老实回答，几分钟就好。你的数据干净吗？你的规则清楚吗？你的订单和联系人齐全吗？答完马上知道你的公司准备好用 AI 了没有。”\n\n操作：桌长帮忙不会扫码的人。\n下一页：“我们一题一题来看。”",
-  "thumb": "thumbs-zh/59-readiness-qr.jpg"
+  "notes": "“工作坊开始之前，我们先分组坐。看看你的名牌：上面有一个号码，1、2 或 3。找到有你号码的桌子，和你的组坐在一起。\n\n每组有 1 位 SuDu 教练。教练会一步一步带你走完工作坊，和你一起核对答案，告诉你公司应该从哪里开始。任何时候卡住了，举手，教练就会过来。”\n\n操作：教练站起来，举起自己的组号，方便大家找到。给 2 分钟换位子。\n准备：报到时给每位参加者一个写着 1、2 或 3 的名牌，平均分配；每张桌子放一张组号卡；在这一页念出每位教练的名字。\n下一页：“大家都和自己的组坐好了吗？我们开始。”",
+  "thumb": "thumbs-zh/67-workshop-groups.jpg"
  },
  {
-  "file": "slides-zh/60-readiness-check.html",
-  "label": "AI 准备度检查",
-  "section": "Workshop",
-  "notes": "“作业纸，第 2 格。8 个关于你自己公司的问题。老实回答：除了你和你的桌长，没人会看到。每个‘是’得 1 分。”\n\n然后，在大家作答时，讲每一题为什么重要：\n1 每个货品一个编号 — 它分不出两个编号是不是同一个 Milo。\n2 单位固定 — “10” 可能是 10 箱，也可能是 10 件。\n3 系统和货架对得上 — 它会答应给顾客你根本没有的货。\n4 订单集中一处 — 它只能读到已连接的聊天。\n5 设好信用额度 — 没有额度，它就没法检查。\n6 价格表是最新的 — 它会报去年的价钱。\n7 写明谁批准 — 它要知道该问谁。\n8 电话已存 — 找不到人，它就没法发信息。\n\n操作：8 分钟作答，然后各桌讨论 5 分钟。1 到 3 分：先打地基；4 到 6 分：先用 AI Agent；7 或 8 分：可以直接上整套系统。\n下一页：“再做 1 个检查：你的房子要多大？”",
-  "thumb": "thumbs-zh/60-readiness-check.jpg"
- },
- {
-  "file": "slides-zh/61-need-wms-mes.html",
+  "file": "slides-zh/68-need-wms-mes.html",
   "label": "你需要 WMS 和 MES 吗？",
   "section": "Workshop",
-  "notes": "“准备度检查告诉你从哪里开始。这个检查告诉你房子要盖多大。2 张短清单，每张 5 题。每个‘是’打勾，两边分开算。\n\nWMS，仓库这边：超过 1 个仓库或很多货架；员工浪费时间找货；要跟 Batch 或有效期，或常因过期丢货；盘点数和系统对不上；每天超过 30 张订单要拣货打包。每一个‘是’，都是 WMS 能解决的问题。\n\nMES，工厂这边：你自己生产、调配或组装产品；你按配方或 BOM 发原料；你不知道一张单做到哪一步；你不清楚每批的真实成本或损耗；你用纸或 Excel 排生产。\n\n计分：0 分，目前 SQL Account 加 AI Agent 就够了。1 或 2 分，先用 AI Agent，以后再加。3 分或以上，你需要它，所以第 1 天就要规划。\n\n如果你没有生产任何东西，MES 那边就跳过：算 0 分。”\n\n操作：桌长把两个分数记在 lead sheet 上，写在准备度分数旁边。\n下一页：“那要怎么开始？只要 3 步。”",
-  "thumb": "thumbs-zh/61-need-wms-mes.jpg"
+  "notes": "“你公司的第一个问题：房子要盖多大？2 张短清单，每张 5 题。每个‘是’打勾，两边分开算。\n\nWMS，仓库这边：超过 1 个仓库或很多货架；员工浪费时间找货；要跟 Batch 或有效期，或常因过期丢货；盘点数和系统对不上；每天超过 30 张订单要拣货打包。每一个‘是’，都是 WMS 能解决的问题。\n\nMES，工厂这边：你自己生产、调配或组装产品；你按配方或 BOM 发原料；你不知道一张单做到哪一步；你不清楚每批的真实成本或损耗；你用纸或 Excel 排生产。\n\n计分：0 分，目前 SQL Account 加 AI Agent 就够了。1 或 2 分，先用 AI Agent，以后再加。3 分或以上，你需要它，所以第 1 天就要规划。\n\n如果你没有生产任何东西，MES 那边就跳过：算 0 分。”\n\n操作：教练把两个分数记在 lead sheet 上，写在准备度分数旁边。\n下一页：“那要怎么开始？只要 3 步。”",
+  "thumb": "thumbs-zh/68-need-wms-mes.jpg"
  },
  {
-  "file": "slides-zh/62-live-in-30-days.html",
+  "file": "slides-zh/69-live-in-30-days.html",
   "label": "Onboarding",
   "section": "正式启动",
   "notes": "“开始只要 3 步。\n\n第 1 步，AI 设置：我们用 SuDu 同步工具安全连接你的 SQL Account。顾客、货品、价格、库存和信用额度自动同步过来，不直接写进你的数据库。同时设好权限，谁能批准什么。\n\n第 2 步，训练 AI：就像教新员工。把你的做法写成 Skill 和 SOP，比如什么时候追款、超过信用额度要问谁。然后对上货品编号：顾客写“bwg besar”，AI 要知道就是你系统里的哪个 item code。我们先用你上个月的订单测试。\n\n第 3 步，开始用你的 AI：它开始接单、追款、查库存、做报表。一开始只出草稿，你批准了才保存，每个动作都有记录。信任建立后，再一个一个加工作。\n\n我们需要你提供 3 样：你的数据、一位批准人、一位每天使用的人。”\n\n下一页：“那人手到底花了你多少钱？”",
-  "thumb": "thumbs-zh/62-live-in-30-days.jpg"
+  "thumb": "thumbs-zh/69-live-in-30-days.jpg"
  },
  {
-  "file": "slides-zh/63-what-it-gives-back.html",
+  "file": "slides-zh/70-what-it-gives-back.html",
   "label": "人手成本",
   "section": "正式启动",
   "notes": "“我们先算人手成本。以一家每天约 80 张订单的批发商为例。Sales：3 个人输入订单、回复顾客，每月 519 小时，成本 RM10,350。Finance：2 个人开 Invoice、追款、对账，346 小时，RM7,820。采购：1 个人开 PO、追货、输入 Supplier 发票，RM3,680。库存：1 个人查库存、做报表，RM3,706。\n\n加起来：7 个人，每月 1,211 小时，成本 RM25,556。一年就是 RM306,672，花在同样的人手工作上。现在看看你自己算的人工 costing，跟这个比一比。”\n\n备注：这是估算，每月成本含 EPF、SOCSO；要大声说“估算”。\n下一页：“那用 AI 呢？”",
-  "thumb": "thumbs-zh/63-what-it-gives-back.jpg"
+  "thumb": "thumbs-zh/70-what-it-gives-back.jpg"
  },
  {
-  "file": "slides-zh/64-cost-compare.html",
+  "file": "slides-zh/71-cost-compare.html",
   "label": "人手 vs AI 成本",
   "section": "正式启动",
   "notes": "“人手：每月 RM25,556。用 SuDu AI：每月 RM2,000。AI 做日常工作，人只负责批准。\n\n每月省下 RM23,556，成本减少 92%。一年大约省下 RM282,672。安装费不到 1 个月就回本。省下来的人手，可以转去服务顾客、跟进业务。”\n\n备注：这是估算，以上一页的人手成本和每月 RM2,000 的配套（Pro）计算；要大声说“估算”。还没算 HRDF 可申请的部分。\n下一页：“这是各个配套。”",
-  "thumb": "thumbs-zh/64-cost-compare.jpg"
+  "thumb": "thumbs-zh/71-cost-compare.jpg"
  },
  {
-  "file": "slides-zh/65-plans.html",
+  "file": "slides-zh/72-plans.html",
   "label": "配套与价格",
   "section": "正式启动",
   "notes": "“4 个配套，从 Basic 开始，我讲简单一点。在座大部分公司应该从 [推荐配套] 开始。拿年费跟你第 1 格的数字比一比。”\n\n待确认：高亮的那一行是 Standard，因为示范里的接 WhatsApp 订单是从这个配套开始有的。如果你选其他配套就改掉。确认价格是最新的。\n下一页：“而且，费用可以申请 HRDF。”",
-  "thumb": "thumbs-zh/65-plans.jpg"
+  "thumb": "thumbs-zh/72-plans.jpg"
  },
  {
-  "file": "slides-zh/66-hrdf.html",
+  "file": "slides-zh/73-hrdf.html",
   "label": "HRDF Claimable",
   "section": "正式启动",
   "notes": "“还有一个好消息：Esoft 专属优惠，可申请 HRDF。Esoft 是 HRD Corp 注册的 Authorised Training Provider，Esoft 帮你申请 HRDF，符合资格的公司就可以 claim。另外，今天还有 Esoft 的专属优惠。”\n\n待确认：哪些费用可以申请 HRDF。\n下一页：“那么，这是你的下一步。”",
-  "thumb": "thumbs-zh/66-hrdf.jpg"
+  "thumb": "thumbs-zh/73-hrdf.jpg"
  },
  {
-  "file": "slides-zh/67-next-step.html",
+  "file": "slides-zh/74-next-step.html",
   "label": "你的下一步",
   "section": "正式启动",
-  "notes": "“今天，最难的部分你已经做完了。你有了你的数字、你的分数和你的第一个 AI 工作。下一步是免费的：45 分钟 Online Demo，用你自己的数据把你的第一个 AI 工作跑给你看。如果你已经确定要开始，14 天内签约，享有 20% 折扣。”\n\n备注：这里不要再回头讲问题。犹豫的人是怕选错：强调轻松、简短、所有东西都由人批准。\n下一页：“最后一句话。”",
-  "thumb": "thumbs-zh/67-next-step.jpg"
+  "notes": "“今天，最难的部分你已经做完了。你有了你的数字、你的分数和你的第一个 AI 工作。下一步是免费的：45 分钟 Online Demo，用你自己的数据把你的第一个 AI 工作跑给你看。如果你已经确定要开始，14 天内签约，享有 20% 折扣。”\n\n备注：这里不要再回头讲问题。犹豫的人是怕选错：强调轻松、简短、所有东西都由人批准。\n下一页：“如果你想再深入一点，我们有 3 个课程即将开课。”",
+  "thumb": "thumbs-zh/74-next-step.jpg"
  },
  {
-  "file": "slides-zh/68-dont-wait.html",
+  "file": "slides-zh/75-courses.html",
+  "label": "即将开课",
+  "section": "正式启动",
+  "notes": "“今天是第 1 天。如果你想和团队一起再深入学习，我们有 3 个课程即将开课。\n\n智能仓库训练营适合仓管员和仓库经理：货位、批次和有效期，用 WMS 扫码入库、拣货和包装，还有终于和系统一致的盘点数字。\n\n智能工厂训练营适合工厂老板和生产经理：把 BOM 和工单做对，追踪车间里的每一份工作，还有每一批的真实成本和损耗。\n\n最后，AI Agent 大师班是进阶课程：你会学到怎么为 AI Agent 写规则和技能、设置批准和权限，还有算出它帮你省下多少时间和钱。打造并管理你自己的 AI 团队。\n\n日期即将公布。告诉你的教练你想上哪一个，我们会第一时间通知你。”\n\n（下一步：第 1 张卡片打开）“我先打开第一个，智能仓库训练营：每人 RM399。你会做 4 件事：画出你的仓库，分区、货架和货位，每样货都有批次和有效期。扫码，不用打字：用 WMS 扫描器收货、上架、拣货和包装。不停工也能盘点：循环盘点，数字和 SQL Account 一致，不用停工一天。还有，让 AI 帮你看库存：库存快卖完或快过期前，Inventory AI 会先提醒你。你会带走你自己的货位图、给团队的扫码流程，还有一份盘点计划。”\n\n这一页多按 1 次 Next：打开第 1 张卡片。\n\n备注：日期、费用和 HRDF 资格要在讲座前确认。\n下一页：“最后一件事：不要等。”",
+  "steps": 1,
+  "thumb": "thumbs-zh/75-courses.jpg"
+ },
+ {
+  "file": "slides-zh/76-dont-wait.html",
   "label": "别再等了",
   "section": "正式启动",
   "notes": "（停一下，让第一句话停留。）“你可以再等一等。但是你的对手不会等你！\n\n他们已经开始用 AI 了：订单自动进来，钱追得更快，库存数字准确。每一次工业革命，先行动的人都抢走了顾客。差距每个月都在拉大。\n\n今天就预约 45 分钟 Online Demo，用你自己的数据看 AI 做事。14 天内签约，享有 20% 折扣。”\n\n下一页：提问。",
-  "thumb": "thumbs-zh/68-dont-wait.jpg"
+  "thumb": "thumbs-zh/76-dont-wait.jpg"
  },
  {
-  "file": "slides-zh/69-questions.html",
+  "file": "slides-zh/77-questions.html",
   "label": "提问",
   "section": "提问",
   "notes": "提问时间约 10 分钟，然后幸运抽奖，再讲结语（第 33 页）。\n如果全场安静：“我来问一个大家心里都在想的问题：我是不是要停用 SQL Account？”\n\n预备答案：\n· 要停用 SQL Account 吗？不用。它照用；SuDu 在它周围运作，并把记录写回去。\n· AutoCount？可以，也能连 AutoCount。\n· 会取代我的员工吗？它接手打单和追款。员工负责检查、批准和应对顾客。\n· 出错怎么办？重要步骤要等批准，所有东西都有记录，每个新工作都从只出草稿开始。\n· 数据安全吗／会被拿去训练吗？[和产品团队确认。]\n· 数据很乱？可以，照样开始：先做准备度检查，我们在设置期间帮你整理货品编号。\n· 语言？[确认：马来文、英文、中文、混合。]\n· 津贴？[确认 HRD Corp 和数码化津贴的情况。]",
-  "thumb": "thumbs-zh/69-questions.jpg"
- },
- {
-  "file": "slides-zh/70-closing.html",
-  "label": "结语",
-  "section": "备用",
-  "notes": "大家和团队交流时，这页一直放着。",
-  "thumb": "thumbs-zh/70-closing.jpg"
+  "thumb": "thumbs-zh/77-questions.jpg"
  }
 ];
   window.DECK_WIDTH = 1920;

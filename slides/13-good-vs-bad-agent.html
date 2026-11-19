@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Good agent vs bad agent · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+body.light { background: #FAFAF7; } body.light .bg { display: none; }
+body.dark { background: #03201C; } body.dark .bg .spark { display: none; }
+.slide { padding-top: 92px; }
+.mk { font-family: var(--mono); font-size: 20px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--green); }
+body.dark .mk { color: var(--neon); }
+.mt { font-size: 78px; font-weight: 750; letter-spacing: -.035em; line-height: 1.04; margin-top: 16px; max-width: 1560px; text-wrap: balance; }
+.mt em { font-style: normal; color: var(--green); } body.dark .mt em { color: var(--neon); }
+.ml { font-size: 34px; line-height: 1.42; color: var(--ink-2); margin-top: 22px; max-width: 1320px; text-wrap: pretty; }
+body.dark .ml { color: var(--on-dark-2); }
+.ml b { color: var(--ink); font-weight: 650; } body.dark .ml b { color: var(--on-dark); }
+.m3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; margin-top: auto; margin-bottom: 64px; }
+.m3 > div { border-top: 3px solid var(--ink); padding-top: 22px; }
+body.dark .m3 > div { border-color: var(--neon); }
+.m3 b { display: block; font-size: 38px; font-weight: 750; letter-spacing: -.02em; line-height: 1.15; }
+.m3 p { font-size: 27px; line-height: 1.42; color: var(--ink-2); margin-top: 10px; }
+body.dark .m3 p { color: var(--on-dark-2); }
+.mn { font-size: 180px; font-weight: 800; letter-spacing: -.05em; line-height: .9; }
+.mn small { font-size: .32em; letter-spacing: -.02em; color: var(--green); } body.dark .mn small { color: var(--neon); }
+.mq { display: inline-block; font-size: 32px; font-weight: 600; padding: 18px 28px; border-radius: 6px 26px 26px 26px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -30px rgba(2,34,31,.45); }
+.mnote { font-size: 23px; color: var(--ink-3); } body.dark .mnote { color: var(--on-dark-3); }
+/* motion: soft rise, staggered with --d */
+.u { opacity: 0; transform: translateY(26px); animation: mUp .95s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
+.uf { opacity: 0; animation: mFade 1.1s ease forwards; animation-delay: var(--d, 0s); }
+.ux { opacity: 0; transform: translateX(-30px); animation: mUp .95s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
+.ug { transform-origin: left; transform: scaleX(0); animation: mGrow 1.4s cubic-bezier(.65,0,.25,1) forwards; animation-delay: var(--d, 0s); }
+@keyframes mUp { to { opacity: 1; transform: none; } }
+@keyframes mFade { to { opacity: 1; } }
+@keyframes mGrow { to { transform: none; } }
+html.static .u, html.static .uf, html.static .ux { opacity: 1; transform: none; animation: none; }
+html.static .ug { transform: none; animation: none; }
+
+.mt { font-size: 70px; }
+.gb { display:grid; grid-template-columns: 330px 1fr 1fr; column-gap: 26px; margin-top: 36px; flex:1; min-height: 0; grid-template-rows: auto repeat(3, 1fr) auto; row-gap: 14px; }
+.gb .who { display:flex; align-items:center; gap: 20px; padding: 14px 24px; border-radius: 24px; }
+.gb .who img { width: 104px; height: 104px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 1px var(--line); flex:none; }
+.gb .who b { display:block; font-size: 38px; font-weight: 800; letter-spacing: -.02em; }
+.gb .who span { display:block; font-size: 23px; font-weight: 600; margin-top: 2px; }
+.gb .bad.who { background: #FFF1D6; } .gb .bad.who span { color: #8A3417; }
+.gb .good.who { background: var(--ink); color: var(--on-dark); } .gb .good.who span { color: var(--neon); }
+.gb .ev { display:flex; flex-direction:column; justify-content:center; padding-left: 6px; border-left: 4px solid var(--ink); padding: 0 0 0 20px; }
+.gb .ev small { font-family: var(--mono); font-size: 20px; font-weight: 700; color: var(--green); }
+.gb .ev b { font-size: 30px; font-weight: 750; letter-spacing: -.01em; line-height: 1.2; margin-top: 4px; }
+.gb .c { display:flex; align-items:center; gap: 18px; padding: 18px 24px; border-radius: 22px; font-size: 27px; line-height: 1.32; }
+.gb .c i { flex:none; width: 54px; height: 54px; border-radius: 50%; display:grid; place-items:center; font-style: normal; }
+.gb .c.bad { background: #FBF7EF; color: #5B4A33; box-shadow: inset 0 0 0 2px #F1E2C2; } .gb .c.bad i { background: #FFE2A8; color: #8A3417; }
+.gb .c.good { background: #EAF7F1; color: var(--ink); box-shadow: inset 0 0 0 2px rgba(0,108,72,.25); font-weight: 600; } .gb .c.good i { background: var(--green); color: #fff; }
+.gb .zz { font-weight: 800; color: #C77800; }
+.gb .sc { display:flex; align-items:center; justify-content:space-between; padding: 18px 26px; border-radius: 22px; }
+.gb .sc b { font-size: 54px; font-weight: 800; letter-spacing: -.03em; } .gb .sc span { font-size: 25px; font-weight: 600; text-align:right; }
+.gb .sc.bad { background: #FFF1D6; } .gb .sc.bad b { color: #C77800; } .gb .sc.bad span { color: #8A3417; }
+.gb .sc.good { background: var(--green); color: #fff; } .gb .sc.good span { color: #E6F6EE; }
+.gb .sl { display:flex; align-items:center; font-family: var(--mono); font-size: 20px; font-weight: 700; letter-spacing: .14em; color: var(--ink-3); }
+.st { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .6s cubic-bezier(.3,1.3,.5,1); }
+.st.good { transition-delay: .35s; }
+body[data-s="1"] .s1 { opacity: 1; transform: none; }
+body[data-s="2"] .s1 { opacity: 1; transform: none; }
+body[data-s="2"] .s2 { opacity: 1; transform: none; }
+body[data-s="3"] .s1 { opacity: 1; transform: none; }
+body[data-s="3"] .s2 { opacity: 1; transform: none; }
+body[data-s="3"] .s3 { opacity: 1; transform: none; }
+body[data-s="4"] .s1 { opacity: 1; transform: none; }
+body[data-s="4"] .s2 { opacity: 1; transform: none; }
+body[data-s="4"] .s3 { opacity: 1; transform: none; }
+body[data-s="4"] .s4 { opacity: 1; transform: none; }
+
+html.static .st { opacity: 1; transform: none; }
+.zzz { display:inline-block; animation: zzz 1.6s ease-in-out infinite; } @keyframes zzz { 50% { transform: translateY(-5px) rotate(-6deg); } }
+</style>
+</head>
+<body class="light" data-section="What is an AI Agent?" data-sparks="none">
+<main class="slide">
+<div class="mk u" style="--d:.05s">Good agent vs bad agent</div>
+<h1 class="mt u" style="--d:.15s">Same AI. Very <em>different</em> staff.</h1>
+<p class="ml u" style="--d:.3s">A bad agent waits for your prompt. A good agent <b>sees the work and starts it</b>.</p>
+<div class="gb">
+  <div></div>
+  <div class="who bad u" style="--d:.5s"><img src="../assets/av/malas-tudung.svg" alt="Ah Malas with a coffee"><div><b>Ah Malas</b><span>Only does what you type</span></div></div>
+  <div class="who good u" style="--d:.7s"><img src="../assets/av/agent-salute.svg" alt="Ah Rajin saluting"><div><b>Ah Rajin</b><span>Does the work before you ask</span></div></div>
+<div class="ev st s1"><small>9:00 am</small><b>3 WhatsApp orders come in</b></div><div class="c bad st s1"><i><span class="zz zzz">z</span></i><span>Zzz&hellip; does nothing until you type &ldquo;create the orders&rdquo;.</span></div><div class="c good st s1"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></i><span>Drafts 3 Sales Orders. &ldquo;Boss, approve?&rdquo;</span></div><div class="ev st s2"><small>11:30 am</small><b>Milo stock is down to 2 days</b></div><div class="c bad st s2"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg></i><span>Says nothing. You find out when a customer shouts.</span></div><div class="c good st s2"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></i><span>&ldquo;Milo runs out Friday. PO to the supplier is drafted.&rdquo;</span></div><div class="ev st s3"><small>4:00 pm</small><b>Kedai Ali is 45 days late</b></div><div class="c bad st s3"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5M12 16h.01"/><circle cx="12" cy="12" r="9"/></svg></i><span>Nobody asked, so it never reminds.</span></div><div class="c good st s3"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></i><span>Sends a polite reminder. &ldquo;RM3,200 promised by Friday.&rdquo;</span></div>
+  <div class="sl st s4">BY 5 PM</div>
+  <div class="sc bad st s4"><b>1 job</b><span>the 1 you typed</span></div>
+  <div class="sc good st s4"><b>5 jobs</b><span>done before you asked,<br>all waiting for your OK</span></div>
+</div>
+<script>
+(function () {
+  document.body.dataset.s = '0';
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') document.body.dataset.s = String(e.data.deckStep); });
+})();
+</script>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

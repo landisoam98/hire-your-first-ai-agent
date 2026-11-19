@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>No tools, no work · Hire Your First AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+body.light { background: #FAFAF7; } body.light .bg { display: none; }
+body.dark { background: #03201C; } body.dark .bg .spark { display: none; }
+.slide { padding-top: 92px; }
+.mk { font-family: var(--mono); font-size: 20px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--green); }
+body.dark .mk { color: var(--neon); }
+.mt { font-size: 78px; font-weight: 750; letter-spacing: -.035em; line-height: 1.04; margin-top: 16px; max-width: 1560px; text-wrap: balance; }
+.mt em { font-style: normal; color: var(--green); } body.dark .mt em { color: var(--neon); }
+.ml { font-size: 34px; line-height: 1.42; color: var(--ink-2); margin-top: 22px; max-width: 1320px; text-wrap: pretty; }
+body.dark .ml { color: var(--on-dark-2); }
+.ml b { color: var(--ink); font-weight: 650; } body.dark .ml b { color: var(--on-dark); }
+.m3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; margin-top: auto; margin-bottom: 64px; }
+.m3 > div { border-top: 3px solid var(--ink); padding-top: 22px; }
+body.dark .m3 > div { border-color: var(--neon); }
+.m3 b { display: block; font-size: 38px; font-weight: 750; letter-spacing: -.02em; line-height: 1.15; }
+.m3 p { font-size: 27px; line-height: 1.42; color: var(--ink-2); margin-top: 10px; }
+body.dark .m3 p { color: var(--on-dark-2); }
+.mn { font-size: 180px; font-weight: 800; letter-spacing: -.05em; line-height: .9; }
+.mn small { font-size: .32em; letter-spacing: -.02em; color: var(--green); } body.dark .mn small { color: var(--neon); }
+.mq { display: inline-block; font-size: 32px; font-weight: 600; padding: 18px 28px; border-radius: 6px 26px 26px 26px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -30px rgba(2,34,31,.45); }
+.mnote { font-size: 23px; color: var(--ink-3); } body.dark .mnote { color: var(--on-dark-3); }
+/* motion: soft rise, staggered with --d */
+.u { opacity: 0; transform: translateY(26px); animation: mUp .95s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
+.uf { opacity: 0; animation: mFade 1.1s ease forwards; animation-delay: var(--d, 0s); }
+.ux { opacity: 0; transform: translateX(-30px); animation: mUp .95s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: var(--d, 0s); }
+.ug { transform-origin: left; transform: scaleX(0); animation: mGrow 1.4s cubic-bezier(.65,0,.25,1) forwards; animation-delay: var(--d, 0s); }
+@keyframes mUp { to { opacity: 1; transform: none; } }
+@keyframes mFade { to { opacity: 1; } }
+@keyframes mGrow { to { transform: none; } }
+html.static .u, html.static .uf, html.static .ux { opacity: 1; transform: none; animation: none; }
+html.static .ug { transform: none; animation: none; }
+
+.chain { display:flex; align-items:stretch; justify-content:space-between; margin-top: 70px; }
+.chain .ar { align-self: center; }
+.chain .nd { width: 440px; display:flex; flex-direction:column; align-items:center; text-align:center; padding: 40px 30px 36px; border-radius: 32px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 40px 70px -50px rgba(2,34,31,.45); }
+.chain .nd.last { background: var(--ink); color: var(--on-dark); box-shadow: 0 0 0 3px var(--green), 0 50px 80px -40px rgba(0,108,72,.6); }
+.chain .pic { width: 170px; height: 170px; border-radius: 50%; display:grid; place-items:center; background: var(--mint); color: var(--green); overflow:hidden; }
+.chain .pic img { width: 100%; height: 100%; }
+.chain .pic i { display:flex; }
+.chain .last .pic { background: rgba(0,245,169,.14); color: var(--neon); }
+.chain b { font-size: 46px; font-weight: 800; letter-spacing: -.025em; margin-top: 26px; }
+.chain .nd span { font-size: 27px; color: var(--ink-2); margin-top: 8px; } .chain .last span { color: var(--on-dark-2); }
+.chain .ar { color: var(--green); display:flex; }
+.erp { margin-top: auto; margin-bottom: 50px; font-size: 30px; color: var(--ink-2); }
+.p0, .p1 { flex:1; display:flex; flex-direction:column; }
+.p1 { display:none; } body[data-s="1"] .p0 { display:none; } body[data-s="1"] .p1 { display:flex; }
+.e2 { display:grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; height: 490px; margin-bottom: 24px; }
+.e2 > div { position:relative; display:flex; flex-direction:column; border-radius: 30px; padding: 30px 34px; overflow:hidden; }
+.e2 .bd { background: #FBF7EF; box-shadow: inset 0 0 0 2px #F1E2C2; }
+.e2 .gd { background: #EAF7F1; box-shadow: inset 0 0 0 3px var(--green); }
+.e2 h3 { font-size: 40px; font-weight: 800; letter-spacing: -.02em; }
+.e2 .bd h3 { color: #8A3417; } .e2 .gd h3 { color: var(--green); }
+.e2 .scene { position:relative; flex:1; min-height: 0; margin-top: 10px; }
+.e2 .av { position:absolute; width: 170px; height: 170px; border-radius: 50%; box-shadow: 0 0 0 1px var(--line), 0 20px 40px -20px rgba(2,34,31,.4); background:#fff; }
+.e2 .bd .av { left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.e2 .qm { position:absolute; left: calc(50% + 60px); top: calc(50% - 120px); font-size: 64px; font-weight: 800; color: #C77800; }
+.e2 .src { position:absolute; display:flex; align-items:center; gap: 12px; padding: 14px 18px; border-radius: 16px; background: #fff; font-size: 24px; font-weight: 650; color: #5B4A33; box-shadow: 0 0 0 1px #F1E2C2, 0 14px 30px -18px rgba(90,60,20,.45); }
+.e2 .src i { color: #C77800; display:flex; }
+.e2 .src.s1 { left: 0; top: 4%; transform: rotate(-4deg); } .e2 .src.s2 { right: 0; top: 8%; transform: rotate(3deg); }
+.e2 .src.s3 { left: 2%; bottom: 8%; transform: rotate(3deg); } .e2 .src.s4 { right: 2%; bottom: 4%; transform: rotate(-3deg); }
+.e2 .hub { position:absolute; left: 50%; top: 50%; margin: -78px 0 0 -130px; width: 260px; padding: 22px 18px; border-radius: 26px; background: #fff; text-align:center; box-shadow: 0 0 0 3px var(--green), 0 26px 50px -24px rgba(0,108,72,.55); }
+.e2 .hub img { height: 42px; } .e2 .hub b { display:block; font-size: 22px; font-weight: 700; color: var(--ink); margin-top: 8px; } .e2 .hub span { display:block; font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .1em; color: var(--ink-3); margin-top: 4px; }
+.e2 .tl { position:absolute; display:flex; align-items:center; gap: 10px; padding: 12px 18px; border-radius: 999px; background: var(--green); color: #fff; font-size: 23px; font-weight: 700; box-shadow: 0 12px 26px -14px rgba(0,108,72,.7); }
+.e2 .tl.t1 { left: 0; top: 4%; } .e2 .tl.t2 { right: 0; top: 4%; } .e2 .tl.t3 { left: 0; bottom: 4%; } .e2 .tl.t4 { right: 0; bottom: 4%; }
+.e2 svg.wires { position:absolute; inset: 0; width: 100%; height: 100%; }
+.e2 .gd .av { width: 120px; height: 120px; right: 50%; top: -6px; transform: translateX(50%); display:none; }
+.e2 .vd2 { display:flex; align-items:center; gap: 12px; font-size: 28px; font-weight: 750; margin-top: 14px; }
+.e2 .bd .vd2 { color: #8A3417; } .e2 .gd .vd2 { color: var(--green); }
+.bt2 { font-size: 32px; color: var(--ink-2); } .bt2 b { color: var(--ink); }
+
+.erp b { color: var(--ink); }
+</style>
+</head>
+<body class="light" data-section="SuDu AI" data-sparks="none">
+<main class="slide">
+<div class="p0">
+<div class="mk u" style="--d:.05s">Tools</div>
+<h1 class="mt u" style="--d:.2s">No tools, no <em>work</em></h1>
+<p class="ml u" style="--d:.4s">A brain alone gives advice. Tools let it do the job.</p>
+<div class="chain"><div class="nd u" style="--d:0.60s"><div class="pic"><img src="../assets/av/agent-hi.svg" alt="The SuDu agent"></div><b>The brain</b><span>Understands and plans</span></div><span class="ar u" style="--d:1.10s"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="nd u" style="--d:0.95s"><div class="pic"><i><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V5.5a1.5 1.5 0 013 0V12M11 11V4a1.5 1.5 0 013 0v7M14 11V5.5a1.5 1.5 0 013 0V14c0 4-3 7-7 7-3 0-4.6-1.6-6-4l-2-4a1.5 1.5 0 012.6-1.5L8 15"/></svg></i></div><b>The tools</b><span>Check stock, create orders, send</span></div><span class="ar u" style="--d:1.45s"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><div class="nd u last" style="--d:1.30s"><div class="pic"><i><svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></i></div><b>Your ERP</b><span>Where stock, orders and money live</span></div></div>
+<p class="erp u" style="--d:1.8s">Every tool works inside your <b>ERP</b>, the core of the company: customers, stock, invoices, money.</p>
+</div>
+<div class="p1">
+<div class="mk u" style="--d:.05s">Tools need an ERP</div>
+<h1 class="mt u" style="--d:.15s">No proper ERP, <em>no AI work</em></h1>
+<p class="ml u" style="--d:.3s">Every tool is a button inside your ERP. If your company runs on paper and chats, there is <b>no button to press</b>.</p>
+<div class="e2">
+  <div class="bd u" style="--d:.5s"><h3>Without a proper ERP</h3><div class="scene"><div class="src s1 u" style="--d:0.80s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 19V5"/></svg></i>Paper notebook</div><div class="src s2 u" style="--d:0.95s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></i>Excel on 3 PCs</div><div class="src s3 u" style="--d:1.10s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></i>WhatsApp chats</div><div class="src s4 u" style="--d:1.25s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></i>In the boss&rsquo;s head</div><img class="av" src="../assets/av/agent-mind.svg" alt="The agent, puzzled"><span class="qm">?</span></div><div class="vd2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Nothing to check, nothing to click. It can only guess.</div></div>
+  <div class="gd u" style="--d:.8s"><h3>With SuDu</h3><div class="scene"><svg class="wires" viewBox="0 0 100 100" preserveAspectRatio="none"><g stroke="#00A57A" stroke-width=".5" stroke-dasharray="2 2" fill="none"><path d="M22 12 L50 50"/><path d="M78 12 L50 50"/><path d="M22 88 L50 50"/><path d="M78 88 L50 50"/></g></svg><div class="hub u" style="--d:1.1s"><img src="../assets/logo-dark.png" alt="SuDu AI"><b>1 place for all your data</b><span>SQL ACCOUNT &middot; WMS &middot; MES</span></div><div class="tl t1 u" style="--d:1.30s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Check stock</div><div class="tl t2 u" style="--d:1.45s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Create Sales Order</div><div class="tl t3 u" style="--d:1.60s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Send the DO</div><div class="tl t4 u" style="--d:1.75s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Record payment</div></div><div class="vd2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Every tool has a real button. The agent does the job.</div></div>
+</div>
+<p class="bt2 u" style="--d:2s">That is why SuDu comes first: <b>an AI Agent is only as good as the system it works in.</b></p>
+</div>
+<script>
+(function () {
+  document.body.dataset.s = '0';
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') document.body.dataset.s = String(e.data.deckStep); });
+})();
+</script>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>

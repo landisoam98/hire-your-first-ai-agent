@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" fill="none" role="img">
+<defs><clipPath id="mtc"><circle cx="150" cy="150" r="148"/></clipPath></defs>
+<circle cx="150" cy="150" r="148" fill="#FFFFFF" stroke="#D9DED9" stroke-width="1.5"/>
+<g clip-path="url(#mtc)" stroke="#02221F" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- tudung: covers the head and drapes over the shoulders -->
+  <path d="M150 46 C 96 46 68 92 70 146 C 72 186 88 210 96 228 C 66 242 44 268 36 312 H 264 C 256 268 234 242 204 228 C 212 210 228 186 230 146 C 232 92 204 46 150 46 Z" fill="#E6FBF3"/>
+  <path d="M96 228 C 118 250 182 250 204 228" fill="none"/>
+  <path d="M206 236 C 214 262 222 284 226 312" fill="none" stroke-width="3.5"/>
+  <!-- face opening with a green band -->
+  <path d="M150 84 C 114 84 101 114 102 146 C 103 182 124 204 150 204 C 176 204 197 182 198 146 C 199 114 186 84 150 84 Z" fill="none" stroke="#00F5A9" stroke-width="16"/>
+  <path d="M150 84 C 114 84 101 114 102 146 C 103 182 124 204 150 204 C 176 204 197 182 198 146 C 199 114 186 84 150 84 Z" fill="#FFFFFF"/>
+  <!-- sleepy face: droopy lids, yawn -->
+  <path d="M118 138 q 11 8 22 0" fill="none"/><path d="M160 138 q 11 8 22 0" fill="none"/>
+  <path d="M116 128 l 24 2" fill="none" stroke-width="3"/><path d="M160 130 l 24 -2" fill="none" stroke-width="3"/>
+  <ellipse cx="150" cy="173" rx="8" ry="10" fill="#02221F" stroke-width="0"/>
+  <!-- hand and coffee mug -->
+  <rect x="186" y="214" width="50" height="54" rx="9" fill="#00F5A9"/>
+  <path d="M236 228 c 16 0 16 26 0 26" fill="none"/>
+  <path d="M180 232 c -12 2 -14 24 2 26 l 8 -1" fill="#FFFFFF"/>
+  <path d="M200 204 c -6 -8 6 -12 0 -20" fill="none" stroke-width="3"/><path d="M220 204 c -6 -8 6 -12 0 -20" fill="none" stroke-width="3"/>
+</g>
+<text x="214" y="86" font-family="Figtree, Arial, sans-serif" font-size="30" font-weight="800" fill="#02221F">z</text>
+<text x="236" y="62" font-family="Figtree, Arial, sans-serif" font-size="40" font-weight="800" fill="#02221F">Z</text>
+</svg>

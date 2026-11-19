@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<title>视频：F.03 在 BMW · 聘请你的第一个 AI Agent</title>
+<link rel="stylesheet" href="../shared/deck.css">
+<style>
+body { background: #000; }
+.slide { padding: 0 !important; }
+.vw { position:absolute; inset: 0; background: #000; }
+.vw video { width: 100%; height: 100%; object-fit: contain; display:block; cursor: pointer; }
+.src { position:absolute; left: 48px; bottom: 36px; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .14em; color: rgba(242,251,247,.6); text-transform: uppercase; }
+body .deck-foot, body .foot { display:none !important; }
+</style>
+<style>:root{--sans:"Figtree","PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;--mono:"JetBrains Mono","PingFang SC","Noto Sans SC","Microsoft YaHei",monospace}html[lang=zh-Hans] body{word-break:normal;line-break:strict}</style><style>/* Chinese-only tweaks */
+h1.display { font-size: 126px; }
+</style>
+</head>
+<body class="dark bare" data-section="SuDu AI" data-sparks="none">
+<main class="slide">
+<div class="vw"><video id="v" src="../assets/video/f03-bmw.mp4" playsinline preload="auto"></video></div>
+<div class="src">视频：Figure AI · F.03 在 BMW</div>
+<script>
+(function () {
+  var v = document.getElementById('v');
+  var STATIC = navigator.webdriver || location.hash === '#static';
+  if (STATIC) { v.addEventListener('loadedmetadata', function () { v.currentTime = Math.min(12, v.duration / 3); }); return; }
+  function go() { var p = v.play(); if (p && p.catch) p.catch(function () { v.muted = true; v.play(); }); }
+  if (v.readyState >= 2) go(); else v.addEventListener('canplay', go, { once: true });
+  v.addEventListener('click', function () { if (v.muted) { v.muted = false; return; } v.paused ? v.play() : v.pause(); });
+})();
+</script>
+</main>
+<script src="../shared/deck.js"></script>
+</body>
+</html>
