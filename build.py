@@ -5258,6 +5258,86 @@ tr.on td:first-child { border-radius: 18px 0 0 18px; } tr.on td:last-child { bor
 ''' % p29,
 "\"4 plans, starting from Basic, and I will make it simple. Most companies in this room should start at [recommended plan]. Compare the yearly price with the number in your box 1.\"\n\nTO CONFIRM: the highlighted row is Standard because taking WhatsApp orders, as shown in the demo, starts there. Change it if you pick another plan. Check prices are current.\nNext: \"And the fees are HRDF claimable.\"")
 
+slide('29-plan-details', 'Plan details', SEC[6], 'light', 'data-sparks="9,0" style="--gx:85%;--gy:20%;--mx:85%;--my:20%"', '''
+.slide { padding-top: 88px; }
+.h1 { font-size: 76px; margin-top: 12px; }
+.h1 em { font-style: normal; color: var(--green); }
+.sub { font-size: 29px; color: var(--ink-2); margin-top: 14px; }
+.pl { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 26px; margin-top: 48px; }
+.pc { position:relative; display:flex; flex-direction:column; padding: 30px 30px 22px; border-radius: 30px; }
+.pc h3 { font-size: 40px; font-weight: 800; letter-spacing: -.02em; color: var(--green); }
+.pc .for { font-size: 21px; line-height: 1.35; color: var(--ink-3); margin-top: 8px; min-height: 58px; }
+.pc .pr { margin-top: 16px; font-size: 62px; font-weight: 800; letter-spacing: -.04em; line-height: 1; color: var(--ink); font-feature-settings: "tnum"; white-space: nowrap; }
+.pc .pr small { font-size: 23px; font-weight: 600; letter-spacing: 0; color: var(--ink-3); margin-left: 6px; }
+.pc .su { font-size: 20px; color: var(--ink-3); margin-top: 10px; }
+.pc dl { margin-top: 18px; border-top: 1px solid var(--line); }
+.pc dl div { display:flex; justify-content:space-between; align-items:baseline; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.pc dt { font-size: 21px; color: var(--ink-2); white-space: nowrap; }
+.pc dd { font-size: 23px; font-weight: 800; color: var(--ink); white-space: nowrap; font-feature-settings: "tnum"; }
+.pc dd.tk { font-size: 34px; color: var(--green); }
+.pc.on { background: var(--ink); color: var(--on-dark); box-shadow: 0 0 0 3px var(--neon), 0 50px 80px -40px rgba(0,108,72,.6); }
+.pc.on h3, .pc.on dd.tk { color: var(--neon); }
+.pc.on .for, .pc.on .su, .pc.on .pr small { color: var(--on-dark-3); }
+.pc.on .pr, .pc.on dd { color: var(--on-dark); } .pc.on dt { color: var(--on-dark-2); }
+.pc.on dl, .pc.on dl div { border-color: rgba(242,251,247,.14); }
+.pc .tag { position:absolute; right: 24px; top: -17px; font-family: var(--mono); font-size: 16px; font-weight: 700; letter-spacing: .06em; padding: 6px 10px; border-radius: 8px; background: var(--neon); color: var(--ink); white-space: nowrap; }
+.note { margin-top: auto; font-size: 21px; color: var(--ink-3); }
+''', '''
+<div class="kicker r" style="--d:.05s">Plan details</div>
+<h1 class="h1 r" style="--d:.15s">What each plan <em>includes</em></h1>
+<p class="sub r" style="--d:.3s">Billed yearly. Every plan links free to SQL Account, on web and mobile.</p>
+<div class="pl"><div class="pc glass r" style="--d:0.45s"><h3>Basic</h3><p class="for">AI Sales Agent: quotes, orders and invoices</p><div class="pr">RM<span data-count="850" data-delay="0.9" data-dur="1.2">0</span><small>/month</small></div><p class="su">+ RM9,500 setup, 1x</p><dl><div><dt>AI tokens / month</dt><dd class="tk"><span data-count="2000" data-delay="1.1" data-dur="1.4">0</span></dd></div><div><dt>Tasks / month</dt><dd>&asymp; 2,000 &ndash; 3,000</dd></div><div><dt>AI system users</dt><dd>5</dd></div><div><dt>WhatsApp numbers</dt><dd>1</dd></div></dl></div><div class="pc on r" style="--d:0.60s"><span class="tag">Most start here</span><h3>Standard</h3><p class="for">Sales, stock and reports, automated</p><div class="pr">RM<span data-count="1200" data-delay="1.1" data-dur="1.2">0</span><small>/month</small></div><p class="su">+ RM12,000 setup, 1x</p><dl><div><dt>AI tokens / month</dt><dd class="tk"><span data-count="3000" data-delay="1.3" data-dur="1.4">0</span></dd></div><div><dt>Tasks / month</dt><dd>&asymp; 3,000 &ndash; 4,000</dd></div><div><dt>AI system users</dt><dd>10</dd></div><div><dt>WhatsApp numbers</dt><dd>1</dd></div></dl></div><div class="pc glass r" style="--d:0.75s"><h3>Pro</h3><p class="for">Adds payment receipt, credit notes and approvals</p><div class="pr">RM<span data-count="2000" data-delay="1.2" data-dur="1.2">0</span><small>/month</small></div><p class="su">+ RM19,000 setup, 1x</p><dl><div><dt>AI tokens / month</dt><dd class="tk"><span data-count="5000" data-delay="1.4" data-dur="1.4">0</span></dd></div><div><dt>Tasks / month</dt><dd>&asymp; 5,000 &ndash; 6,000</dd></div><div><dt>AI system users</dt><dd>20</dd></div><div><dt>WhatsApp numbers</dt><dd>3</dd></div></dl></div><div class="pc glass r" style="--d:0.90s"><h3>Enterprise</h3><p class="for">Full operations: procurement, reorder and BOM</p><div class="pr">RM<span data-count="3500" data-delay="1.4" data-dur="1.2">0</span><small>/month</small></div><p class="su">+ RM35,000 setup, 1x</p><dl><div><dt>AI tokens / month</dt><dd class="tk"><span data-count="10000" data-delay="1.6" data-dur="1.4">0</span></dd></div><div><dt>Tasks / month</dt><dd>&asymp; 10,000 &ndash; 12,000</dd></div><div><dt>AI system users</dt><dd>30</dd></div><div><dt>WhatsApp numbers</dt><dd>5</dd></div></dl></div></div>
+<p class="note f" style="--d:1.6s">Task counts are estimates: heavier jobs, like a full order chat, use more tokens.</p>
+''',
+"\"Here is what each plan includes. Every plan gives you a monthly allowance of AI tokens; 1 token covers 1 task or a little more, depending on the job.\n\nBasic, RM850 a month: 2,000 tokens, about 2,000 to 3,000 tasks, 5 AI system users and 1 WhatsApp number.\n\nStandard, where most companies start: RM1,200 a month, 3,000 tokens, 10 users, 1 WhatsApp number. Pro: RM2,000, 5,000 tokens, 20 users and 3 WhatsApp numbers. Enterprise: RM3,500, 10,000 tokens, 30 users and 5 WhatsApp numbers.\n\nAll plans are billed yearly with a one-off setup fee, and every plan links to SQL Account for free.\"\n\nNext: \"And if a busy month uses up your tokens?\"")
+
+slide('29-flexi-tokens', 'Flexi token top-ups', SEC[6], 'light', 'data-sparks="9,0" style="--gx:80%;--gy:25%;--mx:80%;--my:30%"', '''
+.slide { padding-top: 88px; }
+.h1 { font-size: 76px; margin-top: 12px; }
+.h1 em { font-style: normal; color: var(--green); }
+.sub { font-size: 29px; color: var(--ink-2); margin-top: 14px; }
+.wrap { display:grid; grid-template-columns: 1fr 560px; gap: 40px; margin-top: 42px; }
+.packs { display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.pk { padding: 34px 20px 30px; border-radius: 28px; text-align:center; }
+.pk .am { font-size: 74px; font-weight: 800; letter-spacing: -.04em; line-height: 1; font-feature-settings: "tnum"; }
+.pk .ts { font-size: 26px; font-weight: 750; color: var(--green); margin-top: 16px; white-space: nowrap; }
+.pk .ot { font-size: 20px; color: var(--ink-3); margin-top: 6px; }
+.pk.on { background: var(--ink); color: var(--on-dark); box-shadow: 0 0 0 3px var(--neon), 0 50px 80px -40px rgba(0,108,72,.6); }
+.pk.on .ts { color: var(--neon); } .pk.on .ot { color: var(--on-dark-3); }
+.lv { margin-top: 30px; }
+.lv h4 { font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+.lv .row { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 14px; }
+.lv .row div { padding: 18px 22px; border-radius: 20px; background: #fff; box-shadow: 0 0 0 1px var(--line); }
+.lv .row i { display:flex; gap: 6px; margin-bottom: 10px; }
+.lv .row s { width: 14px; height: 14px; border-radius: 50%; background: var(--emerald); } .lv .row s.o { background: var(--mint); }
+.lv b { display:block; font-size: 26px; font-weight: 800; }
+.lv span { display:block; font-size: 20px; line-height: 1.3; color: var(--ink-3); margin-top: 4px; }
+.cb { display:flex; gap: 18px; align-items:center; margin-top: 26px; padding: 20px 26px; border-radius: 22px; background: var(--mint); font-size: 23px; line-height: 1.4; color: var(--ink-2); }
+.cb i { flex:none; width: 46px; height: 46px; border-radius: 50%; background: var(--ink); color: var(--neon); display:grid; place-items:center; font-style: normal; font-weight: 800; font-size: 26px; }
+.cb b { color: var(--ink); }
+.hw { padding: 32px 34px 30px; border-radius: 30px; display:flex; flex-direction:column; }
+.hw h3 { font-size: 32px; font-weight: 800; letter-spacing: -.02em; }
+.hw dl { margin-top: 12px; }
+.hw dl div { display:flex; justify-content:space-between; align-items:baseline; gap: 16px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+.hw dt { font-size: 22px; color: var(--ink-2); }
+.hw dd { font-size: 22px; font-weight: 800; text-align:right; }
+.hw dd.g { color: var(--green); }
+.hw p { font-size: 21px; line-height: 1.42; color: var(--ink-3); margin-top: auto; padding-top: 20px; }
+''', '''
+<div class="kicker r" style="--d:.05s">If tokens run out</div>
+<h1 class="h1 r" style="--d:.15s">Busy month? <em>Top up</em> with Flexi</h1>
+<p class="sub r" style="--d:.3s">Every plan includes monthly tokens. Top up only in the months that run hot.</p>
+<div class="wrap">
+<div>
+<div class="packs"><div class="pk glass pop" style="--d:0.45s"><div class="am">RM<span data-count="100" data-delay="0.8" data-dur="1">0</span></div><div class="ts">&asymp; 220 &ndash; 330 tasks</div><div class="ot">one-time top-up</div></div><div class="pk on pop" style="--d:0.60s"><div class="am">RM<span data-count="300" data-delay="0.9" data-dur="1">0</span></div><div class="ts">&asymp; 660 &ndash; 1,000 tasks</div><div class="ot">one-time top-up</div></div><div class="pk glass pop" style="--d:0.75s"><div class="am">RM<span data-count="500" data-delay="1.1" data-dur="1">0</span></div><div class="ts">&asymp; 1,100 &ndash; 1,650 tasks</div><div class="ot">one-time top-up</div></div></div>
+<div class="lv r" style="--d:1s"><h4>What counts as a task</h4><div class="row"><div><i><s></s><s class="o"></s><s class="o"></s></i><b>Light</b><span>Quick answer or reminder</span></div><div><i><s></s><s></s><s class="o"></s></i><b>Medium</b><span>Create a document or report</span></div><div><i><s></s><s></s><s></s></i><b>Heavy</b><span>A full order chat, from enquiry to Sales Order</span></div></div></div>
+<div class="cb r" style="--d:1.3s"><i>!</i><span><b>No surprise bills.</b> You get an alert before your tokens run low. Nothing is charged automatically.</span></div>
+</div>
+<div class="hw glass r" style="--d:.8s"><h3>How top-ups work</h3><dl><div><dt>Unused monthly tokens</dt><dd>Reset next month</dd></div><div><dt>Flexi pack</dt><dd>One-time, on demand</dd></div><div><dt>Auto-charge</dt><dd class="g">Never</dd></div><div><dt>Low-balance alert</dt><dd class="g">Included</dd></div></dl><p>If usage stays high every month, moving up a plan costs less than buying packs.</p></div>
+</div>
+''',
+"\"Peak season, a promotion, a big collections push: some months use more. Then you buy a Flexi top-up. RM100 gives about 220 to 330 tasks, RM300 about 660 to 1,000, RM500 about 1,100 to 1,650. It is one-time, only when you need it.\n\nA light task is a quick answer or a reminder. A heavy one is a full order chat, from enquiry to Sales Order. That is why the counts are a range.\n\nNo surprise bills: you get an alert before your tokens run low, and nothing is charged automatically. Unused monthly tokens reset next month. And if you top up every month, moving up a plan costs less.\"\n\nNext: \"So what does manual work really cost you today?\"")
+
 slide('29-hrdf', 'HRDF Claimable', SEC[6], 'light', 'data-sparks="9,0 1,5" style="--gx:80%;--gy:25%;--mx:80%;--my:30%"', '''
 .slide { padding-top: 96px; }
 .h1 { font-size: 104px; line-height: 1; letter-spacing: -.04em; margin-top: 18px; }
@@ -5621,7 +5701,7 @@ def main():
         ('SuDu AI', ['tools-and-memory', 'wms-intro', 'wms-supply', 'wms-stock', 'video-wms']),
         ('Get started', ['courses']),   # upcoming courses, right after the WMS video
         ('SuDu AI', ['faq', 'why-sudu', 'plug-straight-in', 'plug-deep', 'the-house', 'meme-pool']),
-        ('Get started', ['live-in-30-days', 'plans', 'what-it-gives-back', 'cost-compare', 'hrdf']),   # before the live demo
+        ('Get started', ['live-in-30-days', 'plans', 'plan-details', 'flexi-tokens', 'what-it-gives-back', 'cost-compare', 'hrdf']),   # before the live demo
         ('SuDu AI', ['section-demo'] + demo_k[:demo_k.index('you-stay-the-boss')]),
         ('Workshop', ['section-workshop']),
         ('Get started', ['dont-wait']),
