@@ -4414,11 +4414,11 @@ DEEP_ROWS = [  # icon, topic, connector, sudu, sudu tag
     ('<path d="M6 3h8l4 4v14H6z"/><path d="M9 13h6M9 17h4"/>', 'Orders',
      'Staff key in orders 1 at a time. Customer self-service is a paid add-on.', 'Customer orders on WhatsApp turn into Sales Order drafts. You just approve.', ''),
     ('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', 'Follow-up',
-     'A scheduled message fires once and is done. No waiting for replies.', 'Tasks that run for days: send, wait for the reply, follow up, stop when paid.', 'rolling out'),
+     'A scheduled message fires once and is done. No waiting for replies.', 'Tasks that run for days: send, wait for the reply, follow up, stop when paid.', ''),
     ('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16"/>', 'Memory',
      'Reads SQL Account live for each question.', 'A memory layer: every customer&rsquo;s history, habits and past chats, across millions of records.', ''),
     ('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>', 'If it goes down',
-     '1 Windows PC, always on. Everything on 1 disk: no backup, nobody alerted.', 'The cloud: monitored, with alerts. Big questions run on SuDu&rsquo;s data platform, not your SQL Account server.', 'data platform rolling out'),
+     '1 Windows PC, always on. Everything on 1 disk: no backup, nobody alerted.', 'The cloud: monitored, with alerts. Big questions run on SuDu&rsquo;s data platform, not your SQL Account server.', ''),
     ('<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>', 'Setup &amp; access',
      'On-site IT. No mobile app; admin page only on that PC. Licence tied to 1 PC.', 'Sign in on web or mobile. Several companies in 1 account.', ''),
 ]
