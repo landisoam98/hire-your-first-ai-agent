@@ -5610,6 +5610,7 @@ def main():
     S[:] = [x for x in S if key(x) not in DROP]
     keys = [key(x) for x in S]
     demo = keys[keys.index('demo-day'):keys.index('you-stay-the-boss') + 1]   # demo intros + use cases, as defined
+    demo_k = [k for k in demo if k not in DROP]
     SECTIONS = [
         ('Company intro', ['cover', 'who-we-are']),
         ('Speaker intro', ['speaker', 'speaker-owen', 'today', 'takeaways', 'meme-img']),
@@ -5617,11 +5618,17 @@ def main():
                                   'why-agent', 'agent-intro', 'what-is-agent', 'good-vs-bad-agent', 'brain-to-staff']),
         ('SuDu AI', ['imagine', 'video-figure', 'vision', 'the-map', 'five-stages', 'layers-3d']),
         ('The problem', ['section-problem', 'tell-us', 'top-5-issues', 'guess-the-order', 'typed-three-times', 'problem-2', 'problem-3', 'problem-4', 'problem-5', 'count-your-number', 'ai-guru', 'new-way']),
-        ('SuDu AI', ['tools-and-memory', 'wms-intro', 'wms-supply', 'wms-stock', 'video-wms', 'faq', 'why-sudu', 'plug-straight-in', 'plug-deep', 'the-house',
-                     'meme-pool', 'section-demo'] + [k for k in demo if k not in DROP]),
-        ('Workshop', ['section-workshop', 'workshop-groups', 'need-wms-mes']),
-        ('Get started', ['live-in-30-days', 'what-it-gives-back', 'cost-compare', 'plans', 'hrdf', 'next-step', 'courses', 'dont-wait']),
+        ('SuDu AI', ['tools-and-memory', 'wms-intro', 'wms-supply', 'wms-stock', 'video-wms']),
+        ('Get started', ['courses']),   # upcoming courses, right after the WMS video
+        ('SuDu AI', ['faq', 'why-sudu', 'plug-straight-in', 'plug-deep', 'the-house', 'meme-pool']),
+        ('Get started', ['live-in-30-days', 'plans', 'what-it-gives-back', 'cost-compare', 'hrdf']),   # before the live demo
+        ('SuDu AI', ['section-demo'] + demo_k[:demo_k.index('you-stay-the-boss')]),
+        ('Workshop', ['section-workshop']),
+        ('Get started', ['dont-wait']),
         ('Questions', ['questions']),
+        ('SuDu AI', demo_k[demo_k.index('you-stay-the-boss'):]),   # 4 things AI never does, after Questions
+        ('Workshop', ['workshop-groups', 'need-wms-mes']),
+        ('Get started', ['next-step']),
     ]
     by = {key(x): x for x in S}
     order = [k for _, ks in SECTIONS for k in ks]
