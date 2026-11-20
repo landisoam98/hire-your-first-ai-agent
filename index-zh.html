@@ -253,40 +253,46 @@
   "file": "slides-zh/33-new-way.html",
   "label": "全新的工作方式",
   "section": "问题",
-  "notes": "“所以有了工具，工作方式就不一样了。AI Agent 负责做事：它会思考，读订单、计划每一步；它也会执行：查库存、打单、发送、追款。\n\n那你呢？你掌管规矩。你定规矩：信用额度、价格、谁批准什么。你监督：每个动作都在 1 个画面上看得到。你批准：没有你，什么都不入账。规矩交给 AI，汇报回到你手上。\n\n以前，人做事，软件记录。现在，AI 做事，人来掌管。这就是全新的工作方式。”\n\n下一页：“而让这一切成真的，就是工具。”"
+  "notes": "“所以有了工具，工作方式就不一样了。AI Agent 负责做事：它会思考，读订单、计划每一步；它也会执行：查库存、打单、发送、追款。\n\n那你呢？你掌管规矩。你定规矩：信用额度、价格、谁批准什么。你监督：每个动作都在 1 个画面上看得到。你批准：没有你，什么都不入账。规矩交给 AI，汇报回到你手上。\n\n以前，人做事，软件记录。现在，AI 做事，人来掌管。这就是全新的工作方式。”\n\n下一页：“而让这一切成真的，就是工具。”",
+  "thumb": "thumbs-zh/33-new-way.jpg"
  },
  {
   "file": "slides-zh/34-tools-and-memory.html",
   "label": "没有工具，就做不了事",
   "section": "SuDu AI",
   "notes": "“这是大家最容易忘记的部分。世界上最聪明的大脑，没有工具，也只能讲话。大脑负责看懂和计划。工具是它的双手：查库存、开订单、发信息。而每个工具都在 1 个地方运作：你的 ERP，你的客户、库存、订单和钱都在那里。”\n\n（下一步）“关键在这里。每个工具都是你 ERP 里的一个按钮。看左边：很多公司靠一本纸本簿子、3 台不同电脑里的 Excel、WhatsApp 聊天记录，还有只有老板记得的东西在运作。把 AI Agent 放进这样的公司，它能做什么？没东西可查，没东西可按。它只能猜，而猜是很危险的。右边是 SuDu：所有数据都在 1 个地方，SQL Account、仓库和工厂，每份工作都有真正的按钮：查库存、开 Sales Order、发 DO、记录收款。这样 AI Agent 才能做事。所以记住：AI Agent 有多好，要看它所在的系统有多好。这就是为什么 SuDu 要先到位。”\n\n这一页多按 1 次 Next：为什么工具需要好的 ERP。\n下一页：“那在仓库里，这个系统长什么样？就是 SuDu WMS。”",
-  "steps": 1
+  "steps": 1,
+  "thumb": "thumbs-zh/34-tools-and-memory.jpg"
  },
  {
   "file": "slides-zh/35-wms-intro.html",
   "label": "SuDu WMS：它能做什么",
   "section": "SuDu AI",
-  "notes": "“所以，AI Agent 需要一个有真正按钮的好系统。在仓库里，这个系统就是 SuDu WMS。它负责 3 件事。\n\n第一，供应链：库存不够的时候，AI 自己开 Purchase Request，你 Approve，PO 就发给 Supplier。\n\n第二，库存：进货、出货和 Stock Count，全部用手机 App 扫描，每个 Batch 都追踪得到。\n\n第三，基本生产：按 BOM 生产成品，库存自己更新。\n\n而且全部直接过账到 SQL Account，所以账目永远和仓库对得上。”\n\n下一页：“我们一个流程一个流程来看，先从采购开始。”"
+  "notes": "“所以，AI Agent 需要一个有真正按钮的好系统。在仓库里，这个系统就是 SuDu WMS。它负责 3 件事。\n\n第一，供应链：库存不够的时候，AI 自己开 Purchase Request，你 Approve，PO 就发给 Supplier。\n\n第二，库存：进货、出货和 Stock Count，全部用手机 App 扫描，每个 Batch 都追踪得到。\n\n第三，基本生产：按 BOM 生产成品，库存自己更新。\n\n而且全部直接过账到 SQL Account，所以账目永远和仓库对得上。”\n\n下一页：“我们一个流程一个流程来看，先从采购开始。”",
+  "thumb": "thumbs-zh/35-wms-intro.jpg"
  },
  {
   "file": "slides-zh/36-wms-supply.html",
   "label": "SuDu WMS：供应链与生产",
   "section": "SuDu AI",
   "notes": "“流程 1，补货。Sales Order 开出来了。WMS 检查余额，发现库存不够，就发出警示，AI 自己开好 Purchase Request。\n\n流程 2，Approve。这张单等你批。你按 1 下 Approve，它就转成 Purchase Order，AI 再把它发给 Supplier。没有人需要重复打单。”\n\n（下一步）“再来看生产。流程 6，产品组装。按库存生产或按订单生产，用的 BOM 可以有多个版本、多层。组装完成后，原料扣掉，成品加进来，还有自己的 Batch 编号，库存余额自己更新。”\n\n这页有 1 次额外的 Next：基本生产。\n下一页：“再来看库存本身：每一箱进，每一箱出。”",
-  "steps": 1
+  "steps": 1,
+  "thumb": "thumbs-zh/36-wms-supply.jpg"
  },
  {
   "file": "slides-zh/37-wms-stock.html",
   "label": "SuDu WMS：库存管理",
   "section": "SuDu AI",
   "notes": "“流程 3，进货。收货，上架。WMS 自己生成新的 Batch，自己把库存余额加上去。\n\n流程 4，出货。从 Delivery Order 开始，员工用手机 App 拣货、包装，一边扫描，余额就一边减少。”\n\n（下一步）“流程 5，Stock Count。办公室在网页上建 Stock Count 任务。仓库用手机 App 做 Stock Count。数字不对，办公室就退回，再点一次。Approve 之后，AI 生成 Stock Adjustment，过账到 SQL Account。所以你的账和货架对得上。”\n\n这页有 1 次额外的 Next：Stock Count。\n下一页：“图看够了。我来给你看看，在真正的仓库里是什么样子。”",
-  "steps": 1
+  "steps": 1,
+  "thumb": "thumbs-zh/37-wms-stock.jpg"
  },
  {
   "file": "slides-zh/38-video-wms.html",
   "label": "视频：SuDu WMS",
   "section": "SuDu AI",
-  "notes": "（视频播放：大约 3 分钟，SuDu WMS 预览，有字幕。让它播完。）\n\n“这就是工具在真正的仓库里的样子：每一箱都扫码，每个货位都清楚，每次盘点都和系统一致。”\n\n操作：点一下视频可以暂停或继续。如果开始时没有声音，点一下视频就会打开声音。\n下一页：“演示之前，先回答 2 个我最常被问的问题。”"
+  "notes": "（视频播放：大约 3 分钟，SuDu WMS 预览，有字幕。让它播完。）\n\n“这就是工具在真正的仓库里的样子：每一箱都扫码，每个货位都清楚，每次盘点都和系统一致。”\n\n操作：点一下视频可以暂停或继续。如果开始时没有声音，点一下视频就会打开声音。\n下一页：“演示之前，先回答 2 个我最常被问的问题。”",
+  "thumb": "thumbs-zh/38-video-wms.jpg"
  },
  {
   "file": "slides-zh/39-faq.html",
@@ -305,13 +311,13 @@
   "file": "slides-zh/41-plug-straight-in.html",
   "label": "为什么不直接接上去？",
   "section": "SuDu AI",
-  "notes": "“每个星期都有人问我：我可以直接把 Claude 或 ChatGPT 接到我的 SQL Account 吗？可以。有 3 种做法，我们老实比一比。\n\n第 1 种：自己动手做。程序员把 Claude 直接接进数据库。它只在你开口问的时候才做事。它直接写进资料表，跳过 SQL Account 自己的检查，没有批准、没有记录，而且装在程序员的笔记本电脑上。你要付程序员的钱，再加 AI 订阅。\n\n第 2 种：用连接器。一个让 Claude 或 ChatGPT 跟 SQL Account 沟通的插件。这是正规的产品：它用 SQL Account 自己的登录，订单也要你批准。但它还是要有人开口问才做事。它只涵盖会计，而且要在 1 台一直开着的办公室电脑上运行。你还要付两次钱：连接器的费用，再加每个用户的 Claude 或 ChatGPT 订阅。\n\n第 3 种：SuDu AI。AI 员工每天自己做事：追款、发报表、接订单。它遵守 SQL Account 的规则，所有东西都在批准队列里等你，而且都有记录。它涵盖会计、仓库和工厂。它在云端运行，网页、手机、WhatsApp 都能用。而且只有 1 个价钱，AI 全包。\n\nClaude 和 ChatGPT 是很好的大脑。用 SuDu，大脑、ERP 和 AI 员工，1 个价钱全部包含。”\n\n备注：保持公平，不要说出任何连接器产品的名字。Claude 是 Anthropic 做的，ChatGPT 是 OpenAI 做的。\n下一页：“所以 AI 底下需要有东西撑着。”\n\n[English notes changed — update zh-notes.json]"
+  "notes": "“每个星期都有人问我：我可以直接把 Claude 或 ChatGPT 接到我的 SQL Account 吗？可以。有 3 种做法，我们老实比一比。\n\n第 1 种：自己动手做。程序员把 Claude 直接接进数据库。它只在你开口问的时候才做事。它直接写进资料表，跳过 SQL Account 自己的检查，没有批准、没有记录，而且装在程序员的笔记本电脑上。你要付程序员的钱，再加 AI 订阅。\n\n第 2 种：用连接器。一个让 Claude 或 ChatGPT 跟 SQL Account 沟通的插件。这是正规的产品：它用 SQL Account 自己的登录，订单也要你批准。但它还是要有人开口问才做事。它只涵盖会计，而且要在 1 台一直开着的办公室电脑上运行。你还要付两次钱：连接器的费用，再加每个用户的 Claude 或 ChatGPT 订阅。\n\n第 3 种：SuDu AI。AI 员工每天自己做事：追款、发报表、接订单。它遵守 SQL Account 的规则，所有东西都在批准队列里等你，而且都有记录。它涵盖会计、仓库和工厂。它在云端运行，网页、手机、WhatsApp 都能用。而且只有 1 个价钱，AI 全包。\n\nClaude 和 ChatGPT 是很好的大脑。用 SuDu，大脑、ERP 和 AI 员工，1 个价钱全部包含。”\n\n备注：保持公平，不要说出任何连接器产品的名字。Claude 是 Anthropic 做的，ChatGPT 是 OpenAI 做的。\n下一页：“我们再深入一层。”"
  },
  {
   "file": "slides-zh/42-plug-deep.html",
-  "label": "Under the hood: connector vs SuDu",
+  "label": "深入比较：连接器 vs SuDu",
   "section": "SuDu AI",
-  "notes": "\"Let me go 1 level deeper, because this is where the difference really shows. A connector lets you chat with your data. SuDu runs your company. 4 things.\n\nWhatsApp. A connector drafts orders from chats you forward to it. SuDu has a contact book that links every WhatsApp number to its customer or supplier, so it reads new chats, POs and bank slips by itself: nobody has to forward anything.\n\nMemory. A chat app remembers only this chat; close it and it forgets. SuDu has a memory layer: every customer's history, habits like Milo means the 1 kg pack, and past chats, across millions of records.\n\nLong tasks. A chat is 1 question, 1 answer. SuDu runs tasks that last for days: send the reminder, wait for the reply, follow up on Friday, close the case when the money is in.\n\nBig reports. This one matters for your server. SQL Account runs on a Firebird database. It is built for daily bookkeeping, not for an AI scanning years of data. If every AI question goes straight to it, a big report can slow it down for the whole office, while your staff are trying to issue invoices. SuDu is moving those big questions onto its own data platform, so your SQL Account server stays fast for your staff.\"\n\nNote: the data platform is rolling out; say \"is moving\", not \"already\". Keep it fair: no connector product is named.\nNext: \"So AI needs something underneath it.\""
+  "notes": "“我们再深入一层，因为真正的分别在这里。连接器让你跟数据聊天，SuDu 帮你运营公司。4 件事。\n\nWhatsApp。连接器要你把聊天转发过去，它才起草订单。SuDu 有联系人簿，把每个 WhatsApp 号码对上顾客或供应商，所以新聊天、PO 和银行单据，它自己会读：不用任何人转发。\n\n记忆。聊天软件只记得这次聊天，关掉就忘了。SuDu 有记忆层：每位顾客的历史、习惯，比如 Milo 是指 1 公斤装，还有以前的聊天，几百万条记录都记得。\n\n长时间任务。聊天是问 1 次、答 1 次。SuDu 可以跑好几天的任务：发提醒、等回复、星期五跟进、钱到了就结案。\n\n大报表。这一点跟你的服务器有关。SQL Account 用的是 Firebird 数据库，是为日常记账设计的，不是给 AI 扫描好几年的数据用的。如果每个 AI 问题都直接打到它，一份大报表就能让全办公室变慢，而你的员工正在开 Invoice。SuDu 正在把这些大问题搬到自己的数据平台上跑，让你的 SQL Account 服务器留给员工，保持快速。”\n\n备注：数据平台正在陆续上线；要说“正在搬”，不要说“已经”。保持公平：不要说出任何连接器产品的名字。\n下一页：“所以 AI 底下需要有东西撑着。”"
  },
  {
   "file": "slides-zh/43-the-house.html",

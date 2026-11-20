@@ -4421,7 +4421,7 @@ DEEP_ROWS = [  # icon, topic, connector, sudu, sudu tag
 slide('13-plug-deep', 'Under the hood: connector vs SuDu', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
 .slide { padding-top: 76px; }
 .mt { font-size: 62px; }
-.dp { display:grid; grid-template-columns: 230px 1fr 1.35fr; margin-top: 26px; }
+.dp { display:grid; grid-template-columns: 290px 1fr 1.35fr; margin-top: 26px; }
 .dh { padding: 0 22px 12px; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .12em; color: var(--ink-3); display:flex; align-items:flex-end; }
 .dh.s { background: var(--ink); color: var(--neon); border-radius: 22px 22px 0 0; padding-top: 16px; }
 .tp, .cn, .su { padding: 16px 22px; border-top: 1px solid var(--line); display:flex; align-items:center; }

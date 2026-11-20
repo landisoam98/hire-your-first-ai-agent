@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 <head>
 <meta charset="utf-8">
-<title>Under the hood: connector vs SuDu · Hire Your First AI Agent</title>
+<title>深入比较：连接器 vs SuDu · 聘请你的第一个 AI Agent</title>
 <link rel="stylesheet" href="../shared/deck.css">
 <style>
 body.light { background: #FAFAF7; } body.light .bg { display: none; }
@@ -38,7 +38,7 @@ html.static .ug { transform: none; animation: none; }
 
 .slide { padding-top: 76px; }
 .mt { font-size: 62px; }
-.dp { display:grid; grid-template-columns: 230px 1fr 1.35fr; margin-top: 26px; }
+.dp { display:grid; grid-template-columns: 290px 1fr 1.35fr; margin-top: 26px; }
 .dh { padding: 0 22px 12px; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .12em; color: var(--ink-3); display:flex; align-items:flex-end; }
 .dh.s { background: var(--ink); color: var(--neon); border-radius: 22px 22px 0 0; padding-top: 16px; }
 .tp, .cn, .su { padding: 16px 22px; border-top: 1px solid var(--line); display:flex; align-items:center; }
@@ -59,14 +59,14 @@ h1.display { font-size: 126px; }
 </head>
 <body class="light" data-section="SuDu AI" data-sparks="none">
 <main class="slide">
-<div class="mk u" style="--d:.05s">FAQ 2 &middot; Under the hood</div>
-<h1 class="mt u" style="--d:.15s">Chatting with your data vs <em>running your company</em></h1>
+<div class="mk u" style="--d:.05s">常见问题 2 · 深入比较</div>
+<h1 class="mt u" style="--d:.15s">跟数据聊天 vs <em>帮你运营公司</em></h1>
 <div class="dp">
-  <div class="dh u" style="--d:.3s"></div><div class="dh u" style="--d:.35s">A connector + Claude or ChatGPT</div><div class="dh s u" style="--d:.4s">SuDu AI</div>
-  <div class="tp u" style="--d:0.60s"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></i>WhatsApp</div><div class="cn u" style="--d:0.65s">Drafts orders from chats you forward</div><div class="su u" style="--d:0.70s"><span>A contact book links every number to its customer or supplier. It reads new chats, POs and bank slips by itself.</span></div><div class="tp u" style="--d:0.80s"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16"/></svg></i>记忆</div><div class="cn u" style="--d:0.85s">Only this chat. It forgets when you close it.</div><div class="su u" style="--d:0.90s"><span>A memory layer: every customer&rsquo;s history, habits and past chats, across millions of records.</span></div><div class="tp u" style="--d:1.00s"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i>Long tasks</div><div class="cn u" style="--d:1.05s">1 question, 1 answer</div><div class="su u" style="--d:1.10s"><span>Tasks that run for days: send, wait for the reply, follow up, close the case.</span></div><div class="tp u" style="--d:1.20s"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><path d="M18 15l3 3-3 3"/></svg></i>Big reports</div><div class="cn u" style="--d:1.25s">Every question hits your SQL Account server. A big report can slow it for the whole office.</div><div class="su u" style="--d:1.30s"><span>Big questions run on SuDu&rsquo;s data platform, not on your SQL Account server.</span><em>rolling out</em></div>
+  <div class="dh u" style="--d:.3s"></div><div class="dh u" style="--d:.35s">连接器 + Claude 或 ChatGPT</div><div class="dh s u" style="--d:.4s">SuDu AI</div>
+  <div class="tp u" style="--d:0.60s"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></i>WhatsApp</div><div class="cn u" style="--d:0.65s">你转发聊天过来，它才起草订单</div><div class="su u" style="--d:0.70s"><span>联系人簿把每个号码对上顾客或供应商。新聊天、PO 和银行单据，它自己会读。</span></div><div class="tp u" style="--d:0.80s"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16"/></svg></i>记忆</div><div class="cn u" style="--d:0.85s">只记得这次聊天，关掉就忘了。</div><div class="su u" style="--d:0.90s"><span>记忆层：每位顾客的历史、习惯和以前的聊天，几百万条记录都记得。</span></div><div class="tp u" style="--d:1.00s"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></i>长时间任务</div><div class="cn u" style="--d:1.05s">问 1 次，答 1 次</div><div class="su u" style="--d:1.10s"><span>可以跑好几天的任务：发出去、等回复、跟进、结案。</span></div><div class="tp u" style="--d:1.20s"><i><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/><path d="M18 15l3 3-3 3"/></svg></i>大报表</div><div class="cn u" style="--d:1.25s">每个问题都直接打到你的 SQL Account 服务器。一份大报表就能让全办公室变慢。</div><div class="su u" style="--d:1.30s"><span>大问题在 SuDu 的数据平台上跑，不碰你的 SQL Account 服务器。</span><em>陆续上线</em></div>
 </div>
 <div class="fb u" style="--d:1.6s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/></svg></i>
-  <p>SQL Account runs on a <b>Firebird</b> database, built for daily bookkeeping, not for an AI scanning years of data. <b>Heavy AI questions on it can clash with your staff&rsquo;s work.</b></p></div>
+  <p>SQL Account 用的是 <b>Firebird</b> 数据库，是为日常记账设计的，不是给 AI 扫描好几年的数据用的。 <b>AI 的大问题直接跑在上面，会跟员工的工作撞在一起。</b></p></div>
 </main>
 <script src="../shared/deck.js"></script>
 </body>
