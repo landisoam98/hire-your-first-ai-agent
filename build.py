@@ -4357,54 +4357,97 @@ def _dangers():
     return out
 SAFE = ['Permission for every user', 'A person approves before it is saved', 'Every action logged', 'SQL Account&rsquo;s own rules kept']
 
-slide('13-plug-straight-in', 'Why not plug it straight in?', SEC[2], 'light', 'data-sparks="9,0" style="--gx:85%;--gy:20%;--mx:85%;--my:25%"', '''
-.slide { padding-top: 84px; }
-.top { }
-.h1 { font-size: 62px; max-width: 1600px; }
-.lead { font-size: 30px; margin-top: 12px; }
-.lead b { color: #B4451F; }
-.wire { display:flex; align-items:center; gap: 24px; margin-top: 30px; }
-.lg { display:flex; gap: 14px; }
-.lg div { display:flex; align-items:center; gap: 14px; padding: 16px 24px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px var(--line); font-size: 28px; font-weight: 700; }
-.lg img { width: 46px; height: 46px; }
-.cable { flex:1; position:relative; height: 4px; border-top: 4px dashed #FF8A5B; }
-.cable b { position:absolute; left: 50%; top: -52px; transform: translateX(-50%); font-size: 18px; font-weight: 700; color: #B4451F; white-space: nowrap; font-family: var(--mono); letter-spacing: .08em; }
-.cable i { position:absolute; left: 50%; top: -18px; transform: translateX(-50%); width: 32px; height: 32px; border-radius: 50%; background: #FF8A5B; color: #fff; display:grid; place-items:center; font-style: normal; font-weight: 800; font-size: 22px; }
-.db { padding: 16px 26px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1px var(--line); text-align:center; }
-.db img { height: 38px; display:block; }
-.db span { display:block; font-size: 18px; color: var(--ink-3); margin-top: 6px; }
-.row { display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 34px; }
-.dg { padding: 26px 28px; border-radius: 24px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -30px rgba(2,34,31,.35); border-top: 6px solid #FF8A5B; }
-.dg .hd { display:flex; align-items:center; justify-content:space-between; }
-.dg .i { width: 64px; height: 64px; border-radius: 18px; background: rgba(255,138,91,.14); color: #B4451F; display:grid; place-items:center; }
-.dg .n { font-size: 44px; font-weight: 700; color: rgba(180,69,31,.35); }
-.dg h3 { font-size: 34px; font-weight: 700; letter-spacing: -.02em; margin-top: 16px; }
-.dg p { font-size: 25px; line-height: 1.35; color: var(--ink-2); margin-top: 8px; }
-.dg p.eg { color: var(--ink-3); font-style: italic; font-size: 23px; }
-.safe { margin-top: 24px; display:flex; flex-direction:column; align-items:flex-start; gap: 14px; padding: 22px 30px; border-radius: 22px; background: var(--ink); color: var(--on-dark); }
-.safe > b { font-size: 28px; font-weight: 700; white-space: nowrap; }
-.safe > b em { font-style: normal; color: var(--neon); }
-.safe .ck { display:flex; gap: 10px; flex-wrap: wrap; align-items:center; }
-.safe .ck > em { font-style: normal; font-size: 22px; font-weight: 700; color: var(--on-dark-2); margin-right: 6px; }
-.safe .ck span { display:flex; align-items:center; gap: 8px; font-size: 21px; font-weight: 600; padding: 8px 12px; border-radius: 10px; background: rgba(0,245,169,.12); color: var(--on-dark); white-space: nowrap; }
-.safe .ck svg { color: var(--neon); }
+PLUG_COLS = [('diy', 'Do it yourself', 'Claude wired straight into the database'),
+             ('con', 'A connector', 'An SQL Account plug-in + Claude or ChatGPT'),
+             ('sudu', 'SuDu AI', 'AI staff on a full ERP')]
+PLUG_ROWS = [  # label, diy, connector, sudu ; each (ok?, text) ok: 1 good, 0 neutral, -1 bad
+    ('Who does the work', (-1, 'You, when you ask it'), (-1, 'You, when you ask it'), (1, 'It works on its own, every day')),
+    ('Your accounts', (-1, 'Writes straight in, skips the checks'), (1, 'Uses SQL Account&rsquo;s own login'), (1, 'Keeps SQL Account&rsquo;s rules')),
+    ('Approval and log', (-1, 'None'), (0, 'You approve each order'), (1, 'Approval queue, every action logged')),
+    ('What it covers', (0, 'Accounting'), (0, 'Accounting only'), (1, 'Accounting, warehouse and factory')),
+    ('Runs on', (-1, 'A programmer&rsquo;s laptop'), (-1, '1 office PC that must stay on'), (1, 'The cloud: web, mobile, WhatsApp')),
+    ('What you pay', (-1, 'Programmer + AI subscription'), (-1, 'Connector fee + Claude or ChatGPT subscription'), (1, '1 price. AI included.')),
+]
+PLUG_IC = {1: '<path d="M4 12.5l5 5L20 6.5"/>', 0: '<path d="M6 12h12"/>', -1: '<path d="M6 6l12 12M18 6L6 18"/>'}
+def _plug_table():
+    o = '<div class="pt"><div class="hc"></div>' + ''.join('<div class="hc %s u" style="--d:%.2fs"><b>%s</b><span>%s</span></div>' % (c, .35 + k * .12, t, s_) for k, (c, t, s_) in enumerate(PLUG_COLS))
+    for r, (lab, *cells) in enumerate(PLUG_ROWS):
+        d = .8 + r * .14
+        o += '<div class="lb u" style="--d:%.2fs">%s</div>' % (d, lab)
+        for (c, _, _), (v, t) in zip(PLUG_COLS, cells):
+            o += '<div class="cl %s v%d u" style="--d:%.2fs"><i>%s</i><span>%s</span></div>' % (c, v, d, ic(PLUG_IC[v], 20, 3), t)
+    return o + '</div>'
+
+slide('13-plug-straight-in', 'Why not plug it straight in?', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
+.slide { padding-top: 76px; }
+.mt { font-size: 60px; }
+.pt { display:grid; grid-template-columns: 260px 1fr 1fr 1.12fr; margin-top: 26px; }
+.hc { padding: 0 20px 14px; display:flex; flex-direction:column; justify-content:flex-end; }
+.hc b { font-size: 32px; font-weight: 800; letter-spacing: -.02em; }
+.hc span { font-size: 20px; color: var(--ink-3); margin-top: 2px; line-height: 1.3; }
+.hc.sudu { background: var(--ink); border-radius: 22px 22px 0 0; padding-top: 18px; }
+.hc.sudu b { color: var(--neon); } .hc.sudu span { color: var(--on-dark-2); }
+.lb, .cl { padding: 13px 20px; border-top: 1px solid var(--line); display:flex; align-items:center; }
+.lb { font-family: var(--mono); font-size: 17px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+.cl { gap: 12px; font-size: 24px; line-height: 1.28; color: var(--ink-2); }
+.cl i { flex:none; display:grid; place-items:center; width: 32px; height: 32px; border-radius: 50%; }
+.cl.v1 i { background: var(--mint); color: var(--green); }
+.cl.v0 i { background: #ECEFEC; color: var(--ink-3); }
+.cl.v-1 i { background: #FFE9DF; color: #B4451F; }
+.cl.sudu { background: var(--ink); color: var(--on-dark); border-top-color: rgba(242,251,247,.12); font-weight: 600; }
+.cl.sudu.v1 i { background: rgba(0,245,169,.16); color: var(--neon); }
+.pt > .cl.sudu:last-child { border-radius: 0 0 22px 22px; }
+.bt { margin-top: 26px; font-size: 32px; color: var(--ink-2); }
+.bt b { color: var(--ink); } .bt em { font-style: normal; color: var(--green); font-weight: 750; }
 ''', '''
-<div class="top">
-  <div>
-    <div class="kicker r" style="--d:0s">FAQ 2</div>
-    <h1 class="h1 r" style="--d:.05s">&ldquo;Can I just connect Claude or Codex straight to SQL Account?&rdquo;</h1>
-    <p class="lead r" style="--d:.25s">A programmer can do it in a weekend. <b>Here is what can go wrong.</b></p>
-  </div>
-</div>
-<div class="wire r" style="--d:.4s">
-    <div class="lg"><div><img src="../assets/logos/claude.svg" alt="Claude logo">Claude</div><div><img src="../assets/logos/openai.svg" alt="OpenAI logo">Codex</div></div>
-    <div class="cable"><b>DIRECT ACCESS</b><i>!</i></div>
-    <div class="db"><img src="../assets/sql-h.png" alt="SQL Account"><span>your company database</span></div>
-</div>
-<div class="row">''' + _dangers() + '''</div>
-<div class="safe r" style="--d:1.6s"><b>The agent is not the danger. <em>Direct access is.</em></b><div class="ck"><em>The safe way, through SuDu:</em>''' + ''.join('<span>' + ic(CHECK, 20, 3) + x + '</span>' for x in SAFE) + '''</div></div>
+<div class="mk u" style="--d:.05s">FAQ 2</div>
+<h1 class="mt u" style="--d:.15s">&ldquo;Can I just connect Claude to SQL Account?&rdquo; <em>3 ways, compared</em></h1>
+''' + _plug_table() + '''
+<p class="bt u" style="--d:1.8s"><b>Claude and ChatGPT are great brains.</b> With SuDu you get the brain, the ERP and the AI staff, <em>all in 1 price</em>.</p>
 ''',
-"\"Every week someone asks me: my nephew, or my IT guy, says he can connect ChatGPT, Claude or Codex straight to my SQL Account this weekend. Can he? Yes, he probably can. Here is what can go wrong.\n\nOne: no access control. It can read every figure and change any of them, and nothing asks you first. It is like giving a new temp the master key and the company chop on day one.\n\nTwo: it can freeze the server. SQL Account keeps its data in a database. One heavy question, like every sale for five years, can lock it, and nobody in the office can issue an invoice until it recovers.\n\nThree: it messes up your accounts. Writing straight into the database skips SQL Account's own checks: the running numbers, the stock update, the accounts. Your records stop matching each other, and you may not notice for months.\n\nSo the agent is not the danger. Direct access is. The safe way is a proper connection: permission for every user, a person approves before anything is saved into SQL Account, every action is logged, and SQL Account's own rules are kept. That is what SuDu's sync tool does.\"\n\nNote: say \"can freeze\", not \"will crash\". Claude is made by Anthropic and Codex by OpenAI; both logos are shown only to name the tools.\nNext: \"So AI needs something underneath it.\"")
+"\"Every week someone asks me: can I just connect Claude or ChatGPT to my SQL Account? You can. There are 3 ways, so let's compare them honestly.\n\nWay 1: do it yourself. A programmer wires Claude straight into the database. It only works when you ask it. It writes straight into the tables and skips SQL Account's own checks, there is no approval and no log, and it lives on a programmer's laptop. You pay the programmer and the AI subscription.\n\nWay 2: a connector. A plug-in that lets Claude or ChatGPT talk to SQL Account. This is a proper product: it uses SQL Account's own login, and you approve orders. But it still only works when someone asks it something. It covers accounting only, and it runs on 1 office PC that must stay switched on. And you pay twice: the connector fee, plus a Claude or ChatGPT subscription for every user.\n\nWay 3: SuDu AI. AI staff that work on their own every day: chasing payments, sending reports, taking orders. It keeps SQL Account's rules, everything waits in an approval queue and is logged. It covers accounting, warehouse and factory. It runs in the cloud, on web, mobile and WhatsApp. And it is 1 price, with the AI included.\n\nClaude and ChatGPT are great brains. With SuDu you get the brain, the ERP and the AI staff, all in 1 price.\"\n\nNote: keep it fair: do not name any connector product. Claude is made by Anthropic, ChatGPT by OpenAI.\nNext: \"Let me go 1 level deeper.\"")
+
+# ---------------- FAQ 2b: under the hood (connector vs SuDu) ----------------
+DEEP_ROWS = [  # icon, topic, connector, sudu, sudu tag
+    ('<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>', 'WhatsApp',
+     'Drafts orders from chats you forward', 'A contact book links every number to its customer or supplier. It reads new chats, POs and bank slips by itself.', ''),
+    ('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16"/>', 'Memory',
+     'Only this chat. It forgets when you close it.', 'A memory layer: every customer&rsquo;s history, habits and past chats, across millions of records.', ''),
+    ('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', 'Long tasks',
+     '1 question, 1 answer', 'Tasks that run for days: send, wait for the reply, follow up, close the case.', ''),
+    ('<path d="M4 6h16M4 12h16M4 18h10"/><path d="M18 15l3 3-3 3"/>', 'Big reports',
+     'Every question hits your SQL Account server. A big report can slow it for the whole office.', 'Big questions run on SuDu&rsquo;s data platform, not on your SQL Account server.', 'rolling out'),
+]
+slide('13-plug-deep', 'Under the hood: connector vs SuDu', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
+.slide { padding-top: 76px; }
+.mt { font-size: 62px; }
+.dp { display:grid; grid-template-columns: 230px 1fr 1.35fr; margin-top: 26px; }
+.dh { padding: 0 22px 12px; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .12em; color: var(--ink-3); display:flex; align-items:flex-end; }
+.dh.s { background: var(--ink); color: var(--neon); border-radius: 22px 22px 0 0; padding-top: 16px; }
+.tp, .cn, .su { padding: 16px 22px; border-top: 1px solid var(--line); display:flex; align-items:center; }
+.tp { gap: 14px; font-size: 30px; font-weight: 800; letter-spacing: -.01em; }
+.tp i { flex:none; display:grid; place-items:center; width: 50px; height: 50px; border-radius: 14px; background: var(--mint); color: var(--green); }
+.cn { font-size: 25px; line-height: 1.32; color: var(--ink-3); }
+.su { background: var(--ink); color: var(--on-dark); font-size: 26px; line-height: 1.32; font-weight: 600; border-top-color: rgba(242,251,247,.12); flex-wrap: wrap; gap: 8px 12px; }
+.su em { font-style: normal; font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; border: 1.5px solid #FFB547; color: #FFB547; }
+.dp > .su:last-child { border-radius: 0 0 22px 22px; }
+.fb { margin-top: 24px; display:flex; align-items:center; gap: 22px; padding: 18px 26px; border-radius: 20px; background: #FFF6E8; box-shadow: inset 0 0 0 2px rgba(255,181,71,.5); }
+.fb i { flex:none; display:grid; place-items:center; width: 54px; height: 54px; border-radius: 50%; background: #FFB547; color: var(--ink); }
+.fb p { font-size: 27px; line-height: 1.38; color: var(--ink); }
+.fb b { color: #8A3417; }
+''', '''
+<div class="mk u" style="--d:.05s">FAQ 2 &middot; Under the hood</div>
+<h1 class="mt u" style="--d:.15s">Chatting with your data vs <em>running your company</em></h1>
+<div class="dp">
+  <div class="dh u" style="--d:.3s"></div><div class="dh u" style="--d:.35s">A connector + Claude or ChatGPT</div><div class="dh s u" style="--d:.4s">SuDu AI</div>
+  ''' + ''.join('<div class="tp u" style="--d:%.2fs"><i>%s</i>%s</div><div class="cn u" style="--d:%.2fs">%s</div><div class="su u" style="--d:%.2fs"><span>%s</span>%s</div>'
+                % (.6 + k * .2, ic(p, 26, 2), t, .65 + k * .2, c, .7 + k * .2, s_, ('<em>%s</em>' % g) if g else '') for k, (p, t, c, s_, g) in enumerate(DEEP_ROWS)) + '''
+</div>
+<div class="fb u" style="--d:1.6s"><i>''' + ic('<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/>', 28, 2.4) + '''</i>
+  <p>SQL Account runs on a <b>Firebird</b> database, built for daily bookkeeping, not for an AI scanning years of data. <b>Heavy AI questions on it can clash with your staff&rsquo;s work.</b></p></div>
+''',
+"\"Let me go 1 level deeper, because this is where the difference really shows. A connector lets you chat with your data. SuDu runs your company. 4 things.\n\nWhatsApp. A connector drafts orders from chats you forward to it. SuDu has a contact book that links every WhatsApp number to its customer or supplier, so it reads new chats, POs and bank slips by itself: nobody has to forward anything.\n\nMemory. A chat app remembers only this chat; close it and it forgets. SuDu has a memory layer: every customer's history, habits like Milo means the 1 kg pack, and past chats, across millions of records.\n\nLong tasks. A chat is 1 question, 1 answer. SuDu runs tasks that last for days: send the reminder, wait for the reply, follow up on Friday, close the case when the money is in.\n\nBig reports. This one matters for your server. SQL Account runs on a Firebird database. It is built for daily bookkeeping, not for an AI scanning years of data. If every AI question goes straight to it, a big report can slow it down for the whole office, while your staff are trying to issue invoices. SuDu is moving those big questions onto its own data platform, so your SQL Account server stays fast for your staff.\"\n\nNote: the data platform is rolling out; say \"is moving\", not \"already\". Keep it fair: no connector product is named.\nNext: \"So AI needs something underneath it.\"")
+
 
 HOUSE = [  # top to bottom: n, part, title, what, without, check, marker (x, y), delay
     ('4', 'ROOF', 'AI Agents', 'Do the daily work: orders, stock, payments, reports.',
@@ -5567,7 +5610,7 @@ def main():
                                   'why-agent', 'agent-intro', 'what-is-agent', 'good-vs-bad-agent', 'brain-to-staff']),
         ('SuDu AI', ['imagine', 'video-figure', 'vision', 'the-map', 'five-stages', 'layers-3d']),
         ('The problem', ['section-problem', 'tell-us', 'top-5-issues', 'guess-the-order', 'typed-three-times', 'problem-2', 'problem-3', 'problem-4', 'problem-5', 'count-your-number', 'ai-guru', 'new-way']),
-        ('SuDu AI', ['tools-and-memory', 'wms-intro', 'wms-supply', 'wms-stock', 'video-wms', 'faq', 'why-sudu', 'plug-straight-in', 'the-house',
+        ('SuDu AI', ['tools-and-memory', 'wms-intro', 'wms-supply', 'wms-stock', 'video-wms', 'faq', 'why-sudu', 'plug-straight-in', 'plug-deep', 'the-house',
                      'meme-pool', 'section-demo'] + [k for k in demo if k not in DROP]),
         ('Workshop', ['section-workshop', 'workshop-groups', 'need-wms-mes']),
         ('Get started', ['live-in-30-days', 'what-it-gives-back', 'cost-compare', 'plans', 'hrdf', 'next-step', 'courses', 'dont-wait']),
