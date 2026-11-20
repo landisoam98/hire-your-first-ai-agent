@@ -3721,6 +3721,9 @@ slide('24-tools-and-memory', 'No tools, no work', SEC[2], 'light', 'data-sparks=
 .e2 .bd { background: #FBF7EF; box-shadow: inset 0 0 0 2px #F1E2C2; }
 .e2 .gd { background: #EAF7F1; box-shadow: inset 0 0 0 3px var(--green); }
 .e2 h3 { font-size: 40px; font-weight: 800; letter-spacing: -.02em; }
+.e2 .gd h3 { font-size: 31px; line-height: 1.2; }
+.e2 .hub .lg { display:flex; align-items:center; justify-content:center; gap: 12px; } .e2 .hub .lg img { height: 38px; } .e2 .hub .lg img.sq { height: 58px; }
+.e2 .hub .lg i { font-style: normal; font-size: 28px; font-weight: 800; color: var(--green); }
 .e2 .bd h3 { color: #8A3417; } .e2 .gd h3 { color: var(--green); }
 .e2 .scene { position:relative; flex:1; min-height: 0; margin-top: 10px; }
 .e2 .av { position:absolute; width: 170px; height: 170px; border-radius: 50%; box-shadow: 0 0 0 1px var(--line), 0 20px 40px -20px rgba(2,34,31,.4); background:#fff; }
@@ -3730,7 +3733,7 @@ slide('24-tools-and-memory', 'No tools, no work', SEC[2], 'light', 'data-sparks=
 .e2 .src i { color: #C77800; display:flex; }
 .e2 .src.s1 { left: 0; top: 4%; transform: rotate(-4deg); } .e2 .src.s2 { right: 0; top: 8%; transform: rotate(3deg); }
 .e2 .src.s3 { left: 2%; bottom: 8%; transform: rotate(3deg); } .e2 .src.s4 { right: 2%; bottom: 4%; transform: rotate(-3deg); }
-.e2 .hub { position:absolute; left: 50%; top: 50%; margin: -78px 0 0 -130px; width: 260px; padding: 22px 18px; border-radius: 26px; background: #fff; text-align:center; box-shadow: 0 0 0 3px var(--green), 0 26px 50px -24px rgba(0,108,72,.55); }
+.e2 .hub { position:absolute; left: 50%; top: 50%; margin: -88px 0 0 -205px; width: 410px; padding: 22px 18px; border-radius: 26px; background: #fff; text-align:center; box-shadow: 0 0 0 3px var(--green), 0 26px 50px -24px rgba(0,108,72,.55); }
 .e2 .hub img { height: 42px; } .e2 .hub b { display:block; font-size: 22px; font-weight: 700; color: var(--ink); margin-top: 8px; } .e2 .hub span { display:block; font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .1em; color: var(--ink-3); margin-top: 4px; }
 .e2 .tl { position:absolute; display:flex; align-items:center; gap: 10px; padding: 12px 18px; border-radius: 999px; background: var(--green); color: #fff; font-size: 23px; font-weight: 700; box-shadow: 0 12px 26px -14px rgba(0,108,72,.7); }
 .e2 .tl.t1 { left: 0; top: 4%; } .e2 .tl.t2 { right: 0; top: 4%; } .e2 .tl.t3 { left: 0; bottom: 4%; } .e2 .tl.t4 { right: 0; bottom: 4%; }
@@ -3755,7 +3758,7 @@ slide('24-tools-and-memory', 'No tools, no work', SEC[2], 'light', 'data-sparks=
 <p class="ml u" style="--d:.3s">Every tool is a button inside your ERP. If your company runs on paper and chats, there is <b>no button to press</b>.</p>
 <div class="e2">
   <div class="bd u" style="--d:.5s"><h3>Without a proper ERP</h3><div class="scene"><div class="src s1 u" style="--d:0.80s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 19V5"/></svg></i>Paper notebook</div><div class="src s2 u" style="--d:0.95s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></i>Excel on 3 PCs</div><div class="src s3 u" style="--d:1.10s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></svg></i>WhatsApp chats</div><div class="src s4 u" style="--d:1.25s"><i><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></i>In the boss&rsquo;s head</div><img class="av" src="../assets/av/agent-mind.svg" alt="The agent, puzzled"><span class="qm">?</span></div><div class="vd2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></svg>Nothing to check, nothing to click. It can only guess.</div></div>
-  <div class="gd u" style="--d:.8s"><h3>With SuDu</h3><div class="scene"><svg class="wires" viewBox="0 0 100 100" preserveAspectRatio="none"><g stroke="#00A57A" stroke-width=".5" stroke-dasharray="2 2" fill="none"><path d="M22 12 L50 50"/><path d="M78 12 L50 50"/><path d="M22 88 L50 50"/><path d="M78 88 L50 50"/></g></svg><div class="hub u" style="--d:1.1s"><img src="../assets/logo-dark.png" alt="SuDu AI"><b>1 place for all your data</b><span>SQL ACCOUNT &middot; WMS &middot; MES</span></div><div class="tl t1 u" style="--d:1.30s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Check stock</div><div class="tl t2 u" style="--d:1.45s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Create Sales Order</div><div class="tl t3 u" style="--d:1.60s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Send the DO</div><div class="tl t4 u" style="--d:1.75s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Record payment</div></div><div class="vd2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Every tool has a real button. The agent does the job.</div></div>
+  <div class="gd u" style="--d:.8s"><h3>With SQL (Accounting) + SuDu AI (WMS &amp; MES)</h3><div class="scene"><svg class="wires" viewBox="0 0 100 100" preserveAspectRatio="none"><g stroke="#00A57A" stroke-width=".5" stroke-dasharray="2 2" fill="none"><path d="M22 12 L50 50"/><path d="M78 12 L50 50"/><path d="M22 88 L50 50"/><path d="M78 88 L50 50"/></g></svg><div class="hub u" style="--d:1.1s"><div class="lg"><img class="sq" src="../assets/logos/sql-account-payroll.png" alt="SQL Account"><i>+</i><img src="../assets/logo-dark.png" alt="SuDu AI"></div><b>1 place for all your data</b><span>SQL ACCOUNT &middot; WMS &middot; MES</span></div><div class="tl t1 u" style="--d:1.30s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Check stock</div><div class="tl t2 u" style="--d:1.45s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Create Sales Order</div><div class="tl t3 u" style="--d:1.60s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Send the DO</div><div class="tl t4 u" style="--d:1.75s"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Record payment</div></div><div class="vd2"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Every tool has a real button. The agent does the job.</div></div>
 </div>
 <p class="bt2 u" style="--d:2s">That is why SuDu comes first: <b>an AI Agent is only as good as the system it works in.</b></p>
 </div>
@@ -3766,7 +3769,7 @@ slide('24-tools-and-memory', 'No tools, no work', SEC[2], 'light', 'data-sparks=
 })();
 </script>
 ''',
-"\"Here is the part people forget. The smartest brain in the world, with no tools, can only talk. The brain understands and plans. The tools are its hands: check stock, create an order, send a message. And every tool works inside 1 place: your ERP, where your customers, stock, orders and money live.\"\n\n(Next) \"And here is the catch. Every tool is a button inside your ERP. Look at the left: many companies run on a paper notebook, Excel on 3 different PCs, WhatsApp chats, and things only the boss remembers. Give an AI Agent that company, and what can it do? Nothing to check, nothing to click. It can only guess, and a guess is dangerous. On the right is SuDu: 1 place for all your data, SQL Account, warehouse and factory, and every job has a real button: check stock, create the Sales Order, send the DO, record the payment. Now the agent can do the work. So remember: an AI Agent is only as good as the system it works in. That is why SuDu comes first.\"\n\nThis slide has 1 extra Next press: why tools need a proper ERP.\nNext: \"Let me show you what that looks like in a real warehouse.\"")
+"\"Here is the part people forget. The smartest brain in the world, with no tools, can only talk. The brain understands and plans. The tools are its hands: check stock, create an order, send a message. And every tool works inside 1 place: your ERP, where your customers, stock, orders and money live.\"\n\n(Next) \"And here is the catch. Every tool is a button inside your ERP. Look at the left: many companies run on a paper notebook, Excel on 3 different PCs, WhatsApp chats, and things only the boss remembers. Give an AI Agent that company, and what can it do? Nothing to check, nothing to click. It can only guess, and a guess is dangerous. On the right is SuDu: 1 place for all your data, SQL Account, warehouse and factory, and every job has a real button: check stock, create the Sales Order, send the DO, record the payment. Now the agent can do the work. So remember: an AI Agent is only as good as the system it works in. That is why SuDu comes first.\"\n\nThis slide has 1 extra Next press: why tools need a proper ERP.\nNext: \"So in the warehouse, what does that system look like? SuDu WMS.\"")
 
 
 # ---------------- slide: what is an AI agent ----------------
@@ -4111,6 +4114,127 @@ slide('03-takeaways', 'What you take home', SEC[0], 'light', 'data-sparks="9,0 1
     <b>Get a<em>free</em><br>Demo AI Account</b></div>
 </div>
 ''', "\"By the end of today, you take home 3 things.\n\nOne: a clear picture of AI. What AI really is, how an AI Agent works, what it can and cannot do, with no tech talk.\n\nTwo: you know how to plan AI for your business. Where your company should start, and which job is best to hand to AI first.\n\nThree: a free Demo AI Account. Go back and try it yourself: watch AI Agents work on sample data.\"\n\nNext: \"But first, be honest: who is really the boss of your company?\"")
+
+# ---------------- SuDu WMS: 3 slides between "No tools, no work" and the WMS video ----------------
+# From the SuDu WMS workflow chart: flow 1 reorder, 2 approval, 3 goods in, 4 goods out, 5 stock count, 6 item assembly.
+# Each node pops in along its flow, the arrows draw, a neon dot runs each arrow. wms-supply and wms-stock have 1 extra Next press.
+WMS_CSS = '''
+/* ---- SuDu WMS flow slides: nodes pop in along the flow, arrows draw, a neon dot runs each arrow ---- */
+.slide { padding-top: 84px; }
+.mt { font-size: 70px; } .ml { font-size: 30px; margin-top: 16px; } .ml b { white-space: nowrap; }
+.wf { display:flex; flex-direction:column; gap: 84px; margin-top: 92px; }
+.wr { display:grid; grid-template-columns: 190px 1fr; gap: 28px; align-items:center; }
+.wl b { display:block; font-family: var(--mono); font-size: 20px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+.wl span { display:block; font-size: 32px; font-weight: 800; letter-spacing: -.02em; line-height: 1.1; margin-top: 6px; }
+.wc { display:flex; align-items:stretch; }
+.wn { position:relative; flex: 1 1 0; min-width: 0; min-height: 200px; display:flex; flex-direction:column; justify-content:center; padding: 36px 24px 22px; border-radius: 24px; background: #fff;
+  box-shadow: 0 0 0 1px var(--line), 0 30px 50px -36px rgba(2,34,31,.5); border-bottom: 6px solid var(--emerald); }
+.wn > b { font-size: 32px; font-weight: 780; letter-spacing: -.02em; line-height: 1.12; }
+.wn .wt { font-size: 23px; line-height: 1.32; color: var(--ink-3); margin-top: 8px; }
+.wn small { display:block; font-family: var(--mono); font-size: 17px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 4px 0; }
+.wn.warn { background: #FFF5EF; border-bottom-color: #E0662E; }
+.wn.ai { background: var(--ink); color: var(--on-dark); border-bottom-color: var(--neon); }
+.wn.ai .wt { color: var(--on-dark-2); }
+.wn.ai::after { content:""; position:absolute; inset: -7px; border-radius: 31px; border: 3px solid var(--neon); opacity: 0; pointer-events:none; animation: wGlow 2.4s ease-in-out infinite; animation-delay: calc(var(--d, 0s) + 1s); }
+@keyframes wGlow { 0%, 100% { opacity: 0; transform: scale(.98); } 50% { opacity: .9; transform: none; } }
+.wn.end { background: var(--mint); border-bottom-color: var(--green); }
+.wb { position:absolute; left: 18px; top: -19px; display:inline-flex; align-items:center; gap: 8px; height: 38px; padding: 0 16px 0 10px; border-radius: 999px; font-size: 18px; font-weight: 750; white-space: nowrap;
+  box-shadow: 0 10px 20px -12px rgba(2,34,31,.5); animation: wPop .55s var(--spring) both; animation-delay: calc(var(--d, 0s) + .35s); }
+.wb svg { flex: none; }
+.wb.ok { background: #D9F5E7; color: var(--green); } .wb.alert { background: #FFE1D6; color: #B4351A; } .wb.wait { background: #FFF0CC; color: #8A5A00; }
+.wb.app, .wb.web { background: #E6ECFA; color: #2D4C93; }
+.wb.auto { background: var(--ink); color: var(--neon); padding-left: 4px; }
+.wn.ai .wb.auto { background: var(--neon); color: var(--ink); }
+.wb img { width: 30px; height: 30px; border-radius: 50%; background: #fff; }
+@keyframes wPop { from { opacity: 0; transform: scale(.5) translateY(8px); } to { opacity: 1; transform: none; } }
+.wi { opacity: 0; transform: translateY(22px) scale(.96); animation: wIn .75s var(--spring) forwards; animation-delay: var(--d, 0s); }
+@keyframes wIn { to { opacity: 1; transform: none; } }
+.wa { position:relative; flex: 0 0 62px; align-self: center; height: 20px; }
+.wa::before { content:""; position:absolute; left: 6px; right: 12px; top: 8px; height: 4px; border-radius: 2px; background: var(--emerald); transform-origin: left; transform: scaleX(0); animation: mGrow .45s ease forwards; animation-delay: var(--d, 0s); }
+.wa::after { content:""; position:absolute; right: 2px; top: 1px; border-left: 14px solid var(--emerald); border-top: 9px solid transparent; border-bottom: 9px solid transparent; opacity: 0; animation: mFade .25s ease forwards; animation-delay: calc(var(--d, 0s) + .35s); }
+.wa s { position:absolute; left: 4px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 10px 2px rgba(0,245,169,.8); opacity: 0; animation: wDot 1.5s linear infinite; animation-delay: calc(var(--d, 0s) + .7s); }
+@keyframes wDot { 0% { opacity: 0; transform: translateX(0); } 20%, 75% { opacity: 1; } 100% { opacity: 0; transform: translateX(38px); } }
+.p0, .p1 { flex:1; display:flex; flex-direction:column; }
+.p1 { display:none; } body[data-s="1"] .p0 { display:none; } body[data-s="1"] .p1 { display:flex; }
+.nx { margin-top: auto; align-self: flex-end; display:flex; align-items:center; gap: 14px; font-size: 24px; font-weight: 700; color: var(--green); }
+.nx i { display:grid; place-items:center; width: 44px; height: 44px; border-radius: 50%; background: var(--ink); color: var(--neon); }
+html.static .wi, html.static .wb { opacity: 1; transform: none; animation: none; }
+html.static .wa::before { transform: none; animation: none; } html.static .wa::after { opacity: 1; animation: none; }
+html.static .wa s, html.static .wn.ai::after { display: none; }
+'''
+
+slide('24-wms-intro', 'SuDu WMS: what it does', SEC[3], 'light', 'data-sparks="none"', MIN_CSS + WMS_CSS + '''
+.mt, .ml { max-width: 1260px; }
+.mt { font-size: 62px; }
+.hero { position:absolute; right: 128px; top: 64px; width: 240px; height: 240px; }
+.pz { display:flex; align-items:stretch; margin-top: 54px; }
+.pz .wa { flex-basis: 72px; }
+.pc { flex: 1 1 0; min-width: 0; display:flex; flex-direction:column; padding: 30px 34px 28px; border-radius: 30px; background: #fff; box-shadow: 0 0 0 1px var(--line), 0 40px 70px -50px rgba(2,34,31,.45); }
+.pc .hd { display:flex; align-items:center; justify-content:space-between; }
+.pc .ico { width: 84px; height: 84px; border-radius: 50%; display:grid; place-items:center; background: var(--mint); color: var(--green); }
+.pc .no { font-family: var(--mono); font-size: 22px; font-weight: 700; letter-spacing: .1em; color: var(--ink-3); }
+.pc h3 { font-size: 36px; font-weight: 800; letter-spacing: -.025em; line-height: 1.1; margin-top: 20px; }
+.pc p { font-size: 24px; line-height: 1.42; color: var(--ink-2); margin-top: 12px; }
+.pc .ch { display:flex; flex-wrap:wrap; gap: 10px; margin-top: auto; padding-top: 20px; }
+.pc .ch span { font-family: var(--mono); font-size: 16px; font-weight: 700; letter-spacing: .05em; padding: 7px 12px; border-radius: 999px; background: var(--mint); color: var(--green); }
+.usp { display:grid; grid-template-columns: auto repeat(4, 1fr); align-items:center; gap: 26px; margin-top: auto; padding: 24px 32px; border-radius: 26px; background: var(--ink); color: var(--on-dark); }
+.usp > b { font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--neon); }
+.usp div { display:flex; align-items:center; gap: 12px; font-size: 23px; font-weight: 650; line-height: 1.25; }
+.usp div i { flex:none; display:grid; place-items:center; width: 36px; height: 36px; border-radius: 50%; background: rgba(0,245,169,.15); color: var(--neon); }
+''', '''
+<div class="mk u" style="--d:.05s">SuDu WMS</div>
+<h1 class="mt u" style="--d:.2s">AI Agent with <em>SuDu AI&rsquo;s warehouse system</em></h1>
+<p class="ml u" style="--d:.4s">An AI Agent is only as good as the system it works in. For buying, stock and making, that system is <b>SuDu WMS</b>, linked straight to SQL Account.</p>
+<img class="hero av u" style="--d:.5s" src="../assets/av/agent-thumbs.svg" alt="">
+<div class="pz"><div class="pc wi" style="--d:0.60s"><div class="hd"><i class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="12" height="10" rx="1"/><path d="M14 10h4l3 3v4h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></i><span class="no">01</span></div><h3>Supply chain management</h3><p>Stock runs low, the AI raises the Purchase Request, you approve, and the PO goes to the supplier.</p><div class="ch"><span>Flow 1 &middot; Reorder</span><span>Flow 2 &middot; Approval</span></div></div><i class="wa" style="--d:0.80s"><s></s></i><div class="pc wi" style="--d:1.00s"><div class="hd"><i class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5l9 4.5 9-4.5M12 12v9"/></svg></i><span class="no">02</span></div><h3>Inventory management</h3><p>Receive, put away, pick, pack and count. Every move is scanned on the mobile app, and every batch is tracked.</p><div class="ch"><span>Flow 3 &middot; Goods in</span><span>Flow 4 &middot; Goods out</span><span>Flow 5 &middot; Stock Count</span></div></div><i class="wa" style="--d:1.20s"><s></s></i><div class="pc wi" style="--d:1.40s"><div class="hd"><i class="ico"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V10l5 3V10l5 3V10l5 3V5h3v15z"/></svg></i><span class="no">03</span></div><h3>Basic production management</h3><p>Build finished goods from a BOM with many versions and layers. Materials go out, finished goods come in.</p><div class="ch"><span>Flow 6 &middot; Item assembly</span></div></div></div>
+<div class="usp u" style="--d:1.90s"><b>Why SuDu WMS</b><div><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></i>AI creates the documents</div><div><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></i>Staff work on the mobile app</div><div><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></i>Every batch tracked</div><div><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></i>Posts straight to SQL Account</div></div>
+''',
+"\"So an AI Agent needs a proper system with real buttons. In the warehouse, that system is SuDu WMS. It covers 3 jobs.\n\nOne, supply chain: when stock runs low, the AI raises the Purchase Request, you approve, and the PO goes to the supplier.\n\nTwo, inventory: goods in, goods out and the stock count, all scanned on the mobile app, with every batch tracked.\n\nThree, basic production: build finished goods from a BOM, and the stock updates itself.\n\nAnd everything posts straight to SQL Account, so the accounts always match the warehouse.\"\n\nNext: \"Let me walk you through each flow, starting with buying.\"")
+
+slide('24-wms-supply', 'SuDu WMS: supply chain and production', SEC[3], 'light', 'data-sparks="none"', MIN_CSS + WMS_CSS, '''
+<div class="p0">
+<div class="mk u" style="--d:.05s">SuDu WMS &middot; Supply chain management</div>
+<h1 class="mt u" style="--d:.2s">Stock runs low? <em>AI buys it for you</em></h1>
+<p class="ml u" style="--d:.4s">From the Sales Order to the supplier, nobody keys in anything twice.</p>
+<div class="wf"><div class="wr"><div class="wl wi" style="--d:0.70s"><b>Flow 1</b><span>Reorder</span></div><div class="wc"><div class="wn  wi" style="--d:0.95s"><span class="wb ok"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Completed</span><b>Sales Order issued</b><span class="wt">Customer order confirmed</span></div><i class="wa" style="--d:1.09s"><s></s></i><div class="wn warn wi" style="--d:1.31s"><span class="wb alert"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>Alert</span><b>Stock not enough</b><span class="wt">Balance is below the order</span></div><i class="wa" style="--d:1.45s"><s></s></i><div class="wn ai wi" style="--d:1.67s"><span class="wb auto"><img src="../assets/av/agent-hi.svg" alt="">AI auto-creates</span><b>Purchase Request</b><span class="wt">Raised for the shortfall</span></div></div></div><div class="wr"><div class="wl wi" style="--d:2.13s"><b>Flow 2</b><span>Approval</span></div><div class="wc"><div class="wn  wi" style="--d:2.38s"><span class="wb wait"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 21h12M7 3v3l5 6 5-6V3M7 21v-3l5-6 5 6v3"/></svg>Pending approval</span><b>Needs approval</b><span class="wt">Waits for the boss</span></div><i class="wa" style="--d:2.52s"><s></s></i><div class="wn  wi" style="--d:2.74s"><span class="wb ok"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Completed</span><b>Approved</b><span class="wt">1 tap on the phone</span></div><i class="wa" style="--d:2.88s"><s></s></i><div class="wn  wi" style="--d:3.10s"><b>Converted to PO</b><span class="wt">No retyping</span></div><i class="wa" style="--d:3.24s"><s></s></i><div class="wn ai wi" style="--d:3.46s"><span class="wb auto"><img src="../assets/av/agent-hi.svg" alt="">AI auto-sends</span><b>Sent to supplier</b><span class="wt">Sent automatically</span></div></div></div></div>
+</div>
+<div class="p1">
+<div class="mk u" style="--d:.05s">SuDu WMS &middot; Basic production management</div>
+<h1 class="mt u" style="--d:.2s">Make it, and the stock <em>updates itself</em></h1>
+<p class="ml u" style="--d:.4s">Build finished goods from a BOM. Materials go out, finished goods come in, each with a batch number.</p>
+<div class="wf"><div class="wr"><div class="wl wi" style="--d:0.70s"><b>Flow 6</b><span>Item assembly</span></div><div class="wc"><div class="wn  wi" style="--d:0.95s"><b>Item Assembly</b><span class="wt">Start the job</span></div><i class="wa" style="--d:1.09s"><s></s></i><div class="wn  wi" style="--d:1.31s"><b>Make to stock</b><small>or</small><b>Make to order</b></div><i class="wa" style="--d:1.45s"><s></s></i><div class="wn  wi" style="--d:1.67s"><b>BOM</b><span class="wt">Multiple versions, multiple layers</span></div></div></div><div class="wr"><div class="wl wi" style="--d:2.13s"><b>Done</b><span>Stock updates</span></div><div class="wc"><div class="wn  wi" style="--d:2.38s"><span class="wb ok"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Item assembly completed</span><b>&minus;Materials, +Finished good</b><span class="wt">Used as per the BOM</span></div><i class="wa" style="--d:2.52s"><s></s></i><div class="wn ai wi" style="--d:2.74s"><span class="wb auto"><img src="../assets/av/agent-hi.svg" alt="">AI auto-generates</span><b>+Finished good batch</b><span class="wt">Batch number for tracking</span></div><i class="wa" style="--d:2.88s"><s></s></i><div class="wn end wi" style="--d:3.10s"><b>+Item balance</b><span class="wt">Stock is right at once</span></div></div></div></div>
+</div>
+<script>
+(function () {
+  document.body.dataset.s = '0';
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') document.body.dataset.s = String(e.data.deckStep); });
+})();
+</script>
+''',
+"\"Flow 1, reorder. A Sales Order is issued. The WMS checks the balance and sees the stock is not enough, so it raises an alert, and the AI creates the Purchase Request by itself.\n\nFlow 2, approval. The request waits for you. You approve with 1 tap, it converts to a Purchase Order, and the AI sends it to the supplier. Nobody keys in anything twice.\"\n\n(Next) \"Now production. Flow 6, item assembly. Make to stock or make to order, from a BOM that can have many versions and many layers. When the assembly is done, the materials go out, the finished good comes in with its own batch number, and the item balance updates by itself.\"\n\nThis slide has 1 extra Next press: basic production.\nNext: \"And the stock itself: every carton in, every carton out.\"")
+
+slide('24-wms-stock', 'SuDu WMS: inventory', SEC[3], 'light', 'data-sparks="none"', MIN_CSS + WMS_CSS, '''
+<div class="p0">
+<div class="mk u" style="--d:.05s">SuDu WMS &middot; Inventory management</div>
+<h1 class="mt u" style="--d:.2s">Every carton in and out, <em>scanned</em></h1>
+<p class="ml u" style="--d:.4s">Staff work on the mobile app. The item balance moves by itself.</p>
+<div class="wf"><div class="wr"><div class="wl wi" style="--d:0.70s"><b>Flow 3</b><span>Goods in</span></div><div class="wc"><div class="wn  wi" style="--d:0.95s"><b>Receiving</b><span class="wt">Goods arrive from the supplier</span></div><i class="wa" style="--d:1.09s"><s></s></i><div class="wn  wi" style="--d:1.31s"><span class="wb ok"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Direct convert</span><b>Putaway</b><span class="wt">Straight onto the shelf</span></div><i class="wa" style="--d:1.45s"><s></s></i><div class="wn ai wi" style="--d:1.67s"><span class="wb auto"><img src="../assets/av/agent-hi.svg" alt="">AI auto-generates</span><b>New Batch</b><span class="wt">Batch number created</span></div><i class="wa" style="--d:1.81s"><s></s></i><div class="wn end wi" style="--d:2.03s"><span class="wb auto"><img src="../assets/av/agent-hi.svg" alt="">Auto add</span><b>+Item balance</b><span class="wt">Stock goes up</span></div></div></div><div class="wr"><div class="wl wi" style="--d:2.49s"><b>Flow 4</b><span>Goods out</span></div><div class="wc"><div class="wn  wi" style="--d:2.74s"><b>Delivery Order</b><span class="wt">Ready to deliver</span></div><i class="wa" style="--d:2.88s"><s></s></i><div class="wn  wi" style="--d:3.10s"><span class="wb app"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Mobile app</span><b>Picking</b><span class="wt">Scan each item</span></div><i class="wa" style="--d:3.24s"><s></s></i><div class="wn  wi" style="--d:3.46s"><span class="wb app"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Mobile app</span><b>Packing</b><span class="wt">Check and pack</span></div><i class="wa" style="--d:3.60s"><s></s></i><div class="wn end wi" style="--d:3.82s"><b>&minus;Item balance</b><span class="wt">Stock goes down</span></div></div></div></div>
+</div>
+<div class="p1">
+<div class="mk u" style="--d:.05s">SuDu WMS &middot; Stock Count</div>
+<h1 class="mt u" style="--d:.2s">A stock count you <em>can trust</em></h1>
+<p class="ml u" style="--d:.4s">The office assigns, the floor counts on the app. A wrong count goes back for a recount. Only approved counts post to SQL Account.</p>
+<div class="wf"><div class="wr"><div class="wl wi" style="--d:0.70s"><b>Flow 5</b><span>Count</span></div><div class="wc"><div class="wn  wi" style="--d:0.95s"><span class="wb web"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Web</span><b>Create count task</b><span class="wt">Assigner, on the web</span></div><i class="wa" style="--d:1.09s"><s></s></i><div class="wn  wi" style="--d:1.31s"><span class="wb app"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Mobile app</span><b>Count</b><span class="wt">Assignee, on the mobile app</span></div><i class="wa" style="--d:1.45s"><s></s></i><div class="wn warn wi" style="--d:1.67s"><span class="wb alert"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg>Reject alert</span><b>Review</b><span class="wt">Count looks wrong?</span></div><i class="wa" style="--d:1.81s"><s></s></i><div class="wn  wi" style="--d:2.03s"><span class="wb app"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Mobile app</span><b>Recount</b><span class="wt">Assignee counts again</span></div></div></div><div class="wr"><div class="wl wi" style="--d:2.49s"><b>Then</b><span>Approve and post</span></div><div class="wc"><div class="wn  wi" style="--d:2.74s"><span class="wb ok"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg>Approved</span><b>Approve</b><span class="wt">Assigner, on the web</span></div><i class="wa" style="--d:2.88s"><s></s></i><div class="wn ai wi" style="--d:3.10s"><span class="wb auto"><img src="../assets/av/agent-hi.svg" alt="">AI auto-generates</span><b>Stock Adjustment</b><span class="wt">Made from the count</span></div><i class="wa" style="--d:3.24s"><s></s></i><div class="wn end wi" style="--d:3.46s"><b>Post to SQL Account</b><span class="wt">Accounts match the shelf</span></div></div></div></div>
+<div class="nx u" style="--d:4.02s"><i><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5l11 7-11 7z"/></svg></i>Next: see it in a real warehouse</div>
+</div>
+<script>
+(function () {
+  document.body.dataset.s = '0';
+  addEventListener('message', function (e) { if (e.data && typeof e.data.deckStep === 'number') document.body.dataset.s = String(e.data.deckStep); });
+})();
+</script>
+''',
+"\"Flow 3, goods in. Receive the goods and put them away. The WMS creates the new batch and adds the item balance by itself.\n\nFlow 4, goods out. From the Delivery Order, staff pick and pack on the mobile app, and the balance goes down as they scan.\"\n\n(Next) \"Flow 5, stock count. The office creates the count task on the web. The floor counts on the mobile app. If a count looks wrong, the office rejects it and it goes back for a recount. Once it is approved, the AI generates the Stock Adjustment and posts it to SQL Account. So your accounts match the shelf.\"\n\nThis slide has 1 extra Next press: stock count.\nNext: \"Enough diagrams. Let me show you what that looks like in a real warehouse.\"")
 
 # ---------------- video: SuDu WMS seminar preview (plays after "No tools, no work") ----------------
 slide('24-video-wms', 'Video: SuDu WMS', SEC[3], 'dark bare', 'data-sparks="none"', '''
@@ -5443,7 +5567,7 @@ def main():
                                   'why-agent', 'agent-intro', 'what-is-agent', 'good-vs-bad-agent', 'brain-to-staff']),
         ('SuDu AI', ['imagine', 'video-figure', 'vision', 'the-map', 'five-stages', 'layers-3d']),
         ('The problem', ['section-problem', 'tell-us', 'top-5-issues', 'guess-the-order', 'typed-three-times', 'problem-2', 'problem-3', 'problem-4', 'problem-5', 'count-your-number', 'ai-guru', 'new-way']),
-        ('SuDu AI', ['tools-and-memory', 'video-wms', 'faq', 'why-sudu', 'plug-straight-in', 'the-house',
+        ('SuDu AI', ['tools-and-memory', 'wms-intro', 'wms-supply', 'wms-stock', 'video-wms', 'faq', 'why-sudu', 'plug-straight-in', 'the-house',
                      'meme-pool', 'section-demo'] + [k for k in demo if k not in DROP]),
         ('Workshop', ['section-workshop', 'workshop-groups', 'need-wms-mes']),
         ('Get started', ['live-in-30-days', 'what-it-gives-back', 'cost-compare', 'plans', 'hrdf', 'next-step', 'courses', 'dont-wait']),
@@ -5467,6 +5591,8 @@ def main():
         if s['file'].endswith('what-is-agent'):
             item['steps'] = 6
         if s['file'].endswith('tools-and-memory'):
+            item['steps'] = 1
+        if s['file'].endswith('wms-supply') or s['file'].endswith('wms-stock'):
             item['steps'] = 1
         if s['file'].endswith('ai-guru'):
             item['steps'] = 2
