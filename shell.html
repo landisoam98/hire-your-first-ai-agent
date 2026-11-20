@@ -211,6 +211,13 @@
       const im = document.createElement('img');
       im.className = 'thumb-img'; im.src = item.thumb; im.decoding = 'async';
       card.appendChild(im);
+    } else if (useImg) {
+      // no picture yet: a plain title card. Never load many live slides at once (heavy, flickers)
+      const ph = document.createElement('div');
+      ph.className = 'thumb-img';
+      ph.style.cssText = 'display:grid;place-items:center;padding:14px;text-align:center;color:#A9C4BA;font:600 15px/1.35 -apple-system,sans-serif';
+      ph.textContent = item.label || ('Slide ' + (idx + 1));
+      card.appendChild(ph);
     } else {
       // 网格默认用：真实 HTML 子页面（清晰、所见即所得）
       const thumb = document.createElement('div');

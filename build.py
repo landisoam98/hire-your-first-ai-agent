@@ -4410,30 +4410,34 @@ slide('13-plug-straight-in', 'Why not plug it straight in?', SEC[2], 'light', 'd
 # ---------------- FAQ 2b: under the hood (connector vs SuDu) ----------------
 DEEP_ROWS = [  # icon, topic, connector, sudu, sudu tag
     ('<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>', 'WhatsApp',
-     'Drafts orders from chats you forward', 'A contact book links every number to its customer or supplier. It reads new chats, POs and bank slips by itself.', ''),
+     'No groups. It knows a customer only if their phone matches SQL Account.', 'A contact book links every number and group to its customer or supplier. It reads new chats, POs and bank slips by itself.', ''),
+    ('<path d="M6 3h8l4 4v14H6z"/><path d="M9 13h6M9 17h4"/>', 'Orders',
+     'Staff key in orders 1 at a time. Customer self-service is a paid add-on.', 'Customer orders on WhatsApp turn into Sales Order drafts. You just approve.', ''),
+    ('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', 'Follow-up',
+     'A scheduled job fires once and is done. No waiting for replies.', 'Tasks that run for days: send, wait for the reply, follow up, stop when paid.', ''),
     ('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16"/>', 'Memory',
      'Only this chat. It forgets when you close it.', 'A memory layer: every customer&rsquo;s history, habits and past chats, across millions of records.', ''),
-    ('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>', 'Long tasks',
-     '1 question, 1 answer', 'Tasks that run for days: send, wait for the reply, follow up, close the case.', ''),
-    ('<path d="M4 6h16M4 12h16M4 18h10"/><path d="M18 15l3 3-3 3"/>', 'Big reports',
-     'Every question hits your SQL Account server. A big report can slow it for the whole office.', 'Big questions run on SuDu&rsquo;s data platform, not on your SQL Account server.', 'rolling out'),
+    ('<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>', 'Runs on',
+     '1 Windows PC: always on, logged in, never asleep, SQL Account closed. Needs 16 GB RAM.', 'The cloud. Big questions run on SuDu&rsquo;s data platform, not your SQL Account server.', 'data platform rolling out'),
+    ('<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>', 'Setup &amp; access',
+     'On-site IT: installer, tunnel, antivirus exclusions. Admin page only on that PC.', 'Sign in on web or mobile. Several companies in 1 account.', ''),
 ]
 slide('13-plug-deep', 'Under the hood: connector vs SuDu', SEC[2], 'light', 'data-sparks="none"', MIN_CSS + '''
 .slide { padding-top: 76px; }
 .mt { font-size: 62px; }
-.dp { display:grid; grid-template-columns: 290px 1fr 1.35fr; margin-top: 26px; }
+.dp { display:grid; grid-template-columns: 290px 1fr 1.25fr; margin-top: 18px; }
 .dh { padding: 0 22px 12px; font-family: var(--mono); font-size: 18px; font-weight: 700; letter-spacing: .12em; color: var(--ink-3); display:flex; align-items:flex-end; }
 .dh.s { background: var(--ink); color: var(--neon); border-radius: 22px 22px 0 0; padding-top: 16px; }
-.tp, .cn, .su { padding: 16px 22px; border-top: 1px solid var(--line); display:flex; align-items:center; }
-.tp { gap: 14px; font-size: 30px; font-weight: 800; letter-spacing: -.01em; }
-.tp i { flex:none; display:grid; place-items:center; width: 50px; height: 50px; border-radius: 14px; background: var(--mint); color: var(--green); }
-.cn { font-size: 25px; line-height: 1.32; color: var(--ink-3); }
-.su { background: var(--ink); color: var(--on-dark); font-size: 26px; line-height: 1.32; font-weight: 600; border-top-color: rgba(242,251,247,.12); flex-wrap: wrap; gap: 8px 12px; }
+.tp, .cn, .su { padding: 11px 22px; border-top: 1px solid var(--line); display:flex; align-items:center; }
+.tp { gap: 14px; font-size: 27px; font-weight: 800; letter-spacing: -.01em; }
+.tp i { flex:none; display:grid; place-items:center; width: 44px; height: 44px; border-radius: 14px; background: var(--mint); color: var(--green); }
+.cn { font-size: 22px; line-height: 1.3; color: var(--ink-3); }
+.su { background: var(--ink); color: var(--on-dark); font-size: 22px; line-height: 1.3; font-weight: 600; border-top-color: rgba(242,251,247,.12); flex-wrap: wrap; gap: 8px 12px; }
 .su em { font-style: normal; font-family: var(--mono); font-size: 15px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; border: 1.5px solid #FFB547; color: #FFB547; }
 .dp > .su:last-child { border-radius: 0 0 22px 22px; }
-.fb { margin-top: 24px; display:flex; align-items:center; gap: 22px; padding: 18px 26px; border-radius: 20px; background: #FFF6E8; box-shadow: inset 0 0 0 2px rgba(255,181,71,.5); }
+.fb { margin-top: 18px; display:flex; align-items:center; gap: 22px; padding: 18px 26px; border-radius: 20px; background: #FFF6E8; box-shadow: inset 0 0 0 2px rgba(255,181,71,.5); }
 .fb i { flex:none; display:grid; place-items:center; width: 54px; height: 54px; border-radius: 50%; background: #FFB547; color: var(--ink); }
-.fb p { font-size: 27px; line-height: 1.38; color: var(--ink); }
+.fb p { font-size: 24px; line-height: 1.38; color: var(--ink); }
 .fb b { color: #8A3417; }
 ''', '''
 <div class="mk u" style="--d:.05s">FAQ 2 &middot; Under the hood</div>
@@ -4446,7 +4450,7 @@ slide('13-plug-deep', 'Under the hood: connector vs SuDu', SEC[2], 'light', 'dat
 <div class="fb u" style="--d:1.6s"><i>''' + ic('<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17h.01"/>', 28, 2.4) + '''</i>
   <p>SQL Account runs on a <b>Firebird</b> database, built for daily bookkeeping, not for an AI scanning years of data. <b>Heavy AI questions on it can clash with your staff&rsquo;s work.</b></p></div>
 ''',
-"\"Let me go 1 level deeper, because this is where the difference really shows. A connector lets you chat with your data. SuDu runs your company. 4 things.\n\nWhatsApp. A connector drafts orders from chats you forward to it. SuDu has a contact book that links every WhatsApp number to its customer or supplier, so it reads new chats, POs and bank slips by itself: nobody has to forward anything.\n\nMemory. A chat app remembers only this chat; close it and it forgets. SuDu has a memory layer: every customer's history, habits like Milo means the 1 kg pack, and past chats, across millions of records.\n\nLong tasks. A chat is 1 question, 1 answer. SuDu runs tasks that last for days: send the reminder, wait for the reply, follow up on Friday, close the case when the money is in.\n\nBig reports. This one matters for your server. SQL Account runs on a Firebird database. It is built for daily bookkeeping, not for an AI scanning years of data. If every AI question goes straight to it, a big report can slow it down for the whole office, while your staff are trying to issue invoices. SuDu is moving those big questions onto its own data platform, so your SQL Account server stays fast for your staff.\"\n\nNote: the data platform is rolling out; say \"is moving\", not \"already\". Keep it fair: no connector product is named.\nNext: \"So AI needs something underneath it.\"")
+"\"Let me go 1 level deeper, because this is where the difference really shows. A connector lets you chat with your data. SuDu runs your company. 6 things.\n\nWhatsApp. A connector cannot read WhatsApp groups, and it only knows a customer if their phone number matches the mobile in SQL Account. SuDu has a contact book that links every number and group to its customer or supplier, so it reads new chats, POs and bank slips by itself.\n\nOrders. With a connector, your staff still key in orders 1 at a time; customer self-service is a paid add-on. In SuDu, a customer's WhatsApp order becomes a Sales Order draft, and you just approve.\n\nFollow-up. A connector's scheduled job fires once and is done: it does not wait for the reply, and it does not stop when the customer pays. SuDu runs tasks for days: send, wait, follow up, stop when paid.\n\nMemory. A chat app remembers only this chat. SuDu has a memory layer: every customer's history, habits and past chats, across millions of records.\n\nRuns on. A connector needs 1 Windows PC that is always on, logged in, never asleep, with SQL Account closed, and about 16 GB of RAM. If that PC goes down, the AI stops. SuDu runs in the cloud, and SuDu is moving big questions onto its own data platform, so your SQL Account server stays fast for your staff. Remember, SQL Account runs on Firebird, built for bookkeeping, not for an AI scanning years of data.\n\nSetup. A connector needs on-site IT: an installer, a tunnel, antivirus exclusions, and the admin page only opens on that PC. SuDu: sign in on web or mobile, and run several companies in 1 account.\"\n\nNote: the data platform is rolling out; say \"is moving\", not \"already\". Keep it fair: no connector product is named.\nNext: \"So AI needs something underneath it.\"")
 
 
 HOUSE = [  # top to bottom: n, part, title, what, without, check, marker (x, y), delay

@@ -320,248 +320,289 @@
   "file": "slides/42-plug-deep.html",
   "label": "Under the hood: connector vs SuDu",
   "section": "SuDu AI",
-  "notes": "\"Let me go 1 level deeper, because this is where the difference really shows. A connector lets you chat with your data. SuDu runs your company. 4 things.\n\nWhatsApp. A connector drafts orders from chats you forward to it. SuDu has a contact book that links every WhatsApp number to its customer or supplier, so it reads new chats, POs and bank slips by itself: nobody has to forward anything.\n\nMemory. A chat app remembers only this chat; close it and it forgets. SuDu has a memory layer: every customer's history, habits like Milo means the 1 kg pack, and past chats, across millions of records.\n\nLong tasks. A chat is 1 question, 1 answer. SuDu runs tasks that last for days: send the reminder, wait for the reply, follow up on Friday, close the case when the money is in.\n\nBig reports. This one matters for your server. SQL Account runs on a Firebird database. It is built for daily bookkeeping, not for an AI scanning years of data. If every AI question goes straight to it, a big report can slow it down for the whole office, while your staff are trying to issue invoices. SuDu is moving those big questions onto its own data platform, so your SQL Account server stays fast for your staff.\"\n\nNote: the data platform is rolling out; say \"is moving\", not \"already\". Keep it fair: no connector product is named.\nNext: \"So AI needs something underneath it.\""
+  "notes": "\"Let me go 1 level deeper, because this is where the difference really shows. A connector lets you chat with your data. SuDu runs your company. 6 things.\n\nWhatsApp. A connector cannot read WhatsApp groups, and it only knows a customer if their phone number matches the mobile in SQL Account. SuDu has a contact book that links every number and group to its customer or supplier, so it reads new chats, POs and bank slips by itself.\n\nOrders. With a connector, your staff still key in orders 1 at a time; customer self-service is a paid add-on. In SuDu, a customer's WhatsApp order becomes a Sales Order draft, and you just approve.\n\nFollow-up. A connector's scheduled job fires once and is done: it does not wait for the reply, and it does not stop when the customer pays. SuDu runs tasks for days: send, wait, follow up, stop when paid.\n\nMemory. A chat app remembers only this chat. SuDu has a memory layer: every customer's history, habits and past chats, across millions of records.\n\nRuns on. A connector needs 1 Windows PC that is always on, logged in, never asleep, with SQL Account closed, and about 16 GB of RAM. If that PC goes down, the AI stops. SuDu runs in the cloud, and SuDu is moving big questions onto its own data platform, so your SQL Account server stays fast for your staff. Remember, SQL Account runs on Firebird, built for bookkeeping, not for an AI scanning years of data.\n\nSetup. A connector needs on-site IT: an installer, a tunnel, antivirus exclusions, and the admin page only opens on that PC. SuDu: sign in on web or mobile, and run several companies in 1 account.\"\n\nNote: the data platform is rolling out; say \"is moving\", not \"already\". Keep it fair: no connector product is named.\nNext: \"So AI needs something underneath it.\"",
+  "thumb": "thumbs/42-plug-deep.jpg"
  },
  {
   "file": "slides/43-the-house.html",
   "label": "What AI needs underneath",
   "section": "SuDu AI",
-  "notes": "\"AI is like a house. Most people only look at the roof. The AI is the exciting part. But a roof needs a house under it, and AI on messy data only makes mistakes faster. So build from the foundation up. For each level, 1 risk and 1 question to check yourself.\n\n1, the foundation: clean data. 1 code per item, fixed units, and stock that matches the shelf because every carton is scanned and every job recorded. Without it, the AI quotes the wrong price and promises stock you do not have. Check: when you count, does the system match the shelf?\n\n2, the door: a safe connection. The AI goes through a controlled door that keeps your accounting rules, never straight into the database. Without it, 1 wrong command can freeze the server or break your accounts. Check: does any tool write straight into your SQL database?\n\n3, the walls: permissions and approvals. Who may see what, do what, and say yes, with every action logged. Without them, the AI can change anything, and nobody knows who did what. Check: is it written down who approves discounts, credit and purchases?\n\n4, the roof: the AI Agents doing the daily work. Without them, people keep typing and chasing by hand. Check: which job eats the most hours each week?\n\nFor the next part, I will show you the whole house, working.\"\n\nThe house builds itself from the ground up; the numbered dots match the 4 levels. This is thread 2; it returns later in the deck.\nNext: \"Before the demo, 1 picture every admin in this room will understand.\""
+  "notes": "\"AI is like a house. Most people only look at the roof. The AI is the exciting part. But a roof needs a house under it, and AI on messy data only makes mistakes faster. So build from the foundation up. For each level, 1 risk and 1 question to check yourself.\n\n1, the foundation: clean data. 1 code per item, fixed units, and stock that matches the shelf because every carton is scanned and every job recorded. Without it, the AI quotes the wrong price and promises stock you do not have. Check: when you count, does the system match the shelf?\n\n2, the door: a safe connection. The AI goes through a controlled door that keeps your accounting rules, never straight into the database. Without it, 1 wrong command can freeze the server or break your accounts. Check: does any tool write straight into your SQL database?\n\n3, the walls: permissions and approvals. Who may see what, do what, and say yes, with every action logged. Without them, the AI can change anything, and nobody knows who did what. Check: is it written down who approves discounts, credit and purchases?\n\n4, the roof: the AI Agents doing the daily work. Without them, people keep typing and chasing by hand. Check: which job eats the most hours each week?\n\nFor the next part, I will show you the whole house, working.\"\n\nThe house builds itself from the ground up; the numbered dots match the 4 levels. This is thread 2; it returns later in the deck.\nNext: \"Before the demo, 1 picture every admin in this room will understand.\"",
+  "thumb": "thumbs/43-the-house.jpg"
  },
  {
   "file": "slides/44-meme-pool.html",
   "label": "Meme: who gets saved",
   "section": "SuDu AI",
-  "notes": "(This one is for a laugh. Let it land.)\n\n\"Be honest, admins in the room. The boss is busy playing with the new AI Agent. The admin preparing the report is drowning. And the admin keying in orders? Already at the bottom of the pool, since last year.\" (pause for the laugh)\n\n\"That is exactly why we built SuDu: so nobody in your company has to drown in reports and keying in again.\"\n\nNext: \"Enough talking. Let me show you.\""
+  "notes": "(This one is for a laugh. Let it land.)\n\n\"Be honest, admins in the room. The boss is busy playing with the new AI Agent. The admin preparing the report is drowning. And the admin keying in orders? Already at the bottom of the pool, since last year.\" (pause for the laugh)\n\n\"That is exactly why we built SuDu: so nobody in your company has to drown in reports and keying in again.\"\n\nNext: \"Enough talking. Let me show you.\"",
+  "thumb": "thumbs/44-meme-pool.jpg"
  },
  {
   "file": "slides/45-section-demo.html",
   "label": "Section: Live demo",
   "section": "SuDu AI",
-  "notes": "\"Enough talking. Let me show you. This is a live demo on a sample company, Maju Jaya Foods, with sample data. 6 AI Agents, 7 parts: setting up, then sales, inventory, purchase, collection, up sales and finance. Watch what each agent does, and where it stops and asks a person.\"\n\nNext: \"First, meet the 6 AI Agents.\""
+  "notes": "\"Enough talking. Let me show you. This is a live demo on a sample company, Maju Jaya Foods, with sample data. 6 AI Agents, 7 parts: setting up, then sales, inventory, purchase, collection, up sales and finance. Watch what each agent does, and where it stops and asks a person.\"\n\nNext: \"First, meet the 6 AI Agents.\"",
+  "thumb": "thumbs/45-section-demo.jpg"
  },
  {
   "file": "slides/46-demo-day.html",
   "label": "Live demo",
   "section": "SuDu AI",
-  "notes": "\"Let me introduce the 6 AI Agents in today's demo. They work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: \"Before we start, 1 quick note about today's demo account.\""
+  "notes": "\"Let me introduce the 6 AI Agents in today's demo. They work for Maju Jaya Foods, a sample company with sample data. Sasha takes the orders. Ivan watches the stock. Puteri does the buying. Cody chases the money. Uma brings lost customers back. Felix keeps the numbers. First we set them up once, then each one does real jobs on the screen.\"\n\nEach next slide is 1 use case. Show it live, then come back to the slide.\nNext: \"Before we start, 1 quick note about today's demo account.\"",
+  "thumb": "thumbs/46-demo-day.jpg"
  },
  {
   "file": "slides/47-demo-note.html",
   "label": "Demo account note",
   "section": "SuDu AI",
-  "notes": "\"Before we start the demo, 1 quick note. What you are about to see runs on a demo account. In a demo account, we cannot sync the full data from SQL Account, for example the opening ledger, the balances each customer already owes. Collection AI needs exactly that data to know who is overdue. So today, Sales, Inventory, Purchase, Up Sales and Finance AI run live, and for Collection AI I will walk you through the slides instead. On your own account, with your full data synced, Collection AI runs live like the others.\"\n\nNext: \"Before any agent works, we set it up once.\""
+  "notes": "\"Before we start the demo, 1 quick note. What you are about to see runs on a demo account. In a demo account, we cannot sync the full data from SQL Account, for example the opening ledger, the balances each customer already owes. Collection AI needs exactly that data to know who is overdue. So today, Sales, Inventory, Purchase, Up Sales and Finance AI run live, and for Collection AI I will walk you through the slides instead. On your own account, with your full data synced, Collection AI runs live like the others.\"\n\nNext: \"Before any agent works, we set it up once.\"",
+  "thumb": "thumbs/47-demo-note.jpg"
  },
  {
   "file": "slides/48-uc-01.html",
   "label": "Demo: Setting up ",
   "section": "SuDu AI",
-  "notes": "\"Setting up: set it up once. Link WhatsApp. Set up contacts. Auto-save to SQL Account. Check the stock balance. Set approvals: credit limit, minimum price. Load past prices. Done once. Every agent uses these settings.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nPrep: historical prices to be prepared by Jordan Lee.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Sales AI intro slide."
+  "notes": "\"Setting up: set it up once. Link WhatsApp. Set up contacts. Auto-save to SQL Account. Check the stock balance. Set approvals: credit limit, minimum price. Load past prices. Done once. Every agent uses these settings.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nPrep: historical prices to be prepared by Jordan Lee.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Sales AI intro slide.",
+  "thumb": "thumbs/48-uc-01.jpg"
  },
  {
   "file": "slides/49-intro-02.html",
   "label": "Demo: Sales AI",
   "section": "SuDu AI",
-  "notes": "\"Part 2: Sales AI. Meet Sasha. Takes orders from WhatsApp, PDF and chat. Sasha will show you 3 jobs.\"\n\nNext: \"Sales AI, use case 1: create a sales order.\""
+  "notes": "\"Part 2: Sales AI. Meet Sasha. Takes orders from WhatsApp, PDF and chat. Sasha will show you 3 jobs.\"\n\nNext: \"Sales AI, use case 1: create a sales order.\"",
+  "thumb": "thumbs/49-intro-02.jpg"
  },
  {
   "file": "slides/50-uc-02.html",
   "label": "Demo: Sales AI 1 of 3",
   "section": "SuDu AI",
-  "notes": "\"Sales AI, use case 1 of 3: create a sales order. Type the order in plain words. Or upload the customer's PDF or photo. Check the draft, then approve. Prices come from the customer's history.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Sales AI: send the so or invoice to the customer.\""
+  "notes": "\"Sales AI, use case 1 of 3: create a sales order. Type the order in plain words. Or upload the customer's PDF or photo. Check the draft, then approve. Prices come from the customer's history.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Sales AI: send the so or invoice to the customer.\"",
+  "thumb": "thumbs/50-uc-02.jpg"
  },
  {
   "file": "slides/51-uc-03.html",
   "label": "Demo: Sales AI 2 of 3",
   "section": "SuDu AI",
-  "notes": "\"Sales AI, use case 2 of 3: send the so or invoice to the customer. Add the customer's WhatsApp number in Contacts. Ask: \"Send SI-2001 to Jaya Grocer\". The PDF lands in their WhatsApp. No download, no forwarding.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Sales AI: turn the sales order into an invoice.\""
+  "notes": "\"Sales AI, use case 2 of 3: send the so or invoice to the customer. Add the customer's WhatsApp number in Contacts. Ask: \"Send SI-2001 to Jaya Grocer\". The PDF lands in their WhatsApp. No download, no forwarding.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Sales AI: turn the sales order into an invoice.\"",
+  "thumb": "thumbs/51-uc-03.jpg"
  },
  {
   "file": "slides/52-uc-04.html",
   "label": "Demo: Sales AI 3 of 3",
   "section": "SuDu AI",
-  "notes": "\"Sales AI, use case 3 of 3: turn the sales order into an invoice. Ask in plain words. It copies every line from the SO. Saved into SQL Account. No retyping between SO and invoice.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Inventory AI intro slide."
+  "notes": "\"Sales AI, use case 3 of 3: turn the sales order into an invoice. Ask in plain words. It copies every line from the SO. Saved into SQL Account. No retyping between SO and invoice.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Inventory AI intro slide.",
+  "thumb": "thumbs/52-uc-04.jpg"
  },
  {
   "file": "slides/53-intro-03.html",
   "label": "Demo: Inventory AI",
   "section": "SuDu AI",
-  "notes": "\"Part 3: Inventory AI. Meet Ivan. Checks stock, sends stock reports. Ivan will show you 3 jobs.\"\n\nNext: \"Inventory AI, use case 1: check stock balance.\""
+  "notes": "\"Part 3: Inventory AI. Meet Ivan. Checks stock, sends stock reports. Ivan will show you 3 jobs.\"\n\nNext: \"Inventory AI, use case 1: check stock balance.\"",
+  "thumb": "thumbs/53-intro-03.jpg"
  },
  {
   "file": "slides/54-uc-05.html",
   "label": "Demo: Inventory AI 1 of 3",
   "section": "SuDu AI",
-  "notes": "\"Inventory AI, use case 1 of 3: check stock balance. Type /accounting to ask SQL Account directly. Or ask the ERP, after it updates. Get the answer in seconds. /accounting reads straight from SQL Account.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Inventory AI: create a stock report.\""
+  "notes": "\"Inventory AI, use case 1 of 3: check stock balance. Type /accounting to ask SQL Account directly. Or ask the ERP, after it updates. Get the answer in seconds. /accounting reads straight from SQL Account.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Inventory AI: create a stock report.\"",
+  "thumb": "thumbs/54-uc-05.jpg"
  },
  {
   "file": "slides/55-uc-06.html",
   "label": "Demo: Inventory AI 2 of 3",
   "section": "SuDu AI",
-  "notes": "\"Inventory AI, use case 2 of 3: create a stock report. Ask for a PDF report and send it on WhatsApp. Or ask for a live dashboard. Change it by asking again. A PDF to share, or a dashboard that keeps updating.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Inventory AI: send a report on a schedule.\""
+  "notes": "\"Inventory AI, use case 2 of 3: create a stock report. Ask for a PDF report and send it on WhatsApp. Or ask for a live dashboard. Change it by asking again. A PDF to share, or a dashboard that keeps updating.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Inventory AI: send a report on a schedule.\"",
+  "thumb": "thumbs/55-uc-06.jpg"
  },
  {
   "file": "slides/56-uc-07.html",
   "label": "Demo: Inventory AI 3 of 3",
   "section": "SuDu AI",
-  "notes": "\"Inventory AI, use case 3 of 3: send a report on a schedule. Ask once, in plain words. It becomes a routine. The report arrives every week. Ask once. It runs every week.\"\n\nDo: show it live on the real screen (web or mobile app, routine, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Purchase AI intro slide."
+  "notes": "\"Inventory AI, use case 3 of 3: send a report on a schedule. Ask once, in plain words. It becomes a routine. The report arrives every week. Ask once. It runs every week.\"\n\nDo: show it live on the real screen (web or mobile app, routine, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Purchase AI intro slide.",
+  "thumb": "thumbs/56-uc-07.jpg"
  },
  {
   "file": "slides/57-intro-04.html",
   "label": "Demo: Purchase AI",
   "section": "SuDu AI",
-  "notes": "\"Part 4: Purchase AI. Meet Puteri. Makes POs, records supplier invoices. Puteri will show you 3 jobs.\"\n\nNext: \"Purchase AI, use case 1: create a purchase order.\""
+  "notes": "\"Part 4: Purchase AI. Meet Puteri. Makes POs, records supplier invoices. Puteri will show you 3 jobs.\"\n\nNext: \"Purchase AI, use case 1: create a purchase order.\"",
+  "thumb": "thumbs/57-intro-04.jpg"
  },
  {
   "file": "slides/58-uc-08.html",
   "label": "Demo: Purchase AI 1 of 3",
   "section": "SuDu AI",
-  "notes": "\"Purchase AI, use case 1 of 3: create a purchase order. Type it in plain words. Or upload a photo of a handwritten list. Approve and send. Even messy handwriting becomes a clean PO.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Purchase AI: supplier invoice to purchase invoice.\""
+  "notes": "\"Purchase AI, use case 1 of 3: create a purchase order. Type it in plain words. Or upload a photo of a handwritten list. Approve and send. Even messy handwriting becomes a clean PO.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Purchase AI: supplier invoice to purchase invoice.\"",
+  "thumb": "thumbs/58-uc-08.jpg"
  },
  {
   "file": "slides/59-uc-09.html",
   "label": "Demo: Purchase AI 2 of 3",
   "section": "SuDu AI",
-  "notes": "\"Purchase AI, use case 2 of 3: supplier invoice to purchase invoice. Upload the supplier's invoice. It matches the PO and goods received. Saved as a purchase invoice. Wrong qty or price is caught first.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Purchase AI: chase late deliveries.\""
+  "notes": "\"Purchase AI, use case 2 of 3: supplier invoice to purchase invoice. Upload the supplier's invoice. It matches the PO and goods received. Saved as a purchase invoice. Wrong qty or price is caught first.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Purchase AI: chase late deliveries.\"",
+  "thumb": "thumbs/59-uc-09.jpg"
  },
  {
   "file": "slides/60-uc-10.html",
   "label": "Demo: Purchase AI 3 of 3",
   "section": "SuDu AI",
-  "notes": "\"Purchase AI, use case 3 of 3: chase late deliveries. Set a task: chase POs not yet received. It messages the supplier on WhatsApp. The reply goes back to the buyer. No more calling suppliers one by one.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Collection AI intro slide."
+  "notes": "\"Purchase AI, use case 3 of 3: chase late deliveries. Set a task: chase POs not yet received. It messages the supplier on WhatsApp. The reply goes back to the buyer. No more calling suppliers one by one.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Collection AI intro slide.",
+  "thumb": "thumbs/60-uc-10.jpg"
  },
  {
   "file": "slides/61-intro-05.html",
   "label": "Demo: Collection AI",
   "section": "SuDu AI",
-  "notes": "\"Part 5: Collection AI. Meet Cody. Chases overdue payments, reads bank slips. Cody will show you 3 jobs.\"\n\nNext: \"Collection AI, use case 1: check overdue customers.\""
+  "notes": "\"Part 5: Collection AI. Meet Cody. Chases overdue payments, reads bank slips. Cody will show you 3 jobs.\"\n\nNext: \"Collection AI, use case 1: check overdue customers.\"",
+  "thumb": "thumbs/61-intro-05.jpg"
  },
  {
   "file": "slides/62-uc-11.html",
   "label": "Demo: Collection AI 1 of 3",
   "section": "SuDu AI",
-  "notes": "\"Collection AI, use case 1 of 3: check overdue customers. Create a routine to check overdue customers. It opens a task with the list. Send each statement on WhatsApp. Every weekday, nobody has to remember.\"\n\nDo: show it live on the real screen (web or mobile app, routine, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Collection AI: customer asks for more time.\""
+  "notes": "\"Collection AI, use case 1 of 3: check overdue customers. Create a routine to check overdue customers. It opens a task with the list. Send each statement on WhatsApp. Every weekday, nobody has to remember.\"\n\nDo: show it live on the real screen (web or mobile app, routine, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Collection AI: customer asks for more time.\"",
+  "thumb": "thumbs/62-uc-11.jpg"
  },
  {
   "file": "slides/63-uc-12.html",
   "label": "Demo: Collection AI 2 of 3",
   "section": "SuDu AI",
-  "notes": "\"Collection AI, use case 2 of 3: customer asks for more time. The customer replies on WhatsApp. The reply shows up in the task. You approve the next step. You decide. It follows up on the day.\"\n\nDo: show it live on the real screen (WhatsApp, web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Collection AI: customer sends a payment receipt.\""
+  "notes": "\"Collection AI, use case 2 of 3: customer asks for more time. The customer replies on WhatsApp. The reply shows up in the task. You approve the next step. You decide. It follows up on the day.\"\n\nDo: show it live on the real screen (WhatsApp, web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Collection AI: customer sends a payment receipt.\"",
+  "thumb": "thumbs/63-uc-12.jpg"
  },
  {
   "file": "slides/64-uc-13.html",
   "label": "Demo: Collection AI 3 of 3",
   "section": "SuDu AI",
-  "notes": "\"Collection AI, use case 3 of 3: customer sends a payment receipt. The customer sends the payment receipt on WhatsApp. It reads the amount and matches invoices. A customer payment is created. No payment receipts lost in the chat.\"\n\nDo: show it live on the real screen (WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Up Sales AI intro slide."
+  "notes": "\"Collection AI, use case 3 of 3: customer sends a payment receipt. The customer sends the payment receipt on WhatsApp. It reads the amount and matches invoices. A customer payment is created. No payment receipts lost in the chat.\"\n\nDo: show it live on the real screen (WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Up Sales AI intro slide.",
+  "thumb": "thumbs/64-uc-13.jpg"
  },
  {
   "file": "slides/65-intro-06.html",
   "label": "Demo: Up Sales AI",
   "section": "SuDu AI",
-  "notes": "\"Part 6: Up Sales AI. Meet Uma. Wins back lost customers. Uma will show you 1 job.\"\n\nNext: \"Up Sales AI, use case 1: win back lost customers.\""
+  "notes": "\"Part 6: Up Sales AI. Meet Uma. Wins back lost customers. Uma will show you 1 job.\"\n\nNext: \"Up Sales AI, use case 1: win back lost customers.\"",
+  "thumb": "thumbs/65-intro-06.jpg"
  },
  {
   "file": "slides/66-uc-14.html",
   "label": "Demo: Up Sales AI 1 of 1",
   "section": "SuDu AI",
-  "notes": "\"Up Sales AI, use case 1 of 1: win back lost customers. Find customers with no order in 30 days. Send them a promotion on WhatsApp. Attach a promo PDF. Customers come back before they forget you.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Finance AI intro slide."
+  "notes": "\"Up Sales AI, use case 1 of 1: win back lost customers. Find customers with no order in 30 days. Send them a promotion on WhatsApp. Attach a promo PDF. Customers come back before they forget you.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: the Finance AI intro slide.",
+  "thumb": "thumbs/66-uc-14.jpg"
  },
  {
   "file": "slides/67-intro-07.html",
   "label": "Demo: Finance AI",
   "section": "SuDu AI",
-  "notes": "\"Part 7: Finance AI. Meet Felix. Explains the numbers, builds dashboards. Felix will show you 2 jobs.\"\n\nNext: \"Finance AI, use case 1: ask for financial numbers.\""
+  "notes": "\"Part 7: Finance AI. Meet Felix. Explains the numbers, builds dashboards. Felix will show you 2 jobs.\"\n\nNext: \"Finance AI, use case 1: ask for financial numbers.\"",
+  "thumb": "thumbs/67-intro-07.jpg"
  },
  {
   "file": "slides/68-uc-15.html",
   "label": "Demo: Finance AI 1 of 2",
   "section": "SuDu AI",
-  "notes": "\"Finance AI, use case 1 of 2: ask for financial numbers. Ask in plain words. Profit and loss, sales, who owes you. Answers straight from SQL Account. An afternoon in Excel becomes 1 question.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Finance AI: create a financial dashboard.\""
+  "notes": "\"Finance AI, use case 1 of 2: ask for financial numbers. Ask in plain words. Profit and loss, sales, who owes you. Answers straight from SQL Account. An afternoon in Excel becomes 1 question.\"\n\nDo: show it live on the real screen (web or mobile app), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"Finance AI: create a financial dashboard.\"",
+  "thumb": "thumbs/68-uc-15.jpg"
  },
  {
   "file": "slides/69-uc-16.html",
   "label": "Demo: Finance AI 2 of 2",
   "section": "SuDu AI",
-  "notes": "\"Finance AI, use case 2 of 2: create a financial dashboard. Ask for a PDF and send it on WhatsApp. Or ask for a live dashboard. Share it with your partners. Your numbers, any time.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"So that is the whole team at work. Now, what does it never do without you?\""
+  "notes": "\"Finance AI, use case 2 of 2: create a financial dashboard. Ask for a PDF and send it on WhatsApp. Or ask for a live dashboard. Share it with your partners. Your numbers, any time.\"\n\nDo: show it live on the real screen (web or mobile app, WhatsApp), then come back to this slide.\nNote: sample company and sample data; the screen on the slide is an illustration of the real one.\nNext: \"So that is the whole team at work. Now, what does it never do without you?\"",
+  "thumb": "thumbs/69-uc-16.jpg"
  },
  {
   "file": "slides/70-you-stay-the-boss.html",
   "label": "4 things AI never does",
   "section": "SuDu AI",
-  "notes": "\"You just saw it do a lot. So let me tell you the 4 things AI never does. It does not save anything you have not approved. It never changes your financial figures. It only reads the WhatsApp groups you allow. And every single thing it did is recorded, so you can check it any time. You are still the boss. Now, would this work in your company? Let's find out.\"\n\nNext: \"Would this work in your company? Let's score it.\""
+  "notes": "\"You just saw it do a lot. So let me tell you the 4 things AI never does. It does not save anything you have not approved. It never changes your financial figures. It only reads the WhatsApp groups you allow. And every single thing it did is recorded, so you can check it any time. You are still the boss. Now, would this work in your company? Let's find out.\"\n\nNext: \"Would this work in your company? Let's score it.\"",
+  "thumb": "thumbs/70-you-stay-the-boss.jpg"
  },
  {
   "file": "slides/71-section-workshop.html",
   "label": "Section: Workshop",
   "section": "Workshop",
-  "notes": "\"Now it is your turn. This is the workshop part. 3 steps.\n\nOne: find your group, using the number on your name tag. Two: meet your coach; every group has 1 SuDu coach. Three: check your own company: do you need a WMS and an MES?\"\n\nNext: \"First, find your number.\""
+  "notes": "\"Now it is your turn. This is the workshop part. 3 steps.\n\nOne: find your group, using the number on your name tag. Two: meet your coach; every group has 1 SuDu coach. Three: check your own company: do you need a WMS and an MES?\"\n\nNext: \"First, find your number.\"",
+  "thumb": "thumbs/71-section-workshop.jpg"
  },
  {
   "file": "slides/72-workshop-groups.html",
   "label": "Workshop groups",
   "section": "Workshop",
-  "notes": "\"Before we start the workshop, let's sit in groups. Look at your name tag: you have a number, 1, 2 or 3. Find the table with your number and sit with your group.\n\nEach group has 1 SuDu coach. Your coach will guide you through every step of the workshop, check your answers with you, and tell you where your company should start. Stuck at any point? Raise your hand, and your coach comes to you.\"\n\nDo: coaches stand up and hold up their group number so people can find them. Give 2 minutes to move.\nPrep: give every participant a name tag with 1, 2 or 3 at registration, spread evenly; put a group number card on each table; say each coach's name out loud here.\nNext: \"Everyone with your group? Let's start.\""
+  "notes": "\"Before we start the workshop, let's sit in groups. Look at your name tag: you have a number, 1, 2 or 3. Find the table with your number and sit with your group.\n\nEach group has 1 SuDu coach. Your coach will guide you through every step of the workshop, check your answers with you, and tell you where your company should start. Stuck at any point? Raise your hand, and your coach comes to you.\"\n\nDo: coaches stand up and hold up their group number so people can find them. Give 2 minutes to move.\nPrep: give every participant a name tag with 1, 2 or 3 at registration, spread evenly; put a group number card on each table; say each coach's name out loud here.\nNext: \"Everyone with your group? Let's start.\"",
+  "thumb": "thumbs/72-workshop-groups.jpg"
  },
  {
   "file": "slides/73-need-wms-mes.html",
   "label": "Do you need WMS and MES?",
   "section": "Workshop",
-  "notes": "\"First question for your company: how big does the house need to be? 2 short lists, 5 questions each. Tick every yes, and count each side on its own.\n\nWMS, the warehouse: more than 1 warehouse or many racks; staff wasting time looking for stock; batch or expiry dates, or stock thrown away because it expired; a stock count that does not match the system; more than 30 orders a day to pick and pack. Every yes is a problem a WMS fixes.\n\nMES, the factory: you make, mix or assemble your own products; you issue raw materials by a recipe or BOM; you cannot tell how far a job has gone; the real cost or waste of each batch is unclear; you plan production on paper or in Excel.\n\nScore: 0, SQL Account plus AI agents is enough for now. 1 or 2, start with the agents and add it later. 3 or more, you need it, so plan it from day 1.\n\nIf you do not make anything, skip the MES side: it is 0.\"\n\nDo: coaches note both scores on the lead sheet next to the readiness score.\nNext: \"So how do you start? Just 3 steps.\""
+  "notes": "\"First question for your company: how big does the house need to be? 2 short lists, 5 questions each. Tick every yes, and count each side on its own.\n\nWMS, the warehouse: more than 1 warehouse or many racks; staff wasting time looking for stock; batch or expiry dates, or stock thrown away because it expired; a stock count that does not match the system; more than 30 orders a day to pick and pack. Every yes is a problem a WMS fixes.\n\nMES, the factory: you make, mix or assemble your own products; you issue raw materials by a recipe or BOM; you cannot tell how far a job has gone; the real cost or waste of each batch is unclear; you plan production on paper or in Excel.\n\nScore: 0, SQL Account plus AI agents is enough for now. 1 or 2, start with the agents and add it later. 3 or more, you need it, so plan it from day 1.\n\nIf you do not make anything, skip the MES side: it is 0.\"\n\nDo: coaches note both scores on the lead sheet next to the readiness score.\nNext: \"So how do you start? Just 3 steps.\"",
+  "thumb": "thumbs/73-need-wms-mes.jpg"
  },
  {
   "file": "slides/74-live-in-30-days.html",
   "label": "Onboarding",
   "section": "Get started",
-  "notes": "\"Starting takes just 3 steps.\n\nStep 1, AI setup: we connect your SQL Account safely with the SuDu sync tool. Customers, items, prices, stock and credit limits sync across on their own, and nothing writes straight into your database. We also set permissions: who can approve what.\n\nStep 2, train the AI: just like teaching a new staff member. Write your way of working as Skills and SOPs, for example when to chase a payment, and who to ask when an order is over the credit limit. Then match the item codes: when a customer writes “bwg besar”, the AI has to know which item code that is in your system. We test it first with your orders from last month.\n\nStep 3, start using your AI: it takes orders, chases payments, checks stock and makes reports. At first it only drafts, nothing is saved until you approve, and every action is logged. Once you trust it, add jobs 1 at a time.\n\nWe need 3 things from you: your data, 1 approver and 1 daily user.\"\n\nNext: \"So what does manual work really cost you?\""
+  "notes": "\"Starting takes just 3 steps.\n\nStep 1, AI setup: we connect your SQL Account safely with the SuDu sync tool. Customers, items, prices, stock and credit limits sync across on their own, and nothing writes straight into your database. We also set permissions: who can approve what.\n\nStep 2, train the AI: just like teaching a new staff member. Write your way of working as Skills and SOPs, for example when to chase a payment, and who to ask when an order is over the credit limit. Then match the item codes: when a customer writes “bwg besar”, the AI has to know which item code that is in your system. We test it first with your orders from last month.\n\nStep 3, start using your AI: it takes orders, chases payments, checks stock and makes reports. At first it only drafts, nothing is saved until you approve, and every action is logged. Once you trust it, add jobs 1 at a time.\n\nWe need 3 things from you: your data, 1 approver and 1 daily user.\"\n\nNext: \"So what does manual work really cost you?\"",
+  "thumb": "thumbs/74-live-in-30-days.jpg"
  },
  {
   "file": "slides/75-what-it-gives-back.html",
   "label": "Manual work cost",
   "section": "Get started",
-  "notes": "\"First, the cost of manual work. Take a wholesaler with about 80 orders a day. Sales: 3 people key in orders and reply to customers, 519 hours a month, costing RM10,350. Finance: 2 people do invoices, chase payments and reconcile, 346 hours, RM7,820. Purchasing: 1 person does POs, chases deliveries and keys in supplier invoices, RM3,680. Stock: 1 person checks stock and makes reports, RM3,706.\n\nAdded up: 7 people, 1,211 hours a month, costing RM25,556. That is RM306,672 a year, spent on the same manual work. Now look at the staff cost you worked out yourself, and compare.\"\n\nNote: this is an estimate; monthly cost includes EPF and SOCSO. Say \"estimate\" out loud.\nNext: \"And with AI?\""
+  "notes": "\"First, the cost of manual work. Take a wholesaler with about 80 orders a day. Sales: 3 people key in orders and reply to customers, 519 hours a month, costing RM10,350. Finance: 2 people do invoices, chase payments and reconcile, 346 hours, RM7,820. Purchasing: 1 person does POs, chases deliveries and keys in supplier invoices, RM3,680. Stock: 1 person checks stock and makes reports, RM3,706.\n\nAdded up: 7 people, 1,211 hours a month, costing RM25,556. That is RM306,672 a year, spent on the same manual work. Now look at the staff cost you worked out yourself, and compare.\"\n\nNote: this is an estimate; monthly cost includes EPF and SOCSO. Say \"estimate\" out loud.\nNext: \"And with AI?\"",
+  "thumb": "thumbs/75-what-it-gives-back.jpg"
  },
  {
   "file": "slides/76-cost-compare.html",
   "label": "Manual vs AI cost",
   "section": "Get started",
-  "notes": "\"Manual: RM25,556 a month. With SuDu AI: RM2,000 a month. The AI does the daily work, people only approve.\n\nYou save RM23,556 a month, a 92% cut in cost. That is about RM282,672 a year. The setup fee pays for itself in under 1 month. And the people you free up can move to serving customers and growing sales.\"\n\nNote: this is an estimate, using the manual cost on the previous slide and a RM2,000 a month plan (Pro); say \"estimate\" out loud. It does not yet count what HRDF can cover.\nNext: \"Here are the plans.\""
+  "notes": "\"Manual: RM25,556 a month. With SuDu AI: RM2,000 a month. The AI does the daily work, people only approve.\n\nYou save RM23,556 a month, a 92% cut in cost. That is about RM282,672 a year. The setup fee pays for itself in under 1 month. And the people you free up can move to serving customers and growing sales.\"\n\nNote: this is an estimate, using the manual cost on the previous slide and a RM2,000 a month plan (Pro); say \"estimate\" out loud. It does not yet count what HRDF can cover.\nNext: \"Here are the plans.\"",
+  "thumb": "thumbs/76-cost-compare.jpg"
  },
  {
   "file": "slides/77-plans.html",
   "label": "Plans and prices",
   "section": "Get started",
-  "notes": "\"4 plans, starting from Basic, and I will make it simple. Most companies in this room should start at [recommended plan]. Compare the yearly price with the number in your box 1.\"\n\nTO CONFIRM: the highlighted row is Standard because taking WhatsApp orders, as shown in the demo, starts there. Change it if you pick another plan. Check prices are current.\nNext: \"And the fees are HRDF claimable.\""
+  "notes": "\"4 plans, starting from Basic, and I will make it simple. Most companies in this room should start at [recommended plan]. Compare the yearly price with the number in your box 1.\"\n\nTO CONFIRM: the highlighted row is Standard because taking WhatsApp orders, as shown in the demo, starts there. Change it if you pick another plan. Check prices are current.\nNext: \"And the fees are HRDF claimable.\"",
+  "thumb": "thumbs/77-plans.jpg"
  },
  {
   "file": "slides/78-hrdf.html",
   "label": "HRDF Claimable",
   "section": "Get started",
-  "notes": "\"One more piece of good news: an Esoft exclusive offer, and it is HRDF claimable. Esoft is an Authorised Training Provider registered with HRD Corp. Esoft helps you apply, and eligible companies can claim HRDF. On top of that, there is an Esoft exclusive offer today.\"\n\nTO CONFIRM: which fees can be claimed under HRDF.\nNext: \"So here is your next step.\""
+  "notes": "\"One more piece of good news: an Esoft exclusive offer, and it is HRDF claimable. Esoft is an Authorised Training Provider registered with HRD Corp. Esoft helps you apply, and eligible companies can claim HRDF. On top of that, there is an Esoft exclusive offer today.\"\n\nTO CONFIRM: which fees can be claimed under HRDF.\nNext: \"So here is your next step.\"",
+  "thumb": "thumbs/78-hrdf.jpg"
  },
  {
   "file": "slides/79-next-step.html",
   "label": "Your next step",
   "section": "Get started",
-  "notes": "\"You already did the hard part today. You have your number, your score and your first AI job. The next step is free: a 45-minute Online Demo, where we run your first AI job on your own data. If you already know you want to start, sign within 14 days and get 20% off.\"\n\nNote: do not go back over the problem here. People who hesitate are afraid of choosing wrong: stress free, short, and a person approves everything.\nNext: \"And if you want to go deeper, 3 courses are coming.\""
+  "notes": "\"You already did the hard part today. You have your number, your score and your first AI job. The next step is free: a 45-minute Online Demo, where we run your first AI job on your own data. If you already know you want to start, sign within 14 days and get 20% off.\"\n\nNote: do not go back over the problem here. People who hesitate are afraid of choosing wrong: stress free, short, and a person approves everything.\nNext: \"And if you want to go deeper, 3 courses are coming.\"",
+  "thumb": "thumbs/79-next-step.jpg"
  },
  {
   "file": "slides/80-courses.html",
   "label": "Upcoming courses",
   "section": "Get started",
   "notes": "\"Today was day 1. If you want to go deeper with your team, we have 3 courses coming.\n\nThe Smart Warehouse Bootcamp is for storekeepers and warehouse managers: bins, batches and expiry dates, scanning in, picking and packing with WMS, and stock counts that finally match the system.\n\nThe Smart Factory Bootcamp is for factory owners and production managers: BOM and work orders done right, tracking every job on the floor, and the real cost and waste of each batch.\n\nAnd the AI Agent Masterclass is the advanced course: you learn to write rules and skills for your agents, set approvals and permissions, and measure the time and money it saves. Build and run your own AI team.\n\nDates are coming soon. Tell your coach which one you want, and we will let you know first.\"\n\n(Next: card 1 opens) \"Let me open the first one, the Smart Warehouse Bootcamp: RM399 per person. 4 things you will do: map your warehouse, zones, racks and bins, with batch and expiry for every item. Scan, don't type: receive, put away, pick and pack with the WMS scanner. Count without stopping: cycle counts that match SQL Account, no shutdown day. And let AI watch the stock: Inventory AI warns you before stock runs out or expires. You leave with your own bin map, a scanning flow for your team and a stock count plan.\"\n\nThis slide has 1 extra Next press: card 1 opens.\n\nNote: dates, fees and HRDF status to be confirmed before the seminar.\nNext: \"And 1 last thing: don't wait.\"",
-  "steps": 1
+  "steps": 1,
+  "thumb": "thumbs/80-courses.jpg"
  },
  {
   "file": "slides/81-dont-wait.html",
   "label": "Don't wait",
   "section": "Get started",
-  "notes": "(Pause. Let the first line land.) \"You can wait a little longer. But your competitors won't wait for you!\n\nThey already use AI: orders come in by themselves, payments are chased faster, stock figures are right. In every industrial revolution, the ones who moved first took the customers. The gap grows every month.\n\nBook your 45-minute Online Demo today, and see AI work on your own data. Sign within 14 days and get 20% off.\"\n\nNext: questions."
+  "notes": "(Pause. Let the first line land.) \"You can wait a little longer. But your competitors won't wait for you!\n\nThey already use AI: orders come in by themselves, payments are chased faster, stock figures are right. In every industrial revolution, the ones who moved first took the customers. The gap grows every month.\n\nBook your 45-minute Online Demo today, and see AI work on your own data. Sign within 14 days and get 20% off.\"\n\nNext: questions.",
+  "thumb": "thumbs/81-dont-wait.jpg"
  },
  {
   "file": "slides/82-questions.html",
   "label": "Questions",
   "section": "Questions",
-  "notes": "Take questions for about ten minutes, then the lucky draw, then the closing line (slide 33).\nIf the room is quiet: \"Let me ask the one everybody is thinking: do I have to stop using SQL Account?\"\n\nPrepared answers:\n· Stop using SQL Account? No. It stays; SuDu works around it and sends records back.\n· AutoCount? Yes, it connects to AutoCount as well.\n· Replace my staff? It takes over the typing and chasing. Staff check, approve and deal with customers.\n· Mistakes? Important steps wait for approval, everything is recorded, every new job starts draft-only.\n· Data safe / used for training? [Confirm with product team.]\n· Messy data? Yes, start anyway: the readiness check, and we clean item codes during setup.\n· Languages? [Confirm: BM, English, Chinese, mixed.]\n· Grants? [Confirm HRD Corp and digitalisation grant position.]"
+  "notes": "Take questions for about ten minutes, then the lucky draw, then the closing line (slide 33).\nIf the room is quiet: \"Let me ask the one everybody is thinking: do I have to stop using SQL Account?\"\n\nPrepared answers:\n· Stop using SQL Account? No. It stays; SuDu works around it and sends records back.\n· AutoCount? Yes, it connects to AutoCount as well.\n· Replace my staff? It takes over the typing and chasing. Staff check, approve and deal with customers.\n· Mistakes? Important steps wait for approval, everything is recorded, every new job starts draft-only.\n· Data safe / used for training? [Confirm with product team.]\n· Messy data? Yes, start anyway: the readiness check, and we clean item codes during setup.\n· Languages? [Confirm: BM, English, Chinese, mixed.]\n· Grants? [Confirm HRD Corp and digitalisation grant position.]",
+  "thumb": "thumbs/82-questions.jpg"
  }
 ];
   window.DECK_WIDTH = 1920;
@@ -757,6 +798,13 @@
       const im = document.createElement('img');
       im.className = 'thumb-img'; im.src = item.thumb; im.decoding = 'async';
       card.appendChild(im);
+    } else if (useImg) {
+      // no picture yet: a plain title card. Never load many live slides at once (heavy, flickers)
+      const ph = document.createElement('div');
+      ph.className = 'thumb-img';
+      ph.style.cssText = 'display:grid;place-items:center;padding:14px;text-align:center;color:#A9C4BA;font:600 15px/1.35 -apple-system,sans-serif';
+      ph.textContent = item.label || ('Slide ' + (idx + 1));
+      card.appendChild(ph);
     } else {
       // 网格默认用：真实 HTML 子页面（清晰、所见即所得）
       const thumb = document.createElement('div');
