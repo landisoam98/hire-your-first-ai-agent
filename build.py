@@ -5282,26 +5282,29 @@ slide('29-hrdf', 'HRDF Claimable', SEC[6], 'light', 'data-sparks="9,0 1,5" style
 .cd.hi .ic svg { width: 60px; height: 60px; }
 .cd.hi .es { width: 100%; height: 220px; border-radius: 28px; background: #fff; display:grid; place-items:center; box-shadow: 0 0 0 1px var(--line), 0 24px 40px -26px rgba(2,34,31,.45); }
 .cd.hi .es img { width: 86%; height: 170px; object-fit: contain; }
+.cd.hi .es .wm { display:flex; flex-direction:column; align-items:center; gap: 6px; }
+.cd.hi .es .wm b { margin: 0; font-size: 64px; font-weight: 800; letter-spacing: .02em; color: var(--ink); }
+.cd.hi .es .wm small { margin: 0; font-family: var(--mono); font-size: 22px; font-weight: 700; letter-spacing: .2em; color: var(--green); }
 .cd.hi .ph { color: var(--neon); }
 ''', '''
 <div class="kicker r" style="--d:.05s">Training grant</div>
 <h1 class="h1 r" style="--d:.15s">HRDF Claimable</h1>
-<p class="sub r" style="--d:.3s"><em>Esoft</em> exclusive offer, HRDF claimable</p>
+<p class="sub r" style="--d:.3s"><em>ESTREAM (SQL HQ)</em> exclusive offer, HRDF claimable</p>
 <div class="row">
   <div class="glass cd r" style="--d:.55s">
     <span class="lg pop" style="--d:.9s"><img src="../assets/logos/hrdcorp-registered-tp.png" alt="HRD Corp Registered Training Provider logo"></span>
-    <small>ESOFT</small><b>Authorised Training Provider</b><p>A training provider registered with HRD Corp.</p></div>
-  <div class="go f" style="--d:1.1s"><span>Esoft helps you<br>claim HRDF</span>
+    <small>ESTREAM (SQL HQ)</small><b>Authorised Training Provider</b><p>A training provider registered with HRD Corp.</p></div>
+  <div class="go f" style="--d:1.1s"><span>ESTREAM helps you<br>claim HRDF</span>
     <svg viewBox="0 0 150 40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path pathLength="1" style="--d:1.2s" d="M8 20 H140 M124 6 L140 20 L124 34"/></svg></div>
   <div class="glass cd r" style="--d:.75s">
     <span class="lg pop" style="--d:1.1s"><img src="../assets/logos/hrdcorp-claimable.png" alt="HRD Corp Claimable logo"></span>
     <small>HRDF</small><b>HRDF Claimable</b><p>Eligible companies can claim the HRD Corp grant.</p></div>
   <div class="plus f" style="--d:1.4s"><i>+</i></div>
   <div class="glass cd hi r" style="--d:.95s">
-    <span class="es pop" style="--d:1.3s"><img src="../assets/logos/esoft.png" alt="Esoft logo"></span>
-    <b style="margin-top:auto">Esoft exclusive offer</b><p>Esoft customers get extra discounts!</p></div>
+    <span class="es pop" style="--d:1.3s"><span class="wm"><b>ESTREAM</b><small>SQL HQ</small></span></span>
+    <b style="margin-top:auto">ESTREAM exclusive offer</b><p>ESTREAM customers get extra discounts!</p></div>
 </div>
-''', "\"One more piece of good news: an Esoft exclusive offer, and it is HRDF claimable. Esoft is an Authorised Training Provider registered with HRD Corp. Esoft helps you apply, and eligible companies can claim HRDF. On top of that, there is an Esoft exclusive offer today.\"\n\nTO CONFIRM: which fees can be claimed under HRDF.\nNext: \"So here is your next step.\"")
+''', "\"One more piece of good news: an ESTREAM exclusive offer, and it is HRDF claimable. ESTREAM, SQL HQ, is an Authorised Training Provider registered with HRD Corp. ESTREAM helps you apply, and eligible companies can claim HRDF. On top of that, there is an ESTREAM exclusive offer today.\"\n\nTO CONFIRM: which fees can be claimed under HRDF.\nNext: \"So here is your next step.\"")
 
 slide('30-live-in-30-days', 'Onboarding', SEC[6], 'light', 'data-sparks="9,0" style="--gx:78%;--gy:40%;--mx:70%;--my:40%"', '''
 .slide { padding-top: 96px; }
